@@ -2,15 +2,17 @@ assert = require "assert"
 fs = require "fs"
 bodyParser = require "body-parser"
 express = require "express"
-browserify = require('browserify-middleware')
 
 app = express()
 
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
-app.use express.static('public')
-app.use '/js', browserify('./client')
+browserify = require('browserify-middleware')
+browserify.settings
+  transform: ['coffeeify']
+
+app.use '/js/client.js', browserify(__dirname + '/client/client.coffee')
 
 # CORS
 app.use (req, res, next) ->
@@ -23,8 +25,9 @@ app.use (req, res, next) ->
   console.log(req.method, req.path, req.body)
   next()
 
-app.get "/", (req, res) ->
-  res.send("yo")
+# Serve Static files from public/
+app.use express.static('public')
 
+# Listen
 listener = app.listen process.env.PORT, ->
   console.log('Your app is listening on port ' + listener.address().port)
