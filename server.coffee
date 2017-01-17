@@ -12,7 +12,7 @@ browserify = require('browserify-middleware')
 browserify.settings
   transform: ['coffeeify']
 
-app.use '/js/client.js', browserify(__dirname + '/client/client.coffee')
+app.use '/client.js', browserify(__dirname + '/client.coffee')
 
 # CORS
 app.use (req, res, next) ->
@@ -28,6 +28,6 @@ app.use (req, res, next) ->
 # Serve Static files from public/
 app.use express.static('public')
 
-# Listen
+# Listen on App port
 listener = app.listen process.env.PORT, ->
   console.log('Your app is listening on port ' + listener.address().port)

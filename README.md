@@ -1,9 +1,7 @@
-Welcome to the Gomix BETA
-=========================
+CoffeeScript Base
+=================
 
-Click `"Show"` in the header to see your app live. Updates to your code will instantly deploy and update live.
-
-Gomix is a developer playground that lets you code a real web-app without the slow setup and deployment steps.
+This base project uses express
 
 [About Gomix](https://gomix.com/about)
 
@@ -11,13 +9,11 @@ Gomix is a developer playground that lets you code a real web-app without the sl
 Your Project
 ------------
 
-On the back-end,
-- your app starts at `server.js`
+- your app starts at `server.coffee`
 - add frameworks and packages in `package.json`
 - safely store app secrets in `.env`
-
-On the front-end,
-- edit `client.js`, `style.css` and `index.html`
+- `client.coffee` is compiled and served as /client.js
+- Files in public/ such as `style.css` and `index.html` are served directly
 - drag in `assets`, like images or music, to add them to your project
 
 
