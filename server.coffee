@@ -16,13 +16,13 @@ browserify.settings
   extensions: ['.coffee', '.litcoffee']
 app.use '/client.js', browserify(__dirname + '/client.coffee')
 
-# CORS - Allow any site to make requests to our API
+# CORS - Allow pages from any domain to make requests to our API
 app.use (req, res, next) ->
   res.header("Access-Control-Allow-Origin", "*")
   res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
   next()
 
-# Logging
+# Log all requests for diagnostics
 app.use (req, res, next) ->
   console.log(req.method, req.path, req.body)
   next()
