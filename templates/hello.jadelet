@@ -3,3 +3,9 @@
 main
   = Header(this)
   h1 hello
+
+  footer
+    a(href="https://gomix.com/#!/r/jadelet-base")
+      p Remix this in Gomix
+    a(href="https://gomix.com/#!/project/jadelet-base")
+      p View code
