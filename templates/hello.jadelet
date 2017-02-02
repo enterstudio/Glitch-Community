@@ -2,9 +2,13 @@
 
 main
   = Header(this)
+  
+  hr
   h1(click=@clickTest)= @hello
   p= @utils.search.hi
 
+
+  - # includes/footer
   footer
     a(href="https://gomix.com/#!/r/jadelet-base")
       p Remix this in Gomix

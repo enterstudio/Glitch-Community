@@ -6,5 +6,26 @@
 - url = "https://gomix.com/community/"
 
 header(role="banner")
-  h1 welcome to ufo
-  img(src=bird)
+  .header-info
+    a(href="/community")
+      img.logo(src=bird)
+    //if !user.isExisting
+    h1.headline
+      a(href="/community")
+        span Gomix
+      span= " "
+      span is the easiest way to build the app or bot of your dreams
+    p.about With working example apps to remix, a code editor to modify them, instant hosting and deployment - anybody can build a web app on Gomix, for free. 
+      a(href="https://gomix.com/about") Learn more
+    p.video
+      img.play-button(src=play)
+      span How it works in 2 minutes
+
+  nav(role="navigation")
+    form(action="/community/search" method="get" role="search")
+      input.search-input(name="q" placeholder="bots, apps, tutorials")
+    a(href="https://github.com/login/oauth/authorize?client_id=b4cb743ed07e20abf0b2&scope=user:email")
+      button.button-small Sign in
+        span.emoji.octocat
+    // TODO replace w user avatar and link to profile page if signed in
+    
