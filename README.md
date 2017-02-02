@@ -6,6 +6,8 @@ A client-side app framework with databinding between your models and views.
 Jadelet is a flavor of [Hamlet](http://hamlet.coffee). We use Jadelet to make the [Gomix editor](https://gomix.com/#!/project/jadelet-base) and the [community site](http://gomix.com/community)
 
 
+> TODO: replace w jade/jewel/necklace ascii art
+
          (  )   (   )  )
           ) (   )  (  (
           ( )  (    ) )
