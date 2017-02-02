@@ -2,11 +2,13 @@
 # by express browserify middleware using the
 # coffeeify transform
 
-hello = require './coffee-module'
-console.log(hello + ' world :o')
+model = require './model.coffee'
+
+# hello = require './coffee-module'
+console.log(model.hello + ' world :o')
 
 HelloTemplate = require "./templates/hello"
 
-template = HelloTemplate()
+template = HelloTemplate(model)
 
 document.body.appendChild template
