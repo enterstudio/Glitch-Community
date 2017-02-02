@@ -20,8 +20,9 @@
 		"stylus": "^0.54.5",
 		"stylish": "^1.0.0",
 		"through2": "^2.0.3",
-    "underscore": "^1.8.3",
-		"fuzzy": "^0.1.3"
+		"underscore": "^1.8.3",
+		"fuzzy": "^0.1.3",
+		"markdown-it": "^8.2.2"
 	},
 	"engines": {
 		"node": "6.9.1"
@@ -33,6 +34,6 @@
 		"node",
 		"gomix",
 		"express",
-    "jadelet"
+		"jadelet"
 	]
 }

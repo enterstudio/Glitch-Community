@@ -1,10 +1,12 @@
-utils = require "./utils/utils"
+search = require "./utils/search"
+
 
 self = 
-  utils: utils
+  utils:
+    search: search
   
   hello: 'sup'
-  
+
   clickTest: ->
     alert 'yo'
 
