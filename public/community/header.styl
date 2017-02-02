@@ -1,0 +1,67 @@
+header
+  margin-top: 1rem
+  overflow: auto
+  position: relative
+
+  .logo
+    vertical-align: middle
+    margin-right: 5px
+    margin-bottom: 1rem
+    width: 75px
+    @media (max-width: smallViewport)
+      width: 70px
+  
+  //.headline
+  //  vertical-align: middle
+  //  display: inline-block
+  //  max-width: 450px
+  //  margin-left: 5px
+  //  margin-top: 0
+
+  p
+    max-width: 450px
+
+  nav
+    position: absolute
+    right: 0
+    top: 0
+    text-align: right
+    //@media (max-width: mediumViewport)
+    //  position: relative
+    //  margin-top: 1.5rem
+    form
+      //display: inline-block
+      margin-bottom: 0.5rem
+      //margin-bottom: 0
+      input
+        //margin-top: 1rem
+        background-image: url(search)
+        background-repeat: no-repeat
+        width: 250px
+        @media (max-width: smallViewport)
+          width: 160px
+    button
+      margin-left: 10px
+      //display: inline-block
+
+    @media (max-width: smallViewport)
+      form
+        display: block
+        input
+          margin-top: 0
+      //button
+
+  .video
+    display: inline-block
+    color: link
+    cursor: pointer
+    .play-button
+      vertical-align: -6px
+      margin-right: 5px
+    &:hover
+      text-decoration: underline
+
+.category-page,
+.search-results
+  .video
+    display: none

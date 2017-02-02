@@ -1,0 +1,212 @@
+monospace = Menlo, Consolas, Monaco, "Lucida Console", Monospace
+sansserif = "Benton Sans", Helvetica, Sans-serif
+
+primary = #222
+secondary = #C3C3C3
+tertiary = #9B9B9B
+secondary-background = #F5F5F5
+secondary-background-active = #E8E8E8
+text-on-secondary-background = #727272
+line-on-secondary-background = #B8B8B8
+input-border = #CCC
+input-border-focused = #A2D7FF
+marketing = #FFD1C6
+overlay-background = rgba(255, 255, 255, 0.8)
+cta = #83ffcd
+link = #3652D3
+section-line = #E5E5E5
+warning-background = #ffced5
+beta = #fcf3b0
+
+
+heart = "https://s3.amazonaws.com/hyperweb-editor-assets/us-east-1%3Ab0bac0a2-1470-4ff8-b72d-acc002ba0a16%2Fheart.svg"
+showApp = "https://s3.amazonaws.com/hyperweb-editor-assets/us-east-1%3Ab0bac0a2-1470-4ff8-b72d-acc002ba0a16%2Fshow-app.svg"
+search = "https://cdn.gomix.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Fsearch.svg"
+
+smallViewport = 414px
+mediumViewport = 670px
+largeViewport = 900px
+hugeViewport = 1080px
+
+*
+  box-sizing: border-box
+
+body
+  font-family: sansserif
+  padding: 1rem 5%
+  color: primary
+  margin-left: auto
+  margin-right: auto
+  width: 100%
+  max-width: 1207px
+  @media (max-width: 400px)
+    padding-left: 15px
+    padding-right: 15px
+  //@media (min-width: hugeViewport)
+    //padding: 25px 25px
+
+h1
+  font-weight: bold
+  font-size: 22px
+
+h2
+  font-weight: bold
+  font-size: 18px
+
+p
+  line-height: 20px
+
+a
+  color: link
+  text-decoration: none
+  &:hover
+    text-decoration: underline
+
+hr
+  background-color: section-line
+  height: 1px
+  border: none
+
+.hidden
+  display: none !important
+
+.centered
+  display: flex
+  flex-direction: row
+  align-items: center
+  justify-content: center
+
+main,
+section
+  clear: both
+
+section,
+article
+  margin-top: 1rem
+  margin-bottom: 1rem
+
+section
+  margin-top: 2rem
+
+.name,
+.button,
+button
+  text-align: left
+  font-size: 14px
+  font-weight: 600
+  background-color: white
+  border: solid primary 2px
+  display: inline-block
+  border-radius: 5px
+  padding: 6px 12px
+  padding-bottom: 5px
+  cursor: pointer
+  &:hover
+    background-color: secondary-background
+  &:active
+    background-color: secondary-background-active
+    color: primary
+
+.cta-button
+  color: primary
+  font-weight: 600
+  border: solid primary 2px
+  display: inline-block
+  border-radius: 5px
+  padding: 6px 12px
+  cursor: pointer
+  background-color: cta
+  box-shadow: 4px 4px 0 primary
+  &:hover
+    background-color: cta
+    box-shadow: 2px 2px 0 primary
+    // position: relative
+    // top: 2px
+    // left: 2px
+  &:active
+    background-color: cta
+    box-shadow: none
+
+.button-secondary
+  border-width: 1px
+  font-size: 11px
+  padding: 2px 4px
+  padding-right: 5px
+  border-color: line-on-secondary-background
+  color: text-on-secondary-background
+  &:hover
+    color: primary
+    background-color: secondary-background-active
+  &:active
+    border-color: primary
+
+.button-small
+  font-size: 12px
+  padding: 3px 10px
+
+  
+input
+  border-color: input-border
+  width: 200px
+  height: 25px
+  border-radius: 3px
+  border-style: solid
+  border-width: 1px
+  padding-left: 10px
+  padding-bottom: 2px
+  font-size: 13px
+  background-repeat: no-repeat
+  background-position: right 5px center
+  transition: all .1s
+  &:focus
+    outline: none
+    box-shadow: 0px 0px 3px 0px input-border-focused
+
+.search-results
+  margin-top: 0
+
+.by-fogcreek
+  img
+    margin-top: 1rem
+    margin-bottom: 1rem
+  p
+    max-width: 500px
+
+.warning
+  background-color: warning-background
+
+.legible-background
+  background-color: white
+
+.beta
+  position: fixed
+  right: 20px
+  bottom: 15px
+  z-index: 4
+  display: inline-block
+  background-color: beta
+  font-size: 12px
+  font-weight: bold
+  padding: 4px 8px
+  padding-bottom: 2px
+  vertical-align: middle
+  margin-left: 5px
+  user-select: none
+
+.emoji
+  width: 16px
+  height: 16px
+  display: inline-block
+  vertical-align: -4px
+  margin-left: 4px
+  background-repeat: no-repeat
+  &.octocat
+    background-image: url("https://gomix.com/images/emojis/github-logo-light.svg")
+    
+.avatar
+  display: inline-block
+  width: 32px
+  height: 32px
+  border-radius: 5px
+  background-color: cyan // overriden by avatar color from ls
+
