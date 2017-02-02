@@ -5,6 +5,8 @@
 hello = require './coffee-module'
 console.log(hello + ' world :o')
 
-template = require "./templates/hello"
+HelloTemplate = require "./templates/hello"
 
-console.log template()
+template = HelloTemplate()
+
+document.body.appendChild template
