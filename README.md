@@ -1,5 +1,9 @@
-CoffeeScript Base
+Jadelet Base
 =================
+
+Jadelet is an 
+
+It's based o
 
 This base project uses express
 

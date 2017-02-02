@@ -4,3 +4,7 @@
 
 hello = require './coffee-module'
 console.log(hello + ' world :o')
+
+template = require "./templates/hello"
+
+console.log template()

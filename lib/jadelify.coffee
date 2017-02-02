@@ -8,7 +8,7 @@ compileRaw = (raw) ->
     compiler: CoffeeScript
     exports: "module.exports"
     mode: "jade" # TOOD: -> jadelet
-    runtime: "require('#{__dirname}/runtime')"
+    runtime: "require('hamlet.coffee')"
 
 # Hook require to .jadelet extension
 require.extensions[".jadelet"] = (module, filename) ->
