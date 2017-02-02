@@ -3,4 +3,8 @@
 section.features(role="navigation")
   h2 Featured Apps
   ul
+    - # each feature in featured
+    - # _.shuffle model.featured()
+    li hello
 
+  p= @utils.search.hi
