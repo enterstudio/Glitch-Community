@@ -1,6 +1,0 @@
-- Header = require "./includes/header"
-
-main
-  = Header(this)
-  p bye 👋 another route
-
