@@ -1,6 +1,6 @@
 search = require "./utils/search"
 
-curated = require "./utils/curated"
+curated = require "./curated"
 
 self = 
   utils:
