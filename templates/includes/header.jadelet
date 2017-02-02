@@ -1,1 +1,10 @@
-h1 welcome to ufo
+- bird = "https://cdn.gomix.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Fbird.svg"
+- glasses = "https://s3.amazonaws.com/hyperweb-editor-assets/us-east-1%3Ab0bac0a2-1470-4ff8-b72d-acc002ba0a16%2Fshow-app.svg"
+- cover = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fog-image.png"
+- play = "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fplay.svg"
+
+- url = "https://gomix.com/community/"
+
+header(role="banner")
+  h1 welcome to ufo
+  img(src=bird)
