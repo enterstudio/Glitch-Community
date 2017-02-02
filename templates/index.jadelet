@@ -4,6 +4,7 @@ main
   = Header(this)
   
   hr
+
   h1(click=@clickTest)= @hello
   p= @utils.search.hi
 

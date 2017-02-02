@@ -1,0 +1,2 @@
+- glasses = "https://s3.amazonaws.com/hyperweb-editor-assets/us-east-1%3Ab0bac0a2-1470-4ff8-b72d-acc002ba0a16%2Fshow-app.svg"
+- cover = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fog-image.png"

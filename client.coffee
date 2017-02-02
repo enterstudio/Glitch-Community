@@ -3,11 +3,9 @@
 # coffeeify transform
 
 model = require './model.coffee'
-console.log(model.hello + ' world :o')
+console.log(model.hello + ' world :o') #
 
-HelloTemplate = require "./templates/hello"
-hello = HelloTemplate(model)
+IndexTemplate = require "./templates/index"
+index = IndexTemplate(model)
 
-document.body.appendChild hello
-
-# document.getElementsByTagName('head')[0].appendChild('<x></x>')
+document.body.appendChild index
