@@ -1,15 +1,25 @@
 Jadelet Base
 =================
 
-Databinding, client app framework, lets you code a client-side application with the conventions of a server-based node app
+A client-side app framework with databinding between your models and the views.
+..Databinding, client app framework, lets you code a client-side application with the conventions of a server-based node app
+
+Jadelet is a flavor of [Hamlet](http://hamlet.coffee). We use Jadelet to make the [Gomix editor](https://gomix.com/#!/project/jadelet-base) and the [community site](http://gomix.com/community)
+
+               _____
+       _..--'''@   @'''--.._
+     .'   @_/-//-\/>/>'/ @  '.
+    (  @  /_<//<'/----------^-)
+    |'._  @     //|###########|
+    |~  ''--..@|',|}}}}}}}}}}}|
+    |  ~   ~   |/ |###########|
+    | ~~  ~   ~|./|{{{{{{{{{{{|
+     '._ ~ ~ ~ |,/`````````````
+        ''--.~.|/
 
 
-
-
-
-Jadelet is based on [Hamlet](http://hamlet.coffee). We use Jadelet to make the [Gomix editor](https://gomix.com/#!/project/jadelet-base) and the [community site](http://gomix.com/community)
-Edit Me 🎤
------------
+Getting Started
+-----------------
 
 - your app starts at `server.coffee`
 - add frameworks and packages in `package.json`
