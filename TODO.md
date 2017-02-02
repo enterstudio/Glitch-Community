@@ -2,6 +2,8 @@
 
 👀 https://gomix.com/#!/project/commbranch2
 
+## phase 1
+
 - [x] port styles
 - [x] port home view
   - [ ] header
@@ -13,18 +15,23 @@
 - [ ] port search function
 - [ ] port overlays (project)
 
-- [ ] figure out routes
+- [ ] figure out routes (`/community` and `/` go to the same place)
 - [ ] 404 page
-- [ ] `/community` vs `/` paths?
 - [ ] create a trackEvent GA abstraction (use editor gtm w category? mirror event_tracking.coffee)
 - [ ] add accessibility (aria, etc.)
+- [ ] port image links to the new project (because will be fully replacing the current community)
 
 ## phase 2
+
 - [ ] user detection logic
 - [ ] start work on your-profile section and profile hover pop..
 - [ ] simplify curation data requirements based on api and gh calls
 
+## phase 3
 
+- [ ] move curation data to a db or service (airtable + caching seems okay)
+
+---------------------
 
 # QA
 
