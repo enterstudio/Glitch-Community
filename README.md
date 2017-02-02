@@ -1,32 +1,48 @@
-Jadelet Base
-=================
+# Gomix Community Projects
 
-A client-side app framework with databinding between your models and views.
+Discover new reasons to code, remix cool and helpful projects made with Gomix.
 
-Jadelet is a flavor of [Hamlet](http://hamlet.coffee). We use Jadelet to make the [Gomix editor](https://gomix.com/#!/project/jadelet-base) and the [community site](http://gomix.com/community)
+Philosophically, a little bit `app store`, some `Spotify`, and a little bit `Youtube`.
 
 
-> TODO: replace w jade/jewel/necklace ascii art
-
-         (  )   (   )  )
-          ) (   )  (  (
-          ( )  (    ) )
-          _____________
-         <▓▓▓▓▓▓▓▓▓▓▓▓▓> ___
-         |             |/ _ \
-         |=============  | | |
-         |xoxoxoxoxoxox  |_| |
-      ___|=============|\___/  
-     /    \___________/    \
-     \_____________________/
-
+                      /88888888888888888888888888\
+                      |88888888888888888888888888/
+                       |~~____~~~~~~~~~"""""""""|
+                      / \_________/"""""""""""""\
+                     /  |              \         \
+                    /   |  88    88     \         \
+                   /    |  88    88      \         \
+                  /    /                  \        |
+                 /     |   ________        \       |
+                 \     |   \______/        /       |
+      /"\         \     \____________     /        |
+      | |__________\_        |  |        /        /
+    /""""\           \_------'  '-------/       --
+    \____/,___________\                 -------/
+    ------*            |                    \
+      ||               |                     \
+      ||               |                 ^    \
+      ||               |                | \    \
+      ||               |                |  \    \
+      ||               |                |   \    \
+      \|              /                /"""\/    /
+         -------------                |    |    /
+         |\--_                        \____/___/
+         |   |\-_                       |
+         |   |   \_                     |
+         |   |     \                    |
+         |   |      \_                  |
+         |   |        ----___           |
+         |   |               \----------|
+         /   |                     |     ----------""\
+    /"\--"--_|                     |               |  \
+    |_______/                      \______________/    )
+                                                  \___/
 
 Getting Started
 -----------------
 
-- your app starts at `server.coffee`
-- add frameworks and packages in `package.json`
-- safely store app secrets in `.env`
+- the app starts at `server.coffee`
 - `client.coffee` is compiled and served as /client.js
 - view templates start at `templates/hello.jadelet`
 - stylus files like `public/style.styl` is compiled and served directly as `public/style.css`
