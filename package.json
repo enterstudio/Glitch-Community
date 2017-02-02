@@ -2,19 +2,24 @@
 	"//1": "describes your app and its dependencies",
 	"//2": "https://docs.npmjs.com/files/package.json",
 	"//3": "updating this file will download and update your packages",
-	"name": "my-gomix-app",
+	"name": "jadelet-base",
 	"version": "0.0.1",
-	"description": "What am I about?",
+	"description": "Get started using jadelet in literally a second",
 	"main": "server.js",
 	"scripts": {
 		"start": "coffee server.coffee"
 	},
 	"dependencies": {
-		"express": "^4.14.0",
-		"coffee-script": "^1.12.2",
-		"body-parser": "^1.15.2",
+		"autoprefixer-stylus": "^0.9.1",
+		"express": "^4.14.1",
+		"hamlet.coffee": "0.7.7-pre.0",
+		"coffee-script": "^1.12.3",
+		"body-parser": "^1.16.0",
 		"browserify-middleware": "^7.1.0",
-		"coffeeify": "^2.1.0"
+		"coffeeify": "^2.1.0",
+		"stylus": "^0.53.0",
+		"stylish": "^0.6.0",
+		"through2": "^2.0.3"
 	},
 	"engines": {
 		"node": "6.9.1"

@@ -1,6 +1,8 @@
 assert = require "assert"
 fs = require "fs"
 express = require "express"
+stylish = require 'stylish'
+autoprefixer = require 'autoprefixer-stylus'
 
 app = express()
 
@@ -9,11 +11,13 @@ bodyParser = require "body-parser"
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 
+jadeletTransform = require './lib/jadelify'
+
 # Configure browserify middleware to serve client.coffee as client.js
 browserify = require('browserify-middleware')
 browserify.settings
-  transform: ['coffeeify']
-  extensions: ['.coffee', '.litcoffee']
+  transform: ['coffeeify', jadeletTransform]
+  extensions: ['.coffee', '.litcoffee', '.jadelet']
 app.use '/client.js', browserify(__dirname + '/client.coffee')
 
 # CORS - Allow pages from any domain to make requests to our API
@@ -29,6 +33,18 @@ app.use (req, res, next) ->
 
 # Serve Static files from public/
 app.use express.static('public')
+
+# Configure stylus and autoprefixer support
+app.use stylish
+  src: __dirname + '/public'
+  setup: (renderer) ->
+    renderer.use autoprefixer()
+  watchCallback: (error, filename) ->
+    if error
+      console.error error
+    else
+      console.log "#{filename} compiled to css"
+
 
 # Listen on App port
 listener = app.listen process.env.PORT, ->
