@@ -1,8 +1,13 @@
 - Header = require "./includes/header"
+- Featured = require "./includes/featured"
 
-main
+span
   = Header(this)
-  
+
+  main(role="main")
+    = Featured(this)
+
+
   hr
 
   h1(click=@clickTest)= @hello
