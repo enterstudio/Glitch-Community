@@ -1,5 +1,8 @@
-self = 
+utils = require "./utils/utils"
 
+self = 
+  utils: utils
+  
   hello: 'sup'
   
   clickTest: ->
