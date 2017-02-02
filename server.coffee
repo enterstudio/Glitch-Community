@@ -1,4 +1,3 @@
-assert = require "assert"
 fs = require "fs"
 express = require "express"
 stylish = require 'stylish'
@@ -14,6 +13,7 @@ app.use(bodyParser.json())
 jadeletTransform = require './lib/jadelify'
 
 # Configure browserify middleware to serve client.coffee as client.js
+# and to allow requiring .jadelet files as templates
 browserify = require('browserify-middleware')
 browserify.settings
   transform: ['coffeeify', jadeletTransform]
@@ -44,7 +44,6 @@ app.use stylish
       console.error error
     else
       console.log "#{filename} compiled to css"
-
 
 # Listen on App port
 listener = app.listen process.env.PORT, ->
