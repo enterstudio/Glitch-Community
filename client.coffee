@@ -2,10 +2,10 @@
 # by express browserify middleware using the
 # coffeeify transform
 
-model = require './model.coffee'
-console.log(model.hello + ' world :o') #
+application = require './application.coffee'
+console.log(application.hello + ' world :o') #
 
 IndexTemplate = require "./templates/index"
-index = IndexTemplate(model)
+index = IndexTemplate application
 
 document.body.appendChild index
