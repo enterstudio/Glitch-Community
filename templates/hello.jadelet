@@ -2,7 +2,7 @@
 
 main
   = Header(this)
-  h1 hello
+  h1(click=@clickTest)= @hello
 
   footer
     a(href="https://gomix.com/#!/r/jadelet-base")

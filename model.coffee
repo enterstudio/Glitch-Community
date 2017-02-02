@@ -1,9 +1,8 @@
 self = 
 
-  hello: 'hello'
+  hello: 'sup'
   
-  x: ->
-    'yo'
+  clickTest: ->
+    alert 'yo'
 
-    
 module.exports = self
