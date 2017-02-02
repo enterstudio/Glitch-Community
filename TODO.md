@@ -4,7 +4,8 @@ from https://gomix.com/#!/project/commbranch2
 - [ ] port home view
 - [ ] port other views
 - [ ] figure out routes
+- [ ] 404 page
 - [ ] `/community` vs `/` paths?
-- [ ] port curation lib/model/db
+- [ ] port curation data (formerly model)
 - [ ] port search function
 - [ ] port overlays (project)
