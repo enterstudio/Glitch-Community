@@ -1,18 +1,18 @@
-- bird = "https://cdn.gomix.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Fbird.svg"
+- logo = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fcarp.svg"
 - play = "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fplay.svg"
 
 header(role="banner")
   .header-info
     a(href="/community")
-      img.logo(src=bird)
+      img.logo(src=logo)
     //if !user.isExisting
     h1.headline
       a(href="/community")
-        span Gomix
+        span Glitch
       span= " "
       span is the easiest way to build the app or bot of your dreams
     p.about With working example apps to remix, a code editor to modify them, instant hosting and deployment - anybody can build a web app on Gomix, for free. 
-      a(href="https://gomix.com/about") Learn more
+      a(href="https://glitch.com/about") Learn more
     p.video
       img.play-button(src=play)
       span How it works in 2 minutes

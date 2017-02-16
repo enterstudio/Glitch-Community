@@ -7,7 +7,7 @@
 - [x] port styles
 - [x] port home view
   - [x] header
-  - [ ] port curation data (formerly model)
+  - [ ] port curation data (formerly model, now 'curated')
   - [ ] featured
   - [ ] projects/cats
   - [ ] footer
