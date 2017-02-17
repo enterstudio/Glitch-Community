@@ -4,7 +4,7 @@ search = require "./utils/search"
 curated = require "./curated"
 
 
-console.log curated
+console.log 'curated', curated
 
 self = 
   utils:
