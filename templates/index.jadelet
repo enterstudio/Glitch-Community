@@ -7,9 +7,31 @@ span
   main(role="main")
     = Featured(this)
 
+    - # TODO make this an include 'shuffledCategories'?
+    - console.log 'shuffledCategories'
+    - console.log @shuffledCategories()
 
-    section
-      h1 sup
+    - @shuffledCategories().forEach (category) ->
+        article.projects(style="background-color: #{category.background}")
+          header.category
+            a.category-name(href="#{category.url}")
+              h2=category.name
+                span.arrow →
+            span.category-image-container
+              a.category-image(href="#{category.url}")
+                img(src=category.img)
+            p.category-description=category.description
+
+          ul.projects-container
+            - projects = @shuffledProjects projects
+            - matchingProjects = 0
+
+            each project in projects
+              if project.categoryId == category.id
+                if matchingProjects < MAX_PROJECTS_PER_CATEGORY
+                  include includes/project
+                  - matchingProjects ++
+
 
   - # includes/footer
   footer

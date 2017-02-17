@@ -16,8 +16,9 @@ self =
     _.shuffle curated.featured()
 
   shuffledCategories: ->
-    # shuffled, max 3 random cateogories
-    
-  
+    MAX_CATEOGIES_DISPLAYED = 3
+    shuffledCategories = _.shuffle curated.categories()
+    shuffledCategories.slice(0, MAX_CATEOGIES_DISPLAYED)
+
 
 module.exports = self
