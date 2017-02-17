@@ -17,12 +17,9 @@ self =
 
   shuffledCategories: ->
     MAX_CATEOGIES_DISPLAYED = 3
-    
-    homepageCategories = curated.categories()
-    console.log 'homepageCategories', homepageCategories
-
     homepageCategories = _.filter curated.categories(), (category) ->
-      return if category.homepageCategories    
+      if category.listedOnHomepage
+        category
     shuffledCategories = _.shuffle homepageCategories
     shuffledCategories.slice(0, MAX_CATEOGIES_DISPLAYED)
 

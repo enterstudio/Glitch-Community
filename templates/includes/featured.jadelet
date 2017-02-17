@@ -3,7 +3,6 @@
 
 section.features(role="navigation")
   h2 Featured Apps
-  - console.log @featuredProjects()
   ul
     - context = @
     - @featuredProjects().forEach (project) ->
@@ -29,3 +28,4 @@ section.features(role="navigation")
 
 
   - # p= @utils.search
+
