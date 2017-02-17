@@ -56,9 +56,6 @@ module.exports =
       ]
   ] 
 
-  # type 1: categories listed on the site
-  # type 2: WIP collections, not listed
-  # type 3: company collections, not listed
   categories: -> [
       name: 'Hello Worlds'
       url: 'hello-worlds'
@@ -67,7 +64,7 @@ module.exports =
       description: "Experiment with technologies and libraries by remixing these sample projects."
       background: "rgba(252, 243, 174, #{backgroundOpacity})"
       id: 1
-      type: 1
+      homepageCategory: true
     ,
       name: 'Games'
       url: 'games'
@@ -76,7 +73,7 @@ module.exports =
       description: "Make your own cool games. Get that idea out of your head and into the world."
       background: "rgba(251, 159, 88, #{backgroundOpacity})"
       id: 2
-      type: 1      
+      listedOnHomepage: true      
     ,
       name: 'Building Blocks'
       url: 'building-blocks'
@@ -85,7 +82,7 @@ module.exports =
       description: "Databases, emailing and more. The bread and butter basics of modern web dev."
       background: "rgba(49, 204, 212, #{backgroundOpacity})"
       id: 3
-      type: 1      
+      listedOnHomepage: true      
     ,
       name: 'Learn to Code'
       url: 'learn-to-code'
@@ -94,7 +91,7 @@ module.exports =
       description: "Learn by doing, then breaking, then doing some more. You got this!"
       background: "rgba(255, 209, 198, #{backgroundOpacity})"
       id: 4
-      type: 1      
+      listedOnHomepage: true      
     ,
       name: 'Tools for Work'
       url: 'tools-for-work'
@@ -103,7 +100,7 @@ module.exports =
       description: "Every business is a snowflake. Build and customize your own tools and integrations."
       background: "rgba(112, 164, 216, #{backgroundOpacity})"
       id: 5
-      type: 1      
+      listedOnHomepage: true      
     ,
       name: 'Community Picks'
       url: 'community-picks'
@@ -112,7 +109,7 @@ module.exports =
       description: "Community submissions that do the flyest things ✨"
       background: "rgba(156, 224, 252, #{backgroundOpacity})"
       id: 6
-      type: 1      
+      listedOnHomepage: true      
     ,
       name: 'Handy Bots'
       url: 'handy-bots'
@@ -121,7 +118,7 @@ module.exports =
       description: "Build helpful tools, meme generators, or Westworld. Your bots have your back."
       background: "rgba(201, 191, 244, #{backgroundOpacity})"
       id: 7
-      type: 1      
+      listedOnHomepage: true      
     ,
       name: 'Hardware'
       url: 'hardware'
@@ -130,7 +127,7 @@ module.exports =
       description: "Connect your gadgets and gizmos to the world – or your kitchen."
       background: "rgba(48, 220, 166, #{backgroundOpacity})"
       id: 8
-      type: 1
+      listedOnHomepage: true
     ,
       name: 'Slack Apps'
       url: 'slack'
@@ -139,7 +136,7 @@ module.exports =
       description: "Bots, slash commands and apps that integrate with Slack."
       background: "rgba(252, 243, 174, #{backgroundOpacity})"
       id: 9
-      type: 3
+      companyCollection: true
     ,
       name: 'Big Game Apps'
       url: 'big-game'
@@ -148,7 +145,7 @@ module.exports =
       description: "From gridiron to your editor, create apps for the big game."
       background: "rgba(252, 243, 174, #{backgroundOpacity})"
       id: 10
-      type: 2    
+      listedOnHomepage: true
   ]
 
   projects: -> [

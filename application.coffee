@@ -17,7 +17,13 @@ self =
 
   shuffledCategories: ->
     MAX_CATEOGIES_DISPLAYED = 3
-    shuffledCategories = _.shuffle curated.categories()
+    
+    homepageCategories = curated.categories()
+    console.log 'homepageCategories', homepageCategories
+
+    homepageCategories = _.filter curated.categories(), (category) ->
+      return if category.homepageCategories    
+    shuffledCategories = _.shuffle homepageCategories
     shuffledCategories.slice(0, MAX_CATEOGIES_DISPLAYED)
 
   projectsInCategory: (categoryId) -> 
@@ -26,19 +32,6 @@ self =
       _.contains project.categoryIds, categoryId
     shuffledProject = _.shuffle projectsInCategory
     shuffledProject.slice(0, MAX_PROJECTS_PER_CATEGORY)
-      # project
-    # projects = _.where curated.projects(),
-    #   categoryId: categoryId
-    # console.log projectsInCategory
-    # shuffle
-
-#   shuffledProjects: (categoryId) ->
-#     MAX_PROJECTS_PER_CATEGORY = 3
-#     console.log "x", categoryId
-    
-#     shuffledProjects = _.shuffle projects
-#     shuffledProjects.slice(0, MAX_PROJECTS_PER_CATEGORY)
-    
 
 
 module.exports = self
