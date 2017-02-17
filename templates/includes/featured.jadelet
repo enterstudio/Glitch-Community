@@ -6,10 +6,8 @@ section.features(role="navigation")
   ul
     - @featured().forEach (project) ->
       - console.log project
+      li= project.name
+        a(href=@remixLink(project.url, project.id))
+          span remix me
 
-    - # each feature in featured
-    - # _.shuffle model.featured()
-      li project
-        a(href=@utils.remixLink(project.url, project.id))
-
-  p= @utils.search.hi
+  p= @utils.searchhi

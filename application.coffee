@@ -9,8 +9,6 @@ console.log 'hi'
 self = 
   utils:
     search: search
-    remixLink: (projectName, projectId) ->
-      "https://gomix.com/#!/remix/#{projectName}/#{projectId}"
 
   # presenters:
   featured: ->
@@ -24,6 +22,8 @@ self =
   featured: ->
     _.shuffle curated.featured()
 
-  
+  remixLink: (projectName, projectId) ->
+    "https://gomix.com/#!/remix/#{projectName}/#{projectId}"
+
     
 module.exports = self
