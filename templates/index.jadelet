@@ -8,11 +8,8 @@ span
     = Featured(this)
 
 
-  hr
-
-  h1(click=@clickTest)= @hello
-  p= @utils.search.hi
-
+    section
+      h1 sup
 
   - # includes/footer
   footer

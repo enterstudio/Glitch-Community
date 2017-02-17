@@ -4,10 +4,13 @@ section.features(role="navigation")
   h2 Featured Apps
   - console.log @featured()
   ul
+    - context = @
     - @featured().forEach (project) ->
       - console.log project
+      - remixLink = context.utils.remixLink(project.url, project.id)
       li= project.name
-        a(href=@remixLink(project.url, project.id))
+        a(href=remixLink)
           span remix me
 
-  p= @utils.searchhi
+
+  - # p= @utils.search
