@@ -20,9 +20,12 @@ self =
     shuffledCategories = _.shuffle curated.categories()
     shuffledCategories.slice(0, MAX_CATEOGIES_DISPLAYED)
 
+  categoryProjects: (-> 
+    
   shuffledProjects: (categoryId) ->
     MAX_PROJECTS_PER_CATEGORY = 3
-    console.log "x", projects
+    console.log "x", categoryId
+    
     shuffledProjects = _.shuffle projects
     shuffledProjects.slice(0, MAX_PROJECTS_PER_CATEGORY)
     

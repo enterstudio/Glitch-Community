@@ -27,11 +27,11 @@ span
             p.category-description=category.description
 
           ul.projects-container
-            - console.log 'hihi', category.projects
             - projects = context.shuffledProjects(category.id)
             - console.log projects
 
-            - @shuffledCategories().forEach (category) ->
+            - projects.forEach (project) ->
+              - console.log project
 
             - # = include Project(context, project)
 
