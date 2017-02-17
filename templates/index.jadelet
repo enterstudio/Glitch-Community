@@ -11,6 +11,7 @@ span
     - console.log 'shuffledCategories'
     - console.log @shuffledCategories()
 
+    - context = @
     - @shuffledCategories().forEach (category) ->
         article.projects(style="background-color: #{category.background}")
           header.category
@@ -23,14 +24,15 @@ span
             p.category-description=category.description
 
           ul.projects-container
-            - projects = @shuffledProjects projects
-            - matchingProjects = 0
+            - console.log 'hihi', category.projects
+            - projects = context.shuffledProjects(category.id)
+            - console.log projects
+            = include Project(this)
 
-            each project in projects
-              if project.categoryId == category.id
-                if matchingProjects < MAX_PROJECTS_PER_CATEGORY
-                  include includes/project
-                  - matchingProjects ++
+            - # each project in projects
+            - #   if project.categoryId == category.id
+            - #     if matchingProjects < MAX_PROJECTS_PER_CATEGORY
+            - #       include includes/project
 
 
   - # includes/footer
