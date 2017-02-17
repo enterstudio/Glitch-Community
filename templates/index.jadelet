@@ -29,7 +29,7 @@ span
             - projects.forEach (project) ->
               - console.log project
 
-            - # = include Project(context, project)
+            - # = include Project(context, project, category)
 
             - # each project in projects
             - #   if project.categoryId == category.id
