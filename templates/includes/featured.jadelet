@@ -2,9 +2,14 @@
 
 section.features(role="navigation")
   h2 Featured Apps
+  - console.log @featured()
   ul
+    - @featured().forEach (project) ->
+      - console.log project
+
     - # each feature in featured
     - # _.shuffle model.featured()
-    li hello
+      li project
+        a(href=@utils.remixLink(project.url, project.id))
 
   p= @utils.search.hi

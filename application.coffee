@@ -1,5 +1,6 @@
-search = require "./utils/search"
+_ = require 'underscore'
 
+search = require "./utils/search"
 curated = require "./curated"
 
 console.log curated
@@ -8,7 +9,9 @@ console.log 'hi'
 self = 
   utils:
     search: search
-  
+    remixLink: (projectName, projectId) ->
+      "https://gomix.com/#!/remix/#{projectName}/#{projectId}"
+
   # presenters:
   featured: ->
     "sdf"
@@ -19,6 +22,8 @@ self =
     alert 'yo'
 
   featured: ->
-    curated.featured()
+    _.shuffle curated.featured()
+
+  
     
 module.exports = self
