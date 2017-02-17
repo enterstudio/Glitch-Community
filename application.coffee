@@ -21,14 +21,15 @@ self =
     shuffledCategories.slice(0, MAX_CATEOGIES_DISPLAYED)
 
   projectsInCategory: (categoryId) -> 
-    console.log 'curated projects', curated.projects()
-    curated.projects().map (project) ->
-      console.log project.categoryIds
-      if project
+    MAX_PROJECTS_PER_CATEGORY = 3
+    projectsInCategory = _.filter curated.projects(), (project) ->
+      _.contains project.categoryIds, categoryId
+    shuffledProject = _.shuffle projectsInCategory
+    shuffledProject.slice(0, MAX_PROJECTS_PER_CATEGORY)
       # project
-    projects = _.where curated.projects(),
-      categoryId: categoryId
-    console.log projects
+    # projects = _.where curated.projects(),
+    #   categoryId: categoryId
+    # console.log projectsInCategory
     # shuffle
 
 #   shuffledProjects: (categoryId) ->

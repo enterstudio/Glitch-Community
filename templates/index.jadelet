@@ -9,9 +9,7 @@ span
     = Featured(this)
 
     - # TODO make this an include 'shuffledCategories'?
-    - console.log 'shuffledCategories'
-    - console.log @shuffledCategories()
-
+    - # console.log @shuffledCategories()
     - # = ShuffledCategories(this)
 
     - context = @
@@ -28,10 +26,8 @@ span
 
           ul.projects-container
             - projects = context.projectsInCategory(category.id)
-            - console.log projects
-
-            - # projects.forEach (project) ->
-              - # console.log project
+            - projects.forEach (project) ->
+              - console.log project
 
             - # = include Project(context, project)
 
