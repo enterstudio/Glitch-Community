@@ -1,5 +1,6 @@
 - Header = require "./includes/header"
 - Featured = require "./includes/featured"
+- # ShuffledCategories = require "./includes/shuffledCategories"
 
 span
   = Header(this)
@@ -10,6 +11,8 @@ span
     - # TODO make this an include 'shuffledCategories'?
     - console.log 'shuffledCategories'
     - console.log @shuffledCategories()
+
+    - # = ShuffledCategories(this)
 
     - context = @
     - @shuffledCategories().forEach (category) ->
@@ -27,7 +30,10 @@ span
             - console.log 'hihi', category.projects
             - projects = context.shuffledProjects(category.id)
             - console.log projects
-            = include Project(this)
+
+            - @shuffledCategories().forEach (category) ->
+
+            - # = include Project(context, project)
 
             - # each project in projects
             - #   if project.categoryId == category.id
