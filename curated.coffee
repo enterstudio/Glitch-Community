@@ -1,3 +1,5 @@
+
+
 computer = "https://cdn.hyperdev.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Fcomputer.svg"
 recordPlayer = 'https://cdn.hyperdev.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Frecord-player.svg'
 diamond = "https://cdn.hyperdev.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Fdiamond.svg"
@@ -15,6 +17,10 @@ superbowl = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FbigGam
 backgroundOpacity = 0.3
 
 # 🌱 See CURATORS.md for info on adding projects
+
+# luck-beam updates: 
+# - project 'name' to 'referenceName' (won't be printed on new community, instead will use api)
+# - url won't be used, will also be fetched from db based on id
 
 module.exports =
 
@@ -157,7 +163,7 @@ module.exports =
         name: 'etamponi'
         avatar: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
-      categoryId: [2]
+      categoryIds: [2]
     ,
       name: 'Kerbal Space Program'
       projectId: 2
@@ -170,7 +176,7 @@ module.exports =
         name: 'InPermutation'
         avatar: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
       ]
-      categoryId: [2]
+      categoryIds: [2]
     ,
       name: 'Pong Solo'
       projectId: 3
@@ -183,7 +189,7 @@ module.exports =
         name: 'STRd6'
         avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]
-      categoryId: [2]
+      categoryIds: [2]
     ,
       name: 'Fancy Soundboard'
       projectId: 4
@@ -199,7 +205,7 @@ module.exports =
           name: 'pketh'
           avatar: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
       ]
-      categoryId: [2]
+      categoryIds: [2]
     ,
       name: 'SVG Editor'
       projectId: 5
@@ -212,7 +218,7 @@ module.exports =
           name: 'InPermutation'
           avatar: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
       ]
-      categoryId: [6]
+      categoryIds: [6]
     ,
       name: 'Data Dashboard'
       projectId: 8
@@ -221,7 +227,7 @@ module.exports =
       likes: 13
       remixes: null
       description: "Display data from Google Sheets on a live dashboard"
-      categoryId: [5]
+      categoryIds: [5]
     ,
       name: 'Socket.io Chat'
       projectId: 9
@@ -230,7 +236,7 @@ module.exports =
       likes: 9
       remixes: null
       description: "A simple chat demo using Socket.io"
-      categoryId: [3]
+      categoryIds: [3]
     ,
       name: 'Mini Lua Compiler'
       projectId: 10
@@ -243,7 +249,7 @@ module.exports =
         name: 'InPermutation'
         avatar: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
       ]
-      categoryId: [4]
+      categoryIds: [4]
     ,
       name: 'Sending Email'
       projectId: 11
@@ -253,7 +259,7 @@ module.exports =
       likes: 8
       remixes: null
       description: "Email sending form with React and Nodemailer"
-      categoryId: [3] 
+      categoryIds: [3] 
     ,
       name: 'API Endpoint'
       projectId: 12
@@ -262,7 +268,7 @@ module.exports =
       likes: 3
       remixes: null
       description: "GET and POST RESTful API endpoints using Express"
-      categoryId: [3] 
+      categoryIds: [3] 
     ,
       name: 'Simple MongoDB Example'
       projectId: 13
@@ -271,7 +277,7 @@ module.exports =
       likes: 5
       remixes: null
       description: "Connect and add items to a MongoDB database"
-      categoryId: [3]
+      categoryIds: [3]
     ,
       name: 'Passport.js'
       projectId: 14
@@ -280,7 +286,7 @@ module.exports =
       likes: 9
       remixes: null
       description: "User authentication using Passport.js and OAuth providers"
-      categoryId: [1] 
+      categoryIds: [1] 
     ,
       name: 'Backbone.js'
       projectId: 16
@@ -289,7 +295,7 @@ module.exports =
       likes: 3
       remixes: null
       description: "A To-do list app using Backbone.js (TodoMVC)"
-      categoryId: [1] 
+      categoryIds: [1] 
     ,
       name: 'Mocha and Chai'
       projectId: 17
@@ -302,7 +308,7 @@ module.exports =
           name: 'etamponi'
           avatar: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
-      categoryId: [1]
+      categoryIds: [1]
     ,
       name: 'D3.js'
       projectId: 18
@@ -311,7 +317,7 @@ module.exports =
       likes: 2
       remixes: null
       description: "Rendering SVG charts on the server-side with D3.js"
-      categoryId: [1]
+      categoryIds: [1]
     ,
       name: 'Browserify Middleware'
       projectId: 19
@@ -324,7 +330,7 @@ module.exports =
           name: 'STRd6'
           avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]
-      categoryId: [1]
+      categoryIds: [1]
     ,
       name: 'Sending SMS with Twilio'
       projectId: 20
@@ -333,7 +339,7 @@ module.exports =
       likes: 9
       remixes: null
       description: "Use Twilio to send SMS alerts on page error"
-      categoryId: [3,8]
+      categoryIds: [3,8]
     ,  
       name: 'Twitter Bot'
       projectId: 88
@@ -346,7 +352,7 @@ module.exports =
           name: 'fourtonfish'
           avatar: 'https://avatars3.githubusercontent.com/u/3909390?v=3&s=48'
       ]
-      categoryId: [7]       
+      categoryIds: [7]       
     ,
       name: 'Slack Bot (with persistence)'
       projectId: 22
@@ -355,7 +361,7 @@ module.exports =
       likes: 19
       remixes: null
       description: "Onboarding bot using Slack's Events API, with MongoDB for persistence"
-      categoryId: [7,9]       
+      categoryIds: [7,9]       
     ,
       name: 'CoffeeScript, Jade & Stylus'
       projectId: 23
@@ -368,7 +374,7 @@ module.exports =
           name: 'pketh'
           avatar: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
       ]
-      categoryId: [1] 
+      categoryIds: [1] 
     ,
       name: 'Simply Done'
       projectId: 24
@@ -381,7 +387,7 @@ module.exports =
           name: 'enriquesanchez'
           avatar: 'https://avatars2.githubusercontent.com/u/3276087?v=3&s=48'
       ]
-      categoryId: [5]
+      categoryIds: [5]
     ,
       name: 'Web Scraper'
       projectId: 25
@@ -390,7 +396,7 @@ module.exports =
       likes: 7
       remixes: null
       description: "Web scraper using scrape-it"
-      categoryId: [3]
+      categoryIds: [3]
     ,
       name: 'Learn ASL Alphabet'
       projectId: 28
@@ -403,7 +409,7 @@ module.exports =
           name: 'jude'
           avatar: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
       ]
-      categoryId: [6]
+      categoryIds: [6]
     ,  
       name: 'Tetrjs'
       projectId: 86
@@ -416,7 +422,7 @@ module.exports =
           name: 'jennazee'
           avatar: 'https://avatars3.githubusercontent.com/u/1097241?v=3&s=48'
       ]
-      categoryId: [2]      
+      categoryIds: [2]      
     ,
       name: 'Display Data from Excel'
       projectId: 29
@@ -429,7 +435,7 @@ module.exports =
           name: 'jude'
           avatar: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
       ]
-      categoryId: [5]  
+      categoryIds: [5]  
     ,
       name: 'L-system'
       projectId: 30
@@ -442,7 +448,7 @@ module.exports =
           name: 'STRd6'
           avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]
-      categoryId: [6]
+      categoryIds: [6]
     ,
       name: 'Trello Shopping List Generator'
       projectId: 32
@@ -455,7 +461,7 @@ module.exports =
           name: 'LouManglass' 
           avatar: 'https://avatars3.githubusercontent.com/u/241059?v=3&s=48'        
       ]
-      categoryId: [6]
+      categoryIds: [6]
     ,
       name: 'Frog Feels'
       projectId: 33
@@ -468,7 +474,7 @@ module.exports =
           name: 'pketh'
           avatar: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
       ]
-      categoryId: [6]
+      categoryIds: [6]
     ,
       name: 'Sass Middleware'
       projectId: 34
@@ -481,7 +487,7 @@ module.exports =
           name: 'STRd6'
           avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]
-      categoryId: [1] 
+      categoryIds: [1] 
     ,
       name: 'Hoodie'
       projectId: 35
@@ -495,7 +501,7 @@ module.exports =
           name: 'gr2m'
           avatar: 'https://avatars2.githubusercontent.com/u/39992?v=3&s=48'
       ]
-      categoryId: [1]   
+      categoryIds: [1]   
     ,
       name: 'Font Awesome Export tool'
       projectId: 36
@@ -508,7 +514,7 @@ module.exports =
           name: 'olragon'
           avatar: 'https://avatars2.githubusercontent.com/u/47636?v=3&s=48'
       ]
-      categoryId: [6]
+      categoryIds: [6]
     ,
       name: 'HipChat Add-on'
       projectId: 37
@@ -521,7 +527,7 @@ module.exports =
           name: 'rmanalan'
           avatar: 'https://avatars2.githubusercontent.com/u/549?v=3&s=48'
       ]
-      categoryId: [1]
+      categoryIds: [1]
     ,
       name: 'Processing.js'
       projectId: 39
@@ -534,7 +540,7 @@ module.exports =
           name: 'JosephLaurino'
           avatar: 'https://avatars2.githubusercontent.com/u/755681?v=3&s=48'
       ]
-      categoryId: [1]
+      categoryIds: [1]
     ,
       name: 'Postcard Maker'
       projectId: 40,
@@ -547,7 +553,7 @@ module.exports =
           name: 'margalit'
           avatar: 'https://avatars2.githubusercontent.com/u/2268424?v=3&s=48'
       ]
-      categoryId: [6]
+      categoryIds: [6]
     ,
       name: 'Trello Webhook Server'
       projectId: 44
@@ -556,7 +562,7 @@ module.exports =
       likes: 9
       remixes: null
       description: "Lists Trello board activity via webhooks"
-      categoryId: [5]      
+      categoryIds: [5]      
     ,
       name: 'Instant Website: Freelancer Bootstrap Template'
       projectId: 46
@@ -569,7 +575,7 @@ module.exports =
           name: 'davidtmiller'
           avatar: 'https://avatars3.githubusercontent.com/u/8400627?v=3&s=48'
       ]
-      categoryId: [4]  
+      categoryIds: [4]  
     ,
       name: 'Instant Website: Creative Bootstrap Template'
       projectId: 47
@@ -582,7 +588,7 @@ module.exports =
           name: 'davidtmiller'
           avatar: 'https://avatars3.githubusercontent.com/u/8400627?v=3&s=48'
       ]
-      categoryId: [4] 
+      categoryIds: [4] 
     ,
       name: 'CoderDojo Kata: Beginner JavaScript Sushi'
       projectId: 48
@@ -591,7 +597,7 @@ module.exports =
       likes: 7
       remixes: null
       description: "Learn the basics of HTML, JavaScript, triggering actions and using jQuery"
-      categoryId: [4]  
+      categoryIds: [4]  
     ,
       name: 'Assets.js'
       projectId: 49
@@ -604,7 +610,7 @@ module.exports =
           name: 'etamponi'
           avatar: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
-      categoryId: [1] 
+      categoryIds: [1] 
     ,
       name: 'CoderDojo Kata: Intermediate JavaScript Sushi'
       projectId: 50
@@ -613,7 +619,7 @@ module.exports =
       likes: 4
       remixes: null
       description: "Learn about logging, listening, variables, conditionals, arrays & functions"
-      categoryId: [4] 
+      categoryIds: [4] 
     ,
       name: 'Slack Slash Command Handler'
       projectId: 51
@@ -622,7 +628,7 @@ module.exports =
       likes: 14
       remixes: null
       description: "Respond to custom Slash Commands in Slack, using MongoDB for persistence"
-      categoryId: [7,9]
+      categoryIds: [7,9]
     ,  
       name: 'Circles Bouncing Off Lines'
       projectId: 82
@@ -635,7 +641,7 @@ module.exports =
         name: 'maryrosecook'
         avatar: 'https://avatars3.githubusercontent.com/u/2716?v=3&s=48'
       ]
-      categoryId: [4] 
+      categoryIds: [4] 
     ,
       name: 'App Authentication with Auth0'
       projectId: 53
@@ -644,7 +650,7 @@ module.exports =
       likes: 17
       remixes: null
       description: "Let Auth0 take care of how users authenticate with your app"
-      categoryId: [3]
+      categoryIds: [3]
     ,
       name: 'Alexa Skill for Amazon Echo'
       projectId: 54
@@ -653,7 +659,7 @@ module.exports =
       likes: 17
       remixes: null
       description: "Ask Alexa for airport information using an airport code"
-      categoryId: [7,8]
+      categoryIds: [7,8]
     ,
       name: 'Messenger Platform bot'
       projectId: 55
@@ -666,7 +672,7 @@ module.exports =
           name: 'fbsamples'
           avatar: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
       ]      
-      categoryId: [7]
+      categoryIds: [7]
     ,  
       name: 'Chewy'
       projectId: 95
@@ -679,7 +685,7 @@ module.exports =
           name: 'stretchyboy'
           avatar: 'https://avatars1.githubusercontent.com/u/229326?v=3&s=48'
       ]
-      categoryId: [7]       
+      categoryIds: [7]       
     ,
       name: 'Grunt.js'
       projectId: 56
@@ -688,7 +694,7 @@ module.exports =
       likes: 7
       remixes: null
       description: "Example app that minifies a JS file with Uglify using Grunt"
-      categoryId: [1]
+      categoryIds: [1]
     ,
       name: 'Parse Server'
       projectId: 57
@@ -701,7 +707,7 @@ module.exports =
           name: 'AndrewLane'
           avatar: 'https://avatars3.githubusercontent.com/u/479232?v=3&s=48'
       ]
-      categoryId: [3]
+      categoryIds: [3]
     ,
       name: 'Parse Dashboard'
       projectId: 58
@@ -714,7 +720,7 @@ module.exports =
           name: 'AndrewLane'
           avatar: 'https://avatars3.githubusercontent.com/u/479232?v=3&s=48'
       ]
-      categoryId: [5]
+      categoryIds: [5]
     ,
       name: 'Parse To-do App'
       projectId: 59
@@ -723,7 +729,7 @@ module.exports =
       likes: 9
       remixes: null
       description: "Example To-do app that uses Parse Server as a backend"
-      categoryId: [5] 
+      categoryIds: [5] 
     ,
       name: 'Node Twitter'
       projectId: 60
@@ -736,7 +742,7 @@ module.exports =
           name: 'vinitkumar'
           avatar: 'https://avatars3.githubusercontent.com/u/537678?v=3&s=48'
       ]
-      categoryId: [6]
+      categoryIds: [6]
     ,  
       name: 'React.js'
       projectId: 61
@@ -745,7 +751,7 @@ module.exports =
       likes: 4
       remixes: null
       description: "React comment box tutorial example"
-      categoryId: [1]
+      categoryIds: [1]
     ,
       name: 'Firebase Database Quickstart'
       projectId: 63
@@ -754,7 +760,7 @@ module.exports =
       likes: 12
       remixes: null
       description: "A simple social blog app using Firebase"
-      categoryId: [3]
+      categoryIds: [3]
     ,
       name: 'HTML Slide Deck Presentation'
       projectId: 64
@@ -763,7 +769,7 @@ module.exports =
       likes: 9
       remixes: null
       description: "Example presentation slide show using reveal.js"
-      categoryId: [5]
+      categoryIds: [5]
     ,
       name: 'Salesforce Quickstart'
       projectId: 65
@@ -773,7 +779,7 @@ module.exports =
       likes: 11
       remixes: null
       description: "Handles OAuth and commands using SOQL, Search and Chatter APIs"
-      categoryId: [5,3] 
+      categoryIds: [5,3] 
     ,
       name: 'MongoDB database persistence (sync)'
       projectId: 66
@@ -782,7 +788,7 @@ module.exports =
       likes: 7
       remixes: null
       description: "A simple blog app using MongoDB database to store data"
-      categoryId: [3]
+      categoryIds: [3]
     ,  
       name: 'MongoDB database persistence (async)'
       projectId: 67
@@ -791,7 +797,7 @@ module.exports =
       likes: 4
       remixes: null
       description: "A simple blog app using MongoDB database to store data"
-      categoryId: [3]   
+      categoryIds: [3]   
     ,  
       name: 'SQLite3 with Sequelize'
       projectId: 68
@@ -800,7 +806,7 @@ module.exports =
       likes: 4
       remixes: null
       description: "List app that demos a SQLite3 database using the Sequelize ORM"
-      categoryId: [3]
+      categoryIds: [3]
     ,
       name: 'Learn Node.js with The Node Beginner'
       projectId: 7
@@ -813,7 +819,7 @@ module.exports =
         name: 'manuelkiessling'
         avatar: 'https://avatars3.githubusercontent.com/u/206592?v=3&s=48'
       ]
-      categoryId: [4]
+      categoryIds: [4]
     ,  
       name: 'Learn JavaScript with Javascripting Workshopper'
       projectId: 26
@@ -822,7 +828,7 @@ module.exports =
       likes: 14
       remixes: null
       description: "18 exercises, covering the basics of JavaScript from variables to functions"
-      categoryId: [4]     
+      categoryIds: [4]     
     ,
       name: 'Slack Bot'
       projectId: 69
@@ -831,7 +837,7 @@ module.exports =
       likes: 15
       remixes: null
       description: "Example Onboarding bot using Slack's Events API"
-      categoryId: [7,9]
+      categoryIds: [7,9]
     ,
       name: 'Add to Alexa Flash Briefing'
       projectId: 70
@@ -840,7 +846,7 @@ module.exports =
       likes: 19
       remixes: null
       description: "Generate an Alexa Flash Briefing compatible JSON feed from submitted articles"
-      categoryId: [7,8] 
+      categoryIds: [7,8] 
     ,
       name: 'Multi Draw'
       projectId: 71
@@ -849,7 +855,7 @@ module.exports =
       likes: 9
       remixes: null
       description: "Draw in real-time with multiple other people, and see what they're drawing too"
-      categoryId: [2]      
+      categoryIds: [2]      
     ,
       name: 'App Store Image Grabber'
       projectId: 72
@@ -859,7 +865,7 @@ module.exports =
       likes: 6
       remixes: null
       description: "Get the logos and screenshots from any app in the Apple iOS App Store"
-      categoryId: [5]
+      categoryIds: [5]
     ,  
       name: 'NeDB'
       projectId: 73
@@ -868,7 +874,7 @@ module.exports =
       likes: 7
       remixes: null
       description: "A list app that demos interacting with a NeDB database"
-      categoryId: [3]
+      categoryIds: [3]
     ,  
       name: 'Nuxt.js'
       projectId: 74
@@ -881,7 +887,7 @@ module.exports =
         name: 'nuxt'
         avatar: 'https://avatars3.githubusercontent.com/u/23360933?v=3&s=48'
       ]
-      categoryId: [1] 
+      categoryIds: [1] 
     ,  
       name: 'Vue.js HN'
       projectId: 75
@@ -894,7 +900,7 @@ module.exports =
         name: 'vuejs'
         avatar: 'https://avatars3.githubusercontent.com/u/6128107?v=3&s=48'
       ]
-      categoryId: [6] 
+      categoryIds: [6] 
     ,  
       name: 'Vue.js SSR'
       projectId: 76
@@ -907,7 +913,7 @@ module.exports =
         name: 'vuejs'
         avatar: 'https://avatars3.githubusercontent.com/u/6128107?v=3&s=48'
       ]
-      categoryId: [1]
+      categoryIds: [1]
     ,  
       name: 'FogBugz.js'
       projectId: 77
@@ -920,7 +926,7 @@ module.exports =
           name: 'bigdogwillfeed'
           avatar: 'https://avatars3.githubusercontent.com/u/4453639?v=3&s=48'
       ]
-      categoryId: [3]
+      categoryIds: [3]
     ,  
       name: 'FogBugz Webhook Dashboard'
       projectId: 78
@@ -929,7 +935,7 @@ module.exports =
       likes: 7
       remixes: null
       description: "A simple server that handles incoming Webhooks delivered from FogBugz"
-      categoryId: [5]  
+      categoryIds: [5]  
     ,  
       name: 'Multiplayer Starter Game'
       projectId: 79
@@ -942,7 +948,7 @@ module.exports =
         name: 'underscorediscovery'
         avatar: 'https://avatars3.githubusercontent.com/u/236374?v=3&s=48'
       ]
-      categoryId: [2,3]
+      categoryIds: [2,3]
     ,  
       name: 'Pixelatize'
       projectId: 80
@@ -955,7 +961,7 @@ module.exports =
         name: 'jennschiffer'
         avatar: 'https://avatars3.githubusercontent.com/u/341305?v=3&s=48'
       ]
-      categoryId: [6] 
+      categoryIds: [6] 
     ,  
       name: 'Space Invaders'
       projectId: 81
@@ -968,7 +974,7 @@ module.exports =
         name: 'maryrosecook'
         avatar: 'https://avatars3.githubusercontent.com/u/2716?v=3&s=48'
       ]
-      categoryId: [2] 
+      categoryIds: [2] 
     ,  
       name: 'Voting'
       projectId: 85
@@ -981,7 +987,7 @@ module.exports =
           name: 'hsubox'
           avatar: 'https://avatars3.githubusercontent.com/u/470813?v=3&s=48'
       ]
-      categoryId: [5]
+      categoryIds: [5]
     ,  
       name: 'Mini Breakout'
       projectId: 87
@@ -994,7 +1000,7 @@ module.exports =
           name: 'anildash'
           avatar: 'https://avatars3.githubusercontent.com/u/84376?v=3&s=48'
       ]
-      categoryId: [2] 
+      categoryIds: [2] 
     ,  
       name: 'Browser Quest'
       projectId: 83
@@ -1010,7 +1016,7 @@ module.exports =
           name: 'sork'
           avatar: 'https://avatars3.githubusercontent.com/u/184017?v=3&s=48'
       ]
-      categoryId: [2]
+      categoryIds: [2]
     ,  
       name: 'Blockspring'
       projectId: 88
@@ -1020,7 +1026,7 @@ module.exports =
       likes: 12
       remixes: null
       description: "Use Blockspring to easily get data from third-party APIs"
-      categoryId: [3]
+      categoryIds: [3]
     ,
       name: 'Multiplayer Snake'
       projectId: 89
@@ -1033,7 +1039,7 @@ module.exports =
           name: 'benoror'
           avatar: 'https://avatars0.githubusercontent.com/u/119117?v=3&s=48'
       ]
-      categoryId: [2]
+      categoryIds: [2]
     ,
       name: 'Prototype with Material Design'
       projectId: 90
@@ -1046,7 +1052,7 @@ module.exports =
           name: 'ghaida'
           avatar: 'https://avatars3.githubusercontent.com/u/342672?v=3&s=48'
       ]
-      categoryId: [3]
+      categoryIds: [3]
     ,
       name: 'Coffee Talks'
       projectId: 91
@@ -1062,7 +1068,7 @@ module.exports =
           name: 'pketh'
           avatar: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
       ]
-      categoryId: [6]
+      categoryIds: [6]
     ,
       name: 'Contentful Command Slack Bot'
       projectId: 92
@@ -1075,7 +1081,7 @@ module.exports =
           name: 'stefanjudis'
           avatar: 'https://avatars1.githubusercontent.com/u/962099?v=3&s=48'
       ]
-      categoryId: [7,9]
+      categoryIds: [7,9]
     ,
       name: 'Wordpress Slack Slash Command'
       projectId: 94
@@ -1088,7 +1094,7 @@ module.exports =
           name: 'tharsheblows'
           avatar: 'https://avatars1.githubusercontent.com/u/1530368?v=3&s=48'
       ]
-      categoryId: [7,9]
+      categoryIds: [7,9]
     ,
       name: 'Botkit Starter Kit for Slack'
       projectId: 96
@@ -1101,7 +1107,7 @@ module.exports =
           name: 'howdyai'
           avatar: 'https://avatars1.githubusercontent.com/u/16260958?v=3&s=48'
       ]
-      categoryId: [7,9]
+      categoryIds: [7,9]
     ,
       name: 'Multiple IFTTT Triggers'
       projectId: 97
@@ -1110,7 +1116,7 @@ module.exports =
       likes: 13
       remixes: null
       description: "Trigger multiple actions from a single command"
-      categoryId: [8]
+      categoryIds: [8]
     ,
       name: 'Conditional IFTTT Triggers'
       projectId: 98
@@ -1119,7 +1125,7 @@ module.exports =
       likes: 11
       remixes: null
       description: "Trigger one or more IFTTT services when certain conditions are met"
-      categoryId: [8]
+      categoryIds: [8]
     ,
       name: 'Zapier Webhooks'
       projectId: 99
@@ -1128,7 +1134,7 @@ module.exports =
       likes: 14
       remixes: null
       description: "Send and receive webhooks to and from Zapier"
-      categoryId: [8,5]
+      categoryIds: [8,5]
     ,
       name: 'Google Home Action'
       projectId: 100
@@ -1137,7 +1143,7 @@ module.exports =
       likes: 12
       remixes: null
       description: "Which is better, Daddy or Chips? Your Google Home knows"
-      categoryId: [8,7]
+      categoryIds: [8,7]
     ,
       name: 'Particle JS API'
       projectId: 101
@@ -1146,7 +1152,7 @@ module.exports =
       likes: 10
       remixes: null
       description: "Control an LED on a Particle device using the Particle JS API"
-      categoryId: [8,3]
+      categoryIds: [8,3]
     ,
       name: 'littleBits API'
       projectId: 102
@@ -1155,7 +1161,7 @@ module.exports =
       likes: 16
       remixes: null
       description: "Control your CloudBit device using the littleBits API"
-      categoryId: [8,3]
+      categoryIds: [8,3]
     ,
       name: 'Temboo'
       projectId: 103
@@ -1164,7 +1170,7 @@ module.exports =
       likes: 10
       remixes: null
       description: "Temboo example app that uses their Node.js SDK"
-      categoryId: [8] 
+      categoryIds: [8] 
     ,
       name: 'CoffeeScript'
       projectId: 104
@@ -1177,7 +1183,7 @@ module.exports =
           name: 'STRd6'
           avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]      
-      categoryId: [3]
+      categoryIds: [3]
     ,
       name: 'Super Bowl Squares'
       projectId: 105
@@ -1186,7 +1192,7 @@ module.exports =
       likes: 21
       remixes: null
       description: "Start your own Football Squares pool with friends and colleagues"    
-      categoryId: [10] 
+      categoryIds: [10] 
     ,
       name: 'Big Game Bingo'
       projectId: 106
@@ -1195,7 +1201,7 @@ module.exports =
       likes: 19
       remixes: null
       description: "Watch the big game for the ads? Embrace the clichés and play Big Game Bingo!"     
-      categoryId: [10] 
+      categoryIds: [10] 
     ,
       name: 'Quarterback Quiz'
       projectId: 107
@@ -1204,7 +1210,7 @@ module.exports =
       likes: 15
       remixes: null
       description: "Test your Football knowledge with this Quarterback quiz"     
-      categoryId: [10] 
+      categoryIds: [10] 
     ,
       name: 'LiveChat Agent App'
       projectId: 108
@@ -1217,7 +1223,7 @@ module.exports =
           name: 'livechat'
           avatar: 'https://avatars2.githubusercontent.com/u/1615526?v=3&s=48'
       ]      
-      categoryId: [3,5] 
+      categoryIds: [3,5] 
     ,
       name: 'Hackathon Starter'
       projectId: 109
@@ -1230,5 +1236,5 @@ module.exports =
           name: 'sahat'
           avatar: 'https://avatars2.githubusercontent.com/u/544954?v=3&s=48'
       ]      
-      categoryId: [3]     
+      categoryIds: [3]     
   ]
