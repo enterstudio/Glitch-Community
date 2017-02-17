@@ -3,6 +3,7 @@ _ = require 'underscore'
 search = require "./utils/search"
 curated = require "./curated"
 
+
 console.log curated
 
 self = 
@@ -11,9 +12,12 @@ self =
     remixLink: (projectName, projectId) ->
       "https://gomix.com/#!/remix/#{projectName}/#{projectId}"
 
-  # presenters:
-  featured: ->
+  featuredProjects: ->
     _.shuffle curated.featured()
 
+  shuffledCategories: ->
+    # shuffled, max 3 random cateogories
+    
   
+
 module.exports = self

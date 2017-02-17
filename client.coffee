@@ -3,7 +3,6 @@
 # coffeeify transform
 
 application = require './application.coffee'
-console.log(application.hello + ' world :o') #
 
 IndexTemplate = require "./templates/index"
 index = IndexTemplate application

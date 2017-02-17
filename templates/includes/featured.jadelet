@@ -2,15 +2,29 @@
 
 section.features(role="navigation")
   h2 Featured Apps
-  - console.log @featured()
+  - console.log @featuredProjects()
   ul
     - context = @
-    - @featured().forEach (project) ->
-      - console.log project
-      - remixLink = context.utils.remixLink(project.url, project.id)
-      li= project.name
-        a(href=remixLink)
-          span remix me
+    - @featuredProjects().forEach (project) ->
+      - # console.log project
+      - # remixLink = context.utils.remixLink(project.url, project.id)
+      - # li= project.name
+      - #   a(href=remixLink)
+      - #     span remix me
+      li
+        .featured-container(data-project-id=project.id data-project-name=project.url)
+          img.featured(width=30 height=30 src=project.img)
+
+          p.project-name= project.name
+        - if project.users
+          .users
+            - project.users.forEach (user) ->
+              .user(title=user.name data-tooltip=user.name data-tooltip-left=true)
+                img(width=30 height=30 src=user.avatar)
+        - else
+          .users
+            .user(title="Gomix team" data-tooltip="Gomix team" data-tooltip-left=true)
+              img(width=30 height=30 src=defaultAvatar)
 
 
   - # p= @utils.search
