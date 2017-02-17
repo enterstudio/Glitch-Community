@@ -16,19 +16,17 @@ self =
     _.shuffle curated.featured()
 
   shuffledCategories: ->
-    MAX_CATEOGIES_DISPLAYED = 3
     homepageCategories = _.filter curated.categories(), (category) ->
       if category.listedOnHomepage
         category
     shuffledCategories = _.shuffle homepageCategories
-    shuffledCategories.slice(0, MAX_CATEOGIES_DISPLAYED)
+    shuffledCategories.slice(0, 3)
 
   projectsInCategory: (categoryId) -> 
-    MAX_PROJECTS_PER_CATEGORY = 3
     projectsInCategory = _.filter curated.projects(), (project) ->
       _.contains project.categoryIds, categoryId
     shuffledProject = _.shuffle projectsInCategory
-    shuffledProject.slice(0, MAX_PROJECTS_PER_CATEGORY)
+    shuffledProject.slice(0, 3)
 
 
 module.exports = self
