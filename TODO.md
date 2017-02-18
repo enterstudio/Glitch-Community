@@ -7,9 +7,9 @@
 - [x] port styles
 - [x] port home view
   - [x] header
-  - [ ] port curation data (formerly model, now 'curated')
-  - [ ] featured
-  - [ ] projects/cats
+  - [x] port curation data (formerly model, now 'curated')
+  - [x] featured
+  - [-] projects/cats
   - [ ] footer
 - [ ] port other pages
 - [ ] port search function

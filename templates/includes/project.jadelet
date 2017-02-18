@@ -1,27 +1,7 @@
-- # just project ob
+- defaultAvatar = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FdefaultAvatar.svg"
 
 - project = this
 
-- defaultAvatar = "https://cdn.gomix.com/0a15009e-17ee-4915-bc29-5ba03bb09517%2Favatar.svg"
-
-- # li
-- #   if project.users
-- #     .users
-- #       each user in project.users
-- #         .user(title=user.name data-tooltip=user.name data-tooltip-left=true)
-- #           img(width=30 height=30 src=user.avatar)
-- #     .user-names
-- #       each user, index in project.users
-- #         - totalUsers = project.users.length - 1
-- #         if index > 0 && index !== totalUsers
-- #           span= " , "
-- #         else if index > 0
-- #           span= " and "
-- #         span.user-name=user.name
-- #   else
-- #     .users
-- #       .user(title="Gomix team" data-tooltip="Gomix team" data-tooltip-left=true)
-- #         img(width=30 height=30 src=defaultAvatar)
 
 li
   - if project.users
