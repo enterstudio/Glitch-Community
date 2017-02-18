@@ -1,5 +1,7 @@
 - Header = require "./includes/header"
 - Featured = require "./includes/featured"
+- Project = require "./includes/project"
+
 - # ShuffledCategories = require "./includes/shuffledCategories"
 
 span
@@ -29,7 +31,7 @@ span
             - projects.forEach (project) ->
               - console.log project
 
-            - # = include Project(context, project, category)
+              - # = include Project(context, project, category)
 
             - # each project in projects
             - #   if project.categoryId == category.id
