@@ -2,7 +2,7 @@
 - Featured = require "./includes/featured"
 - Project = require "./includes/project"
 
-
+- # projectPresenter = require "../presenters/project-item"
 - # ShuffledCategories = require "./includes/shuffledCategories"
 
 span
@@ -26,7 +26,7 @@ span
           ul.projects-container
             - projects = context.projectsInCategory(category.id)
             - projects.forEach (project) ->
-              = Project(project, context)
+              = Project(project)
 
 
 

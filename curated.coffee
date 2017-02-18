@@ -251,7 +251,7 @@ module.exports =
       projectId: 11
       appId: '5e32909a-54f2-43d3-acad-465ff145a3c7'
       editorUrl: 'nodemailer'
-      projectAvatarNeedsLegibility: true
+      projectAvatarNeedsBackground: true
       likes: 8
       remixes: null
       description: "Email sending form with React and Nodemailer"
@@ -489,7 +489,7 @@ module.exports =
       projectId: 35
       appId: '4d787ffa-d62b-4907-91ef-e86c1e1e1335'
       editorUrl: 'hoodie'
-      projectAvatarNeedsLegibility: true
+      projectAvatarNeedsBackground: true
       likes: 9
       remixes: null
       description: "Starter project using Hoodie"
@@ -771,7 +771,7 @@ module.exports =
       projectId: 65
       appId: '3549cd9d-7768-447e-9d74-fa70370d6a1f'
       editorUrl: 'salesforce-quickstart'
-      projectAvatarNeedsLegibility: true
+      projectAvatarNeedsBackground: true
       likes: 11
       remixes: null
       description: "Handles OAuth and commands using SOQL, Search and Chatter APIs"
@@ -856,7 +856,7 @@ module.exports =
       name: 'App Store Image Grabber'
       projectId: 72
       appId: 'd04c9a09-d45a-4aaa-8f33-a1e2772945d0'
-      projectAvatarNeedsLegibility: true
+      projectAvatarNeedsBackground: true
       editorUrl: 'itunes-art'
       likes: 6
       remixes: null
@@ -1018,7 +1018,7 @@ module.exports =
       projectId: 88
       appId: '48d9a081-8ac6-497d-bc28-d3a32df56834'
       editorUrl: 'blockspring'
-      projectAvatarNeedsLegibility: true      
+      projectAvatarNeedsBackground: true      
       likes: 12
       remixes: null
       description: "Use Blockspring to easily get data from third-party APIs"

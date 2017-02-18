@@ -1,7 +1,6 @@
 - # just project ob
 
 - project = this
-- console.log context
 
 - defaultAvatar = "https://cdn.gomix.com/0a15009e-17ee-4915-bc29-5ba03bb09517%2Favatar.svg"
 
@@ -31,7 +30,6 @@ li
         .user(title=user.name data-tooltip=user.name data-tooltip-left=true)
           img(width=30 height=30 src=user.avatar)
     .user-names
-      - console.log context
       - # - project.users.forEach (user) ->
       - #   - # each user, index in project.users
       - #   - totalUsers = project.users.length - 1
@@ -45,9 +43,10 @@ li
       .user(title="Gomix team" data-tooltip="Gomix team" data-tooltip-left=true)
         img(width=30 height=30 src=defaultAvatar)
 
+  - category = {color: "pink"}
   .project(style="background-color: #{category.color}; border-bottom-color: #{category.color}" data-project-id=project.appId data-project-name=project.editorUrl)
     .project-container
-      - if project.projectAvatarNeedsLegibility
+      - if project.projectAvatarNeedsBackground
         img.avatar.legible-background(src="https://cdn.gomix.com/project-avatar/#{project.appId}.png")
       - else
         img.avatar(src="https://cdn.gomix.com/project-avatar/#{project.appId}.png")
