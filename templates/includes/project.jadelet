@@ -1,7 +1,5 @@
 - defaultAvatar = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FdefaultAvatar.svg"
-
 - project = this
-
 
 li
   - if project.users
@@ -35,12 +33,6 @@ li
       .description=project.description
       .overflow-mask(style="background-color: #{category.color}")
 
-  // .meta
-  //   if project.likes
-  //     .likes=project.likes
-  //   if project.remixes
-  //     .remixes=project.remixes
-
   - # category may not be there (like in search results, should be null)
   - # if !category , then category = null?
 
@@ -54,9 +46,3 @@ li
   - #       .project-name=project.name
   - #     .description=project.description
   - #     .overflow-mask(style="background-color: #{category.color}")
-
-  // .meta
-  //   if project.likes
-  //     .likes=project.likes
-  //   if project.remixes
-  //     .remixes=project.remixes
