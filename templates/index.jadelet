@@ -2,6 +2,7 @@
 - Featured = require "./includes/featured"
 - Project = require "./includes/project"
 
+
 - # ShuffledCategories = require "./includes/shuffledCategories"
 
 span
@@ -9,10 +10,6 @@ span
 
   main(role="main")
     = Featured(this)
-
-    - # TODO make this an include 'shuffledCategories'?
-    - # console.log @shuffledCategories()
-    - # = ShuffledCategories(this)
 
     - context = @
     - @shuffledCategories().forEach (category) ->
@@ -29,14 +26,9 @@ span
           ul.projects-container
             - projects = context.projectsInCategory(category.id)
             - projects.forEach (project) ->
-              - console.log project
+              - console.log "🤖", project
+              = Project(project)
 
-              - # = include Project(context, project, category)
-
-            - # each project in projects
-            - #   if project.categoryId == category.id
-            - #     if matchingProjects < MAX_PROJECTS_PER_CATEGORY
-            - #       include includes/project
 
 
   - # includes/footer

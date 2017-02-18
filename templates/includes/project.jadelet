@@ -19,7 +19,6 @@
 - #       .user(title="Gomix team" data-tooltip="Gomix team" data-tooltip-left=true)
 - #         img(width=30 height=30 src=defaultAvatar)
 
-
 li
   - if project.users
     .users
@@ -27,14 +26,15 @@ li
         .user(title=user.name data-tooltip=user.name data-tooltip-left=true)
           img(width=30 height=30 src=user.avatar)
     .user-names
-      - project.users.forEach (user, index) ->
-        - # each user, index in project.users
-        - totalUsers = project.users.length - 1
-        - if index > 0 && index !== totalUsers
-          span= " , "
-        - else if index > 0
-          span= " and "
-        span.user-name=user.name
+      - console.log context
+      - # - project.users.forEach (user) ->
+      - #   - # each user, index in project.users
+      - #   - totalUsers = project.users.length - 1
+      - #   - if index > 0 && index !== totalUsers
+      - #     span= " , "
+      - #   - else if index > 0
+      - #     span= " and "
+      - #   span.user-name=user.name
   - else
     .users
       .user(title="Gomix team" data-tooltip="Gomix team" data-tooltip-left=true)
