@@ -26,8 +26,7 @@ span
           ul.projects-container
             - projects = context.projectsInCategory(category.id)
             - projects.forEach (project) ->
-              - console.log "🤖", project
-              = Project(project)
+              = Project(project, context)
 
 
 
