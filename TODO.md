@@ -1,7 +1,5 @@
 # TODO
 
-👀 https://gomix.com/#!/project/commbranch2
-
 ## phase 1
 
 - [x] port styles
@@ -23,7 +21,7 @@
 
 ## phase 2
 
-- [ ] user detection logic
+- [ ] user detection ls
 - [ ] start work on your-profile section and profile hover pop..
 - [ ] simplify curation data requirements based on api and gh calls
 
