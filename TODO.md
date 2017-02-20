@@ -19,6 +19,8 @@
 - [ ] add accessibility (aria, etc.)
 - [ ] port image links to the new project (because will be fully replacing the current community)
 
+- [ ] social meta tags/imgs in index.html
+
 ## phase 2
 
 - [ ] user detection ls
