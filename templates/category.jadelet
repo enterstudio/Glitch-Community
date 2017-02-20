@@ -1,0 +1,16 @@
+- {context, category} = this
+
+article.projects(style="background-color: #{category.background}")
+  header.category
+    a.category-name(href="#{category.url}")
+      h2= category.name
+        span.arrow →
+    span.category-image-container
+      a.category-image(href="#{category.url}")
+        img(src=category.img)
+    p.category-description=category.description
+
+  ul.projects-container
+    - projects = context.projectsInCategory(category.id)
+    - projects.forEach (project) ->
+      = Project(project)
