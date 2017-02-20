@@ -14,6 +14,8 @@ Getting Started
 - Files in `public/` are served directly
 - drag in `assets`, like images or music, to add them to your project
 
+data -> model -> presenter -> DOM
+
 ```
   ___     ___      ___
  {o,o}   {o.o}    {o,o}

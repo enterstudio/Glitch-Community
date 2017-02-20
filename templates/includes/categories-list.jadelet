@@ -1,0 +1,12 @@
+section.categories(role="navigation")
+  h2 More Ideas
+  // a(href="/categories")
+  //   h2 More Ideas →
+  ul
+    each category in categories
+      if category.type === 1
+        a.category-box-link(href=category.url)
+          li
+            .category-box.centered(style="background-color: #{category.color}")
+              img(src=category.img)
+            .category-box-label.centered(style="background-color: #{category.color}")= category.name

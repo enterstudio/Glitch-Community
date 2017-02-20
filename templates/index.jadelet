@@ -1,5 +1,6 @@
 - Header = require "./includes/header"
 - Featured = require "./includes/featured"
+- CategoriesList = require "./includes/categories-list"
 
 - CategoryPresenter = require "../presenters/category"
 
@@ -12,6 +13,8 @@ span
     - application = @
     - @shuffledCategories().forEach (category) ->
       = CategoryPresenter(application, category)
+
+    = CategoriesList(this)
 
   - # includes/footer
   footer
