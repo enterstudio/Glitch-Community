@@ -3,18 +3,15 @@
 
 - CategoryPresenter = require "../presenters/category"
 
-- # projectPresenter = require "../presenters/project-item"
-- # ShuffledCategories = require "./includes/shuffledCategories"
-
 span
   = Header(this)
 
   main(role="main")
     = Featured(this)
 
-    - context = @
+    - application = @
     - @shuffledCategories().forEach (category) ->
-      = CategoryPresenter(context, category)
+      = CategoryPresenter(application, category)
 
   - # includes/footer
   footer
