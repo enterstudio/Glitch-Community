@@ -1,6 +1,7 @@
 - Header = require "./includes/header"
 - Featured = require "./includes/featured"
-- Project = require "./includes/project"
+
+- CategoryPresenter = require "../presenters/category"
 
 - # projectPresenter = require "../presenters/project-item"
 - # ShuffledCategories = require "./includes/shuffledCategories"
@@ -14,8 +15,6 @@ span
     - context = @
     - @shuffledCategories().forEach (category) ->
       = CategoryPresenter(context, category)
-
-
 
   - # includes/footer
   footer
