@@ -7,11 +7,11 @@
   - [x] header
   - [x] port curation data (formerly model, now 'curated')
   - [x] featured
-  - [-] projects/cats
-  - [ ] footer
-- [ ] port other pages
-- [ ] port search function
+  - [x] projects/cats
+  - [x] footer
 - [ ] port overlays (project)
+- [ ] port other pages
+- [ ] search page rendered from api response
 
 - [ ] figure out routes (`/community` and `/` go to the same place)
 - [ ] 404 page
@@ -29,7 +29,7 @@
 
 ## phase 3
 
-- [ ] move curation data to a db or service (airtable + caching seems okay)
+- [ ] move curation data to a db or service (airtable/sheets + caching seems okay)
 
 ---------------------
 

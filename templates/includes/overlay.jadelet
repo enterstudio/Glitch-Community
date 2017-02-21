@@ -1,0 +1,32 @@
+- # ga_overlay_show = "javascript: ga('send', {hitType: 'pageview',page: '/community-overlay/show'});"
+- # ga_overlay_view_code = "javascript: ga('send', {hitType: 'pageview',page: '/community-overlay/view-code'});"
+- # ga_overlay_remix = "javascript: ga('send', {hitType: 'pageview',page: '/community-overlay/remix'});"
+
+- show = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fshow-app.svg"
+
+
+
+.overlay-background.hidden
+  dialog.overlay
+    section.pop-over-info
+      .overlay-title project-name
+    section.pop-over-actions.has-buttons
+      // button links set index.coffee
+      a.button-link.show-app-link(href="")
+        .button.show-app
+          img(src=show)
+          span Show
+      a.button-link.project-link(href="")
+        .button View Code
+      a.button-link.remix-link(href="")
+        .button.cta-button Remix your own
+
+    section.pop-over-actions.markdown-container
+      include loader
+      .markdown-content
+        // md inserted here from index.coffee
+
+    section.pop-over-info.last-section
+      // mailto inserted from index.coffee
+      a.thoughts-link(href="")
+        button.button-small.thoughts What do you think?

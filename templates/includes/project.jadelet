@@ -2,7 +2,6 @@
 
 - project = @project
 - category = @category
-- console.log @
 
 li
   - if project.users
@@ -35,17 +34,3 @@ li
         .project-name=project.name
       .description=project.description
       .overflow-mask(style="background-color: #{category.color}")
-
-  - # category may not be there (like in search results, should be null)
-  - # if !category , then category = null?
-
-  - # .project(style="background-color: #{category.color}; border-bottom-color: #{category.color}" data-project-id=project.appId data-project-name=project.editorUrl)
-  - #   .project-container
-  - #     if project.projectAvatarNeedsLegibility
-  - #       img.avatar.legible-background(src="https://cdn.gomix.com/project-avatar/#{project.appId}.png")
-  - #     else
-  - #       img.avatar(src="https://cdn.gomix.com/project-avatar/#{project.appId}.png")
-  - #     button
-  - #       .project-name=project.name
-  - #     .description=project.description
-  - #     .overflow-mask(style="background-color: #{category.color}")

@@ -34,7 +34,7 @@ self =
     shuffledProjects = self.projectsInCategory categoryId
     shuffledProjects.slice(0, 3)
 
-  test: () ->
-    alert 'feature has been been clicked'
+  showProjectOverlay: (project) ->
+    console.log 'project has been been clicked', project
 
 module.exports = self

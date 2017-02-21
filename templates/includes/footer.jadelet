@@ -1,7 +1,6 @@
-
-- ga_about_footer = "javascript: ga('send', {hitType: 'pageview',page: '/internal-links/about/footer-link'});"
-- ga_help_footer = "javascript: ga('send', {hitType: 'pageview',page: '/internal-links/help/footer-link'});"
-- ga_status_footer = "javascript: ga('send', {hitType: 'pageview',page: '/internal-links/status/footer-link'});"
+- # ga_about_footer = "javascript: ga('send', {hitType: 'pageview',page: '/internal-links/about/footer-link'});"
+- # ga_help_footer = "javascript: ga('send', {hitType: 'pageview',page: '/internal-links/help/footer-link'});"
+- # ga_status_footer = "javascript: ga('send', {hitType: 'pageview',page: '/internal-links/status/footer-link'});"
 
 - remixButton = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix-button.svg"
 
@@ -14,21 +13,19 @@ footer(role="contentinfo")
   p
     a(href=remix)
       img(src=remixButton)
-  
+
   p
     a(href=editor) View Code
-      //img(class="bird" width=35 height=29 src=bird)
-      //span View Code
 
   hr
   p
-    a(href=about onclick=ga_about_footer) About
+    a(href=about) About
   p
     a(href="https://medium.com/gomix") Blog
   p
-    a(href="https://gomix.com/help/faqs/" onclick=ga_help_footer) FAQ
+    a(href="https://gomix.com/help/faqs/") FAQ
   p
-    a(href="http://status.gomix.com/" onclick=ga_status_footer) System Status
+    a(href="http://status.gomix.com/") System Status
   p
     a(href="http://support.gomix.com/latest") Support Forum
   p

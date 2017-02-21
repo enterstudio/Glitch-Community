@@ -6,7 +6,7 @@ section.features(role="navigation")
     - application = @
     - @featuredProjects().forEach (project) ->
       li
-        - showProjectOverlay = -> application.test project
+        - showProjectOverlay = -> application.showProjectOverlay project
         .featured-container(click=showProjectOverlay)
           img.featured(width=30 height=30 src=project.img)
 
