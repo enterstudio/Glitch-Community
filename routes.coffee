@@ -10,9 +10,9 @@ module.exports = (app) ->
 
   app.get '/', (request, response) -> 
     console.log 'hello route hit'
-    response.end 'hello'
-  
-  
+    # response.end 'hello'
+    response.sendFile __dirname + '/public/index.html'
+
   # redirect /index.html to ./
   # app.get '/index.html', (request, response) -> 
   #   response.redirect('./')
@@ -36,8 +36,8 @@ module.exports = (app) ->
   #   else
   #     render.pageNotFound response
 
-  
-  
+
+
   # app.get '/:username', (request, response) ->
     # if request.get('Content-Type') is 'application/json'
       # return user object from api

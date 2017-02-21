@@ -32,8 +32,6 @@ app.use (req, res, next) ->
   console.log(req.method, req.path, req.body)
   next()
 
-# Serve Static files from public/
-app.use express.static('public')
 
 # Configure stylus and autoprefixer support
 app.use stylish
@@ -47,12 +45,15 @@ app.use stylish
       console.log "#{filename} compiled to css"
 
       
-# Listen on App port
-listener = app.listen process.env.PORT, ->
-  console.log('Your app is listening on port ' + listener.address().port)
-
 routes = require('./routes')(router);
 
 app.use '/community', router
 app.use '/', router
+
+# Serve Static files from public/
+app.use express.static('public')
+
+# Listen on App port
+listener = app.listen process.env.PORT, ->
+  console.log('Your app is listening on port ' + listener.address().port)
 

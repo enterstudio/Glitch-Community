@@ -6,7 +6,7 @@
 
 - Category = require "../presenters/category"
 
-span
+content
   = Header(this)
 
   main(role="main")
