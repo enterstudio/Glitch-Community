@@ -1,8 +1,6 @@
 - console.log "🐒 category", @categories()
 section.categories(role="navigation")
   h2 More Ideas
-  // a(href="/categories")
-  //   h2 More Ideas →
   ul
     - @categories().forEach (category) ->
       - if category.listedOnHomepage

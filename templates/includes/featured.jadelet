@@ -3,15 +3,10 @@
 section.features(role="navigation")
   h2 Featured Apps
   ul
-    - context = @
+    - application = @
     - @featuredProjects().forEach (project) ->
-      - # console.log project
-      - # remixLink = context.utils.remixLink(project.url, project.id)
-      - # li= project.name
-      - #   a(href=remixLink)
-      - #     span remix me
       li
-        .featured-container(data-project-id=project.id data-project-name=project.url)
+        .featured-container(click=application.test)
           img.featured(width=30 height=30 src=project.img)
 
           p.project-name= project.name

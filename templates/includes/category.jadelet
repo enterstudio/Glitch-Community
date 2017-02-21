@@ -1,4 +1,3 @@
-
 article.projects(style="background-color: #{@background}")
   header.category
     a.category-name(href=@url)
@@ -10,10 +9,5 @@ article.projects(style="background-color: #{@background}")
     p.category-description= @description
 
   ul.projects-container
-    - console.log @projects
     - @projects.forEach (project) ->
-
-      - console.log "❤️", project
-
       = project
-

@@ -11,7 +11,9 @@ module.exports = (app) ->
   # console.log utils.categoryUrls()
 
   app.get '/', (request, response) -> 
-    response.sendFile "#{__dirname}/public/index.html"
+    #response.sendFile "#{__dirname}/public/index.html"
+    response.render('index', route: request.path)
+    
 
   app.get '/sample', (request, response) ->
     

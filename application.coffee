@@ -3,6 +3,9 @@ _ = require 'underscore'
 search = require "./utils/search"
 curated = require "./curated"
 
+# OverlayTemplate =
+# OverlayPresenter = 
+
 self = 
   utils:
     search: search
@@ -31,5 +34,7 @@ self =
     shuffledProjects = self.projectsInCategory categoryId
     shuffledProjects.slice(0, 3)
 
-
+  test: () ->
+    alert 'feature has been been clicked'
+    
 module.exports = self

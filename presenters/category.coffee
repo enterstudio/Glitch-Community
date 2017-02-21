@@ -1,5 +1,4 @@
 CategoryTemplate = require "../templates/includes/category"
-# ProjectTemplate = require "../templates/includes/project"
 
 ProjectPresenter = require "./project"
 
