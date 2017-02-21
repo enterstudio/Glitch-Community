@@ -23,6 +23,8 @@
 
 ## phase 2
 
+- [ ] show some projects that currently need help
+
 - [ ] user detection ls
 - [ ] start work on your-profile section and profile hover pop..
 - [ ] simplify curation data requirements based on api and gh calls
@@ -30,6 +32,8 @@
 ## phase 3
 
 - [ ] move curation data to a db or service (airtable/sheets + caching seems okay)
+
+### phase 4 teams
 
 ---------------------
 
