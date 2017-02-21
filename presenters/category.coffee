@@ -4,7 +4,7 @@ ProjectTemplate = require "../templates/includes/project"
 module.exports = (context, category) ->
   console.log category
 
-  projectElements = context.projectsInCategory(category.id).map (project) ->
+  projectElements = context.projectsInSelectedCategory(category.id).map (project) ->
     ProjectTemplate(project)
   
   templateModel = Object.assign {}, category

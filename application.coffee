@@ -18,18 +18,18 @@ self =
         category
     _.shuffle homepageCategories
 
+  projectsInCategory: (categoryId) ->
+    projectsInCategory = _.filter curated.projects(), (project) ->
+      _.contains project.categoryIds, categoryId
+    _.shuffle projectsInCategory
+
   selectedCategories: ->
-    homepageCategories = _.filter curated.categories(), (category) ->
-      if category.listedOnHomepage
-        category
     shuffledCategories = self.categories()
     shuffledCategories.slice(0, 3)
 
-  projectsInCategory: (categoryId) -> 
-    projectsInCategory = _.filter curated.projects(), (project) ->
-      _.contains project.categoryIds, categoryId
-    shuffledProject = _.shuffle projectsInCategory
-    shuffledProject.slice(0, 3)
+  projectsInSelectedCategory: (categoryId) -> 
+    shuffledProjects = self.projectsInCategory categoryId
+    shuffledProjects.slice(0, 3)
 
 
 module.exports = self
