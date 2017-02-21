@@ -19,7 +19,6 @@ span
     = ByFogcreek(this)
 
 
-
   footer
     a(href="https://gomix.com/#!/r/jadelet-base")
       p Remix this in Gomix
