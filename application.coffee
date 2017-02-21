@@ -3,9 +3,6 @@ _ = require 'underscore'
 search = require "./utils/search"
 curated = require "./curated"
 
-
-console.log 'curated', curated
-
 self = 
   utils:
     search: search
@@ -15,11 +12,17 @@ self =
   featuredProjects: ->
     _.shuffle curated.featured()
 
-  shuffledCategories: ->
+  categories: ->
     homepageCategories = _.filter curated.categories(), (category) ->
       if category.listedOnHomepage
         category
-    shuffledCategories = _.shuffle homepageCategories
+    _.shuffle homepageCategories
+
+  selectedCategories: ->
+    homepageCategories = _.filter curated.categories(), (category) ->
+      if category.listedOnHomepage
+        category
+    shuffledCategories = self.categories()
     shuffledCategories.slice(0, 3)
 
   projectsInCategory: (categoryId) -> 

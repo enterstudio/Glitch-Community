@@ -1,0 +1,7 @@
+- fogcreek = "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fus-east-1-044a595b-d397-4910-9ab0-e01def5c7dd4-logogroup.svg"
+section.by-fogcreek(role="complementary")
+  h2 Made By Fog Creek
+  img(src=fogcreek)
+  p You might know us for making Trello, FogBugz, and co-creating Stack Overflow. We're 
+    a(href="https://www.fogcreek.com") a friendly, self-funded company 
+    span that's been helping people make stuff for over 16 years.
