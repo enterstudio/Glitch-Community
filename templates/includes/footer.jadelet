@@ -10,13 +10,16 @@
 - remix = "https://gomix.com/#!/remix/community/6ce807b5-7214-49d7-aadd-f11803bc35fd"
 
 footer(role="contentinfo")
+
   p
     a(href=remix)
       img(src=remixButton)
   
   p
     a(href=editor) View Code
-    
+      //img(class="bird" width=35 height=29 src=bird)
+      //span View Code
+
   hr
   p
     a(href=about onclick=ga_about_footer) About
@@ -27,6 +30,8 @@ footer(role="contentinfo")
   p
     a(href="http://status.gomix.com/" onclick=ga_status_footer) System Status
   p
+    a(href="http://support.gomix.com/latest") Support Forum
+  p
     a(href="https://gomix.com/legal/") Legal Stuff
 
-.beta beta
+  .beta beta
