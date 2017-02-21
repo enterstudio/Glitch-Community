@@ -36,5 +36,5 @@ self =
 
   test: () ->
     alert 'feature has been been clicked'
-    
+
 module.exports = self
