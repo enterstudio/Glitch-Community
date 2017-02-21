@@ -3,7 +3,7 @@
 - ga_help_footer = "javascript: ga('send', {hitType: 'pageview',page: '/internal-links/help/footer-link'});"
 - ga_status_footer = "javascript: ga('send', {hitType: 'pageview',page: '/internal-links/status/footer-link'});"
 
-- remixButton = "https://gomix.com/images/background-light/remix-on-gomix.svg"
+- remixButton = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix-button.svg"
 
 - about = "https://gomix.com/about/"
 - editor = "https://gomix.com/#!/project/community"
