@@ -7,11 +7,12 @@ application = require './application.coffee'
 IndexTemplate = require "./templates/index"
 index = IndexTemplate application
 
-changePage (newPage) = ->
-  
-  document.body.removeChild
-  document.body.appendChild newPage
+changePage = (newPage) ->
+  content = document.querySelector('content')
+  content.remove()
+  content.appendChild newPage
 
 # client-side routes
+
 
 document.body.appendChild index

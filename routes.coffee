@@ -2,6 +2,8 @@
 # utils = require './utils'
 # render = require './render'
 
+
+
 _ = require 'underscore'
 
 module.exports = (app) ->
@@ -9,10 +11,12 @@ module.exports = (app) ->
   # console.log utils.categoryUrls()
 
   app.get '/', (request, response) -> 
-    console.log 'hello route hit'
-    # response.end 'hello'
-    response.sendFile __dirname + '/public/index.html'
+    response.sendFile "#{__dirname}/public/index.html"
 
+  app.get '/sample', (request, response) ->
+    
+    response.send 'hello'
+    
   # redirect /index.html to ./
   # app.get '/index.html', (request, response) -> 
   #   response.redirect('./')
