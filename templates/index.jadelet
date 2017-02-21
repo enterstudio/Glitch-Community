@@ -4,7 +4,7 @@
 - ByFogcreek = require "./includes/by-fogcreek"
 - Footer = require "./includes/footer"
 
-- CategoryPresenter = require "../presenters/category"
+- Category = require "../presenters/category"
 
 span
   = Header(this)
@@ -13,8 +13,8 @@ span
     = Featured(this)
 
     - application = @
-    - @selectedCategories().forEach (category) ->
-      = CategoryPresenter(application, category)
+    - @selectedCategories().forEach (categoryData) ->
+      = Category(application, categoryData)
 
     = CategoriesList(this)
     = ByFogcreek(this)

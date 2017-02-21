@@ -2,14 +2,12 @@ CategoryTemplate = require "../templates/includes/category"
 ProjectTemplate = require "../templates/includes/project"
 
 module.exports = (context, category) ->
-  console.log category
 
   projectElements = context.projectsInSelectedCategory(category.id).map (project) ->
-    ProjectTemplate(project)
+    ProjectTemplate(project, category)
   
   templateModel = Object.assign {}, category
   templateModel.projects = projectElements
-
-  console.log `projectElements`, projectElements
+  templateModel.category = category
   
   CategoryTemplate templateModel
