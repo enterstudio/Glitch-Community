@@ -1,5 +1,6 @@
 fs = require "fs"
 express = require "express"
+router = express.Router()
 stylish = require 'stylish'
 autoprefixer = require 'autoprefixer-stylus'
 
@@ -45,6 +46,13 @@ app.use stylish
     else
       console.log "#{filename} compiled to css"
 
+      
 # Listen on App port
 listener = app.listen process.env.PORT, ->
   console.log('Your app is listening on port ' + listener.address().port)
+
+routes = require('./routes')(router);
+
+app.use '/community', router
+app.use '/', router
+

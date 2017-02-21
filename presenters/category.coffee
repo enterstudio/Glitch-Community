@@ -3,17 +3,14 @@ CategoryTemplate = require "../templates/includes/category"
 
 ProjectPresenter = require "./project"
 
-module.exports = (context, category) ->
+module.exports = (application, category) ->
 
-  projectElements = context.projectsInSelectedCategory(category.id).map (project) ->
+  projectElements = application.projectsInSelectedCategory(category.id).map (project) ->
     # ProjectTemplate(project, category)
-    ProjectPresenter(context, project, category)
+    ProjectPresenter(application, project, category)
   
   templateModel = Object.assign {}, category
   templateModel.projects = projectElements
-
-
-  console.log "😇", templateModel
   
   CategoryTemplate templateModel
 

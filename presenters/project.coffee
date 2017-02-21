@@ -1,5 +1,9 @@
 ProjectTemplate = require "../templates/includes/project"
 
-module.exports = (context, project, category) ->
+module.exports = (application, project, category) ->
 
-  ProjectTemplate
+  templateModel = Object.assign {}, application
+  templateModel.category = category
+  templateModel.project = project
+  
+  ProjectTemplate templateModel

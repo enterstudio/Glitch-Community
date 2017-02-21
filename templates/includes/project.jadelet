@@ -1,5 +1,7 @@
 - defaultAvatar = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FdefaultAvatar.svg"
-- project = this
+
+- project = @project
+- category = @category
 - console.log @
 
 li
@@ -23,7 +25,6 @@ li
       .user(title="Gomix team" data-tooltip="Gomix team" data-tooltip-left=true)
         img(width=30 height=30 src=defaultAvatar)
 
-  - category = {color: "pink"}
   .project(style="background-color: #{category.color}; border-bottom-color: #{category.color}" data-project-id=project.appId data-project-name=project.editorUrl)
     .project-container
       - if project.projectAvatarNeedsBackground
