@@ -13,8 +13,8 @@ span
     = Featured(this)
 
     - application = @
-    - @selectedCategories().forEach (categoryData) ->
-      = Category(application, categoryData)
+    - @selectedCategories().forEach (category) ->
+      = Category(application, category)
 
     = CategoriesList(this)
     = ByFogcreek(this)
