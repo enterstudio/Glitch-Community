@@ -33,5 +33,3 @@ footer(role="contentinfo")
     a(href="http://support.gomix.com/latest") Support Forum
   p
     a(href="https://gomix.com/legal/") Legal Stuff
-
-  .beta beta
