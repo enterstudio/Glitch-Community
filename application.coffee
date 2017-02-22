@@ -8,6 +8,7 @@ trackEvent = require "./utils/track-event"
 self = 
 
   overlayVisible: Observable false
+  overlayTemplate: Observable "" # video, project
   overlayProject: Observable {}
 
   utils:
@@ -39,8 +40,9 @@ self =
     shuffledProjects.slice(0, 3)
 
   showProjectOverlay: (project) ->
-    self.overlayProject project
     self.overlayVisible true
+    self.overlayProject project
+    self.overlayTemplate "project"
     console.log 'overlayVisible', self.overlayVisible()
     console.log 'overlayProject', self.overlayProject()
 
