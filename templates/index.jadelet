@@ -3,6 +3,7 @@
 - CategoriesList = require "./includes/categories-list"
 - ByFogcreek = require "./includes/by-fogcreek"
 - Footer = require "./includes/footer"
+- Overlay = require "./includes/overlay"
 
 - Category = require "../presenters/category"
 
@@ -20,5 +21,7 @@ content
     = ByFogcreek(this)
 
   = Footer(this)
+  
+  - # = Overlay(this)
   
   .beta beta
