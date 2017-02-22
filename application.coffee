@@ -1,14 +1,15 @@
+Observable = require 'o_0'
 _ = require 'underscore'
 
+curated = require "./curated"
 search = require "./utils/search"
 trackEvent = require "./utils/track-event"
 
-curated = require "./curated"
-
-# OverlayTemplate =
-# OverlayPresenter = 
-
 self = 
+
+  overlayVisible: Observable false
+  overlayProject: Observable {}
+
   utils:
     search: search
     trackEvent: trackEvent
@@ -38,6 +39,9 @@ self =
     shuffledProjects.slice(0, 3)
 
   showProjectOverlay: (project) ->
-    console.log 'project has been been clicked', project
+    self.overlayProject project
+    self.overlayVisible true
+    console.log 'overlayVisible', self.overlayVisible()
+    console.log 'overlayProject', self.overlayProject()
 
 module.exports = self
