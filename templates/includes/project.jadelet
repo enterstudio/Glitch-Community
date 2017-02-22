@@ -21,7 +21,7 @@ li
         - currentUser += 1
   - else
     .users
-      .user(title="Gomix team" data-tooltip="Gomix team" data-tooltip-left=true)
+      .user(title="Glitch team" data-tooltip="Glitch team" data-tooltip-left=true)
         img(width=30 height=30 src=defaultAvatar)
 
   .project(style="background-color: #{category.color}; border-bottom-color: #{category.color}" data-project-id=project.appId data-project-name=project.editorUrl)
