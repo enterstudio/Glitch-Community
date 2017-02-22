@@ -1,6 +1,8 @@
 _ = require 'underscore'
 
 search = require "./utils/search"
+trackEvent = require "./utils/track-event"
+
 curated = require "./curated"
 
 # OverlayTemplate =
@@ -9,6 +11,7 @@ curated = require "./curated"
 self = 
   utils:
     search: search
+    trackEvent: trackEvent
     remixLink: (projectName, projectId) ->
       "https://gomix.com/#!/remix/#{projectName}/#{projectId}"
 
