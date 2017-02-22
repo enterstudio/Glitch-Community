@@ -22,6 +22,6 @@ content
 
   = Footer(this)
   
-  - # = Overlay(this)
+  = Overlay(this)
   
   .beta beta
