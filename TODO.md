@@ -9,21 +9,34 @@
   - [x] featured
   - [x] projects/cats
   - [x] footer
-- [ ] port overlays (project)
+- [x] port overlays (project)
+
+- [x] post route to get a list of curated projects
+- [ ] ??move overlay methods to overlay presenter
+
+- [ ] if query string containing project name, open project overlay to that name (linkable lightboxes)
+
+
+- [ ] fix ga track-events
+
 - [ ] port other pages
 - [ ] search page rendered from api response
 
 - [x] figure out routes (`/community` and `/` go to the same place)
 - [ ] 404 page
-- [-] create a trackEvent GA abstraction (use editor gtm w category? mirror event_tracking.coffee)
+- [x] create a trackEvent GA abstraction (use editor gtm w category? mirror event_tracking.coffee)
 - [ ] add accessibility (aria, etc.)
 - [ ] port image links to the new project (because will be fully replacing the current community)
 
 - [ ] social meta tags/imgs in index.html
+- [ ] manually merge in latest prod model/curated of projects
+
+
 
 ## phase 2
 
-- [ ] hands raised: show some projects that currently need help
+- [ ] get `application` methods into console, like editor
+- [ ] hands raised mockup: show some projects that currently need help
 - [ ] user detection ls
 - [ ] start work on your-profile section and profile hover pop..
 - [ ] simplify curation data requirements based on api and gh calls

@@ -10,4 +10,4 @@ article.projects(style="background-color: #{@background}")
 
   ul.projects-container
     - @projects.forEach (project) ->
-      = project
+      = project.template

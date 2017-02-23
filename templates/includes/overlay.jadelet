@@ -1,42 +1,37 @@
+
 - Loader = require "./loader"
 
-- console.log '@project',@project
-
-- projectName = @project.projectName
-- projectId = @project.projectId
-
+- showIcon = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fshow-app.svg"
+- project = @.overlayProject()
+- projectName = project.projectName
+- projectId = project.projectId
 - showLink = "https://#{projectName}.glitch.me"
 - editorLink = "https://glitch.com/#!/project/#{projectName}"
 - remixLink = "https://glitch.com/#!/remix/#{projectName}/#{projectId}"
-- projectThoughtsMailto = @self.projectThoughtsMailto projectName, projectId
 
-- show = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fshow-app.svg"
+- trackEventShow = -> @trackEvent.overlayProjectShow project
+- trackEventViewCode = -> @trackEvent.overlayProjectViewCode project
+- trackEventRemix = -> @trackEvent.overlayProjectRemix project
+- projectThoughtsMailto = -> @self.projectThoughtsMailto projectName, projectId
 
-- # ga_overlay_show = "javascript: ga('send', {hitType: 'pageview',page: '/community-overlay/show'});"
-- # ga_overlay_view_code = "javascript: ga('send', {hitType: 'pageview',page: '/community-overlay/view-code'});"
-- # ga_overlay_remix = "javascript: ga('send', {hitType: 'pageview',page: '/community-overlay/remix'});"
-
-
-.overlay-background(class=@isOverlayHidden click=@hideOverlay)
+.overlay-background(class=@self.isOverlayHidden click=@hideOverlay)
 
   - if @overlayTemplate() is 'project'
-    dialog.overlay(click=@stopPropagation)
+    dialog.overlay(click=@self.stopPropagation)
       section.pop-over-info
-
         .overlay-title= projectName
       section.pop-over-actions.has-buttons
-        a.button-link.show-app-link(href=showLink)
+        a.button-link.show-app-link(href=showLink click=trackEventShow)
           .button.show-app
-            img(src=show)
+            img(src=showIcon)
             span Show
-        a.button-link.project-link(href=editorLink)
+        a.button-link.project-link(href=editorLink click=trackEventViewCode)
           .button View Code
-
-        a.button-link.remix-link(href=remixLink)
+        a.button-link.remix-link(href=remixLink click=trackEventRemix)
           .button.cta-button Remix your own
 
       section.pop-over-actions.markdown-container(class=@warningIfReadmeError)
-        .markdown-content(class=@hiddenUnlessOverlayReadmeLoaded)= @overlayReadme
+        .markdown-content(class=@self.hiddenUnlessOverlayReadmeLoaded)= @overlayReadme
         - if !@overlayReadmeLoaded()
           = Loader(this)
 
@@ -45,8 +40,9 @@
           button.button-small.thoughts What do you think?
 
   - if @overlayTemplate() is 'video'
-    dialog.overlay(click=@stopPropagation)
+    dialog.overlay(click=@self.stopPropagation)
       section.pop-over-actions
         .wistia_responsive_padding
           .wistia_responsive_wrapper
             .wistia_embed.wistia_async_vskja9agqj(videoFoam=true)
+

@@ -1,9 +1,12 @@
 ProjectTemplate = require "../templates/includes/project"
 
-module.exports = (application, project, category) ->
+self = (application, project, category) ->
 
-  templateModel = Object.assign {}, application
-  templateModel.category = category
-  templateModel.project = project
+  template: ->
+    console.log 'project template box rendered'
+    templateModel = Object.assign {}, application
+    templateModel.category = category
+    templateModel.project = project
+    ProjectTemplate templateModel
 
-  ProjectTemplate templateModel
+module.exports = self

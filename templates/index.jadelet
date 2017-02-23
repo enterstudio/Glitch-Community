@@ -14,10 +14,8 @@ content
     = Featured(this)
 
     - application = @
-    - console.log @selectedCategories()
     - @selectedCategories().forEach (category) ->
-      - console.log 'hi'
-      = Category(application, category)
+      = Category(application, category).template
 
     = Categories(this)
     = ByFogcreek(this)
@@ -25,6 +23,6 @@ content
   = Footer(this)
 
   article
-    = Overlay(this)
+    = Overlay(this).template
 
   .beta beta

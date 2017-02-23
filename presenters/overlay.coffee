@@ -1,16 +1,32 @@
 OverlayTemplate = require "../templates/includes/overlay"
 
-# methods for md, videoplaying, what child to render based on observables
+self = (application) ->
 
-module.exports = (application, project) ->
-  templateModel = Object.assign {}, application
-  templateModel.self = self
-  templateModel.project = application.overlayProject()
+  template: ->
+    console.log 'overlay template', application # leaks
+    templateModel = Object.assign {}, application
+    templateModel.self = self application
+    templateModel.trackEvent = application.utils.trackEvent
+    OverlayTemplate templateModel
   
-  OverlayTemplate templateModel
+  isOverlayHidden: ->
+    "hidden" unless application.overlayVisible()
+      
+  stopPropagation: (event) ->
+    event.stopPropagation()
 
-self = 
+  warningIfReadmeError: ->
+    "warning" if application.overlayReadmeError()
 
+  hiddenUnlessOverlayReadmeLoaded: ->
+    'hidden' unless application.overlayReadmeLoaded()
+
+      
+      
+      
+      
+      
+      
   projectThoughtsMailto: (projectName, projectId) ->
     support = "customer-service@fogcreek.com"
     subject = "[Glitch] I have feelings about #{projectName}"
@@ -33,4 +49,8 @@ self =
       (project id: #{projectId})
     """
     encodeURI "mailto:#{support}?subject=#{subject}&body=#{body}"
+
+
+module.exports = self
+
 

@@ -1,22 +1,20 @@
-# model = require './model'
-# utils = require './utils'
-# render = require './render'
-
-
-
 _ = require 'underscore'
+curated = require "./curated"
 
 module.exports = (app) ->
 
   # console.log utils.categoryUrls()
 
   app.get '/', (request, response) -> 
-    #response.sendFile "#{__dirname}/public/index.html"
     response.render('index', route: request.path)
-
 
   app.get '/sample', (request, response) ->
     response.send 'hello'
+
+  app.get '/curated/projects', (request, response) ->
+    response.jsonp curated.projects()
+  # TODO make a route to 
+    
     
   # redirect /index.html to ./
   # app.get '/index.html', (request, response) -> 
