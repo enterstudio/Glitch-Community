@@ -1,10 +1,13 @@
-- # ga_about_footer = "javascript: ga('send', {hitType: 'pageview',page: '/internal-links/about/footer-link'});"
-- # ga_help_footer = "javascript: ga('send', {hitType: 'pageview',page: '/internal-links/help/footer-link'});"
-- # ga_status_footer = "javascript: ga('send', {hitType: 'pageview',page: '/internal-links/status/footer-link'});"
+- trackEvent = @utils.trackEvent
 
 - remixButton = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix-button.svg"
 
 - about = "https://gomix.com/about/"
+- blog = "https://medium.com/gomix"
+- help = "https://gomix.com/help/faqs/"
+- status = "http://status.gomix.com/"
+- support = "https://support.gomix.com/latest"
+- legal = "https://gomix.com/legal/"
 - editor = "https://gomix.com/#!/project/community"
 - remix = "https://gomix.com/#!/remix/community/6ce807b5-7214-49d7-aadd-f11803bc35fd"
 
@@ -13,20 +16,20 @@ footer(role="contentinfo")
   p
     a(href=remix)
       img(src=remixButton)
-
   p
     a(href=editor) View Code
 
   hr
+
   p
-    a(href=about) About
+    a(href=about click=trackEvent.aboutPageFooter) About
   p
-    a(href="https://medium.com/gomix") Blog
+    a(href=blog click=trackEvent.blogPageFooter) Blog
   p
-    a(href="https://gomix.com/help/faqs/") FAQ
+    a(href=help click=trackEvent.helpPageFooter) FAQ
   p
-    a(href="http://status.gomix.com/") System Status
+    a(href=status click=trackEvent.statusPageFooter) System Status
   p
-    a(href="http://support.gomix.com/latest") Support Forum
+    a(href=support click=trackEvent.supportPageFooter) Support Forum
   p
-    a(href="https://gomix.com/legal/") Legal Stuff
+    a(href=legal click=trackEvent.legalPageFooter) Legal Stuff

@@ -14,7 +14,7 @@ Getting Started
 - Files in `public/` are served directly
 - drag in `assets`, like images or music, to add them to your project
 
-data -> model -> presenter -> DOM
+application models -> presenter -> DOM
 
 ```
   ___     ___      ___
@@ -23,3 +23,10 @@ data -> model -> presenter -> DOM
 --"-"-----"-"------"-"--
 O RLY?  YA RLY   NO WAI!
 ```
+
+TEMP: why rewrite in jadelet:
+- similar to editor reduces switching cost
+- more maintainable views
+- unit testable
+- can render views based on user LS values
+

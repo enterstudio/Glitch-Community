@@ -24,12 +24,13 @@ li
       .user(title="Glitch team" data-tooltip="Glitch team" data-tooltip-left=true)
         img(width=30 height=30 src=defaultAvatar)
 
-  .project(style="background-color: #{category.color}; border-bottom-color: #{category.color}" data-project-id=project.appId data-project-name=project.editorUrl)
+  - showProjectOverlay = -> @showProjectOverlay project
+  .project(click=showProjectOverlay style="background-color: #{category.color}; border-bottom-color: #{category.color}")
     .project-container
       - if project.projectAvatarNeedsBackground
-        img.avatar.legible-background(src="https://cdn.gomix.com/project-avatar/#{project.appId}.png")
+        img.avatar.legible-background(src="https://cdn.gomix.com/project-avatar/#{project.projectId}.png")
       - else
-        img.avatar(src="https://cdn.gomix.com/project-avatar/#{project.appId}.png")
+        img.avatar(src="https://cdn.gomix.com/project-avatar/#{project.projectId}.png")
       button
         .project-name=project.name
       .description=project.description

@@ -1,32 +1,52 @@
+- Loader = require "./loader"
+
+- console.log '@project',@project
+
+- projectName = @project.projectName
+- projectId = @project.projectId
+
+- showLink = "https://#{projectName}.glitch.me"
+- editorLink = "https://glitch.com/#!/project/#{projectName}"
+- remixLink = "https://glitch.com/#!/remix/#{projectName}/#{projectId}"
+- projectThoughtsMailto = @self.projectThoughtsMailto projectName, projectId
+
+- show = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fshow-app.svg"
+
 - # ga_overlay_show = "javascript: ga('send', {hitType: 'pageview',page: '/community-overlay/show'});"
 - # ga_overlay_view_code = "javascript: ga('send', {hitType: 'pageview',page: '/community-overlay/view-code'});"
 - # ga_overlay_remix = "javascript: ga('send', {hitType: 'pageview',page: '/community-overlay/remix'});"
 
-- show = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fshow-app.svg"
 
-- Loader = 
+.overlay-background(class=@isOverlayHidden click=@hideOverlay)
 
-.overlay-background.hidden
-  dialog.overlay
-    section.pop-over-info
-      .overlay-title project-name
-    section.pop-over-actions.has-buttons
-      // button links set index.coffee
-      a.button-link.show-app-link(href="")
-        .button.show-app
-          img(src=show)
-          span Show
-      a.button-link.project-link(href="")
-        .button View Code
-      a.button-link.remix-link(href="")
-        .button.cta-button Remix your own
+  - if @overlayTemplate() is 'project'
+    dialog.overlay(click=@stopPropagation)
+      section.pop-over-info
 
-    section.pop-over-actions.markdown-container
-      = Loader(this)
-      .markdown-content
-        // md inserted here from index.coffee
+        .overlay-title= projectName
+      section.pop-over-actions.has-buttons
+        a.button-link.show-app-link(href=showLink)
+          .button.show-app
+            img(src=show)
+            span Show
+        a.button-link.project-link(href=editorLink)
+          .button View Code
 
-    section.pop-over-info.last-section
-      // mailto inserted from index.coffee
-      a.thoughts-link(href="")
-        button.button-small.thoughts What do you think?
+        a.button-link.remix-link(href=remixLink)
+          .button.cta-button Remix your own
+
+      section.pop-over-actions.markdown-container(class=@warningIfReadmeError)
+        .markdown-content(class=@hiddenUnlessOverlayReadmeLoaded)= @overlayReadme
+        - if !@overlayReadmeLoaded()
+          = Loader(this)
+
+      section.pop-over-info.last-section
+        a.thoughts-link(href=projectThoughtsMailto)
+          button.button-small.thoughts What do you think?
+
+  - if @overlayTemplate() is 'video'
+    dialog.overlay(click=@stopPropagation)
+      section.pop-over-actions
+        .wistia_responsive_padding
+          .wistia_responsive_wrapper
+            .wistia_embed.wistia_async_vskja9agqj(videoFoam=true)

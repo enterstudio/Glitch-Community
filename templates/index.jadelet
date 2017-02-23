@@ -1,11 +1,11 @@
 - Header = require "./includes/header"
 - Featured = require "./includes/featured"
-- CategoriesList = require "./includes/categories-list"
+- Categories = require "./includes/categories"
 - ByFogcreek = require "./includes/by-fogcreek"
 - Footer = require "./includes/footer"
-- Overlay = require "./includes/overlay"
 
 - Category = require "../presenters/category"
+- Overlay = require "../presenters/overlay"
 
 content
   = Header(this)
@@ -14,14 +14,17 @@ content
     = Featured(this)
 
     - application = @
+    - console.log @selectedCategories()
     - @selectedCategories().forEach (category) ->
+      - console.log 'hi'
       = Category(application, category)
 
-    = CategoriesList(this)
+    = Categories(this)
     = ByFogcreek(this)
 
   = Footer(this)
-  
-  = Overlay(this)
-  
+
+  article
+    = Overlay(this)
+
   .beta beta

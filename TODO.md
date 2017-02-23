@@ -13,9 +13,9 @@
 - [ ] port other pages
 - [ ] search page rendered from api response
 
-- [ ] figure out routes (`/community` and `/` go to the same place)
+- [x] figure out routes (`/community` and `/` go to the same place)
 - [ ] 404 page
-- [ ] create a trackEvent GA abstraction (use editor gtm w category? mirror event_tracking.coffee)
+- [-] create a trackEvent GA abstraction (use editor gtm w category? mirror event_tracking.coffee)
 - [ ] add accessibility (aria, etc.)
 - [ ] port image links to the new project (because will be fully replacing the current community)
 
@@ -23,7 +23,7 @@
 
 ## phase 2
 
-- [ ] show some projects that currently need help
+- [ ] hands raised: show some projects that currently need help
 - [ ] user detection ls
 - [ ] start work on your-profile section and profile hover pop..
 - [ ] simplify curation data requirements based on api and gh calls
