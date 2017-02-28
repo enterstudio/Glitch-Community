@@ -10,25 +10,35 @@
   - [x] projects/cats
   - [x] footer
 - [x] port overlays (project)
-
 - [x] post route to get a list of curated projects
-- [ ] ??move overlay methods to overlay presenter
+- [x] move overlay methods to overlay presenter
+- [x] BUG: 'overlay template' leaking/overrendering
 
-- [ ] if query string containing project name, open project overlay to that name (linkable lightboxes)
+- [x] replace ga track-events, w one global onclick handler which logs things w data ga tags 
+- [x] modularize tracking
 
+- [ ] GA: event tracking re-init on overlay creation
 
-- [ ] fix ga track-events
+- [x] opening overlay updates url bar
+- [x] if query string containing project name, open project overlay to that name (linkable lightboxes)
+
+- [ ] add users to project overlay (start w curated clicks, then url based ones)
+
+- [ ] add fb/gh sign in strategies in popover (inside header)
 
 - [ ] port other pages
+
 - [ ] search page rendered from api response
 
 - [x] figure out routes (`/community` and `/` go to the same place)
 - [ ] 404 page
 - [x] create a trackEvent GA abstraction (use editor gtm w category? mirror event_tracking.coffee)
 - [ ] add accessibility (aria, etc.)
-- [ ] port image links to the new project (because will be fully replacing the current community)
+
+- [ ] ??port image links to the new project (because will be fully replacing the current community)
 
 - [ ] social meta tags/imgs in index.html
+
 - [ ] manually merge in latest prod model/curated of projects
 
 
@@ -57,3 +67,9 @@
 - [ ] urls as expected?
 
 ----------------
+
+
+# changePage = (newPage) ->
+#   content = document.querySelector('content')
+#   content.remove()
+#   content.appendChild newPage

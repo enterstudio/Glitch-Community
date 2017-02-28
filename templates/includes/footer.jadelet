@@ -1,4 +1,3 @@
-- trackEvent = @utils.trackEvent
 
 - remixButton = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix-button.svg"
 
@@ -22,14 +21,14 @@ footer(role="contentinfo")
   hr
 
   p
-    a(href=about click=trackEvent.aboutPageFooter) About
+    a(href=about data-track="footer → about") About
   p
-    a(href=blog click=trackEvent.blogPageFooter) Blog
+    a(href=blog data-track="footer → blog") Blog
   p
-    a(href=help click=trackEvent.helpPageFooter) FAQ
+    a(href=help data-track="footer → faq") FAQ
   p
-    a(href=status click=trackEvent.statusPageFooter) System Status
+    a(href=status data-track="footer → system status") System Status
   p
-    a(href=support click=trackEvent.supportPageFooter) Support Forum
+    a(href=support data-track="footer → support forum") Support Forum
   p
-    a(href=legal click=trackEvent.legalPageFooter) Legal Stuff
+    a(href=legal data-track="footer → legal stuff") Legal Stuff

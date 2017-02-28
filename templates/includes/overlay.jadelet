@@ -1,48 +1,47 @@
-
 - Loader = require "./loader"
-
 - showIcon = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fshow-app.svg"
-- project = @.overlayProject()
-- projectName = project.projectName
-- projectId = project.projectId
-- showLink = "https://#{projectName}.glitch.me"
-- editorLink = "https://glitch.com/#!/project/#{projectName}"
-- remixLink = "https://glitch.com/#!/remix/#{projectName}/#{projectId}"
 
-- trackEventShow = -> @trackEvent.overlayProjectShow project
-- trackEventViewCode = -> @trackEvent.overlayProjectViewCode project
-- trackEventRemix = -> @trackEvent.overlayProjectRemix project
-- projectThoughtsMailto = -> @self.projectThoughtsMailto projectName, projectId
+span
+  .overlay-background(class=@isOverlayHidden click=@hideOverlay)
 
-.overlay-background(class=@self.isOverlayHidden click=@hideOverlay)
-
-  - if @overlayTemplate() is 'project'
-    dialog.overlay(click=@self.stopPropagation)
+    dialog.overlay(click=@stopPropagation class=@hiddenUnlessProject)
       section.pop-over-info
-        .overlay-title= projectName
+        .overlay-title= @projectName
       section.pop-over-actions.has-buttons
-        a.button-link.show-app-link(href=showLink click=trackEventShow)
+        a.button-link.show-app-link(href=@showLink onclick=@overlayButtonClickHandler data-track="overlay → show" data-track-label=@projectName)
           .button.show-app
             img(src=showIcon)
             span Show
-        a.button-link.project-link(href=editorLink click=trackEventViewCode)
+        a.button-link.project-link(href=@editorLink onclick=@overlayButtonClickHandler data-track="overlay → view code" data-track-label=@projectName)
           .button View Code
-        a.button-link.remix-link(href=remixLink click=trackEventRemix)
+        a.button-link.remix-link(href=@remixLink onclick=@overlayButtonClickHandler data-track="overlay → remix" data-track-label=@projectName)
           .button.cta-button Remix your own
 
       section.pop-over-actions.markdown-container(class=@warningIfReadmeError)
-        .markdown-content(class=@self.hiddenUnlessOverlayReadmeLoaded)= @overlayReadme
-        - if !@overlayReadmeLoaded()
+        .project-users
+
+        - if @projectUsers()
+          .users
+            - @projectUsers().forEach (user) ->
+              .user(title=user.name data-tooltip=user.name data-tooltip-left=true)
+                img(width=30 height=30 src=user.avatar)
+        - # - else
+        - #   .users
+        - #     .user(title="Gomix team" data-tooltip="Gomix team" data-tooltip-left=true)
+        - #       img(width=30 height=30 src=defaultAvatar)
+
+
+        .markdown-content(class=@hiddenUnlessOverlayReadmeLoaded)
+          = @overlayReadme
+        span(class=@hiddenIfOverlayReadmeLoaded)
           = Loader(this)
 
       section.pop-over-info.last-section
-        a.thoughts-link(href=projectThoughtsMailto)
+        a.thoughts-link(href=@projectThoughtsMailto)
           button.button-small.thoughts What do you think?
 
-  - if @overlayTemplate() is 'video'
-    dialog.overlay(click=@self.stopPropagation)
+    dialog.overlay(click=@stopPropagation class=@hiddenUnlessVideo)
       section.pop-over-actions
         .wistia_responsive_padding
           .wistia_responsive_wrapper
             .wistia_embed.wistia_async_vskja9agqj(videoFoam=true)
-

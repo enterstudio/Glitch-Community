@@ -1,0 +1,5 @@
+- Header = require "../includes/header"
+
+content
+  p khj
+  = Header(this)

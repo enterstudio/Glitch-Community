@@ -25,7 +25,7 @@ li
         img(width=30 height=30 src=defaultAvatar)
 
   - showProjectOverlay = -> @showProjectOverlay project
-  .project(click=showProjectOverlay style="background-color: #{category.color}; border-bottom-color: #{category.color}")
+  .project(click=showProjectOverlay style="background-color: #{category.color}; border-bottom-color: #{category.color}" data-track="project" data-track-label=project.projectName)
     .project-container
       - if project.projectAvatarNeedsBackground
         img.avatar.legible-background(src="https://cdn.gomix.com/project-avatar/#{project.projectId}.png")

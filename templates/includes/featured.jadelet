@@ -7,10 +7,12 @@ section.features(role="navigation")
     - @featuredProjects().forEach (project) ->
       li
         - showProjectOverlay = -> application.showProjectOverlay project
-        .featured-container(click=showProjectOverlay)
+        .featured-container(click=showProjectOverlay data-track="featured project" data-track-label=project.name)
           img.featured(width=30 height=30 src=project.img)
 
           p.project-name= project.name
+
+        - # refactor me into includes/users.jadelet
         - if project.users
           .users
             - project.users.forEach (user) ->

@@ -3,15 +3,38 @@
 # coffeeify transform
 
 application = require './application.coffee'
+qs = require 'querystringify'
+queryString = qs.parse window.location.search
+normalizeSlashes = require 'normalize-slashes'
 
-IndexTemplate = require "./templates/index"
+IndexTemplate = require "./templates/pages/index"
 index = IndexTemplate application
 
-console.log "route is #{route}"
+CategoryPage = require "./presenters/category-page"
 
-changePage = (newPage) ->
-  content = document.querySelector('content')
-  content.remove()
-  content.appendChild newPage
+normalizedRoute = normalizeSlashes route
+console.log "route is #{normalizedRoute}"
+console.log "query strings are", queryString
+console.log "application is", application
 
-document.body.appendChild index
+# client-side routing
+
+if normalizedRoute is ""
+  document.body.appendChild index
+  application.overlay.showProjectOverlayIfPermalink queryString
+
+else if application.isCategoryUrl(normalizedRoute)
+  category = application.getCategoryFromUrl normalizedRoute
+  console.log category # 
+  categoryPage = CategoryPage(application, category).template()
+  document.body.appendChild categoryPage
+
+
+  
+  
+  
+# document.addEventListener "keydown", (event) ->
+#   application.closeAllPopOvers event
+
+# document.addEventListener "click", (event) ->
+#   application.tracking.init event

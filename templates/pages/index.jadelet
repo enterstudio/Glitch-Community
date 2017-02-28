@@ -1,0 +1,29 @@
+- Header = require "../includes/header"
+- Featured = require "../includes/featured"
+- Categories = require "../includes/categories"
+- ByFogcreek = require "../includes/by-fogcreek"
+- Footer = require "../includes/footer"
+
+- Category = require "../../presenters/category"
+- Overlay = require "../../presenters/overlay"
+
+content
+  = Header(this)
+
+  main(role="main")
+    = Featured(this)
+
+    - application = @
+    - @selectedCategories().forEach (category) ->
+      = Category(application, category).template
+
+    = Categories(this)
+    = ByFogcreek(this)
+
+  = Footer(this)
+
+  article
+
+    = Overlay(this).template
+
+  .beta beta

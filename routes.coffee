@@ -5,15 +5,15 @@ module.exports = (app) ->
 
   # console.log utils.categoryUrls()
 
-  app.get '/', (request, response) -> 
+  app.get '*', (request, response) -> 
     response.render('index', route: request.path)
 
-  app.get '/sample', (request, response) ->
-    response.send 'hello'
+#   app.get '/sample', (request, response) ->
+#     response.send 'hello'
 
   app.get '/curated/projects', (request, response) ->
     response.jsonp curated.projects()
-  # TODO make a route to 
+
     
     
   # redirect /index.html to ./
