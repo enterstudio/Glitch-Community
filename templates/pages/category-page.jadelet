@@ -1,5 +1,48 @@
 - Header = require "../includes/header"
 
-content
-  p khj
+- Categories = require "../includes/categories"
+
+- Footer = require "../includes/footer"
+- Overlay = require "../../presenters/overlay"
+
+
+
+content.category-page
   = Header(this)
+
+  - category = @category
+
+  - projects = @projects
+
+  main(role="main")
+    section
+
+      article.projects(style="background-color: #{category.background}")
+
+        header.category
+          a.category-name
+            h2.category-name=category.name
+          span.category-image-container
+            a.category-image
+              img(src=category.img)
+          p.description=category.description
+
+          - # TODO: conditional partner stuff here (= partnerDetails)
+          - # or move partners over to being the original ~profiles (~slack)
+          - # maybe use emoji instead of icons? what does twitter profiles do? expose urls?
+
+        ul.projects-container
+          - @projects.forEach (project) ->
+            = project.template
+
+
+    = Categories(this)
+
+  = Footer(this)
+
+  article
+
+    = Overlay(this).template
+
+  .beta beta
+

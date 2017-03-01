@@ -1,5 +1,3 @@
-
-
 computer = "https://cdn.hyperdev.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Fcomputer.svg"
 recordPlayer = 'https://cdn.hyperdev.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Frecord-player.svg'
 diamond = "https://cdn.hyperdev.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Fdiamond.svg"
@@ -138,7 +136,14 @@ module.exports =
       description: "Bots, slash commands and apps that integrate with Slack."
       background: "rgba(252, 243, 174, #{backgroundOpacity})"
       id: 9
-      companyCollection: true
+      partnerCollection: true
+      partner: [
+        homepage: ""
+        blog: "https://medium.com/slack-developer-blog"
+        docs: ""
+        github: ""
+        twitter: ""
+      ]
     ,
       name: 'Big Game Apps'
       url: 'big-game'

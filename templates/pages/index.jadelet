@@ -6,11 +6,16 @@
 
 - Category = require "../../presenters/category"
 - Overlay = require "../../presenters/overlay"
+- RecentProjects = require "../../presenters/recent-projects"
 
 content
   = Header(this)
-
+  
   main(role="main")
+    - # TODO ppl asking for help (seen by all)
+  
+    = RecentProjects(this).template
+  
     = Featured(this)
 
     - application = @

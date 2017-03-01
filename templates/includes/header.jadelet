@@ -5,7 +5,7 @@ header(role="banner")
   .header-info
     a(href="/community")
       img.logo(src=logo)
-    //if !user.isExisting
+    //if !user.isSignedIn
     h1.headline
       a(href="/community")
         span Glitch

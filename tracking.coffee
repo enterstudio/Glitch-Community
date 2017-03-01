@@ -22,10 +22,8 @@ self = (application) ->
   getTrackInfoFromElementOrParents: (element) ->
     info = @.getInfo(element)
     return info if info
-    # console.log element
     while (element = element.parentNode) and (element.tagName != "BODY")
       info = @.getInfo(element)
       return info if info
 
 module.exports = self
-

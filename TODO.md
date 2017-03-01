@@ -29,7 +29,7 @@
 - [ ] port other pages
 
 - [ ] search page rendered from api response
-
+- [ ] add special partner category page formatting (see old snippet in todo)
 - [x] figure out routes (`/community` and `/` go to the same place)
 - [ ] 404 page
 - [x] create a trackEvent GA abstraction (use editor gtm w category? mirror event_tracking.coffee)
@@ -40,12 +40,13 @@
 - [ ] social meta tags/imgs in index.html
 
 - [ ] manually merge in latest prod model/curated of projects
-
+- [ ] ?remove unused avatarNeedsBackgorund/legibility bool from curated
 
 
 ## phase 2
 
 - [ ] get `application` methods into console, like editor
+- [ ] browserify stuff
 - [ ] hands raised mockup: show some projects that currently need help
 - [ ] user detection ls
 - [ ] start work on your-profile section and profile hover pop..
@@ -73,3 +74,27 @@
 #   content = document.querySelector('content')
 #   content.remove()
 #   content.appendChild newPage
+
+
+special logic for partnerCollection true
+            if category.partnerCollection
+              if category.docsLink
+                span.extraLinks
+                  a(href=category.docsLink target="_blank")
+                    img.projectAvatar.first(src="https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fbook.svg")
+                    | Docs
+              if category.blogLink
+                span.extraLinks
+                  a(href=category.blogLink target="_blank")
+                    img.projectAvatar(src="https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fpencil-square-o.svg")
+                    | Dev Blog
+              if category.githubLink
+                span.extraLinks
+                  a(href=category.githubLink target="_blank")
+                    img.projectAvatar(src="https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fgithub.svg")
+                    | GitHub
+              if category.twitterLink
+                span.extraLinks
+                  a(href=category.twitterLink target="_blank")
+                    img.projectAvatar(src="https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ftwitter.svg")
+                    | Twitter  

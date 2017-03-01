@@ -17,6 +17,10 @@ console.log "route is #{normalizedRoute}"
 console.log "query strings are", queryString
 console.log "application is", application
 
+# temp:
+console.log "🕵️ recentProjects", application.user.recentProjects()
+console.log "🌈 isSignedIn", application.user.isSignedIn()
+
 # client-side routing
 
 if normalizedRoute is ""
@@ -25,16 +29,16 @@ if normalizedRoute is ""
 
 else if application.isCategoryUrl(normalizedRoute)
   category = application.getCategoryFromUrl normalizedRoute
-  console.log category # 
+  console.log category #
   categoryPage = CategoryPage(application, category).template()
   document.body.appendChild categoryPage
 
-
-  
+# else if first char is @
+  # profile pages
   
   
 # document.addEventListener "keydown", (event) ->
 #   application.closeAllPopOvers event
 
-# document.addEventListener "click", (event) ->
-#   application.tracking.init event
+document.addEventListener "click", (event) ->
+  application.tracking.init event

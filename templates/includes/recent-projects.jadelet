@@ -1,0 +1,7 @@
+// styles in profile.styl
+
+section.profile(role="navigation")
+  h2 Your Projects 
+  - # → link this when profile pages exist
+  .recent-projects
+    p hi

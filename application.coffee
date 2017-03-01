@@ -3,6 +3,7 @@ _ = require 'underscore'
 
 curated = require "./curated"
 tracking = require "./tracking"
+user = require "./user"
 
 Overlay = require "./presenters/overlay"
 
@@ -48,8 +49,6 @@ self =
     if event.keyCode is escapeKey
       self.overlay.hideOverlay()
 
-
-
   isCategoryUrl: (url) ->
     if _.contains self.categoryUrls(), url.toLowerCase()
       true
@@ -66,5 +65,6 @@ self =
 
 self.overlay = Overlay self
 self.tracking = tracking self
+self.user = user self
 
 module.exports = self

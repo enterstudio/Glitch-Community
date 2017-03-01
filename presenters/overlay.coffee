@@ -1,4 +1,3 @@
-
 axios = require 'axios'
 CancelToken = axios.CancelToken
 source = CancelToken.source()
@@ -23,8 +22,8 @@ module.exports = (application) ->
       application.overlayProject()?.projectId
 
     projectUsers: ->
-      console.log 'hi', application.overlayProject()?.users
-      application.overlayProject()?.usersc
+      # console.log 'hi', application.overlayProject()?.users
+      application.overlayProject().users
       
     showLink: -> 
       "https://#{self.projectName()}.gomix.me" # change to glitch later
@@ -97,7 +96,8 @@ module.exports = (application) ->
       application.overlayVisible false
       source.cancel()
       source = CancelToken.source()
-      history.replaceState(null, null, "/")
+
+      history.replaceState(null, null, route)
 
     getProjectReadme: (project) ->
       readmeUrl = "https://api.gomix.com/projects/#{project.projectId}/readme" # change to glitch later
