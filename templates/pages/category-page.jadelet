@@ -1,14 +1,14 @@
-- Header = require "../includes/header"
-
 - Categories = require "../includes/categories"
 
 - Footer = require "../includes/footer"
-- Overlay = require "../../presenters/overlay"
+
+- HeaderPresenter = require "../../presenters/header"
+- OverlayPresenter = require "../../presenters/overlay"
 
 
 
 content.category-page
-  = Header(this)
+  = HeaderPresenter(this).template
 
   - category = @category
 
@@ -42,7 +42,7 @@ content.category-page
 
   article
 
-    = Overlay(this).template
+    = OverlayPresenter(this).template
 
   .beta beta
 

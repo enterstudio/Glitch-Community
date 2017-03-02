@@ -15,13 +15,18 @@ self =
   overlayReadme: Observable ""
   overlayReadmeLoaded: Observable false
   overlayReadmeError: Observable false
+
+  userRecentProjectsVisible: Observable false
+  userRecentProjects: Observable []
+  
+  signInPopVisible: Observable false
   
   showProjectOverlay: (project) ->
     self.overlay.showProjectOverlay project
 
-  showVideoOverlay: (project) ->
-    self.overlay.showVideoOverlay project
-
+  closeAllPopOvers: ->
+    self.signInPopVisible false
+  
   featuredProjects: ->
     _.shuffle curated.featured()
 
@@ -43,11 +48,6 @@ self =
   projectsInSelectedCategory: (categoryId) ->
     shuffledProjects = self.projectsInCategory categoryId
     shuffledProjects.slice(0, 3)
-
-  closeAllPopOvers: (event) ->
-    escapeKey = 27
-    if event.keyCode is escapeKey
-      self.overlay.hideOverlay()
 
   isCategoryUrl: (url) ->
     if _.contains self.categoryUrls(), url.toLowerCase()

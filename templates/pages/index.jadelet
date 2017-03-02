@@ -1,26 +1,28 @@
-- Header = require "../includes/header"
 - Featured = require "../includes/featured"
 - Categories = require "../includes/categories"
 - ByFogcreek = require "../includes/by-fogcreek"
 - Footer = require "../includes/footer"
 
-- Category = require "../../presenters/category"
-- Overlay = require "../../presenters/overlay"
-- RecentProjects = require "../../presenters/recent-projects"
+- HeaderPresenter = require "../../presenters/header"
+- CategoryPresenter = require "../../presenters/category"
+- OverlayPresenter = require "../../presenters/overlay"
+- RecentProjectsPresenter = require "../../presenters/recent-projects"
 
 content
-  = Header(this)
+  = HeaderPresenter(this).template
   
   main(role="main")
-    - # TODO ppl asking for help (seen by all)
+
+    - # TODO ppl asking for help section (seen by all)
   
-    = RecentProjects(this).template
-  
+    - if @.user.cachedUser()
+      = RecentProjectsPresenter(this).template
+
     = Featured(this)
 
     - application = @
     - @selectedCategories().forEach (category) ->
-      = Category(application, category).template
+      = CategoryPresenter(application, category).template
 
     = Categories(this)
     = ByFogcreek(this)
@@ -29,6 +31,6 @@ content
 
   article
 
-    = Overlay(this).template
+    = OverlayPresenter(this).template
 
   .beta beta

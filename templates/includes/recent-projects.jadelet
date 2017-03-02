@@ -1,7 +1,17 @@
-// styles in profile.styl
+- Loader = require "./loader"
 
-section.profile(role="navigation")
-  h2 Your Projects 
+section.profile
+  h2 Your Projects
   - # → link this when profile pages exist
   .recent-projects
-    p hi
+    .profile-info
+      .user-avatar-container
+        .user-avatar(class=@userAvatarIsAnon style="background-color: #{@userAvatarColor}")
+      - # tODO: 'start coding' or new 'project link' button?
+    article.projects
+      - # if @userRecentProjectsVisible
+      ul.projects-container
+        - @projects().forEach (project) ->
+          = project.template
+      - # - else
+      - #   = Loader(this)

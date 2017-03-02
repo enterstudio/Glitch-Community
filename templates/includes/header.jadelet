@@ -1,6 +1,9 @@
 - logo = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fcarp.svg"
 - play = "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fplay.svg"
 
+- SignInPopPresenter = require "../../presenters/sign-in-pop"
+
+
 header(role="banner")
   .header-info
     a(href="/community")
@@ -20,8 +23,6 @@ header(role="banner")
   nav(role="navigation")
     form(action="/community/search" method="get" role="search")
       input.search-input(name="q" placeholder="bots, apps, tutorials")
-    a(href="https://github.com/login/oauth/authorize?client_id=b4cb743ed07e20abf0b2&scope=user:email")
-      button.button-small Sign in
-        span.emoji.octocat
-    // TODO replace w user avatar and link to profile page if signed in
-    
+    button.button-small(click=@toggleSignInPopVisible) Sign in
+    // TODO show user avatar and link to profile page if signed in
+    = SignInPopPresenter(@.application).template

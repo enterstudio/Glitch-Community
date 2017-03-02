@@ -17,6 +17,7 @@ link = #3652D3
 section-line = #E5E5E5
 warning-background = #ffced5
 beta = #fcf3b0
+pop-shadow = 0px 2px 5px 0px rgba(0,0,0,0.27), 0px 1px 1px 0px rgba(0,0,0,0.15)
 
 
 heart = "https://s3.amazonaws.com/hyperweb-editor-assets/us-east-1%3Ab0bac0a2-1470-4ff8-b72d-acc002ba0a16%2Fheart.svg"
@@ -200,13 +201,16 @@ input
   vertical-align: -4px
   margin-left: 4px
   background-repeat: no-repeat
+  background-size: contain
   &.octocat
     background-image: url("https://gomix.com/images/emojis/github-logo-light.svg")
-    
+  &.facebook
+    background-image: url("https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffacebook-logo.png")
+    width: 15px
+
 .avatar
   display: inline-block
   width: 32px
   height: 32px
   border-radius: 5px
-  // background-color: cyan // overriden by avatar color from ls
 

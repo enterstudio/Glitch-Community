@@ -24,7 +24,7 @@ module.exports = (application) ->
     projectUsers: ->
       # console.log 'hi', application.overlayProject()?.users
       application.overlayProject().users
-      
+
     showLink: -> 
       "https://#{self.projectName()}.gomix.me" # change to glitch later
 

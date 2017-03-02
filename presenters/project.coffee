@@ -7,5 +7,5 @@ self = (application, project, category) ->
     templateModel.category = category
     templateModel.project = project
     ProjectTemplate templateModel
-
+    
 module.exports = self

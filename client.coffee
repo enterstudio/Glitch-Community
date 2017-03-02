@@ -1,7 +1,6 @@
 # This client-side CoffeeScript is compiled 
 # by express browserify middleware using the
 # coffeeify transform
-
 application = require './application.coffee'
 qs = require 'querystringify'
 queryString = qs.parse window.location.search
@@ -18,7 +17,6 @@ console.log "query strings are", queryString
 console.log "application is", application
 
 # temp:
-console.log "🕵️ recentProjects", application.user.recentProjects()
 console.log "🌈 isSignedIn", application.user.isSignedIn()
 
 # client-side routing
@@ -29,7 +27,6 @@ if normalizedRoute is ""
 
 else if application.isCategoryUrl(normalizedRoute)
   category = application.getCategoryFromUrl normalizedRoute
-  console.log category #
   categoryPage = CategoryPage(application, category).template()
   document.body.appendChild categoryPage
 
@@ -42,3 +39,4 @@ else if application.isCategoryUrl(normalizedRoute)
 
 document.addEventListener "click", (event) ->
   application.tracking.init event
+  application.closeAllPopOvers()

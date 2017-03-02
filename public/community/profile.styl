@@ -4,9 +4,9 @@ anonAvatar = "https://cdn.gomix.com/01a72eba-647e-4abf-abe6-89b02e388a7f%2Fanon-
 .profile
   padding-bottom: 1rem
 
-  a.category-name
-    color: primary
-    display: inline-block
+  // a.category-name
+  //   color: primary
+  //   display: inline-block
 
   .recent-projects
     background-image: url(defaultUserBackground)
@@ -22,19 +22,26 @@ anonAvatar = "https://cdn.gomix.com/01a72eba-647e-4abf-abe6-89b02e388a7f%2Fanon-
     margin-top: 0
     margin-right: 3%
 
-  .avatar-container
+  .user-avatar-container
     width: 80%
 
-  .avatar
+  .user-avatar
     width: 100%
     height: 0
     padding-bottom: 100%
     margin-bottom: .5em
-
-  .anon-avatar
+    border-radius: 5px
+    
+  .anon-user-avatar
     background-image: url(anonAvatar)
     background-position: center
     background-repeat: no-repeat
     background-size: 65%
     background-color: cyan // overriden from ls
 
+  .projects
+    display: inline
+    padding: 0
+    
+  .project:after
+    border-bottom-color: section-line
