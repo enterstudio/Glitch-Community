@@ -15,24 +15,18 @@ module.exports = (application) ->
       RecentProjectsTemplate self
 
     projects: ->
-      projectElements = application.userRecentProjects.map (project) ->
+      projects = self.filteredProjects()
+      projectElements = projects.map (project) ->
         category = 
           color: undefined
         ProjectPresenter(application, project, category)
 
-    # hiddenUnlessUser: ->
-    #   console.log 'hiddenUnlessUser'
-    #   'hidden' unless application.user.cachedUser()
+    filteredProjects: ->
+      if application.user.isAnon()
+        application.userRecentProjects().slice(0,1)
+      else if application.user.isSignedIn()
+        application.userRecentProjects().slice(0,3)
 
     userAvatarIsAnon: ->
       'anon-user-avatar' unless application.user.isSignedIn()
 
-#     hiddenUnlessUserRecentProjectsVisible: ->
-#       'hidden' unless application.userRecentProjectsVisible()
-
-#     hiddenIfUserRecentProjectsVisible: ->
-#       'hidden' if application.userRecentProjectsVisible()
-        
-  # userRecentProjectsVisibile: Observable false
-  # userRecentProjects: Observable []
-    

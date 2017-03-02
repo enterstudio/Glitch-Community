@@ -1,4 +1,4 @@
-- githubAuthLink = "https://github.com/login/oauth/authorize?client_id=b4cb743ed07e20abf0b2&scope=user:email
+- githubAuthLink = "https://github.com/login/oauth/authorize?client_id=b4cb743ed07e20abf0b2&scope=user:email&redirect_uri=https://gomix.com/community-test/%23!/facebook
 - facebookAuthLink = "#"
 
 dialog.pop-over.pop-over-flexible.sign-in-pop(class=@hiddenUnlessSignInPopVisibile click=@stopPropagation)

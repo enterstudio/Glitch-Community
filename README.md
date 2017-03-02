@@ -1,6 +1,6 @@
-# Gomix Community Projects
+# Glitch Community Projects
 
-Discover new reasons to code, remix cool and helpful projects made with Gomix.
+Discover new reasons to code, remix cool and helpful projects made with Glitch.
 
 Philosophically, a little bit `app store`, some `Spotify`, and a little bit `Youtube`.
 

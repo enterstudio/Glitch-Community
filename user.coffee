@@ -8,8 +8,11 @@ module.exports = (application) ->
       if localStorage.cachedUser
         JSON.parse(localStorage.cachedUser)
   
+    isAnon: ->
+      true if self.cachedUser() and not self.cachedUser().login
+  
     isSignedIn: ->
-      true if localStorage.cachedUser and self.cachedUser().login
+      true if self.cachedUser() and self.cachedUser().login
 
     avatarColor: ->
       # console.log "💃🏻", self.cachedUser().color
@@ -48,11 +51,12 @@ module.exports = (application) ->
 
     normalizeUsersInProject: (usersInProjectFromAPI) ->
       users = []
-      console.log 'usersInProjectFromAPI', usersInProjectFromAPI
       usersInProjectFromAPI.forEach (user) ->
         users.push
             name: user.name
             avatar: user.avatarUrl
+            color: user.color
+      console.log 'recent-project users', users
       return users
         
   if localStorage.cachedUser

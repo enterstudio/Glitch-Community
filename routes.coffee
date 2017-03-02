@@ -11,11 +11,10 @@ module.exports = (app) ->
 #   app.get '/sample', (request, response) ->
 #     response.send 'hello'
 
+  # community api
   app.get '/curated/projects', (request, response) ->
     response.jsonp curated.projects()
 
-    
-    
   # redirect /index.html to ./
   # app.get '/index.html', (request, response) -> 
   #   response.redirect('./')

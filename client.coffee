@@ -1,6 +1,10 @@
 # This client-side CoffeeScript is compiled 
 # by express browserify middleware using the
 # coffeeify transform
+
+console.log '🚒🚒🚒🚒'
+
+
 application = require './application.coffee'
 qs = require 'querystringify'
 queryString = qs.parse window.location.search
@@ -32,11 +36,10 @@ else if application.isCategoryUrl(normalizedRoute)
 
 # else if first char is @
   # profile pages
-  
-  
+
 # document.addEventListener "keydown", (event) ->
 #   application.closeAllPopOvers event
 
 document.addEventListener "click", (event) ->
-  application.tracking.init event
+  # application.tracking.init event
   application.closeAllPopOvers()

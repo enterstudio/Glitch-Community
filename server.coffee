@@ -45,9 +45,9 @@ app.use stylish
     else
       console.log "#{filename} compiled to css"
 
-      
 routes = require('./routes')(router);
 
+app.use '/community-test', router
 app.use '/community', router
 app.use '/', router
 
@@ -57,4 +57,3 @@ app.use express.static('public')
 # Listen on App port
 listener = app.listen process.env.PORT, ->
   console.log('Your app is listening on port ' + listener.address().port)
-
