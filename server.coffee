@@ -1,8 +1,5 @@
 fs = require "fs"
 express = require "express"
-router = express.Router()
-stylish = require 'stylish'
-autoprefixer = require 'autoprefixer-stylus'
 
 app = express()
 
@@ -10,42 +7,11 @@ app = express()
 bodyParser = require "body-parser"
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
-
-jadeletTransform = require './lib/jadelify'
-
-# Configure browserify middleware to serve client.coffee as client.js
-# and to allow requiring .jadelet files as templates
-browserify = require('browserify-middleware')
-browserify.settings
-  transform: ['coffeeify', jadeletTransform]
-  extensions: ['.coffee', '.litcoffee', '.jadelet']
-app.use '/client.js', browserify(__dirname + '/client.coffee')
-
-# CORS - Allow pages from any domain to make requests to our API
-app.use (req, res, next) ->
-  res.header("Access-Control-Allow-Origin", "*")
-  res.header("Access-Control-Allow-Headers", "Origin, X-Requested-With, Content-Type, Accept")
-  next()
-
-# Log all requests for diagnostics
-app.use (req, res, next) ->
-  console.log(req.method, req.path, req.body)
-  next()
-
 app.set('view engine', 'ejs')
+      
+router = require('./routes')();
 
-# Configure stylus and autoprefixer support
-app.use stylish
-  src: __dirname + '/public'
-  setup: (renderer) ->
-    renderer.use autoprefixer()
-  watchCallback: (error, filename) ->
-    if error
-      console.error error
-    else
-      console.log "#{filename} compiled to css"
-
-routes = require('./routes')(router);
+# router('/community')
 
 app.use '/community-test', router
 app.use '/community', router

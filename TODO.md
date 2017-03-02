@@ -28,8 +28,6 @@
 
 - [ ] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 
-- [ ] category page should update TITLE
-
 - [x] port category pages
 - [ ] 404 page
 - [ ] social meta tags/imgs in index.html

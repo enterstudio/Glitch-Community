@@ -51,12 +51,12 @@ module.exports = (application) ->
 
     normalizeUsersInProject: (usersInProjectFromAPI) ->
       users = []
+      console.log 'usersInProjectFromAPI', usersInProjectFromAPI
       usersInProjectFromAPI.forEach (user) ->
         users.push
             name: user.name
             avatar: user.avatarUrl
             color: user.color
-      console.log 'recent-project users', users
       return users
         
   if localStorage.cachedUser
