@@ -11,7 +11,6 @@ queryString = qs.parse window.location.search
 normalizeSlashes = require 'normalize-slashes'
 
 IndexTemplate = require "./templates/pages/index"
-index = IndexTemplate application
 
 CategoryPage = require "./presenters/category-page"
 
@@ -25,14 +24,22 @@ console.log "🌈 isSignedIn", application.user.isSignedIn()
 
 # client-side routing
 
-if normalizedRoute is ""
-  document.body.appendChild index
-  application.overlay.showProjectOverlayIfPermalink queryString
+Promise.resolve()
+.then ->
+  if normalizedRoute is "login/github"
+    normalizedRoute = ""
+    application.loginWithOAuthCode queryString.code, "github"
+.then ->
+  index = IndexTemplate application
+  
+  if normalizedRoute is ""
+    document.body.appendChild index
+    application.overlay.showProjectOverlayIfPermalink queryString
 
-else if application.isCategoryUrl(normalizedRoute)
-  category = application.getCategoryFromUrl normalizedRoute
-  categoryPage = CategoryPage(application, category).template()
-  document.body.appendChild categoryPage
+  else if application.isCategoryUrl(normalizedRoute)
+    category = application.getCategoryFromUrl normalizedRoute
+    categoryPage = CategoryPage(application, category).template()
+    document.body.appendChild categoryPage
 
 # else if first char is @
   # profile pages

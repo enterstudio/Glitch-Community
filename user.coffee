@@ -23,11 +23,13 @@ module.exports = (application) ->
 
     recentProjectIds: ->
       recentFiles = self.cachedUser().recentFiles
-      recentFiles.map (recent) ->
+      recentFiles?.map (recent) ->
         recent.projectId
 
     getRecentProjects: ->
-      recentProjectIds = self.recentProjectIds().toString()
+      recentProjectIds = self.recentProjectIds()?.toString()
+      if !recentProjectIds
+        return
       projectInfoUrl = "https://api.gomix.com/projects/byIds?ids=#{recentProjectIds}"
       axios.get projectInfoUrl
       .then (response) ->
