@@ -5,7 +5,7 @@
 console.log '🚒🚒🚒🚒'
 
 
-application = require './application.coffee'
+application = require './application'
 qs = require 'querystringify'
 queryString = qs.parse window.location.search
 normalizeSlashes = require 'normalize-slashes'

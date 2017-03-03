@@ -1,4 +1,3 @@
-
 - defaultAvatar = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FdefaultAvatar.svg"
 
 - project = @project
@@ -26,13 +25,10 @@ li
         img(width=30 height=30 src=defaultAvatar)
 
   - showProjectOverlay = -> @showProjectOverlay project
-  .project(click=showProjectOverlay style="background-color: #{category.color}; border-bottom-color: #{category.color}" data-track="project" data-track-label=project.projectName)
+  .project(click=showProjectOverlay style="background-color: #{category.color}; border-bottom-color: #{category.color}" data-track="project" data-track-label=project.domain)
     .project-container
-      - if project.projectAvatarNeedsBackground
-        img.avatar.legible-background(src="https://cdn.gomix.com/project-avatar/#{project.projectId}.png")
-      - else
-        img.avatar(src="https://cdn.gomix.com/project-avatar/#{project.projectId}.png")
+      img.avatar(src="https://cdn.gomix.com/project-avatar/#{project.projectId}.png")
       button
-        .project-name=project.name
+        .project-name=@projectName
       .description=project.description
       .overflow-mask(style="background-color: #{category.color}")

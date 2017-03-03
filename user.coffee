@@ -41,10 +41,11 @@ module.exports = (application) ->
         console.error "recentProjects", error
 
     normalizeProject: (projectFromAPI) ->
+      console.log 'projectFromAPI', projectFromAPI
       project =
-        name: projectFromAPI.name
+        name: projectFromAPI.domain
         projectId: projectFromAPI.id
-        projectName: projectFromAPI.name
+        domain: projectFromAPI.domain
         description: projectFromAPI.description
         categoryIds: []
         users: self.normalizeUsersInProject projectFromAPI.users

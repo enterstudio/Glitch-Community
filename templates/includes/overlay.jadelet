@@ -7,7 +7,7 @@ span
 
     dialog.overlay(click=@stopPropagation class=@hiddenUnlessProject)
       section.pop-over-info
-        .overlay-title= @projectName
+        .overlay-title= @projectDomain
       section.pop-over-actions.has-buttons
         a.button-link.show-app-link(href=@showLink onclick=@overlayButtonClickHandler data-track="overlay → show" data-track-label=@projectName)
           .button.show-app

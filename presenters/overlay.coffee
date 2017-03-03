@@ -15,8 +15,8 @@ module.exports = (application) ->
     template: ->
       OverlayTemplate self
 
-    projectName: ->
-      application.overlayProject()?.projectName
+    projectDomain: ->
+      application.overlayProject()?.domain
 
     projectId: ->
       application.overlayProject()?.projectId
@@ -26,13 +26,13 @@ module.exports = (application) ->
       application.overlayProject().users
 
     showLink: -> 
-      "https://#{self.projectName()}.gomix.me" # change to glitch later
+      "https://#{self.projectDomain()}.gomix.me" # change to glitch later
 
     editorLink: ->
-      "https://gomix.com/#!/project/#{self.projectName()}" # change to glitch later
+      "https://gomix.com/#!/project/#{self.projectDomain()}" # change to glitch later
 
     remixLink: ->
-      "https://gomix.com/#!/remix/#{self.projectName()}/#{self.projectId()}" # change to glitch later
+      "https://gomix.com/#!/remix/#{self.projectDomain()}/#{self.projectId()}" # change to glitch later
 
     overlayButtonClickHandler: (event) ->
       application.tracking.init event
@@ -66,7 +66,7 @@ module.exports = (application) ->
       application.overlayTemplate "project"
       application.overlayProject project
       self.getProjectReadme project
-      history.replaceState(null, null, "?project=#{project.projectName}")
+      history.replaceState(null, null, "?project=#{project.domain}")
 
     showVideoOverlay: ->
       application.overlayVisible true
@@ -81,12 +81,10 @@ module.exports = (application) ->
         axios.get projectInfoUrl,
           cancelToken: source.token
         .then (response) ->
-          console.log 'response', response
           project = {
             projectId: response.data.id
-            projectName: response.data.domain
+            domain: response.data.domain
           }
-          console.log project
           self.showProjectOverlay project
         .catch (error) ->
           console.error "showProjectOverlayIfPermalink", error
@@ -97,7 +95,7 @@ module.exports = (application) ->
       source.cancel()
       source = CancelToken.source()
 
-      history.replaceState(null, null, route)
+      history.replaceState(null, null, baseUrl + route)
 
     getProjectReadme: (project) ->
       readmeUrl = "https://api.gomix.com/projects/#{project.projectId}/readme" # change to glitch later
@@ -109,7 +107,7 @@ module.exports = (application) ->
         application.overlayReadmeLoaded true
       .catch (error) ->
         if axios.isCancel error
-          console.log 'request cancelled', project.projectName
+          console.log 'request cancelled', project.domain
         else
           console.error "getProjectReadme", error
           self.showReadmeError()
@@ -132,12 +130,12 @@ module.exports = (application) ->
       self.overlayReadme node
     
     projectThoughtsMailto: ->
-      projectName = self.projectName()
+      projectDomain = self.projectDomain()
       projectId = self.projectId()
       support = "customer-service@fogcreek.com"
-      subject = "[Glitch] I have feelings about #{projectName}"
+      subject = "[Glitch] I have feelings about #{projectDomain}"
       body = """
-        What do you think of the #{projectName} project? 
+        What do you think of the #{projectDomain} project? 
         Is it great? Should we feature it? Is it malicious?
 
         Let us know:

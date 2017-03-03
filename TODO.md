@@ -32,6 +32,8 @@
 - [ ] 404 page
 - [ ] social meta tags/imgs in index.html
 
+- [ ] BUG qs permalinks should work from subpages too https://luck-beam-comm2.gomix.me/games?project=pong-solo
+
 ### auth stuff
 - [x] add fb/gh sign in strategies in popover (inside header)
 - [ ] finish multi sign in oauth/and new user localstorage.cacheduser like editor

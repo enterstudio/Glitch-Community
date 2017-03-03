@@ -20,7 +20,6 @@ module.exports = (application) ->
       #   1
       # else if application.user.isSignedIn()
       # 3
-      console.log 'projects', application.userRecentProjects()
       # if user is signed in , then 3
       # 
       projectElements = application.userRecentProjects.map (project) ->

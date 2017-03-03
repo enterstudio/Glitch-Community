@@ -1,4 +1,4 @@
-# Glitch Community Projects
+ # Glitch Community Projects
 
 Discover new reasons to code, remix cool and helpful projects made with Glitch.
 

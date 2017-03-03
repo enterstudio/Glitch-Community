@@ -35,7 +35,6 @@ content.category-page
           - @projects.forEach (project) ->
             = project.template
 
-
     = Categories(this)
 
   = Footer(this)

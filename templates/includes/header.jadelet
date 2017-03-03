@@ -6,11 +6,11 @@
 
 header(role="banner")
   .header-info
-    a(href="/community")
+    a(href=@base)
       img.logo(src=logo)
     //if !user.isSignedIn
     h1.headline
-      a(href="/community")
+      a(href=@base)
         span Glitch
       span= " "
       span is the easiest way to build the app or bot of your dreams
