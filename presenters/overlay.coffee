@@ -22,7 +22,6 @@ module.exports = (application) ->
       application.overlayProject()?.projectId
 
     projectUsers: ->
-      # console.log 'hi', application.overlayProject()?.users
       application.overlayProject().users
 
     showLink: -> 
@@ -81,10 +80,12 @@ module.exports = (application) ->
         axios.get projectInfoUrl,
           cancelToken: source.token
         .then (response) ->
+          console.log 'response', response
           project = {
             projectId: response.data.id
             domain: response.data.domain
           }
+          console.log project
           self.showProjectOverlay project
         .catch (error) ->
           console.error "showProjectOverlayIfPermalink", error
@@ -95,9 +96,11 @@ module.exports = (application) ->
       source.cancel()
       source = CancelToken.source()
 
-      history.replaceState(null, null, baseUrl + route)
+      history.replaceState(null, null, route)
 
     getProjectReadme: (project) ->
+      console.log "👍", project
+      console.log 'self.projectId()', self.projectId()
       readmeUrl = "https://api.gomix.com/projects/#{project.projectId}/readme" # change to glitch later
       axios.get readmeUrl,
         cancelToken: source.token

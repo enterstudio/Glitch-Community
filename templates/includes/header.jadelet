@@ -3,14 +3,13 @@
 
 - SignInPopPresenter = require "../../presenters/sign-in-pop"
 
-
 header(role="banner")
   .header-info
-    a(href=@base)
+    a(href="/community")
       img.logo(src=logo)
     //if !user.isSignedIn
     h1.headline
-      a(href=@base)
+      a(href="/community")
         span Glitch
       span= " "
       span is the easiest way to build the app or bot of your dreams
@@ -23,6 +22,7 @@ header(role="banner")
   nav(role="navigation")
     form(action="/community/search" method="get" role="search")
       input.search-input(name="q" placeholder="bots, apps, tutorials")
-    button.button-small(click=@toggleSignInPopVisible) Sign in
+    button.button-small.opens-pop-over(click=@toggleSignInPopVisible) Sign in
     // TODO show user avatar and link to profile page if signed in
-    = SignInPopPresenter(@.application).template
+    span(class=@popHiddenUnlessSignInPopVisible)
+      = SignInPopPresenter(@.application).template

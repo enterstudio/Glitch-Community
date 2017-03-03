@@ -48,7 +48,7 @@
     margin: 0
     padding: 0
     list-style-type: none
-    overflow: auto
+    // overflow: auto
 
     li
       float: left
@@ -73,12 +73,10 @@
     transition: 0.1s all
     cursor: pointer
     &:hover
-      .button,
       button
         background-color: secondary-background
         box-shadow: 2px 2px 0 primary
     &:active
-      .button,
       button
         background-color: secondary-background-active
         box-shadow: none
@@ -108,6 +106,7 @@
     .project-container
       overflow: hidden
       height: calc(100% + 12px)
+      overflow: auto
 
     .avatar
       width: 33px
@@ -126,18 +125,6 @@
       max-width: 92%
       margin-left: 54px
 
-    //.project-name
-    //  line-height: 16px
-
-    //.likes
-    //  background-image: url(heart)
-    //  padding-left: 17px
-    //  background-repeat: no-repeat
-    //  background-position-y: 1px
-    //  background-size: 14px
-    //  display: inline-block
-    //  color: tertiary
-
     .overflow-mask
       position: absolute
       width: 100%
@@ -147,6 +134,23 @@
       opacity: .6
       border-bottom-left-radius: 5px
       border-bottom-right-radius: 5px
+
+  .anon-user-sign-up
+    background-color: white
+    margin-top: 1rem
+    border: 5px solid anon-user-sign-up-project-outer
+    height: initial
+    padding-bottom: 1.6rem
+    &:before
+      content: " "
+      position: absolute
+      top: 0
+      left: 0
+      right: 0
+      bottom: 0
+      border: 5px solid anon-user-sign-up-project-inner;
+    &:after
+      border-bottom: none
 
 .search-results,
 .category-page

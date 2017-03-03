@@ -1,4 +1,4 @@
-- Loader = require "./loader"
+- SignInPopPresenter = require "../../presenters/sign-in-pop"
 
 section.profile
   h2 Your Projects
@@ -7,11 +7,16 @@ section.profile
     .profile-info
       .user-avatar-container
         .user-avatar(class=@userAvatarIsAnon style="background-color: #{@userAvatarColor}")
-      - # tODO: 'start coding' or new 'project link' button?
+      - # TODO ('start coding' button, opens editor with no project . editor will do the right thing (new blank or last project))
+      - # ^ is primary green?
     article.projects
-      - # if @userRecentProjectsVisible
       ul.projects-container
         - @projects().forEach (project) ->
           = project.template
-      - # - else
-      - #   = Loader(this)
+        li(class=@hiddenIfUserIsSignedIn)
+          .project.anon-user-sign-up.opens-pop-over(click=@toggleSignInPopVisible)
+            p Access all your projects anywhere
+            - console.log '@', @
+            button Sign in
+            span(class=@popHiddenUnlessSignInPopVisible)
+              = SignInPopPresenter(@.application).template

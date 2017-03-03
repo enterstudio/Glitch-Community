@@ -1,4 +1,4 @@
-- defaultAvatar = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FdefaultAvatar.svg"
+- glitchTeamAvatar = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FdefaultAvatar.svg"
 
 - project = @project
 - category = @category
@@ -8,7 +8,7 @@ li
     .users
       - project.users.forEach (user) ->
         .user(title=user.name data-tooltip=user.name data-tooltip-left=true)
-          img(width=30 height=30 src=user.avatar)
+          img(width=30 height=30 src=user.avatar style="background-color:#{user.color}")
     .user-names
       - currentUser = 0
       - project.users.forEach (user) ->
@@ -22,13 +22,13 @@ li
   - else
     .users
       .user(title="Glitch team" data-tooltip="Glitch team" data-tooltip-left=true)
-        img(width=30 height=30 src=defaultAvatar)
+        img(width=30 height=30 src=glitchTeamAvatar)
 
   - showProjectOverlay = -> @showProjectOverlay project
   .project(click=showProjectOverlay style="background-color: #{category.color}; border-bottom-color: #{category.color}" data-track="project" data-track-label=project.domain)
     .project-container
       img.avatar(src="https://cdn.gomix.com/project-avatar/#{project.projectId}.png")
       button
-        .project-name=@projectName
+        .project-name=project.domain
       .description=project.description
       .overflow-mask(style="background-color: #{category.color}")

@@ -2,15 +2,13 @@
 # by express browserify middleware using the
 # coffeeify transform
 
-console.log '🚒🚒🚒🚒'
-
-
-application = require './application'
+application = require './application.coffee'
 qs = require 'querystringify'
 queryString = qs.parse window.location.search
 normalizeSlashes = require 'normalize-slashes'
 
 IndexTemplate = require "./templates/pages/index"
+index = IndexTemplate application
 
 CategoryPage = require "./presenters/category-page"
 
@@ -24,22 +22,14 @@ console.log "🌈 isSignedIn", application.user.isSignedIn()
 
 # client-side routing
 
-Promise.resolve()
-.then ->
-  if normalizedRoute is "login/github"
-    normalizedRoute = ""
-    application.loginWithOAuthCode queryString.code, "github"
-.then ->
-  index = IndexTemplate application
-  
-  if normalizedRoute is ""
-    document.body.appendChild index
-    application.overlay.showProjectOverlayIfPermalink queryString
+if normalizedRoute is ""
+  document.body.appendChild index
+  application.overlay.showProjectOverlayIfPermalink queryString
 
-  else if application.isCategoryUrl(normalizedRoute)
-    category = application.getCategoryFromUrl normalizedRoute
-    categoryPage = CategoryPage(application, category).template()
-    document.body.appendChild categoryPage
+else if application.isCategoryUrl(normalizedRoute)
+  category = application.getCategoryFromUrl normalizedRoute
+  categoryPage = CategoryPage(application, category).template()
+  document.body.appendChild categoryPage
 
 # else if first char is @
   # profile pages
@@ -47,6 +37,13 @@ Promise.resolve()
 # document.addEventListener "keydown", (event) ->
 #   application.closeAllPopOvers event
 
+# application.tracking.init event
+
 document.addEventListener "click", (event) ->
-  # application.tracking.init event
-  application.closeAllPopOvers()
+  globalclick event
+document.addEventListener "touchstart", (event) ->
+  globalclick event
+  
+globalclick = (event) ->
+  unless $(event.target).closest('.pop-over, .opens-pop-over, .overlay').length
+    application.closeAllPopOvers()

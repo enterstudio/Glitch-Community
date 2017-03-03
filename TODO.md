@@ -19,12 +19,17 @@
 - [x] modularize tracking
 - [x] opening overlay updates url bar
 - [x] if query string containing project name, open project overlay to that name (linkable lightboxes)
-
 - [x] add users to project overlay 
-- [ ] add users to URL based project overlay
+- [x] anon avatars display
+- [x] using anonface and user.color (now given from api)
+- [x] anon user recent projects
 
-- [ ] anon user recent projects
+- [ ] sign in user header
 - [ ] signed in user recent projects
+
+- [x] add users to URL based project overlay
+- [ ] convert overlay from qs to /~project-name (with no subpage name)
+- [ ] users work in qs/direct link based overlays
 
 - [ ] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 
@@ -32,31 +37,31 @@
 - [ ] 404 page
 - [ ] social meta tags/imgs in index.html
 
-- [ ] BUG qs permalinks should work from subpages too https://luck-beam-comm2.gomix.me/games?project=pong-solo
+- [ ] GA: event tracking 
 
-### auth stuff
-- [x] add fb/gh sign in strategies in popover (inside header)
-- [ ] finish multi sign in oauth/and new user localstorage.cacheduser like editor
-- [ ] pass that new user to editor
+- [ ] ??port image links to the new project (because will be fully replacing the current community)
 
-### curated model
+curated model
+-------------
 - [ ] manually merge in latest prod model/curated of projects
 - [ ] ?remove unused avatarNeedsBackgorund/legibility bool from curated
 - [ ] move partner categories into a seperate thing called collectinos. remove listedonhomepage bool and check. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
 
-### partner stuff
-- [ ] team beta?: add special partner category page formatting (see old snippet in todo) . `team/slack`
-
-
-- [ ] ??port image links to the new project (because will be fully replacing the current community)
-
+auth stuff @emanuele
+--------------------
+- [x] add fb/gh sign in strategies in popover (inside header)
+- [ ] finish multi sign in oauth/and new user localstorage.cacheduser like editor
+- [ ] pass that new user to editor
 
 
 
 ## phase 2
 
+partner stuff
+-------------
+- [ ] team beta?: add special partner category page formatting (see old snippet in todo) . `team/slack`
+
 - [ ] add accessibility (aria, etc.)
-- [ ] GA: event tracking 
 - [ ] get `application` methods into console, like editor
 - [ ] browserify stuff
 - [ ] hands raised mockup: show some projects that currently need help

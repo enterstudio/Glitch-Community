@@ -21,11 +21,10 @@ span
       section.pop-over-actions.markdown-container(class=@warningIfReadmeError)
         .project-users
           .users
-
             - if @projectUsers()
               - @projectUsers().forEach (user) ->
                 .user(title=user.name data-tooltip=user.name data-tooltip-left=true)
-                  img(width=30 height=30 src=user.avatar)
+                  img(width=30 height=30 src=user.avatar style="background-color:#{user.color}")
             - else
               .user(title="Glitch team" data-tooltip="Glitch team" data-tooltip-left=true)
                 img(width=30 height=30 src=defaultAvatar)

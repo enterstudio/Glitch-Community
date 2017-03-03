@@ -1,13 +1,10 @@
-- githubAuthLink = "https://github.com/login/oauth/authorize?client_id=b4cb743ed07e20abf0b2&scope=user:email&redirect_uri=https://gomix.com/community-test/login/github"
-- facebookAuthLink = "#"
-
-dialog.pop-over.pop-over-flexible.sign-in-pop(class=@hiddenUnlessSignInPopVisibile click=@stopPropagation)
+dialog.pop-over.sign-in-pop(click=@stopPropagation)
   section.pop-over-actions.last-section
 
-    a.button-link(href="facebookAuthLink")
+    a.button-link(href=@FACEBOOK_AUTH_LINK)
       button.button-small Sign in with Facebook
         span.emoji.facebook
 
-    a.button-link(href=githubAuthLink)
+    a.button-link(href=@GITHUB_AUTH_LINK)
       button.button-small Sign in with Github
         span.emoji.octocat

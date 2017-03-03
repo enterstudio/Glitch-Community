@@ -15,7 +15,6 @@
   <body>
     <script>
       var route = <%- JSON.stringify(route) %>;
-      var baseUrl = <%- JSON.stringify(baseUrl) %>;
     </script>
 
     <noscript>
@@ -24,6 +23,7 @@
       </h1>
     </noscript>
 
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
     <script src="<%= baseUrl %>/client.js"></script>
     <script src="//fast.wistia.com/embed/medias/vskja9agqj.jsonp" async></script>
     <script src="//fast.wistia.com/assets/external/E-v1.js" async></script>

@@ -1,5 +1,7 @@
 axios = require 'axios'
 
+ANON_AVATAR = "https://cdn.gomix.com/f6949da2-781d-4fd5-81e6-1fdd56350165%2Fanon-user-on-project-avatar.svg"
+
 module.exports = (application) ->
   
   self = 
@@ -15,35 +17,28 @@ module.exports = (application) ->
       true if self.cachedUser() and self.cachedUser().login
 
     avatarColor: ->
-      # console.log "💃🏻", self.cachedUser().color
       self.cachedUser().color
 
     avatarImage: ->
       self.cachedUser().avatarUrl
 
-    recentProjectIds: ->
+    userRecentProjectIds: ->
       recentFiles = self.cachedUser().recentFiles
-      recentFiles?.map (recent) ->
+      recentFiles.map (recent) ->
         recent.projectId
 
-    getRecentProjects: ->
-      recentProjectIds = self.recentProjectIds()?.toString()
-      if !recentProjectIds
-        return
-      projectInfoUrl = "https://api.gomix.com/projects/byIds?ids=#{recentProjectIds}"
+    getUserRecentProjects: ->
+      userRecentProjectIds = self.userRecentProjectIds().toString()
+      projectInfoUrl = "https://api.gomix.com/projects/byIds?ids=#{userRecentProjectIds}"
       axios.get projectInfoUrl
       .then (response) ->
         projects = response.data.map (project) ->
-          console.log 'raw project', project
           self.normalizeProject project
         application.userRecentProjects projects
-        console.log 'application.userRecentProjects', application.userRecentProjects()
-        # console.log 'projects', projects
       .catch (error) ->
         console.error "recentProjects", error
 
     normalizeProject: (projectFromAPI) ->
-      console.log 'projectFromAPI', projectFromAPI
       project =
         name: projectFromAPI.domain
         projectId: projectFromAPI.id
@@ -54,15 +49,14 @@ module.exports = (application) ->
 
     normalizeUsersInProject: (usersInProjectFromAPI) ->
       users = []
-      console.log 'usersInProjectFromAPI', usersInProjectFromAPI
       usersInProjectFromAPI.forEach (user) ->
         users.push
             name: user.name
-            avatar: user.avatarUrl
+            avatar: user.avatarUrl or ANON_AVATAR
             color: user.color
       return users
         
   if localStorage.cachedUser
-    self.getRecentProjects()
+    self.getUserRecentProjects()
 
   return self

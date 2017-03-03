@@ -41,13 +41,8 @@ module.exports = ->
       else
         console.log "#{filename} compiled to css"
 
-  # console.log utils.categoryUrls()
-  
   app.get '*', (req, res, next) ->
     res.render('index', route: req.path, baseUrl: req.baseUrl)
-
-#   app.get '/sample', (request, response) ->
-#     response.send 'hello'
 
   # community api
   app.get '/curated/projects', (request, response) ->
