@@ -11,8 +11,6 @@ app.set('view engine', 'ejs')
       
 router = require('./routes')();
 
-# router('/community')
-
 app.use '/community-test', router
 app.use '/community', router
 app.use '/', router
