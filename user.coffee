@@ -34,7 +34,8 @@ module.exports = (application) ->
         recent.projectId
 
     getUserRecentProjects: ->
-      userRecentProjectIds = self.userRecentProjectIds().toString()
+      userRecentProjectIds = self.userRecentProjectIds().reverse().toString()
+      console.log userRecentProjectIds
       projectInfoUrl = "https://api.gomix.com/projects/byIds?ids=#{userRecentProjectIds}"
       axios.get projectInfoUrl
       .then (response) ->
