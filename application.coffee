@@ -75,7 +75,7 @@ self =
     if url.charAt(0) is "@"
       true
 
-  removeFirstCharacter: (string): ->
+  removeFirstCharacter: (string) ->
     # ex: ~cool to cool
     firstCharacterPosition = 1
     end = string.length
