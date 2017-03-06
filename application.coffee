@@ -67,6 +67,15 @@ self =
     categoryUrls = _.map categories, (category) ->
       category.url
 
+  isProjectUrl: (url) ->
+    if url.charAt(0) is "~"
+      true
+
+  isUserProfileUrl: (url) ->
+    if url.charAt(0) is "@"
+      true
+
+      
 self.overlay = Overlay self
 self.tracking = tracking self
 self.user = user self

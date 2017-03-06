@@ -32,6 +32,13 @@ else if application.isCategoryUrl(normalizedRoute)
   categoryPage = CategoryPage(application, category).template()
   document.body.appendChild categoryPage
 
+else if application.isProjectUrl(normalizedRoute)
+  projectName = 
+  document.body.append 'hello'
+
+else if application.isUserProfileUrl(normalizedRoute)
+  document.body.append 'hello'
+
 # else if first char is ~
   # application.overlay.showProjectOverlay projectDomain
   
