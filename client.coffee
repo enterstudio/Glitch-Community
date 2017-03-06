@@ -33,9 +33,9 @@ else if application.isCategoryUrl(normalizedRoute)
   document.body.appendChild categoryPage
 
 else if application.isProjectUrl(normalizedRoute)
-  projectName = application.removeFirstCharacter normalizedRoute
+  projectDomain = application.removeFirstCharacter normalizedRoute
   document.body.appendChild index
-  application.overlay.showProjectOverlayForProject projectName
+  application.overlay.showProjectOverlayForProject projectDomain
 
 else if application.isUserProfileUrl(normalizedRoute)
   document.body.append 'hello'

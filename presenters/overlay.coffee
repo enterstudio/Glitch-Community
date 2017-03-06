@@ -71,26 +71,26 @@ module.exports = (application) ->
       application.overlayVisible true
       application.overlayTemplate "video"
 
-    #     application.overlayVisible true
-    #     application.overlayReadmeLoaded false
-    #     application.overlayTemplate 'project'
-    #     projectInfoUrl = "https://api.gomix.com/projects/#{proj}"
-    #     axios.get projectInfoUrl,
-    #       cancelToken: source.token
-    #     .then (response) ->
-    #       console.log 'response', response
-    #       project = {
-    #         projectId: response.data.id
-    #         domain: response.data.domain
-    #       }
-    #       console.log project
-    #       self.showProjectOverlay project
-    #     .catch (error) ->
-    #       console.error "showProjectOverlayIfPermalink", error
-    #       self.showReadmeError()
 
-    showProjectOverlayForProject: (projectName) ->
-      
+    showProjectOverlayForProject: (projectDomain) ->
+      application.overlayVisible true
+      application.overlayReadmeLoaded false
+      application.overlayTemplate 'project'
+      projectInfoUrl = "https://api.gomix.com/projects/#{projectDomain}"
+      axios.get projectInfoUrl,
+        cancelToken: source.token
+      .then (response) ->
+        console.log 'response', response
+        project = {
+          projectId: response.data.id
+          domain: response.data.domain
+        }
+        console.log project
+        self.showProjectOverlay project
+      .catch (error) ->
+        console.error "showProjectOverlayIfPermalink", error
+        self.showReadmeError()
+
     
           
     hideOverlay: ->
