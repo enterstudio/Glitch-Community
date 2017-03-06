@@ -24,18 +24,17 @@ module.exports = (application) ->
 
     userName: ->
       self.cachedUser().login
-      
+
     # fullName: ->
     #   self.cachedUser().name
-    
+
     userRecentProjectIds: ->
       recentFiles = self.cachedUser().recentFiles
       recentFiles.map (recent) ->
         recent.projectId
 
     getUserRecentProjects: ->
-      userRecentProjectIds = self.userRecentProjectIds().reverse().toString()
-      console.log userRecentProjectIds
+      userRecentProjectIds = self.userRecentProjectIds().toString()
       projectInfoUrl = "https://api.gomix.com/projects/byIds?ids=#{userRecentProjectIds}"
       axios.get projectInfoUrl
       .then (response) ->
@@ -49,7 +48,6 @@ module.exports = (application) ->
       # userId = self.cachedUser().id
 #        axios.get "https://api.gomix.com/users/#{userId}"
 
-        
     normalizeProject: (projectFromAPI) ->
       project =
         name: projectFromAPI.domain

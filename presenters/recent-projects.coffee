@@ -21,7 +21,6 @@ module.exports = (application) ->
 
     projects: ->
       filteredProjects = self.filterProjects()
-      console.log "🚒", filteredProjects
       projectElements = filteredProjects.map (project) ->
         category = 
           color: undefined
