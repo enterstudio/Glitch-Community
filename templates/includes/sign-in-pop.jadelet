@@ -1,7 +1,7 @@
 dialog.pop-over.sign-in-pop(click=@stopPropagation)
   section.pop-over-actions.last-section
 
-    a.button-link(href=@FACEBOOK_AUTH_LINK)
+    a.button-link(href=@facebookAuthLink)
       button.button-small Sign in with Facebook
         span.emoji.facebook
 

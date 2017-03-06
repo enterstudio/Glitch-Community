@@ -10,7 +10,9 @@ module.exports = (application) ->
       redirectUri = "https://gomix.com/community-test/login/github"
       "https://github.com/login/oauth/authorize?client_id=#{clientId}&scope=#{scope}&redirect_uri=#{redirectUri}"
 
-    FACEBOOK_AUTH_LINK: "https://facebook.com/blah/blah"
+    facebookAuthLink: ->
+      callbackURL = "https://gomix.com/community-test/login/facebook"
+      "https://api.gomix.com/auth/facebook?callbackURL=#{callbackURL}"
 
     template: ->
       SignInPopTemplate self
