@@ -22,14 +22,22 @@ console.log "🌈 isSignedIn", application.user.isSignedIn()
 
 # client-side routing
 
-if normalizedRoute is ""
-  document.body.appendChild index
-  application.overlay.showProjectOverlayIfPermalink queryString
+Promise.resolve()
+.then ->
+  if normalizedRoute.startsWith "login/"
+    application.login normalizedRoute.substring("login/".length), queryString.code
+    .then ->
+      history.replaceState null, null, "#{baseUrl}/"
+      normalizedRoute = ""
+.then ->
+  if normalizedRoute is ""
+    document.body.appendChild index
+    application.overlay.showProjectOverlayIfPermalink queryString
 
-else if application.isCategoryUrl(normalizedRoute)
-  category = application.getCategoryFromUrl normalizedRoute
-  categoryPage = CategoryPage(application, category).template()
-  document.body.appendChild categoryPage
+  else if application.isCategoryUrl(normalizedRoute)
+    category = application.getCategoryFromUrl normalizedRoute
+    categoryPage = CategoryPage(application, category).template()
+    document.body.appendChild categoryPage
 
 # else if first char is @
   # profile pages

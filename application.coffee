@@ -66,6 +66,10 @@ self =
     categories = curated.categories()
     categoryUrls = _.map categories, (category) ->
       category.url
+      
+  login: (provider, code) ->
+    console.log provider, code
+    Promise.resolve()
 
 self.overlay = Overlay self
 self.tracking = tracking self
