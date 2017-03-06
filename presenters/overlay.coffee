@@ -65,7 +65,7 @@ module.exports = (application) ->
       application.overlayTemplate "project"
       application.overlayProject project
       self.getProjectReadme project
-      history.replaceState(null, null, "?project=#{project.domain}")
+      history.replaceState(null, null, "~#{project.domain}")
 
     showVideoOverlay: ->
       application.overlayVisible true
