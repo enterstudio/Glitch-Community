@@ -13,10 +13,11 @@ section.profile
       ul.projects-container
         - @projects().forEach (project) ->
           = project.template
-        li(class=@hiddenIfUserIsSignedIn)
-          .project.anon-user-sign-up.opens-pop-over(click=@toggleSignInPopVisible)
-            p Access all your projects anywhere
-            - console.log '@', @
-            button Sign in
-            span(class=@popHiddenUnlessSignInPopVisible)
-              = SignInPopPresenter(@.application).template
+        - unless @userIsSignedIn
+          li
+            .project.anon-user-sign-up.opens-pop-over(click=@toggleSignInPopVisible)
+              p Access all your projects anywhere
+              - console.log '@', @
+              button Sign in
+              span(class=@popHiddenUnlessSignInPopVisible)
+                = SignInPopPresenter(@.application).template

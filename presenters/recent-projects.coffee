@@ -21,6 +21,7 @@ module.exports = (application) ->
 
     projects: ->
       filteredProjects = self.filterProjects()
+      console.log "🚒", filteredProjects
       projectElements = filteredProjects.map (project) ->
         category = 
           color: undefined
@@ -45,8 +46,5 @@ module.exports = (application) ->
 
     popHiddenUnlessSignInPopVisible: ->
       'hidden' unless application.signInPopVisibleOnRecentProjects()
-
-    hiddenIfUserIsSignedIn: ->
-      'hidden' unless self.userIsAnon
 
 # application.user.cachedUser()

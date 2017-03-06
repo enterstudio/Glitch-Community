@@ -6,7 +6,6 @@
 - OverlayPresenter = require "../../presenters/overlay"
 
 
-
 content.category-page
   = HeaderPresenter(this).template
 
@@ -28,7 +27,7 @@ content.category-page
           p.description=category.description
 
           - # TODO: conditional partner stuff here (= partnerDetails)
-          - # or move partners over to being the original ~profiles (~slack)
+          - # or move partners over to being the original @profiles (@slack)
           - # maybe use emoji instead of icons? what does twitter profiles do? expose urls?
 
         ul.projects-container
@@ -44,4 +43,3 @@ content.category-page
     = OverlayPresenter(this).template
 
   .beta beta
-
