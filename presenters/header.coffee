@@ -24,3 +24,8 @@ module.exports = (application) ->
     popHiddenUnlessSignInPopVisible: ->
       'hidden' unless application.signInPopVisibleOnHeader()
 
+    userAvatar: ->
+      application.user.avatarImage()
+
+    userName: ->
+      application.user.userName()

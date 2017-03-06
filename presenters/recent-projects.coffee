@@ -49,3 +49,4 @@ module.exports = (application) ->
     hiddenIfUserIsSignedIn: ->
       'hidden' unless self.userIsAnon
 
+# application.user.cachedUser()

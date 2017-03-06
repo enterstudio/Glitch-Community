@@ -22,6 +22,12 @@ module.exports = (application) ->
     avatarImage: ->
       self.cachedUser().avatarUrl
 
+    userName: ->
+      self.cachedUser().login
+      
+    # fullName: ->
+    #   self.cachedUser().name
+    
     userRecentProjectIds: ->
       recentFiles = self.cachedUser().recentFiles
       recentFiles.map (recent) ->
@@ -39,7 +45,9 @@ module.exports = (application) ->
         console.error "recentProjects", error
 
 #     getUser: ->
-      # 
+      # userId = self.cachedUser().id
+#        axios.get "https://api.gomix.com/users/#{userId}"
+
         
     normalizeProject: (projectFromAPI) ->
       project =
