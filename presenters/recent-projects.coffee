@@ -36,8 +36,8 @@ module.exports = (application) ->
     userAvatarIsAnon: ->
       'anon-user-avatar' if self.userIsAnon
 
-    hiddenUnlessUserIsAnon: ->
-      'hidden' unless self.userIsAnon
+    # hiddenUnlessUserIsAnon: ->
+    #   'hidden' unless self.userIsAnon
   
     toggleSignInPopVisible: (event) ->
       application.signInPopVisibleOnRecentProjects.toggle()
@@ -45,3 +45,7 @@ module.exports = (application) ->
 
     popHiddenUnlessSignInPopVisible: ->
       'hidden' unless application.signInPopVisibleOnRecentProjects()
+
+    hiddenIfUserIsSignedIn: ->
+      'hidden' unless self.userIsAnon
+

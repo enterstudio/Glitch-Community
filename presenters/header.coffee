@@ -17,3 +17,8 @@ module.exports = (application) ->
 
     popHiddenUnlessSignInPopVisible: ->
       'hidden' unless application.signInPopVisibleOnHeader()
+
+    hiddenIfUserIsSignedIn: ->
+      'hidden'if application.user.isSignedIn()
+
+        hiddenUnlessUserIsSignedIn

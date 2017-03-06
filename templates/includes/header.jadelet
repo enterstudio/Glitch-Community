@@ -10,19 +10,25 @@ header(role="banner")
     //if !user.isSignedIn
     h1.headline
       a(href="/community")
-        span Glitch
+        span= "Glitch"
       span= " "
       span is the easiest way to build the app or bot of your dreams
-    p.about With working example apps to remix, a code editor to modify them, instant hosting and deployment - anybody can build a web app on Gomix, for free. 
-      a(href="https://glitch.com/about") Learn more
-    p.video(click=@showVideoOverlay)
-      img.play-button(src=play)
-      span How it works in 2 minutes
+
+    span(class=@hiddenIfUserIsSignedIn)
+      p.about With working example apps to remix, a code editor to modify them, instant hosting and deployment - anybody can build a web app on Gomix, for free. 
+        a(href="https://glitch.com/about") Learn more
+      p.video(click=@showVideoOverlay)
+        img.play-button(src=play)
+        span How it works in 2 minutes
 
   nav(role="navigation")
     form(action="/community/search" method="get" role="search")
       input.search-input(name="q" placeholder="bots, apps, tutorials")
-    button.button-small.opens-pop-over(click=@toggleSignInPopVisible) Sign in
-    // TODO show user avatar and link to profile page if signed in
-    span(class=@popHiddenUnlessSignInPopVisible)
-      = SignInPopPresenter(@.application).template
+
+    span(class=@hiddenIfUserIsSignedIn)
+      button.button-small.opens-pop-over(click=@toggleSignInPopVisible) Sign in
+      span(class=@popHiddenUnlessSignInPopVisible)
+        = SignInPopPresenter(@.application).template
+    span(class=@hiddenUnlessUserIsSignedIn)
+      p hello user
+      // TODO show user avatar and link to profile page if signed in
