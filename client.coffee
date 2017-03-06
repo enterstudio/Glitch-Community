@@ -24,6 +24,7 @@ console.log "🌈 isSignedIn", application.user.isSignedIn()
 
 if normalizedRoute is ""
   document.body.appendChild index
+  # comment out
   application.overlay.showProjectOverlayIfPermalink queryString
 
 else if application.isCategoryUrl(normalizedRoute)
@@ -31,6 +32,10 @@ else if application.isCategoryUrl(normalizedRoute)
   categoryPage = CategoryPage(application, category).template()
   document.body.appendChild categoryPage
 
+# else if first char is ~
+  # application.overlay.showProjectOverlay projectDomain
+  
+  
 # else if first char is @
   # profile pages
 

@@ -23,14 +23,13 @@
 - [x] anon avatars display
 - [x] using anonface and user.color (now given from api)
 - [x] anon user recent projects
-
 - [x] sign in user header
 - [x] signed in user recent projects
-
 - [x] add users to URL based project overlay
 
-- [ ] convert overlay from qs to /~project-name (with no subpage name)
-- [ ] users work in qs/direct link based overlays
+- [ ] OVERLAY: convert overlay from qs to /~project-name (with no subpage name)
+- [ ] OVERLAY: opening an overlay updates url with ~ link (even on subpages)
+- [ ] OVERLAY: users work in qs/direct link based overlays
 
 - [ ] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 
@@ -42,17 +41,13 @@
 
 - [ ] ??port image links to the new project (because will be fully replacing the current community)
 
-curated model
--------------
-- [ ] manually merge in latest prod model/curated of projects
-- [ ] ?remove unused avatarNeedsBackgorund/legibility bool from curated
-- [ ] move partner categories into a seperate thing called collectinos. remove listedonhomepage bool and check. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
+- [ ] CURATED_MODEL: manually merge in latest prod model/curated of projects
+- [ ] CURATED_MODEL: ?remove unused avatarNeedsBackgorund/legibility bool from curated
+- [ ] CURATED_MODEL: move partner categories into a seperate thing called collectinos. remove listedonhomepage bool and check. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
 
-auth stuff @emanuele
---------------------
-- [x] add fb/gh sign in strategies in popover (inside header)
-- [ ] finish multi sign in oauth/and new user localstorage.cacheduser like editor
-- [ ] pass that new user to editor
+- [x] AUTH: add fb/gh sign in strategies in popover (inside header)
+- [ ] AUTH: finish multi sign in oauth/and new user localstorage.cacheduser like editor
+- [ ] AUTH: pass that new user to editor
 
 
 
@@ -60,9 +55,7 @@ auth stuff @emanuele
 
 - [ ] getting recent projects , from teh recent files ls data is kinda flakey, maybe should move that to a user.getUser info api call instead
 
-partner stuff
--------------
-- [ ] team beta?: add special partner category page formatting (see old snippet in todo) . `team/slack`
+- PARTNER: [ ] team beta?: replace special partner category page + formatting with profile page beta (/@slack)
 
 - [ ] add accessibility (aria, etc.)
 - [ ] get `application` methods into console, like editor
