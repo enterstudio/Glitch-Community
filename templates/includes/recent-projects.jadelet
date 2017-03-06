@@ -7,6 +7,8 @@ section.profile
     .profile-info
       .user-avatar-container
         .user-avatar(class=@userAvatarIsAnon style="background-color: #{@userAvatarColor}")
+          - if @userAvatarImage
+            img(src=@userAvatarImage)
       a(href="https://glitch.com/edit")
         button.cta-button Start Coding
     article.projects
