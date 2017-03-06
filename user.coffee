@@ -5,7 +5,7 @@ ANON_AVATAR = "https://cdn.gomix.com/f6949da2-781d-4fd5-81e6-1fdd56350165%2Fanon
 module.exports = (application) ->
   
   self = 
-    
+
     cachedUser: ->
       if localStorage.cachedUser
         JSON.parse(localStorage.cachedUser)
@@ -38,6 +38,9 @@ module.exports = (application) ->
       .catch (error) ->
         console.error "recentProjects", error
 
+#     getUser: ->
+      # 
+        
     normalizeProject: (projectFromAPI) ->
       project =
         name: projectFromAPI.domain
