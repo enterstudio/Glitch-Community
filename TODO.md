@@ -24,8 +24,8 @@
 - [x] using anonface and user.color (now given from api)
 - [x] anon user recent projects
 
-- [ ] sign in user header
-- [ ] signed in user recent projects
+- [x] sign in user header
+- [x] signed in user recent projects
 
 - [x] add users to URL based project overlay
 - [ ] convert overlay from qs to /~project-name (with no subpage name)
@@ -43,6 +43,7 @@
 
 curated model
 -------------
+- [ ] getting recent projects , from teh recent files ls data is kinda flakey, maybe should move that to a user.getUser info api call instead
 - [ ] manually merge in latest prod model/curated of projects
 - [ ] ?remove unused avatarNeedsBackgorund/legibility bool from curated
 - [ ] move partner categories into a seperate thing called collectinos. remove listedonhomepage bool and check. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
