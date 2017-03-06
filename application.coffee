@@ -92,9 +92,11 @@ self =
       callbackURL = "https://gomix.com/community-test/login/facebook"
       authURL = "/auth/facebook/callback?callbackURL=#{callbackURL}&code="
     self.api().post "#{authURL}#{code}"
-    .then (user) ->
-      console.log "LOGGED IN!", user
-      cachedUser = self.user
+    .then (response) ->
+      console.log "LOGGED IN!", response.data
+      cachedUser = self.user.cachedUser() ? {}
+      Object.assign cachedUser, response.data
+      self.storeLocal 'cachedUser', cachedUser
 
 self.overlay = Overlay self
 self.tracking = tracking self
