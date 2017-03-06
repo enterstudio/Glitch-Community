@@ -102,4 +102,6 @@ self.overlay = Overlay self
 self.tracking = tracking self
 self.user = user self
 
+global.communityApp = self
+
 module.exports = self
