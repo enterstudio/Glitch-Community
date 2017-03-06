@@ -27,5 +27,6 @@ module.exports = (application) ->
     userAvatar: ->
       application.user.avatarImage()
 
-    userName: ->
-      application.user.userName()
+    # userPageLink: ->
+    #   userName = application.user.userName()
+    # "/@#{userName}"

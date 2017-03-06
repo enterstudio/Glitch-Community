@@ -30,6 +30,8 @@ header(role="banner")
       span(class=@popHiddenUnlessSignInPopVisible)
         = SignInPopPresenter(@.application).template
     span(class=@hiddenUnlessUserIsSignedIn)
-      p hello user
+      .user
+        img(src=@userAvatar width=30 height=30)
+
       - console.log "❤️ @.application.userRecentProjects()", @.application.userRecentProjects()
       // TODO show user avatar and link to profile page if signed in
