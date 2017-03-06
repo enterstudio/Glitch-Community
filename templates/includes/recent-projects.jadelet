@@ -7,8 +7,8 @@ section.profile
     .profile-info
       .user-avatar-container
         .user-avatar(class=@userAvatarIsAnon style="background-color: #{@userAvatarColor}")
-      - # TODO ('start coding' button, opens editor with no project . editor will do the right thing (new blank or last project))
-      - # ^ is primary green?
+      a(href="https://glitch.com/edit")
+        button.cta-button Start Coding
     article.projects
       ul.projects-container
         - @projects().forEach (project) ->
@@ -17,7 +17,6 @@ section.profile
           li
             .project.anon-user-sign-up.opens-pop-over(click=@toggleSignInPopVisible)
               p Access all your projects anywhere
-              - console.log '@', @
               button Sign in
               span(class=@popHiddenUnlessSignInPopVisible)
                 = SignInPopPresenter(@.application).template
