@@ -75,7 +75,12 @@ self =
     if url.charAt(0) is "@"
       true
 
-      
+  removeFirstCharacter: (string): ->
+    # ex: ~cool to cool
+    firstCharacterPosition = 1
+    end = string.length
+    string.substring(firstCharacterPosition, end)
+
 self.overlay = Overlay self
 self.tracking = tracking self
 self.user = user self

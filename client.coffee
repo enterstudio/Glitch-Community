@@ -33,7 +33,7 @@ else if application.isCategoryUrl(normalizedRoute)
   document.body.appendChild categoryPage
 
 else if application.isProjectUrl(normalizedRoute)
-  projectName = 
+  projectName = application.removeFirstCharacter normalizedRoute
   document.body.append 'hello'
 
 else if application.isUserProfileUrl(normalizedRoute)
