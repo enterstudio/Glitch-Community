@@ -1,5 +1,6 @@
 Observable = require 'o_0'
 _ = require 'underscore'
+axios = require 'axios'
 
 curated = require "./curated"
 tracking = require "./tracking"
@@ -67,9 +68,33 @@ self =
     categoryUrls = _.map categories, (category) ->
       category.url
       
+  api: ->
+    persistentToken = self.user.cachedUser()?.persistentToken
+    if persistentToken
+      axios.create
+        baseURL: 'https://api.gomix.com/',
+        headers:
+          Authorization: persistentToken
+    else
+      axios.create
+        baseURL: 'https://api.gomix.com/'
+        
+  storeLocal: (key, value) ->
+    try
+      window.localStorage[key] = JSON.stringify value
+    catch
+      console.warn "Could not save to localStorage. (localStorage is disabled in private Safari windows)"
+      
   login: (provider, code) ->
     console.log provider, code
-    Promise.resolve()
+    authURL = "/authenticate/"
+    if provider == "facebook"
+      callbackURL = "https://gomix.com/community-test/login/facebook"
+      authURL = "/auth/facebook/callback?callbackURL=#{callbackURL}&code="
+    self.api().post "#{authURL}#{code}"
+    .then (user) ->
+      console.log "LOGGED IN!", user
+      cachedUser = self.user
 
 self.overlay = Overlay self
 self.tracking = tracking self
