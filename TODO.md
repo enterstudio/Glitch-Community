@@ -28,8 +28,10 @@
 - [x] add users to URL based project overlay
 
 - [ ] OVERLAY: convert overlay from qs to /~project-name (with no subpage name)
-- [ ] OVERLAY: opening an overlay updates url with ~ link (even on subpages)
+- [x] OVERLAY: opening an overlay updates url with ~ link (even on subpages)
+- [ ] OVERLAY: add project avatar img to overlay somewhere
 - [ ] OVERLAY: users work in qs/direct link based overlays
+
 
 - [ ] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 
@@ -49,6 +51,7 @@
 - [ ] AUTH: finish multi sign in oauth/and new user localstorage.cacheduser like editor
 - [ ] AUTH: pass that new user to editor
 
+- [ ] pattern background instead of table for default .profile. maybe something glitchy, something earthboundy/cafe-club? tiling
 
 
 ## phase 2
