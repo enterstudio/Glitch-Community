@@ -75,6 +75,12 @@ self =
     if url.charAt(0) is "@"
       true
 
+  isSearchUrl: (url, querystring) ->
+    # true if
+    # querystring object key is q
+    route i
+    return false #temp
+    
   removeFirstCharacter: (string) ->
     # ex: ~cool to cool
     firstCharacterPosition = 1

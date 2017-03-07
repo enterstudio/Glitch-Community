@@ -29,7 +29,7 @@
 
 - [x] OVERLAY: convert overlay from qs to /~project-name (with no subpage name)
 - [x] OVERLAY: opening an overlay updates url with ~ link (even on subpages)
-- [ ] OVERLAY: add project avatar img to overlay somewhere [blocked by api]
+- [x] OVERLAY: add project avatar img to overlay somewhere [blocked by api]
 - [x] OVERLAY: users work in qs/direct link based overlays
 
 
