@@ -10,24 +10,36 @@ module.exports = (application, query) ->
     application: application
 
     template: ->
-      # self.results = self.getSearchResults query
-      SearchPageTemplate self
+      self.searchProjects(query).then (results) ->
+        application.searchResultsProjects results
+      self.searchUsers(query).then (results) ->
+        application.searchResultsUsers results
+      .then ->
+        SearchPageTemplate self
     
     searchProjects: (query) ->
-      searchProjectsUrl = "https://api.gomix.com/projects/search?q=#{query}"
-      axios.get searchProjectsUrl
-        .then (response) ->
-          application.searchResultsProjects response.data
-        .catch (error) ->
-          console.error "searchProjects", error
+      console.log "Q", query
+      return new Promise (resolve, reject) ->
+        searchProjectsUrl = "https://api.gomix.com/projects/search?q=#{query}"
+        axios.get searchProjectsUrl
+          .then (response) ->
+            resolve response.data
+          .catch (error) ->
+            console.error "searchProjects", error
+            reject error
 
     searchUsers: (query) ->
-      searchUsersUrl = "https://api.gomix.com/users/search?q=#{query}"
-      axios.get searchUsersUrl
-        .then (response) ->
-          application.searchResultsUsers response.data
-        .catch (error) ->
-          console.error "searchUsers", error
+      return new Promise (resolve, reject) ->
+        searchUsersUrl = "https://api.gomix.com/users/search?q=#{query}"
+        axios.get searchUsersUrl
+          .then (response) ->
+            resolve response.data
+          .catch (error) ->
+            console.error "searchUsers", error
+            reject error
 
     searchResultsIsEmpty: ->
       true if application.searchResultsUsers().length + application.searchResultsProjects().length is 0
+
+        
+        
