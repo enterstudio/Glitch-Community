@@ -20,7 +20,7 @@ module.exports = (application) ->
       self.cachedUser().color
 
     avatarImage: ->
-      self.cachedUser().avatarUrl
+      self.cachedUser()?.avatarUrl
 
     userName: ->
       self.cachedUser().login

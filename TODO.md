@@ -27,7 +27,7 @@
 - [x] signed in user recent projects
 - [x] add users to URL based project overlay
 
-- [ ] OVERLAY: convert overlay from qs to /~project-name (with no subpage name)
+- [x] OVERLAY: convert overlay from qs to /~project-name (with no subpage name)
 - [x] OVERLAY: opening an overlay updates url with ~ link (even on subpages)
 - [ ] OVERLAY: add project avatar img to overlay somewhere
 - [ ] OVERLAY: users work in qs/direct link based overlays
