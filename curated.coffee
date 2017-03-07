@@ -33,7 +33,7 @@ module.exports =
           login: 'STRd6'
           avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
         ,
-          login 'pketh'
+          login: 'pketh'
           avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
       ]
     ,
@@ -42,7 +42,7 @@ module.exports =
       projectId: '56e665e5-e0a8-46c8-9476-8d9b731117dd'
       img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-quarterback-quiz.png"
       users: [
-          login 'garethx'
+          login: 'garethx'
           avatarUrl: 'https://avatars3.githubusercontent.com/u/1830035?v=3&s=48'
       ]
     ,
@@ -51,7 +51,7 @@ module.exports =
       projectId: '55dbb2a4-94d9-434f-9dcc-1432c975de1c'
       img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-superbowl-squares.png"
       users: [
-          login 'etamponi'
+          login: 'etamponi'
           avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
   ] 

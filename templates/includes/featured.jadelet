@@ -2,10 +2,12 @@
 - defaultAvatar = "https://cdn.gomix.com/0a15009e-17ee-4915-bc29-5ba03bb09517%2Favatar.svg"
 
 section.features
+
   h2 Featured Apps
   ul
     - application = @
     - @featuredProjects().forEach (project) ->
+      - console.log "asdf"
       li
         - showProjectOverlay = -> application.showProjectOverlay project
         .featured-container(click=showProjectOverlay data-track="featured project" data-track-label=project.name)
@@ -15,10 +17,12 @@ section.features
 
         - # refactor me into includes/users.jadelet
         - if project.users
+          - console.log project.users
           .users
             - project.users.forEach (user) ->
-              .user(title=user.name data-tooltip=user.name data-tooltip-left=true)
-                img(width=30 height=30 src=user.avatar)
+              - console.log user
+              .user(title=user.login data-tooltip=user.login data-tooltip-left=true)
+                img(width=30 height=30 src=user.avatarUrl)
         - else
           .users
             .user(title="Gomix team" data-tooltip="Gomix team" data-tooltip-left=true)

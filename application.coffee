@@ -25,7 +25,6 @@ self =
   signInPopVisibleOnRecentProjects: Observable false
   
   closeAllPopOvers: ->
-    console.log 'closeAllPopOvers'
     self.signInPopVisibleOnHeader false
     self.signInPopVisibleOnRecentProjects false
 

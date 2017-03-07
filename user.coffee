@@ -61,8 +61,8 @@ module.exports = (application) ->
       users = []
       usersInProjectFromAPI.forEach (user) ->
         users.push
-            name: user.name
-            avatar: user.avatarUrl or ANON_AVATAR
+            login: user.login
+            avatarUrl: user.avatarUrl or ANON_AVATAR
             color: user.color
       return users
         

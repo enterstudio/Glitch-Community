@@ -1,3 +1,5 @@
+- # CURRENTLY UNUSED
+
 dialog.pop-over.user-options-pop(click=@stopPropagation)
 
   section.pop-over-info.last-section.section-has-tertiary-buttons

@@ -15,6 +15,7 @@ section.profile
       ul.projects-container
         - @projects().forEach (project) ->
           = project.template
+
         - unless @userIsSignedIn
           li
             .project.anon-user-sign-up.opens-pop-over(click=@toggleSignInPopVisible)
