@@ -1,6 +1,0 @@
-content.error-page
-
-  - console.log "🚒", @
-  p hello i am error
-
-  .beta beta

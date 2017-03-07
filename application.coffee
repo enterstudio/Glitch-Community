@@ -79,7 +79,6 @@ self =
     end = string.length
     string.substring(firstCharacterPosition, end)
 
-      
   isProjectUrl: (url) ->
     if url.charAt(0) is "~"
       true
