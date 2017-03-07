@@ -29,7 +29,7 @@ self =
   # search
   searchResultsProjects: Observable {}
   searchResultsUsers: Observable {}
-  
+
   closeAllPopOvers: ->
     self.signInPopVisibleOnHeader false
     self.signInPopVisibleOnRecentProjects false
