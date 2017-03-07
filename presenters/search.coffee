@@ -8,23 +8,24 @@ module.exports = (application) ->
   self = 
 
     application: application
+    searchQuery: application.searchQuery
+    searchResultsProjects: Observable {}
+    searchResultsUsers: Observable {}
 
+
+    
+    
     template: ->
-      # self.searchProjects(query).then (results) ->
-      #   application.searchResultsProjects results
-      # self.searchUsers(query).then (results) ->
-      #   application.searchResultsUsers results
-      console.log self
-      SearchPageTemplate self
-      # .catch (error) ->
-      #   console.error error
-      projectElements = application.projectsInCategory(category.id).map (project) ->
-        ProjectPresenter(application, project, category)
+      # console.log self
+      # SearchPageTemplate self
+      # projectElements = application.projectsInCategory(category.id).map (project) ->
+      #   ProjectPresenter(application, project, category)
 
       templateModel = Object.assign {}, application
-      templateModel.category = category
-      templateModel.projects = projectElements
-      CategoryPageTemplate templateModel
+      # templateModel.category = category
+      # templateModel.projects = projectElements
+      # templateModel.users = 
+      SearchPageTemplate templateModel
 
 
       

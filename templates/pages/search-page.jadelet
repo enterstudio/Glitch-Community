@@ -15,7 +15,7 @@ content
       - if results.length
         ul.projects-container
           - results.forEach (project) ->
-            - # category = {}
+            - category = {}
             - # category.color = '#E5E5E5'
             - # project = result.original
             include includes/project
