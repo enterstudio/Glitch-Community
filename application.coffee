@@ -26,6 +26,10 @@ self =
   signInPopVisibleOnHeader: Observable false
   signInPopVisibleOnRecentProjects: Observable false
   
+  # search
+  searchResultsProjects: Observable {}
+  searchResultsUsers: Observable {}
+  
   closeAllPopOvers: ->
     self.signInPopVisibleOnHeader false
     self.signInPopVisibleOnRecentProjects false
