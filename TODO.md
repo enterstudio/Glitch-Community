@@ -51,6 +51,9 @@
 
 - [ ] pattern background instead of table for default .profile. maybe something glitchy, something earthboundy/cafe-club? tiling
 
+- [ ] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found)
+
+- client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
 
 ## phase 2
 

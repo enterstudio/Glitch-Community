@@ -12,6 +12,7 @@ index = IndexTemplate application
 CategoryPage = require "./presenters/category-page"
 Search = require "./presenters/search"
 pageNotFoundTemplate = require "./templates/pages/404"
+pageNotFound = pageNotFoundTemplate application
 
 normalizedRoute = normalizeSlashes route
 console.log "route is #{normalizedRoute}"
@@ -45,7 +46,8 @@ else if application.isSearchUrl(normalizedRoute, queryString)
   document.body.appendChild searchPage
 
 else
-  document.body.append '404 page goes here'
+  document.body.appendChild pageNotFound
+  # document.body.append '404 page goes here'
 
 # document.addEventListener "keydown", (event) ->
 #   application.closeAllPopOvers event
