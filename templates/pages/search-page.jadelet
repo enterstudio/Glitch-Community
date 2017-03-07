@@ -12,25 +12,26 @@ content
   
   main.search-results(role="main")
     article.projects
-      if results.length
+      - if results.length
         ul.projects-container
-          each result in results
-            - category = {}
-            - category.color = '#E5E5E5'
-            - project = result.original
+          - results.forEach (project) ->
+            - # category = {}
+            - # category.color = '#E5E5E5'
+            - # project = result.original
             include includes/project
-      else
+            - @projects.forEach (project) ->
+              = project.template
+
+      - else
         p no results
         img(src=cat)
 
-    include includes/categories-list
+    = Categories(this)
 
-  include includes/footer
-  include includes/overlay
-  include includes/scripts
+  = Footer(this)
 
-  .hidden.query-string= query
-  script.
-    query = document.getElementsByClassName('query-string')[0].innerHTML;
-    document.getElementsByClassName('search-input')[0].value = query;
-    document.getElementsByClassName('search-input')[0].focus()
+  article
+
+    = OverlayPresenter(this).template
+
+  .beta beta

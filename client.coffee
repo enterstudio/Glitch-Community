@@ -11,6 +11,7 @@ IndexTemplate = require "./templates/pages/index"
 index = IndexTemplate application
 
 CategoryPage = require "./presenters/category-page"
+SearchPage = require "./presenters/search-page"
 
 normalizedRoute = normalizeSlashes route
 console.log "route is #{normalizedRoute}"
@@ -27,9 +28,6 @@ else if application.isCategoryUrl(normalizedRoute)
   category = application.getCategoryFromUrl normalizedRoute
   categoryPage = CategoryPage(application, category).template()
   document.body.appendChild categoryPage
-
-else if application.isSearchUrl(normalizedRoute, queryString)
-  document.body.append "supsupsup"
   
 else if application.isProjectUrl(normalizedRoute)
   projectDomain = application.removeFirstCharacter normalizedRoute
@@ -38,7 +36,12 @@ else if application.isProjectUrl(normalizedRoute)
 
 else if application.isUserProfileUrl(normalizedRoute)
   document.body.append 'hello im a @profile page'
-  
+
+else if application.isSearchUrl(normalizedRoute, queryString)
+  searchResults = application.getSearchResults normalizedRoute
+  searchPage = SearchPage(application, searchResults).template()
+  document.body.appendChild searchPage
+
 else
   document.body.append '404 page goes here'
 

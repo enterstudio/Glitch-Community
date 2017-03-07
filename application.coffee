@@ -67,6 +67,13 @@ self =
     categoryUrls = _.map categories, (category) ->
       category.url
 
+  removeFirstCharacter: (string) ->
+    # ex: ~cool to cool
+    firstCharacterPosition = 1
+    end = string.length
+    string.substring(firstCharacterPosition, end)
+
+      
   isProjectUrl: (url) ->
     if url.charAt(0) is "~"
       true
@@ -79,12 +86,7 @@ self =
     queryStringKeys = _.keys queryString # ['q', 'blah']
     if (url is 'search') and (_.contains queryStringKeys, 'q')
       true
-
-  removeFirstCharacter: (string) ->
-    # ex: ~cool to cool
-    firstCharacterPosition = 1
-    end = string.length
-    string.substring(firstCharacterPosition, end)
+      
 
 self.overlay = Overlay self
 self.tracking = tracking self
