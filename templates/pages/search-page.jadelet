@@ -1,0 +1,36 @@
+- cat = "https://cdn.gomix.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Fcat.svg"
+
+- Categories = require "../includes/categories"
+- HeaderPresenter = require "../../presenters/header"
+- OverlayPresenter = require "../../presenters/overlay"
+- Footer = require "../includes/footer"
+
+include includes/head
+
+content
+  = HeaderPresenter(this).template
+  
+  main.search-results(role="main")
+    article.projects
+      if results.length
+        ul.projects-container
+          each result in results
+            - category = {}
+            - category.color = '#E5E5E5'
+            - project = result.original
+            include includes/project
+      else
+        p no results
+        img(src=cat)
+
+    include includes/categories-list
+
+  include includes/footer
+  include includes/overlay
+  include includes/scripts
+
+  .hidden.query-string= query
+  script.
+    query = document.getElementsByClassName('query-string')[0].innerHTML;
+    document.getElementsByClassName('search-input')[0].value = query;
+    document.getElementsByClassName('search-input')[0].focus()

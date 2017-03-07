@@ -1,16 +1,13 @@
 - Categories = require "../includes/categories"
-
-- Footer = require "../includes/footer"
-
 - HeaderPresenter = require "../../presenters/header"
 - OverlayPresenter = require "../../presenters/overlay"
+- Footer = require "../includes/footer"
 
 
 content.category-page
   = HeaderPresenter(this).template
 
   - category = @category
-
   - projects = @projects
 
   main(role="main")
