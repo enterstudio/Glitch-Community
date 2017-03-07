@@ -14,9 +14,10 @@ module.exports = (application, query) ->
         application.searchResultsProjects results
       self.searchUsers(query).then (results) ->
         application.searchResultsUsers results
-      .then ->
         SearchPageTemplate self
-    
+      .catch (error) ->
+        console.error error
+
     searchProjects: (query) ->
       console.log "Q", query
       return new Promise (resolve, reject) ->
