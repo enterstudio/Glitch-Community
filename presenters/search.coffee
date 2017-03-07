@@ -13,19 +13,21 @@ module.exports = (application, query) ->
       # self.results = self.getSearchResults query
       SearchPageTemplate self
     
-    getSearchResults: (query) ->
-      console.log 'getSearchResults for:', query
-      axios.get query
-      .then (response) ->
-        application.searchResultsProjects response.data
-      .then (response) ->
-        application.searchResultsUsers response.data
-      .catch (error) ->
-        if axios.isCancel error
-          console.log 'request cancelled', project.domain
-        else
-          console.error "getProjectReadme", error
-          self.showReadmeError()
+    searchProjects: (query) ->
+      searchProjectsUrl = "https://api.gomix.com/projects/search?q=#{query}"
+      axios.get searchProjectsUrl
+        .then (response) ->
+          application.searchResultsProjects response.data
+        .catch (error) ->
+          console.error "searchProjects", error
 
-      
-      
+    searchUsers: (query) ->
+      searchUsersUrl = "https://api.gomix.com/users/search?q=#{query}"
+      axios.get searchUsersUrl
+        .then (response) ->
+          application.searchResultsUsers response.data
+        .catch (error) ->
+          console.error "searchUsers", error
+
+    searchResultsIsEmpty: ->
+      true if application.searchResultsUsers().length + application.searchResultsProjects().length is 0
