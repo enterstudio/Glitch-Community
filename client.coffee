@@ -46,7 +46,7 @@ else if application.isSearchUrl(normalizedRoute, queryString)
   document.body.appendChild searchPage
 
 else
-  document.body.appendChild pageNotFound
+  document.innerHTML = pageNotFound.toString()
   # document.body.append '404 page goes here'
 
 # document.addEventListener "keydown", (event) ->
