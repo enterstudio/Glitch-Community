@@ -24,7 +24,9 @@ module.exports = (application) ->
     projectUsers: ->
       application.overlayProject().users
 
-      
+    projectAvatar: ->
+      application.overlayProject()
+
       
     showLink: -> 
       "https://#{self.projectDomain()}.gomix.me" # change to glitch later
@@ -92,7 +94,7 @@ module.exports = (application) ->
       .catch (error) ->
         console.error "showProjectOverlayIfPermalink", error
         self.showReadmeError()
-          
+
     hideOverlay: ->
       application.overlayVisible false
       source.cancel()
@@ -101,7 +103,6 @@ module.exports = (application) ->
       history.replaceState(null, null, route)
 
     getProjectReadme: (project) ->
-      console.log "👍", project
       console.log 'self.projectId()', self.projectId()
       readmeUrl = "https://api.gomix.com/projects/#{project.projectId}/readme" # change to glitch later
       axios.get readmeUrl,
