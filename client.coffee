@@ -9,9 +9,9 @@ normalizeSlashes = require 'normalize-slashes'
 
 IndexTemplate = require "./templates/pages/index"
 index = IndexTemplate application
-
 CategoryPage = require "./presenters/category-page"
 Search = require "./presenters/search"
+pageNotFoundTemplate = require "./templates/pages/404"
 
 normalizedRoute = normalizeSlashes route
 console.log "route is #{normalizedRoute}"

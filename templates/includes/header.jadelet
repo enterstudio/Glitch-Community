@@ -1,3 +1,4 @@
+
 - logo = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fcarp.svg"
 - play = "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fplay.svg"
 
@@ -23,7 +24,7 @@ header(role="banner")
 
   nav(role="navigation")
     form(action="/community/search" method="get" role="search")
-      input.search-input(name="q" placeholder="bots, apps, tutorials")
+      input.search-input(name="q" placeholder="bots, apps, tutorials" value=@application.searchQuery)
 
     span(class=@hiddenIfUserIsSignedIn)
       button.button-small.opens-pop-over(click=@toggleSignInPopVisible) Sign in

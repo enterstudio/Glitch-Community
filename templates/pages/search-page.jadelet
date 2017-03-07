@@ -9,15 +9,13 @@
 -#    searchResultsUsers: application.searchResultsUsers()    
 -#    searchResultsProjects: application.searchResultsProjects()
 
-content
+content.search-results
   = HeaderPresenter(this).template
   
   main.search-results(role="main")
     article.projects
-      - console.log "👺", @searchResultsProjects()
-
-
-      - if @searchResultsProjects()
+      - if @searchResultsProjects().length
+        - console.log "👺", @searchResultsProjects()
         ul.projects-container
           - @searchResultsProjects().forEach (project) ->
             - category = {}

@@ -26,16 +26,14 @@
 - [x] sign in user header
 - [x] signed in user recent projects
 - [x] add users to URL based project overlay
-
+- [x] port category pages
 - [x] OVERLAY: convert overlay from qs to /~project-name (with no subpage name)
 - [x] OVERLAY: opening an overlay updates url with ~ link (even on subpages)
 - [x] OVERLAY: add project avatar img to overlay somewhere [blocked by api]
 - [x] OVERLAY: users work in qs/direct link based overlays
 
+- [-] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 
-- [ ] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
-
-- [x] port category pages
 - [ ] 404 page
 - [ ] social meta tags/imgs in index.html
 

@@ -28,8 +28,8 @@ self =
   
   # search
   searchQuery: Observable ""
-  searchResultsUsers: Observable {}
-  searchResultsProjects: Observable {}
+  searchResultsUsers: Observable []
+  searchResultsProjects: Observable []
 
   closeAllPopOvers: ->
     self.signInPopVisibleOnHeader false
