@@ -8,7 +8,7 @@
 - OverlayPresenter = require "../../presenters/overlay"
 - RecentProjectsPresenter = require "../../presenters/recent-projects"
 
-content
+.content
   = HeaderPresenter(this).template
   
   main(role="main")

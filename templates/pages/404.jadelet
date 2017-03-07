@@ -1,7 +1,4 @@
-html
-  head
-    title 404
-  body.error-page
-    p hello i am error
+.content.error-page
+  p hello i am error
 
-    .beta beta
+  .beta beta

@@ -47,7 +47,7 @@ else if application.isSearchUrl(normalizedRoute, queryString)
   document.body.appendChild searchPage
 
 else
-  document.appendChild error404
+  document.body.appendChild error404
   # document.innerHTML = data.toString()
   # document.body.append '404 page goes here'
 

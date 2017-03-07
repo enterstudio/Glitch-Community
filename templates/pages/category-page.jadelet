@@ -4,7 +4,7 @@
 - Footer = require "../includes/footer"
 
 
-content.category-page
+.content.category-page
   = HeaderPresenter(this).template
 
   - category = @category
