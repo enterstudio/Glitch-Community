@@ -19,7 +19,7 @@ module.exports = (application) ->
       application.overlayProject()?.domain
 
     projectId: ->
-      application.overlayProject()?.projectId
+      application.overlayProject()?.projectId or application.overlayProject()?.id
 
     projectUsers: ->
       application.overlayProject().users
@@ -27,7 +27,6 @@ module.exports = (application) ->
     projectAvatar: ->
       application.overlayProject()
 
-      
     showLink: -> 
       "https://#{self.projectDomain()}.gomix.me" # change to glitch later
 
@@ -75,7 +74,6 @@ module.exports = (application) ->
       application.overlayVisible true
       application.overlayTemplate "video"
 
-
     showProjectOverlayForProject: (projectDomain) ->
       application.overlayVisible true
       application.overlayReadmeLoaded false
@@ -99,7 +97,6 @@ module.exports = (application) ->
       application.overlayVisible false
       source.cancel()
       source = CancelToken.source()
-
       history.replaceState(null, null, route)
 
     getProjectReadme: (project) ->
@@ -117,6 +114,20 @@ module.exports = (application) ->
         else
           console.error "getProjectReadme", error
           self.showReadmeError()
+
+    getProjectDetails: (project) ->
+      projectUrl = "https://api.gomix.com/projects/#{project.projectId}" # change to glitch later
+      axios.get projectUrl,
+        cancelToken: source.token
+      .then (response) ->
+        application.overlayReadmeLoaded true
+      .catch (error) ->
+        if axios.isCancel error
+          console.log 'request cancelled', project.domain
+        else
+          console.error "getProjectReadme", error
+          self.showReadmeError()
+
 
     mdToNode: (md) ->
       node = document.createElement 'span'

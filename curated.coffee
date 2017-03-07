@@ -30,11 +30,11 @@ module.exports =
       projectId: '902cbaf0-e4e9-47c0-80b2-fe7ef583d679'
       img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-big-game-advert-bingo.png"
       users: [
-          name: 'STRd6'
-          avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
+          login: 'STRd6'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
         ,
-          name: 'pketh'
-          avatar: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
+          login 'pketh'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
       ]
     ,
       name: 'Quarterback Quiz'
@@ -42,8 +42,8 @@ module.exports =
       projectId: '56e665e5-e0a8-46c8-9476-8d9b731117dd'
       img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-quarterback-quiz.png"
       users: [
-          name: 'garethx'
-          avatar: 'https://avatars3.githubusercontent.com/u/1830035?v=3&s=48'
+          login 'garethx'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/1830035?v=3&s=48'
       ]
     ,
       name: 'Super Bowl Squares'
@@ -51,8 +51,8 @@ module.exports =
       projectId: '55dbb2a4-94d9-434f-9dcc-1432c975de1c'
       img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-superbowl-squares.png"
       users: [
-          name: 'etamponi'
-          avatar: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
+          login 'etamponi'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
   ] 
 
@@ -159,8 +159,8 @@ module.exports =
       domain: 'memory-game'
       description: 'Memory matching game with different themes for cards'
       users: [
-        name: 'etamponi'
-        avatar: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
+        login: 'etamponi'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
       categoryIds: [2]
     ,
@@ -168,8 +168,8 @@ module.exports =
       domain: 'space-program'
       description: "Launch your spaceship into orbit. Don't die."
       users: [
-        name: 'InPermutation'
-        avatar: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
+        login: 'InPermutation'
+        avatarUrl: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
       ]
       categoryIds: [2]
     ,
@@ -177,8 +177,8 @@ module.exports =
       domain: 'pong-solo'
       description: "Play Pong against a brick wall; now even harder to beat!"
       users: [
-        name: 'STRd6'
-        avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
+        login: 'STRd6'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]
       categoryIds: [2]
     ,
@@ -186,11 +186,11 @@ module.exports =
       domain: 'soundboard'
       description: 'Click pictures, listen to sounds, celebrate'
       users: [
-          name: 'STRd6'
-          avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
+          login: 'STRd6'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
         ,
-          name: 'pketh'
-          avatar: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
+          login: 'pketh'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
       ]
       categoryIds: [2]
     ,
@@ -198,8 +198,8 @@ module.exports =
       domain: 'image-editor'
       description: "A thing for making SVG images. Draw with it."
       users: [
-          name: 'InPermutation'
-          avatar: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
+          login: 'InPermutation'
+          avatarUrl: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
       ]
       categoryIds: [6]
     ,
@@ -217,8 +217,8 @@ module.exports =
       domain: 'mini-compiler'
       description: "Learn how compilers work - create a Lua to Assembly compiler in JavaScript"
       users: [
-        name: 'InPermutation'
-        avatar: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
+        login: 'InPermutation'
+        avatarUrl: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
       ]
       categoryIds: [4]
     ,
@@ -251,8 +251,8 @@ module.exports =
       domain: 'mocha-chai'
       description: "Adding tests before deploy with Mocha and Chai"
       users: [
-          name: 'etamponi'
-          avatar: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
+          login: 'etamponi'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
       categoryIds: [1]
     ,
@@ -265,8 +265,8 @@ module.exports =
       domain: 'browserify-middleware'
       description: "Basic Browserify Middleware Hello World example"
       users: [
-          name: 'STRd6'
-          avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
+          login: 'STRd6'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]
       categoryIds: [1]
     ,
@@ -279,8 +279,8 @@ module.exports =
       domain: 'twitterbot'
       description: "A template for making fun Twitter bots with the Twit Node.js library"
       users: [
-          name: 'fourtonfish'
-          avatar: 'https://avatars3.githubusercontent.com/u/3909390?v=3&s=48'
+          login: 'fourtonfish'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/3909390?v=3&s=48'
       ]
       categoryIds: [7]       
     ,
@@ -293,8 +293,8 @@ module.exports =
       domain: 'hello-coffee'
       description: "A really nice way to start your next project"
       users: [
-          name: 'pketh'
-          avatar: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
+          login: 'pketh'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
       ]
       categoryIds: [1] 
     ,
@@ -302,8 +302,8 @@ module.exports =
       domain: 'to-do'
       description: "A simple, minimalist Todo app"
       users: [
-          name: 'enriquesanchez'
-          avatar: 'https://avatars2.githubusercontent.com/u/3276087?v=3&s=48'
+          login: 'enriquesanchez'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/3276087?v=3&s=48'
       ]
       categoryIds: [5]
     ,
@@ -316,8 +316,8 @@ module.exports =
       domain: 'asl-spell'
       description: "Practice the ASL fingerspelled alphabet"
       users: [
-          name: 'jude'
-          avatar: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
+          login: 'jude'
+          avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
       ]
       categoryIds: [6]
     ,  
@@ -325,8 +325,8 @@ module.exports =
       domain: 'tetrjs'
       description: "A Tetris clone in JavaScript"
       users: [
-          name: 'jennazee'
-          avatar: 'https://avatars3.githubusercontent.com/u/1097241?v=3&s=48'
+          login: 'jennazee'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/1097241?v=3&s=48'
       ]
       categoryIds: [2]      
     ,
@@ -334,8 +334,8 @@ module.exports =
       domain: 'excel-spreadsheet'
       description: "Read and display data from a .xlsx file on Dropbox"
       users: [
-          name: 'jude'
-          avatar: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
+          login: 'jude'
+          avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
       ]
       categoryIds: [5]  
     ,
@@ -343,8 +343,8 @@ module.exports =
       domain: 'flicker-swoop'
       description: "Example implementation of a Lindenmayer system"
       users: [
-          name: 'STRd6'
-          avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
+          login: 'STRd6'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]
       categoryIds: [6]
     ,
@@ -352,8 +352,8 @@ module.exports =
       domain: 'trello-shopping-list'
       description: "Auto-generate a shopping list from Trello recipe checklists"
       users: [
-          name: 'LouManglass' 
-          avatar: 'https://avatars3.githubusercontent.com/u/241059?v=3&s=48'        
+          login: 'LouManglass' 
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/241059?v=3&s=48'        
       ]
       categoryIds: [6]
     ,
@@ -361,8 +361,8 @@ module.exports =
       domain: 'frogfeels'
       description: 'Draw some feelings, see what everyone else drew weekly'
       users: [
-          name: 'pketh'
-          avatar: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
+          login: 'pketh'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
       ]
       categoryIds: [6]
     ,
@@ -370,8 +370,8 @@ module.exports =
       domain: 'node-sass'
       description: "Demo project showing how to use Sass middleware"
       users: [
-          name: 'STRd6'
-          avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
+          login: 'STRd6'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]
       categoryIds: [1] 
     ,
@@ -379,8 +379,8 @@ module.exports =
       domain: 'hoodie'
       description: "Starter project using Hoodie"
       users: [
-          name: 'gr2m'
-          avatar: 'https://avatars2.githubusercontent.com/u/39992?v=3&s=48'
+          login: 'gr2m'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/39992?v=3&s=48'
       ]
       categoryIds: [1]   
     ,
@@ -388,8 +388,8 @@ module.exports =
       domain: 'font-awesome-export'
       description: "Creates the mouse cursor and image code for Font Awesome icons"
       users: [
-          name: 'olragon'
-          avatar: 'https://avatars2.githubusercontent.com/u/47636?v=3&s=48'
+          login: 'olragon'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/47636?v=3&s=48'
       ]
       categoryIds: [6]
     ,
@@ -397,8 +397,8 @@ module.exports =
       domain: 'hipchat-addon'
       description: "A fully functional HipChat add-on"
       users: [
-          name: 'rmanalan'
-          avatar: 'https://avatars2.githubusercontent.com/u/549?v=3&s=48'
+          login: 'rmanalan'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/549?v=3&s=48'
       ]
       categoryIds: [1]
     ,
@@ -406,8 +406,8 @@ module.exports =
       domain: 'processing-js'
       description: "A hypnotic processing.js sketch"
       users: [
-          name: 'JosephLaurino'
-          avatar: 'https://avatars2.githubusercontent.com/u/755681?v=3&s=48'
+          login: 'JosephLaurino'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/755681?v=3&s=48'
       ]
       categoryIds: [1]
     ,
@@ -420,8 +420,8 @@ module.exports =
       domain: 'freelancer-theme'
       description: "A one page Bootstrap website theme for freelancers"
       users: [
-          name: 'davidtmiller'
-          avatar: 'https://avatars3.githubusercontent.com/u/8400627?v=3&s=48'
+          login: 'davidtmiller'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/8400627?v=3&s=48'
       ]
       categoryIds: [4]  
     ,
@@ -429,8 +429,8 @@ module.exports =
       domain: 'creative-theme'
       description: "A one page Bootstrap website theme for portfolios and businesses"
       users: [
-          name: 'davidtmiller'
-          avatar: 'https://avatars3.githubusercontent.com/u/8400627?v=3&s=48'
+          login: 'davidtmiller'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/8400627?v=3&s=48'
       ]
       categoryIds: [4] 
     ,
@@ -453,8 +453,8 @@ module.exports =
       domain: 'circles-bouncing-off-lines'
       description: "Learn how to calculate the movement of circles as they bounce off lines"
       users: [
-        name: 'maryrosecook'
-        avatar: 'https://avatars3.githubusercontent.com/u/2716?v=3&s=48'
+        login: 'maryrosecook'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/2716?v=3&s=48'
       ]
       categoryIds: [4] 
     ,
@@ -472,8 +472,8 @@ module.exports =
       domain: 'messenger-bot'
       description: "A Facebook Messenger Platform bot template"
       users: [
-          name: 'fbsamples'
-          avatar: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
+          login: 'fbsamples'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
       ]      
       categoryIds: [7]
     ,  
@@ -481,8 +481,8 @@ module.exports =
       domain: 'chewy'
       description: "Give Alexa the power of the Force with this Wookieepedia powered Skill"
       users: [
-          name: 'stretchyboy'
-          avatar: 'https://avatars1.githubusercontent.com/u/229326?v=3&s=48'
+          login: 'stretchyboy'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/229326?v=3&s=48'
       ]
       categoryIds: [7]       
     ,
@@ -495,8 +495,8 @@ module.exports =
       domain: 'parse-server'
       description: "An example Parse Server project using Express"
       users: [
-          name: 'AndrewLane'
-          avatar: 'https://avatars3.githubusercontent.com/u/479232?v=3&s=48'
+          login: 'AndrewLane'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/479232?v=3&s=48'
       ]
       categoryIds: [3]
     ,
@@ -504,8 +504,8 @@ module.exports =
       domain: 'parse-dashboard'
       description: "A sample project implementing Parse Dashboard"
       users: [
-          name: 'AndrewLane'
-          avatar: 'https://avatars3.githubusercontent.com/u/479232?v=3&s=48'
+          login: 'AndrewLane'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/479232?v=3&s=48'
       ]
       categoryIds: [5]
     ,
@@ -518,8 +518,8 @@ module.exports =
       domain: 'node-twitter'
       description: "Full Twitter clone app using Express and MongoDB"
       users: [
-          name: 'vinitkumar'
-          avatar: 'https://avatars3.githubusercontent.com/u/537678?v=3&s=48'
+          login: 'vinitkumar'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/537678?v=3&s=48'
       ]
       categoryIds: [6]
     ,  
@@ -562,8 +562,8 @@ module.exports =
       domain: 'node-beginner'
       description: "A beginner's guide to Node.js and JavaScript. Get started by selecting 'View Code'"
       users: [
-        name: 'manuelkiessling'
-        avatar: 'https://avatars3.githubusercontent.com/u/206592?v=3&s=48'
+        login: 'manuelkiessling'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/206592?v=3&s=48'
       ]
       categoryIds: [4]
     ,  
@@ -601,8 +601,8 @@ module.exports =
       domain: 'nuxt-starter'
       description: "Editable live starter for nuxt.js"
       users: [
-        name: 'nuxt'
-        avatar: 'https://avatars3.githubusercontent.com/u/23360933?v=3&s=48'
+        login: 'nuxt'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/23360933?v=3&s=48'
       ]
       categoryIds: [1] 
     ,  
@@ -610,8 +610,8 @@ module.exports =
       domain: 'vue-hn'
       description: "Hacker News clone with server-side rendering, built w/ Vue 2.0, vue-router & vuex"
       users: [
-        name: 'vuejs'
-        avatar: 'https://avatars3.githubusercontent.com/u/6128107?v=3&s=48'
+        login: 'vuejs'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/6128107?v=3&s=48'
       ]
       categoryIds: [6] 
     ,  
@@ -619,8 +619,8 @@ module.exports =
       domain: 'vue-ssr'
       description: "Vue 2.0 Server-side Rendering using only ES5 with no build step"
       users: [
-        name: 'vuejs'
-        avatar: 'https://avatars3.githubusercontent.com/u/6128107?v=3&s=48'
+        login: 'vuejs'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/6128107?v=3&s=48'
       ]
       categoryIds: [1]
     ,  
@@ -628,8 +628,8 @@ module.exports =
       domain: 'fogbugz-js'
       description: "A lightweight, promise-based wrapper around the FogBugz API"
       users: [
-          name: 'bigdogwillfeed'
-          avatar: 'https://avatars3.githubusercontent.com/u/4453639?v=3&s=48'
+          login: 'bigdogwillfeed'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/4453639?v=3&s=48'
       ]
       categoryIds: [3]
     ,  
@@ -642,8 +642,8 @@ module.exports =
       domain: 'multiplayer-game'
       description: "Real-time multiplayer game using Node.js, Socket.io and HTML5 Canvas"
       users: [
-        name: 'underscorediscovery'
-        avatar: 'https://avatars3.githubusercontent.com/u/236374?v=3&s=48'
+        login: 'underscorediscovery'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/236374?v=3&s=48'
       ]
       categoryIds: [2,3]
     ,  
@@ -651,8 +651,8 @@ module.exports =
       domain: 'pixelatize'
       description: "Upload an image and '8-bit-ify' or pixelate or whatever you want to call it"
       users: [
-        name: 'jennschiffer'
-        avatar: 'https://avatars3.githubusercontent.com/u/341305?v=3&s=48'
+        login: 'jennschiffer'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/341305?v=3&s=48'
       ]
       categoryIds: [6] 
     ,  
@@ -660,8 +660,8 @@ module.exports =
       domain: 'space-invaders'
       description: "Learn about the game loop, collisions, input, drawing and sounds"
       users: [
-        name: 'maryrosecook'
-        avatar: 'https://avatars3.githubusercontent.com/u/2716?v=3&s=48'
+        login: 'maryrosecook'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/2716?v=3&s=48'
       ]
       categoryIds: [2] 
     ,  
@@ -669,8 +669,8 @@ module.exports =
       domain: 'voting'
       description: "A simple polling and voting app"
       users: [
-          name: 'hsubox'
-          avatar: 'https://avatars3.githubusercontent.com/u/470813?v=3&s=48'
+          login: 'hsubox'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/470813?v=3&s=48'
       ]
       categoryIds: [5]
     ,  
@@ -678,8 +678,8 @@ module.exports =
       domain: 'mini-breakout'
       description: "A simple Phaser-based Breakout clone"
       users: [
-          name: 'anildash'
-          avatar: 'https://avatars3.githubusercontent.com/u/84376?v=3&s=48'
+          login: 'anildash'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/84376?v=3&s=48'
       ]
       categoryIds: [2] 
     ,  
@@ -687,11 +687,11 @@ module.exports =
       domain: 'browser-quest'
       description: "A HTML5/JavaScript massively multiplayer online role-playing game"
       users: [
-          name: 'glecollinet'
-          avatar: 'https://avatars3.githubusercontent.com/u/364962?v=3&s=48'
+          login: 'glecollinet'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/364962?v=3&s=48'
         ,
-          name: 'sork'
-          avatar: 'https://avatars3.githubusercontent.com/u/184017?v=3&s=48'
+          login: 'sork'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/184017?v=3&s=48'
       ]
       categoryIds: [2]
     ,  
@@ -704,8 +704,8 @@ module.exports =
       domain: 'nondescript-dog'
       description: "Play multiplayer Snake over websockets"
       users: [
-          name: 'benoror'
-          avatar: 'https://avatars0.githubusercontent.com/u/119117?v=3&s=48'
+          login: 'benoror'
+          avatarUrl: 'https://avatars0.githubusercontent.com/u/119117?v=3&s=48'
       ]
       categoryIds: [2]
     ,
@@ -713,8 +713,8 @@ module.exports =
       domain: 'material-design'
       description: "A quick way to bootstrap a site or app with Material"
       users: [
-          name: 'ghaida'
-          avatar: 'https://avatars3.githubusercontent.com/u/342672?v=3&s=48'
+          login: 'ghaida'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/342672?v=3&s=48'
       ]
       categoryIds: [3]
     ,
@@ -722,11 +722,11 @@ module.exports =
       domain: 'coffee-talks'
       description: "Heartfelt dev talks for humans, using Airtable as the database"
       users: [
-          name: 'rosamcgee'
-          avatar: 'https://avatars0.githubusercontent.com/u/2496274?v=3&s=48'
+          login: 'rosamcgee'
+          avatarUrl: 'https://avatars0.githubusercontent.com/u/2496274?v=3&s=48'
         ,
-          name: 'pketh'
-          avatar: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
+          login: 'pketh'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
       ]
       categoryIds: [6]
     ,
@@ -734,8 +734,8 @@ module.exports =
       domain: 'peek-at-posts'
       description: "Slack slash command to peek at the last 3 posts on a WordPress site"
       users: [
-          name: 'tharsheblows'
-          avatar: 'https://avatars1.githubusercontent.com/u/1530368?v=3&s=48'
+          login: 'tharsheblows'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/1530368?v=3&s=48'
       ]
       categoryIds: [7,9]
     ,
@@ -743,8 +743,8 @@ module.exports =
       domain: 'botkit-slack'
       description: "Starter kit for creating a Botkit-powered Slack app"
       users: [
-          name: 'howdyai'
-          avatar: 'https://avatars1.githubusercontent.com/u/16260958?v=3&s=48'
+          login: 'howdyai'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/16260958?v=3&s=48'
       ]
       categoryIds: [7,9]
     ,
@@ -787,8 +787,8 @@ module.exports =
       domain: 'coffee-script-base'
       description: "CoffeeScript backend that compiles clientside code with CoffeeScript using Browserify middleware"
       users: [
-          name: 'STRd6'
-          avatar: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
+          login: 'STRd6'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]      
       categoryIds: [3]
     ,
@@ -811,8 +811,8 @@ module.exports =
       domain: 'livechat-sample-agent-app'
       description: "Sample app demonstrating how to build a LiveChat App Extension"
       users: [
-          name: 'livechat'
-          avatar: 'https://avatars2.githubusercontent.com/u/1615526?v=3&s=48'
+          login: 'livechat'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/1615526?v=3&s=48'
       ]      
       categoryIds: [3,5] 
     ,
@@ -820,8 +820,8 @@ module.exports =
       domain: 'hackathon-starter'
       description: "A boilerplate for Node.js web applications"
       users: [
-          name: 'sahat'
-          avatar: 'https://avatars2.githubusercontent.com/u/544954?v=3&s=48'
+          login: 'sahat'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/544954?v=3&s=48'
       ]      
       categoryIds: [3]     
   ]

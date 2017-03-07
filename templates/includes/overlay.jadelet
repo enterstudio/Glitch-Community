@@ -25,8 +25,8 @@ span
           .users
             - if @projectUsers()
               - @projectUsers().forEach (user) ->
-                .user(title=user.name data-tooltip=user.name data-tooltip-left=true)
-                  img(width=30 height=30 src=user.avatar style="background-color:#{user.color}")
+                .user(title=user.login data-tooltip=user.login data-tooltip-left=true)
+                  img(width=30 height=30 src=user.avatarUrl style="background-color:#{user.color}")
             - else
               .user(title="Glitch team" data-tooltip="Glitch team" data-tooltip-left=true)
                 img(width=30 height=30 src=defaultAvatar)
