@@ -29,8 +29,8 @@
 
 - [x] OVERLAY: convert overlay from qs to /~project-name (with no subpage name)
 - [x] OVERLAY: opening an overlay updates url with ~ link (even on subpages)
-- [ ] OVERLAY: add project avatar img to overlay somewhere
-- [ ] OVERLAY: users work in qs/direct link based overlays
+- [ ] OVERLAY: add project avatar img to overlay somewhere [blocked by api]
+- [x] OVERLAY: users work in qs/direct link based overlays
 
 
 - [ ] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)

@@ -99,14 +99,14 @@ module.exports = (application) ->
       source.cancel()
       source = CancelToken.source()
       history.replaceState(null, null, route)
-
+      
     getProjectDetails: (project) ->
       projectUrl = "https://api.gomix.com/projects/#{project.projectId}" # change to glitch later
       axios.get projectUrl,
         cancelToken: source.token
       .then (response) ->
         console.log response.data
-        application.overlayProjectAvatarUrl response.data
+        application.overlayProjectAvatarUrl response.data.avatar # still waiting on tim to finish adding avatar users to api
         # application.overlayProject response.data # makes all project users match api
       .catch (error) ->
         if axios.isCancel error
@@ -129,8 +129,6 @@ module.exports = (application) ->
         else
           console.error "getProjectReadme", error
           self.showReadmeError()
-
-
 
     mdToNode: (md) ->
       node = document.createElement 'span'

@@ -17,7 +17,7 @@ li
           span= " , "
         - else if currentUser != 0 and totalUsers > 0
           span= " and "
-        span.user-name=user.name
+        span.user-name=user.login
         - currentUser += 1
   - else
     .users
