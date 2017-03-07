@@ -25,7 +25,8 @@ module.exports = (application) ->
       application.overlayProject().users
 
     projectAvatar: ->
-      "https://cdn.gomix.com/project-avatar/#{self.projectId()}.png"
+      if self.projectId()
+        "https://cdn.gomix.com/project-avatar/#{self.projectId()}.png"
 
     showLink: -> 
       "https://#{self.projectDomain()}.gomix.me" # change to glitch later

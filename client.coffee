@@ -32,8 +32,8 @@ else if application.isCategoryUrl(normalizedRoute)
   categoryPage = CategoryPage(application, category).template()
   document.body.appendChild categoryPage
 
-else if application.isSearchUrl(normalizedRoute, querystring)
-  console.log "helloss"
+else if application.isSearchUrl(normalizedRoute, queryString)
+  document.body.append "supsupsup"
   
 else if application.isProjectUrl(normalizedRoute)
   projectDomain = application.removeFirstCharacter normalizedRoute
