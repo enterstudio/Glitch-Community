@@ -1,4 +1,4 @@
- # Glitch Community Projects
+# Glitch Community Projects
 
 Discover new reasons to code, remix cool and helpful projects made with Glitch.
 
@@ -28,5 +28,4 @@ TEMP: why rewrite in jadelet:
 - similar to editor reduces switching cost
 - more maintainable views
 - unit testable
-- can render views based on user LS values
-
+- can render views based on user LS values more conveniently

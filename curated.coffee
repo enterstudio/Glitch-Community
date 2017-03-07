@@ -14,8 +14,6 @@ superbowl = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FbigGam
 
 backgroundOpacity = 0.3
 
-# 🌱 See CURATORS.md for info on adding projects
-
 # luck-beam updates: 
 # - project 'name' to 'referenceName' (won't be printed on new community, instead will use api)
 # - url won't be used, will also be fetched from db based on id
