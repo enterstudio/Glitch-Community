@@ -39,8 +39,9 @@ else if application.isProjectUrl(normalizedRoute)
 
 else if application.isSearchUrl(normalizedRoute, queryString)
   # searchResults = application.search.getSearchResults normalizedRoute
-  query = queryString.q
-  searchPage = Search(application, query).template()
+  application.searchQuery queryString.q
+  searchPage = Search(application).template()
+  console.log searchPage
   document.body.appendChild searchPage
 
 else

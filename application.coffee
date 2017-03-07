@@ -27,6 +27,7 @@ self =
   signInPopVisibleOnRecentProjects: Observable false
   
   # search
+  searchQuery: Observable ""
   searchResultsProjects: Observable {}
   searchResultsUsers: Observable {}
 
