@@ -13,6 +13,7 @@ self =
   overlayVisible: Observable false
   overlayTemplate: Observable "" # video, project
   overlayProject: Observable {}
+  overlayProjectAvatarUrl: Observable ""
   overlayReadme: Observable ""
   overlayReadmeLoaded: Observable false
   overlayReadmeError: Observable false

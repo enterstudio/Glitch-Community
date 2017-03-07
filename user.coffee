@@ -65,7 +65,7 @@ module.exports = (application) ->
             avatarUrl: user.avatarUrl or ANON_AVATAR
             color: user.color
       return users
-        
+
   if localStorage.cachedUser
     self.getUserRecentProjects()
 

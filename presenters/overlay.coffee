@@ -24,8 +24,8 @@ module.exports = (application) ->
     projectUsers: ->
       application.overlayProject().users
 
-    projectAvatar: ->
-      application.overlayProject()
+    # projectAvatar: ->
+    #   application.overlayProject()
 
     showLink: -> 
       "https://#{self.projectDomain()}.gomix.me" # change to glitch later
@@ -68,6 +68,7 @@ module.exports = (application) ->
       application.overlayTemplate "project"
       application.overlayProject project
       self.getProjectReadme project
+      self.getProjectDetails project
       history.replaceState(null, null, "~#{project.domain}")
 
     showVideoOverlay: ->
@@ -99,6 +100,20 @@ module.exports = (application) ->
       source = CancelToken.source()
       history.replaceState(null, null, route)
 
+    getProjectDetails: (project) ->
+      projectUrl = "https://api.gomix.com/projects/#{project.projectId}" # change to glitch later
+      axios.get projectUrl,
+        cancelToken: source.token
+      .then (response) ->
+        console.log response.data
+        application.overlayProjectAvatarUrl response.data
+        # application.overlayProject response.data # makes all project users match api
+      .catch (error) ->
+        if axios.isCancel error
+          console.log 'request cancelled', project.domain
+        else
+          console.error "getProjectDetails", error
+
     getProjectReadme: (project) ->
       console.log 'self.projectId()', self.projectId()
       readmeUrl = "https://api.gomix.com/projects/#{project.projectId}/readme" # change to glitch later
@@ -115,18 +130,6 @@ module.exports = (application) ->
           console.error "getProjectReadme", error
           self.showReadmeError()
 
-    getProjectDetails: (project) ->
-      projectUrl = "https://api.gomix.com/projects/#{project.projectId}" # change to glitch later
-      axios.get projectUrl,
-        cancelToken: source.token
-      .then (response) ->
-        application.overlayReadmeLoaded true
-      .catch (error) ->
-        if axios.isCancel error
-          console.log 'request cancelled', project.domain
-        else
-          console.error "getProjectReadme", error
-          self.showReadmeError()
 
 
     mdToNode: (md) ->

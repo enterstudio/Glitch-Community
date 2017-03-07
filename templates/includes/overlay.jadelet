@@ -19,8 +19,8 @@ span
           .button.cta-button Remix your own
 
       section.pop-over-actions.markdown-container(class=@warningIfReadmeError)
-        - console.log "🐒", @projectAvatar()
-        - #img(src=@projectAvatar)
+        - #console.log "🐒", @projectAvatar()
+        - ##img(src=@projectAvatar)
         .project-users
           .users
             - if @projectUsers()
