@@ -24,6 +24,8 @@ module.exports = (application) ->
     projectUsers: ->
       application.overlayProject().users
 
+      
+      
     showLink: -> 
       "https://#{self.projectDomain()}.gomix.me" # change to glitch later
 
@@ -90,8 +92,6 @@ module.exports = (application) ->
       .catch (error) ->
         console.error "showProjectOverlayIfPermalink", error
         self.showReadmeError()
-
-    
           
     hideOverlay: ->
       application.overlayVisible false

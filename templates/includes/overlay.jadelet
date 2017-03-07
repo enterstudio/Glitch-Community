@@ -19,6 +19,7 @@ span
           .button.cta-button Remix your own
 
       section.pop-over-actions.markdown-container(class=@warningIfReadmeError)
+        img(src=@projectAvatar)
         .project-users
           .users
             - if @projectUsers()
