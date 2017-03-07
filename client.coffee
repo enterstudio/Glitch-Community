@@ -16,16 +16,12 @@ normalizedRoute = normalizeSlashes route
 console.log "route is #{normalizedRoute}"
 console.log "query strings are", queryString
 console.log "application is", application
-
-# temp:
 console.log "🌈 isSignedIn", application.user.isSignedIn()
 
-# client-side routing
+# client-side routing:
 
 if normalizedRoute is ""
   document.body.appendChild index
-  # comment out
-  # application.overlay.showProjectOverlayIfPermalink queryString
 
 else if application.isCategoryUrl(normalizedRoute)
   category = application.getCategoryFromUrl normalizedRoute
@@ -41,15 +37,10 @@ else if application.isProjectUrl(normalizedRoute)
   application.overlay.showProjectOverlayForProject projectDomain
 
 else if application.isUserProfileUrl(normalizedRoute)
-  document.body.append 'hello'
+  document.body.append 'hello im a @profile page'
   
-
-# else if first char is ~
-  # application.overlay.showProjectOverlay projectDomain
-  
-  
-# else if first char is @
-  # profile pages
+else
+  document.body.append '404 page goes here'
 
 # document.addEventListener "keydown", (event) ->
 #   application.closeAllPopOvers event
@@ -59,8 +50,7 @@ else if application.isUserProfileUrl(normalizedRoute)
 document.addEventListener "click", (event) ->
   globalclick event
 document.addEventListener "touchstart", (event) ->
-  globalclick event
-  
+  globalclick event  
 globalclick = (event) ->
   unless $(event.target).closest('.pop-over, .opens-pop-over, .overlay').length
     application.closeAllPopOvers()
