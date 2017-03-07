@@ -11,7 +11,7 @@ IndexTemplate = require "./templates/pages/index"
 index = IndexTemplate application
 
 CategoryPage = require "./presenters/category-page"
-SearchPage = require "./presenters/search-page"
+Search = require "./presenters/search"
 
 normalizedRoute = normalizeSlashes route
 console.log "route is #{normalizedRoute}"
@@ -34,12 +34,13 @@ else if application.isProjectUrl(normalizedRoute)
   document.body.appendChild index
   application.overlay.showProjectOverlayForProject projectDomain
 
-else if application.isUserProfileUrl(normalizedRoute)
-  document.body.append 'hello im a @profile page'
+# else if application.isUserProfileUrl(normalizedRoute)
+#   document.body.append '🙋 hello im a @profile page'
 
 else if application.isSearchUrl(normalizedRoute, queryString)
-  searchResults = application.getSearchResults normalizedRoute
-  searchPage = SearchPage(application, searchResults).template()
+  # searchResults = application.search.getSearchResults normalizedRoute
+  query = queryString.q
+  searchPage = Search(application, query).template()
   document.body.appendChild searchPage
 
 else

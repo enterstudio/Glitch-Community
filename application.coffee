@@ -6,6 +6,7 @@ tracking = require "./tracking"
 user = require "./user"
 
 Overlay = require "./presenters/overlay"
+Search = require "./presenters/search"
 
 self = 
 
@@ -91,5 +92,6 @@ self =
 self.overlay = Overlay self
 self.tracking = tracking self
 self.user = user self
+self.search = Search self
 
 module.exports = self
