@@ -5,20 +5,24 @@
 - OverlayPresenter = require "../../presenters/overlay"
 - Footer = require "../includes/footer"
 
-include includes/head
+-#    searchQuery: application.searchQuery()
+-#    searchResultsUsers: application.searchResultsUsers()    
+-#    searchResultsProjects: application.searchResultsProjects()
 
 content
   = HeaderPresenter(this).template
   
   main.search-results(role="main")
     article.projects
-      - if results.length
+      - console.log "👺", @searchResultsProjects()
+
+
+      - if @searchResultsProjects()
         ul.projects-container
-          - results.forEach (project) ->
+          - @searchResultsProjects().forEach (project) ->
             - category = {}
             - # category.color = '#E5E5E5'
             - # project = result.original
-            include includes/project
             - @projects.forEach (project) ->
               = project.template
 
