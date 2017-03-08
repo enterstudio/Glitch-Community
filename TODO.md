@@ -42,10 +42,10 @@
 
 - [ ] ??port image links to the new project (because will be fully replacing the current community)
 
-- [ ] CURATED_MODEL: manually merge in latest prod model/curated of projects
+- [x] CURATED_MODEL: manually merge in latest prod model/curated of projects
 - [x] CURATED_MODEL: ?remove unused avatarNeedsBackgorund/legibility bool from curated
-- [ ] collection cats, to collections (ie art gaallery, event thing etc)
-- [ ] CURATED_MODEL: move partner categories into partners team beta. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
+- [x] collection cats, to collections (ie art gaallery, event thing etc)
+- [x] CURATED_MODEL: move partner categories into partners team beta. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
 
 - [x] AUTH: add fb/gh sign in strategies in popover (inside header)
 - [ ] AUTH: finish multi sign in oauth/and new user localstorage.cacheduser like editor
@@ -62,7 +62,7 @@
 ## phase 2
 
 - [ ] getting recent projects , from teh recent files ls data is kinda flakey, maybe should move that to a user.getUser info api call instead
-- [ ] PARTNER: team beta?: replace special partner category page + formatting with profile page beta (/@slack)
+- [ ] PARTNER page: beta for profile page: replace special partner category page + formatting with profile page beta (/@slack)
 - [ ] get `application` methods into console, like editor
 - [ ] hands raised mockup: show some projects that currently need help
 - [ ] @PROFILE: profile pages https://fogcreek.wake.com/474
