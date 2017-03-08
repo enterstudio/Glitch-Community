@@ -1,6 +1,8 @@
 # CURRENTLY UNCALLED
+# rethink our ga strategy:
+# https://fogcreek.slack.com/archives/glitch/p1488988341555165
 
-# TODO
+# implementation TODO
 # this is too clever, i'm gonna tear this out 
 # in favor of the previous approach of a bunch of ga sending methods
 # and adding the global ga object in index.html the classic way

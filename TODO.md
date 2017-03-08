@@ -38,7 +38,6 @@
 
 - [ ] social meta tags/imgs in index.html
 
-- [ ] GA: event tracking 
 
 - [ ] ??port image links to the new project (because will be fully replacing the current community)
 
@@ -47,13 +46,14 @@
 - [x] collection cats, to collections (ie art gaallery, event thing etc)
 - [x] CURATED_MODEL: move partner categories into partners team beta. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
 
-- [x] AUTH: add fb/gh sign in strategies in popover (inside header)
-- [ ] AUTH: finish multi sign in oauth/and new user localstorage.cacheduser like editor
-- [ ] AUTH: pass that new user to editor
 
 - [ ] pattern background instead of table for default .profile. maybe something glitchy, something earthboundy/cafe-club? tiling
 
 - [ ] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found) set from `client.coffee`?
+
+- [x] AUTH: add fb/gh sign in strategies in popover (inside header)
+- [ ] AUTH: finish multi sign in oauth/and new user localstorage.cacheduser like editor
+- [ ] AUTH: pass that new user to editor
 
 - [ ] PERF: client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
 - [ ] PERF: compress css
@@ -68,6 +68,9 @@
 - [ ] @PROFILE: profile pages https://fogcreek.wake.com/474
 - [ ] @PROFILE: profile hover pop https://fogcreek.wake.com/476
 - [ ] add accessibility (aria, etc.)
+
+- [ ] GA: event tracking 
+
 
 ## phase 3
 
