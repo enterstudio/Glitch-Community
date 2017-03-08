@@ -17,11 +17,12 @@
       - if @searchResultsProjects().length
         - console.log "👺", @searchResultsProjects()
         ul.projects-container
+          - context = @
           - @searchResultsProjects().forEach (project) ->
-            - # category = {}
-            - # @projects.forEach (project) ->
             - console.log "🚒", project
-            = project.template
+            - # = project.template
+            = project(context, project, {}).template
+
 
       - else
         p no results

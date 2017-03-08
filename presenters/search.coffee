@@ -10,13 +10,13 @@ module.exports = (application) ->
     application: application
     
     template: ->
-      projectElements = application.projectsInSelectedCategory(category.id).map (project) ->
-        ProjectPresenter(application, project, category)
+      # projectElements = application.searchResultsProjects.forEach (project) ->
+      #   ProjectPresenter(application, project, {})
 
       self.searchUsers()
       self.searchProjects()
       templateModel = Object.assign {}, application
-      templateModel.projects = projectElements
+      # templateModel.projects = projectElements
       SearchPageTemplate templateModel
 
     searchProjects: ->
