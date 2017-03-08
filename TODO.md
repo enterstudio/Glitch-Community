@@ -43,8 +43,9 @@
 - [ ] ??port image links to the new project (because will be fully replacing the current community)
 
 - [ ] CURATED_MODEL: manually merge in latest prod model/curated of projects
-- [ ] CURATED_MODEL: ?remove unused avatarNeedsBackgorund/legibility bool from curated
-- [ ] CURATED_MODEL: move partner categories into a seperate thing called collectinos. remove listedonhomepage bool and check. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
+- [x] CURATED_MODEL: ?remove unused avatarNeedsBackgorund/legibility bool from curated
+- [ ] collection cats, to collections (ie art gaallery, event thing etc)
+- [ ] CURATED_MODEL: move partner categories into partners team beta. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
 
 - [x] AUTH: add fb/gh sign in strategies in popover (inside header)
 - [ ] AUTH: finish multi sign in oauth/and new user localstorage.cacheduser like editor
