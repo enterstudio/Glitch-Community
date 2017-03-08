@@ -14,17 +14,17 @@
   
   main.search-results(role="main")
     
-    - # todo hiddenUnlessUsers and users list
+    - # todo article.users
   
     article.projects
-        ul.projects-container(class=@hiddenUnlessProjects)
+        ul.projects-container
           - context = @
           - @searchResultsProjects().forEach (project) ->
             = ProjectPresenter(context, project, {}).template
 
-    span(class=@hiddenIfSearchResultsLoaded)
+    span(class=@self.hiddenIfSearchResultsLoaded)
       = Loader(this)
-    span(class=@hiddenIfNoResults)
+    span(class=@self.hiddenIfNoResults)
       p no results
       img(src=cat)
 

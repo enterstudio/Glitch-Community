@@ -13,6 +13,7 @@ module.exports = (application) ->
       self.searchUsers()
       self.searchProjects()
       templateModel = Object.assign {}, application
+      templateModel.self = self
       SearchPageTemplate templateModel
 
     searchProjects: ->
@@ -39,16 +40,21 @@ module.exports = (application) ->
           console.error "searchUsers", error
 
     isSearchResultsLoaded: ->
+      console.log "⏰", application.searchResultsProjectsLoaded() 
       true if application.searchResultsProjectsLoaded() and application.searchResultsUsersLoaded()
     
-    hiddenIfSearchResultsLoaded: ->
-      'hidden' if self.isSearchResultsLoaded()
+    isSearchResultsProjects: ->
+      true if application.searchResultsProjects().length
 
-    hiddenUnlessProjects: ->
-      'hidden' unless application.searchResultsProjectsLoaded() and application.searchResultsProjects().length
+    isSearchResultsUsers: ->
+      true if application.searchResultsUsers().length      
+
+    hiddenIfSearchResultsLoaded: ->
+      console.log '🦋'
+      'hidden' if self.isSearchResultsLoaded()
       
     hiddenUnlessUsers: ->
-      'hidden' unless application.searchResultsUsersLoaded() and application.searchResultsUsers().length
+      'hidden' unless application.searchResultsUsersLoaded() and self.isSearchResultsUsers()
 
     hiddenIfNoResults: ->
-      'hidden' if self.isSearchResultsLoaded() and ()
+      'hidden' if self.isSearchResultsLoaded() and !self.isSearchResultsProjects() and !self.isSearchResultsUsers()
