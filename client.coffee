@@ -11,8 +11,8 @@ IndexTemplate = require "./templates/pages/index"
 index = IndexTemplate application
 CategoryPage = require "./presenters/category-page"
 Search = require "./presenters/search"
-error404Template = require "./templates/pages/404"
-error404 = error404Template application
+errorPageTemplate = require "./templates/pages/error-page"
+errorPage = errorPageTemplate application
 
 
 normalizedRoute = normalizeSlashes route
@@ -47,7 +47,7 @@ else if application.isSearchUrl(normalizedRoute, queryString)
   document.body.appendChild searchPage
 
 else
-  document.body.appendChild error404
+  document.body.appendChild errorPage
   # document.innerHTML = data.toString()
   # document.body.append '404 page goes here'
 
