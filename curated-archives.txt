@@ -53,6 +53,19 @@
       categoryIds: [7,9]
     ,
 
+    ,
+      projectId: '0e7166c0-de2d-4965-8448-0e932e9f7efa'
+      editorUrl: 'impossible-salmon'
+      likes: 15
+      remixes: null
+      description: "A Slack slash command handler which will help you to quickly access and create data stored in Contentful"
+      users: [
+          name: 'stefanjudis'
+          avatar: 'https://avatars1.githubusercontent.com/u/962099?v=3&s=48'
+      ]
+      categoryId: [7]
+      partnerIds: [1]
+
 
 # dropped/niche projects
       projectId: 'cb02d9ae-61ed-4053-b465-d6e2e9656ac3'
