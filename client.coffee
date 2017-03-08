@@ -47,9 +47,9 @@ else if application.isSearchUrl(normalizedRoute, queryString)
 
 else
   document.body.appendChild errorPage
-  # document.innerHTML = data.toString()
-  # document.body.append '404 page goes here'
 
+
+  
 # document.addEventListener "keydown", (event) ->
 #   application.closeAllPopOvers event
 

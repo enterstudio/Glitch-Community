@@ -21,7 +21,8 @@ backgroundOpacity = 0.3
 # - changed featured properties to match new project ones
 # - removed projectAvatarNeedsBackground. model shouldn't contain styling cues. if the avatar image isn't legible, we'll make a better one
 # - removed curated names for project (instead using domains only), using project names is more predictable and trains the user on how to name their own projects
-# - ported over latest prod (mar 7)
+# - ported over latest prod into this new model (on mar 7)
+# - todo: moved partner collections into team profile pages beta (add a partners section to parse w project domains(/id?) array to api fetch against)
 
 module.exports =
 
@@ -130,22 +131,22 @@ module.exports =
       id: 8
       listedOnHomepage: true
     ,
-      name: 'Slack Apps'
-      url: 'slack'
-      img: slack
-      color: "#FCF3AF"
-      description: "Bots, slash commands and apps that integrate with Slack."
-      background: "rgba(252, 243, 174, #{backgroundOpacity})"
-      id: 9
-      partnerCollection: true
-      partner: [
-        homepage: ""
-        blog: "https://medium.com/slack-developer-blog"
-        docs: ""
-        github: ""
-        twitter: ""
-      ]
-    ,
+    #   name: 'Slack Apps'
+    #   url: 'slack'
+    #   img: slack
+    #   color: "#FCF3AF"
+    #   description: "Bots, slash commands and apps that integrate with Slack."
+    #   background: "rgba(252, 243, 174, #{backgroundOpacity})"
+    #   id: 9
+    #   partnerCollection: true
+    #   partner: [
+    #     homepage: ""
+    #     blog: "https://medium.com/slack-developer-blog"
+    #     docs: ""
+    #     github: ""
+    #     twitter: ""
+    #   ]
+    # ,
       name: 'Big Game Apps'
       url: 'big-game'
       img: superbowl

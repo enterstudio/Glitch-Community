@@ -35,6 +35,7 @@
 - [-] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 
 - [x] 404 page
+
 - [ ] social meta tags/imgs in index.html
 
 - [ ] GA: event tracking 
@@ -51,32 +52,31 @@
 
 - [ ] pattern background instead of table for default .profile. maybe something glitchy, something earthboundy/cafe-club? tiling
 
-- [ ] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found)
+- [ ] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found) set from `client.coffee`?
 
-- client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
+- [ ] client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
 
 ## phase 2
 
 - [ ] getting recent projects , from teh recent files ls data is kinda flakey, maybe should move that to a user.getUser info api call instead
-
-- PARTNER: [ ] team beta?: replace special partner category page + formatting with profile page beta (/@slack)
-
-- [ ] add accessibility (aria, etc.)
+- [ ] PARTNER: team beta?: replace special partner category page + formatting with profile page beta (/@slack)
 - [ ] get `application` methods into console, like editor
-- [ ] browserify stuff
 - [ ] hands raised mockup: show some projects that currently need help
-- [ ] user detection ls
-- [ ] start work on your-profile section and profile hover pop..
-- [ ] simplify curation data requirements based on api and gh calls
-- [ ] quick search (based on results list), with 'all results' as the bottom option
+- [ ] @PROFILE: profile pages https://fogcreek.wake.com/474
+- [ ] @PROFILE: profile hover pop https://fogcreek.wake.com/476
+- [ ] add accessibility (aria, etc.)
 
 ## phase 3
 
 - [ ] move curation data to a db or service (airtable/sheets + caching seems okay)
 
-### phase 4 teams
+### phase 4
 
 - [ ] unit tests (application, presenter methods)
+
+### phase 5 polish
+
+- [ ] quick search (based on results list), with 'all results' as the bottom option
 
 ---------------------
 
