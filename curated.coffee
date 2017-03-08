@@ -57,81 +57,8 @@ module.exports =
           avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
   ] 
-
-  categories: -> [
-      name: 'Hello Worlds'
-      url: 'hello-worlds'
-      img: computer
-      color: "#FCF3AF"
-      description: "Experiment with technologies and libraries by remixing these sample projects."
-      background: "rgba(252, 243, 174, #{backgroundOpacity})"
-      id: 1
-      listedOnHomepage: true
-    ,
-      name: 'Games'
-      url: 'games'
-      img: tetris
-      color: "#FBA058"
-      description: "Make your own cool games. Get that idea out of your head and into the world."
-      background: "rgba(251, 159, 88, #{backgroundOpacity})"
-      id: 2
-      listedOnHomepage: true      
-    ,
-      name: 'Building Blocks'
-      url: 'building-blocks'
-      img: shapes
-      color: "#31cdd4"
-      description: "Databases, emailing and more. The bread and butter basics of modern web dev."
-      background: "rgba(49, 204, 212, #{backgroundOpacity})"
-      id: 3
-      listedOnHomepage: true      
-    ,
-      name: 'Learn to Code'
-      url: 'learn-to-code'
-      img: education
-      color: "#FFD1C6"
-      description: "Learn by doing, then breaking, then doing some more. You got this!"
-      background: "rgba(255, 209, 198, #{backgroundOpacity})"
-      id: 4
-      listedOnHomepage: true      
-    ,
-      name: 'Tools for Work'
-      url: 'tools-for-work'
-      img: coffee
-      color: "#70a4d8"
-      description: "Every business is a snowflake. Build and customize your own tools and integrations."
-      background: "rgba(112, 164, 216, #{backgroundOpacity})"
-      id: 5
-      listedOnHomepage: true      
-    ,
-      name: 'Community Picks'
-      url: 'community-picks'
-      img: diamond
-      color: "#9DE0FC"
-      description: "Community submissions that do the flyest things ✨"
-      background: "rgba(156, 224, 252, #{backgroundOpacity})"
-      id: 6
-      listedOnHomepage: true      
-    ,
-      name: 'Handy Bots'
-      url: 'handy-bots'
-      img: robot
-      color: "#C9BFF4"
-      description: "Build helpful tools, meme generators, or Westworld. Your bots have your back."
-      background: "rgba(201, 191, 244, #{backgroundOpacity})"
-      id: 7
-      listedOnHomepage: true      
-    ,
-      name: 'Hardware'
-      url: 'hardware'
-      img: hardware
-      color: "rgb(48, 220, 166)"
-      description: "Connect your gadgets and gizmos to the world – or your kitchen."
-      background: "rgba(48, 220, 166, #{backgroundOpacity})"
-      id: 8
-      listedOnHomepage: true
-    ,
-    #   name: 'Slack Apps'
+  partners: -> [
+        #   name: 'Slack Apps'
     #   url: 'slack'
     #   img: slack
     #   color: "#FCF3AF"
@@ -147,6 +74,10 @@ module.exports =
     #     twitter: ""
     #   ]
     # ,
+
+  ]
+
+  collections: -> [
       name: 'Big Game Apps'
       url: 'big-game'
       img: superbowl
@@ -154,6 +85,73 @@ module.exports =
       description: "From gridiron to your editor, create apps for the big game."
       background: "rgba(252, 243, 174, #{backgroundOpacity})"
       id: 10
+
+  ]
+
+  categories: -> [
+      name: 'Hello Worlds'
+      url: 'hello-worlds'
+      img: computer
+      color: "#FCF3AF"
+      description: "Experiment with technologies and libraries by remixing these sample projects."
+      background: "rgba(252, 243, 174, #{backgroundOpacity})"
+      id: 1
+    ,
+      name: 'Games'
+      url: 'games'
+      img: tetris
+      color: "#FBA058"
+      description: "Make your own cool games. Get that idea out of your head and into the world."
+      background: "rgba(251, 159, 88, #{backgroundOpacity})"
+      id: 2
+    ,
+      name: 'Building Blocks'
+      url: 'building-blocks'
+      img: shapes
+      color: "#31cdd4"
+      description: "Databases, emailing and more. The bread and butter basics of modern web dev."
+      background: "rgba(49, 204, 212, #{backgroundOpacity})"
+      id: 3
+    ,
+      name: 'Learn to Code'
+      url: 'learn-to-code'
+      img: education
+      color: "#FFD1C6"
+      description: "Learn by doing, then breaking, then doing some more. You got this!"
+      background: "rgba(255, 209, 198, #{backgroundOpacity})"
+      id: 4
+    ,
+      name: 'Tools for Work'
+      url: 'tools-for-work'
+      img: coffee
+      color: "#70a4d8"
+      description: "Every business is a snowflake. Build and customize your own tools and integrations."
+      background: "rgba(112, 164, 216, #{backgroundOpacity})"
+      id: 5
+    ,
+      name: 'Community Picks'
+      url: 'community-picks'
+      img: diamond
+      color: "#9DE0FC"
+      description: "Community submissions that do the flyest things ✨"
+      background: "rgba(156, 224, 252, #{backgroundOpacity})"
+      id: 6
+    ,
+      name: 'Handy Bots'
+      url: 'handy-bots'
+      img: robot
+      color: "#C9BFF4"
+      description: "Build helpful tools, meme generators, or Westworld. Your bots have your back."
+      background: "rgba(201, 191, 244, #{backgroundOpacity})"
+      id: 7
+    ,
+      name: 'Hardware'
+      url: 'hardware'
+      img: hardware
+      color: "rgb(48, 220, 166)"
+      description: "Connect your gadgets and gizmos to the world – or your kitchen."
+      background: "rgba(48, 220, 166, #{backgroundOpacity})"
+      id: 8
   ]
 
   projects: -> [

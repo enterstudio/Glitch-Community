@@ -43,8 +43,7 @@ self =
 
   categories: ->
     homepageCategories = _.filter curated.categories(), (category) ->
-      if category.listedOnHomepage
-        category
+      category
     _.shuffle homepageCategories
 
   projectsInCategory: (categoryId) ->
