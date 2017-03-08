@@ -11,6 +11,7 @@ section.profile
             img(src=@userAvatarImage)
       a(href="https://glitch.com/edit")
         button.cta-button Start Coding
+
     article.projects
       ul.projects-container
         - @projects().forEach (project) ->
