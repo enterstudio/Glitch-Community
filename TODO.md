@@ -58,6 +58,7 @@
 - [ ] PERF: client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
 - [ ] PERF: compress css
 - [ ] PERF: sourcemaps
+- [ ] is the webfont redownloading each time?
 
 ## phase 2
 
