@@ -39,21 +39,23 @@ module.exports = (application) ->
         .catch (error) ->
           console.error "searchUsers", error
 
-    isSearchResultsLoaded: ->
+    searchResultsIsLoaded: ->
       true if application.searchResultsProjectsLoaded() and application.searchResultsUsersLoaded()
 
-    isSearchResultsProjects: ->
+    searchResultsHasProjects: ->
       true if application.searchResultsProjects().length
 
-    isSearchResultsUsers: ->
+    searchResultsHasUsers: ->
       true if application.searchResultsUsers().length      
 
     hiddenIfSearchResultsLoaded: ->
-      console.log '🦋'
-      'hidden' if self.isSearchResultsLoaded()
+      'hidden' if self.searchResultsIsLoaded()
       
     hiddenUnlessUsers: ->
       'hidden' unless application.searchResultsUsersLoaded() and self.isSearchResultsUsers()
 
-    hiddenIfNoResults: ->
-      'hidden' if self.isSearchResultsLoaded() and !self.isSearchResultsProjects() and !self.isSearchResultsUsers()
+    hiddenUnlessResults: ->
+      console.log 'searchResultsHasProjects', self.searchResultsHasProjects()
+      console.log 'searchResultsHasUsers', self.searchResultsHasUsers()      
+      'hidden' unless self.searchResultsHasProjects() and self.searchResultsHasUsers()
+

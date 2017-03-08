@@ -24,7 +24,7 @@
 
     span(class=@self.hiddenIfSearchResultsLoaded)
       = Loader(this)
-    span(class=@self.hiddenIfNoResults)
+    span(class=@self.hiddenUnlessResults)
       p no results
       img(src=cat)
 
