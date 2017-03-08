@@ -18,11 +18,10 @@
         - console.log "👺", @searchResultsProjects()
         ul.projects-container
           - @searchResultsProjects().forEach (project) ->
-            - category = {}
-            - # category.color = '#E5E5E5'
-            - # project = result.original
-            - @projects.forEach (project) ->
-              = project.template
+            - # category = {}
+            - # @projects.forEach (project) ->
+            - console.log "🚒", project
+            = project.template
 
       - else
         p no results
