@@ -15,7 +15,7 @@
 - [x] BUG: 'overlay template' leaking/overrendering
 - [x] figure out routes (`/community` and `/` go to the same place)
 - [x] create a trackEvent GA abstraction (use editor gtm w category? mirror event_tracking.coffee)
-- [x] replace ga track-events, w one global onclick handler which logs things w data ga tags 
+- [x] replace ga track-events, w one global onclick handler which logs things w data ga tags
 - [x] modularize tracking
 - [x] opening overlay updates url bar
 - [x] if query string containing project name, open project overlay to that name (linkable lightboxes)
@@ -39,13 +39,11 @@
 - [x] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 - [x] BUG in search , where clicking project, hitting reload, 404s
 
-
-- [ ] social meta tags/imgs in index.html
 - [ ] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found) set from `client.coffee`?
 
+- [ ] social meta tags/imgs in index.html
 
 - [ ] pattern background instead of table for default .profile. maybe something glitchy, something earthboundy/cafe-club? tiling
-
 
 - [ ] PERF: client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
 - [ ] PERF: compress css

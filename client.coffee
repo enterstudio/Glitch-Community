@@ -39,10 +39,8 @@ else if application.isProjectUrl(normalizedRoute)
 #   document.body.append '🙋 hello im a @profile page'
 
 else if application.isSearchUrl(normalizedRoute, queryString)
-  # searchResults = application.search.getSearchResults normalizedRoute
   application.searchQuery queryString.q
   searchPage = Search(application).template()
-  console.log searchPage
   document.body.appendChild searchPage
 
 else

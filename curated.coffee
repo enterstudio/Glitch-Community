@@ -80,7 +80,7 @@ module.exports =
       # id: 9
       id: 1
     # ,
-    # projects reference with 'partnerId'
+    # projects reference with 'partnerIds'
   ]
 
   # TODO work w gareth to design/make a collection page. distinct from category page.
@@ -97,7 +97,7 @@ module.exports =
       color: "#FCF3AF"
       description: "From gridiron to your editor, create apps for the big game."
       background: "rgba(252, 243, 174, #{backgroundOpacity})"
-      id: 1 # projects reference with 'collectionId'
+      id: 1 # projects reference with 'collectionIds'
   ]
 
   categories: -> [
@@ -812,17 +812,17 @@ module.exports =
       id: '55dbb2a4-94d9-434f-9dcc-1432c975de1c'
       domain: 'superbowl-squares'
       description: "Start your own Football Squares pool with friends and colleagues"
-      categoryIds: [10]
+      collectionIds: [1]
     ,
       id: '902cbaf0-e4e9-47c0-80b2-fe7ef583d679'
       domain: 'big-game-bingo'
       description: "Watch the big game for the ads? Embrace the clichés and play Big Game Bingo!"
-      categoryIds: [10]
+      collectionIds: [1]
     ,
       id: '56e665e5-e0a8-46c8-9476-8d9b731117dd'
       domain: 'quarterback-quiz'
       description: "Test your Football knowledge with this Quarterback quiz"
-      categoryIds: [10]
+      collectionIds: [1]
     ,
       id: '514be323-4add-49c4-806d-e7f8fc27e933'
       domain: 'livechat-sample-agent-app'

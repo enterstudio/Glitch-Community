@@ -14,12 +14,11 @@
 
   main.search-results(role="main")
 
-    - # todo article.users
+    - # TODO article.users
 
     article.projects
         ul.projects-container
           - context = @
-          - console.log "🐸", @searchResultsProjects()[0]
           - @searchResultsProjects().forEach (project) ->
             = ProjectPresenter(context, project, {}).template
 
