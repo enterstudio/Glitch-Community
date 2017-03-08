@@ -21,6 +21,7 @@ backgroundOpacity = 0.3
 # - changed featured properties to match new project ones
 # - removed projectAvatarNeedsBackground. model shouldn't contain styling cues. if the avatar image isn't legible, we'll make a better one
 # - removed curated names for project (instead using domains only), using project names is more predictable and trains the user on how to name their own projects
+# - ported over latest prod (mar 7)
 
 module.exports =
 

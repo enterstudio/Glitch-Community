@@ -34,7 +34,7 @@
 
 - [-] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 
-- [ ] 404 page
+- [x] 404 page
 - [ ] social meta tags/imgs in index.html
 
 - [ ] GA: event tracking 
