@@ -94,13 +94,17 @@ module.exports = (application) ->
         console.error "showProjectOverlayIfPermalink", error
         self.showReadmeError()
 
+    newRoute: ->
+      if application.searchQuery()
+        route + "?q=#{application.searchQuery()}"
+      else
+        route
+        
     hideOverlay: ->
       application.overlayVisible false
       source.cancel()
       source = CancelToken.source()
-      console.log "🇨🇦", application.searchQuery()
-      new
-      history.replaceState(null, null, route)
+      history.replaceState(null, null, self.newRoute())
       
     getProjectReadme: (project) ->
       readmeUrl = "https://api.gomix.com/projects/#{self.projectId()}/readme" # change to glitch later

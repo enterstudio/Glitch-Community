@@ -22,6 +22,7 @@ module.exports = (application) ->
       searchProjectsUrl = "https://api.gomix.com/projects/search?q=#{query}"
       axios.get searchProjectsUrl
         .then (response) ->
+          console.log "😽", response.data[0]
           application.searchResultsProjects response.data
           application.searchResultsProjectsLoaded true
         .catch (error) ->

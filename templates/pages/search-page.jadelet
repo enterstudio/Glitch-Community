@@ -19,6 +19,7 @@
     article.projects
         ul.projects-container
           - context = @
+          - console.log "🐸", @searchResultsProjects()[0]
           - @searchResultsProjects().forEach (project) ->
             = ProjectPresenter(context, project, {}).template
 
