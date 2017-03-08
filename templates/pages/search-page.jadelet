@@ -4,7 +4,7 @@
 - HeaderPresenter = require "../../presenters/header"
 - OverlayPresenter = require "../../presenters/overlay"
 - Footer = require "../includes/footer"
-
+- ProjectPresenter = require "../../presenters/project"
 -#    searchQuery: application.searchQuery()
 -#    searchResultsUsers: application.searchResultsUsers()    
 -#    searchResultsProjects: application.searchResultsProjects()
@@ -21,7 +21,7 @@
           - @searchResultsProjects().forEach (project) ->
             - console.log "🚒", project
             - # = project.template
-            = project(context, project, {}).template
+            = ProjectPresenter(context, project, {}).template
 
 
       - else
