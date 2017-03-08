@@ -50,11 +50,10 @@ module.exports = (application) ->
 
     hiddenIfSearchResultsLoaded: ->
       'hidden' if self.searchResultsIsLoaded()
-      
+  
     hiddenUnlessUsers: ->
       'hidden' unless application.searchResultsUsersLoaded() and self.isSearchResultsUsers()
 
     hiddenIfNoResults: ->
-      console.log '🦋', self.searchResultsHasProjects() # true
-      console.log "🐛", self.searchResultsHasUsers() #true
-      'hidden' if self.searchResultsIsLoaded() and self.searchResultsHasProjects() or self.searchResultsHasUsers()
+      'hidden' if (self.searchResultsHasProjects() or self.searchResultsHasUsers()) or !self.searchResultsIsLoaded()
+

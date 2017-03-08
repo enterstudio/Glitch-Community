@@ -11,11 +11,11 @@
 
 .content.search-results
   = HeaderPresenter(this).template
-  
+
   main.search-results(role="main")
-    
+
     - # todo article.users
-  
+
     article.projects
         ul.projects-container
           - context = @
@@ -27,7 +27,6 @@
     span(class=@self.hiddenIfNoResults)
       p no results
       img(src=cat)
-
 
     = Categories(this)
 

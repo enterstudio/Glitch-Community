@@ -37,7 +37,7 @@
 - [x] collection cats, to collections (ie art gaallery, event thing etc)
 - [x] CURATED_MODEL: move partner categories into partners team beta. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
 
-- [-] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
+- [x] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 - [ ] BUG in search , where clicking project, hitting reload, 404s
 
 - [ ] social meta tags/imgs in index.html
@@ -66,6 +66,7 @@
 - [ ] @PROFILE: profile pages https://fogcreek.wake.com/474
 - [ ] @PROFILE: profile hover pop https://fogcreek.wake.com/476
 - [ ] add accessibility (aria, etc.)
+- [ ] add user search ui bits
 
 - [ ] GA: event tracking 
 

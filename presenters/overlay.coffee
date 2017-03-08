@@ -98,6 +98,8 @@ module.exports = (application) ->
       application.overlayVisible false
       source.cancel()
       source = CancelToken.source()
+      console.log "🇨🇦", application.searchQuery()
+      new
       history.replaceState(null, null, route)
       
     getProjectReadme: (project) ->
