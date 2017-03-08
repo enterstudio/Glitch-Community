@@ -304,7 +304,7 @@ module.exports =
     ,
       projectId: '552a115a-c07e-4609-b196-4dbe8fdb449c'
       domain: 'hello-coffee'
-      description: "A really nice way to start your next project"
+      description: "Start your next project with CoffeeScript + Jade + Stylus with Autoprefixer"
       users: [
           login: 'pketh'
           avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
@@ -846,8 +846,8 @@ module.exports =
       domain: 'tech-forward-2'
       description: "Find and share tools for social progress"
       users: [
-          name: 'mattstauffer'
-          avatar: 'https://avatars2.githubusercontent.com/u/151829?v=3&s=48'
+          login: 'mattstauffer'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/151829?v=3&s=48'
       ]
       categoryIds: [6]
     ,
@@ -855,8 +855,8 @@ module.exports =
       domain: 'ghost'
       description: "Simple blogging platform, just remix to get started"
       users: [
-          name: 'TryGhost'
-          avatar: 'https://avatars2.githubusercontent.com/u/2178663?v=3&s=48'
+          login: 'TryGhost'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/2178663?v=3&s=48'
       ]
       categoryIds: [6]
     ,
@@ -864,8 +864,8 @@ module.exports =
       domain: 'node-console'
       description: "Run console applications in your browser"
       users: [
-          name: 'etamponi'
-          avatar: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
+          login: 'etamponi'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
       categoryIds: [1]
     ,
@@ -873,8 +873,8 @@ module.exports =
       domain: 'dropbox-auth'
       description: "Server-side authorization for Dropbox"
       users: [
-          name: 'zxzxlch'
-          avatar: 'https://avatars3.githubusercontent.com/u/243925?v=3&s=48'
+          login: 'zxzxlch'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/243925?v=3&s=48'
       ]
       categoryIds: [3,5]
     ,
@@ -882,8 +882,8 @@ module.exports =
       domain: 'hyperapp'
       description: "Examples of HyperApp, a 1kb JavaScript library for modern UI apps"
       users: [
-          name: 'hyperapp'
-          avatar: 'https://avatars3.githubusercontent.com/u/25238911?v=3&s=48'
+          login: 'hyperapp'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/25238911?v=3&s=48'
       ]
       categoryIds: [1]
     ,
@@ -891,8 +891,8 @@ module.exports =
       domain: 'html-starter'
       description: "Simple, modular HTML5 template to kick off your responsive websites"
       users: [
-          name: 'zitrusfrisch'
-          avatar: 'https://avatars3.githubusercontent.com/u/1192474?v=3&s=48'
+          login: 'zitrusfrisch'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/1192474?v=3&s=48'
       ]
       categoryIds: [3,4]
     ,
@@ -900,8 +900,8 @@ module.exports =
       domain: 'html-5-boilerplate'
       description: "Simple, modular HTML5 template to kick off your responsive websites"
       users: [
-          name: 'h5bp'
-          avatar: 'https://avatars3.githubusercontent.com/u/1136800?v=3&s=48'
+          login: 'h5bp'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/1136800?v=3&s=48'
       ]
       categoryIds: [1,3]
     ,
@@ -914,8 +914,8 @@ module.exports =
       domain: 'setup-wizard'
       description: "Display a setup wizard for users to configure environment variables when remixing your app"
       users: [
-          name: 'etamponi'
-          avatar: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
+          login: 'etamponi'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
       categoryIds: [3]
     ,
@@ -933,7 +933,7 @@ module.exports =
       domain: 'bitlytics'
       description: "View click stats for all tweets by a user that contain a bit.ly link"
       users: [
-          name: 'garethx'
-          avatar: 'https://avatars3.githubusercontent.com/u/1830035?v=3&s=48'
+          login: 'garethx'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/1830035?v=3&s=48'
       ]
   ]
