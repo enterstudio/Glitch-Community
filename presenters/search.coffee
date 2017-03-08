@@ -37,5 +37,18 @@ module.exports = (application) ->
           application.searchResultsUsersLoaded true
         .catch (error) ->
           console.error "searchUsers", error
-        
-        
+
+    isSearchResultsLoaded: ->
+      true if application.searchResultsProjectsLoaded() and application.searchResultsUsersLoaded()
+    
+    hiddenIfSearchResultsLoaded: ->
+      'hidden' if self.isSearchResultsLoaded()
+
+    hiddenUnlessProjects: ->
+      'hidden' unless application.searchResultsProjectsLoaded() and application.searchResultsProjects().length
+      
+    hiddenUnlessUsers: ->
+      'hidden' unless application.searchResultsUsersLoaded() and application.searchResultsUsers().length
+
+    hiddenIfNoResults: ->
+      'hidden' if self.isSearchResultsLoaded() and ()

@@ -13,19 +13,20 @@
   = HeaderPresenter(this).template
   
   main.search-results(role="main")
+    
+    - # todo hiddenUnlessUsers and users list
+  
     article.projects
-      - if @searchResultsProjects().length
-        ul.projects-container
+        ul.projects-container(class=@hiddenUnlessProjects)
           - context = @
           - @searchResultsProjects().forEach (project) ->
             = ProjectPresenter(context, project, {}).template
 
-      - else
-        p no results
-        img(src=cat)
-
-      span(class=@hiddenUnlessSearchResultsLoaded)
-        = Loader(this)
+    span(class=@hiddenIfSearchResultsLoaded)
+      = Loader(this)
+    span(class=@hiddenIfNoResults)
+      p no results
+      img(src=cat)
 
 
     = Categories(this)
