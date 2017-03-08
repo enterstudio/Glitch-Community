@@ -42,7 +42,7 @@
 
 
 
-- [ ] social meta tags/imgs in index.html
+- [x] social meta tags/imgs in index.html
 - [ ] pattern background instead of table for default .profile. maybe something glitchy, something earthboundy/cafe-club? tiling
 
 
