@@ -11,8 +11,8 @@ IndexTemplate = require "./templates/pages/index"
 index = IndexTemplate application
 CategoryPage = require "./presenters/category-page"
 Search = require "./presenters/search"
-errorPageTemplate = require "./templates/pages/error-page"
-errorPage = errorPageTemplate application
+errorPage404Template = require "./templates/pages/error-page-404"
+errorPage = errorPage404Template application
 
 
 normalizedRoute = normalizeSlashes route

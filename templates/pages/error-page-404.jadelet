@@ -13,4 +13,4 @@
     .beta beta
 
     canvas#stars
-    script(src="../../error-page.js")
+    script(src="https://gomix.com/error-page.js")
