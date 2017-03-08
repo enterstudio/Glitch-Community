@@ -2,12 +2,12 @@
 
 - Categories = require "../includes/categories"
 - HeaderPresenter = require "../../presenters/header"
+- ProjectPresenter = require "../../presenters/project"
 - OverlayPresenter = require "../../presenters/overlay"
 - Footer = require "../includes/footer"
-- ProjectPresenter = require "../../presenters/project"
--#    searchQuery: application.searchQuery()
--#    searchResultsUsers: application.searchResultsUsers()    
--#    searchResultsProjects: application.searchResultsProjects()
+
+- Loader = require "../includes/loader"
+
 
 .content.search-results
   = HeaderPresenter(this).template
@@ -18,12 +18,15 @@
         ul.projects-container
           - context = @
           - @searchResultsProjects().forEach (project) ->
-            - console.log "🚒", project
             = ProjectPresenter(context, project, {}).template
 
       - else
         p no results
         img(src=cat)
+
+      span(class=@hiddenUnlessSearchResultsLoaded)
+        = Loader(this)
+
 
     = Categories(this)
 

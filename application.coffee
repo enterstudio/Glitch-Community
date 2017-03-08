@@ -29,7 +29,9 @@ self =
   # search
   searchQuery: Observable ""
   searchResultsUsers: Observable []
+  searchResultsUsersLoaded: Observable false
   searchResultsProjects: Observable []
+  searchResultsProjectsLoaded: Observable false
 
   closeAllPopOvers: ->
     self.signInPopVisibleOnHeader false

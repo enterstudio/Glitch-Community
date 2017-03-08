@@ -101,8 +101,7 @@ module.exports = (application) ->
       history.replaceState(null, null, route)
       
     getProjectReadme: (project) ->
-      console.log 'self.projectId()', self.projectId()
-      readmeUrl = "https://api.gomix.com/projects/#{project.projectId}/readme" # change to glitch later
+      readmeUrl = "https://api.gomix.com/projects/#{self.projectId()}/readme" # change to glitch later
       axios.get readmeUrl,
         cancelToken: source.token
       .then (response) ->
