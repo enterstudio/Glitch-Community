@@ -38,12 +38,15 @@
 - [x] CURATED_MODEL: move partner categories into partners team beta. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
 - [x] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 - [x] BUG in search , where clicking project, hitting reload, 404s
-
 - [x] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found) set from `client.coffee`?
 
-- [ ] social meta tags/imgs in index.html
 
+
+- [ ] social meta tags/imgs in index.html
 - [ ] pattern background instead of table for default .profile. maybe something glitchy, something earthboundy/cafe-club? tiling
+
+
+
 
 - [ ] PERF: client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
 - [ ] PERF: compress css

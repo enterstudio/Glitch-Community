@@ -30,7 +30,6 @@ module.exports = (application) ->
     searchUsers: ->
       application.searchResultsUsersLoaded false
       query = application.searchQuery()
-      console.log "Q", query
       searchUsersUrl = "https://api.gomix.com/users/search?q=#{query}"
       axios.get searchUsersUrl
         .then (response) ->
