@@ -39,7 +39,7 @@
 - [x] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 - [x] BUG in search , where clicking project, hitting reload, 404s
 
-- [ ] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found) set from `client.coffee`?
+- [x] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found) set from `client.coffee`?
 
 - [ ] social meta tags/imgs in index.html
 

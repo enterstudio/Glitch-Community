@@ -29,6 +29,7 @@ else if application.isCategoryUrl(normalizedRoute)
   category = application.getCategoryFromUrl normalizedRoute
   categoryPage = CategoryPage(application, category).template()
   document.body.appendChild categoryPage
+  document.title = category.name
   
 else if application.isProjectUrl(normalizedRoute)
   projectDomain = application.removeFirstCharacter normalizedRoute
@@ -42,10 +43,11 @@ else if application.isSearchUrl(normalizedRoute, queryString)
   application.searchQuery queryString.q
   searchPage = Search(application).template()
   document.body.appendChild searchPage
+  document.title = queryString.q
 
 else
   document.body.appendChild errorPage
-
+  document.title = "👻 Page not found"
 
   
 # document.addEventListener "keydown", (event) ->

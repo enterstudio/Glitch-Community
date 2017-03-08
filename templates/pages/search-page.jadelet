@@ -14,6 +14,8 @@
 
   main.search-results(role="main")
 
+    - # ?TODO my projects (inside a profile section block)
+
     - # TODO article.users
 
     article.projects

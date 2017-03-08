@@ -55,5 +55,6 @@ module.exports = (application) ->
       'hidden' unless application.searchResultsUsersLoaded() and self.isSearchResultsUsers()
 
     hiddenIfNoResults: ->
-      'hidden' if (self.searchResultsHasProjects() or self.searchResultsHasUsers()) or !self.searchResultsIsLoaded()
+      'hidden' if (self.searchResultsHasProjects()) or !self.searchResultsIsLoaded()
+      # 'hidden' if (self.searchResultsHasProjects() or self.searchResultsHasUsers()) or !self.searchResultsIsLoaded()
 
