@@ -55,7 +55,9 @@
 
 - [ ] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found) set from `client.coffee`?
 
-- [ ] client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
+- [ ] PERF: client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
+- [ ] PERF: compress css
+- [ ] PERF: sourcemaps
 
 ## phase 2
 

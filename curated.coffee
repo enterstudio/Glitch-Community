@@ -841,6 +841,99 @@ module.exports =
           avatarUrl: 'https://avatars2.githubusercontent.com/u/544954?v=3&s=48'
       ]
       categoryIds: [3]
+    ,
+      projectId: '16d249c6-c928-4616-a548-3108bce18ead'
+      domain: 'tech-forward-2'
+      description: "Find and share tools for social progress"
+      users: [
+          name: 'mattstauffer'
+          avatar: 'https://avatars2.githubusercontent.com/u/151829?v=3&s=48'
+      ]
+      categoryIds: [6]
+    ,
+      projectId: '9a2033a3-30d8-4658-93a8-3b5073c73237'
+      domain: 'ghost'
+      description: "Simple blogging platform, just remix to get started"
+      users: [
+          name: 'TryGhost'
+          avatar: 'https://avatars2.githubusercontent.com/u/2178663?v=3&s=48'
+      ]
+      categoryIds: [6]
+    ,
+      projectId: '9fcb4c92-412a-4570-bd9b-ca8fd060eb5b'
+      domain: 'node-console'
+      description: "Run console applications in your browser"
+      users: [
+          name: 'etamponi'
+          avatar: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
+      ]
+      categoryIds: [1]
+    ,
+      projectId: 'd64593e9-4e16-4ee5-a47b-362b5bccf26a'
+      domain: 'dropbox-auth'
+      description: "Server-side authorization for Dropbox"
+      users: [
+          name: 'zxzxlch'
+          avatar: 'https://avatars3.githubusercontent.com/u/243925?v=3&s=48'
+      ]
+      categoryIds: [3,5]
+    ,
+      projectId: '3ba301ab-0572-4077-9cb1-d37ef8b08786'
+      domain: 'hyperapp'
+      description: "Examples of HyperApp, a 1kb JavaScript library for modern UI apps"
+      users: [
+          name: 'hyperapp'
+          avatar: 'https://avatars3.githubusercontent.com/u/25238911?v=3&s=48'
+      ]
+      categoryIds: [1]
+    ,
+      projectId: 'fee2c865-eccf-488f-a663-964082b34098'
+      domain: 'html-starter'
+      description: "Simple, modular HTML5 template to kick off your responsive websites"
+      users: [
+          name: 'zitrusfrisch'
+          avatar: 'https://avatars3.githubusercontent.com/u/1192474?v=3&s=48'
+      ]
+      categoryIds: [3,4]
+    ,
+      projectId: 'c39d16ef-bc2e-44ae-8df5-4293b248b243'
+      domain: 'html-5-boilerplate'
+      description: "Simple, modular HTML5 template to kick off your responsive websites"
+      users: [
+          name: 'h5bp'
+          avatar: 'https://avatars3.githubusercontent.com/u/1136800?v=3&s=48'
+      ]
+      categoryIds: [1,3]
+    ,
+      projectId: 'c4360738-dae3-4b12-ba51-03f5944f3b0f'
+      domain: 'bower-grunt'
+      description: "Find the installed components and inject them into HTML files"
+      categoryIds: [1]
+    ,
+      projectId: 'daa2ecb6-69b3-4415-8499-0756261584d5'
+      domain: 'setup-wizard'
+      description: "Display a setup wizard for users to configure environment variables when remixing your app"
+      users: [
+          name: 'etamponi'
+          avatar: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
+      ]
+      categoryIds: [3]
+    ,
+      projectId: '06290abf-71bb-4336-9447-5364c4b2b6d6'
+      domain: 'twitter-passport-example'
+      description: "Easily use Twitter for authentication in your app"
+      categoryIds: [3]
+    ,
+      projectId: '9d99c4fd-2153-4d0e-b9a7-dcb9b46c9028'
+      domain: 'dojo-bigscreen'
+      description: "A big screen dashboard for your business using Trello, Weather Underground and StatusCake examples"
+      categoryIds: [3]
+    ,
+      projectId: '7bb031da-8422-40b7-b9fb-bab494908c5d'
+      domain: 'bitlytics'
+      description: "View click stats for all tweets by a user that contain a bit.ly link"
+      users: [
+          name: 'garethx'
+          avatar: 'https://avatars3.githubusercontent.com/u/1830035?v=3&s=48'
+      ]
   ]
-
-
