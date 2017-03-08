@@ -40,9 +40,8 @@ module.exports = (application) ->
           console.error "searchUsers", error
 
     isSearchResultsLoaded: ->
-      console.log "⏰", application.searchResultsProjectsLoaded() 
       true if application.searchResultsProjectsLoaded() and application.searchResultsUsersLoaded()
-    
+
     isSearchResultsProjects: ->
       true if application.searchResultsProjects().length
 
