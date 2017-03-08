@@ -22,7 +22,8 @@ module.exports = (application) ->
     projects: ->
       filteredProjects = self.filterProjects()
       projectElements = filteredProjects.map (project) ->
-        project.id = project.projectId
+        unless project.id
+          project.id = project.projectId
         category = 
           color: undefined
         ProjectPresenter(application, project, category)
