@@ -31,34 +31,31 @@
 - [x] OVERLAY: opening an overlay updates url with ~ link (even on subpages)
 - [x] OVERLAY: add project avatar img to overlay somewhere [blocked by api]
 - [x] OVERLAY: users work in qs/direct link based overlays
-
-- [-] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
-
 - [x] 404 page
-
-- [ ] social meta tags/imgs in index.html
-
-
-- [ ] ??port image links to the new project (because will be fully replacing the current community)
-
 - [x] CURATED_MODEL: manually merge in latest prod model/curated of projects
 - [x] CURATED_MODEL: ?remove unused avatarNeedsBackgorund/legibility bool from curated
 - [x] collection cats, to collections (ie art gaallery, event thing etc)
 - [x] CURATED_MODEL: move partner categories into partners team beta. https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#heading=h.huf5k7n5e5u8
 
+- [-] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
+- [ ] BUG in search , where clicking project, hitting reload, 404s
+
+- [ ] social meta tags/imgs in index.html
+
+- [ ] ??port image links to the new project (because will be fully replacing the current community)
 
 - [ ] pattern background instead of table for default .profile. maybe something glitchy, something earthboundy/cafe-club? tiling
 
 - [ ] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found) set from `client.coffee`?
 
-- [x] AUTH: add fb/gh sign in strategies in popover (inside header)
-- [ ] AUTH: finish multi sign in oauth/and new user localstorage.cacheduser like editor
-- [ ] AUTH: pass that new user to editor
-
 - [ ] PERF: client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
 - [ ] PERF: compress css
 - [ ] PERF: sourcemaps
 - [ ] is the webfont redownloading each time?
+
+- [x] AUTH: add fb/gh sign in strategies in popover (inside header)
+- [x] AUTH: finish multi sign in oauth/and new user localstorage.cacheduser like editor
+- [ ] AUTH: pass that new user to editor (test)
 
 ## phase 2
 

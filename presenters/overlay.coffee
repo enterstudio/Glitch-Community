@@ -19,7 +19,7 @@ module.exports = (application) ->
       application.overlayProject()?.domain
 
     projectId: ->
-      application.overlayProject()?.projectId or application.overlayProject()?.id
+      application.overlayProject()?.id
 
     projectUsers: ->
       application.overlayProject().users
@@ -85,7 +85,7 @@ module.exports = (application) ->
       .then (response) ->
         console.log 'response', response
         project = {
-          projectId: response.data.id
+          id: response.data.id
           domain: response.data.domain
         }
         console.log project

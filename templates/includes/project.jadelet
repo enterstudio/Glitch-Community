@@ -27,7 +27,7 @@ li
   - showProjectOverlay = -> @showProjectOverlay project
   .project(click=showProjectOverlay style="background-color: #{category.color}; border-bottom-color: #{category.color}" data-track="project" data-track-label=project.domain)
     .project-container
-      img.avatar(src="https://cdn.gomix.com/project-avatar/#{project.projectId}.png")
+      img.avatar(src="https://cdn.gomix.com/project-avatar/#{project.id}.png")
       button
         .project-name=project.domain
       .description=project.description

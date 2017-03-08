@@ -15,14 +15,11 @@
   main.search-results(role="main")
     article.projects
       - if @searchResultsProjects().length
-        - console.log "👺", @searchResultsProjects()
         ul.projects-container
           - context = @
           - @searchResultsProjects().forEach (project) ->
             - console.log "🚒", project
-            - # = project.template
             = ProjectPresenter(context, project, {}).template
-
 
       - else
         p no results
