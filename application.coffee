@@ -35,7 +35,7 @@ self =
 
   
   normalizedBaseUrl: ->
-    urlLength = baseUrl.length()
+    urlLength = baseUrl.length
     lastCharacter = baseUrl.charAt(urlLength-1)
     if baseUrl is ""
       return "/"
