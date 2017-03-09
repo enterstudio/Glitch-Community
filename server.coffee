@@ -11,12 +11,8 @@ app.set('view engine', 'ejs')
       
 router = require('./routes')();
 
-app.use '/community-test', router
-app.use '/community', router
-app.use '/', router
-
-# Serve Static files from public/
 app.use express.static('public')
+app.use '/', router
 
 # Listen on App port
 listener = app.listen process.env.PORT, ->

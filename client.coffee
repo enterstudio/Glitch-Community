@@ -5,6 +5,7 @@
 application = require './application.coffee'
 qs = require 'querystringify'
 queryString = qs.parse window.location.search
+# todo: replace normalizeSlashes
 normalizeSlashes = require 'normalize-slashes'
 
 IndexTemplate = require "./templates/pages/index"
@@ -13,6 +14,7 @@ CategoryPage = require "./presenters/category-page"
 Search = require "./presenters/search"
 errorPageTemplate = require "./templates/pages/error-page"
 errorPage = errorPageTemplate application
+
 
 normalizedRoute = normalizeSlashes route
 console.log "route is #{normalizedRoute}"

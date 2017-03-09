@@ -1,7 +1,5 @@
 _ = require 'underscore'
 express = require 'express'
-stylish = require 'stylish'
-autoprefixer = require 'autoprefixer-stylus'
 
 curated = require "./curated"
 
