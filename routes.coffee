@@ -8,16 +8,6 @@ curated = require "./curated"
 module.exports = ->
   
   app = express.Router()
-  
-  jadeletTransform = require './lib/jadelify'
-
-  # Configure browserify middleware to serve client.coffee as client.js
-  # and to allow requiring .jadelet files as templates
-  browserify = require('browserify-middleware')
-  browserify.settings
-    transform: ['coffeeify', jadeletTransform]
-    extensions: ['.coffee', '.litcoffee', '.jadelet']
-  app.use '/client.js', browserify(__dirname + '/client.coffee')
 
   # CORS - Allow pages from any domain to make requests to our API
   app.use (req, res, next) ->
@@ -30,21 +20,9 @@ module.exports = ->
     console.log(req.method, req.originalUrl, req.body)
     next()
 
-  # Configure stylus and autoprefixer support
-  app.use stylish
-    src: __dirname + '/public'
-    setup: (renderer) ->
-      renderer.use autoprefixer()
-    watchCallback: (error, filename) ->
-      if error
-        console.error error
-      else
-        console.log "#{filename} compiled to css"
-
   app.get '*', (req, res, next) ->
     res.render('index', route: req.path, baseUrl: req.baseUrl)
 
   # community api
   app.get '/curated/projects', (request, response) ->
     response.jsonp curated.projects()
-

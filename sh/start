@@ -1,15 +1,17 @@
 #!/bin/bash
-set -e
+set -ex
 
-browserify -t coffeeify --debug --extension=".coffee" frontend/index.coffee | \
-  exorcist public/index.js.map > public/index.js
+hamlet -m jade -d templates -r "require('hamlet.coffee')"
+
+browserify -t coffeeify --debug --extension=".coffee" client.coffee | \
+  exorcist public/client.js.map > public/client.js
   
 (
   cd public
-  uglifyjs --in-source-map index.js.map --source-map index.min.js.map \
-    --output index.min.js index.js
+  uglifyjs --in-source-map client.js.map --source-map client.min.js.map \
+    --output client.min.js client.js
 )
 
-stylus --use autoprefixer-stylus --sourcemap-inline --compress frontend/style/style.styl -o public/style.css
+stylus --use autoprefixer-stylus --sourcemap-inline --compress public/style.styl -o public/style.css
 
-coffee backend/index.coffee
+coffee server.coffee
