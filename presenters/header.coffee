@@ -2,6 +2,7 @@ HeaderTemplate = require "../templates/includes/header"
 
 module.exports = (application) ->
 
+  console.log "🚑", baseUrl
   self = 
     application: application
   
@@ -27,6 +28,7 @@ module.exports = (application) ->
     userAvatar: ->
       application.user.avatarImage()
 
+      
     # userPageLink: ->
     #   userName = application.user.userName()
     # "/@#{userName}"
