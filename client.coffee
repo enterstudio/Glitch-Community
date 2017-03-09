@@ -16,6 +16,7 @@ errorPageTemplate = require "./templates/pages/error-page"
 errorPage = errorPageTemplate application
 
 
+console.log "route route is", route
 normalizedRoute = normalizeSlashes route
 console.log "route is #{normalizedRoute}"
 console.log "query strings are", queryString
