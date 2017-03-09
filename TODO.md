@@ -39,13 +39,11 @@
 - [x] search page rendered from api response (projects/search?q=lsdkjf and users/search?..)
 - [x] BUG in search , where clicking project, hitting reload, 404s
 - [x] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found) set from `client.coffee`?
-
-
-
 - [x] social meta tags/imgs in index.html
+
+
+
 - [ ] pattern background instead of table for default .profile. maybe something glitchy, something earthboundy/cafe-club? tiling
-
-
 
 
 - [ ] PERF: client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
