@@ -6,11 +6,11 @@
 
 header(role="banner")
   .header-info
-    a(href="#{baseUrl}")
+    a(href=@baseUrl)
       img.logo(src=logo)
     //if !user.isSignedIn
     h1.headline
-      a(href="#{baseUrl}")
+      a(href=@baseUrl)
         span= "Glitch"
       span= " "
       span is the easiest way to build the app or bot of your dreams
@@ -23,7 +23,7 @@ header(role="banner")
         span How it works in 2 minutes
 
   nav(role="navigation")
-    form(action="#{baseUrl}/search" method="get" role="search")
+    form(action="#{@baseUrl}search" method="get" role="search")
       input.search-input(name="q" placeholder="bots, apps, tutorials" value=@application.searchQuery)
 
     span(class=@hiddenIfUserIsSignedIn)

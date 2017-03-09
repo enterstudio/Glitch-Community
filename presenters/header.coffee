@@ -5,6 +5,7 @@ module.exports = (application) ->
   console.log "🚑", baseUrl
   self = 
     application: application
+    baseUrl: application.normalizedBaseUrl()
   
     template: ->
       HeaderTemplate self

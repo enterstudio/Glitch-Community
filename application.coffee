@@ -33,6 +33,17 @@ self =
   searchResultsProjects: Observable []
   searchResultsProjectsLoaded: Observable false
 
+  
+  normalizedBaseUrl: ->
+    urlLength = baseUrl.length()
+    lastCharacter = baseUrl.charAt(urlLength-1)
+    if baseUrl is ""
+      return "/"
+    else if lastCharacter is not "/"
+      return baseUrl + "/"
+    else
+      return baseUrl
+  
   closeAllPopOvers: ->
     self.signInPopVisibleOnHeader false
     self.signInPopVisibleOnRecentProjects false
