@@ -51,7 +51,7 @@ else
   document.body.appendChild errorPage
   document.title = "👻 Page not found"
 
-  
+
 # document.addEventListener "keydown", (event) ->
 #   application.closeAllPopOvers event
 

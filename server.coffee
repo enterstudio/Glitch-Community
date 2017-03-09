@@ -11,7 +11,7 @@ app.set('view engine', 'ejs')
       
 router = require('./routes')();
 
-app.use express.static('public')
+app.use '/community-test', router
 app.use '/', router
 
 # Listen on App port

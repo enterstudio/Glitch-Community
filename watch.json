@@ -13,6 +13,7 @@
     "include": [
       "^sh/start$",
       "\\.coffee$",
+      "\\.jade",
       "\\.json",
       "\\.styl"
     ]
