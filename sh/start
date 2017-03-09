@@ -1,0 +1,15 @@
+#!/bin/bash
+set -e
+
+browserify -t coffeeify --debug --extension=".coffee" frontend/index.coffee | \
+  exorcist public/index.js.map > public/index.js
+  
+(
+  cd public
+  uglifyjs --in-source-map index.js.map --source-map index.min.js.map \
+    --output index.min.js index.js
+)
+
+stylus --use autoprefixer-stylus --sourcemap-inline --compress frontend/style/style.styl -o public/style.css
+
+coffee backend/index.coffee
