@@ -11,7 +11,7 @@ header(role="banner")
     a(href=@baseUrl)
       img.logo(src=logo)
     //if !user.isSignedIn
-    h1.headline
+    h1.headline(class=@hiddenIfUserIsSignedIn)
       a(href=@baseUrl)
         span= "Glitch"
       span= " "
