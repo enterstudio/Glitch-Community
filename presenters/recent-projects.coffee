@@ -48,4 +48,7 @@ module.exports = (application) ->
     popHiddenUnlessSignInPopVisible: ->
       'hidden' unless application.signInPopVisibleOnRecentProjects()
 
+    hiddenIfUserRecentProjects: ->
+      'hidden' if application.userRecentProjects().length
+      
 # application.user.cachedUser()

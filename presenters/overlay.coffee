@@ -23,9 +23,7 @@ module.exports = (application) ->
 
     currentUserIsInProject: (project) ->
       currentUserId = application.user.userId()
-      console.log '😺', project
       project.users.forEach (user) ->
-        console.log user.id
         if user.id is currentUserId
           application.currentUserIsInProject true
     
@@ -36,8 +34,6 @@ module.exports = (application) ->
       'hidden' unless application.currentUserIsInProject()
 
     projectUsers: ->
-      # console.log self.isCurrentUserInProject()
-      # console.log "my id", application.user.userId()
       application.overlayProject().users
 
     projectAvatar: ->
