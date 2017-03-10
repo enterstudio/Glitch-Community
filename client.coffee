@@ -26,6 +26,7 @@ console.log "🌈 isSignedIn", application.user.isSignedIn()
 
 # client-side routing:
 
+<<<<<<< HEAD
 if normalizedRoute is ""
   document.body.appendChild index
 
@@ -52,6 +53,24 @@ else if application.isSearchUrl(normalizedRoute, queryString)
 else
   document.body.appendChild errorPage
   document.title = "👻 Page not found"
+=======
+Promise.resolve()
+.then ->
+  if normalizedRoute.startsWith "login/"
+    application.login normalizedRoute.substring("login/".length), queryString.code
+    .then ->
+      history.replaceState null, null, "#{baseUrl}/"
+      normalizedRoute = ""
+.then ->
+  if normalizedRoute is ""
+    document.body.appendChild index
+    application.overlay.showProjectOverlayIfPermalink queryString
+
+  else if application.isCategoryUrl(normalizedRoute)
+    category = application.getCategoryFromUrl normalizedRoute
+    categoryPage = CategoryPage(application, category).template()
+    document.body.appendChild categoryPage
+>>>>>>> etamponi
 
 
 # document.addEventListener "keydown", (event) ->

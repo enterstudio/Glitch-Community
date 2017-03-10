@@ -2,10 +2,17 @@ SignInPopTemplate = require "../templates/includes/sign-in-pop"
 
 module.exports = (application) ->
 
-  self = 
+  self =
+  
+    githubAuthLink: ->
+      clientId = "b4cb743ed07e20abf0b2"
+      scope = "user:email,repo"
+      redirectUri = "https://gomix.com/community-test/login/github"
+      "https://github.com/login/oauth/authorize?client_id=#{clientId}&scope=#{scope}&redirect_uri=#{redirectUri}"
 
-    GITHUB_AUTH_LINK: "https://github.com/login/oauth/authorize?client_id=b4cb743ed07e20abf0b2&scope=user:email&redirect_uri=https://gomix.com/community-test/%23!/facebook"
-    FACEBOOK_AUTH_LINK: "https://facebook.com/blah/blah"
+    facebookAuthLink: ->
+      callbackURL = "https://gomix.com/community-test/login/facebook"
+      "https://api.gomix.com/auth/facebook?callbackURL=#{callbackURL}"
 
     template: ->
       SignInPopTemplate self
