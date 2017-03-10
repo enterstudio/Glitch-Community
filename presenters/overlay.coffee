@@ -69,7 +69,7 @@ module.exports = (application) ->
       application.overlayTemplate "project"
       application.overlayProject project
       self.getProjectReadme project
-      history.replaceState(null, null, "~#{project.domain}")
+      history.replaceState(null, null, "#{application.normalizedBaseUrl()}/~#{project.domain}")
 
     showVideoOverlay: ->
       application.overlayVisible true
@@ -95,10 +95,10 @@ module.exports = (application) ->
         self.showReadmeError()
 
     newRoute: ->
+      ret = "#{application.normalizedBaseUrl()}#{route}"
       if application.searchQuery()
-        route + "?q=#{application.searchQuery()}"
-      else
-        route
+        ret += "?q=#{application.searchQuery()}"
+      ret
         
     hideOverlay: ->
       application.overlayVisible false
