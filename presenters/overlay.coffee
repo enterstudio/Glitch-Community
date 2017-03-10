@@ -21,22 +21,23 @@ module.exports = (application) ->
     projectId: ->
       application.overlayProject()?.id
 
+
     isCurrentUserInProject: ->
       currentUserId = application.user.userId()
       projectUsers = application.overlayProject().users
-      if projectUsers
-        projectUsers.forEach (user) ->
-          console.log user.id
-          if user.id is currentUserId
-            console.log '🎃'
-            true
+      projectUsers.forEach (user) ->
+        console.log user.id
+        if user.id is currentUserId
+          console.log '🎃'
+          true
       
     hiddenIfCurrentUserInProject: ->
-      console.log '🎏'
-      'hidden' if self.isCurrentUserInProject()
+      'hidden' if application.currentUserIsInProject()
+        
+        # self.isCurrentUserInProject()
 
-    hiddenUnlessCurrentUserInProject: ->
-      'hidden' unless self.isCurrentUserInProject()
+    # hiddenUnlessCurrentUserInProject: ->
+    #   'hidden' unless self.isCurrentUserInProject()
 
     projectUsers: ->
       # console.log self.isCurrentUserInProject()
@@ -81,6 +82,7 @@ module.exports = (application) ->
       'hidden' if application.overlayReadmeLoaded()
 
     showProjectOverlay: (project) ->
+      applicaiton.currentUserIsInProject false
       application.overlayReadme ""
       application.overlayVisible true
       application.overlayReadmeLoaded false
@@ -94,6 +96,7 @@ module.exports = (application) ->
       application.overlayVisible true
       application.overlayTemplate "video"
 
+    # used to load /~my-project urls
     showProjectOverlayForProject: (projectDomain) ->
       application.overlayVisible true
       application.overlayReadmeLoaded false

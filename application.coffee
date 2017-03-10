@@ -19,6 +19,7 @@ self =
   overlayReadme: Observable ""
   overlayReadmeLoaded: Observable false
   overlayReadmeError: Observable false
+  currentUserIsInProject: Observable false
 
   # users
   userRecentProjects: Observable []
