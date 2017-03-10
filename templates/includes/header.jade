@@ -5,6 +5,7 @@
 - logo2 = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fcommunity-logo.svg"
 
 - SignInPopPresenter = require "../../presenters/sign-in-pop"
+- UserOptionsPopPresenter = require "../../presenters/user-options-pop"
 
 header(role="banner")
   .header-info
@@ -32,9 +33,11 @@ header(role="banner")
       button.button-small.opens-pop-over(click=@toggleSignInPopVisible) Sign in
       span(class=@popHiddenUnlessSignInPopVisible)
         = SignInPopPresenter(@.application).template
-    .user-options-pop-button.opens-pop-over(class=@hiddenUnlessUserIsSignedIn)
+    .user-options-pop-button.opens-pop-over(class=@hiddenUnlessUserIsSignedIn data-tooltip="User options")
       .user
         img(src=@userAvatar width=30 height=30)
         span.down-arrow.icon
+      span(class=@popHiddenUnlessSignInPopVisible)
+        = UserOptionsPopPresenter(@.application).template
 
       // TODO show user avatar and link to profile page if signed in

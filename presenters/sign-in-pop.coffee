@@ -1,4 +1,4 @@
-SignInPopTemplate = require "../templates/includes/sign-in-pop"
+SignInPopTemplate = require "../templates/pop-overs/sign-in-pop"
 
 module.exports = (application) ->
 
