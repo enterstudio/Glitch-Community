@@ -9,7 +9,7 @@ span
       section.pop-over-info
         img.avatar(src=@projectAvatar)
         .overlay-title= @projectDomain
-      section.pop-over-actions.has-buttons
+      section.pop-over-actions.has-buttons(class=@hiddenIfCurrentUserInProject)
         a.button-link.show-app-link(href=@showLink onclick=@overlayButtonClickHandler data-track="overlay → show" data-track-label=@projectName)
           .button.show-app
             img(src=showIcon)
