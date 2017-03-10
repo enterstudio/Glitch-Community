@@ -22,9 +22,9 @@ module.exports = (application) ->
       application.overlayProject()?.id
 
     projectUsers: ->
-      console.log "them", application.overlayProject()?.users
-      console.log "me", application.user.userId
-      application.overlayProject()?.users
+      console.log "them", application.overlayProject().users
+      console.log "my id", application.user.userId()
+      application.overlayProject().users
 
     projectAvatar: ->
       if self.projectId()
@@ -85,13 +85,14 @@ module.exports = (application) ->
       axios.get projectInfoUrl,
         cancelToken: source.token
       .then (response) ->
-        console.log 'response', response
-        project = {
-          id: response.data.id
-          domain: response.data.domain
-        }
-        console.log project
-        self.showProjectOverlay project
+        console.log '🤔 response', response
+        # project = {
+        #   id: response.data.id
+        #   domain: response.data.domain
+        #   users: response.data.users
+        # }
+        # console.log project
+        self.showProjectOverlay response.data
       .catch (error) ->
         console.error "showProjectOverlayIfPermalink", error
         self.showReadmeError()
