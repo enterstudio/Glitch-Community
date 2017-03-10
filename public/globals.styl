@@ -149,6 +149,31 @@ button
   font-size: 12px
   padding: 3px 10px
 
+.button-tertiary
+  color: tertiary
+  border-width: 1px
+  border-color: secondary
+  cursor: pointer
+  display: inline-block
+  margin-top: 10px
+  &:hover
+    color: primary
+    border-color: line-on-secondary-background
+  &::first-child  
+    margin-left: 0
+
+.button-on-secondary-background
+  color: text-on-secondary-background
+  border-color: line-on-secondary-background
+  background-color: secondary-background
+  &:hover
+    color: primary
+    background-color: secondary-background-active
+  &:active,
+  &:focus
+    border-color: primary
+    outline: none
+
   
 input
   border-color: input-border
@@ -197,20 +222,6 @@ input
   vertical-align: middle
   margin-left: 5px
   user-select: none
-
-.emoji
-  width: 16px
-  height: 16px
-  display: inline-block
-  vertical-align: -4px
-  margin-left: 4px
-  background-repeat: no-repeat
-  background-size: contain
-  &.octocat
-    background-image: url("https://gomix.com/images/emojis/github-logo-light.svg")
-  &.facebook
-    background-image: url("https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffacebook-logo.png")
-    width: 15px
 
 .avatar
   display: inline-block
