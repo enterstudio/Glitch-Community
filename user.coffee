@@ -25,6 +25,9 @@ module.exports = (application) ->
     userName: ->
       self.cachedUser().login
 
+    userId: ->
+      self.cachedUser().id
+      
     # fullName: ->
     #   self.cachedUser().name
 

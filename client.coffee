@@ -5,19 +5,14 @@
 application = require './application.coffee'
 qs = require 'querystringify'
 queryString = qs.parse window.location.search
-# todo: replace normalizeSlashes
-# normalizeSlashes = require 'normalize-slashes'
 
 IndexTemplate = require "./templates/pages/index"
 CategoryPage = require "./presenters/category-page"
 Search = require "./presenters/search"
 errorPageTemplate = require "./templates/pages/error-page"
 
-
-console.log "route route is", route
-# normalizedRoute = normalizeSlashes route
 normalizedRoute = route.replace(/^\/|\/$/g, "")
-console.log "route is #{normalizedRoute}"
+console.log "normalizedRoute is #{normalizedRoute}"
 console.log "query strings are", queryString
 console.log "application is", application
 console.log "🌈 isSignedIn", application.user.isSignedIn()

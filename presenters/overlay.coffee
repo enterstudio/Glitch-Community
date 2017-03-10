@@ -22,7 +22,9 @@ module.exports = (application) ->
       application.overlayProject()?.id
 
     projectUsers: ->
-      application.overlayProject().users
+      console.log "them", application.overlayProject()?.users
+      console.log "me", application.user.userId
+      application.overlayProject()?.users
 
     projectAvatar: ->
       if self.projectId()
