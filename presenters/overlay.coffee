@@ -21,23 +21,19 @@ module.exports = (application) ->
     projectId: ->
       application.overlayProject()?.id
 
-
-    isCurrentUserInProject: ->
+    currentUserIsInProject: (project) ->
       currentUserId = application.user.userId()
-      projectUsers = application.overlayProject().users
-      projectUsers.forEach (user) ->
+      console.log '😺', project
+      project.users.forEach (user) ->
         console.log user.id
         if user.id is currentUserId
-          console.log '🎃'
-          true
-      
+          application.currentUserIsInProject true
+    
     hiddenIfCurrentUserInProject: ->
       'hidden' if application.currentUserIsInProject()
         
-        # self.isCurrentUserInProject()
-
-    # hiddenUnlessCurrentUserInProject: ->
-    #   'hidden' unless self.isCurrentUserInProject()
+    hiddenUnlessCurrentUserInProject: ->
+      'hidden' unless application.currentUserIsInProject()
 
     projectUsers: ->
       # console.log self.isCurrentUserInProject()
@@ -82,13 +78,14 @@ module.exports = (application) ->
       'hidden' if application.overlayReadmeLoaded()
 
     showProjectOverlay: (project) ->
-      applicaiton.currentUserIsInProject false
+      application.currentUserIsInProject false
       application.overlayReadme ""
       application.overlayVisible true
       application.overlayReadmeLoaded false
       application.overlayReadmeError false
       application.overlayTemplate "project"
       application.overlayProject project
+      self.currentUserIsInProject project
       self.getProjectReadme project
       history.replaceState(null, null, "#{application.normalizedBaseUrl()}/~#{project.domain}")
 
@@ -96,7 +93,7 @@ module.exports = (application) ->
       application.overlayVisible true
       application.overlayTemplate "video"
 
-    # used to load /~my-project urls
+    # used for direct /~my-project urls
     showProjectOverlayForProject: (projectDomain) ->
       application.overlayVisible true
       application.overlayReadmeLoaded false
@@ -105,15 +102,7 @@ module.exports = (application) ->
       axios.get projectInfoUrl,
         cancelToken: source.token
       .then (response) ->
-        console.log '🤔 response', response.data
-        # project = {
-        #   id: response.data.id
-        #   domain: response.data.domain
-        # #   users: response.data.users
-        # }
-        # console.log project
         self.showProjectOverlay response.data
-        # self.showProjectOverlay response.data
       .catch (error) ->
         console.error "showProjectOverlayIfPermalink", error
         self.showReadmeError()

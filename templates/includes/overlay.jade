@@ -9,6 +9,7 @@ span
       section.pop-over-info
         img.avatar(src=@projectAvatar)
         .overlay-title= @projectDomain
+
       section.pop-over-actions.has-buttons(class=@hiddenIfCurrentUserInProject)
         a.button-link.show-app-link(href=@showLink onclick=@overlayButtonClickHandler data-track="overlay → show" data-track-label=@projectName)
           .button.show-app
@@ -18,6 +19,14 @@ span
           .button View Code
         a.button-link.remix-link(href=@remixLink onclick=@overlayButtonClickHandler data-track="overlay → remix" data-track-label=@projectName)
           .button.button-cta Remix your own
+
+      section.pop-over-actions.has-buttons.editor-actions(class=@hiddenUnlessCurrentUserInProject)
+        a.button-link.show-app-link(href=@showLink onclick=@overlayButtonClickHandler data-track="overlay → show" data-track-label=@projectName)
+          .button.show-app
+            img(src=showIcon)
+            span Show App
+        a.button-link.project-link(href=@editorLink onclick=@overlayButtonClickHandler data-track="overlay → view code" data-track-label=@projectName)
+          .button.button-cta Edit Code
 
       section.pop-over-actions.markdown-container(class=@warningIfReadmeError)
         - #console.log "🐒", @projectAvatar()
