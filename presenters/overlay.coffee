@@ -21,16 +21,23 @@ module.exports = (application) ->
     projectId: ->
       application.overlayProject()?.id
 
+    isCurrentUserInProject: ->
+      currentUserId = application.user.userId()
+      projectUsers = application.overlayProject().users
+      if projectUsers
+        projectUsers.forEach (user) ->
+          console.log user.id
+          if user.id is currentUserId
+            console.log '🎃'
+            true
+      
     hiddenIfCurrentUserInProject: ->
-      # console.log "them", application.overlayProject().users
-      console.log "my id", application.user.userId()
-      # console.log 'project users', application.overlayProject().users
-        #     if application.overlayProject()
-      application.overlayProject().users?.forEach (user) ->
-        console.log 'project user', user?.id
+      console.log '🎏'
+      'hidden' if self.isCurrentUserInProject()
 
-      'fakeclass'
-    
+    hiddenUnlessCurrentUserInProject: ->
+      'hidden' unless self.isCurrentUserInProject()
+
     projectUsers: ->
       # console.log self.isCurrentUserInProject()
       # console.log "my id", application.user.userId()
