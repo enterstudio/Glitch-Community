@@ -31,9 +31,9 @@ module.exports = (application) ->
     getUserRecentProjects: ->
       if !self.cachedUser()
         return
-      application.api().get "/users/byIds?id=#{self.cachedUser().id}"
+      application.api().get "/boot"
       .then (response) ->
-        projects = response.data[0].projects.map (project) ->
+        projects = response.data.projects.map (project) ->
           self.normalizeProject project
         application.userRecentProjects projects
       .catch (error) ->
