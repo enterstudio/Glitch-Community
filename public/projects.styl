@@ -136,7 +136,7 @@
 
   .anon-user-sign-up
     background-color: white
-    margin-top: 1rem
+    margin-top: 3.5rem
     border: 5px solid anon-user-sign-up-project-outer
     height: initial
     padding-bottom: 1.6rem
@@ -150,7 +150,9 @@
       border: 5px solid anon-user-sign-up-project-inner;
     &:after
       border-bottom: none
-
+    @media(max-width: 600px)
+      margin-top: 1rem
+      
 .search-results,
 .category-page
   .category
