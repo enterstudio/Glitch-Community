@@ -62,6 +62,7 @@ module.exports = (application) ->
             login: user.login
             avatarUrl: user.avatarUrl or ANON_AVATAR
             color: user.color
+            id: user.id
       return users
 
   return self
