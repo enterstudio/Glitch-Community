@@ -29,6 +29,11 @@ module.exports = (application) ->
     #   self.cachedUser().name
 
     userRecentProjectIds: ->
+      Promise.resolve()
+      .then ->
+        if !self.cachedUser()
+          return []
+        application.api().get '/users/byIds'
       recentFiles = self.cachedUser().recentFiles
       recentFiles.map (recent) ->
         recent.projectId
