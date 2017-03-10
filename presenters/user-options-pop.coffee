@@ -10,5 +10,5 @@ module.exports = (application) ->
     stopPropagation: (event) ->
       event.stopPropagation()
 
-    hiddenUnlessSignInPopVisible: ->
-      'hidden'
+    hiddenUnlessUserOptionsPopVisible: ->
+      'hidden' unless application.userOptionsPopVisible()

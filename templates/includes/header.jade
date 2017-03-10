@@ -33,11 +33,10 @@ header(role="banner")
       button.button-small.opens-pop-over(click=@toggleSignInPopVisible) Sign in
       span(class=@popHiddenUnlessSignInPopVisible)
         = SignInPopPresenter(@.application).template
-    .user-options-pop-button.opens-pop-over(class=@hiddenUnlessUserIsSignedIn data-tooltip="User options")
+    .user-options-pop-button.opens-pop-over(class=@hiddenUnlessUserIsSignedIn click=@toggleUserOptionsPopVisible data-tooltip="User options")
       .user
         img(src=@userAvatar width=30 height=30)
         span.down-arrow.icon
-      span(class=@popHiddenUnlessSignInPopVisible)
-        = UserOptionsPopPresenter(@.application).template
+      = UserOptionsPopPresenter(@.application).template
 
       // TODO show user avatar and link to profile page if signed in

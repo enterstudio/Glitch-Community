@@ -26,6 +26,7 @@ self =
   # pop overs
   signInPopVisibleOnHeader: Observable false
   signInPopVisibleOnRecentProjects: Observable false
+  userOptionsPopVisible: Observable false
   
   # search
   searchQuery: Observable ""
@@ -48,6 +49,7 @@ self =
   closeAllPopOvers: ->
     self.signInPopVisibleOnHeader false
     self.signInPopVisibleOnRecentProjects false
+    self.userOptionsPopVisible false
 
   showProjectOverlay: (project) ->
     self.overlay.showProjectOverlay project

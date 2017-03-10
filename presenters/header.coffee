@@ -14,6 +14,10 @@ module.exports = (application) ->
       application.signInPopVisibleOnHeader.toggle()
       event.stopPropagation()
 
+    toggleUserOptionsPopVisible: (event) ->
+      application.userOptionsPopVisible.toggle()
+      event.stopPropagation()
+
     showVideoOverlay: ->
       application.overlay.showVideoOverlay()
 
