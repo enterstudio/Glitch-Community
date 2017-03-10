@@ -33,6 +33,7 @@ Promise.resolve()
 .then ->
   index = IndexTemplate application
   errorPage = errorPageTemplate application
+  application.user.getUserRecentProjects()
   
   if normalizedRoute is ""
     document.body.appendChild index
