@@ -12,3 +12,7 @@ module.exports = (application) ->
 
     hiddenUnlessUserOptionsPopVisible: ->
       'hidden' unless application.userOptionsPopVisible()
+
+    signOut: ->
+      localStorage.removeItem('cachedUser')
+      location.reload()

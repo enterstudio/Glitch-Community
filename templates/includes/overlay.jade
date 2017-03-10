@@ -17,7 +17,7 @@ span
         a.button-link.project-link(href=@editorLink onclick=@overlayButtonClickHandler data-track="overlay → view code" data-track-label=@projectName)
           .button View Code
         a.button-link.remix-link(href=@remixLink onclick=@overlayButtonClickHandler data-track="overlay → remix" data-track-label=@projectName)
-          .button.cta-button Remix your own
+          .button.button-cta Remix your own
 
       section.pop-over-actions.markdown-container(class=@warningIfReadmeError)
         - #console.log "🐒", @projectAvatar()

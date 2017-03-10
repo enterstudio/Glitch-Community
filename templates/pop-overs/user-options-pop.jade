@@ -6,14 +6,14 @@ dialog.pop-over.user-options-pop(class=@hiddenUnlessUserOptionsPopVisible click=
   - # @pketh
 
   - # section.pop-over-info
-  - #   .pop-title hello pirijan
+  - #   .pop-title hello pketh
 
   section.pop-over-actions
     a.button-link(href="https://glitch.com/edit")
-      button.button-small Start Coding
+      button.button-cta.button-small Start Coding
 
   section.pop-over-info.last-section.section-has-tertiary-buttons
-    a.button-link(href="#")
+    a.button-link(click=@signOut)
       button.button-small.has-emoji.button-tertiary.button-on-secondary-background
         span Sign Out
         span.emoji.balloon
