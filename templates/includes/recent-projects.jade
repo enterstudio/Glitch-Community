@@ -1,3 +1,4 @@
+- Loader = require "./loader"
 - SignInPopPresenter = require "../../presenters/sign-in-pop"
 
 section.profile
@@ -13,6 +14,9 @@ section.profile
         button.button-cta Start Coding
 
     article.projects
+      span(class="df")
+        = Loader(this)
+
       ul.projects-container
         - @projects().forEach (project) ->
           = project.template
