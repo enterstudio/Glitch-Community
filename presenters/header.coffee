@@ -42,9 +42,11 @@ module.exports = (application) ->
       if application.user.cachedUser()
         hour = moment().format('HH')
         if hour >= 16 and hour <=18
-          'sunset'
+          LOGO_SUNSET
         else if hour > 18 or hour <= 8
-          'night'
+          LOGO_NIGHT
+        else
+          LOGO_DAY
       else
         LOGO_DAY
       
