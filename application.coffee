@@ -36,15 +36,10 @@ self =
   searchResultsProjects: Observable []
   searchResultsProjectsLoaded: Observable false
 
-  
   normalizedBaseUrl: ->
     urlLength = baseUrl.length
-    firstCharacter = baseUrl.charAt(0)
     lastCharacter = baseUrl.charAt(urlLength-1)
-    if firstCharacter is "~"
-      console.log 'baseUrl fc', firstCharacter
-      return "/"
-    else if baseUrl is ""
+    if baseUrl is ""
       return "/"
     else if lastCharacter is not "/"
       return baseUrl + "/"
