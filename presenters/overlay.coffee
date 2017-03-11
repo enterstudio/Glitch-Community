@@ -23,13 +23,13 @@ module.exports = (application) ->
 
     currentUserIsInProject: (project) ->
       currentUserId = application.user.userId()
-      project.users.forEach (user) ->
+      project.users?.forEach (user) ->
         if user.id is currentUserId
           application.currentUserIsInProject true
-    
+
     hiddenIfCurrentUserInProject: ->
       'hidden' if application.currentUserIsInProject()
-        
+
     hiddenUnlessCurrentUserInProject: ->
       'hidden' unless application.currentUserIsInProject()
 
