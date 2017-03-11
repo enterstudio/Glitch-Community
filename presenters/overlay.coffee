@@ -104,10 +104,12 @@ module.exports = (application) ->
         self.showReadmeError()
 
     newRoute: ->
-      ret = "#{application.normalizedBaseUrl()}#{route}"
+      newRoute = "#{application.normalizedBaseUrl()}#{route}"
+  
       if application.searchQuery()
-        ret += "?q=#{application.searchQuery()}"
-      ret
+        newRoute += "?q=#{application.searchQuery()}"
+      console.log 'newroute', newRoute
+      newRoute
         
     hideOverlay: ->
       application.overlayVisible false
