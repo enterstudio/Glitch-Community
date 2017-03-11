@@ -28,7 +28,8 @@
 		"hamlet-cli": "^0.7.0-pre.1",
 		"exorcist": "^0.4.0",
 		"uglify-js": "^2.8.4",
-		"autoprefixer-stylus": "^0.11.0"
+		"autoprefixer-stylus": "^0.11.0",
+		"moment": "^2.17.1"
 	},
 	"engines": {
 		"node": "6.9.1"
