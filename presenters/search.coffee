@@ -19,7 +19,7 @@ module.exports = (application) ->
     searchProjects: ->
       application.searchResultsProjectsLoaded false
       query = application.searchQuery()
-      searchProjectsUrl = "https://api.gomix.com/projects/search?q=#{query}"
+      searchProjectsUrl = "https://api.glitch.com/projects/search?q=#{query}"
       axios.get searchProjectsUrl
         .then (response) ->
           application.searchResultsProjects response.data
@@ -30,7 +30,7 @@ module.exports = (application) ->
     searchUsers: ->
       application.searchResultsUsersLoaded false
       query = application.searchQuery()
-      searchUsersUrl = "https://api.gomix.com/users/search?q=#{query}"
+      searchUsersUrl = "https://api.glitch.com/users/search?q=#{query}"
       axios.get searchUsersUrl
         .then (response) ->
           application.searchResultsUsers response.data
