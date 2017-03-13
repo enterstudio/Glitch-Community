@@ -83,7 +83,7 @@ module.exports = (application) ->
       application.overlayProject project
       self.currentUserIsInProject project
       self.getProjectReadme project
-      history.replaceState(null, null, "#{application.normalizedBaseUrl()}/~#{project.domain}")
+      history.replaceState(null, null, "#{application.normalizedBaseUrl()}~#{project.domain}")
 
     showVideoOverlay: ->
       application.overlayVisible true
