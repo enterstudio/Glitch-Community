@@ -48,16 +48,13 @@ module.exports =
           avatarUrl: 'https://avatars3.githubusercontent.com/u/2178663?v=3&s=48'
       ]
     ,
-      name: 'Teach Alexa new skills'
-      domain: 'alexa-skill'
-      id: '681cc882-059d-4b05-a1f6-6cbc099cc79c'
-      img: "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-alexa.png"
+      name: 'Slack Slash Command'
+      domain: 'slack-slash-command'
+      id: 'a9e55c25-bf40-4162-b1b5-dc33047c0cdc'
+      img: "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-slack-bot.png"
       users: [
-          login: 'STRd6'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
-        ,
-          login: 'pketh'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
+          login: 'Slack'
+          avatarUrl: slackAvatar
       ]
   ]
 
