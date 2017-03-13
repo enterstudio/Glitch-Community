@@ -34,6 +34,7 @@ Promise.resolve()
     document.body.appendChild index
 
   else if application.isCategoryUrl(normalizedRoute)
+    console.log 'hi'
     category = application.getCategoryFromUrl normalizedRoute
     categoryPage = CategoryPage(application, category).template()
     document.body.appendChild categoryPage

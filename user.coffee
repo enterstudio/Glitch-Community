@@ -1,3 +1,4 @@
+
 axios = require 'axios'
 
 ANON_AVATAR = "https://cdn.gomix.com/f6949da2-781d-4fd5-81e6-1fdd56350165%2Fanon-user-on-project-avatar.svg"
@@ -17,16 +18,16 @@ module.exports = (application) ->
       true if self.cachedUser() and self.cachedUser().login
 
     avatarColor: ->
-      self.cachedUser().color
+      self.cachedUser()?.color
 
     avatarImage: ->
       self.cachedUser()?.avatarUrl
 
     userName: ->
-      self.cachedUser().login
+      self.cachedUser()?.login
 
     userId: ->
-      self.cachedUser().id
+      self.cachedUser()?.id
       
     # fullName: ->
     #   self.cachedUser().name
