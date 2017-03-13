@@ -30,6 +30,9 @@ Promise.resolve()
   errorPage = errorPageTemplate application
   application.user.getUserRecentProjects()
   
+  if normalizedRoute is "index.html"
+    normalizedRoute = ""
+  
   if normalizedRoute is ""
     document.body.appendChild index
 

@@ -7,12 +7,12 @@ module.exports = (application) ->
     githubAuthLink: ->
       clientId = "b4cb743ed07e20abf0b2"
       scope = "user:email,repo"
-      redirectUri = "https://gomix.com/community-test/login/github"
+      redirectUri = "https://glitch.com/login/github"
       "https://github.com/login/oauth/authorize?client_id=#{clientId}&scope=#{scope}&redirect_uri=#{redirectUri}"
 
     facebookAuthLink: ->
-      callbackURL = "https://gomix.com/community-test/login/facebook"
-      "https://api.gomix.com/auth/facebook?callbackURL=#{callbackURL}"
+      callbackURL = "https://glitch.com/login/facebook"
+      "https://api.glitch.com/auth/facebook?callbackURL=#{callbackURL}"
 
     template: ->
       SignInPopTemplate self
