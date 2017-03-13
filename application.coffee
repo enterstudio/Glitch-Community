@@ -109,7 +109,7 @@ self =
     console.log provider, code
     authURL = "/authenticate/"
     if provider == "facebook"
-      callbackURL = "https://gomix.com/community-test/login/facebook"
+      callbackURL = "https://glitch.com/login/facebook"
       authURL = "/auth/facebook/callback?callbackURL=#{callbackURL}&code="
     self.api().post "#{authURL}#{code}"
     .then (response) ->
