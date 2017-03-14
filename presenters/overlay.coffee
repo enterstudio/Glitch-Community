@@ -41,13 +41,13 @@ module.exports = (application) ->
         "https://cdn.gomix.com/project-avatar/#{self.projectId()}.png"
 
     showLink: -> 
-      "https://#{self.projectDomain()}.gomix.me" # change to glitch later
+      "https://#{self.projectDomain()}.glitch.me"
 
     editorLink: ->
-      "https://gomix.com/#!/project/#{self.projectDomain()}" # change to glitch later
+      "https://glitch.com/edit/#!/project/#{self.projectDomain()}"
 
     remixLink: ->
-      "https://gomix.com/#!/remix/#{self.projectDomain()}/#{self.projectId()}" # change to glitch later
+      "https://glitch.com/edit/#!/remix/#{self.projectDomain()}/#{self.projectId()}"
 
     overlayButtonClickHandler: (event) ->
       application.tracking.init event
@@ -94,7 +94,7 @@ module.exports = (application) ->
       application.overlayVisible true
       application.overlayReadmeLoaded false
       application.overlayTemplate 'project'
-      projectInfoUrl = "https://api.gomix.com/projects/#{projectDomain}"
+      projectInfoUrl = "https://api.glitch.com/projects/#{projectDomain}"
       axios.get projectInfoUrl,
         cancelToken: source.token
       .then (response) ->
@@ -116,7 +116,7 @@ module.exports = (application) ->
       history.replaceState(null, null, self.newRoute())
       
     getProjectReadme: (project) ->
-      readmeUrl = "https://api.gomix.com/projects/#{self.projectId()}/readme" # change to glitch later
+      readmeUrl = "https://api.glitch.com/projects/#{self.projectId()}/readme" # change to glitch later
       axios.get readmeUrl,
         cancelToken: source.token
       .then (response) ->
