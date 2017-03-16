@@ -33,7 +33,7 @@ module.exports =
       name: 'Glitch Link Unfurling for Slack'
       domain: 'solid-tugboat'
       id: '834590ab-f27a-4fdb-b510-78986f4ba4bc'
-      img: "https://cdn.glitch.com/ffd2347c-5664-45e9-87a8-0f2f8cdb5891%2Fglitch_fish.png"
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-slack-glitch-unfurling.png?1489695229677"
       users: [
           login: 'glitch'
           avatarUrl: 'https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fglitch-team-avatar.svg'
