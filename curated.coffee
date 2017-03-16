@@ -51,7 +51,7 @@ module.exports =
       name: 'Slack Slash Command'
       domain: 'slack-slash-command'
       id: 'a9e55c25-bf40-4162-b1b5-dc33047c0cdc'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-slack-slash-bot.png?1489695229764"
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-slack-slash-bot.svg?1489696106409"
       users: [
           login: 'Slack'
           avatarUrl: slackAvatar
