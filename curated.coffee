@@ -35,9 +35,9 @@ module.exports =
       id: '834590ab-f27a-4fdb-b510-78986f4ba4bc'
       img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-slack-glitch-unfurling.png?1489695229677"
       users: [
-          login: 'glitch'
+          login: 'Glitch team'
           avatarUrl: 'https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fglitch-team-avatar.svg'
-    ]
+      ]
     ,
       name: 'Start your own blog'
       domain: 'ghost'
@@ -51,7 +51,7 @@ module.exports =
       name: 'Slack Slash Command'
       domain: 'slack-slash-command'
       id: 'a9e55c25-bf40-4162-b1b5-dc33047c0cdc'
-      img: "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-slack-bot.png"
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-slack-slash-bot.png?1489695229764"
       users: [
           login: 'Slack'
           avatarUrl: slackAvatar
