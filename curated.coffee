@@ -636,15 +636,6 @@ module.exports =
       ]
       categoryIds: [1]
     ,
-      id: 'b7e334f3-109b-4b92-bead-d995cbba5950'
-      domain: 'fogbugz-js'
-      description: "A lightweight, promise-based wrapper around the FogBugz API"
-      users: [
-          login: 'bigdogwillfeed'
-          avatarUrl: 'https://avatars3.githubusercontent.com/u/4453639?v=3&s=48'
-      ]
-      categoryIds: [3]
-    ,
       id: 'd5d11c11-c239-4b16-ae23-def8e2687c25'
       domain: 'fogbugz-webhooks'
       description: "A simple server that handles incoming Webhooks delivered from FogBugz"
