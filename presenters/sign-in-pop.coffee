@@ -6,7 +6,7 @@ module.exports = (application) ->
   
     githubAuthLink: ->
       clientId = "b4cb743ed07e20abf0b2"
-      scope = "user:email,repo"
+      scope = "user:email"
       redirectUri = "https://glitch.com/login/github"
       "https://github.com/login/oauth/authorize?client_id=#{clientId}&scope=#{scope}&redirect_uri=#{redirectUri}"
 
