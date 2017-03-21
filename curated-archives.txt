@@ -2,7 +2,11 @@
 name: 'Offline With Service Worker',
 domain: 'offline-with-service-worker',
 id: 'ccd1f0e0-94cd-4ec4-8d37-9c31ac9edc24',
-img
+img: ''
+users: [
+  login: 'kosamari',
+  avatarUrl: 'https://avatars3.githubusercontent.com/u/4581495?v=3&s=48'
+]
 
 
 [
