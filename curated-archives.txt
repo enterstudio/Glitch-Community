@@ -1,4 +1,10 @@
-# slack unfurl launch
+
+name: 'Offline With Service Worker',
+domain: 'offline-with-service-worker',
+id: 'ccd1f0e0-94cd-4ec4-8d37-9c31ac9edc24',
+img
+
+
 [
     name: 'Make a Messenger bot in minutes'
     domain: 'messenger-bot'
@@ -8,10 +14,6 @@
         login: 'fbsamples'
         avatarUrl: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
     ]
-    
-    
-    
-    
 
 [
       name: 'Big Game Bingo'
