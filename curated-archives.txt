@@ -1,23 +1,21 @@
 
-name: 'Offline With Service Worker',
-domain: 'offline-with-service-worker',
-id: 'ccd1f0e0-94cd-4ec4-8d37-9c31ac9edc24',
-img: ''
-users: [
-  login: 'kosamari',
-  avatarUrl: 'https://avatars3.githubusercontent.com/u/4581495?v=3&s=48'
-]
-
-
-[
-    name: 'Make a Messenger bot in minutes'
-    domain: 'messenger-bot'
-    id: 'ca73ace5-3fff-4b8f-81c5-c64452145271'
-    img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-facebook-messenger.png"
-    users: [
-        login: 'fbsamples'
-        avatarUrl: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
-    ]
+  name: 'Start your own blog'
+  domain: 'ghost'
+  id: '9a2033a3-30d8-4658-93a8-3b5073c73237'
+  img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FghostFeature.png"
+  users: [
+      login: 'TryGhost'
+      avatarUrl: 'https://avatars3.githubusercontent.com/u/2178663?v=3&s=48'
+  ],
+  
+  name: 'Make a Messenger bot in minutes'
+  domain: 'messenger-bot'
+  id: 'ca73ace5-3fff-4b8f-81c5-c64452145271'
+  img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-facebook-messenger.png"
+  users: [
+      login: 'fbsamples'
+      avatarUrl: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
+  ]
 
 [
       name: 'Big Game Bingo'
