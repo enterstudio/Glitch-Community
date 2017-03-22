@@ -40,7 +40,7 @@ module.exports =
       ]
     ,
       name: 'Offline With Service Worker',
-      domain: 'offline-with-service-worker',
+      domain: 'offline-with-serviceworker',
       id: 'ccd1f0e0-94cd-4ec4-8d37-9c31ac9edc24',
       img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-service-workers.png?1490130108088'
       users: [
