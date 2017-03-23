@@ -933,5 +933,13 @@ module.exports =
         avatarUrl: 'https://avatars0.githubusercontent.com/u/2479295?v=3'
       ]
       categoryIds: [1]
-    
+    ,
+      id: 'c8ac88a4-215c-4064-84c4-946e96b63ace'
+      domain: 'aframe'
+      description: 'A-Frame is a web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms!'
+      users: [
+        login: 'ngokevin'
+        avatarUrl: 'https://avatars1.githubusercontent.com/u/674727?v=3'
+      ]
+      categoryIds: [1]
   ]
