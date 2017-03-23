@@ -924,4 +924,13 @@ module.exports =
           login: 'garethx'
           avatarUrl: 'https://avatars3.githubusercontent.com/u/1830035?v=3&s=48'
       ]
+    ,
+      id: 'c6612fcf-459b-45b3-8ea7-7e1088946a24'
+      domain: 'choo-todo'
+      description: 'An implementation of a TodoMVC-like app using the new v5 Choo API! This is a good starter project if you\'re interested in learning about or trying out Choo.'
+      users: [
+        login: 'byronhulcher'
+        avatarUrl: 'https://avatars0.githubusercontent.com/u/2479295?v=3'
+      ]
+      categoryIds: [1]
   ]
