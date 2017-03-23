@@ -1,4 +1,16 @@
+TO BE ADDED:
 
+      id: 'c8ac88a4-215c-4064-84c4-946e96b63ace'
+      domain: 'aframe'
+      description: 'A-Frame is a web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms!'
+      users: [
+        login: 'ngokevin'
+        avatarUrl: 'https://avatars1.githubusercontent.com/u/674727?v=3'
+      ]
+      categoryIds: [1]
+      
+=========
+      
   name: 'Start your own blog'
   domain: 'ghost'
   id: '9a2033a3-30d8-4658-93a8-3b5073c73237'
