@@ -1,11 +1,9 @@
-
 - Loader = require "./loader"
 - SignInPopPresenter = require "../../presenters/sign-in-pop"
 
 section.profile
   h2 Your Projects
-  - # → link this when profile pages exist
-  .recent-projects
+  .recent-projects(style="background-image: url(#{@userCoverImage}); background-color: #{@userCoverColor}")
     .profile-info
       .user-avatar-container
         .user-avatar(class=@userAvatarIsAnon style="background-color: #{@userAvatarColor}")

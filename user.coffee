@@ -23,12 +23,20 @@ module.exports = (application) ->
     avatarImage: ->
       self.cachedUser()?.avatarUrl
 
+    coverImage: ->
+      # temp const
+      "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fdefault-cover.svg"
+    
+    coverColor: ->
+      # temp const
+      "#1f33d9"
+
     userName: ->
       self.cachedUser()?.login
 
     userId: ->
       self.cachedUser()?.id
-      
+    
     # fullName: ->
     #   self.cachedUser().name
 

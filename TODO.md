@@ -40,29 +40,27 @@
 - [x] BUG in search , where clicking project, hitting reload, 404s
 - [x] update title tag in pages (see prod, searches, categories, 404 👻 Page Not Found) set from `client.coffee`?
 - [x] social meta tags/imgs in index.html
-
-
-
-- [ ] pattern background instead of table for default .profile. maybe something glitchy, something earthboundy/cafe-club? tiling
-
-
-- [ ] PERF: client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
-- [ ] PERF: compress css
-- [ ] PERF: sourcemaps
-- [ ] is the webfont redownloading each time?
-
-- [ ] ??port image links to the new project (because will be fully replacing the current community)
-
+- [x] pattern background instead of table for default .profile. maybe something glitchy, something earthboundy/cafe-club? tiling
+- [x] PERF: client.js size and perf improvemnts (shouldn't be pulling down 4mb for application)
+- [x] PERF: compress css
+- [x] PERF: sourcemaps
+- [x] is the webfont redownloading each time?
+- [x] ??port image links to the new project (because will be fully replacing the current community)
 - [x] AUTH: add fb/gh sign in strategies in popover (inside header)
 - [x] AUTH: finish multi sign in oauth/and new user localstorage.cacheduser like editor
-- [ ] AUTH: pass that new user to editor (test)
+- [x] AUTH: pass that new user to editor (test)
 
 ## phase 2
 
-- [ ] getting recent projects , from teh recent files ls data is kinda flakey, maybe should move that to a user.getUser info api call instead
+- [x] getting recent projects , from teh recent files ls data is kinda flakey, maybe should move that to a user.getUser info api call instead
+
+- [ ] my recent projects on click open editor
+- [ ] recent projects have 'new project ✨'
+
+
 - [ ] PARTNER page: beta for profile page: replace special partner category page + formatting with profile page beta (/@slack)
 - [ ] get `application` methods into console, like editor
-- [ ] hands raised mockup: show some projects that currently need help
+- [x] hands raised mockup: show some projects that currently need help
 - [ ] @PROFILE: profile pages https://fogcreek.wake.com/474
 - [ ] @PROFILE: profile hover pop https://fogcreek.wake.com/476
 - [ ] add accessibility (aria, etc.)

@@ -1,4 +1,4 @@
-- Featured = require "../includes/featured"
+- FeaturedProjects = require "../includes/featured-projects"
 - Categories = require "../includes/categories"
 - ByFogcreek = require "../includes/by-fogcreek"
 - Footer = require "../includes/footer"
@@ -18,7 +18,7 @@
     - if @.user.cachedUser()
       = RecentProjectsPresenter(this).template
 
-    = Featured(this)
+    = FeaturedProjects(this)
 
     - application = @
     - @selectedCategories().forEach (category) ->

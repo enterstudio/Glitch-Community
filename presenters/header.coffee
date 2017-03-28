@@ -4,7 +4,7 @@ HeaderTemplate = require "../templates/includes/header"
 
 module.exports = (application) ->
 
-  console.log "🚑", baseUrl
+  console.log "💁", baseUrl
   self = 
     application: application
     baseUrl: application.normalizedBaseUrl()
@@ -39,14 +39,11 @@ module.exports = (application) ->
       LOGO_DAY = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Flogo-day.svg"
       LOGO_SUNSET = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Flogo-sunset.svg"
       LOGO_NIGHT = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Flogo-night.svg"
-      if application.user.cachedUser()
-        hour = moment().format('HH')
-        if hour >= 16 and hour <=18
-          LOGO_SUNSET
-        else if hour > 18 or hour <= 8
-          LOGO_NIGHT
-        else
-          LOGO_DAY
+      hour = moment().format('HH')
+      if hour >= 16 and hour <=18
+        LOGO_SUNSET
+      else if hour > 18 or hour <= 8
+        LOGO_NIGHT
       else
         LOGO_DAY
       

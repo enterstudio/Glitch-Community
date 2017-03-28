@@ -52,6 +52,7 @@ self =
     self.userOptionsPopVisible false
 
   showProjectOverlay: (project) ->
+    event.preventDefault()
     self.overlay.showProjectOverlay project
   
   featuredProjects: ->

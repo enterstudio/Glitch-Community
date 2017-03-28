@@ -1,12 +1,9 @@
-// defaultUserBackground = "https://cdn.gomix.com/01a72eba-647e-4abf-abe6-89b02e388a7f%2Fdefault-user-background.svg"
-defaultCover = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fdefault-cover.svg"
 anonAvatar = "https://cdn.gomix.com/01a72eba-647e-4abf-abe6-89b02e388a7f%2Fanon-avatar.svg"
 
 .profile
   padding-bottom: 1rem
 
   .recent-projects
-    background-image: url(defaultCover)
     border-radius: 5px
     padding: 16px
     overflow: auto
@@ -51,5 +48,10 @@ anonAvatar = "https://cdn.gomix.com/01a72eba-647e-4abf-abe6-89b02e388a7f%2Fanon-
     display: inline
     padding: 0
     
-  .project:after
-    border-bottom-color: section-line
+  .project
+    &:hover,
+    &:active
+      button
+        background-color: cta
+    &:after
+      border-bottom-color: section-line

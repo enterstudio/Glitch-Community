@@ -1,11 +1,31 @@
 ProjectTemplate = require "../templates/includes/project"
 
-self = (application, project, category) ->
+module.exports = (application, project, category) ->
 
-  template: ->
-    templateModel = Object.assign {}, application
-    templateModel.category = category
-    templateModel.project = project
-    ProjectTemplate templateModel
+  self = 
   
-module.exports = self
+    category: category
+    project: project
+    
+    template: ->
+      ProjectTemplate self
+
+    projectLink: ->
+      if project.isRecentProject
+        self.editorLink()
+      else
+        "/~#{project.domain}"
+      
+    editorLink: ->
+      "https://glitch.com/edit/#!/project/#{project.domain}"
+      
+    showProject: (project) ->
+      event.preventDefault()
+      if project.isRecentProject
+        window.location.href = self.editorLink()
+      else
+        application.showProjectOverlay project
+
+    buttonCtaIfEdit: ->
+      if project.isRecentProject
+        "button-cta"

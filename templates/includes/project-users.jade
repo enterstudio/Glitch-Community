@@ -1,0 +1,27 @@
+- glitchTeamAvatar = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fglitch-team-avatar.svg"
+- users = @users()
+
+
+span
+  - if users
+    .users
+      - users.forEach (user) ->
+        .user(title=user.login data-tooltip=user.login data-tooltip-left=true)
+          img(width=30 height=30 src=user.avatarUrl style="background-color:#{user.color}")
+    .user-names
+      - currentUser = 0
+      - users.forEach (user) ->
+        - totalUsers = users.length - 1
+        - if currentUser != 0 and currentUser < totalUsers
+          span= " , "
+        - else if currentUser != 0 and totalUsers > 0
+          span= " and "
+        span.user-name=user.login
+        - currentUser += 1
+  - else
+    .users
+      .user(title="Glitch team" data-tooltip="Glitch team" data-tooltip-left=true)
+        img(width=30 height=30 src=glitchTeamAvatar)
+    .user-names
+      span.user-name Glitch Team
+
