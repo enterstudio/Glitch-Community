@@ -186,18 +186,6 @@ module.exports =
       ]
       categoryIds: [2]
     ,
-      id: '397d14ff-0309-4411-895a-fda9e935c44b'
-      domain: 'soundboard'
-      description: 'Click pictures, listen to sounds, celebrate'
-      users: [
-          login: 'STRd6'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
-        ,
-          login: 'pketh'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
-      ]
-      categoryIds: [2]
-    ,
       id: 'bb648dc0-74b3-4571-8840-6bf49cf84e66'
       domain: 'image-editor'
       description: "A thing for making SVG images. Draw with it."
