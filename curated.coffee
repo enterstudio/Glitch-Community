@@ -898,6 +898,10 @@ module.exports =
       id: '9d99c4fd-2153-4d0e-b9a7-dcb9b46c9028'
       domain: 'dojo-bigscreen'
       description: "A big screen dashboard for your business using Trello, Weather Underground and StatusCake examples"
+      users: [
+          login: 'danroot'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/2205215?v=3&s=48'
+      ]    
       categoryIds: [3]
     ,
       id: '7bb031da-8422-40b7-b9fb-bab494908c5d'
