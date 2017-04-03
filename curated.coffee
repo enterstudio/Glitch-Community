@@ -78,11 +78,10 @@ module.exports =
 
   # TODO work w gareth to design/make a collection page. distinct from category page.
   # more like a blog post with interstitial photos and descriptions?
-  # ex 'digital art', 'black history month' collection
+  # ex 'black history month' collection
   # a more guided path from intro, tutorials, to building blocks?
   # https://docs.google.com/document/d/1G58e3FqUXqaXPRKwG5Y9w3hw5gbLrIc2p90mX5S-3hk/edit#
   # /collection/big-game urls?
-  # medium blog posts instead?
   collections: -> [
       name: 'Big Game Apps'
       url: 'big-game'
