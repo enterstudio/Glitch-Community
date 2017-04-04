@@ -20,6 +20,10 @@ console.log "🌈 isSignedIn", application.user.isSignedIn()
 # client-side routing:
 Promise.resolve()
 .then ->
+  if document.location.hash.startsWith "#!/"
+    document.location = "https://glitch.com/edit/" + document.location.hash
+    return
+.then ->
   if normalizedRoute.startsWith "login/"
     application.login normalizedRoute.substring("login/".length), queryString.code
     .then ->
