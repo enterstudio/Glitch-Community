@@ -86,17 +86,6 @@
       partnerIds: [1]
 
 
-# dropped/niche projects
-      projectId: 'cb02d9ae-61ed-4053-b465-d6e2e9656ac3'
-      domain: 'assets-lib'
-      description: "Use relative paths to serve your assets on HyperDev"
-      users: [
-          name: 'etamponi'
-          avatar: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
-      ]
-      categoryIds: [1] 
-    ,
-
 
 
 name: 'Quarterback Quiz'

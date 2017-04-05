@@ -930,6 +930,15 @@ module.exports =
       ]
       categoryIds: [1]
     ,
+      id: 'cb02d9ae-61ed-4053-b465-d6e2e9656ac3'
+      domain: 'assets-lib'
+      description: 'Use relative paths to serve your assets on Glitch'
+      users: [
+          login: 'etamponi'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3'
+      ]
+      categoryIds: [1] 
+    ,
       id: 'f2fa9e14-e052-49c3-8799-02229a096740'
       domain: 'guardian'
       description: 'A simple Guardian API client using server side rendering'
@@ -945,6 +954,15 @@ module.exports =
       users: [
         login: 'girliemac'
         avatarUrl: 'https://avatars1.githubusercontent.com/u/107763?v=3'
+      ]
+      categoryIds: [1,3]
+    ,
+      id: 'ccd1f0e0-94cd-4ec4-8d37-9c31ac9edc24'
+      domain: 'offline-with-serviceworker'
+      description: 'Make your application load instantly & work offline with ServiceWorker'
+      users: [
+        login: 'kosamari'
+        avatarUrl: 'https://avatars1.githubusercontent.com/u/4581495?v=3'
       ]
       categoryIds: [1,3]    
   ]
