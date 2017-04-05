@@ -902,7 +902,7 @@ module.exports =
           login: 'danroot'
           avatarUrl: 'https://avatars3.githubusercontent.com/u/2205215?v=3&s=48'
       ]    
-      categoryIds: [3]
+      categoryIds: [6]
     ,
       id: '7bb031da-8422-40b7-b9fb-bab494908c5d'
       domain: 'bitlytics'
@@ -923,7 +923,7 @@ module.exports =
     ,
       id: 'c8ac88a4-215c-4064-84c4-946e96b63ace'
       domain: 'aframe'
-      description: 'A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component'
+      description: 'A web framework for building VR experiences. Make WebVR with HTML and Entity-Component'
       users: [
         login: 'ngokevin'
         avatarUrl: 'https://avatars1.githubusercontent.com/u/674727?v=3'
@@ -937,5 +937,14 @@ module.exports =
         login: 'gidsg'
         avatarUrl: 'https://avatars1.githubusercontent.com/u/1764158?v=3'
       ]
-      categoryIds: [6,3]    
+      categoryIds: [6,1]
+    ,
+      id: '3d15e4dc-9789-49b3-b7aa-59462d9889fd'
+      domain: '2factor-auth'
+      description: 'Two-Factor Authentication (2FA) demo written in Node.js with Nexmo Verify API'
+      users: [
+        login: 'girliemac'
+        avatarUrl: 'https://avatars1.githubusercontent.com/u/107763?v=3'
+      ]
+      categoryIds: [1,3]    
   ]
