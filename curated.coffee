@@ -35,13 +35,13 @@ module.exports =
       id: '834590ab-f27a-4fdb-b510-78986f4ba4bc'
       img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-slack-glitch-unfurling.png?1489695229677"
     ,
-      name: 'Offline With Service Worker',
-      domain: 'offline-with-serviceworker',
-      id: 'ccd1f0e0-94cd-4ec4-8d37-9c31ac9edc24',
-      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-service-workers.png?1490130108088'
+      name: 'Teach Alexa New Skills',
+      domain: 'alexa-skill',
+      id: '681cc882-059d-4b05-a1f6-6cbc099cc79c',
+      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Falexa.png?1491426616444'
       users: [
-        login: 'kosamari',
-        avatarUrl: 'https://avatars3.githubusercontent.com/u/4581495?v=3&s=48'
+          login: 'etamponi'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
     ,
       name: 'Slack Slash Command'
