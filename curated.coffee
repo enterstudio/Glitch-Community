@@ -914,7 +914,7 @@ module.exports =
     ,
       id: 'c6612fcf-459b-45b3-8ea7-7e1088946a24'
       domain: 'choo-todo'
-      description: 'An implementation of a TodoMVC-like app using the new v5 Choo API! This is a good starter project if you\'re interested in learning about or trying out Choo.'
+      description: 'An implementation of a TodoMVC-like app using the new v5 Choo API'
       users: [
         login: 'byronhulcher'
         avatarUrl: 'https://avatars0.githubusercontent.com/u/2479295?v=3'
@@ -923,10 +923,19 @@ module.exports =
     ,
       id: 'c8ac88a4-215c-4064-84c4-946e96b63ace'
       domain: 'aframe'
-      description: 'A-Frame is a web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component. Works on Vive, Rift, desktop, mobile platforms!'
+      description: 'A web framework for building virtual reality experiences. Make WebVR with HTML and Entity-Component'
       users: [
         login: 'ngokevin'
         avatarUrl: 'https://avatars1.githubusercontent.com/u/674727?v=3'
       ]
       categoryIds: [1]
+    ,
+      id: 'f2fa9e14-e052-49c3-8799-02229a096740'
+      domain: 'guardian'
+      description: 'A simple Guardian API client using server side rendering'
+      users: [
+        login: 'gidsg'
+        avatarUrl: 'https://avatars1.githubusercontent.com/u/1764158?v=3'
+      ]
+      categoryIds: [6,3]    
   ]
