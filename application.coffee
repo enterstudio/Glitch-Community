@@ -60,7 +60,7 @@ self =
 
   categories: ->
     homepageCategories = _.filter curated.categories(), (category) ->
-      category
+      !category.categoryPageOnly
     _.shuffle homepageCategories
 
   projectsInCategory: (categoryId) ->
