@@ -17,7 +17,7 @@ module.exports = (application, project, category) ->
         "/~#{project.domain}"
       
     editorLink: ->
-      "https://glitch.com/edit/#!/project/#{project.domain}"
+      "https://glitch.com/edit/#!/#{project.domain}"
       
     showProject: (project) ->
       event.preventDefault()

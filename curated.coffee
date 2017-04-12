@@ -998,7 +998,7 @@ module.exports =
     ,
       id: 'd6f7f0c0-b2cf-4339-8249-d09d3db2cfa1'
       domain: 'wordpress'
-      description: 'Forgive me father for i have blogged'
+      description: 'Forgive me father for I have blogged'
       categoryIds: [9]
      ,
       id: 'de2514f1-269d-4043-b358-1be3612d4686'
