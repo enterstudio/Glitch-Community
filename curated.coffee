@@ -31,29 +31,21 @@ backgroundOpacity = 0.3
 module.exports =
 
   featured: -> [
-      name: 'Glitch Link Unfurling for Slack'
-      domain: 'solid-tugboat'
-      id: '834590ab-f27a-4fdb-b510-78986f4ba4bc'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-slack-glitch-unfurling.png?1489695229677"
+      name: 'Make A Website: Join Us @ Noon EDT'
+      domain: 'my-first-webpage'
+      id: 'a579c549-6b54-48c5-b964-de6aa3d8ceda'
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fmy-first-webpage.png?1492092500435"
     ,
-      name: 'Teach Alexa New Skills',
-      domain: 'alexa-skill',
-      id: '681cc882-059d-4b05-a1f6-6cbc099cc79c',
-      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Falexa.png?1491426616444'
-      users: [
-          login: 'etamponi'
-          avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
-      ]
+      name: 'Glitchocities'
+      domain: 'glitchocities'
+      id: '2288e05f-9a49-470f-b907-22494e69cce1'
+      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fglitchocities.png?1492092755880'
     ,
-      name: 'Slack Slash Command'
-      domain: 'slack-slash-command'
-      id: 'a9e55c25-bf40-4162-b1b5-dc33047c0cdc'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-slack-slash-bot.svg?1489696106409"
-      users: [
-          login: 'Slack'
-          avatarUrl: slackAvatar
-      ]
-  ]
+      name: 'GlitchSpace'
+      domain: 'glitchspace'
+      id: 'bc3e04b5-4113-469c-81c5-e2ca1334b0a8'
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fglitchspace.png?1492093801916"
+  ] 
 
 
   partners: -> [

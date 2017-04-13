@@ -4,7 +4,10 @@
 
 section.featured-projects
 
-  h2 Featured Apps
+  h2
+    b Featured Apps:
+    a(href="/websites") First Websites →
+  p A look back at the sites where many created their first web pages.
   ul
     - application = @
     - @featuredProjects().forEach (project) ->
