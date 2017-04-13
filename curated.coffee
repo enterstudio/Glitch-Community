@@ -31,9 +31,9 @@ backgroundOpacity = 0.3
 module.exports =
 
   featured: -> [
-      name: 'Make A Website: Join Us Live!'
-      domain: 'my-first-webpage'
-      id: 'a579c549-6b54-48c5-b964-de6aa3d8ceda'
+      name: 'The First Website'
+      domain: 'the-first-website'
+      id: '371baed9-806f-4257-9b99-f0918b08c5df'
       img: "https://cdn.glitch.com/c385e92d-5de0-4b19-849e-8a3470eb03d6%2FScreen%20Shot%202017-04-13%20at%2016.14.35.png?1492096722787"
     ,
       name: 'Glitchocities'
