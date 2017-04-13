@@ -867,7 +867,7 @@ module.exports =
           login: 'zitrusfrisch'
           avatarUrl: 'https://avatars3.githubusercontent.com/u/1192474?v=3&s=48'
       ]
-      categoryIds: [3,4]
+      categoryIds: [3,4,9]
     ,
       id: 'c39d16ef-bc2e-44ae-8df5-4293b248b243'
       domain: 'html-5-boilerplate'
@@ -1001,5 +1001,10 @@ module.exports =
       id: '371baed9-806f-4257-9b99-f0918b08c5df'
       domain: 'the-first-website'
       description: 'Where it all began'
-      categoryIds: [9]     
+      categoryIds: [9]
+     ,
+      id: '1511c567-bd2e-4467-9bb9-9241a34ca5e8'
+      domain: 'retro-bootstrap'
+      description: 'A vintage Bootstrap 1.4.0 example template to tinker with'
+      categoryIds: [9]      
   ]
