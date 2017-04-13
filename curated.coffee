@@ -44,7 +44,7 @@ module.exports =
       name: 'GlitchSpace'
       domain: 'glitchspace'
       id: 'bc3e04b5-4113-469c-81c5-e2ca1334b0a8'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fglitchspace.png?1492093801916"
+      img: "https://cdn.glitch.com/c385e92d-5de0-4b19-849e-8a3470eb03d6%2Fglitchspace.png?1492086194993"
   ] 
 
 
