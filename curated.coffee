@@ -34,7 +34,7 @@ module.exports =
       name: 'The First Website'
       domain: 'the-first-website'
       id: '371baed9-806f-4257-9b99-f0918b08c5df'
-      img: "https://cdn.glitch.com/c385e92d-5de0-4b19-849e-8a3470eb03d6%2FScreen%20Shot%202017-04-13%20at%2016.14.35.png?1492096722787"
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fmy-first-webpage.png?1492092500435"
     ,
       name: 'Glitchocities'
       domain: 'glitchocities'
