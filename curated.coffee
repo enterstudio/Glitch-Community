@@ -1027,6 +1027,10 @@ module.exports =
       id: 'e356b09a-8971-43d2-b7b4-f1390422e6f1'
       domain: 'graph-api-webhooks'
       description: 'A sample client for Facebook\'s Graph API Webhooks'
+      users: [
+          login: 'fbsamples'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
+      ]    
       categoryIds: [10]
      ,
       id: '4c08ac56-7e55-424e-9134-744a82fd8ee0'
@@ -1041,5 +1045,9 @@ module.exports =
       id: 'f83e1ac8-b75f-45e2-9ce3-4cf0dfc7656e'
       domain: 'fb-live-teleprompter'
       description: 'Live comments teleprompter'
+      users: [
+          login: 'fbsamples'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
+      ]    
       categoryIds: [10]    
   ]
