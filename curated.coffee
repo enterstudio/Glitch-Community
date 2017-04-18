@@ -1053,7 +1053,7 @@ module.exports =
      ,
       id: 'a665875d-1aa9-4122-8ea1-4513c66da156'
       domain: 'botkit-facebook'
-      description: Build a Facebook Messenger bot with Botkit and Botkit Studio'
+      description: 'Build a Facebook Messenger bot with Botkit and Botkit Studio'
       users: [
           login: 'howdyai'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/16260958?v=3&s=48'
