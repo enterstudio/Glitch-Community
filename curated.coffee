@@ -9,7 +9,7 @@ tetris = "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ftetris
 robot = "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Frobot.svg"
 hardware = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fhardware.svg"
 website = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FfirstWebsiteCRT.svg?1492038242223"
-
+facebook = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FfacebookThumb.png?1492531632789"
 slackAvatar = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fslack.svg"
 # slackCover = ""
 superbowl = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FbigGameLogo.png"
@@ -164,6 +164,15 @@ module.exports =
       description: "A look back at the sites where many people created their first web pages."
       background: "rgba(255, 120, 100, #{backgroundOpacity})"
       id: 9
+      categoryPageOnly: true
+    ,
+      name: 'Facebook'
+      url: 'facebook'
+      img: facebook
+      color: 'rgb(255, 120, 100)'
+      description: "Kickstart creation of your own apps using Facebook developer APIs."
+      background: "rgba(255, 120, 100, #{backgroundOpacity})"
+      id: 10
       categoryPageOnly: true    
   ]
 
