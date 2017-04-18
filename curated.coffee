@@ -31,22 +31,29 @@ backgroundOpacity = 0.3
 module.exports =
 
   featured: -> [
-      name: 'The First Website'
-      domain: 'the-first-website'
-      id: '371baed9-806f-4257-9b99-f0918b08c5df'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fmy-first-webpage.png?1492092500435"
+      name: 'Add user auth with Account Kit'
+      domain: 'account-kit'
+      id: '4c08ac56-7e55-424e-9134-744a82fd8ee0'
+      users: [
+          login: 'tpai'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/579145?v=3&s=48'
+      ]    
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FfacebookAccountKitFeature.png?1492527887787"        
     ,
-      name: 'Glitchocities'
-      domain: 'glitchocities'
-      id: '2288e05f-9a49-470f-b907-22494e69cce1'
-      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fglitchocities.png?1492092755880'
+  	  name: 'Make a Messenger bot in minutes'
+  	  domain: 'messenger-bot'
+  	  id: 'ca73ace5-3fff-4b8f-81c5-c64452145271'
+  	  img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-facebook-messenger.png"   
     ,
-      name: 'GlitchSpace'
-      domain: 'glitchspace'
-      id: 'bc3e04b5-4113-469c-81c5-e2ca1334b0a8'
-      img: "https://cdn.glitch.com/c385e92d-5de0-4b19-849e-8a3470eb03d6%2Fglitchspace.png?1492086194993"
-  ] 
-
+      name: 'Live comments teleprompter'
+      domain: 'fb-live-teleprompter'
+      id: 'f83e1ac8-b75f-45e2-9ce3-4cf0dfc7656e'
+      users: [
+          login: 'fbsamples'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/1541324?v=3&s=48'
+      ]    
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FfacebookLiveFeature.png?1492527885383"     
+  ]
 
   partners: -> [
       name: 'Slack'
