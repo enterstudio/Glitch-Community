@@ -169,9 +169,9 @@ module.exports =
       name: 'Facebook'
       url: 'facebook'
       img: facebook
-      color: 'rgb(255, 120, 100)'
+      color: '#70a4d8'
       description: "Kickstart creation of your own apps using Facebook developer APIs."
-      background: "rgba(255, 120, 100, #{backgroundOpacity})"
+      background: "rgba(112, 164, 216, #{backgroundOpacity})"
       id: 10
       categoryPageOnly: true    
   ]
@@ -487,7 +487,7 @@ module.exports =
           login: 'fbsamples'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
       ]
-      categoryIds: [7]
+      categoryIds: [7,10]
     ,
       id: 'a4c42aef-7c70-484b-ab24-8c344063a7c8'
       domain: 'chewy'
@@ -1022,5 +1022,24 @@ module.exports =
       id: '1511c567-bd2e-4467-9bb9-9241a34ca5e8'
       domain: 'retro-bootstrap'
       description: 'A vintage Bootstrap 1.4.0 example template to tinker with'
-      categoryIds: [9]      
+      categoryIds: [9] 
+     ,
+      id: 'e356b09a-8971-43d2-b7b4-f1390422e6f1'
+      domain: 'graph-api-webhooks'
+      description: 'A sample client for Facebook\'s Graph API Webhooks'
+      categoryIds: [10]
+     ,
+      id: '4c08ac56-7e55-424e-9134-744a82fd8ee0'
+      domain: 'account-kit'
+      description: 'Add user auth with Account Kit'
+      users: [
+          login: 'tpai'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/579145?v=3&s=48'
+      ]      
+      categoryIds: [10]
+     ,
+      id: 'f83e1ac8-b75f-45e2-9ce3-4cf0dfc7656e'
+      domain: 'fb-live-teleprompter'
+      description: 'Live comments teleprompter'
+      categoryIds: [10]    
   ]
