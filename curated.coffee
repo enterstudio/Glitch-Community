@@ -1058,5 +1058,10 @@ module.exports =
           login: 'howdyai'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/16260958?v=3&s=48'
       ]    
-      categoryIds: [10]    
+      categoryIds: [10]
+     ,
+      id: 'c942fe52-dcbc-43fc-ac80-5a66e388221a'
+      domain: 'bot-builder-skype'
+      description: 'An example Skype bot using Microsoft\'s Bot Builder SDK'    
+      categoryIds: [7]     
   ]
