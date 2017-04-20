@@ -1063,5 +1063,10 @@ module.exports =
       id: 'c942fe52-dcbc-43fc-ac80-5a66e388221a'
       domain: 'bot-builder-skype'
       description: 'An example Skype bot using Microsoft\'s Bot Builder SDK'    
-      categoryIds: [7]     
+      categoryIds: [7] 
+     ,
+      id: 'c439638e-7365-4b17-98d2-0913fa44d81e'
+      domain: 'graph-connect'
+      description: 'A Microsoft Graph Connect sample project for Node.js'    
+      categoryIds: [5]     
   ]
