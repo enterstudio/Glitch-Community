@@ -31,28 +31,28 @@ backgroundOpacity = 0.3
 module.exports =
 
   featured: -> [
-      name: 'Add user auth with Account Kit'
-      domain: 'account-kit'
-      id: '4c08ac56-7e55-424e-9134-744a82fd8ee0'
+      name: 'Trigger multiple applets at once'
+      domain: 'multi-ifttt-triggers'
+      id: '4761356a-9369-4e79-9d1e-a8306e8c00b5'
       users: [
-          login: 'tpai'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/579145?v=3&s=48'
+          login: 'garethx'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/1830035?v=3&s=48'
       ]    
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FfacebookAccountKitFeature.png?1492527887787"        
+      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-ifttt.png"        
     ,
   	  name: 'Make a Messenger bot in minutes'
   	  domain: 'messenger-bot'
   	  id: 'ca73ace5-3fff-4b8f-81c5-c64452145271'
   	  img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-facebook-messenger.png"   
     ,
-      name: 'Live comments teleprompter'
-      domain: 'fb-live-teleprompter'
-      id: 'f83e1ac8-b75f-45e2-9ce3-4cf0dfc7656e'
+      name: 'Start your own blog'
+      domain: 'ghost'
+      id: '9a2033a3-30d8-4658-93a8-3b5073c73237'
       users: [
-          login: 'fbsamples'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/1541324?v=3&s=48'
+          login: 'TryGhost'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/2178663?v=3&s=48'
       ]    
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FfacebookLiveFeature.png?1492527885383"     
+      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FghostFeature.png"     
   ]
 
   partners: -> [
