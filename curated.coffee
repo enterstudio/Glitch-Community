@@ -1068,5 +1068,10 @@ module.exports =
       id: 'c439638e-7365-4b17-98d2-0913fa44d81e'
       domain: 'graph-connect'
       description: 'A Microsoft Graph Connect sample project for Node.js'    
+      categoryIds: [5]
+     ,
+      id: '8c68dea8-16a3-4e0d-8755-c9229208b84f'
+      domain: 'azure-storage'
+      description: 'Microsoft Azure Storage database example'    
       categoryIds: [5]     
   ]
