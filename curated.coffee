@@ -196,15 +196,6 @@ module.exports =
       ]
       categoryIds: [2]
     ,
-      id: 'bb648dc0-74b3-4571-8840-6bf49cf84e66'
-      domain: 'image-editor'
-      description: "A thing for making SVG images. Draw with it."
-      users: [
-          login: 'InPermutation'
-          avatarUrl: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
-      ]
-      categoryIds: [6]
-    ,
       id: '824edd48-c9bd-4aee-a3fb-561bb97344ed'
       domain: 'data-dashboard'
       description: "Display data from Google Sheets on a live dashboard"
@@ -232,11 +223,6 @@ module.exports =
       id: '546c8e41-ca39-481c-837f-ea830661c315'
       domain: 'rest-api'
       description: "GET and POST RESTful API endpoints using Express"
-      categoryIds: [3]
-    ,
-      id: 'f7a5a47d-b266-4a86-b13d-09a1d2aaea2b'
-      domain: 'mongodb'
-      description: "Connect and add items to a MongoDB database"
       categoryIds: [3]
     ,
       id: '0d184ee3-fd8d-4b94-acf4-b4e686e57375'
@@ -360,15 +346,6 @@ module.exports =
       ]
       categoryIds: [1]
     ,
-      id: '4d787ffa-d62b-4907-91ef-e86c1e1e1335'
-      domain: 'hoodie'
-      description: "Starter project using Hoodie"
-      users: [
-          login: 'gr2m'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/39992?v=3&s=48'
-      ]
-      categoryIds: [1]
-    ,
       id: 'c4f87dae-fa3a-437e-9e13-fa79e98e3952'
       domain: 'font-awesome-export'
       description: "Creates the mouse cursor and image code for Font Awesome icons"
@@ -377,15 +354,6 @@ module.exports =
           avatarUrl: 'https://avatars2.githubusercontent.com/u/47636?v=3&s=48'
       ]
       categoryIds: [6]
-    ,
-      id: '5e80c868-d95c-4a76-b6a6-291d5d61a4c0'
-      domain: 'hipchat-addon'
-      description: "A fully functional HipChat add-on"
-      users: [
-          login: 'rmanalan'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/549?v=3&s=48'
-      ]
-      categoryIds: [1]
     ,
       id: '008c399a-3f86-45ad-8131-df3a14b0e7ed'
       domain: 'processing-js'
@@ -463,15 +431,6 @@ module.exports =
       ]
       categoryIds: [7,10]
     ,
-      id: 'a4c42aef-7c70-484b-ab24-8c344063a7c8'
-      domain: 'chewy'
-      description: "Give Alexa the power of the Force with this Wookieepedia powered Skill"
-      users: [
-          login: 'stretchyboy'
-          avatarUrl: 'https://avatars1.githubusercontent.com/u/229326?v=3&s=48'
-      ]
-      categoryIds: [7]
-    ,
       id: '68ea9bee-f345-4677-a916-f7c67004ae2d'
       domain: 'grunt-js'
       description: "Example app that minifies a JS file with Uglify using Grunt"
@@ -508,11 +467,6 @@ module.exports =
           avatarUrl: 'https://avatars3.githubusercontent.com/u/537678?v=3&s=48'
       ]
       categoryIds: [6]
-    ,
-      id: '0539a08d-bcda-458e-8647-94813e4248b4'
-      domain: 'react-tutorial'
-      description: "React comment box tutorial example"
-      categoryIds: [1]
     ,
       id: 'fb2f9ebf-77b2-4f81-9f07-e5425f261f57'
       domain: 'firebase-quickstart'
@@ -573,11 +527,6 @@ module.exports =
       domain: 'drawing-game'
       description: "Draw in real-time with multiple other people, and see what they're drawing too"
       categoryIds: [2]
-    ,
-      id: 'd04c9a09-d45a-4aaa-8f33-a1e2772945d0'
-      domain: 'itunes-art'
-      description: "Get the logos and screenshots from any app in the Apple iOS App Store"
-      categoryIds: [5]
     ,
       id: '58fe13bd-0688-49f3-b562-c3b5817fc5d6'
       domain: 'ne-db'
@@ -673,11 +622,6 @@ module.exports =
       ]
       categoryIds: [2]
     ,
-      id: '48d9a081-8ac6-497d-bc28-d3a32df56834'
-      domain: 'blockspring'
-      description: "Use Blockspring to easily get data from third-party APIs"
-      categoryIds: [3]
-    ,
       id: '454c12bf-21a2-485d-ab64-975d05525c16'
       domain: 'nondescript-dog'
       description: "Play multiplayer Snake over websockets"
@@ -707,16 +651,6 @@ module.exports =
           avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
       ]
       categoryIds: [6]
-    ,
-      id: '1a511228-1f09-429c-a2d2-4a3e5ca7d07d'
-      domain: 'peek-at-posts'
-      description: "Slack slash command to peek at the last 3 posts on a WordPress site"
-      users: [
-          login: 'tharsheblows'
-          avatarUrl: 'https://avatars1.githubusercontent.com/u/1530368?v=3&s=48'
-      ]
-      categoryIds: [7]
-      parnterIds: [9]
     ,
       id: '12834ffd-d5ed-423a-b486-9f297f5cd04f'
       domain: 'botkit-slack'
