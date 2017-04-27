@@ -1083,5 +1083,14 @@ module.exports =
       id: '8c68dea8-16a3-4e0d-8755-c9229208b84f'
       domain: 'azure-storage'
       description: 'Microsoft Azure Storage database list app'    
-      categoryIds: [5,11]     
+      categoryIds: [5,11]   
+     ,
+      id: 'd03b8eaf-e8d5-4038-8cdd-96f88673cac8'
+      domain: 'tracery-mastodon-bot'
+      description: 'A starter Mastodon bot that generates random toots using Tracery'  
+      users: [
+          login: 'byronhulcher'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/2479295?v=3&s=48'
+      ]     
+      categoryIds: [7]    
   ]
