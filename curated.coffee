@@ -196,24 +196,6 @@ module.exports =
       ]
       categoryIds: [2]
     ,
-      id: '1400a3bd-f901-4883-8394-a38eeac0d1f0'
-      domain: 'space-program'
-      description: "Launch your spaceship into orbit. Don't die."
-      users: [
-        login: 'InPermutation'
-        avatarUrl: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
-      ]
-      categoryIds: [2]
-    ,
-      id: 'e1a17ca2-9167-4695-ba19-e0d5c34d09bb'
-      domain: 'pong-solo'
-      description: "Play Pong against a brick wall; now even harder to beat!"
-      users: [
-        login: 'STRd6'
-        avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
-      ]
-      categoryIds: [2]
-    ,
       id: 'bb648dc0-74b3-4571-8840-6bf49cf84e66'
       domain: 'image-editor'
       description: "A thing for making SVG images. Draw with it."
@@ -310,15 +292,6 @@ module.exports =
       categoryIds: [7]
       parnterIds: [9]
     ,
-      id: '552a115a-c07e-4609-b196-4dbe8fdb449c'
-      domain: 'hello-coffee'
-      description: "Start your next project with CoffeeScript + Jade + Stylus with Autoprefixer"
-      users: [
-          login: 'pketh'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
-      ]
-      categoryIds: [1]
-    ,
       id: '19d39bfe-9d27-4cbb-8326-ad41d1cc61bc'
       domain: 'to-do'
       description: "A simple, minimalist Todo app"
@@ -359,15 +332,6 @@ module.exports =
           avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
       ]
       categoryIds: [5,11]
-    ,
-      id: 'ebd2e0d7-2ee5-4d4f-9086-342bbbf22f35'
-      domain: 'flicker-swoop'
-      description: "Example implementation of a Lindenmayer system"
-      users: [
-          login: 'STRd6'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
-      ]
-      categoryIds: [6]
     ,
       id: '54b2142c-d885-42da-86ba-22213877039b'
       domain: 'trello-shopping-list'
