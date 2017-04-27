@@ -1092,5 +1092,10 @@ module.exports =
           login: 'byronhulcher'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/2479295?v=3&s=48'
       ]     
-      categoryIds: [7]    
+      categoryIds: [7] 
+     ,
+      id: '0ddc2423-29f6-4e89-9d9f-8e911e949c15'
+      domain: 'pass-azure'
+      description: 'An example app implementing Azure OAuth with Passport.js'    
+      categoryIds: [5,11]      
   ]
