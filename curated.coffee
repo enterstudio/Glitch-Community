@@ -10,6 +10,7 @@ robot = "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Frobot.s
 hardware = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fhardware.svg"
 website = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FfirstWebsiteCRT.svg?1492038242223"
 facebook = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FfacebookThumb.png?1492531632789"
+microsoft = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FmicrosoftLogo.png?1493296051489"
 slackAvatar = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Fslack.svg"
 # slackCover = ""
 superbowl = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FbigGameLogo.png"
@@ -173,7 +174,16 @@ module.exports =
       description: "Kickstart creation of your own apps using Facebook developer APIs."
       background: "rgba(112, 164, 216, #{backgroundOpacity})"
       id: 10
-      categoryPageOnly: true    
+      categoryPageOnly: true
+    ,
+      name: 'Microsoft'
+      url: 'microsoft'
+      img: microsoft
+      color: '#70a4d8'
+      description: "Leverage Microsoft APIs, SDKs and open source projects to make your own apps."
+      background: "rgba(112, 164, 216, #{backgroundOpacity})"
+      id: 11
+      categoryPageOnly: true        
   ]
 
   projects: -> [
@@ -348,7 +358,7 @@ module.exports =
           login: 'jude'
           avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
       ]
-      categoryIds: [5]
+      categoryIds: [5,11]
     ,
       id: 'ebd2e0d7-2ee5-4d4f-9086-342bbbf22f35'
       domain: 'flicker-swoop'
@@ -1063,15 +1073,15 @@ module.exports =
       id: 'c942fe52-dcbc-43fc-ac80-5a66e388221a'
       domain: 'bot-builder-skype'
       description: 'An example Skype bot using Microsoft\'s Bot Builder SDK'    
-      categoryIds: [7] 
+      categoryIds: [7,11] 
      ,
       id: 'c439638e-7365-4b17-98d2-0913fa44d81e'
       domain: 'graph-connect'
       description: 'A Microsoft Graph Connect sample project for Node.js'    
-      categoryIds: [5]
+      categoryIds: [5,11]
      ,
       id: '8c68dea8-16a3-4e0d-8755-c9229208b84f'
       domain: 'azure-storage'
       description: 'Microsoft Azure Storage database example'    
-      categoryIds: [5]     
+      categoryIds: [5,11]     
   ]
