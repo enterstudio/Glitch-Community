@@ -1054,5 +1054,35 @@ module.exports =
           login: 'jennschiffer'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/341305?v=3&s=48'
       ]     
-      categoryIds: [12]     
+      categoryIds: [12]
+     ,
+      id: 'faf46029-79ef-4175-977c-b23659e7dd33'
+      domain: 'donejs-helloworld'
+      description: 'A DoneJS, done-serve and done-autorender starter project'  
+      users: [
+          login: 'chasenlehara'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/10070176?v=3&s=48'
+      ,
+          login: 'bmomberger-bitovi'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/18686722?v=3&s=48'
+      ]     
+      categoryIds: [1]   
+     ,
+      id: 'e7c41525-7315-4218-9002-918ef887aa1c'
+      domain: 'webpack-lazy-loading'
+      description: 'Demos Webpack by lazy loading a module on demand'  
+      users: [
+          login: 'TheLarkInn'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/3408176?v=3&s=48'
+      ]     
+      categoryIds: [1] 
+     ,
+      id: '9626bd34-22d2-4fe2-89ba-067450afc7f0'
+      domain: 'create-react-app-sample'
+      description: 'Create React apps with no build configuration'  
+      users: [
+          login: 'etamponi'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/578612?v=3&s=48'
+      ]     
+      categoryIds: [1]     
   ]
