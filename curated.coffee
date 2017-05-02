@@ -57,6 +57,9 @@ module.exports =
       users: [
           login: 'STRd6'
           avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
+        ,
+          login: 'pketh'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'    
       ]   
   ] 
 
