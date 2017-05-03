@@ -3,26 +3,33 @@
 module.exports =
 
   [
-      name: 'Trigger multiple applets at once'
-      domain: 'multi-ifttt-triggers'
-      id: '4761356a-9369-4e79-9d1e-a8306e8c00b5'
+      name: 'Find Tools for Social Progress'
+      domain: 'tech-forward-2'
+      id: '16d249c6-c928-4616-a548-3108bce18ead'
+      img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FtechForwardFeatureAlt.png"
+      users: [
+          login: 'mattstauffer'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/151829?v=3&s=48'
+      ]       
+    ,
+      name: 'Make Your Own Slack Bot'
+      domain: 'slack-bot'
+      id: '095a1538-8c44-4b27-b0fe-936d194318c2'
+      img: "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-slack-bot.png"
       users: [
           login: 'garethx'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/1830035?v=3&s=48'
-      ]    
-      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-ifttt.png"        
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/1830035?v=3&s=48'
+      ]   
     ,
-  	  name: 'Make a Messenger bot in minutes'
-  	  domain: 'messenger-bot'
-  	  id: 'ca73ace5-3fff-4b8f-81c5-c64452145271'
-  	  img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-facebook-messenger.png"   
-    ,
-      name: 'Start your own blog'
-      domain: 'ghost'
-      id: '9a2033a3-30d8-4658-93a8-3b5073c73237'
+      name: 'Teach Alexa New Skills'
+      domain: 'alexa-skill'
+      id: '681cc882-059d-4b05-a1f6-6cbc099cc79c'
+      img: "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-alexa.png"
       users: [
-          login: 'TryGhost'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/2178663?v=3&s=48'
-      ]    
-      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FghostFeature.png"     
+          login: 'STRd6'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
+        ,
+          login: 'pketh'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'    
+      ]        
   ]
