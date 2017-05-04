@@ -171,7 +171,6 @@ module.exports =
           avatarUrl: 'https://avatars3.githubusercontent.com/u/1136800?v=3&s=48'
       ]
     ,
-    
       id: 'e7c41525-7315-4218-9002-918ef887aa1c'
       domain: 'webpack-lazy-loading'
       description: 'Demos Webpack by lazy loading a module on demand'  
@@ -179,7 +178,7 @@ module.exports =
           login: 'TheLarkInn'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/3408176?v=3&s=48'
       ]
-    
+    ,
       id: '9626bd34-22d2-4fe2-89ba-067450afc7f0'
       domain: 'create-react-app-sample'
       description: 'Create React apps with no build configuration'  
@@ -187,6 +186,5 @@ module.exports =
           login: 'etamponi'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/578612?v=3&s=48'
       ]     
-      categoryIds: [1]  
      ,
   ]
