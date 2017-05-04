@@ -23,13 +23,9 @@ module.exports =
           avatarUrl: 'https://avatars2.githubusercontent.com/u/3276087?v=3&s=48'
       ]
     ,
-      id: 'a24de56a-9f77-4503-be6f-730bcd4094f3'
-      domain: 'excel-spreadsheet'
-      description: "Read and display data from a .xlsx file on Dropbox"
-      users: [
-          login: 'jude'
-          avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
-      ]
+      id: '0ddc2423-29f6-4e89-9d9f-8e911e949c15'
+      domain: 'pass-azure'
+      description: 'An example app implementing Azure OAuth with Passport.js'    
     ,
       id: 'a24de56a-9f77-4503-be6f-730bcd4094f3'
       domain: 'excel-spreadsheet'
