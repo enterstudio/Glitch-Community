@@ -143,7 +143,6 @@ module.exports =
         avatarUrl: 'https://avatars3.githubusercontent.com/u/236374?v=3&s=48'
       ]
     ,
-
       id: '514be323-4add-49c4-806d-e7f8fc27e933'
       domain: 'livechat-sample-agent-app'
       description: "Sample app demonstrating how to build a LiveChat App Extension"
