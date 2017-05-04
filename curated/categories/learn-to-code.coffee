@@ -1,4 +1,4 @@
-# learn to code (categoryIds[4])
+# learn to code
 
 module.exports = 
 

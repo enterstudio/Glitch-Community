@@ -1,4 +1,4 @@
-# tools for work (categoryIds[5])
+# tools for work 
 
 module.exports = 
 

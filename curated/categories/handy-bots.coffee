@@ -1,4 +1,4 @@
-# handy bots (categoryIds[7])
+# handy bots
 
 module.exports = 
 
@@ -85,13 +85,5 @@ module.exports =
       id: '681cc882-059d-4b05-a1f6-6cbc099cc79c'
       domain: 'alexa-skill'
       description: "Ask Alexa for airport information using an airport code"
-    ,
-      id: 'ca73ace5-3fff-4b8f-81c5-c64452145271'
-      domain: 'messenger-bot'
-      description: "A Facebook Messenger Platform bot template"
-      users: [
-          login: 'fbsamples'
-          avatarUrl: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
-      ]
     ,
   ]

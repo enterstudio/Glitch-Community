@@ -1,4 +1,4 @@
-# hardware (categoryIds[8])
+# hardware
 
 module.exports = 
 
@@ -6,12 +6,10 @@ module.exports =
       id: '4761356a-9369-4e79-9d1e-a8306e8c00b5'
       domain: 'multi-ifttt-triggers'
       description: "Trigger multiple actions from a single command"
-      categoryIds: [8]
     ,
       id: '0e1a6c28-f95f-4920-a691-27697b572b24'
       domain: 'conditional-ifttt-triggers'
       description: "Trigger one or more IFTTT services when certain conditions are met"
-      categoryIds: [8]
     ,
       id: '1545abd9-68a2-4c4a-937b-8ee19ac2aa3e'
       domain: 'zapier-webhooks'

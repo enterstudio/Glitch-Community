@@ -35,7 +35,6 @@ module.exports =
           avatarUrl: 'https://avatars3.githubusercontent.com/u/1097241?v=3&s=48'
       ]
     ,
-
       id: 'feca3b9d-2ddb-43ff-98fa-57abfe77506b'
       domain: 'drawing-game'
       description: "Draw in real-time with multiple other people, and see what they're drawing too"
