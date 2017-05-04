@@ -22,19 +22,19 @@ module.exports =
       id: 'd6f7f0c0-b2cf-4339-8249-d09d3db2cfa1'
       domain: 'wordpress'
       description: 'Forgive me father for I have blogged'
-     ,
+    ,
       id: 'de2514f1-269d-4043-b358-1be3612d4686'
       domain: 'livejournal'
       description: 'For the Emo kid inside all of us'
-     ,
+    ,
       id: '371baed9-806f-4257-9b99-f0918b08c5df'
       domain: 'the-first-website'
       description: 'Where it all began'
-     ,
+    ,
       id: '1511c567-bd2e-4467-9bb9-9241a34ca5e8'
       domain: 'retro-bootstrap'
       description: 'A vintage Bootstrap 1.4.0 example template to tinker with'
-     ,
+    ,
       id: 'fee2c865-eccf-488f-a663-964082b34098'
       domain: 'html-starter'
       description: "Simple, modular HTML5 template to kick off your responsive websites"

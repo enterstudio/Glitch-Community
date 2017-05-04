@@ -1,8 +1,6 @@
 _ = require 'underscore'
 express = require 'express'
 
-curated = require "./curated"
-
 module.exports = ->
   
   app = express.Router()
@@ -22,7 +20,3 @@ module.exports = ->
 
   app.get '*', (req, res, next) ->
     res.render('index', route: req.path, baseUrl: req.baseUrl)
-
-  # community api
-  app.get '/curated/projects', (request, response) ->
-    response.jsonp curated.projects()

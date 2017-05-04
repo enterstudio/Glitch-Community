@@ -18,7 +18,7 @@ module.exports =
           login: 'mrdavidjcole'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
       ]     
-     ,
+    ,
       id: '88c8ff04-5a0e-49aa-a383-eea6a250a53b'
       domain: 'wistia-plugin-api-example'
       description: 'Demo of the Wistia player plugin API'  
@@ -34,7 +34,7 @@ module.exports =
           login: 'mrdavidjcole'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
       ]     
-     ,
+    ,
       id: 'f6a79bb0-b834-4b0f-9d4f-5dbf068499bd'
       domain: 'wistia-chapter-links'
       description: 'Deeplink into a specific chapter within an embedded Wistia video'  

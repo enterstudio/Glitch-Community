@@ -26,9 +26,11 @@ it's a similar process for adding collections and partners, just look for their 
 
 ### items removed
 * curated.coffee
+* curated-archive.txt
 
 ### items added
 * "curated" directory
+* archives.txt (copied from the deleted curated-archive.txt)
 * categories.coffee (lists core homepage categories)
 * collections.coffee (lists collections)
 * featured.coffee (featured projects)

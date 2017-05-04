@@ -186,5 +186,5 @@ module.exports =
           login: 'etamponi'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/578612?v=3&s=48'
       ]     
-     ,
+    ,
   ]

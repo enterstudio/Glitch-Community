@@ -2,7 +2,16 @@ Observable = require 'o_0'
 _ = require 'underscore'
 axios = require 'axios'
 
-curated = require "./curated"
+# curated
+curated = 
+  featured: require "./curated/featured"
+  categories: require "./curated/categories"
+  collections: require "./curated/collections"
+  partners: require "./curated/partners"
+  projects: require "./curated/projects"
+
+allProjectGroups = curated.categories.concat curated.collections.concat curated.partners
+
 tracking = require "./tracking"
 user = require "./user"
 
@@ -56,24 +65,33 @@ self =
     self.overlay.showProjectOverlay project
   
   featuredProjects: ->
-    _.shuffle curated.featured()
+    _.shuffle curated.featured
 
   categories: ->
-    homepageCategories = _.filter curated.categories(), (category) ->
+    homepageCategories = _.filter curated.categories, (category) ->
       !category.categoryPageOnly
     _.shuffle homepageCategories
+    
+  allProjects: ->
+    # returns all projects, shuffled
+    allProjects = []
+    for category, projects of curated.projects
+      allProjects = allProjects.concat projects
+    _.shuffle allProjects
 
-  projectsInCategory: (categoryId) ->
-    projectsInCategory = _.filter curated.projects(), (project) ->
-      _.contains project.categoryIds, categoryId
+  projectsInCategory: (category) ->
+    # returns all projects in a category domain, shuffled
+    projectsInCategory = require("./curated/projects")[category]
     _.shuffle projectsInCategory
 
   selectedCategories: ->
+    # returns 3 shuffled categories to display in full on the homepage
     shuffledCategories = self.categories()
     shuffledCategories.slice(0, 3)
 
-  projectsInSelectedCategory: (categoryId) ->
-    shuffledProjects = self.projectsInCategory categoryId
+  projectsInSelectedCategory: (category) ->
+    # returns 3 projects for index page category box, shuffled
+    shuffledProjects = self.projectsInCategory category
     shuffledProjects.slice(0, 3)
 
   isCategoryUrl: (url) ->
@@ -81,11 +99,13 @@ self =
       true
 
   getCategoryFromUrl: (url) ->
-    category = _.findWhere curated.categories(),
+    # in this function, categories include partner and collection pages
+    category = _.findWhere allProjectGroups,
       url: url
 
   categoryUrls: ->
-    categories = curated.categories()
+    # in this function, categories include partner and collection pages
+    categories = allProjectGroups
     categoryUrls = _.map categories, (category) ->
       category.url
       
