@@ -59,10 +59,6 @@ module.exports =
       domain: 'salesforce-quickstart'
       description: "Handles OAuth and commands using SOQL, Search and Chatter APIs"
     ,
-      id: 'd04c9a09-d45a-4aaa-8f33-a1e2772945d0'
-      domain: 'itunes-art'
-      description: "Get the logos and screenshots from any app in the Apple iOS App Store"
-    ,
       id: 'd5d11c11-c239-4b16-ae23-def8e2687c25'
       domain: 'fogbugz-webhooks'
       description: "A simple server that handles incoming Webhooks delivered from FogBugz"

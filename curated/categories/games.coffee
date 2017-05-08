@@ -11,22 +11,6 @@ module.exports =
         avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
       ]
     ,
-      id: '1400a3bd-f901-4883-8394-a38eeac0d1f0'
-      domain: 'space-program'
-      description: "Launch your spaceship into orbit. Don't die."
-      users: [
-        login: 'InPermutation'
-        avatarUrl: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
-      ]
-    ,
-      id: 'e1a17ca2-9167-4695-ba19-e0d5c34d09bb'
-      domain: 'pong-solo'
-      description: "Play Pong against a brick wall; now even harder to beat!"
-      users: [
-        login: 'STRd6'
-        avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
-      ]
-    ,
       id: '9d603f59-e7f6-4f63-8bd9-d55770bc8e0d'
       domain: 'tetrjs'
       description: "A Tetris clone in JavaScript"
@@ -56,7 +40,6 @@ module.exports =
           avatarUrl: 'https://avatars3.githubusercontent.com/u/84376?v=3&s=48'
       ]
     ,
-
       id: '454c12bf-21a2-485d-ab64-975d05525c16'
       domain: 'nondescript-dog'
       description: "Play multiplayer Snake over websockets"

@@ -38,14 +38,6 @@ module.exports =
           avatarUrl: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
       ]
     ,
-      id: 'a4c42aef-7c70-484b-ab24-8c344063a7c8'
-      domain: 'chewy'
-      description: "Give Alexa the power of the Force with this Wookieepedia powered Skill"
-      users: [
-          login: 'stretchyboy'
-          avatarUrl: 'https://avatars1.githubusercontent.com/u/229326?v=3&s=48'
-      ]
-    ,
       id: '095a1538-8c44-4b27-b0fe-936d194318c2'
       domain: 'slack-bot'
       description: "Example Onboarding bot using Slack's Events API"

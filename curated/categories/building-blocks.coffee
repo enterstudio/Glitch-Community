@@ -55,10 +55,6 @@ module.exports =
       domain: 'sqlite3-db'
       description: "List app that demos a SQLite3 database using the Sequelize ORM"
     ,
-      id: '48d9a081-8ac6-497d-bc28-d3a32df56834'
-      domain: 'blockspring'
-      description: "Use Blockspring to easily get data from third-party APIs"
-    ,
       id: '9fe017c4-756e-4c58-b10b-e5412e32aefb'
       domain: 'material-design'
       description: "A quick way to bootstrap a site or app with Material"

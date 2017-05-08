@@ -3,28 +3,12 @@
 module.exports = 
 
   [
-      id: 'bb648dc0-74b3-4571-8840-6bf49cf84e66'
-      domain: 'image-editor'
-      description: "A thing for making SVG images. Draw with it."
-      users: [
-          login: 'InPermutation'
-          avatarUrl: 'https://avatars0.githubusercontent.com/u/1096993?v=3&s=48'
-      ]
-    ,
       id: 'c2043750-bda2-4652-9278-15d221f12345'
       domain: 'asl-spell'
       description: "Practice the ASL fingerspelled alphabet"
       users: [
           login: 'jude'
           avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
-      ]
-    ,
-      id: 'ebd2e0d7-2ee5-4d4f-9086-342bbbf22f35'
-      domain: 'flicker-swoop'
-      description: "Example implementation of a Lindenmayer system"
-      users: [
-          login: 'STRd6'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]
     ,
       id: '54b2142c-d885-42da-86ba-22213877039b'

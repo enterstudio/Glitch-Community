@@ -91,36 +91,12 @@ module.exports =
           avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
       ]
     ,
-      id: '552a115a-c07e-4609-b196-4dbe8fdb449c'
-      domain: 'hello-coffee'
-      description: "Start your next project with CoffeeScript + Jade + Stylus with Autoprefixer"
-      users: [
-          login: 'pketh'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
-      ]
-    ,
       id: '1c04125e-84eb-4ab4-b5db-347ad757f4eb'
       domain: 'node-sass'
       description: "Demo project showing how to use Sass middleware"
       users: [
           login: 'STRd6'
           avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
-      ]
-    ,
-      id: '4d787ffa-d62b-4907-91ef-e86c1e1e1335'
-      domain: 'hoodie'
-      description: "Starter project using Hoodie"
-      users: [
-          login: 'gr2m'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/39992?v=3&s=48'
-      ]
-    ,
-      id: '5e80c868-d95c-4a76-b6a6-291d5d61a4c0'
-      domain: 'hipchat-addon'
-      description: "A fully functional HipChat add-on"
-      users: [
-          login: 'rmanalan'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/549?v=3&s=48'
       ]
     ,
       id: '008c399a-3f86-45ad-8131-df3a14b0e7ed'
