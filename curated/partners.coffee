@@ -3,6 +3,7 @@ facebook = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffacebo
 microsoft = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FmicrosoftLogo.png?1493296051489"
 twilio = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftwilio.png?1493735308539"
 wistia = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fwistia.png?1493735308565"
+google = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FgoogleLogo.png?1494335487109"
 
 backgroundOpacity = 0.3
 
@@ -42,4 +43,12 @@ module.exports =
       color: '#70a4d8'
       description: "Wistia's APIs allow you to easily upload, embed, and track videos within your own apps."
       background: "rgba(112, 164, 216, #{backgroundOpacity})"
+    ,
+      name: 'Google'
+      url: 'google'
+      curatedName: 'google',
+      img: google
+      color: "rgb(48, 220, 166)"
+      description: "Connect your gadgets and gizmos to the world – or your kitchen."
+      background: "rgba(48, 220, 166, #{backgroundOpacity})"   
   ]
