@@ -29,5 +29,9 @@ module.exports =
       users: [
           login: 'howdyai'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/16260958?v=3&s=48'
-      ]    
+      ]  
+    ,
+      id: '834590ab-f27a-4fdb-b510-78986f4ba4bc'
+      domain: 'solid-tugboat'
+      description: "Glitch Link Unfurling for Slack"    
   ]
