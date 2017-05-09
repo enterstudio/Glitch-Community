@@ -18,13 +18,10 @@ module.exports =
       id: '38ccccbc-8fb1-4ae5-bf06-b8d67b7dfb6a'
       domain: 'slack-bot-persist'
       description: "Onboarding bot using Slack's Events API, with MongoDB for persistence"
-      parnterIds: [9]
     ,
-
       id: 'a9e55c25-bf40-4162-b1b5-dc33047c0cdc'
       domain: 'slack-slash-command'
       description: "Respond to custom Slash Commands in Slack, using MongoDB for persistence"
-      parnterIds: [9]
     ,
       id: '681cc882-059d-4b05-a1f6-6cbc099cc79c'
       domain: 'alexa-skill'
@@ -41,7 +38,6 @@ module.exports =
       id: '095a1538-8c44-4b27-b0fe-936d194318c2'
       domain: 'slack-bot'
       description: "Example Onboarding bot using Slack's Events API"
-      parnterIds: [9]
     ,
       id: 'ea79cf2c-9dce-4e84-ac29-3b6d1941c452'
       domain: 'add-to-alexa'

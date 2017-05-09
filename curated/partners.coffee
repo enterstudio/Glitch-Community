@@ -23,7 +23,7 @@ module.exports =
     ,
       name: 'Microsoft'
       url: 'microsoft'
-      curatedName: 'microsoft',
+      curatedName: 'microsoft'
       img: microsoft
       color: '#70a4d8'
       description: "Leverage Microsoft APIs, SDKs and open source projects to make your own apps."
@@ -31,7 +31,7 @@ module.exports =
     ,
       name: 'Twilio'
       url: 'twilio'
-      curatedName: 'twilio',
+      curatedName: 'twilio'
       img: twilio
       color: 'rgb(255, 120, 100)'
       description: "Build apps that communicate with everyone in the world using Twilio's Voice & Video, Messaging, and Auth APIs."
@@ -39,7 +39,7 @@ module.exports =
     ,
       name: 'Wistia'
       url: 'wistia'
-      curatedName: 'wistia',
+      curatedName: 'wistia'
       img: wistia
       color: '#70a4d8'
       description: "Wistia's APIs allow you to easily upload, embed, and track videos within your own apps."
@@ -47,7 +47,7 @@ module.exports =
     ,
       name: 'Google'
       url: 'google'
-      curatedName: 'google',
+      curatedName: 'google'
       img: google
       color: "rgb(48, 220, 166)"
       description: "Get started with your own apps building on Google developer APIs."
@@ -55,7 +55,7 @@ module.exports =
     ,
       name: 'Slack'
       url: 'slack'
-      curatedName: 'slack',
+      curatedName: 'slack'
       img: slack
       color: "#FCF3AF"
       description: "Build bots, slash commands and apps for Slack."

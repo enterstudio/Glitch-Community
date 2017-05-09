@@ -42,5 +42,4 @@ module.exports =
           login: 'zitrusfrisch'
           avatarUrl: 'https://avatars3.githubusercontent.com/u/1192474?v=3&s=48'
       ]
-    ,
   ]
