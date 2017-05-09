@@ -22,7 +22,8 @@ module.exports =
   "twilio"           : require "./partners/twilio"
   "wistia"           : require "./partners/wistia"
   "google"           : require "./partners/google"  
-  "slack"           : require "./partners/slack"    
+  "slack"           : require "./partners/slack"  
+  "signal"           : require "./partners/signal"    
 
   # collections
   "websites"         : require "./collections/websites"
