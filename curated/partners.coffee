@@ -4,6 +4,7 @@ microsoft = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fmicro
 twilio = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftwilio.png?1493735308539"
 wistia = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fwistia.png?1493735308565"
 google = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FgoogleLogo.png?1494335487109"
+slack = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fslack.svg?1494344404198"
 
 backgroundOpacity = 0.3
 
@@ -50,5 +51,13 @@ module.exports =
       img: google
       color: "rgb(48, 220, 166)"
       description: "Get started with your own apps building on Google developer APIs."
-      background: "rgba(48, 220, 166, #{backgroundOpacity})"   
+      background: "rgba(48, 220, 166, #{backgroundOpacity})"  
+    ,
+      name: 'Slack'
+      url: 'slack'
+      curatedName: 'slack',
+      img: slack
+      color: "#FCF3AF"
+      description: "Build bots, slash commands and apps for Slack."
+      background: "rgba(252, 243, 174, #{backgroundOpacity})"    
   ]

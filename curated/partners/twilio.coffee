@@ -14,5 +14,4 @@ module.exports =
           login: 'jennschiffer'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/341305?v=3&s=48'
       ]     
-    ,
   ]

@@ -26,5 +26,4 @@ module.exports =
       id: '0ddc2423-29f6-4e89-9d9f-8e911e949c15'
       domain: 'pass-azure'
       description: 'An example app implementing Azure OAuth with Passport.js'    
-    ,
   ]

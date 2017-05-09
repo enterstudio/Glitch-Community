@@ -1,4 +1,4 @@
-# facebook partner page
+# google partner page
 
 module.exports = 
 

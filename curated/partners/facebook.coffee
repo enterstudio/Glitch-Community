@@ -42,5 +42,4 @@ module.exports =
           login: 'fbsamples'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/1541324?v=3&s=48'
       ]
-    ,
   ]
