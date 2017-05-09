@@ -49,6 +49,6 @@ module.exports =
       curatedName: 'google',
       img: google
       color: "rgb(48, 220, 166)"
-      description: "Connect your gadgets and gizmos to the world – or your kitchen."
+      description: "Get started with your own apps building on Google developer APIs."
       background: "rgba(48, 220, 166, #{backgroundOpacity})"   
   ]

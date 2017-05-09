@@ -37,5 +37,5 @@ module.exports =
     ,
       id: '50c4eefb-0b97-4673-ad19-5811e1df1a6c'
       domain: 'google-analytics'
-      description: “Get website stats from Google Analytics"    
+      description: "Get website stats from Google Analytics"    
   ]
