@@ -21,5 +21,13 @@ module.exports =
       users: [
           login: 'jasonrhodes'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/159370?v=3&s=48'
-      ]     
+      ] 
+    ,
+      id: '65f8090a-f12a-4090-bc8f-6d7b3a6b56f1'
+      domain: 'auto-collector-dashboard'
+      description: 'An instant analytics dashboard for Keen IO projects'  
+      users: [
+          login: 'tbarn'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/2008034?v=3&s=48'
+      ]    
   ]
