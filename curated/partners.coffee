@@ -5,6 +5,7 @@ twilio = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftwilio.p
 wistia = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fwistia.png?1493735308565"
 google = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FgoogleLogo.png?1494335487109"
 slack = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fslack.svg?1494344404198"
+signal = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fsignal.svg?1494370781472"
 
 backgroundOpacity = 0.3
 
@@ -59,5 +60,13 @@ module.exports =
       img: slack
       color: "#FCF3AF"
       description: "Build bots, slash commands and apps for Slack."
-      background: "rgba(252, 243, 174, #{backgroundOpacity})"    
+      background: "rgba(252, 243, 174, #{backgroundOpacity})" 
+    ,
+      name: 'Signal'
+      url: 'signal'
+      curatedName: 'signal'
+      img: signal
+      color: "#ffe000"
+      description: "Build bots, slash commands and apps for Slack."
+      background: "rgba(249, 249, 249, #{backgroundOpacity})"     
   ]
