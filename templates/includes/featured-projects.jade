@@ -5,7 +5,9 @@
 section.featured-projects
 
   h2
-    b Featured Apps
+    b Featured:
+    a(href="/microsoft") Microsoft Apps →
+  p Leverage Microsoft APIs, SDKs and open source projects to make your own apps.
   ul
     - application = @
     - @featuredProjects().forEach (project) ->

@@ -63,14 +63,6 @@ module.exports =
       domain: 'fogbugz-webhooks'
       description: "A simple server that handles incoming Webhooks delivered from FogBugz"
     , 
-      id: '21ec6159-b62d-4397-9de2-4736d40aa18f'
-      domain: 'voting'
-      description: "A simple polling and voting app"
-      users: [
-          login: 'hsubox'
-          avatarUrl: 'https://avatars3.githubusercontent.com/u/470813?v=3&s=48'
-      ]
-    ,
       id: '1545abd9-68a2-4c4a-937b-8ee19ac2aa3e'
       domain: 'zapier-webhooks'
       description: "Send and receive webhooks to and from Zapier"

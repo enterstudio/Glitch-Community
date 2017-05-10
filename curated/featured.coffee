@@ -3,33 +3,26 @@
 module.exports =
 
   [
-      name: 'Find Tools for Social Progress'
-      domain: 'tech-forward-2'
-      id: '16d249c6-c928-4616-a548-3108bce18ead'
-      img: "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FtechForwardFeatureAlt.png"
+      name: 'Connect mail, docs & more'
+      domain: 'graph-connect'
+      id: 'c439638e-7365-4b17-98d2-0913fa44d81e'
       users: [
-          login: 'mattstauffer'
-          avatarUrl: 'https://avatars3.githubusercontent.com/u/151829?v=3&s=48'
-      ]       
+          login: 'microsoftgraph'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/17304259?v=3&s=48'
+      ]    
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FgraphExample.png?1493295763383"        
     ,
-      name: 'Make Your Own Slack Bot'
-      domain: 'slack-bot'
-      id: '095a1538-8c44-4b27-b0fe-936d194318c2'
-      img: "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-slack-bot.png"
-      users: [
-          login: 'garethx'
-          avatarUrl: 'https://avatars3.githubusercontent.com/u/1830035?v=3&s=48'
-      ]   
+  	  name: 'Build a Skype bot'
+  	  domain: 'bot-builder-skype'
+  	  id: 'c942fe52-dcbc-43fc-ac80-5a66e388221a'
+  	  img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FskypeBot.png?1493295763303"   
     ,
-      name: 'Teach Alexa New Skills'
-      domain: 'alexa-skill'
-      id: '681cc882-059d-4b05-a1f6-6cbc099cc79c'
-      img: "https://cdn.hyperdev.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-alexa.png"
+      name: 'Grab and store data in Azure'
+      domain: 'azure-storage'
+      id: '8c68dea8-16a3-4e0d-8755-c9229208b84f'
       users: [
-          login: 'STRd6'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
-        ,
-          login: 'pketh'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'    
-      ]        
+          login: 'azure'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/6844498?v=3&s=48'
+      ]    
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FazureExample.png?1493295763406"       
   ]
