@@ -166,4 +166,12 @@ module.exports =
       id: '08c254ab-b575-46c2-abc4-60e1d5948fea'
       domain: 'google-passport-oauth'
       description: "An example app implementing Google OAuth with Passport.js"
+    ,
+      id: 'f5fa3acd-ea66-4409-bec7-b333d508ac95'
+      domain: 'github-oauth'
+      description: 'An example app implementing Github OAuth with Passport.js'  
+      users: [
+          login: 'blinkymach12'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/30277?v=3&s=48'
+      ]    
   ]

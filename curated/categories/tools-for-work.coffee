@@ -101,5 +101,13 @@ module.exports =
     ,
       id: '50c4eefb-0b97-4673-ad19-5811e1df1a6c'
       domain: 'google-analytics'
-      description: "Get website stats from Google Analytics"    
+      description: "Get website stats from Google Analytics"
+    ,
+      id: '2442c68d-7b6d-4b69-9d13-feab530aa88e'
+      domain: 'trello-power-up'
+      description: 'A full featured sample Trello Power-Up'  
+      users: [
+          login: 'mpcowan'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/1246035?v=3&s=48'
+      ]     
   ]
