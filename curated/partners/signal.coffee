@@ -29,5 +29,13 @@ module.exports =
       users: [
           login: 'tbarn'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/2008034?v=3&s=48'
-      ]    
+      ]
+    ,
+      id: '10d165f5-d890-4046-895d-f80812bbab67'
+      domain: 'sms-a-webpage'
+      description: 'Send an SMS message to a web page with Twilio'  
+      users: [
+          login: 'GregBaugues'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/1013128?v=3&s=48'
+      ]     
   ]
