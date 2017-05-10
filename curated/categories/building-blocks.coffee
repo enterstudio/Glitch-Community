@@ -131,14 +131,6 @@ module.exports =
       domain: 'twilio-sms'
       description: "Use Twilio to send SMS alerts on page error"
     ,
-      id: '6ef506f0-b790-454b-a9b8-f31347cc69f3'
-      domain: 'multiplayer-game'
-      description: "Real-time multiplayer game using Node.js, Socket.io and HTML5 Canvas"
-      users: [
-        login: 'underscorediscovery'
-        avatarUrl: 'https://avatars3.githubusercontent.com/u/236374?v=3&s=48'
-      ]
-    ,
       id: '514be323-4add-49c4-806d-e7f8fc27e933'
       domain: 'livechat-sample-agent-app'
       description: "Sample app demonstrating how to build a LiveChat App Extension"

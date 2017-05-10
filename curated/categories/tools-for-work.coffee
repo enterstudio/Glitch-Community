@@ -15,14 +15,6 @@ module.exports =
       domain: 'data-dashboard'
       description: "Display data from Google Sheets on a live dashboard"
     ,
-      id: '19d39bfe-9d27-4cbb-8326-ad41d1cc61bc'
-      domain: 'to-do'
-      description: "A simple, minimalist Todo app"
-      users: [
-          login: 'enriquesanchez'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/3276087?v=3&s=48'
-      ]
-    ,
       id: '0ddc2423-29f6-4e89-9d9f-8e911e949c15'
       domain: 'pass-azure'
       description: 'An example app implementing Azure OAuth with Passport.js'    
@@ -89,7 +81,7 @@ module.exports =
     ,
       id: 'a4cbb317-e950-439c-b264-d9657fc60bfc'
       domain: 'youtube-analytics'
-      description: "Gets video data from the YouTube Analytics and Data APIs"  
+      description: "Get video data from the YouTube Analytics and Data APIs"  
     ,
       id: '50c4eefb-0b97-4673-ad19-5811e1df1a6c'
       domain: 'google-analytics'

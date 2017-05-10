@@ -33,7 +33,7 @@ module.exports =
     ,
       id: 'a4cbb317-e950-439c-b264-d9657fc60bfc'
       domain: 'youtube-analytics'
-      description: "Gets video data from the YouTube Analytics and Data APIs"  
+      description: "Get video data from the YouTube Analytics and Data APIs"  
     ,
       id: '50c4eefb-0b97-4673-ad19-5811e1df1a6c'
       domain: 'google-analytics'

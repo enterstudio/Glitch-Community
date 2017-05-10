@@ -111,18 +111,6 @@ module.exports =
       domain: 'grunt-js'
       description: "Example app that minifies a JS file with Uglify using Grunt"
     ,
-      id: '0539a08d-bcda-458e-8647-94813e4248b4'
-      domain: 'react-tutorial'
-      description: "React comment box tutorial example"
-    ,
-      id: 'f2fa9e14-e052-49c3-8799-02229a096740'
-      domain: 'guardian'
-      description: 'A simple Guardian API client using server side rendering'
-      users: [
-        login: 'gidsg'
-        avatarUrl: 'https://avatars1.githubusercontent.com/u/1764158?v=3'
-      ]
-    ,
       id: '3d15e4dc-9789-49b3-b7aa-59462d9889fd'
       domain: '2factor-auth'
       description: 'Two-Factor Authentication (2FA) demo written in Node.js with Nexmo Verify API'
