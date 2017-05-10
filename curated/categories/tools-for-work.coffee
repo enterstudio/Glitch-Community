@@ -91,4 +91,15 @@ module.exports =
           avatarUrl: 'https://avatars3.githubusercontent.com/u/243925?v=3&s=48'
       ]
     ,
+      id: '649d5871-e041-4e46-8908-9ff392db5968'
+      domain: 'google-sheets'
+      description: "A sample app that authenticates with, and gets data from, the Google Sheets API"
+    ,
+      id: 'a4cbb317-e950-439c-b264-d9657fc60bfc'
+      domain: 'youtube-analytics'
+      description: "Gets video data from the YouTube Analytics and Data APIs"  
+    ,
+      id: '50c4eefb-0b97-4673-ad19-5811e1df1a6c'
+      domain: 'google-analytics'
+      description: "Get website stats from Google Analytics"    
   ]

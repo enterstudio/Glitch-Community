@@ -163,4 +163,7 @@ module.exports =
           avatarUrl: 'https://avatars3.githubusercontent.com/u/1192474?v=3&s=48'
       ]
     ,
+      id: '08c254ab-b575-46c2-abc4-60e1d5948fea'
+      domain: 'google-passport-oauth'
+      description: "An example app implementing Google OAuth with Passport.js"
   ]
