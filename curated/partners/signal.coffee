@@ -43,7 +43,7 @@ module.exports =
       domain: 'algolia-quickstart'
       description: "Shows you how to index and search objects in Algolia"
       users: [
-          login: 'keen'
+          login: 'algolia'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/2034458?v=3&s=48'
       ]   
     ,
