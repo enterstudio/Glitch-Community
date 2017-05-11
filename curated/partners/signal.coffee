@@ -69,5 +69,13 @@ module.exports =
     ,
       id: 'a61a8dac-8660-42f8-8c7a-d6ace049e11d'
       domain: 'watson-tone-analyzer'
-      description: "Analyze the tone of the text you supply with IBM Watson"      
+      description: "Analyze the tone of the text you supply with IBM Watson"
+    ,
+      id: '05c11443-eba3-47c4-a33b-f02aae99c6d2'
+      domain: 'foursquare-passport-oauth'
+      description: "An example app implementing Foursquare OAuth with Passport.js"  
+    ,
+      id: '2fea610c-de70-4ffb-95fd-91227aa1845b'
+      domain: 'foursquare-local-venues'
+      description: "List venues nearby an area you specify using the Foursquare Venues API"      
   ]

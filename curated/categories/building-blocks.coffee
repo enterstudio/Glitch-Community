@@ -165,5 +165,9 @@ module.exports =
       users: [
           login: 'blinkymach12'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/30277?v=3&s=48'
-      ]    
+      ]  
+    ,
+      id: '05c11443-eba3-47c4-a33b-f02aae99c6d2'
+      domain: 'foursquare-passport-oauth'
+      description: "An example app implementing Foursquare OAuth with Passport.js"     
   ]
