@@ -61,5 +61,13 @@ module.exports =
       users: [
           login: 'keen'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/8461781?v=3&s=48'
-      ]     
+      ]
+    ,
+      id: '097f4560-7641-4f11-a729-83ca1010090c'
+      domain: 'watson-text-to-speech'
+      description: "Turn the text you supply into speech with IBM Watson"  
+    ,
+      id: 'a61a8dac-8660-42f8-8c7a-d6ace049e11d'
+      domain: 'watson-tone-analyzer'
+      description: "Analyze the tone of the text you supply with IBM Watson"      
   ]
