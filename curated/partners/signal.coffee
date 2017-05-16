@@ -77,5 +77,21 @@ module.exports =
     ,
       id: '2fea610c-de70-4ffb-95fd-91227aa1845b'
       domain: 'foursquare-local-venues'
-      description: "List venues nearby an area you specify using the Foursquare Venues API"      
+      description: "List venues nearby an area you specify using the Foursquare Venues API" 
+    ,
+      id: '5c586250-1805-494d-94fb-51136c8e16c9'
+      domain: 'sendgrid-quickstart'
+      description: 'The minimum needed code to send an email with SendGrid'  
+      users: [
+          login: 'sendgrid'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/181234?v=3&s=48'
+      ]
+    ,
+      id: '18e40723-cd17-4fd8-81f7-490c4561ff5a'
+      domain: 'square-connect'
+      description: 'A node server implementation of the Square Connect API sample app'  
+      users: [
+          login: 'square'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/82592?v=3&s=48'
+      ]     
   ]
