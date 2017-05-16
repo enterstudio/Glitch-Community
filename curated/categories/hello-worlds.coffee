@@ -174,4 +174,12 @@ module.exports =
         login: 'notwaldorf'
         avatarUrl: 'https://avatars2.githubusercontent.com/u/1369170?v=3'
       ]
+    ,
+      id: '143fb4e8-1ce1-4a08-9aff-8cbe7b2ecfc0'
+      domain: 'handlebars-setup-example'
+      description: 'A reference implementation of server-side templating using handlebars-express'  
+      users: [
+          login: 'jude'
+          avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
+      ]     
   ]
