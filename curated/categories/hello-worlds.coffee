@@ -161,7 +161,15 @@ module.exports =
     ,
       id: '93ac1c34-12b2-4fbe-9db6-2dd1770bf629'
       domain: 'polymer-custom-element'
-      description: "Make your first Web Component with Polymer"
+      description: "Make your first Web Component with Polymer!"
+      users: [
+        login: 'notwaldorf'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/1369170?v=3'
+      ]
+    ,
+      id: '77c2df02-7119-4120-a9ad-3c16390f49bd'
+      domain: 'simple-custom-element'
+      description: "A tutorial to make your first vanilla custom element"
       users: [
         login: 'notwaldorf'
         avatarUrl: 'https://avatars2.githubusercontent.com/u/1369170?v=3'
