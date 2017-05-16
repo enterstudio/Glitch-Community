@@ -3,26 +3,33 @@
 module.exports =
 
   [
-      name: 'Connect mail, docs & more'
-      domain: 'graph-connect'
-      id: 'c439638e-7365-4b17-98d2-0913fa44d81e'
+      name: 'Firebase Quickstart'
+      id: 'fb2f9ebf-77b2-4f81-9f07-e5425f261f57'
+      domain: 'firebase-quickstart'
+      img: "https://cdn.glitch.com/d6417c7a-aa1b-4b65-90ba-49405f1dda44%2FfirebaseFeature.png?1494343245365"
       users: [
-          login: 'microsoftgraph'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/17304259?v=3&s=48'
-      ]    
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FgraphExample.png?1493295763383"        
+          login: 'etamponi'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/578612?v=3&s=48'
+      ]       
     ,
-  	  name: 'Build a Skype bot'
-  	  domain: 'bot-builder-skype'
-  	  id: 'c942fe52-dcbc-43fc-ac80-5a66e388221a'
-  	  img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FskypeBot.png?1493295763303"   
-    ,
-      name: 'Grab and store data in Azure'
-      domain: 'azure-storage'
-      id: '8c68dea8-16a3-4e0d-8755-c9229208b84f'
+      name: 'YouTube Analytics'
+      id: 'a4cbb317-e950-439c-b264-d9657fc60bfc'
+      domain: 'youtube-analytics'
+      img: "https://cdn.glitch.com/d6417c7a-aa1b-4b65-90ba-49405f1dda44%2FyouTubeFeature.png?1494343246146"
       users: [
-          login: 'azure'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/6844498?v=3&s=48'
-      ]    
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FazureExample.png?1493295763406"       
+          login: 'garethx'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/1830035?v=3&s=48'
+      ]   
+    ,
+      name: 'Google Home Action'
+      id: 'af1e91ec-2f6d-4a37-82cb-21c8bd289460'
+      domain: 'google-home'
+      img: "https://cdn.glitch.com/d6417c7a-aa1b-4b65-90ba-49405f1dda44%2FgoogleHomeFeature.png?1494343245673"
+      users: [
+          login: 'STRd6'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
+        ,
+          login: 'pketh'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'    
+      ]        
   ]
