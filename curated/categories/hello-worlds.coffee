@@ -157,5 +157,13 @@ module.exports =
       users: [
           login: 'jude'
           avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
-      ]        
+      ]
+    ,
+      id: '93ac1c34-12b2-4fbe-9db6-2dd1770bf629'
+      domain: 'polymer-custom-element'
+      description: "Make your first Web Component with Polymer"
+      users: [
+        login: 'notwaldorf'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/1369170?v=3'
+      ]
   ]
