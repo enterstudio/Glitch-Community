@@ -89,9 +89,17 @@ module.exports =
     ,
       id: '18e40723-cd17-4fd8-81f7-490c4561ff5a'
       domain: 'square-connect'
-      description: 'A node server implementation of the Square Connect API sample app'  
+      description: 'A Square Connect API sample app allowing you to take payments via Square'  
       users: [
           login: 'square'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/82592?v=3&s=48'
+      ] 
+    ,
+      id: '333bebc5-1fb2-4b0f-be47-e53efb94a870'
+      domain: 'box-app-auth'
+      description: 'Demo app showing the basic functionality of the Box Node.js SDK'  
+      users: [
+          login: 'box'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/23900?v=3&s=48'
       ]     
   ]
