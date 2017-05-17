@@ -113,12 +113,12 @@ self =
     persistentToken = self.user.cachedUser()?.persistentToken
     if persistentToken
       axios.create
-        baseURL: 'https://api.gomix.com/',
+        baseURL: 'https://api.glitch.com/',
         headers:
           Authorization: persistentToken
     else
       axios.create
-        baseURL: 'https://api.gomix.com/'
+        baseURL: 'https://api.glitch.com/'
         
   storeLocal: (key, value) ->
     try
