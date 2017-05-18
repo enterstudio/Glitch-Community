@@ -6,6 +6,7 @@ wistia = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fwistia.p
 google = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FgoogleLogo.png?1494335487109"
 slack = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fslack.svg?1494344404198"
 signal = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fsignal.svg?1494371350294"
+botkit = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FbotkitLogo.png?1495145720251"
 
 backgroundOpacity = 0.3
 
@@ -62,11 +63,27 @@ module.exports =
       description: "Build bots, slash commands and apps for Slack."
       background: "rgba(252, 243, 174, #{backgroundOpacity})" 
     ,
+      name: 'Slack Integration Templates'
+      url: 'slack-integration-templates'
+      curatedName: 'slack-integration-templates'
+      img: slack
+      color: "#FCF3AF"
+      description: "Template projects to kickstart building integrations with Slack."
+      background: "rgba(252, 243, 174, #{backgroundOpacity})"     
+    ,
       name: 'SIGNAL.2017'
       url: 'signal'
       curatedName: 'signal'
       img: signal
       color: "#ffe000"
       description: "The Developer Conference by Twilio."
-      background: "rgba(0,0,0, #{backgroundOpacity})"     
+      background: "rgba(0,0,0, #{backgroundOpacity})" 
+    ,
+      name: 'Botkit'
+      url: 'botkit'
+      curatedName: 'botkit'
+      img: botkit
+      color: "#C9BFF4"
+      description: "Build helpful tools, meme generators, or Westworld. Your bots have your back."
+      background: "rgba(201, 191, 244, #{backgroundOpacity})"   
   ]
