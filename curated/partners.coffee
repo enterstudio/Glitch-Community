@@ -84,6 +84,6 @@ module.exports =
       curatedName: 'botkit'
       img: botkit
       color: "#C9BFF4"
-      description: "Build helpful tools, meme generators, or Westworld. Your bots have your back."
+      description: "Building blocks for building bots."
       background: "rgba(201, 191, 244, #{backgroundOpacity})"   
   ]
