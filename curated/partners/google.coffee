@@ -37,5 +37,21 @@ module.exports =
     ,
       id: '50c4eefb-0b97-4673-ad19-5811e1df1a6c'
       domain: 'google-analytics'
-      description: "Get website stats from Google Analytics"    
+      description: "Get website stats from Google Analytics" 
+    ,
+      id: '93ac1c34-12b2-4fbe-9db6-2dd1770bf629'
+      domain: 'polymer-custom-element'
+      description: "Make your first Web Component with Polymer!"
+      users: [
+        login: 'notwaldorf'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/1369170?v=3'
+      ]
+    ,
+      id: '9544d94c-81a2-43c6-b19b-c4c7e3b736af'
+      domain: 'aspiring-chauffeur'
+      description: 'Examples that show what each of the Polymer 2.0 mixins do'  
+      users: [
+        login: 'notwaldorf'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/1369170?v=3'
+      ]      
   ]
