@@ -101,5 +101,13 @@ module.exports =
       users: [
           login: 'box'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/23900?v=3&s=48'
-      ]     
+      ]  
+    ,
+      id: '2519101d-6b1d-4c6f-9eec-47d372514700'
+      domain: 'docusign-node-client'
+      description: 'Login and send a template for signature'  
+      users: [
+          login: 'docusign'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/270752?v=3&s=48'
+      ]    
   ]
