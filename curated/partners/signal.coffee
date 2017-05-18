@@ -109,5 +109,13 @@ module.exports =
       users: [
           login: 'docusign'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/270752?v=3&s=48'
-      ]    
+      ]  
+    ,
+      id: 'f8b10c22-54cc-4bd8-97e1-d3bc817c4f36'
+      domain: 'aws-sdk'
+      description: 'Create a S3 bucket, and upload a file to that bucket'  
+      users: [
+          login: 'awslabs'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/3299148?v=3&s=48'
+      ]     
   ]
