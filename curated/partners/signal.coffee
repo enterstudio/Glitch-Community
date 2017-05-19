@@ -117,5 +117,13 @@ module.exports =
       users: [
           login: 'awslabs'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/3299148?v=3&s=48'
-      ]     
+      ] 
+    ,
+      id: '19163ecc-caeb-45fe-93ef-8def89eba6ef'
+      domain: 'shopify-node-app'
+      description: 'Skeleton public app for Shopify using the Embedded App SDK'  
+      users: [
+        login: 'elkfox'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/5110165?v=3'
+      ]      
   ]
