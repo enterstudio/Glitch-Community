@@ -78,7 +78,6 @@ module.exports =
       color: "#ffe000"
       description: "The Developer Conference by Twilio."
       background: "rgba(0,0,0, #{backgroundOpacity})"
-      messaging: ""
     ,
       name: 'Botkit'
       url: 'botkit'
