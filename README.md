@@ -24,8 +24,9 @@ application models -> presenter -> DOM
 O RLY?  YA RLY   NO WAI!
 ```
 
-TEMP: why rewrite in jadelet:
-- similar to editor reduces switching cost
+Why is this in [Jadelet](https://jadelet.com/)?
+-----------------------
+- editor is also written in jadelet, reduces switching cost
 - more maintainable views
 - unit testable
-- can render views based on user LS values more conveniently
+- can render views based on user localstorage values more conveniently

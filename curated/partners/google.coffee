@@ -53,5 +53,5 @@ module.exports =
       users: [
         login: 'notwaldorf'
         avatarUrl: 'https://avatars2.githubusercontent.com/u/1369170?v=3'
-      ]      
+      ]     
   ]

@@ -13,13 +13,13 @@ span
 
       section.pop-over-actions.has-buttons(class=@hiddenIfCurrentUserInProject)
         a.button-link.show-app-link(href=@showLink onclick=@overlayButtonClickHandler data-track="overlay → show" data-track-label=@projectName)
-          .button.show-app
+          button.show-app
             img(src=showIcon)
             span Preview App
         a.button-link.project-link(href=@editorLink onclick=@overlayButtonClickHandler data-track="overlay → view code" data-track-label=@projectName)
-          .button View Code
+          button View Code
         a.button-link.remix-link(href=@remixLink onclick=@overlayButtonClickHandler data-track="overlay → remix" data-track-label=@projectName)
-          .button.button-cta Remix your own
+          button.button-cta Remix your own
 
       section.pop-over-actions.has-buttons.editor-actions(class=@hiddenUnlessCurrentUserInProject)
         a.button-link.show-app-link(href=@showLink onclick=@overlayButtonClickHandler data-track="overlay → show" data-track-label=@projectName)
@@ -27,7 +27,7 @@ span
             img(src=showIcon)
             span Preview App
         a.button-link.project-link(href=@editorLink onclick=@overlayButtonClickHandler data-track="overlay → view code" data-track-label=@projectName)
-          .button.button-cta Edit Code
+          button.button-cta Edit Code
 
       section.pop-over-actions.markdown-container(class=@warningIfReadmeError)
         - #console.log "🐒", @projectAvatar()

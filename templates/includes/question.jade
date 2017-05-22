@@ -1,0 +1,23 @@
+- project = @project
+
+- iconHelp = 'https://cdn.glitch.com/f7224274-1330-4022-a8f2-8ae09dbd68a8%2Fask-for-help.svg?1494954687906'
+
+li
+
+  img.help-icon(src=iconHelp)
+
+  a(href=@projectUrl)
+    .project(data-track="project help" data-track-label=project.domain style="background-color:#{@colorOuter()}")
+      .project-container(style="background-color:#{@colorInner()}")
+
+        img.avatar(src=project.userAvatar style="background-color:#{project.userColor}")
+
+        button(class=@buttonCtaIfEdit)= "Help #{project.userLogin}"
+
+        .description.question(alt=project.question)=@filteredQuestion
+
+        .description.tags
+          - context = @
+          - project.tags.forEach (tag) ->
+            - filteredTag = context.filteredTag tag
+            .tag(alt=tag)= filteredTag

@@ -1,6 +1,5 @@
 ProjectUsersTemplate = require "../templates/includes/project-users"
 
-# maybe projects
 module.exports = (application, project) ->
 
   self =

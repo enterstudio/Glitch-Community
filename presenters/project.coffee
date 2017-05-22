@@ -15,10 +15,10 @@ module.exports = (application, project, category) ->
         self.editorLink()
       else
         "/~#{project.domain}"
-      
+
     editorLink: ->
       "https://glitch.com/edit/#!/#{project.domain}"
-      
+
     showProject: (project) ->
       event.preventDefault()
       if project.isRecentProject

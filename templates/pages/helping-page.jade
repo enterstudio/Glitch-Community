@@ -1,0 +1,21 @@
+- Categories = require "../includes/categories"
+- HeaderPresenter = require "../../presenters/header"
+- Footer = require "../includes/footer"
+- HelpOthersPresenter = require "../../presenters/help-others"
+
+
+- Loader = require "../includes/loader"
+
+
+.content.helping-page
+  = HeaderPresenter(this).template
+
+  main(role="main")
+
+    = HelpOthersPresenter(this).template(12)
+
+    = Categories(this)
+
+  = Footer(this)
+
+  .beta beta

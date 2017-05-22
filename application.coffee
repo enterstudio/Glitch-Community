@@ -2,6 +2,9 @@ Observable = require 'o_0'
 _ = require 'underscore'
 axios = require 'axios'
 
+API_URL = 'https://api.glitch.com/' # 'https://api.staging.glitch.com/
+EDITOR_URL = 'https://glitch.com/edit/' # 'https://staging.glitch.com/edit/
+
 # curated
 curated = 
   featured: require "./curated/featured"
@@ -37,13 +40,16 @@ self =
   signInPopVisibleOnHeader: Observable false
   signInPopVisibleOnRecentProjects: Observable false
   userOptionsPopVisible: Observable false
-  
+
   # search
   searchQuery: Observable ""
   searchResultsUsers: Observable []
   searchResultsUsersLoaded: Observable false
   searchResultsProjects: Observable []
   searchResultsProjectsLoaded: Observable false
+
+  # questions
+  projectQuestions: Observable []
 
   normalizedBaseUrl: ->
     urlLength = baseUrl.length
@@ -54,7 +60,7 @@ self =
       return baseUrl + "/"
     else
       return baseUrl
-  
+    
   closeAllPopOvers: ->
     self.signInPopVisibleOnHeader false
     self.signInPopVisibleOnRecentProjects false
@@ -71,7 +77,7 @@ self =
     homepageCategories = _.filter curated.categories, (category) ->
       !category.categoryPageOnly
     _.shuffle homepageCategories
-    
+
   allProjects: ->
     # returns all projects, shuffled
     allProjects = []
@@ -98,28 +104,38 @@ self =
     if _.contains self.categoryUrls(), url.toLowerCase()
       true
 
+  isHelpingUrl: (url) ->
+    if url is 'helping'
+      true
+      
   getCategoryFromUrl: (url) ->
     # in this function, categories include partner and collection pages
     category = _.findWhere allProjectGroups,
       url: url
-
+      
   categoryUrls: ->
     # in this function, categories include partner and collection pages
     categories = allProjectGroups
     categoryUrls = _.map categories, (category) ->
       category.url
-      
+
+  projectUrl: (project) ->
+    if project.line
+      "#{EDITOR_URL}/#!/#{project.domain}?path=#{project.path}:#{project.line}:#{project.character}"
+    else
+      "#{EDITOR_URL}/#!/#{project.domain}"
+  
   api: ->
     persistentToken = self.user.cachedUser()?.persistentToken
     if persistentToken
       axios.create
-        baseURL: 'https://api.glitch.com/',
+        baseURL: API_URL,
         headers:
           Authorization: persistentToken
     else
       axios.create
-        baseURL: 'https://api.glitch.com/'
-        
+        baseURL: API_URL
+
   storeLocal: (key, value) ->
     try
       window.localStorage[key] = JSON.stringify value
@@ -157,13 +173,17 @@ self =
     queryStringKeys = _.keys queryString # ['q', 'blah']
     if (url is 'search') and (_.contains queryStringKeys, 'q')
       true
-      
+
+  fogcreekAge: ->
+    founded = 2001
+    current = new Date().getFullYear()
+    current - founded
 
 self.overlay = Overlay self
 self.tracking = tracking self
 self.user = user self
 self.search = Search self
 
-global.communityApp = self
+global.application = self
 
 module.exports = self

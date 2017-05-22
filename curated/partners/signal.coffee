@@ -77,7 +77,7 @@ module.exports =
     ,
       id: '2fea610c-de70-4ffb-95fd-91227aa1845b'
       domain: 'foursquare-local-venues'
-      description: "List venues nearby an area you specify using the Foursquare Venues API" 
+      description: "List venues nearby an area you specify using the Foursquare Venues API"      
     ,
       id: '5c586250-1805-494d-94fb-51136c8e16c9'
       domain: 'sendgrid-quickstart'
@@ -101,7 +101,7 @@ module.exports =
       users: [
           login: 'box'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/23900?v=3&s=48'
-      ]  
+      ] 
     ,
       id: '2519101d-6b1d-4c6f-9eec-47d372514700'
       domain: 'docusign-node-client'
@@ -109,7 +109,7 @@ module.exports =
       users: [
           login: 'docusign'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/270752?v=3&s=48'
-      ]  
+      ]
     ,
       id: 'f8b10c22-54cc-4bd8-97e1-d3bc817c4f36'
       domain: 'aws-sdk'
@@ -117,7 +117,7 @@ module.exports =
       users: [
           login: 'awslabs'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/3299148?v=3&s=48'
-      ] 
+      ]  
     ,
       id: '19163ecc-caeb-45fe-93ef-8def89eba6ef'
       domain: 'shopify-node-app'
@@ -125,5 +125,5 @@ module.exports =
       users: [
         login: 'elkfox'
         avatarUrl: 'https://avatars2.githubusercontent.com/u/5110165?v=3'
-      ]      
+      ]     
   ]

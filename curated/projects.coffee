@@ -23,9 +23,9 @@ module.exports =
   "wistia"           : require "./partners/wistia"
   "google"           : require "./partners/google"  
   "slack"            : require "./partners/slack"  
-  "signal"           : require "./partners/signal"  
+  "signal"           : require "./partners/signal" 
   "slack-enterprise" : require "./partners/slack-enterprise"  
-  "botkit"           : require "./partners/botkit"    
+  "botkit"           : require "./partners/botkit"   
 
   # collections
   "websites"         : require "./collections/websites"

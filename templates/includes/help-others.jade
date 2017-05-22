@@ -1,0 +1,15 @@
+- Loader = require "./loader"
+
+section.help-others(class=@hiddenIfNoQuestions)
+  h2
+    a(href="/helping")
+      span Help Others, Get Thanks →
+
+  article.projects
+    span(class=@hiddenIfHasQuestions)
+      = Loader(this)
+
+    - if @hasQuestions()
+      ul.projects-container
+        - @questions().forEach (question) ->
+          = question.template

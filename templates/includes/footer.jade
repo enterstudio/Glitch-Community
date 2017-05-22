@@ -1,4 +1,4 @@
-- remixButton = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fremix-button.svg"
+- viewSourceButton = "https://cdn.glitch.com/f7224274-1330-4022-a8f2-8ae09dbd68a8%2Fview-source-button.svg?1495215277640"
 
 - editor = "https://glitch.com/edit/#!/project/community"
 - remix = "https://glitch.com/edit/#!/remix/community"
@@ -9,26 +9,36 @@
 - status = "http://status.glitch.com/"
 - support = "https://support.glitch.com"
 - legal = "https://glitch.com/legal"
+- platforms = "https://glitch.com/forplatforms"
+- os = "https://glitch.com/foropensource"
 
 footer(role="contentinfo")
 
   p
-    a(href=remix)
-      img(src=remixButton width=162 alt="Remix on Glitch")
+    span Of course, this site was made in Glitch too
   p
-    a(href=editor) View Code
+    a(href=editor)
+      img(src=viewSourceButton width=162 alt="View Source on Glitch")
 
   hr
 
-  p
-    a(href=about data-track="footer → about") About
-  p
-    a(href=blog data-track="footer → blog") Blog
-  p
-    a(href=help data-track="footer → faq") FAQ
-  p
-    a(href=status data-track="footer → system status") System Status
-  p
-    a(href=support data-track="footer → support forum") Support Forum
-  p
-    a(href=legal data-track="footer → legal stuff") Legal Stuff
+  div.leftLinks
+    p
+      a(href=about data-track="footer → about") About
+    p
+      a(href=blog data-track="footer → blog") Blog
+    p
+      a(href=help data-track="footer → faq") FAQ
+    p
+      a(href=status data-track="footer → system status") System Status
+    p
+      a(href=support data-track="footer → support forum") Support Forum
+    p
+      a(href=legal data-track="footer → legal stuff") Legal Stuff
+  
+  div.rightLinks  
+    p Glitch for:
+    p
+      a(href=platforms) Platforms
+    p
+      a(href=os) Open Source  

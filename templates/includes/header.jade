@@ -5,6 +5,7 @@
 
 header(role="banner")
   .header-info
+
     a(href=@baseUrl)
       img.logo(src=@logo)
     //if !user.isSignedIn
@@ -22,6 +23,13 @@ header(role="banner")
         span How it works in 2 minutes
 
   nav(role="navigation")
+    // temporary banner for For Platforms launch 
+    div.help-topbar
+      p
+        span.new New!
+        span Have an API or SDK?
+        a.link(href="/forplatforms") Check out Glitch for Platforms  
+  
     form(action="#{@baseUrl}search" method="get" role="search")
       input.search-input(name="q" placeholder="bots, apps, tutorials" value=@application.searchQuery)
 
