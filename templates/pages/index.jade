@@ -8,16 +8,16 @@
 - OverlayPresenter = require "../../presenters/overlay"
 - RecentProjectsPresenter = require "../../presenters/recent-projects"
 - CtaButtonsPresenter = require "../../presenters/cta-buttons"
-- HelpOthersPresenter = require "../../presenters/help-others"
+- HelpingPresenter = require "../../presenters/helping"
 
 .content
   = HeaderPresenter(this).template
-  
+
   main(role="main")
 
     = CtaButtonsPresenter(this).template
 
-    = HelpOthersPresenter(this).template(3)
+    = HelpingPresenter(this).template(3)
 
     - if @.user.cachedUser()
       = RecentProjectsPresenter(this).template

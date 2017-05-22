@@ -1,7 +1,7 @@
 - Categories = require "../includes/categories"
 - HeaderPresenter = require "../../presenters/header"
 - Footer = require "../includes/footer"
-- HelpOthersPresenter = require "../../presenters/help-others"
+- HelpingPresenter = require "../../presenters/helping"
 
 
 - Loader = require "../includes/loader"
@@ -12,7 +12,7 @@
 
   main(role="main")
 
-    = HelpOthersPresenter(this).template(12)
+    = HelpingPresenter(this).template(12)
 
     = Categories(this)
 

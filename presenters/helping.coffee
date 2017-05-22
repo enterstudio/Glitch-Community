@@ -1,4 +1,4 @@
-HelpOthersTemplate = require "../templates/includes/help-others"
+HelpingTemplate = require "../templates/includes/helping"
 QuestionPresenter = require './question'
 
 Observable = require 'o_0'
@@ -7,22 +7,22 @@ _ = require 'underscore'
 DEFAULT_MAX_QUESTIONS = 3
 
 module.exports = (application) ->
-  
-  self = 
-    
+
+  self =
+
     hasQuestions: Observable false
     questionCount: Observable 1
-  
+
     maxQuestions: Observable DEFAULT_MAX_QUESTIONS
-  
+
     template: (number) ->
       self.getQuestions()
       self.maxQuestions number
-      HelpOthersTemplate self
+      HelpingTemplate self
 
     hiddenIfHasQuestions: ->
       'hidden' if self.hasQuestions()
-        
+
     hiddenIfNoQuestions: ->
       'hidden' if self.questionCount() is 0
 
@@ -44,7 +44,7 @@ module.exports = (application) ->
         application.projectQuestions questions
       .catch (error) ->
         console.error "GET projects/questions", error
-        
+
     questions: ->
       projectQuestions = application.projectQuestions()
       questionElements = projectQuestions.map (project) ->

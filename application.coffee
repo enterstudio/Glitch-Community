@@ -2,8 +2,8 @@ Observable = require 'o_0'
 _ = require 'underscore'
 axios = require 'axios'
 
-API_URL = 'https://api.glitch.com' # 'https://api.staging.glitch.com/
-EDITOR_URL = 'https://glitch.com/edit' # 'https://staging.glitch.com/edit/
+API_URL = 'https://api.glitch.com/' # 'https://api.staging.glitch.com/
+EDITOR_URL = 'https://glitch.com/edit/' # 'https://staging.glitch.com/edit/
 
 # curated
 curated = 
