@@ -11,11 +11,15 @@ section.featured-projects
     - @featuredProjects().forEach (project) ->
 
       li
-        = ProjectUsersPresenter(@, project).template
-
-        - showProjectOverlay = -> application.showProjectOverlay project
-        a(href="/~#{project.domain}")
-          .featured-container(click=showProjectOverlay data-track="featured project" data-track-label=project.name)
-            img.featured(width=30 height=30 src=project.img)
-            p.project-name= project.name
+        - if project.link
+          a(href=project.link)
+            .featured-container(data-track="featured project" data-track-label=project.name)
+              img.featured(width=30 height=30 src=project.img)
+              p.project-name= project.name
+        - else
+          - showProjectOverlay = -> application.showProjectOverlay project
+          a(href="/~#{project.domain}")
+            .featured-container(click=showProjectOverlay data-track="featured project" data-track-label=project.name)
+              img.featured(width=30 height=30 src=project.img)
+              p.project-name= project.name
 

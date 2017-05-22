@@ -1,3 +1,8 @@
+      name: 'Make a Messenger bot'
+      id: 'ca73ace5-3fff-4b8f-81c5-c64452145271'
+      domain: 'messenger-bot'
+      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-facebook-messenger.png"
+
 
   name: 'Start your own blog'
   domain: 'ghost'

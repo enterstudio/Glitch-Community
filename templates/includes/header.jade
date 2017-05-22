@@ -8,7 +8,7 @@ header(role="banner")
 
     a(href=@baseUrl)
       img.logo(src=@logo)
-    //if !user.isSignedIn
+
     h1.headline(class=@hiddenIfUserIsSignedIn)
       a(href=@baseUrl)
         span= "Glitch"
@@ -22,14 +22,7 @@ header(role="banner")
         img.play-button(src=play)
         span How it works in 2 minutes
 
-  nav(role="navigation")
-    // temporary banner for For Platforms launch 
-    div.help-topbar
-      p
-        span.new New!
-        span Have an API or SDK?
-        a.link(href="/forplatforms") Check out Glitch for Platforms  
-  
+  nav(role="navigation")  
     form(action="#{@baseUrl}search" method="get" role="search")
       input.search-input(name="q" placeholder="bots, apps, tutorials" value=@application.searchQuery)
 
@@ -43,4 +36,3 @@ header(role="banner")
         span.down-arrow.icon
       = UserOptionsPopPresenter(@.application).template
 
-      // TODO show user avatar and link to profile page if signed in

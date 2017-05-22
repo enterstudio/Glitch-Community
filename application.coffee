@@ -121,9 +121,9 @@ self =
 
   projectUrl: (project) ->
     if project.line
-      "#{EDITOR_URL}/#!/#{project.domain}?path=#{project.path}:#{project.line}:#{project.character}"
+      "#{EDITOR_URL}#!/#{project.domain}?path=#{project.path}:#{project.line}:#{project.character}"
     else
-      "#{EDITOR_URL}/#!/#{project.domain}"
+      "#{EDITOR_URL}#!/#{project.domain}"
   
   api: ->
     persistentToken = self.user.cachedUser()?.persistentToken
