@@ -1,15 +1,25 @@
 - Loader = require "./loader"
 
-section.helping(class=@hiddenIfNoQuestions)
+section.helping
   h2
     a(href="/helping")
       span Help Others, Get Thanks →
+    .loader-pie(title="Looking for more questions...")
+      .slice.left-top(class=@animatedUnlessLookingForQuestions)
+      .slice.top-right(class=@animatedUnlessLookingForQuestions)
+      .slice.right-bottom(class=@animatedUnlessLookingForQuestions)
+      .slice.bottom-left(class=@animatedUnlessLookingForQuestions)
 
   article.projects
-    span(class=@hiddenIfHasQuestions)
+    span(class=@hiddenIfGotQuestions)
       = Loader(this)
 
-    - if @hasQuestions()
+    span(class=@hiddenUnlessQuestions)
       ul.projects-container
         - @questions().forEach (question) ->
+          - console.log '🚴🏼', question
           = question.template
+
+    span(class=@hiddenIfHasQuestions)
+      - # p (/^▽^)八(＾□＾*)
+      p Looks like nobody is asking for help right now 八(＾□＾*)

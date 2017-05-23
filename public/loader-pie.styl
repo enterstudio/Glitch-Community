@@ -1,0 +1,80 @@
+pie-duration = 10s
+pie-size = 20px
+count = infinite
+
+.loader-pie
+  position: relative
+  width: pie-size
+  height: pie-size
+  border-radius: 50%
+  overflow: hidden
+  background-color: secondary-background
+  display: inline-block
+  vertical-align: top
+  
+  .slice
+    width: 50%
+    height: 50%
+    position: absolute
+    background-color: line-on-secondary-background
+    visibility: hidden
+
+    &.top-right
+      top: 0%
+      right: 0%
+      transform-origin: left bottom
+      &.animated
+        animation: pie-top-right pie-duration linear forwards infinite
+
+    &.right-bottom
+      right: 0%
+      bottom: 0%
+      transform-origin: left top    
+      &.animated
+        animation: pie-right-bottom pie-duration linear forwards infinite
+      
+    &.bottom-left
+      bottom: 0%
+      left: 0%
+      transform-origin: right top
+      &.animated
+        animation: pie-bottom-left pie-duration linear forwards infinite
+
+    &.left-top
+      left: 0%
+      top: 0%
+      transform-origin: right bottom
+      &.animated
+        animation: pie-left-top pie-duration linear forwards infinite
+    
+@keyframes pie-top-right
+  0%
+    visibility: hidden
+    transform: skewY(-90deg)
+  25%, 100%
+    visibility: visible
+    transform: skewY(0deg)
+
+@keyframes pie-right-bottom
+  0%, 25%
+    visibility: hidden
+    transform: skewX(90deg)
+  50%, 100%
+    visibility: visible
+    transform: skewX(0deg)
+
+@keyframes pie-bottom-left
+  0%, 50%
+    visibility: hidden
+    transform: skewY(-90deg)
+  75%, 100%
+    visibility: visible
+    transform: skewY(0deg)
+
+@keyframes pie-left-top
+  0%, 75% 
+    visibility: hidden
+    transform: skewX(90deg)
+  100%
+    visibility: visible
+    transform: skewX(0deg)

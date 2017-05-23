@@ -12,7 +12,7 @@
   "dependencies": {
     "express": "^4.15.0",
     "browserify": "^14.1.0",
-    "hamlet.coffee": "0.7.6",
+    "jadelet": "0.8.0-pre.2",
     "coffee-script": "^1.12.4",
     "body-parser": "^1.16.1",
     "coffeeify": "^2.1.0",

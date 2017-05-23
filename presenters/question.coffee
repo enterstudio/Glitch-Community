@@ -1,5 +1,4 @@
 Observable = require 'o_0'
-randomColor = require 'randomcolor'
 
 QuestionTemplate = require "../templates/includes/question"
 
@@ -10,15 +9,9 @@ module.exports = (application, project) ->
   
   self = 
   
-    colors: Observable []
-
     project: project
     
     template: ->
-      palette = randomColor
-        luminosity: 'light'
-        count: 2
-      self.colors palette
       QuestionTemplate self
 
     filteredQuestion: ->
@@ -31,12 +24,6 @@ module.exports = (application, project) ->
     
     filteredTag: (tag) ->
       tag.substring 0, MAX_TAG_LENGTH
-    
-    colorOuter: ->
-      self.colors()[0]
-    
-    colorInner: ->
-      self.colors()[1]
 
     projectUrl: ->
       application.projectUrl project

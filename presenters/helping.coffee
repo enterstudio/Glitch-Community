@@ -3,44 +3,59 @@ QuestionPresenter = require './question'
 
 Observable = require 'o_0'
 _ = require 'underscore'
+randomColor = require 'randomcolor'
 
+animationIteration = 'webkitAnimationiteration oanimationiteration msAnimationiteration animationiteration'
 DEFAULT_MAX_QUESTIONS = 3
 
 module.exports = (application) ->
 
   self =
 
-    hasQuestions: Observable false
-    questionCount: Observable 1
-
     maxQuestions: Observable DEFAULT_MAX_QUESTIONS
+
+    gotQuestions: Observable false
+    lookingForQuestions: Observable false
 
     template: (number) ->
       self.getQuestions()
       self.maxQuestions number
       HelpingTemplate self
-
+      
+    hiddenIfGotQuestions: ->
+      'hidden' if self.gotQuestions()
+      
     hiddenIfHasQuestions: ->
-      'hidden' if self.hasQuestions()
+      'hidden' if application.projectQuestions().length
 
-    hiddenIfNoQuestions: ->
-      'hidden' if self.questionCount() is 0
+    hiddenUnlessQuestions: ->
+      'hidden' unless application.projectQuestions().length
 
     mapQuestions: (data) ->
       if data
-        selected = _.sample data,  self.maxQuestions()
+        selected = data.slice 0, self.maxQuestions()
         questions = selected.map (question) ->
-          console.log question.details
-          JSON.parse question.details
+          colors = randomColor
+            luminosity: 'light'
+            count: 2
+          details = JSON.parse question.details
+          # if details
+          details.colorOuter = colors[0]
+          details.colorInner = colors[1]
+          console.log "💭 details", details
+          return details
+
         return questions
 
     getQuestions: ->
+      self.lookingForQuestions true
       application.api().get 'projects/questions'
       .then (response) ->
-        console.log '💁 got questions', response.data
-        self.hasQuestions true
-        self.questionCount response.data.length
+        self.gotQuestions true
+        self.lookingForQuestions false
+        console.log '🔥 getQuestions', response.data
         questions = self.mapQuestions response.data
+        console.log "🏕", questions
         application.projectQuestions questions
       .catch (error) ->
         console.error "GET projects/questions", error
@@ -50,3 +65,12 @@ module.exports = (application) ->
       questionElements = projectQuestions.map (project) ->
         project.id = project.projectId
         QuestionPresenter(application, project)
+
+    animatedUnlessLookingForQuestions: ->
+      'animated' unless self.lookingForQuestions()
+
+  setInterval ->
+    self.getQuestions()
+  , 10000
+
+  return self

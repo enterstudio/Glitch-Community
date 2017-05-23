@@ -1,7 +1,7 @@
 #!/bin/bash
 set -ex
 
-hamlet -m jade -d templates -r "require('hamlet.coffee')"
+jadelet -d templates -r "require('jadelet')"
 
 browserify -t coffeeify --debug --extension=".coffee" client.coffee | \
   exorcist public/client.js.map > public/client.js

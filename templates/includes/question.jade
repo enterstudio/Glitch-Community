@@ -5,16 +5,16 @@
 li
 
   img.help-icon(src=iconHelp)
-
+  
   a(href=@projectUrl)
-    .project(data-track="project help" data-track-label=project.domain style="background-color:#{@colorOuter()}")
-      .project-container(style="background-color:#{@colorInner()}")
+    .project(data-track="project help" data-track-label=project.domain style="background-color:#{project.colorOuter}")
+      .project-container(style="background-color:#{project.colorInner}")
 
         img.avatar(src=project.userAvatar style="background-color:#{project.userColor}")
 
         button(class=@buttonCtaIfEdit)= "Help #{project.userLogin}"
 
-        .description.question(alt=project.question)=@filteredQuestion
+        .description.question(title=project.question)=@filteredQuestion
 
         .description.tags
           - context = @
