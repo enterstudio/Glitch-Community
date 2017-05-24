@@ -125,5 +125,13 @@ module.exports =
       users: [
         login: 'elkfox'
         avatarUrl: 'https://avatars2.githubusercontent.com/u/5110165?v=3'
-      ]     
+      ]   
+    ,
+      id: '5802ece3-f541-4e78-80da-3fb26266f0de'
+      domain: 'twilio-canned-text-api'
+      description: "a mini api using the twilio api" 
+      users: [
+          login: 'jennschiffer'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/341305?v=3&s=48'
+      ]
   ]
