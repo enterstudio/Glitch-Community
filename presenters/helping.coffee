@@ -18,6 +18,7 @@ module.exports = (application) ->
     lookingForQuestions: Observable false
 
     template: (number) ->
+      console.log 'render helping template'
       self.getQuestions()
       self.maxQuestions number
       HelpingTemplate self

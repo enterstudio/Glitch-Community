@@ -105,6 +105,7 @@ self =
       true
 
   isHelpingUrl: (url) ->
+    console.log 'url is', url
     if url is 'helping'
       true
       

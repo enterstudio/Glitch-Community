@@ -37,11 +37,12 @@ Promise.resolve()
   
   if normalizedRoute is "index.html"
     normalizedRoute = ""
-  
+
   if normalizedRoute is ""
     document.body.appendChild index
 
   else if application.isHelpingUrl(normalizedRoute)
+    console.log 'normalizedRoute2 helping -o k'
     helpingPage = HelpingPage(application).template()
     document.body.appendChild helpingPage
     document.title = "Helping"

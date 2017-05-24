@@ -3,23 +3,23 @@
 section.helping
   h2
     a(href="/helping")
-      span Help Others, Get Thanks →
+      span= "Help Others, Get Thanks →"
+    span= " "
     .loader-pie(title="Looking for more questions...")
-      .slice.left-top(class=@animatedUnlessLookingForQuestions)
-      .slice.top-right(class=@animatedUnlessLookingForQuestions)
-      .slice.right-bottom(class=@animatedUnlessLookingForQuestions)
-      .slice.bottom-left(class=@animatedUnlessLookingForQuestions)
+      .left-side
+        .slice(class=@animatedUnlessLookingForQuestions)
+      .right-side
+        .slice(class=@animatedUnlessLookingForQuestions)
 
   article.projects
     span(class=@hiddenIfGotQuestions)
       = Loader(this)
+
+    span(class=@hiddenIfHasQuestions)
+      p Looks like nobody is asking for help right now 八(＾□＾*)
 
     span(class=@hiddenUnlessQuestions)
       ul.projects-container
         - @questions().forEach (question) ->
           - console.log '🚴🏼', question
           = question.template
-
-    span(class=@hiddenIfHasQuestions)
-      - # p (/^▽^)八(＾□＾*)
-      p Looks like nobody is asking for help right now 八(＾□＾*)
