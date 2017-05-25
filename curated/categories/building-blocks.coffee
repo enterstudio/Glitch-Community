@@ -169,5 +169,37 @@ module.exports =
     ,
       id: '05c11443-eba3-47c4-a33b-f02aae99c6d2'
       domain: 'foursquare-passport-oauth'
-      description: "An example app implementing Foursquare OAuth with Passport.js"     
+      description: "An example app implementing Foursquare OAuth with Passport.js"  
+    ,
+      id: '5c586250-1805-494d-94fb-51136c8e16c9'
+      domain: 'sendgrid-quickstart'
+      description: 'The minimum needed code to send an email with SendGrid'  
+      users: [
+          login: 'sendgrid'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/181234?v=3&s=48'
+      ]
+    ,
+      id: '18e40723-cd17-4fd8-81f7-490c4561ff5a'
+      domain: 'square-connect'
+      description: 'A Square Connect API sample app allowing you to take payments via Square'  
+      users: [
+          login: 'square'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/82592?v=3&s=48'
+      ] 
+    ,
+      id: 'f8b10c22-54cc-4bd8-97e1-d3bc817c4f36'
+      domain: 'aws-sdk'
+      description: 'Create a S3 bucket, and upload a file to that bucket'  
+      users: [
+          login: 'awslabs'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/3299148?v=3&s=48'
+      ]  
+    ,
+      id: '19163ecc-caeb-45fe-93ef-8def89eba6ef'
+      domain: 'shopify-node-app'
+      description: 'Skeleton public app for Shopify using the Embedded App SDK'  
+      users: [
+        login: 'elkfox'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/5110165?v=3'
+      ]     
   ]
