@@ -13,10 +13,12 @@ Search = require "./presenters/search"
 errorPageTemplate = require "./templates/pages/error-page"
 
 normalizedRoute = route.replace(/^\/|\/$/g, "")
+console.log "#########"
 console.log "normalizedRoute is #{normalizedRoute}"
 console.log "query strings are", queryString
 console.log "application is", application
 console.log "🌈 isSignedIn", application.user.isSignedIn()
+console.log "#########"
 
 # client-side routing:
 Promise.resolve()
@@ -30,19 +32,13 @@ Promise.resolve()
     .then ->
       history.replaceState null, null, "#{baseUrl}/"
       normalizedRoute = ""
-.then ->
-  index = IndexTemplate application
-  errorPage = errorPageTemplate application
-  application.user.getUserRecentProjects()
-  
-  if normalizedRoute is "index.html"
-    normalizedRoute = ""
-
-  if normalizedRoute is ""
+.then ->  
+  if normalizedRoute is "index.html" or normalizedRoute is ""
+    index = IndexTemplate application
+    application.user.getUserRecentProjects()
     document.body.appendChild index
 
   else if application.isHelpingUrl(normalizedRoute)
-    console.log 'normalizedRoute2 helping -o k'
     helpingPage = HelpingPage(application).template()
     document.body.appendChild helpingPage
     document.title = "Helping"
@@ -55,8 +51,10 @@ Promise.resolve()
 
   else if application.isProjectUrl(normalizedRoute)
     projectDomain = application.removeFirstCharacter normalizedRoute
+    index = IndexTemplate application
     document.body.appendChild index
     application.overlay.showProjectOverlayForProject projectDomain
+    application.user.getUserRecentProjects()
     
   # else if application.isUserProfileUrl(normalizedRoute)
   #   document.body.append '🙋 hello im a @profile page'
@@ -68,6 +66,7 @@ Promise.resolve()
     document.title = queryString.q
 
   else
+    errorPage = errorPageTemplate application
     document.body.appendChild errorPage
     document.title = "👻 Page not found"
 

@@ -15,9 +15,12 @@ section.helping
     span(class=@hiddenIfGotQuestions)
       = Loader(this)
 
-    span(class=@hiddenIfHasQuestions)
-      p Looks like nobody is asking for help right now 八(＾□＾*)
-
+    span(class=@hiddenIfQuestions)
+      p= @kaomoji
+      p Looks like nobody is asking for help right now. 
+        a.general-link(href="https://medium.com/glitch/just-raise-your-hand-how-glitch-helps-aa6564cb1685")
+          span Learn more
+      
     span(class=@hiddenUnlessQuestions)
       ul.projects-container
         - @questions().forEach (question) ->

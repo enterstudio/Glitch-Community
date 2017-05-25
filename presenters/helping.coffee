@@ -16,9 +16,9 @@ module.exports = (application) ->
 
     gotQuestions: Observable false
     lookingForQuestions: Observable false
+    kaomoji: Observable '八(＾□＾*)'
 
     template: (number) ->
-      console.log 'render helping template'
       self.getQuestions()
       self.maxQuestions number
       HelpingTemplate self
@@ -26,7 +26,7 @@ module.exports = (application) ->
     hiddenIfGotQuestions: ->
       'hidden' if self.gotQuestions()
       
-    hiddenIfHasQuestions: ->
+    hiddenIfQuestions: ->
       'hidden' if application.projectQuestions().length
 
     hiddenUnlessQuestions: ->
@@ -43,7 +43,6 @@ module.exports = (application) ->
           # if details
           details.colorOuter = colors[0]
           details.colorInner = colors[1]
-          console.log "💭 details", details
           return details
 
         return questions
@@ -54,10 +53,10 @@ module.exports = (application) ->
       .then (response) ->
         self.gotQuestions true
         self.lookingForQuestions false
-        console.log '🔥 getQuestions', response.data
         questions = self.mapQuestions response.data
-        console.log "🏕", questions
         application.projectQuestions questions
+        if questions.length is 0
+          self.randomKaomoji()
       .catch (error) ->
         console.error "GET projects/questions", error
 
@@ -70,6 +69,17 @@ module.exports = (application) ->
     animatedUnlessLookingForQuestions: ->
       'animated' unless self.lookingForQuestions()
 
+    randomKaomoji: ->
+      kaomojis = [
+        '八(＾□＾*)'
+        '(ノ^_^)ノ'
+        'ヽ(*ﾟｰﾟ*)ﾉ'
+        '♪(┌・。・)┌'
+        'ヽ(๏∀๏ )ﾉ'
+        'ヽ(^。^)丿'
+      ]
+      self.kaomoji _.sample kaomojis
+        
   setInterval ->
     self.getQuestions()
   , 10000
