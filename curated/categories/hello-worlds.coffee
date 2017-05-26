@@ -111,14 +111,6 @@ module.exports =
       domain: 'grunt-js'
       description: "Example app that minifies a JS file with Uglify using Grunt"
     ,
-      id: '3d15e4dc-9789-49b3-b7aa-59462d9889fd'
-      domain: '2factor-auth'
-      description: 'Two-Factor Authentication (2FA) demo written in Node.js with Nexmo Verify API'
-      users: [
-        login: 'girliemac'
-        avatarUrl: 'https://avatars1.githubusercontent.com/u/107763?v=3'
-      ]
-    ,
       id: 'ccd1f0e0-94cd-4ec4-8d37-9c31ac9edc24'
       domain: 'offline-with-serviceworker'
       description: 'Make your application load instantly & work offline with ServiceWorker'
@@ -181,5 +173,13 @@ module.exports =
       users: [
           login: 'jude'
           avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
-      ]       
+      ] 
+    ,
+      id: '5d5360ae-ed85-4a92-b60e-421acb2da08a'
+      domain: 'coffee-script-base'
+      description: "CoffeeScript backend that compiles clientside code with CoffeeScript using Browserify middleware"
+      users: [
+          login: 'STRd6'
+          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
+      ]    
   ]

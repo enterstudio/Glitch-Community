@@ -71,14 +71,6 @@ module.exports =
       domain: 'littlebits-api'
       description: "Control your CloudBit device using the littleBits API"
     ,
-      id: '5d5360ae-ed85-4a92-b60e-421acb2da08a'
-      domain: 'coffee-script-base'
-      description: "CoffeeScript backend that compiles clientside code with CoffeeScript using Browserify middleware"
-      users: [
-          login: 'STRd6'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
-      ]
-    ,
       id: '4a351a6e-f316-495c-b107-8b91ade9746e'
       domain: 'hackathon-starter'
       description: "A boilerplate for Node.js web applications"
