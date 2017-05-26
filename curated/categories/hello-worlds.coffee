@@ -181,13 +181,5 @@ module.exports =
       users: [
           login: 'jude'
           avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
-      ]   
-    ,
-      id: 'a527542b-8a25-4ba5-af16-6f200a8b11c3'
-      domain: 'github-api'
-      description: 'An example app playing with some things we can fetch from the GitHub API'  
-      users: [
-          login: 'blinkymach12'
-          avatarUrl: 'https://avatars1.githubusercontent.com/u/30277?v=3&s=48'
-      ]     
+      ]       
   ]

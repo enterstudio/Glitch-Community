@@ -117,5 +117,13 @@ module.exports =
       users: [
           login: 'docusign'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/270752?v=3&s=48'
-      ]    
+      ] 
+    ,
+      id: 'fd94eac0-7f39-48d7-85d4-87ae0d46b36a'
+      domain: 'wistia-webhooks-example'
+      description: 'Use Webhooks to hear about stuff when it happens in Wistia'  
+      users: [
+          login: 'mrdavidjcole'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
+      ]     
   ]

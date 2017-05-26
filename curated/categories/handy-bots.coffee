@@ -73,5 +73,24 @@ module.exports =
       users: [
           login: 'byronhulcher'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/2479295?v=3&s=48'
+      ] 
+    ,
+      id: 'a665875d-1aa9-4122-8ea1-4513c66da156'
+      domain: 'botkit-facebook'
+      description: 'A starting point for building Facebook bots with Botkit'  
+      users: [
+        login: 'esoelzer'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/4480070?v=3'
+	      ,
+        login: 'benbrown'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/729873?v=3'
+      ] 
+    ,
+      id: '88a3bab6-2e03-4580-aa38-9976cf3e671d'
+      domain: 'botkit-ciscospark'
+      description: 'Starter kit for creating a Botkit-powered Cisco Spark bot'  
+      users: [
+        login: 'esoelzer'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/4480070?v=3'
       ]     
   ]

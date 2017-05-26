@@ -201,5 +201,21 @@ module.exports =
       users: [
         login: 'elkfox'
         avatarUrl: 'https://avatars2.githubusercontent.com/u/5110165?v=3'
-      ]     
+      ] 
+    ,
+      id: 'a527542b-8a25-4ba5-af16-6f200a8b11c3'
+      domain: 'github-api'
+      description: 'An example app playing with some things we can fetch from the GitHub API'  
+      users: [
+          login: 'blinkymach12'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/30277?v=3&s=48'
+      ] 
+    ,
+      id: '2caf0a90-90fa-419f-ba2b-58649ce2fbae'
+      domain: 'wistia-oauth-example'
+      description: 'Connect to Wistia using OAuth2'  
+      users: [
+          login: 'mrdavidjcole'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
+      ]    
   ]
