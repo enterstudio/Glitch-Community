@@ -11,8 +11,8 @@ module.exports =
       img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FsignalFeature.png?1495626958605"
       link: 'https://glitch.com/signal'
     ,
-      name: 'Build a bot for Slack'
-      id: '095a1538-8c44-4b27-b0fe-936d194318c2'
-      domain: 'slack-bot'
-      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-slack-bot.png"
+      name: 'Skype Bot Builder'
+      id: 'c942fe52-dcbc-43fc-ac80-5a66e388221a'
+      domain: 'bot-builder-skype'
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FskypeBot.png?1493295763303"
   ]
