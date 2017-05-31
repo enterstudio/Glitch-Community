@@ -92,5 +92,16 @@ module.exports =
       users: [
         login: 'esoelzer'
         avatarUrl: 'https://avatars2.githubusercontent.com/u/4480070?v=3'
+      ]  
+    ,
+      id: '216ad9f8-8b2b-4a63-b11a-675087c02c37'
+      domain: 'actions-on-google-api-ai-boilerplate'
+      description: 'A starting point for building Actions for Google Home that use API.AI'  
+      users: [
+        login: 'techpeace'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/2220?v=3'
+      ,
+        login: 'aaronhunter'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/3399027?v=3'
       ]     
   ]
