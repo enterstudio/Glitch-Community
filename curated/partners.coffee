@@ -93,6 +93,6 @@ module.exports =
       curatedName: 'trello'
       img: trello
       color: '#70a4d8'
-      description: "Kickstart creation of your own power-ups and apps using Trello APIs."
+      description: "Start building with Trello. Create your own power-ups and apps using Trello APIs."
       background: "rgba(112, 164, 216, #{backgroundOpacity})"    
   ]
