@@ -7,6 +7,7 @@ google = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FgoogleLo
 slack = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fslack.svg?1494344404198"
 signal = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fsignal.svg?1494371350294"
 botkit = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FbotkitLogo.png?1495145720251"
+trello = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftrello.svg?1496329579103"
 
 backgroundOpacity = 0.3
 
@@ -85,5 +86,13 @@ module.exports =
       img: botkit
       color: "#C9BFF4"
       description: "Building blocks for building bots."
-      background: "rgba(201, 191, 244, #{backgroundOpacity})"   
+      background: "rgba(201, 191, 244, #{backgroundOpacity})"  
+    ,
+      name: 'Trello'
+      url: 'trello'
+      curatedName: 'trello'
+      img: trello
+      color: '#70a4d8'
+      description: "Kickstart creation of your own power-ups and apps using Trello APIs."
+      background: "rgba(112, 164, 216, #{backgroundOpacity})"    
   ]
