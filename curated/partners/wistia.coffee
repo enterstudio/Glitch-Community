@@ -41,5 +41,13 @@ module.exports =
       users: [
           login: 'mrdavidjcole'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
+      ]
+    ,
+      id: '44c9b29b-4344-4a9a-a522-c13176552d0a'
+      domain: 'wistia-friendly-csp-example'
+      description: 'An example app with a Content Security Policy that plays nice with Wistia embeds'  
+      users: [
+          login: 'mrdavidjcole'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
       ]     
   ]
