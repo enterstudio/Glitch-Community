@@ -30,3 +30,4 @@ module.exports =
 
   # collections
   "websites"         : require "./collections/websites"
+  "big-game"         : require "./collections/superbowl"  

@@ -14,9 +14,9 @@ module.exports =
       url: 'big-game'
       curatedName: 'big-game',
       img: superbowl
-      color: "#FCF3AF"
+      color: "#F06449"
       description: "From gridiron to your editor, create apps for the big game."
-      background: "rgba(252, 243, 174, #{backgroundOpacity})"
+      background: "rgba(240, 100, 73, #{backgroundOpacity})"
     ,    
       name: 'First Websites'
       url: 'websites'
