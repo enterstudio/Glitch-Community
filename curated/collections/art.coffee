@@ -46,4 +46,28 @@ module.exports =
         login: 'jennschiffer'
         avatarUrl: 'https://avatars3.githubusercontent.com/u/341305?v=3&s=48'
       ] 
+    ,           
+      id: '95ee8b6c-0da3-48d5-a257-62958af5acbc'
+      domain: 'color-wander'
+      description: "Generative artwork based on a seeded random"
+      users: [
+        login: 'mattdesl'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/1383811?v=3&s=48'
+      ]  
+    ,           
+      id: '5892c832-22b9-4397-b59d-598955b47ad0'
+      domain: 'node-canvas-clock'
+      description: "A clock utilizing node-canvas, a Cairo backed Canvas implementation"
+      users: [
+        login: 'Automattic'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/887802?v=3&s=48'
+      ]          
+    ,           
+      id: '982e2ca5-9d48-4ea5-ae72-f2397efec4cf'
+      domain: 'by-conspiracy-or-design'
+      description: "A poem in Node.js"
+      users: [
+        login: 'orangeduck'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/177299?v=3&s=48'
+      ] 
   ]
