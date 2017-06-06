@@ -32,7 +32,7 @@ module.exports =
       curatedName: 'art',
       img: art
       color: "#F06449"
-      description: "Put pixel to screen, and create visual and interactive experiences that express yourself."
+      description: "Put pixel to screen. Create visual and interactive experiences that express yourself."
       background: "rgba(240, 100, 73, #{backgroundOpacity})"    
   ]
 
