@@ -125,5 +125,13 @@ module.exports =
       users: [
           login: 'mrdavidjcole'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
-      ]     
+      ] 
+    ,
+      id: 'e4ac1d7a-3d8e-48a7-b75f-75a5d04865af'
+      domain: 'stripe-checkout'
+      description: 'Stripe Checkout embedded payment sample app'  
+      users: [
+          login: 'jude'
+          avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
+      ]    
   ]
