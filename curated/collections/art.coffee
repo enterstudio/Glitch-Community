@@ -13,7 +13,7 @@ module.exports =
     ,
       id: '008c399a-3f86-45ad-8131-df3a14b0e7ed'
       domain: 'processing-js'
-      description: "A hypnotic processing.js sketch"
+      description: "A hypnotic sketch in Processing.js, a port of the Processing Visualization Language"
     ,
       id: '46b12cac-bcfe-404e-b9e0-df1373842403'
       domain: 'p5js'
@@ -41,7 +41,7 @@ module.exports =
     ,           
       id: 'c1df4c27-6233-43a7-a3c4-0be0e32bfc74'
       domain: 'makecheckboxart'
-      description: "Make art with checkboxes"
+      description: "Make pixel art with checkboxes"
       users: [
         login: 'jennschiffer'
         avatarUrl: 'https://avatars3.githubusercontent.com/u/341305?v=3&s=48'
