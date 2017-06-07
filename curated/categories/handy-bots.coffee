@@ -43,14 +43,6 @@ module.exports =
       domain: 'add-to-alexa'
       description: "Generate an Alexa Flash Briefing compatible JSON feed from submitted articles"
     ,
-      id: '1a511228-1f09-429c-a2d2-4a3e5ca7d07d'
-      domain: 'peek-at-posts'
-      description: "Slack slash command to peek at the last 3 posts on a WordPress site"
-      users: [
-          login: 'tharsheblows'
-          avatarUrl: 'https://avatars1.githubusercontent.com/u/1530368?v=3&s=48'
-      ]
-    ,
       id: '12834ffd-d5ed-423a-b486-9f297f5cd04f'
       domain: 'botkit-slack'
       description: "Starter kit for creating a Botkit-powered Slack app"
@@ -103,5 +95,13 @@ module.exports =
       ,
         login: 'aaronhunter'
         avatarUrl: 'https://avatars2.githubusercontent.com/u/3399027?v=3'
+      ] 
+    ,
+      id: 'dd532795-a0db-4c04-9716-2806e7a024f4'
+      domain: 'twitch-bot'
+      description: 'A barebones Twitch bot starter project'  
+      users: [
+        login: 'shindakun'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/319128?v=3'
       ]     
   ]
