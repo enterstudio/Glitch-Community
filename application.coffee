@@ -145,11 +145,11 @@ self =
       
   login: (provider, code) ->
     console.log provider, code
-    authURL = "/authenticate/"
+    authURL = "/auth/github/#{code}"
     if provider == "facebook"
       callbackURL = "https://glitch.com/login/facebook"
-      authURL = "/auth/facebook/callback?callbackURL=#{callbackURL}&code="
-    self.api().post "#{authURL}#{code}"
+      authURL = "/auth/facebook/#{code}?callbackURL=#{callbackURL}"
+    self.api().post "#{authURL}"
     .then (response) ->
       console.log "LOGGED IN!", response.data
       cachedUser = self.user.cachedUser() ? {}

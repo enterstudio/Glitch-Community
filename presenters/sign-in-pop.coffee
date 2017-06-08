@@ -11,8 +11,11 @@ module.exports = (application) ->
       "https://github.com/login/oauth/authorize?client_id=#{clientId}&scope=#{scope}&redirect_uri=#{redirectUri}"
 
     facebookAuthLink: ->
+      clientId = "660180164153542"
+      scopes="email"
       callbackURL = "https://glitch.com/login/facebook"
-      "https://api.glitch.com/auth/facebook?callbackURL=#{callbackURL}"
+      "https://www.facebook.com/v2.9/dialog/oauth?" +
+        "client_id=#{clientId}&scope=#{scopes}&redirect_uri=#{encodeURIComponent callbackURL}"
 
     template: ->
       SignInPopTemplate self
