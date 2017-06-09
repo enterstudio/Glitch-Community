@@ -14,5 +14,6 @@ module.exports = (application) ->
       'hidden' unless application.userOptionsPopVisible()
 
     signOut: ->
+      analytics.reset()
       localStorage.removeItem('cachedUser')
       location.reload()
