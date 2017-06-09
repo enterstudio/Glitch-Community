@@ -32,7 +32,9 @@ Promise.resolve()
     .then ->
       history.replaceState null, null, "#{baseUrl}/"
       normalizedRoute = ""
-.then ->  
+.then -> 
+  application.identifyUser()
+  
   if normalizedRoute is "index.html" or normalizedRoute is ""
     index = IndexTemplate application
     application.user.getUserRecentProjects()

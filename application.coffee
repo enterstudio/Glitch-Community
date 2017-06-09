@@ -154,6 +154,18 @@ self =
       cachedUser = self.user.cachedUser() ? {}
       Object.assign cachedUser, response.data
       self.storeLocal 'cachedUser', cachedUser
+      self.identifyUser()
+      analytics.track "Signed In",
+        provider: provider
+      
+  identifyUser: ->
+    unless self.user.isSignedIn()
+      return
+    cachedUser = self.user.cachedUser()
+    analytics.identify cachedUser.id,
+      name: cachedUser.name
+      login: cachedUser.login
+      email: cachedUser.email
 
   removeFirstCharacter: (string) ->
     # ex: ~cool to cool
