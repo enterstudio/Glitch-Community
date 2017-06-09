@@ -73,8 +73,6 @@ Promise.resolve()
 # document.addEventListener "keydown", (event) ->
 #   application.closeAllPopOvers event
 
-# application.tracking.init event
-
 document.addEventListener "click", (event) ->
   globalclick event
 document.addEventListener "touchstart", (event) ->

@@ -15,7 +15,6 @@ curated =
 
 allProjectGroups = curated.categories.concat curated.collections.concat curated.partners
 
-tracking = require "./tracking"
 user = require "./user"
 
 Overlay = require "./presenters/overlay"
@@ -181,7 +180,6 @@ self =
     current - founded
 
 self.overlay = Overlay self
-self.tracking = tracking self
 self.user = user self
 self.search = Search self
 

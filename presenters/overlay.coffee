@@ -44,13 +44,10 @@ module.exports = (application) ->
       "https://#{self.projectDomain()}.glitch.me"
 
     editorLink: ->
-      "https://glitch.com/edit/#!/project/#{self.projectDomain()}"
+      "https://glitch.com/edit/#!/#{self.projectDomain()}"
 
     remixLink: ->
       "https://glitch.com/edit/#!/remix/#{self.projectDomain()}/#{self.projectId()}"
-
-    overlayButtonClickHandler: (event) ->
-      application.tracking.init event
       
     hiddenUnlessProject: ->
       'hidden' unless application.overlayTemplate() is 'project'
