@@ -18,7 +18,7 @@ span
             span Preview
         a.button-link.project-link(href=@editorLink)
           button View Source
-        a.button-link.remix-link(href=@remixLink onclick=)
+        a.button-link.remix-link(href=@remixLink onclick=@trackRemix)
           button.button-cta Remix your own
 
       section.pop-over-actions.has-buttons.editor-actions(class=@hiddenUnlessCurrentUserInProject)
