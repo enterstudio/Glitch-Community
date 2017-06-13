@@ -102,4 +102,11 @@ module.exports =
         avatarUrl: 'https://avatars1.githubusercontent.com/u/1764158?v=3'
       ]
     ,
+      id: '2539c9eb-689e-4765-addb-baf19c7b5bf2'
+      domain: 'facemoji'
+      description: "An experiment with the FaceDetector API. It puts emojis on your face!"
+      users: [
+          login: 'danreeves'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/1973559?v=3&s=48'
+      ]    
   ]

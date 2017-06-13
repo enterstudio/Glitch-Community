@@ -25,5 +25,13 @@ module.exports =
     ,
       id: '834590ab-f27a-4fdb-b510-78986f4ba4bc'
       domain: 'solid-tugboat'
-      description: "Glitch Link Unfurling for Slack"    
+      description: "Glitch Link Unfurling for Slack"  
+    ,
+      id: '6918f86b-415b-4393-8911-ef0c25fe4d8d'
+      domain: 'slack-classic-unfurling'
+      description: "This app generates some metadata for Slack's Classic Link Unfurl API"
+      users: [
+          login: 'jude'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/12502380?v=3&s=48'
+      ]     
   ]

@@ -133,5 +133,21 @@ module.exports =
       users: [
           login: 'jude'
           avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
+      ]   
+    ,
+      id: 'd107b34f-f216-4ea7-8337-52d2407e7c5f'
+      domain: 'clearbit-enrichment'
+      description: "Script to enrich a CSV file of contacts via Clearbit Enrichment"
+    ,
+      id: '12ed2850-83a7-4e2a-8981-20387a44b78d'
+      domain: 'customerio-importer'
+      description: "Import users from a CSV file into Customer.io"
+    ,
+      id: '6918f86b-415b-4393-8911-ef0c25fe4d8d'
+      domain: 'slack-classic-unfurling'
+      description: "This app generates some metadata for Slack's Classic Link Unfurl API"
+      users: [
+          login: 'jude'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/12502380?v=3&s=48'
       ]    
   ]
