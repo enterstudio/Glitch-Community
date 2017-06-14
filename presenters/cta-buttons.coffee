@@ -11,4 +11,4 @@ module.exports = (application) ->
       'hidden' unless application.user.isSignedIn()
         
     trackNewProject: ->
-      analytics.track "Create Project"
+      analytics.track "New Project Clicked"
