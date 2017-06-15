@@ -41,5 +41,13 @@ module.exports =
       users: [
           login: 'sachinr'
           avatarUrl: 'https://avatars3.githubusercontent.com/u/700173?v=3&s=48'
+      ] 
+    ,
+      id: '0d31ee69-6e4c-498c-abb6-2c92d61b25db'
+      domain: 'slack-announcements-approval-blueprint'
+      description: "Request and approve posting announcements into a channel"
+      users: [
+          login: 'sachinr'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/700173?v=3&s=48'
       ]     
   ]
