@@ -33,5 +33,13 @@ module.exports =
       users: [
           login: 'sachinr'
           avatarUrl: 'https://avatars3.githubusercontent.com/u/700173?v=3&s=48'
-      ]    
+      ]  
+    ,
+      id: '892ba74a-f4f8-46e0-8b05-20a5ed7ddc8c'
+      domain: 'slack-account-binding-blueprint'
+      description: "An app that shows how a Slack user account can be bound to one on another system"
+      users: [
+          login: 'sachinr'
+          avatarUrl: 'https://avatars3.githubusercontent.com/u/700173?v=3&s=48'
+      ]     
   ]
