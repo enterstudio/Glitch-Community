@@ -64,9 +64,9 @@ module.exports =
       description: "Build bots, slash commands and apps for Slack."
       background: "rgba(252, 243, 174, #{backgroundOpacity})" 
     ,
-      name: 'Slack Integration Templates'
-      url: 'slack-integration-templates'
-      curatedName: 'slack-integration-templates'
+      name: 'Slack Blueprints'
+      url: 'slack-blueprints'
+      curatedName: 'slack-blueprints'
       img: slack
       color: "#FCF3AF"
       description: "Template projects to kickstart building integrations with Slack."
