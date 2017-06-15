@@ -69,7 +69,7 @@ module.exports =
       curatedName: 'slack-blueprints'
       img: slack
       color: "#FCF3AF"
-      description: "Template projects to kickstart building integrations with Slack."
+      description: "Project blueprints to kickstart building integrations for Slack."
       background: "rgba(252, 243, 174, #{backgroundOpacity})"     
     ,
       name: 'SIGNAL.2017'
