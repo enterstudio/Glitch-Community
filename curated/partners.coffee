@@ -8,7 +8,7 @@ slack = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fslack.svg
 signal = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fsignal.svg?1494371350294"
 botkit = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FbotkitLogo.png?1495145720251"
 trello = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftrello.svg?1496329579103"
-botwiki = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftrello.svg?1496329579103"
+botwiki = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fbotwiki.svg?1497621318530"
 
 backgroundOpacity = 0.3
 
@@ -101,7 +101,7 @@ module.exports =
       url: 'botwiki'
       curatedName: 'botwiki'
       img: botwiki
-      color: "#ffe000"
-      description: "The Developer Conference by Twilio."
+      color: "#F7E967"
+      description: "Make friendly, useful, and artistic online bots"
       background: "rgba(0,0,0, #{backgroundOpacity})"     
   ]
