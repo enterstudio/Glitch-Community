@@ -1,35 +1,37 @@
-# botkit partner page
+# botwiki partner page
 
 module.exports = 
 
   [
-      id: '12834ffd-d5ed-423a-b486-9f297f5cd04f'
-      domain: 'botkit-slack'
-      description: "Starter kit for creating a Botkit-powered Slack app"
+      id: '4032b241-bff8-473e-aa6b-eb0c92a4bd06'
+      domain: 'twitterbot'
+      description: "A simple, flexible template for making Twitter bots"
       users: [
-        login: 'esoelzer'
-        avatarUrl: 'https://avatars2.githubusercontent.com/u/4480070?v=3'
-	      ,
-        login: 'peterswimm'
-        avatarUrl: 'https://avatars2.githubusercontent.com/u/1554372?v=3'
+        login: 'fourtonfish'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/3909390?v=3'
       ]
     ,
-      id: 'a665875d-1aa9-4122-8ea1-4513c66da156'
-      domain: 'botkit-facebook'
-      description: 'A starting point for building Facebook bots with Botkit'  
+      id: '326fe1c4-c132-4d41-bd6b-8503705ea7fa'
+      domain: 'twitterbot-autorespond'
+      description: 'Make Twitter bots that respond to mentions and direct messages'  
       users: [
-        login: 'esoelzer'
-        avatarUrl: 'https://avatars2.githubusercontent.com/u/4480070?v=3'
-	      ,
-        login: 'benbrown'
-        avatarUrl: 'https://avatars2.githubusercontent.com/u/729873?v=3'
+        login: 'fourtonfish'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/3909390?v=3'
       ] 
     ,
-      id: '88a3bab6-2e03-4580-aa38-9976cf3e671d'
-      domain: 'botkit-ciscospark'
-      description: 'Starter kit for creating a Botkit-powered Cisco Spark bot'  
+      id: '3c154b8d-e506-4703-8406-6c95aa79ea3a'
+      domain: 'random-image-twitterbot'
+      description: 'A Twitter bot that posts random images of your choice'  
       users: [
-        login: 'esoelzer'
-        avatarUrl: 'https://avatars2.githubusercontent.com/u/4480070?v=3'
+        login: 'fourtonfish'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/3909390?v=3'
+      ]
+    ,
+      id: '10c150f9-8a5f-4e26-8697-92c6eccd98fe'
+      domain: 'twitterbot-webhooks'
+      description: 'Make Twitter bots using the new Twitter Webhooks API'  
+      users: [
+        login: 'fourtonfish'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/3909390?v=3'
       ]      
   ]

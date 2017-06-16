@@ -102,6 +102,6 @@ module.exports =
       curatedName: 'botwiki'
       img: botwiki
       color: "#F7E967"
-      description: "Make friendly, useful, and artistic online bots"
+      description: "Make friendly, useful, and artistic online bots."
       background: "rgba(0,0,0, #{backgroundOpacity})"     
   ]
