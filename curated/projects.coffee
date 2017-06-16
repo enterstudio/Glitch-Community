@@ -27,6 +27,7 @@ module.exports =
   "slack-blueprints" : require "./partners/slack-blueprints"  
   "botkit"           : require "./partners/botkit"  
   "trello"           : require "./partners/trello"  
+  "botwiki"           : require "./partners/botwiki"   
 
   # collections
   "websites"         : require "./collections/websites"

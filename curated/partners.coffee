@@ -8,6 +8,7 @@ slack = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fslack.svg
 signal = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fsignal.svg?1494371350294"
 botkit = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FbotkitLogo.png?1495145720251"
 trello = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftrello.svg?1496329579103"
+botwiki = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftrello.svg?1496329579103"
 
 backgroundOpacity = 0.3
 
@@ -94,5 +95,13 @@ module.exports =
       img: trello
       color: '#70a4d8'
       description: "Start building with Trello. Create your own power-ups and apps using Trello APIs."
-      background: "rgba(112, 164, 216, #{backgroundOpacity})"    
+      background: "rgba(112, 164, 216, #{backgroundOpacity})" 
+    ,
+      name: 'Botwiki'
+      url: 'botwiki'
+      curatedName: 'botwiki'
+      img: botwiki
+      color: "#ffe000"
+      description: "The Developer Conference by Twilio."
+      background: "rgba(0,0,0, #{backgroundOpacity})"     
   ]
