@@ -8,7 +8,7 @@ module.exports =
       img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-facebook-messenger.png"
       domain: 'messenger-bot'
     ,
-      name: 'Teach Alexa New Skills'
+      name: 'Build a Skill, Get a Free Echo Dot'
       id: '681cc882-059d-4b05-a1f6-6cbc099cc79c'
       img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-alexa.png"
       domain: 'alexa-skill'
