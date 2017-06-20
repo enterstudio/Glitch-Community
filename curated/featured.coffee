@@ -3,17 +3,18 @@
 module.exports =
 
   [
-      name: 'Glitch for Platforms'
-      img: "https://cdn.glitch.com/f7224274-1330-4022-a8f2-8ae09dbd68a8%2Ffeatured-for-partners.svg"
-      link: 'https://glitch.com/forplatforms'
+      name: 'Make a Messenger Bot in Minutes'
+      id: 'ca73ace5-3fff-4b8f-81c5-c64452145271'
+      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-facebook-messenger.png"
+      domain: 'messenger-bot'
     ,
-      name: 'Master Your Web Stats'
-      id: '50c4eefb-0b97-4673-ad19-5811e1df1a6c'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FgoogleAnalyticsFeature.png?1496824939857"
-      domain: 'google-analytics'
+      name: 'Teach Alexa New Skills'
+      id: '681cc882-059d-4b05-a1f6-6cbc099cc79c'
+      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-alexa.png"
+      domain: 'alexa-skill'
     ,
-      name: 'Take Recurring Payments'
-      id: 'e4ac1d7a-3d8e-48a7-b75f-75a5d04865af'
-      domain: 'stripe-checkout'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FstripeCheckoutFeature.png?1496825478611"       
+      name: 'An Instant Bootstrap Website'
+      id: 'ab2a48b3-b6e1-4883-a4ea-045dfb87cdc8'
+      domain: 'creative-theme'
+      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-bootstrap.png"     
   ]
