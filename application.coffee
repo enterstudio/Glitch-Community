@@ -147,7 +147,7 @@ self =
     authURL = "/auth/github/#{code}"
     if provider == "facebook"
       callbackURL = "https://glitch.com/login/facebook"
-      authURL = "/auth/facebook/#{code}?callbackURL=#{callbackURL}"
+      authURL = "/auth/facebook/#{code}?callbackURL=#{encodeURIComponent callbackURL}"
     self.api().post "#{authURL}"
     .then (response) ->
       console.log "LOGGED IN!", response.data
