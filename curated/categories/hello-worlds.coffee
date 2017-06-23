@@ -181,5 +181,13 @@ module.exports =
       users: [
           login: 'STRd6'
           avatarUrl: 'https://avatars2.githubusercontent.com/u/18894?v=3&s=48'
-      ]    
+      ]
+    ,
+      id: '58a02e28-67bc-46d8-b2ba-3774a26428f9'
+      domain: 'react-babel'
+      description: 'Boilerplate project for using React, Webpack and Babel for JSX'  
+      users: [
+        login: 'stevekinney'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/251000?v=3'
+      ]        
   ]
