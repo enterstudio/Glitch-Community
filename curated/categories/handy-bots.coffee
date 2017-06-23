@@ -55,10 +55,6 @@ module.exports =
       domain: 'google-home'
       description: "Which is better, Daddy or Chips? Your Google Home knows"
     ,
-      id: '681cc882-059d-4b05-a1f6-6cbc099cc79c'
-      domain: 'alexa-skill'
-      description: "Ask Alexa for airport information using an airport code"
-    ,
       id: 'd03b8eaf-e8d5-4038-8cdd-96f88673cac8'
       domain: 'tracery-mastodon-bot'
       description: 'A starter Mastodon bot that generates random toots using Tracery'  
