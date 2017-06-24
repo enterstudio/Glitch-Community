@@ -143,14 +143,6 @@ module.exports =
           avatarUrl: 'https://avatars1.githubusercontent.com/u/578612?v=3&s=48'
       ]     
     ,
-      id: '3c6fad5b-ef49-4be7-baaa-e60f2a9be44d'
-      domain: 'cockroachdb-getting-started'
-      description: 'CockroachDB getting started app for Node.js'  
-      users: [
-          login: 'jude'
-          avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
-      ]
-    ,
       id: '93ac1c34-12b2-4fbe-9db6-2dd1770bf629'
       domain: 'polymer-custom-element'
       description: "Make your first Web Component with Polymer!"
