@@ -25,7 +25,7 @@ module.exports =
     ,
       id: '681cc882-059d-4b05-a1f6-6cbc099cc79c'
       domain: 'alexa-skill'
-      description: "Ask Alexa for airport information using an airport code"
+      description: "A full, working Alexa Skill that gets weather forecast info from forecast.io"
     ,
       id: 'ca73ace5-3fff-4b8f-81c5-c64452145271'
       domain: 'messenger-bot'
