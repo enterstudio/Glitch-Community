@@ -27,6 +27,10 @@ module.exports =
       domain: 'alexa-skill'
       description: "A full, working Alexa Skill that gets weather forecast info from forecast.io"
     ,
+      id: '831b49f7-87f4-41b6-a1fb-d4fa69da4a5c'
+      domain: 'barebones-alexa-skill'
+      description: 'A basic Alexa Skill project template' 
+    ,
       id: 'ca73ace5-3fff-4b8f-81c5-c64452145271'
       domain: 'messenger-bot'
       description: "A Facebook Messenger Platform bot template"
