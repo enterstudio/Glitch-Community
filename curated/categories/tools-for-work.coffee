@@ -93,7 +93,7 @@ module.exports =
       users: [
           login: 'mpcowan'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/1246035?v=3&s=48'
-      ]  
+      ]
     ,
       id: '36ffab71-8383-4955-a12c-a9472f7187ec'
       domain: 'keen-dashboards'
@@ -101,7 +101,7 @@ module.exports =
       users: [
           login: 'keen'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/8461781?v=3&s=48'
-      ]  
+      ]
     ,
       id: '333bebc5-1fb2-4b0f-be47-e53efb94a870'
       domain: 'box-app-auth'
