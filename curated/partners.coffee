@@ -111,6 +111,6 @@ module.exports =
       curatedName: 'twitter'
       img: trello
       color: '#70a4d8'
-      description: "Start building with Twitter."
+      description: "Tap into the Twitter Platform, and build apps using Twitter APIs."
       background: "rgba(112, 164, 216, #{backgroundOpacity})"     
   ]

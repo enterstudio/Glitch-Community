@@ -3,31 +3,23 @@
 module.exports = 
 
   [
-      id: 'c9bd27a5-9cbc-4592-8189-45847dfabcdb'
-      domain: 'twilio-sms'
-      description: 'Send SMS messages with Twilio'      
+      id: '450d4b24-03a7-4a07-9c69-75a90b204e68'
+      domain: 'twitter-dm-quiz-bot-webhooks'
+      description: "Twitter DM quiz bot template using Quick Replies (Account Activity API version)"
     ,
-      id: 'c7f4cd78-a43d-4129-b3f0-b53d3a9790a4'
-      domain: 'twilio-chat-demo-js'
-      description: 'IP Messaging API Demo Application for JavaScript'  
-      users: [
-          login: 'jennschiffer'
-          avatarUrl: 'https://avatars1.githubusercontent.com/u/341305?v=3&s=48'
-      ] 
+      id: '9ed3d200-169e-4649-afe5-4d51d6aff5b2'
+      domain: 'twitter-dm-quiz-bot-polling'
+      description: "Twitter DM quiz bot template using Quick Replies (Polling version)"
     ,
-      id: '10d165f5-d890-4046-895d-f80812bbab67'
-      domain: 'sms-a-webpage'
-      description: 'Send an SMS message to a web page with Twilio'  
-      users: [
-          login: 'GregBaugues'
-          avatarUrl: 'https://avatars1.githubusercontent.com/u/1013128?v=3&s=48'
-      ]  
+      id: 'af027bbf-ec14-457c-99b5-84e4401f8171'
+      domain: 'twitter-support-bot-webhooks'
+      description: 'Twitter Support bot template, using Welcome Messages and Buttons (Account Activity API version)'  
     ,
-      id: '5802ece3-f541-4e78-80da-3fb26266f0de'
-      domain: 'twilio-canned-text-api'
-      description: "a mini api using the twilio api" 
-      users: [
-          login: 'jennschiffer'
-          avatarUrl: 'https://avatars1.githubusercontent.com/u/341305?v=3&s=48'
-      ]
+      id: '6491cd31-4003-4d43-8adc-8d24c6415e72'
+      domain: 'twitter-support-bot-polling'
+      description: 'Twitter Support bot template, using Welcome Messages and Buttons (Polling version)'  
+    ,
+      id: 'c7101cc0-12a1-466e-b515-6dd9492174ac'
+      domain: 'alexa-twitter-dm-skill'
+      description: 'An Alexa Skill that reads out your Twitter Direct Messages'
   ]
