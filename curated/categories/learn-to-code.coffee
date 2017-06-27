@@ -63,4 +63,7 @@ module.exports =
           avatarUrl: 'https://avatars3.githubusercontent.com/u/1192474?v=3&s=48'
       ]
     ,
+      id: '71354558-dc80-48e5-9c90-b704c0ba306f'
+      domain: 'markdown-webpage'
+      description: 'Automatically create and update a web page using markdown'     
   ]
