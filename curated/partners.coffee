@@ -9,6 +9,7 @@ signal = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fsignal.s
 botkit = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FbotkitLogo.png?1495145720251"
 trello = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftrello.svg?1496329579103"
 botwiki = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fbotwiki.svg?1497621318530"
+twitter = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftrello.svg?1496329579103"
 
 backgroundOpacity = 0.3
 
@@ -103,5 +104,13 @@ module.exports =
       img: botwiki
       color: "#F7E967"
       description: "Make friendly, useful, and artistic online bots."
-      background: "rgba(0,0,0, #{backgroundOpacity})"     
+      background: "rgba(0,0,0, #{backgroundOpacity})" 
+    ,
+      name: 'Twitter'
+      url: 'twitter'
+      curatedName: 'twitter'
+      img: trello
+      color: '#70a4d8'
+      description: "Start building with Twitter."
+      background: "rgba(112, 164, 216, #{backgroundOpacity})"     
   ]
