@@ -49,5 +49,13 @@ module.exports =
       users: [
           login: 'mrdavidjcole'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
-      ]     
+      ]
+    ,
+      id: 'b152690f-95f2-41f9-b754-2b1955bd5414'
+      domain: 'wistia-embed-options-demo'
+      description: 'A UI for setting embed options to change the Wistia video player' 
+      users: [
+          login: 'mrdavidjcole'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
+      ]    
   ]
