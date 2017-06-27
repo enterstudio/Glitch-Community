@@ -9,7 +9,7 @@ signal = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fsignal.s
 botkit = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FbotkitLogo.png?1495145720251"
 trello = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftrello.svg?1496329579103"
 botwiki = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fbotwiki.svg?1497621318530"
-twitter = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftrello.svg?1496329579103"
+twitter = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FtwitterLogo.svg?1498598490912"
 
 backgroundOpacity = 0.3
 
@@ -109,8 +109,8 @@ module.exports =
       name: 'Twitter'
       url: 'twitter'
       curatedName: 'twitter'
-      img: trello
+      img: twitter
       color: '#70a4d8'
-      description: "Tap into the Twitter Platform, and build apps using Twitter APIs."
+      description: "Tap into the Twitter Platform and build apps using Twitter APIs."
       background: "rgba(112, 164, 216, #{backgroundOpacity})"     
   ]
