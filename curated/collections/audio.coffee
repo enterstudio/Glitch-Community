@@ -1,73 +1,29 @@
-audio collection
+# audio collection
 
 module.exports = 
 
   [
-      id: '39207b72-5365-4cfd-8a6f-d65afee4d55f'
-      domain: 'paper-js'
-      description: "A starter project for Paper.js, the Swiss Army Knife of vector graphics scripting"
+      id: 'd30e7771-6e5d-4742-a229-6b4e60c002b8'
+      domain: 'spotify-audio-features'
+      description: "Search Spotify and visualise the audio features of any track"
     ,
-      id: 'b0a368de-1e93-4f40-a19c-954fc1743a98'
-      domain: 'three-js'
-      description: "A demo of three.js, an easy to use, lightweight, 3D JS library"
+      id: '92c0055e-b916-4a72-8cba-af65ec9eae03'
+      domain: 'spotify-oauth'
+      description: "Easy authentication for Spotify"
     ,
-      id: '008c399a-3f86-45ad-8131-df3a14b0e7ed'
-      domain: 'processing-js'
-      description: "A hypnotic sketch in Processing.js, a port of the Processing Visualization Language"
+      id: '663246b5-5f7b-4ce6-9762-59ee4064b993'
+      domain: 'hypem-daily'
+      description: 'Alexa Flash briefing for the top song on Hype Machine'  
     ,
-      id: '46b12cac-bcfe-404e-b9e0-df1373842403'
-      domain: 'p5js'
-      description: "Starter app for p5.js, a JS library for creating graphic and interactive experiences"  
+      id: '56ba9be1-d7bb-467d-a3ff-5657c018abe5'
+      domain: 'soundcloud-waveform'
+      description: 'Search SoundCloud and visualize the audio waveform of any track'  
     ,
-      id: 'a7b7d5c3-b931-4ce0-a746-fe06ed8da62a'
-      domain: 'frogfeels'
-      description: 'Draw some feelings, see what everyone else drew weekly'
-      users: [
-          login: 'pketh'
-          avatarUrl: 'https://avatars2.githubusercontent.com/u/877072?v=3&s=48'
-      ]
+      id: '2f23cda5-a318-4db3-93de-c8158172598b'
+      domain: 'genius-lyrics'
+      description: 'Search for song lyrics on Genius'
     ,
-      id: 'b76e18c8-01d4-48ce-9516-af13503c2a53'
-      domain: 'pixelatize'
-      description: "Upload an image and '8-bit-ify' or pixelate or whatever you want to call it"
-      users: [
-        login: 'jennschiffer'
-        avatarUrl: 'https://avatars3.githubusercontent.com/u/341305?v=3&s=48'
-      ] 
-    ,
-      id: 'feca3b9d-2ddb-43ff-98fa-57abfe77506b'
-      domain: 'drawing-game'
-      description: "Draw in real-time with multiple other people, and see what they're drawing too"
-    ,           
-      id: 'c1df4c27-6233-43a7-a3c4-0be0e32bfc74'
-      domain: 'makecheckboxart'
-      description: "Make pixel art with checkboxes"
-      users: [
-        login: 'jennschiffer'
-        avatarUrl: 'https://avatars3.githubusercontent.com/u/341305?v=3&s=48'
-      ] 
-    ,           
-      id: '95ee8b6c-0da3-48d5-a257-62958af5acbc'
-      domain: 'color-wander'
-      description: "Generative artwork based on a seeded random"
-      users: [
-        login: 'mattdesl'
-        avatarUrl: 'https://avatars3.githubusercontent.com/u/1383811?v=3&s=48'
-      ]  
-    ,           
-      id: '5892c832-22b9-4397-b59d-598955b47ad0'
-      domain: 'node-canvas-clock'
-      description: "A clock utilizing node-canvas, a Cairo backed Canvas implementation"
-      users: [
-        login: 'Automattic'
-        avatarUrl: 'https://avatars3.githubusercontent.com/u/887802?v=3&s=48'
-      ]          
-    ,           
-      id: '982e2ca5-9d48-4ea5-ae72-f2397efec4cf'
-      domain: 'by-conspiracy-or-design'
-      description: "A poem in Node.js"
-      users: [
-        login: 'orangeduck'
-        avatarUrl: 'https://avatars3.githubusercontent.com/u/177299?v=3&s=48'
-      ] 
+      id: '18a231a3-af44-4629-855a-d0e6b8081b2e'
+      domain: 'songkick-events'
+      description: 'Search for upcoming events for an artist on Songkick'  
   ]
