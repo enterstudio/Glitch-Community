@@ -33,4 +33,5 @@ module.exports =
   # collections
   "websites"         : require "./collections/websites"
   "big-game"         : require "./collections/superbowl"  
-  "art"              : require "./collections/art"  
+  "art"              : require "./collections/art" 
+  "audio"              : require "./collections/audio"   
