@@ -70,4 +70,8 @@ module.exports =
         login: 'orangeduck'
         avatarUrl: 'https://avatars3.githubusercontent.com/u/177299?v=3&s=48'
       ] 
+     ,
+      id: 'ce68082e-54d3-44eb-b978-f274be581db6'
+      domain: 'ascii-art'
+      description: 'Implements ascii-art, a library for ASCII art and Figlet fonts'         
   ]
