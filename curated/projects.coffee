@@ -27,11 +27,11 @@ module.exports =
   "slack-blueprints" : require "./partners/slack-blueprints"  
   "botkit"           : require "./partners/botkit"  
   "trello"           : require "./partners/trello"  
-  "botwiki"           : require "./partners/botwiki"
-  "twitter"           : require "./partners/twitter"   
+  "botwiki"          : require "./partners/botwiki"
+  "twitter"          : require "./partners/twitter"   
 
   # collections
   "websites"         : require "./collections/websites"
   "big-game"         : require "./collections/superbowl"  
   "art"              : require "./collections/art" 
-  "music"              : require "./collections/music"   
+  "music"            : require "./collections/music"   
