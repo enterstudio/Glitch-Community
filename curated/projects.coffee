@@ -34,4 +34,4 @@ module.exports =
   "websites"         : require "./collections/websites"
   "big-game"         : require "./collections/superbowl"  
   "art"              : require "./collections/art" 
-  "audio"              : require "./collections/audio"   
+  "music"              : require "./collections/music"   

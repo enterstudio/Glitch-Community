@@ -1,4 +1,4 @@
-# audio collection
+# music collection
 
 module.exports = 
 
