@@ -81,5 +81,13 @@ module.exports =
       users: [
         login: 'ngokevin'
         avatarUrl: 'https://avatars1.githubusercontent.com/u/674727?v=3'
+      ] 
+    ,
+      id: '2639a924-90bb-481b-9e69-394c0edcf51d'
+      domain: 'piano-drops'
+      description: 'A simple p5.js sketch of drops falling on a piano'
+      users: [
+        login: 'urtubia'
+        avatarUrl: 'https://avatars1.githubusercontent.com/u/105050?v=3'
       ]    
   ]
