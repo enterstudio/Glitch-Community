@@ -73,5 +73,13 @@ module.exports =
      ,
       id: 'ce68082e-54d3-44eb-b978-f274be581db6'
       domain: 'ascii-art'
-      description: 'Implements ascii-art, a library for ASCII art and Figlet fonts'         
+      description: 'Implements ascii-art, a library for ASCII art and Figlet fonts' 
+    ,
+      id: 'c8ac88a4-215c-4064-84c4-946e96b63ace'
+      domain: 'aframe'
+      description: 'A web framework for building VR experiences. Make WebVR with HTML and Entity-Component'
+      users: [
+        login: 'ngokevin'
+        avatarUrl: 'https://avatars1.githubusercontent.com/u/674727?v=3'
+      ]    
   ]
