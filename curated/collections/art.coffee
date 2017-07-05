@@ -89,5 +89,13 @@ module.exports =
       users: [
         login: 'urtubia'
         avatarUrl: 'https://avatars1.githubusercontent.com/u/105050?v=3'
-      ]    
+      ] 
+     ,
+      id: 'f666d919-304f-4f76-97aa-f7b8e6370c47'
+      domain: 'send-this-to-your-lover'
+      description: 'A very romantic website (but it\'s not for you, it\'s for your lover)'
+      users: [
+        login: 'adnissen'
+        avatarUrl: 'https://avatars1.githubusercontent.com/u/463495?v=3'
+      ]        
   ]
