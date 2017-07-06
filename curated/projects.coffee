@@ -15,6 +15,7 @@ module.exports =
   "community-picks"  : require "./categories/community-picks"
   "handy-bots"       : require "./categories/handy-bots"
   "hardware"         : require "./categories/hardware"
+  "art"              : require "./categories/art"   
   
   # partners
   "facebook"         : require "./partners/facebook"
@@ -32,6 +33,5 @@ module.exports =
 
   # collections
   "websites"         : require "./collections/websites"
-  "big-game"         : require "./collections/superbowl"  
-  "art"              : require "./collections/art" 
+  "big-game"         : require "./collections/superbowl"
   "music"            : require "./collections/music"   
