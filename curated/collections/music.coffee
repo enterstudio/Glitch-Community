@@ -25,5 +25,13 @@ module.exports =
     ,
       id: '18a231a3-af44-4629-855a-d0e6b8081b2e'
       domain: 'songkick-events'
-      description: 'Search for upcoming events for an artist on Songkick'  
+      description: 'Search for upcoming events for an artist on Songkick'
+    ,
+      id: 'e918901b-a39e-49ce-bbf2-bc40b67fbbad'
+      domain: 'remixtoplankton'
+      description: 'A re-interpretation of one of the Elektroplankton interactive music games'
+      users: [
+        login: 'urtubia'
+        avatarUrl: 'https://avatars1.githubusercontent.com/u/105050?v=3'
+      ]      
   ]
