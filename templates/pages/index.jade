@@ -17,9 +17,8 @@
 
     = CtaButtonsPresenter(this).template
 
-    = HelpingPresenter(this).template(3)
-
     - if @.user.cachedUser()
+      = HelpingPresenter(this).template(3)
       = RecentProjectsPresenter(this).template
 
     = FeaturedProjects(this)
