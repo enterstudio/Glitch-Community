@@ -3,18 +3,17 @@
 module.exports =
 
   [
-      name: 'Make a Messenger Bot in Minutes'
-      id: 'ca73ace5-3fff-4b8f-81c5-c64452145271'
-      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-facebook-messenger.png"
-      domain: 'messenger-bot'
+      name: 'Create Art with Code'
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FartFeature.png?1499334067413"
+      link: 'https://glitch.com/art'
     ,
-      name: 'Teach Alexa New Skills'
-      id: '681cc882-059d-4b05-a1f6-6cbc099cc79c'
-      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-alexa.png"
-      domain: 'alexa-skill'
+      name: 'YouTube Analytics'
+      img: "https://cdn.glitch.com/d6417c7a-aa1b-4b65-90ba-49405f1dda44%2FyouTubeFeature.png?1494343246146"
+      id: 'a4cbb317-e950-439c-b264-d9657fc60bfc'
+      domain: 'youtube-analytics'
     ,
-      name: 'An Instant Bootstrap Website'
-      id: 'ab2a48b3-b6e1-4883-a4ea-045dfb87cdc8'
-      domain: 'creative-theme'
-      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2Ffeatured-bootstrap.png"     
+      name: 'Skype Bot Builder'
+      id: 'c942fe52-dcbc-43fc-ac80-5a66e388221a'
+      domain: 'bot-builder-skype'
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FskypeBot.png?1493295763303"
   ]
