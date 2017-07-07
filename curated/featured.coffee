@@ -9,7 +9,7 @@ module.exports =
       img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FghostFeature.png"
     ,
       name: 'YouTube Analytics'
-      img: "https://cdn.glitch.com/d6417c7a-aa1b-4b65-90ba-49405f1dda44%2FyouTubeFeature.png?1494343246146"
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FyouTubeFeature.png?1499417942589"
       id: 'a4cbb317-e950-439c-b264-d9657fc60bfc'
       domain: 'youtube-analytics'
     ,
