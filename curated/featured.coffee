@@ -3,9 +3,10 @@
 module.exports =
 
   [
-      name: 'Create Art with Code'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FartFeature.png?1499334067413"
-      link: 'https://glitch.com/art'
+      name: 'Start Your Own Blog'
+      domain: 'ghost'
+      id: '9a2033a3-30d8-4658-93a8-3b5073c73237'
+      img: "https://cdn.glitch.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FghostFeature.png"
     ,
       name: 'YouTube Analytics'
       img: "https://cdn.glitch.com/d6417c7a-aa1b-4b65-90ba-49405f1dda44%2FyouTubeFeature.png?1494343246146"
