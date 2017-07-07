@@ -34,4 +34,20 @@ module.exports =
         login: 'fourtonfish'
         avatarUrl: 'https://avatars2.githubusercontent.com/u/3909390?v=3'
       ]      
+     ,
+      id: '3291eecf-e2d8-4abc-8666-2b72590a2476'
+      domain: 'random-image-generator-twitterbot'
+      description: 'A Twitter bot that creates and posts random images using Processing'
+      users: [
+        login: 'fourtonfish'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/3909390?v=3'
+      ]    
+     ,
+      id: '43c0de26-d157-4912-a858-dd8b58ee0784'
+      domain: 'twitterbot-follower-autoreply'
+      description: 'A template for a Twitter bot that responds to users who follow it'
+      users: [
+        login: 'fourtonfish'
+        avatarUrl: 'https://avatars2.githubusercontent.com/u/3909390?v=3'
+      ]     
   ]
