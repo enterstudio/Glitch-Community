@@ -10,7 +10,7 @@ botkit = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FbotkitLo
 trello = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ftrello.svg?1496329579103"
 botwiki = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fbotwiki.svg?1497621318530"
 twitter = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FtwitterLogo.svg?1498598490912"
-algolia = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FtwitterLogo.svg?1498598490912"
+algolia = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FalgoliaSVG.svg?1500297962582"
 
 backgroundOpacity = 0.3
 
@@ -120,7 +120,7 @@ module.exports =
       curatedName: 'algolia'
       img: algolia
       color: '#70a4d8'
-      description: "Wistia's APIs allow you to easily upload, embed, and track videos within your own apps."
+      description: "Build search into your business with apps built on Algolia\'s APIs."
       background: "rgba(112, 164, 216, #{backgroundOpacity})"
     ,    
   ]
