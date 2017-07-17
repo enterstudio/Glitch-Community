@@ -29,7 +29,8 @@ module.exports =
   "botkit"           : require "./partners/botkit"  
   "trello"           : require "./partners/trello"  
   "botwiki"          : require "./partners/botwiki"
-  "twitter"          : require "./partners/twitter"   
+  "twitter"          : require "./partners/twitter" 
+  "algolia"          : require "./partners/algolia"   
 
   # collections
   "websites"         : require "./collections/websites"
