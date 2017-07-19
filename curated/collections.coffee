@@ -35,21 +35,21 @@ module.exports =
       description: "The sounds of music created, connected, visualized and remixed, signifying everything."
       background: "rgba(162, 193, 255, 0.5)"  
     ,
-      name: 'Auth'
+      name: 'User Auth'
       url: 'auth'
       curatedName: 'auth',
       img: music
       color: "#70A4D8"
-      description: "Authentication options on Glitch."
+      description: "User authentication apps on Glitch."
       background: "rgba(162, 193, 255, 0.5)"  
     ,
       name: 'Storage'
       url: 'storage'
       curatedName: 'storage',
       img: music
-      color: "#70A4D8"
-      description: "Storage options on Glitch."
-      background: "rgba(162, 193, 255, 0.5)"      
+      color: 'rgb(255, 120, 100)'
+      description: "Apps that help you store data on Glitch."
+      background: "rgba(255, 120, 100, #{backgroundOpacity})"   
   ]
 
 

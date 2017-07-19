@@ -38,5 +38,9 @@ module.exports =
       users: [
           login: 'jude'
           avatarUrl: 'https://pbs.twimg.com/profile_images/627115681201430528/0rE2ZRqj.jpg'
-      ]     
+      ]  
+    ,
+      id: '364f1889-7aed-458f-b78c-2e35fed2f40b'
+      domain: 'low-db'
+      description: "A list app that demonstrates interacting with a JSON-file based Lowdb database"    
   ]

@@ -209,5 +209,9 @@ module.exports =
       users: [
           login: 'mrdavidjcole'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
-      ]    
+      ] 
+    ,
+      id: '364f1889-7aed-458f-b78c-2e35fed2f40b'
+      domain: 'low-db'
+      description: "A list app that demonstrates interacting with a JSON-file based Lowdb database"    
   ]
