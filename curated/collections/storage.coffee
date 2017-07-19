@@ -1,4 +1,4 @@
-# storag collection
+# storage collection
 
 module.exports = 
 
