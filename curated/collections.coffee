@@ -3,6 +3,8 @@
 website = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FfirstWebsiteCRT.svg?1492038242223"
 superbowl = "https://cdn.gomix.com/6ce807b5-7214-49d7-aadd-f11803bc35fd%2FbigGameLogo.png"
 music = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Fmusic.svg?1499155427323"
+auth = "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FuserAuth.svg?1500481569794"
+storage = "https://cdn.hyperdev.com/us-east-1%3Acba180f4-ee65-4dfc-8dd5-f143280d3c10%2Fcomputer.svg"
 
 backgroundOpacity = 0.3
 
@@ -38,7 +40,7 @@ module.exports =
       name: 'User Auth'
       url: 'auth'
       curatedName: 'auth',
-      img: music
+      img: auth
       color: "#70A4D8"
       description: "User authentication apps on Glitch."
       background: "rgba(162, 193, 255, 0.5)"  
@@ -46,7 +48,7 @@ module.exports =
       name: 'Storage'
       url: 'storage'
       curatedName: 'storage',
-      img: music
+      img: storage
       color: 'rgb(255, 120, 100)'
       description: "Apps that help you store data on Glitch."
       background: "rgba(255, 120, 100, #{backgroundOpacity})"   
