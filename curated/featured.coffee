@@ -7,10 +7,10 @@ module.exports =
       img: "https://cdn.glitch.com/f7224274-1330-4022-a8f2-8ae09dbd68a8%2Ffeatured-for-partners.svg"
       link: 'https://glitch.com/forplatforms'
     ,
-      name: 'YouTube Analytics'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FyouTubeFeature.png?1499417942589"
-      id: 'a4cbb317-e950-439c-b264-d9657fc60bfc'
-      domain: 'youtube-analytics'
+      name: 'Connect mail, docs & more'
+      domain: 'graph-connect'
+      id: 'c439638e-7365-4b17-98d2-0913fa44d81e'   
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FgraphExample.png?1500539241149"
     ,
       name: 'Create actions for Google Home'
       domain: 'google-home'
