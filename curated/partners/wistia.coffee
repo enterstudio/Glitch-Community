@@ -57,5 +57,13 @@ module.exports =
       users: [
           login: 'mrdavidjcole'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
-      ]    
+      ] 
+    ,
+      id: 'c87a9f43-2c32-46f7-911d-497a50a3f1bc'
+      domain: 'wistia-upload-api-example'
+      description: "Upload a video by URL to Wistia" 
+      users: [
+          login: 'mrdavidjcole'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
+      ]      
   ]
