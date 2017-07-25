@@ -36,5 +36,6 @@ module.exports =
   "websites"         : require "./collections/websites"
   "big-game"         : require "./collections/superbowl"
   "music"            : require "./collections/music" 
-  "auth"            : require "./collections/auth" 
-  "storage"            : require "./collections/storage" 
+  "auth"             : require "./collections/auth" 
+  "storage"          : require "./collections/storage" 
+  "manuscript"       : require "./collections/manuscript"   

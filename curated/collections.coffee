@@ -51,7 +51,15 @@ module.exports =
       img: storage
       color: 'rgb(255, 120, 100)'
       description: "Apps that help you store data on Glitch."
-      background: "rgba(255, 120, 100, #{backgroundOpacity})"   
+      background: "rgba(255, 120, 100, #{backgroundOpacity})" 
+    ,
+      name: 'Manuscript'
+      url: 'manuscript'
+      curatedName: 'manuscript',
+      img: storage
+      color: 'rgb(255, 120, 100)'
+      description: "Apps that help you craft great software."
+      background: "rgba(255, 120, 100, #{backgroundOpacity})"     
   ]
 
 
