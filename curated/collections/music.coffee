@@ -23,9 +23,9 @@ module.exports =
       domain: 'genius-lyrics'
       description: 'Search for song lyrics on Genius'
     ,
-      id: '18a231a3-af44-4629-855a-d0e6b8081b2e'
-      domain: 'songkick-events'
-      description: 'Search for upcoming events for an artist on Songkick'
+      id: '34583e24-ad61-47b3-a6fc-ce7529948d32'
+      domain: 'scribbletune'
+      description: "Create music with JavaScript & Node.js"
     ,
       id: 'e918901b-a39e-49ce-bbf2-bc40b67fbbad'
       domain: 'remixtoplankton'
