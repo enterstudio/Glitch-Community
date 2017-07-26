@@ -41,5 +41,9 @@ module.exports =
     ,
       id: 'dae1b9f3-1a2d-4014-bc18-d1d054f8de0a'
       domain: 'billboard-stats'
-      description: "Get stats from the billboard music charts"    
+      description: "Get stats from the billboard music charts"
+    ,
+      id: '097f4560-7641-4f11-a729-83ca1010090c'
+      domain: 'watson-text-to-speech'
+      description: "Turn the text you supply into speech with IBM Watson"     
   ]
