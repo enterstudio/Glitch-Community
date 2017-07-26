@@ -33,5 +33,9 @@ module.exports =
       users: [
         login: 'urtubia'
         avatarUrl: 'https://avatars1.githubusercontent.com/u/105050?v=3'
-      ]      
+      ] 
+    ,
+      id: '24c2862f-6e08-4a28-9972-10ae6e257436'
+      domain: 'itunes-search'
+      description: "Get data from the iTunes Search API"    
   ]
