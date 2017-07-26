@@ -37,5 +37,9 @@ module.exports =
     ,
       id: '24c2862f-6e08-4a28-9972-10ae6e257436'
       domain: 'itunes-search'
-      description: "Get data from the iTunes Search API"    
+      description: "Get data from the iTunes Search API"
+    ,
+      id: 'dae1b9f3-1a2d-4014-bc18-d1d054f8de0a'
+      domain: 'billboard-stats'
+      description: "Get stats from the billboard music charts"    
   ]
