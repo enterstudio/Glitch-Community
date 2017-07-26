@@ -33,5 +33,9 @@ module.exports =
       users: [
           login: 'jude'
           avatarUrl: 'https://avatars3.githubusercontent.com/u/12502380?v=3&s=48'
-      ]     
+      ] 
+    ,
+      id: '1060e9e5-f18a-433e-8828-893abf5398f0'
+      domain: 'slack-passport-oauth'
+      description: "An example app implementing Slack OAuth with Passport.js"    
   ]

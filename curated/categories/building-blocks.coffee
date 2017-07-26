@@ -213,5 +213,9 @@ module.exports =
     ,
       id: '364f1889-7aed-458f-b78c-2e35fed2f40b'
       domain: 'low-db'
-      description: "A list app that demonstrates interacting with a JSON-file based Lowdb database"    
+      description: "A list app that demonstrates interacting with a JSON-file based Lowdb database" 
+    ,
+      id: '1060e9e5-f18a-433e-8828-893abf5398f0'
+      domain: 'slack-passport-oauth'
+      description: "An example app implementing Slack OAuth with Passport.js"    
   ]
