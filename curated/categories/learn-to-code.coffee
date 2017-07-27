@@ -65,5 +65,13 @@ module.exports =
     ,
       id: '71354558-dc80-48e5-9c90-b704c0ba306f'
       domain: 'markdown-webpage'
-      description: 'Automatically create and update a web page using markdown'     
+      description: 'Automatically create and update a web page using markdown'  
+    ,
+      id: '6d438ff3-88c3-46e7-9984-5830683d8dee'
+      domain: 'drum-machine'
+      description: "A simple drum machine that runs in the browser, with annotated source code"
+      users: [
+        login: 'maryrosecook'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/2716?v=3&s=48'
+      ]        
   ]

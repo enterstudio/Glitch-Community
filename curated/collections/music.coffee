@@ -45,5 +45,13 @@ module.exports =
     ,
       id: '097f4560-7641-4f11-a729-83ca1010090c'
       domain: 'watson-text-to-speech'
-      description: "Turn the text you supply into speech with IBM Watson"     
+      description: "Turn the text you supply into speech with IBM Watson" 
+    ,
+      id: '6d438ff3-88c3-46e7-9984-5830683d8dee'
+      domain: 'drum-machine'
+      description: "A simple drum machine that runs in the browser, with annotated source code"
+      users: [
+        login: 'maryrosecook'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/2716?v=3&s=48'
+      ]    
   ]
