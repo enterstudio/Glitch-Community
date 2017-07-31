@@ -53,5 +53,13 @@ module.exports =
       users: [
         login: 'maryrosecook'
         avatarUrl: 'https://avatars3.githubusercontent.com/u/2716?v=3&s=48'
+      ]
+    ,
+      id: '9474811b-b3aa-478b-81b0-e174471b661c'
+      domain: 'meadow-city'
+      description: "Audio reactive A-Frame scene using custom shaders"  
+      users: [
+        login: 'AndresCuervo'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/5826638?v=3&s=48'
       ]    
   ]
