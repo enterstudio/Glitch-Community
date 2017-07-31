@@ -40,9 +40,9 @@ module.exports = (application) ->
             luminosity: 'light'
             count: 2
           details = JSON.parse question.details
-          # if details
-          details.colorOuter = colors[0]
-          details.colorInner = colors[1]
+          if details
+            details.colorOuter = colors[0]
+            details.colorInner = colors[1]
           return details
 
         return questions
