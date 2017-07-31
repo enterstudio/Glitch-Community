@@ -44,6 +44,8 @@ module.exports = (application) ->
             details.colorOuter = colors[0]
             details.colorInner = colors[1]
           return details
+        .filter (details) ->
+          details
 
         return questions
 
