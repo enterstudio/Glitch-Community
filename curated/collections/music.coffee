@@ -5,7 +5,7 @@ module.exports =
   [
       id: 'd30e7771-6e5d-4742-a229-6b4e60c002b8'
       domain: 'spotify-audio-features'
-      description: "Search Spotify and visualise the audio features of any track"
+      description: "Search Spotify and visualize the audio features of any track"
     ,
       id: '92c0055e-b916-4a72-8cba-af65ec9eae03'
       domain: 'spotify-oauth'

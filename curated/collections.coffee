@@ -34,7 +34,7 @@ module.exports =
       curatedName: 'music',
       img: music
       color: "#70A4D8"
-      description: "The sounds of music created, connected, visualized and remixed, signifying everything."
+      description: "The sounds of music created, connected, visualized and remixed."
       background: "rgba(162, 193, 255, 0.5)"  
     ,
       name: 'User Auth'
