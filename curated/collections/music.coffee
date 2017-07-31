@@ -61,5 +61,13 @@ module.exports =
       users: [
         login: 'AndresCuervo'
         avatarUrl: 'https://avatars3.githubusercontent.com/u/5826638?v=3&s=48'
-      ]    
+      ] 
+    ,
+      id: '5112be86-af43-4967-8d38-be0c9b610868'
+      domain: 'web-audio-experiments'
+      description: "Web Audio API Experiments"
+      users: [
+        login: 'jennschiffer'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/341305?v=3&s=48'
+      ]      
   ]
