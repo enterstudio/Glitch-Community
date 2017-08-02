@@ -6,10 +6,18 @@ module.exports =
       id: 'd30e7771-6e5d-4742-a229-6b4e60c002b8'
       domain: 'spotify-audio-features'
       description: "Search Spotify and visualize the audio features of any track"
+      users: [
+        login: 'arirawr'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/6777313?v=3&s=48'
+      ]    
     ,
       id: '92c0055e-b916-4a72-8cba-af65ec9eae03'
       domain: 'spotify-oauth'
       description: "Easy authentication for Spotify"
+      users: [
+        login: 'arirawr'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/6777313?v=3&s=48'
+      ]    
     ,
       id: '663246b5-5f7b-4ce6-9762-59ee4064b993'
       domain: 'hypem-daily'
