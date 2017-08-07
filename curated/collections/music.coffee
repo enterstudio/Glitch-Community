@@ -77,5 +77,13 @@ module.exports =
       users: [
         login: 'jennschiffer'
         avatarUrl: 'https://avatars3.githubusercontent.com/u/341305?v=3&s=48'
-      ]      
+      ]
+    ,
+      id: 'd1212b2a-7db2-40db-931b-82ad9a73e988'
+      domain: 'xylophone'
+      description: "A xylophone drawn with css with js events"    
+      users: [
+        login: 'jennschiffer'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/341305?v=3&s=48'
+      ]
   ]
