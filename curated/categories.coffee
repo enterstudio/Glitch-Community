@@ -90,5 +90,12 @@ module.exports =
       color: "#FFA3BB"
       description: "Weird, fun masterpieces from talented artists, and the tools to create your own."
       background: "rgba(255, 164, 187, 0.5)" 
-    
+    ,
+      name: 'Music'
+      url: 'music'
+      curatedName: 'music',
+      img: music
+      color: "#70A4D8"
+      description: "The sounds of music created, connected, visualized and remixed."
+      background: "rgba(162, 193, 255, 0.5)"      
   ]

@@ -16,6 +16,7 @@ module.exports =
   "handy-bots"       : require "./categories/handy-bots"
   "hardware"         : require "./categories/hardware"
   "art"              : require "./categories/art"   
+  "music"            : require "./categories/music"   
   
   # partners
   "facebook"         : require "./partners/facebook"
@@ -35,7 +36,6 @@ module.exports =
   # collections
   "websites"         : require "./collections/websites"
   "big-game"         : require "./collections/superbowl"
-  "music"            : require "./collections/music" 
   "auth"             : require "./collections/auth" 
   "storage"          : require "./collections/storage" 
   "manuscript"       : require "./collections/manuscript"   
