@@ -29,14 +29,6 @@ module.exports =
       description: "A look back at the sites where many people created their first web pages."
       background: "rgba(255, 120, 100, #{backgroundOpacity})"
     ,
-      name: 'Music'
-      url: 'music'
-      curatedName: 'music',
-      img: music
-      color: "#70A4D8"
-      description: "The sounds of music created, connected, visualized and remixed."
-      background: "rgba(162, 193, 255, 0.5)"  
-    ,
       name: 'User Auth'
       url: 'auth'
       curatedName: 'auth',

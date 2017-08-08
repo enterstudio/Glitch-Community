@@ -89,5 +89,6 @@ module.exports =
       img: art
       color: "#FFA3BB"
       description: "Weird, fun masterpieces from talented artists, and the tools to create your own."
-      background: "rgba(255, 164, 187, 0.5)"      
+      background: "rgba(255, 164, 187, 0.5)" 
+    
   ]
