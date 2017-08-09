@@ -42,5 +42,13 @@ module.exports =
     ,
       id: '364f1889-7aed-458f-b78c-2e35fed2f40b'
       domain: 'low-db'
-      description: "A list app that demonstrates interacting with a JSON-file based Lowdb database"    
+      description: "A list app that demonstrates interacting with a JSON-file based Lowdb database" 
+    ,   
+      id: '373e5a0b-7ef8-4b1d-a69e-2c7f5e12533d'
+      domain: 'pouchdb-server'
+      description: "NoSQL Database in JavaScript"  
+      users: [
+        login: 'twilson63'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/21292?v=3&s=48'
+      ]    
   ]

@@ -92,5 +92,5 @@ module.exports =
     ,
       id: '1060e9e5-f18a-433e-8828-893abf5398f0'
       domain: 'slack-passport-oauth'
-      description: "An example app implementing Slack OAuth with Passport.js"    
+      description: "An example app implementing Slack OAuth with Passport.js"  
   ]

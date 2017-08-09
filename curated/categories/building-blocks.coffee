@@ -217,5 +217,13 @@ module.exports =
     ,
       id: '1060e9e5-f18a-433e-8828-893abf5398f0'
       domain: 'slack-passport-oauth'
-      description: "An example app implementing Slack OAuth with Passport.js"    
+      description: "An example app implementing Slack OAuth with Passport.js" 
+    ,
+      id: '373e5a0b-7ef8-4b1d-a69e-2c7f5e12533d'
+      domain: 'pouchdb-server'
+      description: "NoSQL Database in JavaScript"
+      users: [
+        login: 'twilson63'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/21292?v=3&s=48'
+      ]    
   ]
