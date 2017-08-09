@@ -86,4 +86,12 @@ module.exports =
         login: 'jennschiffer'
         avatarUrl: 'https://avatars3.githubusercontent.com/u/341305?v=3&s=48'
       ]
+    ,
+      id: 'bfda4f37-28b9-42d6-95b7-d00094351a4c'
+      domain: 'wistia-turntable'
+      description: "Spins four Compact Discs in unison, each playing a different video" 
+      users: [
+          login: 'mrdavidjcole'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
+      ]       
   ]
