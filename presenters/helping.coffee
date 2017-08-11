@@ -45,7 +45,7 @@ module.exports = (application) ->
             details.colorInner = colors[1]
           return details
         .filter (details) ->
-          details
+          details?.version >= 2
 
         return questions
 
