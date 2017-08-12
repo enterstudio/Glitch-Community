@@ -95,7 +95,7 @@ module.exports =
       url: 'music'
       curatedName: 'music',
       img: music
-      color: "#70A4D8"
+      color: "#a3c4fd"
       description: "The sounds of music created, connected, visualized and remixed."
       background: "rgba(162, 193, 255, 0.5)"      
   ]
