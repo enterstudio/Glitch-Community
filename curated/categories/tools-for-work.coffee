@@ -149,5 +149,16 @@ module.exports =
       users: [
           login: 'jude'
           avatarUrl: 'https://avatars3.githubusercontent.com/u/12502380?v=3&s=48'
-      ]    
+      ]
+    ,
+      id: '2330a90c-9520-4c02-8db2-4e3078a69b69'
+      domain: 'airtable-example'
+      description: "Display data from an Airtable base"  
+      users: [
+        login: 'emmettnicholas'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/225406?v=3&s=48'
+       ,
+        login: 'kasrak'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/331454?v=3&s=48'    
+      ]     
   ]
