@@ -73,5 +73,13 @@ module.exports =
       users: [
           login: 'mrdavidjcole'
           avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
+      ] 
+    ,
+      id: 'e838ecde-d599-43a8-891e-d1d2ed88182a'
+      domain: 'wistia-player-plugin-heap'
+      description: "A Heap Analytics integration for the Wistia video player" 
+      users: [
+          login: 'mrdavidjcole'
+          avatarUrl: 'https://avatars1.githubusercontent.com/u/752729?v=3&s=48'
       ]     
   ]
