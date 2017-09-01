@@ -89,8 +89,16 @@ module.exports =
       id: '92c0055e-b916-4a72-8cba-af65ec9eae03'
       domain: 'spotify-oauth'
       description: "Easy authentication for Spotify" 
-    ,
+     ,
       id: '1060e9e5-f18a-433e-8828-893abf5398f0'
       domain: 'slack-passport-oauth'
       description: "An example app implementing Slack OAuth with Passport.js"  
+     ,
+      id: '364846d3-fc17-419b-93d8-9b5365a05edf'
+      domain: 'runscope-oauth'
+      description: "An example app implementing Runscope OAuth with Passport.js"
+      users: [
+        login: 'heitortsergent'
+        avatarUrl: 'https://avatars3.githubusercontent.com/u/446316?v=3&s=48'
+      ]        
   ]
