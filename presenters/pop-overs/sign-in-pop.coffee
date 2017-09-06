@@ -10,13 +10,13 @@ module.exports = (application) ->
     githubAuthLink: ->
       clientId = "65efbd87382354ca25e7"
       scope = "user:email"
-      redirectUri = encodeURIComponent "https://staging.glitch.com/login/github"
+      redirectUri = encodeURIComponent "#{APP_URL}/login/github"
       "https://github.com/login/oauth/authorize?client_id=#{clientId}&scope=#{scope}&redirect_uri=#{redirectUri}"
 
     facebookAuthLink: ->
       clientId = "1858825521057112"
       scopes="email"
-      callbackURL = encodeURIComponent "https://staging.glitch.com/login/facebook"
+      callbackURL = encodeURIComponent "#{APP_URL}/login/facebook"
       "https://www.facebook.com/v2.9/dialog/oauth?" +
         "client_id=#{clientId}&scope=#{scopes}&redirect_uri=#{callbackURL}"
 
