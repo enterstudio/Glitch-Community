@@ -16,7 +16,7 @@ else
   CDN_URL = 'https://cdn.glitch.com'
 
 updateCache = (type) ->
-  https.get "#{API_URL}/#{type}", (response) ->
+  https.get "#{API_URL}#{type}", (response) ->
     content = ""
     response.on 'data', (data) ->
       content += data.toString 'utf8'
