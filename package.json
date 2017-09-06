@@ -1,47 +1,46 @@
 {
-  "//1": "describes your app and its dependencies",
-  "//2": "https://docs.npmjs.com/files/package.json",
-  "//3": "updating this file will download and update your packages",
-  "name": "gomix-community-site",
+  "name": "glitch-community-site",
   "version": "0.0.1",
   "description": "Find cool projects and people using Gomix",
   "main": "server.js",
   "scripts": {
-    "start": "sh/start"
+    "start": "sh/start.sh"
   },
   "dependencies": {
-    "express": "^4.15.0",
-    "browserify": "^14.1.0",
-    "jadelet": "0.8.0-pre.2",
-    "coffee-script": "^1.12.4",
-    "body-parser": "^1.16.1",
+    "express": "^4.15.4",
+    "browserify": "^14.4.0",
+    "jadelet": "^0.8.0-pre.7",
+    "coffee-script": "^1.12.7",
+    "body-parser": "^1.17.2",
     "coffeeify": "^2.1.0",
     "stylus": "^0.54.5",
     "through2": "^2.0.3",
     "underscore": "^1.8.3",
-    "markdown-it": "^8.3.0",
-    "ejs": "^2.5.6",
+    "markdown-it": "^8.4.0",
+    "ejs": "^2.5.7",
     "o_0": "^0.3.8",
     "markdown-it-sanitizer": "^0.4.3",
-    "axios": "^0.15.3",
-    "querystringify": "^0.0.4",
-    "hamlet-cli": "^0.7.0-pre.1",
+    "axios": "^0.16.2",
+    "querystringify": "^1.0.0",
     "exorcist": "^0.4.0",
-    "uglify-js": "^2.8.4",
-    "autoprefixer-stylus": "^0.11.0",
-    "moment": "^2.17.1",
-    "randomcolor": "^0.5.2"
+    "uglify-js": "2.6.1",
+    "autoprefixer-stylus": "^0.14.0",
+    "moment": "^2.18.1",
+    "randomcolor": "^0.5.3",
+    "isuuid": "^0.1.0",
+    "quantize": "^1.0.2"
   },
   "engines": {
-    "node": "6.9.1"
+    "node": "8.x"
   },
   "repository": {
-    "url": "https://gomix.com/community"
+    "url": "https://glitch.com/community"
   },
   "keywords": [
     "node",
     "glitch",
     "express",
     "jadelet"
-  ]
+  ],
+  "license": "GPL-3.0"
 }

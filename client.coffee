@@ -2,25 +2,36 @@
 # by express browserify middleware using the
 # coffeeify transform
 
-application = require './application.coffee'
+global.FEATURED_PROJECTS = require "./curated/featured"
+
+require "./extensions"
+
+application = require './application'
 qs = require 'querystringify'
 queryString = qs.parse window.location.search
+_ = require 'underscore'
 
-IndexTemplate = require "./templates/pages/index"
-CategoryPage = require "./presenters/category-page"
-HelpingPage = require "./presenters/helping-page"
-Search = require "./presenters/search"
-errorPageTemplate = require "./templates/pages/error-page"
+IndexPage = require "./presenters/pages/index"
+CategoryPage = require "./presenters/pages/category"
+UserPage = require "./presenters/pages/user"
+TeamPage = require "./presenters/pages/team"
+QuestionsPage = require "./presenters/pages/questions"
+SearchPage = require "./presenters/pages/search"
+errorPageTemplate = require "./templates/pages/error"
 
-normalizedRoute = route.replace(/^\/|\/$/g, "")
+normalizedRoute = route.replace(/^\/|\/$/g, "").toLowerCase()
 console.log "#########"
 console.log "normalizedRoute is #{normalizedRoute}"
-console.log "query strings are", queryString
-console.log "application is", application
-console.log "🌈 isSignedIn", application.user.isSignedIn()
+console.log "❓ query strings are", queryString
+console.log "🎏 application is", application
+console.log "👻 current user is", application.currentUser()
+console.log "🌈 isSignedIn", application.currentUser().isSignedIn()
 console.log "#########"
 
+
+
 # client-side routing:
+
 Promise.resolve()
 .then ->
   if document.location.hash.startsWith "#!/"
@@ -32,53 +43,113 @@ Promise.resolve()
     .then ->
       history.replaceState null, null, "#{baseUrl}/"
       normalizedRoute = ""
-.then -> 
-  application.identifyUser()
-  
+.then ->
+  currentUserId = application.currentUser().id()
+  if currentUserId
+    application.getUserById currentUserId
+  user = application.currentUser()
+  if application.currentUser().isSignedIn()
+    analytics.identify user.id(),
+      name: user.name()
+      login: user.login()
+      email: user.email()
+
+  # index page ✅
   if normalizedRoute is "index.html" or normalizedRoute is ""
-    index = IndexTemplate application
-    application.user.getUserRecentProjects()
-    document.body.appendChild index
+    application.getRandomCategories()
+    application.getQuestions()
+    indexPage = IndexPage application
+    document.body.appendChild indexPage
 
-  else if application.isHelpingUrl(normalizedRoute)
-    helpingPage = HelpingPage(application).template()
-    document.body.appendChild helpingPage
-    document.title = "Helping"
-    
-  else if application.isCategoryUrl(normalizedRoute)
-    category = application.getCategoryFromUrl normalizedRoute
-    categoryPage = CategoryPage(application, category).template()
-    document.body.appendChild categoryPage
-    document.title = category.name
 
+  # questions page ✅
+  else if application.isQuestionsUrl(normalizedRoute)
+    application.getCategories()
+    questionsPage = QuestionsPage application
+    document.body.appendChild questionsPage
+    # TODO append active projects count to document.title . i.e. Questions (12)
+    document.title = "Questions"
+
+
+  # ~project overlay page ✅
   else if application.isProjectUrl(normalizedRoute)
     projectDomain = application.removeFirstCharacter normalizedRoute
-    index = IndexTemplate application
-    document.body.appendChild index
-    application.overlay.showProjectOverlayForProject projectDomain
-    application.user.getUserRecentProjects()
-    
-  # else if application.isUserProfileUrl(normalizedRoute)
-  #   document.body.append '🙋 hello im a @profile page'
-  
-  else if application.isSearchUrl(normalizedRoute, queryString)
-    application.searchQuery queryString.q
-    searchPage = Search(application).template()
-    document.body.appendChild searchPage
-    document.title = queryString.q
+    application.showProjectOverlayPage projectDomain
+    application.getRandomCategories()
+    indexPage = IndexPage application
+    document.body.appendChild indexPage
 
+  
+  # user page ✅
+  else if application.isUserProfileUrl(normalizedRoute)
+    application.pageIsUserPage true
+    userLogin = normalizedRoute.substring 1, normalizedRoute.length
+    userPage = UserPage(application, userLogin)
+    application.getUserByLogin userLogin
+    document.body.appendChild userPage
+    document.title = decodeURI normalizedRoute
+
+
+  # anon user page ✅
+  else if application.isAnonUserProfileUrl(normalizedRoute)
+    application.pageIsUserPage true
+    userId = application.anonProfileIdFromUrl normalizedRoute
+    userPage = UserPage(application, userId)
+    application.getUserById userId
+    document.body.appendChild userPage
+    document.title = normalizedRoute
+
+  # team page ✅
+  else if application.isTeamUrl(normalizedRoute)
+    application.pageIsTeamPage true
+    team = application.getCachedTeamByUrl(normalizedRoute)
+    teamPage = TeamPage(application)
+    application.getTeamById team.id
+    document.body.appendChild teamPage
+    document.title = team.name
+
+  # search page ✅
+  else if application.isSearchUrl(normalizedRoute, queryString)
+    application.getRandomCategories()
+    query = queryString.q
+    application.searchQuery query
+    application.searchTeams query
+    application.searchUsers query
+    application.searchProjects query
+    searchPage = SearchPage application
+    document.body.appendChild searchPage
+    document.title = "Search for #{query}"
+
+
+  # category page ✅
+  else if application.isCategoryUrl(normalizedRoute)
+    application.getCategories()
+    application.getCategory normalizedRoute
+    categoryPage = CategoryPage application
+    document.body.appendChild categoryPage
+    document.title = application.category().name()    
+
+
+  # error page ✅
   else
     errorPage = errorPageTemplate application
     document.body.appendChild errorPage
     document.title = "👻 Page not found"
-
-# document.addEventListener "keydown", (event) ->
-#   application.closeAllPopOvers event
+    
+.catch (error) ->
+  console.error error
+  throw error
 
 document.addEventListener "click", (event) ->
   globalclick event
-document.addEventListener "touchstart", (event) ->
-  globalclick event  
+document.addEventListener "keyup", (event) ->
+  escapeKey = 27
+  tabKey = 9
+  if event.keyCode == escapeKey
+    application.closeAllPopOvers()
+  else if event.keyCode == tabKey
+    globalclick event
+
 globalclick = (event) ->
   unless $(event.target).closest('.pop-over, .opens-pop-over, .overlay').length
     application.closeAllPopOvers()

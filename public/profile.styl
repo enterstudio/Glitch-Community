@@ -1,43 +1,50 @@
 anonAvatar = "https://cdn.gomix.com/01a72eba-647e-4abf-abe6-89b02e388a7f%2Fanon-avatar.svg"
 
 .profile
-  padding-bottom: 1rem
-
-  .recent-projects
+  // overflow: auto
+  // margin-top: 1rem
+  
+  .profile-container
     border-radius: 5px
     padding: 16px
-    overflow: auto
+    // overflow: auto
+    background-size: 100%
+    background-position: center
     
     .user-names
       display: none
   
   .profile-info
     width: 22%
-    float: left
     margin-top: 0
     margin-right: 3%
     @media (max-width: 800px)
       width: 34%
       float: none
-      margin-bottom: 1rem
     @media (max-width: 400px)
       width: 45%
+    
+    .description
+      margin-top: 0
+      width: 100%
+      p
+        margin: 0
 
   .user-avatar-container
     width: 80%
+    @media (max-width: 800px)
+      width: 50%
 
   .user-avatar
-    width: 81%
+    position: relative
     height: 0
-    padding-bottom: 80%
+    padding-bottom: 100%
     margin-bottom: 1rem
     border-radius: 5px
     background-size: contain
     background-repeat: no-repeat
-    img
-      max-width: 100%
-      border-radius: 5px
-    
+    background-position: center
+
   .anon-user-avatar
     background-image: url(anonAvatar)
     background-position: center
@@ -47,6 +54,9 @@ anonAvatar = "https://cdn.gomix.com/01a72eba-647e-4abf-abe6-89b02e388a7f%2Fanon-
   .projects
     display: inline
     padding: 0
+  
+  .projects-container
+    overflow: hidden
     
   .project
     &:hover,
@@ -55,3 +65,39 @@ anonAvatar = "https://cdn.gomix.com/01a72eba-647e-4abf-abe6-89b02e388a7f%2Fanon-
         background-color: cta
     &:after
       border-bottom-color: section-line
+  
+  .sparkling_heart
+    width: 18px
+    height: 18px
+
+  .upload-cover-button
+    position: absolute
+    top: 5px
+    right: 5px
+
+  .upload-avatar-button
+    position: absolute
+    top: -5%
+    right: 0
+
+
+.recent-projects
+  
+  .profile-info
+    margin: 0
+    display: inline-block    
+    @media(max-width: 800px)
+      width: 45%
+
+  .user-avatar-container
+    min-width: 130px
+    .button
+      color: primary
+  
+  .projects
+    display: inline-block
+    margin: 0
+    width: 78%
+    @media(max-width: 800px)
+      width: 100%
+      margin-top: 1rem

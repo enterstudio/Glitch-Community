@@ -2,54 +2,92 @@ Observable = require 'o_0'
 _ = require 'underscore'
 axios = require 'axios'
 
-API_URL = 'https://api.glitch.com/' # 'https://api.staging.glitch.com/
-EDITOR_URL = 'https://glitch.com/edit/' # 'https://staging.glitch.com/edit/
+cachedCategories = require './cache/categories.json'
+cachedTeams = require './cache/teams.json'
 
-# curated
-curated = 
-  featured: require "./curated/featured"
-  categories: require "./curated/categories"
-  collections: require "./curated/collections"
-  partners: require "./curated/partners"
-  projects: require "./curated/projects"
+Model = require "./models/model"
 
-allProjectGroups = curated.categories.concat curated.collections.concat curated.partners
+User = require './models/user'
+Project = require './models/project'
+Category = require './models/category'
+Team = require './models/team'
+Question = require './models/question'
 
-user = require "./user"
+cachedUser = 
+  if localStorage.cachedUser
+    try
+      JSON.parse(localStorage.cachedUser)
+    catch
+      {}
 
-Overlay = require "./presenters/overlay"
-Search = require "./presenters/search"
 
-self = 
+self = Model(
+    featuredProjects: FEATURED_PROJECTS
+    currentUser: cachedUser
+  ).extend
 
   # overlays
-  overlayVisible: Observable false
-  overlayTemplate: Observable "" # video, project
-  overlayProject: Observable {}
-  overlayProjectAvatarUrl: Observable ""
-  overlayReadme: Observable ""
-  overlayReadmeLoaded: Observable false
-  overlayReadmeError: Observable false
-  currentUserIsInProject: Observable false
-
-  # users
-  userRecentProjects: Observable []
-
+  overlayProjectVisible: Observable false
+  overlayProject: Observable undefined
+  overlayVideoVisible: Observable false
+  
   # pop overs
   signInPopVisibleOnHeader: Observable false
   signInPopVisibleOnRecentProjects: Observable false
   userOptionsPopVisible: Observable false
+  ctaPopVisible: Observable false
+  addTeamUserPopVisible: Observable false
+  addTeamProjectPopVisible: Observable false
 
   # search
   searchQuery: Observable ""
+  searchingForUsers: Observable false
   searchResultsUsers: Observable []
   searchResultsUsersLoaded: Observable false
+  searchResultsHaveNoUsers: Observable false
+
+  searchingForProjects: Observable false
   searchResultsProjects: Observable []
   searchResultsProjectsLoaded: Observable false
+  searchResultsHaveNoProjects: Observable false
 
+  searchingForTeams: Observable false
+  searchResultsTeams: Observable []
+  searchResultsTeamsLoaded: Observable false
+  searchResultsHaveNoTeams: Observable false
+  
   # questions
-  projectQuestions: Observable []
+  questions: Observable []
+  gettingQuestions: Observable false
 
+  # pages
+  pageIsTeamPage: Observable false
+  pageIsUserPage: Observable false
+  
+  # category page
+  category: Observable {}
+  categoryProjectsLoaded: Observable false
+
+  # notifications
+  notifyUserDescriptionUpdated: Observable false # unused
+  notifyUploading: ->
+    self.uploadFilesRemaining() > 0
+  notifyUploadFailure: Observable false
+
+  # upload status
+  pendingUploads: Observable []
+  uploadFilesRemaining: ->
+    self.pendingUploads().length
+  uploadProgress: -> # Integer between 0..100
+    pendingUploads = self.pendingUploads()
+    numberOfPendingUploads = pendingUploads.length
+
+    progress = pendingUploads.reduce (value, {ratio}) ->
+      value + ratio()
+    , 0
+
+    (progress / numberOfPendingUploads * 100) | 0
+  
   normalizedBaseUrl: ->
     urlLength = baseUrl.length
     lastCharacter = baseUrl.charAt(urlLength-1)
@@ -59,114 +97,141 @@ self =
       return baseUrl + "/"
     else
       return baseUrl
-    
+
   closeAllPopOvers: ->
+    console.log 'closeAllPopOvers'
+    $(".pop-over.disposable, .overlay-background.disposable").remove()
     self.signInPopVisibleOnHeader false
     self.signInPopVisibleOnRecentProjects false
     self.userOptionsPopVisible false
+    self.ctaPopVisible false
+    self.addTeamUserPopVisible false
+    self.addTeamProjectPopVisible false
+    self.overlayProjectVisible false
+    self.overlayVideoVisible false
 
-  showProjectOverlay: (project) ->
-    event.preventDefault()
-    self.overlay.showProjectOverlay project
-  
-  featuredProjects: ->
-    _.shuffle curated.featured
+  searchProjects: (query) ->
+    self.searchResultsProjects []
+    Project.getSearchResults application, query
 
-  categories: ->
-    homepageCategories = _.filter curated.categories, (category) ->
-      !category.categoryPageOnly
-    _.shuffle homepageCategories
+  searchUsers: (query) ->
+    self.searchResultsUsers []
+    User.getSearchResults application, query
 
-  allProjects: ->
-    # returns all projects, shuffled
-    allProjects = []
-    for category, projects of curated.projects
-      allProjects = allProjects.concat projects
-    _.shuffle allProjects
-
-  projectsInCategory: (category) ->
-    # returns all projects in a category domain, shuffled
-    projectsInCategory = require("./curated/projects")[category]
-    _.shuffle projectsInCategory
-
-  selectedCategories: ->
-    # returns 3 shuffled categories to display in full on the homepage
-    shuffledCategories = self.categories()
-    shuffledCategories.slice(0, 3)
-
-  projectsInSelectedCategory: (category) ->
-    # returns 3 projects for index page category box, shuffled
-    shuffledProjects = self.projectsInCategory category
-    shuffledProjects.slice(0, 3)
-
-  isCategoryUrl: (url) ->
-    if _.contains self.categoryUrls(), url.toLowerCase()
-      true
-
-  isHelpingUrl: (url) ->
-    console.log 'url is', url
-    if url is 'helping'
-      true
-      
-  getCategoryFromUrl: (url) ->
-    # in this function, categories include partner and collection pages
-    category = _.findWhere allProjectGroups,
-      url: url
-      
-  categoryUrls: ->
-    # in this function, categories include partner and collection pages
-    categories = allProjectGroups
-    categoryUrls = _.map categories, (category) ->
-      category.url
-
-  projectUrl: (project) ->
-    if project.line
-      "#{EDITOR_URL}#!/#{project.domain}?path=#{project.path}:#{project.line}:#{project.character}"
-    else
-      "#{EDITOR_URL}#!/#{project.domain}"
-  
-  api: ->
-    persistentToken = self.user.cachedUser()?.persistentToken
+  searchTeams: (query) ->
+    self.searchResultsTeams []
+    Team.getSearchResults application, query
+    
+    
+  api: (source) ->
+    persistentToken = self.currentUser()?.persistentToken()
     if persistentToken
-      axios.create
-        baseURL: API_URL,
+      axios.create  
+        baseURL: API_URL
+        cancelToken: source?.token
         headers:
           Authorization: persistentToken
     else
       axios.create
         baseURL: API_URL
+        cancelToken: source?.token
 
   storeLocal: (key, value) ->
     try
       window.localStorage[key] = JSON.stringify value
     catch
       console.warn "Could not save to localStorage. (localStorage is disabled in private Safari windows)"
-      
+
   login: (provider, code) ->
     console.log provider, code
-    authURL = "/auth/github/#{code}"
     if provider == "facebook"
-      callbackURL = "https://glitch.com/login/facebook"
+      # capitalize for analytics
+      provider = "Facebook"
+      callbackURL = "#{APP_URL}/login/facebook"
       authURL = "/auth/facebook/#{code}?callbackURL=#{encodeURIComponent callbackURL}"
+    else
+      provider = "GitHub"
+      authURL = "/auth/github/#{code}"
     self.api().post "#{authURL}"
     .then (response) ->
-      console.log "LOGGED IN!", response.data
-      cachedUser = self.user.cachedUser() ? {}
-      Object.assign cachedUser, response.data
-      self.storeLocal 'cachedUser', cachedUser
-      self.identifyUser()
       analytics.track "Signed In",
         provider: provider
-      
-  identifyUser: ->
-    unless self.user.isSignedIn()
-      return
-    cachedUser = self.user.cachedUser()
-    analytics.identify cachedUser.id,
-      name: cachedUser.name
-      login: cachedUser.login
-      email: cachedUser.email
+      console.log "LOGGED IN", response.data
+      self.currentUser User response.data
+      self.storeLocal 'cachedUser', response.data
 
+  getUserByLogin: (login) ->
+    User.getUserByLogin application, login
+
+  getUserById: (id) ->
+    User.getUserById application, id
+
+  getTeamById: (id) ->
+    Team.getTeamById application, id
+
+  saveCurrentUser: (userData) ->
+    userData.fetched = true
+    console.log '👀 current user data is ', userData
+    self.currentUser().update(userData)
+    teams = self.currentUser().teams().map (datum) ->
+      Team(datum)
+    self.currentUser().teams teams
+
+  saveUser: (userData) ->
+    userData.fetched = true
+    userData.initialDescription = userData.description
+    console.log '👀 user data is ', userData
+    self.user User(userData).update(userData)
+    self.getProjects userData.projects
+
+  saveTeam: (teamData) ->
+    teamData.fetched = true
+    console.log '👀 team data is ', teamData
+    self.team Team(teamData).update(teamData)
+    self.getProjects teamData.projects
+
+  getProjects: (projectsData) ->
+    projectIds = projectsData.map (project) ->
+      project.id
+    Project.getProjectsByIds(self.api(), projectIds)
+
+  getUsers: (usersData) ->
+    userIds = usersData.map (user) ->
+      user.id
+    User.getUsersById(self.api(), userIds)
+
+  getCategory: (url) ->
+    categoryData = _.find cachedCategories, (category) ->
+      category.url is url
+    self.category Category(categoryData)
+    Category.updateCategory application, categoryData.id
+
+  getRandomCategories: (numberOfCategories, projectsPerCategory) ->
+    Category.getRandomCategories(self, numberOfCategories, projectsPerCategory)
+    .then (categories) ->
+      self.categories categories
+
+  getCategories: ->
+    Category.getCategories(self)
+    .then (categories) -> 
+      self.categories categories
+
+  getQuestions: ->
+    Question.getQuestions self
+    .then (questions) ->
+      self.questions questions
+    
+  fogcreekAge: ->
+    FOUNDED = 2001
+    current = new Date().getFullYear()
+    current - FOUNDED
+
+  showProjectOverlayPage: (domain) ->
+    Project.getProjectOverlay(application, domain)
+
+  # client.coffee routing helpers
+  # TODO?: move to utils.coffee
+  
   removeFirstCharacter: (string) ->
     # ex: ~cool to cool
     firstCharacterPosition = 1
@@ -181,20 +246,50 @@ self =
     if url.charAt(0) is "@"
       true
 
+  isAnonUserProfileUrl: (url) ->
+    if url.match(/^(user\/)/g) # matches "user/" at beginning of url
+      true
+  
+  anonProfileIdFromUrl: (url) ->
+    url.replace(/^(user\/)/g, '')
+  
   isSearchUrl: (url, queryString) ->
     queryStringKeys = _.keys queryString # ['q', 'blah']
     if (url is 'search') and (_.contains queryStringKeys, 'q')
       true
 
-  fogcreekAge: ->
-    founded = 2001
-    current = new Date().getFullYear()
-    current - founded
+  isCategoryUrl: (url) ->
+    true if _.find cachedCategories, (category) ->
+      category.url is url
 
-self.overlay = Overlay self
-self.user = user self
-self.search = Search self
+  isTeamUrl: (url) ->
+    true if _.find cachedTeams, (team) ->
+      team.url is url
+
+  getCachedTeamByUrl: (url) ->
+    _.find cachedTeams, (team) ->
+      team.url is url
+
+  isQuestionsUrl: (url) ->
+    if url is 'questions'
+      true
+
+
+self.attrModel "user", User
+self.attrModel "currentUser", User
+self.attrModels "featuredProjects", Project
+self.attrModels "categories", Category
+self.attrModel "category", Category
+self.attrModel "team", Team
+self.attrModel "question", Question
 
 global.application = self
+global.API_URL = API_URL
+global.EDITOR_URL = EDITOR_URL
+global.User = User
+global.Project = Project
+global.Category = Category
+global.Team = Team
+global.Question = Question
 
 module.exports = self

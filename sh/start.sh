@@ -1,0 +1,39 @@
+#!/bin/bash
+set -e
+
+jadelet -d templates -r "require('jadelet')"
+
+browserify \
+  --transform coffeeify \
+  --debug \
+  --extension=".coffee" \
+  client.coffee \
+  | exorcist public/client.js.map \
+  > public/client.js
+
+
+if [[ $ENVIRONMENT = 'production' ]]
+  then
+    (
+      echo "💟 environment is in production mode"
+      uglifyjs public/client.js \
+        --compress \
+        --mangle \
+        --screw-ie8 \
+        --in-source-map public/client.js.map \
+        --source-map public/client.min.js.map \
+        --source-map-url client.min.js.map \
+        --source-map-include-sources \
+        > public/client.min.js
+    )
+  else
+    echo "🚒 environment is in development mode"
+fi
+
+stylus \
+  --use autoprefixer-stylus \
+  --sourcemap \
+  --compress public/styles.styl \
+  --out public/styles.css
+
+coffee server.coffee

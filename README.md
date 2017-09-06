@@ -2,7 +2,7 @@
 
 Discover new reasons to code, remix cool and helpful projects made with Glitch.
 
-Philosophically, a little bit `app store`, some `Spotify`, and a little bit `Youtube`.
+Philosophically, a little bit `Youtube`, some `Spotify`, with a sprinkle of `app store`.
 
 Getting Started
 -----------------
@@ -26,7 +26,7 @@ O RLY?  YA RLY   NO WAI!
 
 Why is this in [Jadelet](https://jadelet.com/)?
 -----------------------
-- editor is also written in jadelet, reduces switching cost
-- more maintainable views
-- unit testable
-- can render views based on user localstorage values more conveniently
+- The Glitch editor is also written in jadelet, so it reduces switching cost
+- A nice Models, Presenters and Templates architecture
+- Unit testable (eventually!)
+- Can render views based on cached localstorage values, then update them with API based values

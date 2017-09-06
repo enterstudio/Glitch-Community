@@ -4,14 +4,11 @@ HeaderTemplate = require "../templates/includes/header"
 
 module.exports = (application) ->
 
-  console.log "⛵️ baseUrl is ", baseUrl
-  self = 
+  self =
+
     application: application
     baseUrl: application.normalizedBaseUrl()
   
-    template: ->
-      HeaderTemplate self
-
     toggleSignInPopVisible: (event) ->
       application.signInPopVisibleOnHeader.toggle()
       event.stopPropagation()
@@ -20,20 +17,14 @@ module.exports = (application) ->
       application.userOptionsPopVisible.toggle()
       event.stopPropagation()
 
-    showVideoOverlay: ->
-      application.overlay.showVideoOverlay()
-
-    hiddenIfUserIsSignedIn: ->
-      'hidden' if application.user.isSignedIn()
-
-    hiddenUnlessUserIsSignedIn: ->
-      'hidden' unless application.user.isSignedIn()
+    hiddenUnlessUserIsExperienced: ->
+      'hidden' unless application.currentUser().isAnExperiencedUser()
       
-    popHiddenUnlessSignInPopVisible: ->
+    hiddenUnlessSignInPopVisible: ->
       'hidden' unless application.signInPopVisibleOnHeader()
 
     userAvatar: ->
-      application.user.avatarImage()
+      application.currentUser().avatarUrl()
 
     logo: ->
       LOGO_DAY = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Flogo-day.svg"
@@ -46,7 +37,15 @@ module.exports = (application) ->
         LOGO_NIGHT
       else
         LOGO_DAY
-      
-    # userPageLink: ->
-    #   userName = application.user.userName()
-    # "/@#{userName}"
+
+    hiddenIfSignedIn: ->
+      'hidden' if application.currentUser().login()
+        
+    hiddenUnlessSignedIn: ->
+      'hidden' unless application.currentUser().login()
+    
+    submit: (event) ->
+      if event.target.children.q.value.trim().length is 0
+        event.preventDefault()
+        
+  return HeaderTemplate self

@@ -1,57 +1,57 @@
 RecentProjectsTemplate = require "../templates/includes/recent-projects"
-ProjectPresenter = require "./project"
-
-# SignInPopTemplate = require "../templates/includes/sign-in-pop"
+ProjectItemPresenter = require "./project-item"
 
 module.exports = (application) ->
 
   self = 
 
     application: application
-    userAvatarColor: application.user.avatarColor()
-    userAvatarImage: application.user.avatarImage()
-    userCoverColor: application.user.coverColor()
-    userCoverImage: application.user.coverImage()
+    currentUser: application.currentUser()
 
-    userIsAnon: application.user.isAnon()
-    userIsSignedIn: application.user.isSignedIn()
-
-    template: ->
-      RecentProjectsTemplate self
-
-    # signInPopTemplate: ->
-    #   SignInPopTemplate self
-
+    style: ->
+      backgroundImage: "url('#{application.currentUser().coverUrl('large')}')"
+      backgroundColor: application.currentUser().coverColor()
+    
+    userAvatarStyle: ->
+      backgroundColor: application.currentUser().color()
+      backgroundImage: "url('#{application.currentUser().userAvatarUrl('large')}')"
+    
+    userAvatarUrl: ->
+      application.currentUser().userAvatarUrl('large')
+    
     projects: ->
-      filteredProjects = self.filterProjects()
-      projectElements = filteredProjects.map (project) ->
-        unless project.id
-          project.id = project.projectId
+      projects = application.currentUser().projects()
+      if application.currentUser().isAnon()
+        projects = projects.slice(0,1)
+      else if application.currentUser().isSignedIn()
+        projects = projects.slice(0,3)      
+      projectIds = projects.map (project) ->
+        id: project.id()
+      application.getProjects projectIds
+      projects.map (project) ->
         project.isRecentProject = true
         category = 
-          color: undefined
-        ProjectPresenter(application, project, category)
-
-    filterProjects: ->
-      projects = application.userRecentProjects()
-      if self.userIsAnon
-        projects.slice(0,1)
-      else if self.userIsSignedIn
-        projects.slice(0,3)
+          color: ->
+            undefined
+        ProjectItemPresenter(application, project, category)
 
     userAvatarIsAnon: ->
-      'anon-user-avatar' if self.userIsAnon
+      'anon-user-avatar' if application.currentUser().isAnon()
 
-    # hiddenUnlessUserIsAnon: ->
-    #   'hidden' unless self.userIsAnon
-  
     toggleSignInPopVisible: (event) ->
       application.signInPopVisibleOnRecentProjects.toggle()
       event.stopPropagation()
 
-    popHiddenUnlessSignInPopVisible: ->
+    hiddenUnlessSignInPopVisible: ->
       'hidden' unless application.signInPopVisibleOnRecentProjects()
 
-    hiddenIfUserRecentProjects: ->
-      'hidden' if application.userRecentProjects().length
-    
+    userLink: ->
+      application.currentUser().userLink()
+
+    hiddenIfUserIsFetched: ->
+      'hidden' if application.currentUser().fetched()
+
+    hiddenUnlessCurrentUser: ->
+      'hidden' unless application.currentUser().id()
+
+  return RecentProjectsTemplate self

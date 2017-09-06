@@ -1,7 +1,0 @@
-# manuscript collection
-
-module.exports = 
-
-  [
-
-  ]

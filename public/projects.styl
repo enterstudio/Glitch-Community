@@ -1,3 +1,5 @@
+project-avatar-size = 42px
+
 .projects
   clear: both
   display: inline-block
@@ -5,7 +7,7 @@
   vertical-align: top
   border-radius: 5px
   padding: 16px
-
+  
   a
     color: primary
     text-decoration: none
@@ -18,6 +20,17 @@
     @media (max-width: hugeViewport)
       width: 21%
 
+  .placeholder
+    margin-top: 12px
+    .psst
+      width: 50px
+      display: inline-block
+      vertical-align: middle
+      margin-right: .5rem
+    p
+      display: inline-block
+      vertical-align: bottom
+    
   .category
     padding-bottom: 0
     margin-top: 0
@@ -43,18 +56,22 @@
 
   .category-description
     font-size: 14px
+    margin-bottom: 0
 
   .projects-container
     margin: 0
     padding: 0
     list-style-type: none
-    overflow: auto
+    // overflow: auto
+    overflow: hidden
 
     li
       float: left
       display: block
       margin-right: 10px
       width: 32.2%
+      position: relative
+      margin-bottom: 12px
       @media (max-width: largeViewport)
         width: 32%
       @media (max-width: 592px)
@@ -66,10 +83,13 @@
       &:hover
         text-decoration: none
       
-        
+    .down-arrow
+      margin: 0
+    
   .project
     font-size: 0.9rem
     background-color: section-line
+    border-bottom-color: section-line
     border-radius: 5px
     width: 100%
     padding: 12px
@@ -77,6 +97,7 @@
     position: relative
     transition: 0.1s all
     cursor: pointer
+    overflow: hidden
     &:hover
       button
         background-color: secondary-background
@@ -112,17 +133,21 @@
       height: calc(100% + 12px)
 
     .avatar
-      width: 33px
       border-radius: 5px
       margin-right: 7px
       vertical-align: top
       display: inline
+      width: project-avatar-size
+      height: project-avatar-size
 
     button
       display: inline
-      max-width: calc(100% - 33px - 11px)
-      padding-bottom: 7px
+      max-width: "calc(100% - %s - 11px)" % project-avatar-size
+      vertical-align: -13px
 
+    .project-name
+      display: inline-block
+      
     .description
       margin-top: 12px
       max-width: 92%
@@ -139,6 +164,26 @@
       border-bottom-left-radius: 5px
       border-bottom-right-radius: 5px
       background-color: section-line
+
+    .private-project-badge
+      display: none
+
+    &.private-project
+      background-color: private
+      border-bottom-color: private
+      .overflow-mask
+        background-color: private        
+      .private-project-badge
+        display: inline-block
+        background-color: private
+        width: 22px
+        height: 20px
+        margin-right: 4px
+        border-radius: 3px
+        background-image: url('https://cdn.glitch.com/f7224274-1330-4022-a8f2-8ae09dbd68a8%2Fprivate.svg?1496253541539')
+        background-position: center
+        background-repeat: no-repeat
+        vertical-align: middle
 
   .anon-user-sign-up
     background-color: white
@@ -158,17 +203,36 @@
       border-bottom: none
     @media(max-width: 600px)
       margin-top: 1rem
-      
+    // &:hover,
+    // &:active
+    //   button
+    //     background-color: primary-background
+
 .search-results,
+.user-page,
+.team-page,
 .category-page
   .category
     float: none
     width: initial
   .projects-container
     li
-      margin-bottom: 1rem
       width: 32%
       @media (max-width: largeViewport)
         width: 48%
       @media (max-width: 592px)
         width: 100%
+
+.project-options
+  display: none
+  position: absolute
+  right: 0px
+  top: 2px
+  padding: 10px
+  padding-bottom: 8px
+  background-color: white
+  border-radius: 5px
+  border: 0
+  &:focus
+    outline: transparent
+    background: #efefef

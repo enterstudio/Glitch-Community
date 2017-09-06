@@ -2,8 +2,14 @@ section.categories(role="navigation")
   h2 More Ideas
   ul
     - @categories().forEach (category) ->
-      a.category-box-link(href=category.url)
+    
+      - avatarUrl = category.avatarUrl
+      - color = category.color()
+      - name = category.name
+      - url = category.url
+      
+      a.category-box-link(href=url)
         li
-          .category-box.centered(style="background-color: #{category.color}")
-            img(src=category.img)
-          .category-box-label.centered(style="background-color: #{category.color}")= category.name
+          .category-box.centered(style="background-color: #{color}")
+            img(src=avatarUrl alt=name)
+          .category-box-label.centered(style="background-color: #{color}")= name

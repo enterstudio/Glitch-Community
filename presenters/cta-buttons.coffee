@@ -1,14 +1,16 @@
 CtaButtonsTemplate = require "../templates/includes/cta-buttons"
+CtaPop = require "./pop-overs/cta-pop"
 
 module.exports = (application) ->
 
-  self = 
+  self =
 
-    template: ->
-      CtaButtonsTemplate self
+    ctaPop: CtaPop(application)
+
+    toggleCtaPop: ->
+      application.ctaPopVisible.toggle()
 
     hiddenUnlessIsSignedIn: ->
-      'hidden' unless application.user.isSignedIn()
+      'hidden' unless application.currentUser().isSignedIn()
         
-    trackNewProject: ->
-      analytics.track "New Project Clicked"
+  return CtaButtonsTemplate self

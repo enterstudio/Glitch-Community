@@ -1,8 +1,8 @@
-.name,
 .button,
 button
   text-align: left
   font-size: 14px
+  line-height: 14px
   font-weight: 600
   background-color: white
   border: solid primary 2px
@@ -11,6 +11,8 @@ button
   padding: 6px 12px
   padding-bottom: 5px
   cursor: pointer
+  position: relative
+  vertical-align: middle
   &:hover
     background-color: secondary-background
   &:active
@@ -40,23 +42,27 @@ button
     background-color: cta
     box-shadow: none
 
-.button-secondary
-  border-width: 1px
-  font-size: 11px
-  padding: 2px 4px
-  padding-right: 5px
-  border-color: line-on-secondary-background
-  color: text-on-secondary-background
-  &:hover
-    color: primary
-    background-color: secondary-background-active
-  &:active
-    border-color: primary
+// .button-secondary
+//   border-width: 1px
+//   font-size: 11px
+//   padding: 2px 4px
+//   padding-right: 5px
+//   border-color: line-on-secondary-background
+//   color: text-on-secondary-background
+//   &:hover
+//     color: primary
+//     background-color: secondary-background-active
+//   &:active
+//     border-color: primary
 
 .button-small
   font-size: 12px
-  padding: 3px 10px
-
+  padding: 4px 8px
+  padding-top: 5px
+  line-height: 12px
+  // &.button-cta
+  //   padding: 5px 10px
+  
 .button-tertiary
   color: tertiary
   border-width: 1px
@@ -80,4 +86,24 @@ button
     border-color: primary
     outline: none
 
-  
+.cta-buttons
+  margin-top: 1rem
+  button,
+  .button
+    margin-right: 10px
+    @media (max-width: smallViewport)
+      margin-bottom: 12px
+
+
+.button-borderless
+  cursor: pointer
+  display: inline-block
+  padding-right: 5px
+  position: relative
+  &:hover
+    opacity: 1;
+    background-color: #eaeaea;
+    border-radius: 5px;
+    border: none;
+    .down-arrow
+      opacity: 1

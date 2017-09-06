@@ -1,4 +1,3 @@
-fs = require "fs"
 express = require "express"
 
 app = express()
@@ -8,10 +7,8 @@ bodyParser = require "body-parser"
 app.use(bodyParser.urlencoded({ extended: false }))
 app.use(bodyParser.json())
 app.set('view engine', 'ejs')
-      
-router = require('./routes')();
 
-app.use '/community-test', router
+router = require('./routes')();
 app.use '/', router
 
 # Add an explicit no-cache to 404 responses

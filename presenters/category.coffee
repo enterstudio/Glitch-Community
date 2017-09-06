@@ -1,17 +1,30 @@
 CategoryTemplate = require "../templates/includes/category"
-ProjectPresenter = require "./project"
+ProjectItemPresenter = require "./project-item"
 
 module.exports = (application, category) ->
-  # get the projects of this category based on the curatedName property of the category
-  projects = application.projectsInSelectedCategory(category.curatedName)
-  self =
-    template: ->
-      try
-        projectElements = projects.map (project) ->
-          ProjectPresenter(application, project, category)
+  category = category
+  projects = category.projects
 
-        templateModel = Object.assign {}, category
-        templateModel.projects = projectElements
-        CategoryTemplate templateModel
-      catch error
-        "#{category.curatedName} #{error}"
+  projectElements = projects.map (project) ->
+    ProjectItemPresenter(application, project, category)
+
+  self =
+
+    category: category
+    projects: projects
+
+    style: ->
+      backgroundColor: category.backgroundColor()
+
+    url: ->
+      category.url()
+
+    name: ->
+      category.name()
+    
+    description: ->
+      category.description()
+    
+  self.projects = projectElements
+
+  return CategoryTemplate self
