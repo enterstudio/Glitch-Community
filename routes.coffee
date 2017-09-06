@@ -11,6 +11,7 @@ updateCache = (type) ->
     response.on 'data', (data) ->
       content += data.toString 'utf8'
     response.on 'end', ->
+      
       fs.writeFile "./cache/#{type}.json", content, (error) ->
         if error
           console.error "☔️", error
