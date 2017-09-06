@@ -134,7 +134,7 @@ Promise.resolve()
     
   # lol wut
   else if normalizedRoute is 'wp-login.php'
-    location.assign('https://www.youtube.com/embed/zguO2OmwGpc?autoplay=1')
+    location.assign('https://www.youtube.com/embed/DLzxrzFCyOs?autoplay=1')
 
 
   # error page ✅
