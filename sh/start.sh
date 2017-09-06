@@ -1,6 +1,8 @@
 #!/bin/bash
 set -e
 
+mkdir -p cache
+
 jadelet -d templates -r "require('jadelet')"
 
 browserify \

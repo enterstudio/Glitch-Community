@@ -4,14 +4,23 @@ _ = require 'underscore'
 express = require 'express'
 CACHE_INTERVAL = 1000 * 60 * 30 # 30 minutes
 
+if process.env.RUNNING_ON is 'staging'
+  APP_URL = 'https://staging.glitch.com'
+  API_URL = 'https://api.staging.glitch.com/'
+  EDITOR_URL = 'https://staging.glitch.com/edit/'
+  CDN_URL = 'https://cdn.staging.glitch.com'
+else
+  APP_URL = 'https://glitch.com'
+  API_URL = 'https://api.glitch.com/'
+  EDITOR_URL = 'https://glitch.com/edit/'
+  CDN_URL = 'https://cdn.glitch.com'
 
 updateCache = (type) ->
-  https.get "https://api.staging.glitch.com/#{type}", (response) ->
+  https.get "#{API_URL}/#{type}", (response) ->
     content = ""
     response.on 'data', (data) ->
       content += data.toString 'utf8'
     response.on 'end', ->
-      
       fs.writeFile "./cache/#{type}.json", content, (error) ->
         if error
           console.error "☔️", error
@@ -63,16 +72,6 @@ module.exports = ->
     response.sendStatus 200
 
   app.get '*', (request, response, next) ->
-    if process.env.RUNNING_ON is 'staging'
-      APP_URL = 'https://staging.glitch.com'
-      API_URL = 'https://api.staging.glitch.com/'
-      EDITOR_URL = 'https://staging.glitch.com/edit/'
-      CDN_URL = 'https://cdn.staging.glitch.com'
-    else
-      APP_URL = 'https://glitch.com'
-      API_URL = 'https://api.glitch.com/'
-      EDITOR_URL = 'https://glitch.com/edit/'
-      CDN_URL = 'https://cdn.glitch.com'
     response.render 'index',
       route: request.path
       baseUrl: request.baseUrl
