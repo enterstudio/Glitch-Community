@@ -12,10 +12,10 @@ header(role="banner")
       input.search-input(name="q" id="search-projects" placeholder="bots, apps, users" value=@application.searchQuery)
 
     span(class=@hiddenIfSignedIn)
-      button.button-small.opens-pop-over(click=@toggleSignInPopVisible) Sign in
+      .button.button-small.opens-pop-over(click=@toggleSignInPopVisible) Sign in
       span(class=@hiddenUnlessSignInPopVisible)
         = SignInPopPresenter(@.application).template
-    button.user-options-pop-button.opens-pop-over(class=@hiddenUnlessSignedIn click=@toggleUserOptionsPopVisible data-tooltip="User options" data-tooltip-right=true)
+    .user-options-pop-button.opens-pop-over(class=@hiddenUnlessSignedIn click=@toggleUserOptionsPopVisible data-tooltip="User options" data-tooltip-right=true)
       .user
         img(src=@userAvatar width=30 height=30 alt="User options")
         span.down-arrow.icon
