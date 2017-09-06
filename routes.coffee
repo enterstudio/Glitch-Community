@@ -11,6 +11,8 @@ updateCache = (type) ->
     response.on 'data', (data) ->
       content += data.toString 'utf8'
     response.on 'end', ->
+      unless fs.existsSync "./cache"
+        fs.mkdirSync "./cache"
       fs.writeFile "./cache/#{type}.json", content, (error) ->
         if error
           console.error "☔️", error
