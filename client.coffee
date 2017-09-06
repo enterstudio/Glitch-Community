@@ -99,6 +99,7 @@ Promise.resolve()
     document.body.appendChild userPage
     document.title = normalizedRoute
 
+    
   # team page ✅
   else if application.isTeamUrl(normalizedRoute)
     application.pageIsTeamPage true
@@ -108,6 +109,7 @@ Promise.resolve()
     document.body.appendChild teamPage
     document.title = team.name
 
+    
   # search page ✅
   else if application.isSearchUrl(normalizedRoute, queryString)
     application.getRandomCategories()
@@ -129,13 +131,18 @@ Promise.resolve()
     document.body.appendChild categoryPage
     document.title = application.category().name()    
 
+    
+  # lol wut
+  else if normalizedRoute is 'wp-login.php'
+    location.assign('https://www.youtube.com/embed/zguO2OmwGpc?autoplay=1')
+
 
   # error page ✅
   else
     errorPage = errorPageTemplate application
     document.body.appendChild errorPage
     document.title = "👻 Page not found"
-    
+  
 .catch (error) ->
   console.error error
   throw error
