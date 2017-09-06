@@ -54,10 +54,10 @@ module.exports = (application) ->
       "https://#{self.projectDomain()}.glitch.me"
 
     editorLink: ->
-      "https://glitch.com/edit/#!/project/#{self.projectDomain()}"
+      "#{EDITOR_URL}#!/project/#{self.projectDomain()}"
 
     remixLink: ->
-      "https://glitch.com/edit/#!/remix/#{self.projectDomain()}/#{self.projectId()}"
+      "#{EDITOR_URL}#!/remix/#{self.projectDomain()}/#{self.projectId()}"
       
     trackRemix: ->
       analytics.track "Click Remix",

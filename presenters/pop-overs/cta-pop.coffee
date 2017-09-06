@@ -4,8 +4,8 @@ module.exports = (application) ->
 
   self =
 
-    newProjectLink: "https://glitch.com/edit/#!/new-project"
-    newWebsiteLink: "https://glitch.com/edit/#!/remix/hello-website"
+    newProjectLink: "#{EDITOR_URL}#!/new-project"
+    newWebsiteLink: "#{EDITOR_URL}#!/remix/hello-website"
     
     trackNewProject: ->
       analytics.track "New Project Clicked",

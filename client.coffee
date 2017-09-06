@@ -35,7 +35,7 @@ console.log "#########"
 Promise.resolve()
 .then ->
   if document.location.hash.startsWith "#!/"
-    document.location = "https://glitch.com/edit/" + document.location.hash
+    document.location = EDITOR_URL + document.location.hash
     return
 .then ->
   if normalizedRoute.startsWith "login/"

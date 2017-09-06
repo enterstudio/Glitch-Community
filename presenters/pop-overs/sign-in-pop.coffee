@@ -8,13 +8,13 @@ module.exports = (application) ->
   self =
   
     githubAuthLink: ->
-      clientId = "b4cb743ed07e20abf0b2"
+      clientId = GITHUB_CLIENT_ID
       scope = "user:email"
       redirectUri = encodeURIComponent "#{APP_URL}/login/github"
       "https://github.com/login/oauth/authorize?client_id=#{clientId}&scope=#{scope}&redirect_uri=#{redirectUri}"
 
     facebookAuthLink: ->
-      clientId = "660180164153542"
+      clientId = FACEBOOK_CLIENT_ID
       scopes="email"
       callbackURL = encodeURIComponent "#{APP_URL}/login/facebook"
       "https://www.facebook.com/v2.9/dialog/oauth?" +

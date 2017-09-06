@@ -9,11 +9,15 @@ if process.env.RUNNING_ON is 'staging'
   API_URL = 'https://api.staging.glitch.com/'
   EDITOR_URL = 'https://staging.glitch.com/edit/'
   CDN_URL = 'https://cdn.staging.glitch.com'
+  GITHUB_CLIENT_ID = "65efbd87382354ca25e7"
+  FACEBOOK_CLIENT_ID = "1858825521057112"
 else
   APP_URL = 'https://glitch.com'
   API_URL = 'https://api.glitch.com/'
   EDITOR_URL = 'https://glitch.com/edit/'
   CDN_URL = 'https://cdn.glitch.com'
+  GITHUB_CLIENT_ID = "b4cb743ed07e20abf0b2"
+  FACEBOOK_CLIENT_ID = "660180164153542"
 
 updateCache = (type) ->
   https.get "#{API_URL}#{type}", (response) ->
@@ -80,4 +84,5 @@ module.exports = ->
       APP_URL: APP_URL
       EDITOR_URL: EDITOR_URL
       CDN_URL: CDN_URL
-      
+      GITHUB_CLIENT_ID: GITHUB_CLIENT_ID
+      FACEBOOK_CLIENT_ID: FACEBOOK_CLIENT_ID
