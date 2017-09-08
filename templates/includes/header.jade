@@ -12,7 +12,7 @@ header(role="banner")
       input.search-input(name="q" id="search-projects" placeholder="bots, apps, users" value=@application.searchQuery)
 
     span(class=@hiddenIfSignedIn)
-      .button.button-small.opens-pop-over(click=@toggleSignInPopVisible) Sign in
+      button.button.button-small.opens-pop-over(click=@toggleSignInPopVisible) Sign in
       span(class=@hiddenUnlessSignInPopVisible)
         = SignInPopPresenter(@.application).template
     .user-options-pop-button.opens-pop-over(class=@hiddenUnlessSignedIn click=@toggleUserOptionsPopVisible data-tooltip="User options" data-tooltip-right=true)
