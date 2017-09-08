@@ -203,7 +203,7 @@ module.exports = User = (I={}, self=Model(I)) ->
   return self
 
 User.getUserByLogin = (application, login) ->
-  userPath = "users/byLogins?logins=#{login}&so"
+  userPath = "users/byLogins?logins=#{login}"
   application.api().get userPath
   .then (response) ->
     if response.data.length
