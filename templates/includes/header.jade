@@ -16,7 +16,7 @@ header(role="banner")
       span(class=@hiddenUnlessSignInPopVisible)
         = SignInPopPresenter(@.application).template
     .user-options-pop-button.opens-pop-over(class=@hiddenUnlessSignedIn click=@toggleUserOptionsPopVisible data-tooltip="User options" data-tooltip-right=true)
-      .user
+      button.user
         img(src=@userAvatar width=30 height=30 alt="User options")
         span.down-arrow.icon
       = UserOptionsPopPresenter(@.application).template
