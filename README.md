@@ -7,6 +7,10 @@ Philosophically, a little bit `Youtube`, some `Spotify`, with a sprinkle of `app
 Getting Started
 -----------------
 
+[Contribution Guidelines and Process](https://docs.google.com/document/d/11xNX1SnAfnhUJZcE6jx_ic4QQUGtThv1CpvBprtB4Wo/edit)
+
+Architecture: 
+
 - the app starts at `server.coffee`
 - `client.coffee` is compiled and served as /client.js
 - view templates start at `templates/hello.jadelet`
