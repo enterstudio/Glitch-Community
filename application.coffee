@@ -154,8 +154,6 @@ self = Model(
       authURL = "/auth/github/#{code}"
     self.api().post "#{authURL}"
     .then (response) ->
-      # mark user signed in no
-      
       analytics.track "Signed In",
         provider: provider
       console.log "LOGGED IN", response.data

@@ -54,7 +54,7 @@ module.exports = (application) ->
       "https://#{self.projectDomain()}.glitch.me"
 
     editorLink: ->
-      "#{EDITOR_URL}#!/project/#{self.projectDomain()}"
+      "#{EDITOR_URL}#!/#{self.projectDomain()}"
 
     remixLink: ->
       "#{EDITOR_URL}#!/remix/#{self.projectDomain()}/#{self.projectId()}"
