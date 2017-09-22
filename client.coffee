@@ -53,6 +53,8 @@ Promise.resolve()
       name: user.name()
       login: user.login()
       email: user.email()
+      created_at: application.userCreatedAt
+    delete application.userCreatedAt
 
   # index page ✅
   if normalizedRoute is "index.html" or normalizedRoute is ""
