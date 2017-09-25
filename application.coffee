@@ -142,6 +142,21 @@ self = Model(
     catch
       console.warn "Could not save to localStorage. (localStorage is disabled in private Safari windows)"
 
+  getLocal: (key) ->
+    try
+      JSON.parse window.localStorage[key]
+
+  getUserPrefs: ->
+    self.getLocal('userPrefs') or {}
+
+  getUserPref: (key) ->
+    self.getUserPrefs()[key]
+
+  updateUserPrefs: (key, value) ->
+    prefs = self.getUserPrefs()
+    prefs[key] = value
+    self.storeLocal('userPrefs', prefs)
+    
   login: (provider, code) ->
     console.log provider, code
     if provider == "facebook"
@@ -274,7 +289,7 @@ self = Model(
     if url is 'questions'
       true
 
-
+      
 self.attrModel "user", User
 self.attrModel "currentUser", User
 self.attrModels "featuredProjects", Project
