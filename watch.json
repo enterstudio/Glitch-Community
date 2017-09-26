@@ -11,12 +11,12 @@
       "^test/"
     ],
     "include": [
-      "^sh/start$",
+      "^sh/start.sh$",
       "\\.coffee$",
       "\\.jade",
       "\\.json",
       "\\.styl"
     ]
   },
-  "throttle": 10
+  "throttle": 100
 }

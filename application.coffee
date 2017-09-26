@@ -232,9 +232,8 @@ self = Model(
       self.categories categories
 
   getQuestions: ->
-    Question.getQuestions self
-    .then (questions) ->
-      self.questions questions
+    questions = await Question.getQuestions self
+    self.questions questions
     
   fogcreekAge: ->
     FOUNDED = 2001

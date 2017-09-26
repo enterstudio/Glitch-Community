@@ -5,14 +5,16 @@ mkdir -p cache
 
 jadelet -d templates -r "require('jadelet')"
 
-browserify \
-  --transform coffeeify \
-  --debug \
-  --extension=".coffee" \
-  client.coffee \
-  | exorcist public/client.js.map \
-  > public/client.js
+if [[ $ENVIRONMENT  = 'production' ]]
+then
+  TRANSPILE="--transpile"
+else
+  TRANSPILE=""
+fi
 
+coffee --compile $TRANSPILE --inline-map .
+
+browserify --debug client.js | exorcist public/client.js.map > public/client.js
 
 if [[ $ENVIRONMENT = 'production' ]]
   then

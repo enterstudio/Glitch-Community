@@ -2,6 +2,8 @@
 # by express browserify middleware using the
 # coffeeify transform
 
+require 'babel-polyfill'
+
 global.FEATURED_PROJECTS = require "./curated/featured"
 
 require "./extensions"
