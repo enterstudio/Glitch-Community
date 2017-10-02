@@ -114,8 +114,10 @@ getKey = (conditions, key) ->
   results[0]
 
 getNamespaceFromPolicyConditions = (conditions) ->
-  (conditions.filter ([a, b, c]) ->
-    b is "$key" and (a is "starts-with" or a is "eq")
+  (conditions.filter (condition) ->
+    if Array.isArray(condition)
+      [a, b, c] = condition
+      b is "$key" and (a is "starts-with" or a is "eq")
   )[0][2]
 
 extractPolicyData = (policy) ->
