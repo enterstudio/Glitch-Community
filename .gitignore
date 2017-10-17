@@ -4,3 +4,4 @@
 *.js.map
 *.gz
 cache/*
+*.md5

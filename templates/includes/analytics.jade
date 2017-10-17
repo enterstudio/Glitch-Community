@@ -1,0 +1,47 @@
+- Loader = require "./loader"
+
+section.analytics(class=@hiddenUnlessCurrentUserIsOnTeam)
+  - console.log "Rendered Analytics"
+  script(src="https://cdn.plot.ly/plotly-latest.min.js" load=@plotlyLoad async="4eva")
+
+  h2 Stats
+
+  .chart-container
+    span(class=@hiddenUnlessGettingAnalytics)= Loader
+    h3
+      span= "#{@totalRemixes()} Remixes Over the #{@analyticsTimeLabel()}"
+      span.emoji.emoji-in-title.microphone
+    .button-wrap
+      button.button-small.button-tertiary.button-select(click=@toggleAnalyticsTimePop)
+        span= @analyticsTimeLabel
+        span(class=@hiddenUnlessGettingAnalyticsFromDate)= Loader
+    .button-wrap
+      button.button-small.button-tertiary(click=@toggleAnalyticsProjectsPop)
+        span= @analyticsProjectDomain
+        span(class=@hiddenUnlessGettingAnalyticsProjectDomain)= Loader
+      
+    = @remixesChartElement
+    
+    h3.from-header From
+    = @remixesReferrersBars
+
+  .chart-container
+    span(class=@hiddenUnlessGettingAnalytics)= Loader
+    h3
+      span= "#{@totalVisits()} Visits Over the #{@analyticsTimeLabel()}"
+      span.emoji.emoji-in-title.eyes
+    .button-wrap
+      button.button-small.button-tertiary.button-select(click=@toggleAnalyticsTimePop)
+        span= @analyticsTimeLabel               
+        span(class=@hiddenUnlessGettingAnalyticsFromDate)= Loader
+      = @analyticsTimePop
+    .button-wrap
+      button.button-small.button-tertiary(click=@toggleAnalyticsProjectsPop)
+        span= @analyticsProjectDomain
+        span(class=@hiddenUnlessGettingAnalyticsProjectDomain)= Loader
+      = @analyticsProjectsPop
+
+    = @visitsChartElement
+
+    h3.from-header From
+    = @visitsReferrersBars

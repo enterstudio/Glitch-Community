@@ -135,28 +135,71 @@
   @media(max-width: mediumViewport)
     left: initial
 
-.add-team-project-pop
-  width: 280px
+.add-team-project-pop,
+.analytics-projects-pop
   left: 2px
   top: 25px
-  .result-container
-    &:hover,
-    &:focus,
-    &.active
-      background-color: section-line
   .results
+    .result
+      border-radius: 3px
+    .result-container
+      &:hover
+        .result
+          background-color: section-line
+      &:active,
+      &.active
+        .result
+          background-color: section-line
     .result-avatar
-      width: 20%
-      margin-right: 5%
-      vertical-align: top
+      width: 40px
+      margin-right: 10px
+      vertical-align: middle
+      // display: block
     .result-information
       display: inline-block
-      width: 75%
+      width: 76%
+      vertical-align: top
+      // button
+      //   margin-left: 0
     .users
       display: block
+      margin-bottom: 3px
+      // margin-top: 8px
+      // margin-bottom: 2px
+      project-result-avatar-size = 22px
+      .user
+        width: project-result-avatar-size
+        height: project-result-avatar-size
+        img
+          width: project-result-avatar-size
+          height: project-result-avatar-size
+    .result-name
+      margin-left: 0 !important
+          
+.analytics-projects-pop    
+  top: 22px
+  left: 8px
+          
+// revisit the blue selection
+.analytics-time-pop
+  top: 22px
+  left: 8px
+  .result-container
+    padding-top: 3px
+  .result
+    &:hover
+      background-color: section-line
+    &:active,
+    &.active
+      background-color: section-line
+      // .result-name
+      //   color: primary-background
 
-    // .users
-    //   pointer-events: none
+.analytics-time-pop,
+.analytics-projects-pop
+  @media(max-width: mediumViewport)
+    left: initial
+
 
 // refactor this: used on user page for project-options-pop (only?)
 .project

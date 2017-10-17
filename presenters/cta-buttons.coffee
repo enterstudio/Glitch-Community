@@ -1,7 +1,7 @@
 Observable = require 'o_0'
 
 CtaButtonsTemplate = require "../templates/includes/cta-buttons"
-CtaPop = require "./pop-overs/cta-pop"
+CtaPopPresenter = require "./pop-overs/cta-pop"
 
 module.exports = (application) ->
 
@@ -9,7 +9,7 @@ module.exports = (application) ->
 
     hideForPlatforms: Observable false
   
-    ctaPop: CtaPop(application)
+    ctaPop: CtaPopPresenter application
 
     toggleCtaPop: ->
       application.ctaPopVisible.toggle()

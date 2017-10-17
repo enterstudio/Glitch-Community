@@ -12,6 +12,7 @@ If the id property is not given the model is not cached.
 
 _ = require 'underscore'
 axios = require 'axios'
+querystring = require 'querystring'
 
 cache = {}
 cacheBuster = Math.floor(Math.random() * 1000)
@@ -190,7 +191,6 @@ module.exports = Team = (I={}, self=Model(I)) ->
     pushSearchResult: (application) ->
       application.searchResultsTeams.push self
       application.searchResultsTeamsLoaded true
-
 
   if I.id
     cache[I.id] = self

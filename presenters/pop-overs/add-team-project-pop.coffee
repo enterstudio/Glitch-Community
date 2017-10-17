@@ -10,13 +10,13 @@ module.exports = (application) ->
     application: application
   
     query: Observable ""
-  
+
     hiddenUnlessAddTeamProjectPopVisible: ->
       'hidden' unless application.addTeamProjectPopVisible()
 
     stopPropagation: (event) ->
       event.stopPropagation()
-    
+
     hiddenUnlessSearching: ->
       'hidden' unless application.searchingForProjects()
 
@@ -38,7 +38,7 @@ module.exports = (application) ->
       , 500
 
     searchResults: ->
-      MAX_RESULTS = 5
+      MAX_RESULTS = 10
       if self.query().length
         application.searchResultsProjects().slice(0, MAX_RESULTS)
       else

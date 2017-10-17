@@ -1,5 +1,5 @@
-.result-container(style=@hoverBackground)
-  li.result.project-result(tabindex=0 click=@addProjectToTeam keydown=@projectResultKey)
+.result-container(style=@hoverBackground class=@activeIfSelectedProjects)
+  li.result.project-result(tabindex=0 click=@projectAction keydown=@projectResultKey)
     img.result-avatar(src=@avatarUrl)
     .result-information
       = @usersListPresenter

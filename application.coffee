@@ -30,7 +30,7 @@ self = Model(
   overlayProjectVisible: Observable false
   overlayProject: Observable undefined
   overlayVideoVisible: Observable false
-  
+
   # pop overs
   signInPopVisibleOnHeader: Observable false
   signInPopVisibleOnRecentProjects: Observable false
@@ -39,23 +39,33 @@ self = Model(
   addTeamUserPopVisible: Observable false
   addTeamProjectPopVisible: Observable false
 
-  # search
+  # search - users
   searchQuery: Observable ""
   searchingForUsers: Observable false
   searchResultsUsers: Observable []
   searchResultsUsersLoaded: Observable false
   searchResultsHaveNoUsers: Observable false
 
+  # search - projects
   searchingForProjects: Observable false
   searchResultsProjects: Observable []
   searchResultsProjectsLoaded: Observable false
   searchResultsHaveNoProjects: Observable false
 
+  # search - teams
   searchingForTeams: Observable false
   searchResultsTeams: Observable []
   searchResultsTeamsLoaded: Observable false
   searchResultsHaveNoTeams: Observable false
-  
+
+  # analytics
+  # gettingAnalytics: Observable true
+  # gettingAnalyticsFromDate: Observable false
+  # gettingAnalyticsProjectDomain: Observable false
+  # analyticsFromDate: Observable 0
+  # analyticsProjectDomain: Observable 'All Projects'
+  # analyticsTimeLabel: Observable 'Last 2 Weeks'
+
   # questions
   questions: Observable []
   gettingQuestions: Observable false
@@ -63,13 +73,13 @@ self = Model(
   # pages
   pageIsTeamPage: Observable false
   pageIsUserPage: Observable false
-  
+
   # category page
   category: Observable {}
   categoryProjectsLoaded: Observable false
 
   # notifications
-  notifyUserDescriptionUpdated: Observable false # unused
+  notifyUserDescriptionUpdated: Observable false # unused, to remove
   notifyUploading: ->
     self.uploadFilesRemaining() > 0
   notifyUploadFailure: Observable false
@@ -123,7 +133,7 @@ self = Model(
     Team.getSearchResults application, query
     
     
-  api: (source) ->
+  api: (source, queries) ->
     persistentToken = self.currentUser()?.persistentToken()
     if persistentToken
       axios.create  

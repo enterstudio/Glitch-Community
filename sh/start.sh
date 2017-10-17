@@ -5,9 +5,9 @@ mkdir -p cache
 
 jadelet -d templates -r "require('jadelet')"
 
-coffee --compile --transpile --inline-map .
+coffee --compile .
 
-browserify --debug client.js | exorcist public/client.js.map > public/client.js
+browserify client.js > public/client.js
 
 if [[ $ENVIRONMENT = 'production' ]]
   then

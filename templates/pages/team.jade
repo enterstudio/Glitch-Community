@@ -1,5 +1,4 @@
 - Loader = require "../includes/loader"
-- TeamUserPresenter = require "../../presenters/team-user-avatar"
 
 main.user-page.team-page(role="main")
 
@@ -45,6 +44,9 @@ main.user-page.team-page(role="main")
   span(class=@hiddenIfNotOnTeamAndNoPins)
     = @pinnedProjectsList
   = @recentProjects
+
+  - console.log "render team"
+  = @teamAnalytics
 
   section.team-marketing(class=@hiddenIfOnTeam)
     img(src="https://cdn.glitch.com/55f8497b-3334-43ca-851e-6c9780082244%2Fteams-boombox.svg?1503591763497")

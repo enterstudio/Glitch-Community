@@ -12,6 +12,7 @@ AddTeamUserPopPresenter = require "../pop-overs/add-team-user-pop"
 AddTeamProjectPopPresenter = require "../pop-overs/add-team-project-pop"
 ProjectsListPresenter = require "../projects-list"
 TeamUserPresenter = require "../team-user-avatar"
+AnalyticsPresenter = require "../analytics"
 UserAvatarTemplate = require "../../templates/includes/user-avatar" #
 assetUtils = require('../../utils/assets')(application)
 
@@ -35,6 +36,10 @@ module.exports = (application) ->
           TeamUserPresenter application, user
       else
         users.map UserAvatarTemplate
+
+    teamAnalytics: ->
+      if self.team().fetched()
+        AnalyticsPresenter application, self.team()
 
     ctaButtons: ->
       CtaButtonsPresenter(application)
