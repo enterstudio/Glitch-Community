@@ -1,7 +1,6 @@
 - Loader = require "./loader"
 
 section.analytics(class=@hiddenUnlessCurrentUserIsOnTeam)
-  - console.log "Rendered Analytics"
   script(src="https://cdn.plot.ly/plotly-latest.min.js" load=@plotlyLoad async="4eva")
 
   h2 Stats

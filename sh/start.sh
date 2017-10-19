@@ -5,7 +5,7 @@ mkdir -p cache
 
 jadelet -d templates -r "require('jadelet')"
 
-coffee --compile .
+coffee  --transpile --compile .
 
 browserify client.js > public/client.js
 
@@ -17,10 +17,6 @@ if [[ $ENVIRONMENT = 'production' ]]
         --compress \
         --mangle \
         --screw-ie8 \
-        --in-source-map public/client.js.map \
-        --source-map public/client.min.js.map \
-        --source-map-url client.min.js.map \
-        --source-map-include-sources \
         > public/client.min.js
     )
   else

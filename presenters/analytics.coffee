@@ -260,9 +260,6 @@ module.exports = (application, teamOrProject) ->
           domain: r.domain
           value: r[REFERRER_VALUES[i]]
 
-        unless referrers.length > 0
-          return null
-
         # NOTE: Plotly.restyle wants the arrays pushed down into the trace values YOLO!
         data =
           x: [referrers.map (r) -> r.value]
