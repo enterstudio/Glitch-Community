@@ -4,6 +4,7 @@ axios = require 'axios'
 
 cachedCategories = require './cache/categories.json'
 cachedTeams = require './cache/teams.json'
+featuredCollections = require "./curated/featured"
 
 Model = require "./models/model"
 
@@ -18,13 +19,13 @@ cachedUser =
     try
       JSON.parse(localStorage.cachedUser)
     catch
-      {}
-
 
 self = Model(
-    featuredProjects: FEATURED_PROJECTS
+    # featuredProjects: featuredProjects
     currentUser: cachedUser
   ).extend
+
+  featuredCollections: featuredCollections
 
   # overlays
   overlayProjectVisible: Observable false
@@ -57,14 +58,6 @@ self = Model(
   searchResultsTeams: Observable []
   searchResultsTeamsLoaded: Observable false
   searchResultsHaveNoTeams: Observable false
-
-  # analytics
-  # gettingAnalytics: Observable true
-  # gettingAnalyticsFromDate: Observable false
-  # gettingAnalyticsProjectDomain: Observable false
-  # analyticsFromDate: Observable 0
-  # analyticsProjectDomain: Observable 'All Projects'
-  # analyticsTimeLabel: Observable 'Last 2 Weeks'
 
   # questions
   questions: Observable []
@@ -301,7 +294,7 @@ self = Model(
       
 self.attrModel "user", User
 self.attrModel "currentUser", User
-self.attrModels "featuredProjects", Project
+# self.attrModels "featuredProjects", Project
 self.attrModels "categories", Category
 self.attrModel "category", Category
 self.attrModel "team", Team

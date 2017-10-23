@@ -3,9 +3,7 @@
 section.analytics(class=@hiddenUnlessCurrentUserIsOnTeam)
   script(src="https://cdn.plot.ly/plotly-latest.min.js" load=@plotlyLoad async="4eva")
 
-  h2 Stats
-
-  .chart-container
+  section.chart-container
     span(class=@hiddenUnlessGettingAnalytics)= Loader
     h3
       span= "#{@totalRemixes()} Remixes Over the #{@analyticsTimeLabel()}"
@@ -21,10 +19,10 @@ section.analytics(class=@hiddenUnlessCurrentUserIsOnTeam)
       
     = @remixesChartElement
     
-    h3.from-header From
+    h4.from-header From
     = @remixesReferrersBars
 
-  .chart-container
+  section.chart-container
     span(class=@hiddenUnlessGettingAnalytics)= Loader
     h3
       span= "#{@totalVisits()} Visits Over the #{@analyticsTimeLabel()}"
@@ -42,5 +40,5 @@ section.analytics(class=@hiddenUnlessCurrentUserIsOnTeam)
 
     = @visitsChartElement
 
-    h3.from-header From
+    h4.from-header From
     = @visitsReferrersBars

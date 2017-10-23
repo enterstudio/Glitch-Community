@@ -1,0 +1,5 @@
+li
+  a(href="#{@link()}")
+    .featured-container(data-track="featured project" data-track-label=@title)
+      img.featured(width=30 height=30 @src alt="background image for #{@title()}")
+      p.project-name= @title

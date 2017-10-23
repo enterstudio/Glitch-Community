@@ -3,7 +3,7 @@ moment = require 'moment'
 AnalyticsTimePopTemplate = require "../../templates/pop-overs/analytics-time-pop"
 
 twoWeeks = moment().subtract(2, 'weeks').valueOf()
-oneMonth = moment().subtract(1, 'months').valueOf()
+oneMonth = moment().subtract(4, 'weeks').valueOf()
 oneDay = moment().subtract(24, 'hours').valueOf()
 
 module.exports = (application, analytics) ->
@@ -19,7 +19,7 @@ module.exports = (application, analytics) ->
       event.stopPropagation()
 
     selectMonthFrame: ->
-      analytics.analyticsTimeLabel 'Last Month'
+      analytics.analyticsTimeLabel 'Last 4 Weeks'
       # analytics.analyticsFromDate oneMonth
       analytics.gettingAnalyticsFromDate true
 
@@ -34,7 +34,7 @@ module.exports = (application, analytics) ->
       analytics.gettingAnalyticsFromDate true
 
     activeIfLabelIsMonths: ->
-      'active' if analytics.analyticsTimeLabel() is 'Last Month'
+      'active' if analytics.analyticsTimeLabel() is 'Last 4 Weeks'
 
     activeIfLabelIsWeeks: ->
       'active' if analytics.analyticsTimeLabel() is 'Last 2 Weeks'

@@ -4,8 +4,6 @@
 
 require 'babel-polyfill'
 
-global.FEATURED_PROJECTS = require "./curated/featured"
-
 require "./extensions"
 
 application = require './application'

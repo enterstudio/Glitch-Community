@@ -19,7 +19,7 @@ BACKGROUND_COLOR = '#f5f5f5'
 # HEIGHTS = [200, 200]
 
 twoWeeks = moment().subtract(2, 'weeks').valueOf()
-oneMonth = moment().subtract(1, 'months').valueOf()
+fourWeeks = moment().subtract(4, 'weeks').valueOf()
 oneDay = moment().subtract(24, 'hours').valueOf()
 
 # Crack open a promise so anyone can resolve or reject it later
@@ -62,8 +62,8 @@ module.exports = (application, teamOrProject) ->
     analyticsTimeLabel: Observable 'Last 2 Weeks'
     
     analyticsFromDate: ->
-      if self.analyticsTimeLabel() is 'Last Month'
-        oneMonth
+      if self.analyticsTimeLabel() is 'Last 4 Weeks'
+        fourWeeks
       else if self.analyticsTimeLabel() is 'Last 24 Hours'
         oneDay
       else
@@ -175,7 +175,7 @@ module.exports = (application, teamOrProject) ->
             showgrid: true
             autorange: false
             fixedrange: true         
-            tickangle: 1e-10 # to have it aligned to the right of the tick          xaxis:
+            #tickangle: 1e-10 # to have it aligned to the right of the tick          xaxis:
             range: [data.x[0].getTime() - 3600000, data.x[data.x.length-1].getTime() + 4 * 3600000]
           yaxis:
             fixedrange: true
@@ -349,7 +349,7 @@ module.exports = (application, teamOrProject) ->
     hiddenUnlessCurrentUserIsOnTeam: ->
       'hidden' unless self.currentUserIsOnTeam application
 
-        
+
   window.addEventListener 'resize', _.throttle ->
     Plotly.Plots.resize(self.remixesChartElement)
     Plotly.Plots.resize(self.remixesReferrersBars)
