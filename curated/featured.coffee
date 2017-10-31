@@ -1,9 +1,9 @@
 module.exports =
 
   [
-      title: 'Join the Global Hackathon'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FproductHuntHackathonFeatureBanner.png?1508772195526",
-      link: "https://glitch.com/producthunt"
+      title: 'Apps for Slack'
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-slack-slash-bot.svg?1489696797191",
+      link: "https://glitch.com/slack"
     ,
       title: 'Make WebVR, Reality'
       img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FaframeBanner.png?1508772212312"
