@@ -49,7 +49,7 @@ module.exports = (application, project, options, analytics) ->
 
     activeIfSelectedProjects: ->
       console.log "🐸",analytics
-      if analytics.analyticsProjectDomain() is project.domain()
+      if analytics.analyticsProjectDomain?() is project.domain()
         'active'
     
     preventDefault: (event) ->
