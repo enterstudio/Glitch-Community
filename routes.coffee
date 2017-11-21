@@ -1,9 +1,13 @@
 https = require 'https'
 fs = require "fs"
+rp = require "request-promise"
+util = require "util"
 { spawn } = require 'child_process'
 _ = require 'underscore'
 express = require 'express'
 CACHE_INTERVAL = 1000 * 60 * 30 # 30 minutes
+
+fs_writeFile = util.promisify fs.writeFile
 
 if process.env.RUNNING_ON is 'staging'
   APP_URL = 'https://staging.glitch.com'
@@ -21,19 +25,14 @@ else
   FACEBOOK_CLIENT_ID = "660180164153542"
 
 updateCache = (type) ->
-  https.get "#{API_URL}#{type}", (response) ->
-    content = ""
-    response.on 'data', (data) ->
-      content += data.toString 'utf8'
-    response.on 'end', ->
-      fs.writeFile "./cache/#{type}.json", content, (error) ->
-        if error
-          console.error "☔️", error
-        else
-          console.log "☂️ #{type} re-cached"
-    .on 'error', (error) ->
-      console.error error
-
+  rp "#{API_URL}#{type}"
+  .then (data) ->
+    fs_writeFile "./cache/#{type}.json", data
+    .then ->
+      console.log "☂️ #{type} re-cached"
+  .catch ->
+    console.error "☔️", error
+    
 updateCaches = ->
   updateCache 'categories'
   updateCache 'teams'
