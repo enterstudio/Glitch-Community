@@ -33,10 +33,8 @@ updateCache = (type) ->
     .on 'error', (error) ->
       console.error error
 
-updateCategories = ->
+updateCaches = ->
   updateCache 'categories'
-      
-updateTeams = ->
   updateCache 'teams'
 
 clientJs = ->
@@ -44,11 +42,9 @@ clientJs = ->
     'client.min.js'
   else
     'client.js'
-  
-updateCategories()
-updateTeams()
-setInterval updateCategories, CACHE_INTERVAL
-setInterval updateTeams, CACHE_INTERVAL
+
+updateCaches()
+setInterval updateCaches, CACHE_INTERVAL
 
 module.exports = ->
   
