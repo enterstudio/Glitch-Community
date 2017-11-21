@@ -1,5 +1,6 @@
 https = require 'https'
 fs = require "fs"
+{ spawn } = require 'child_process'
 _ = require 'underscore'
 express = require 'express'
 CACHE_INTERVAL = 1000 * 60 * 30 # 30 minutes
@@ -36,6 +37,9 @@ updateCache = (type) ->
 updateCaches = ->
   updateCache 'categories'
   updateCache 'teams'
+  
+  process = spawn 'sh/rebuild-client.sh'
+  process.on 'close', -> console.log "☂️ cache updated"
 
 clientJs = ->
   if process.env.ENVIRONMENT is 'production'
