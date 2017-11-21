@@ -26,19 +26,20 @@ else
 
 updateCache = (type) ->
   rp "#{API_URL}#{type}"
-  .then (data) ->
-    fs_writeFile "./cache/#{type}.json", data
+  .then (response) ->
+    fs_writeFile "./cache/#{type}.json", response
     .then ->
       console.log "☂️ #{type} re-cached"
-  .catch ->
+  .catch (error) ->
     console.error "☔️", error
-    
+
 updateCaches = ->
   updateCache 'categories'
-  updateCache 'teams'
-
-  process = spawn 'sh/rebuild-client.sh'
-  process.on 'close', -> console.log "☂️ cache updated"
+  .then ->
+    updateCache 'teams'
+  .then ->
+    process = spawn 'sh/rebuild-client.sh'
+    process.on 'close', -> console.log "☂️ cache updated"
 
 clientJs = ->
   if process.env.ENVIRONMENT is 'production'
