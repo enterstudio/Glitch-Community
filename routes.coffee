@@ -37,7 +37,7 @@ updateCache = (type) ->
 updateCaches = ->
   updateCache 'categories'
   updateCache 'teams'
-  
+
   process = spawn 'sh/rebuild-client.sh'
   process.on 'close', -> console.log "☂️ cache updated"
 
@@ -67,12 +67,8 @@ module.exports = ->
     console.log(request.method, request.originalUrl, request.body)
     next()
 
-  app.post '/update-categories', (request, response) ->
-    updateCategories()
-    response.sendStatus 200
-
-  app.post '/update-teams', (request, response) ->
-    updateTeams()
+  app.post '/update-caches', (request, response) ->
+    updateCaches()
     response.sendStatus 200
 
   app.get '*', (request, response, next) ->

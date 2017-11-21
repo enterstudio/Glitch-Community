@@ -8,5 +8,5 @@ uglifyjs public/client.js \
   --mangle \
   --screw-ie8 \
   > public/client.min.js.tmp
-  
+
 mv -f public/client.min.js.tmp public/client.min.js
