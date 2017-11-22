@@ -28,7 +28,9 @@
     "babel-core": "^6.26.0",
     "babel-preset-env": "^1.6.0",
     "babel-polyfill": "^6.26.0",
-    "coffeescript": "2.0.0"
+    "coffeescript": "2.0.0",
+    "request": "^2.83.0",
+    "request-promise": "^4.2.2"
   },
   "engines": {
     "node": "8.x"

@@ -1,8 +1,13 @@
 https = require 'https'
 fs = require "fs"
+rp = require "request-promise"
+util = require "util"
+{ spawn } = require 'child_process'
 _ = require 'underscore'
 express = require 'express'
 CACHE_INTERVAL = 1000 * 60 * 30 # 30 minutes
+
+fs_writeFile = util.promisify fs.writeFile
 
 if process.env.RUNNING_ON is 'staging'
   APP_URL = 'https://staging.glitch.com'
@@ -20,35 +25,30 @@ else
   FACEBOOK_CLIENT_ID = "660180164153542"
 
 updateCache = (type) ->
-  https.get "#{API_URL}#{type}", (response) ->
-    content = ""
-    response.on 'data', (data) ->
-      content += data.toString 'utf8'
-    response.on 'end', ->
-      fs.writeFile "./cache/#{type}.json", content, (error) ->
-        if error
-          console.error "☔️", error
-        else
-          console.log "☂️ #{type} re-cached"
-    .on 'error', (error) ->
-      console.error error
+  rp "#{API_URL}#{type}"
+  .then (response) ->
+    fs_writeFile "./cache/#{type}.json", response
+    .then ->
+      console.log "☂️ #{type} re-cached"
+  .catch (error) ->
+    console.error "☔️", error
 
-updateCategories = ->
+updateCaches = ->
   updateCache 'categories'
-      
-updateTeams = ->
-  updateCache 'teams'
+  .then ->
+    updateCache 'teams'
+  .then ->
+    process = spawn 'sh/rebuild-client.sh'
+    process.on 'close', -> console.log "☂️ cache updated"
 
 clientJs = ->
   if process.env.ENVIRONMENT is 'production'
     'client.min.js'
   else
     'client.js'
-  
-updateCategories()
-updateTeams()
-setInterval updateCategories, CACHE_INTERVAL
-setInterval updateTeams, CACHE_INTERVAL
+
+updateCaches()
+setInterval updateCaches, CACHE_INTERVAL
 
 module.exports = ->
   
@@ -67,12 +67,8 @@ module.exports = ->
     console.log(request.method, request.originalUrl, request.body)
     next()
 
-  app.post '/update-categories', (request, response) ->
-    updateCategories()
-    response.sendStatus 200
-
-  app.post '/update-teams', (request, response) ->
-    updateTeams()
+  app.post '/update-caches', (request, response) ->
+    updateCaches()
     response.sendStatus 200
 
   app.get '*', (request, response, next) ->
