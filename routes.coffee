@@ -69,7 +69,8 @@ module.exports = ->
 
   app.post '/update-caches', (request, response) ->
     updateCaches()
-    response.sendStatus 200
+    .then ->
+      response.sendStatus 200
 
   app.get '*', (request, response, next) ->
     response.render 'index',
