@@ -1,15 +1,15 @@
 module.exports =
 
   [
-      title: 'Facebook Apps'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FfacebookLiveFeature.png?1492527885383",
-      link: "https://glitch.com/facebook"
+      title: 'Tap into Twitter'
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FtwitterBanner.png?1511792112779",
+      link: "https://glitch.com/twitter"
     ,
       title: 'Make WebVR, Reality'
       img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FaframeBanner.png?1508772212312"
       link: 'https://glitch.com/aframe'
     ,
-      title: 'Quickstart Auth Apps'
-      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FuserAuthBanner.png?1508772241832'
-      link: 'https://glitch.com/auth'
+      title: 'Database apps'
+      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FstorageBanner.png?1511792110327'
+      link: 'https://glitch.com/storage'
   ]
