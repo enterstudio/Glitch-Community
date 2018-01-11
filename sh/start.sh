@@ -29,4 +29,5 @@ stylus \
   --compress public/styles.styl \
   --out public/styles.css
 
-coffee server.coffee
+coffee --compile server.coffee .
+node server.js
