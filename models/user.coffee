@@ -6,8 +6,10 @@ field it will be cached based on the id. If the id already
 exists in the cache the same reference to that model will be
 returned.
 
-If the id property is not given the model is not cached.hi
+If the id property is not given the model is not cached.
 ###
+
+console.log "hi"
 
 isuuid = require 'isuuid'
 _ = require 'underscore'
