@@ -1,5 +1,6 @@
 #!/bin/bash
 
+echo "uglification underway"
 uglifyjs public/client.js \
       --compress \
       --mangle \
