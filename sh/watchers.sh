@@ -3,7 +3,7 @@ set -e
 
 coffee --watch --transpile --compile . &
 nodemon --exec "bash sh/compile-jade.sh" --ext jade &
-watchify client.js -o public/client.js &
+watchify client.js -o public/client.js -v &
 nodemon --exec "bash sh/uglify.sh" --watch public/client.js
 stylus \
   --watch \
