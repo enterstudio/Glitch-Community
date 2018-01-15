@@ -9,8 +9,6 @@ returned.
 If the id property is not given the model is not cached.
 ###
 
-console.log "hi"
-
 isuuid = require 'isuuid'
 _ = require 'underscore'
 axios = require 'axios'
