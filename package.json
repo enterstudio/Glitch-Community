@@ -3,7 +3,7 @@
   "version": "0.0.1",
   "description": "Find cool projects and people using Glitch",
   "scripts": {
-    "start": "sh/start.sh"
+    "start": "echo investigating"
   },
   "dependencies": {
     "express": "^4.16.2",
