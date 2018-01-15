@@ -1,15 +1,15 @@
 module.exports =
 
   [
-      title: 'Botkit Building Blocks'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FbotKitFeatureBanner.png?1515405980498"
-      link: 'https://glitch.com/botkit'
+      title: 'Make Virtual Reality, Reality'
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FmozillaAframe.png?1494449169684"
+      link: 'https://glitch.com/aframe'
     ,
-      title: 'Slack Counter Bot'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-slack-slash-bot.svg?1494429489069",
-      link: "https://glitch.com/~slack-wordcounter"
+      title: 'Teach Alexa New Skills'
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Falexa.png?1491426616444"
+      link: "https://glitch.com/~alexa-skill"
     ,    
-      title: 'Twitter Bot Templates'
-      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FbotWikiFeatureBanner.png?1515405985715'
-      link: 'https://glitch.com/botwiki'
+      title: 'Build a Slack Bot'
+      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Ffeatured-slack-glitch-unfurling.png?1489695368717'
+      link: 'https://glitch.com/slack'
   ]
