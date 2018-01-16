@@ -154,15 +154,6 @@ module.exports = (application, userLoginOrId) ->
 
     projects: ->
       self.user().projects()
-      
-    deletedProjects: ->
-      user
-      projectPath = "/projects/#{project.id()}"
-      application.api().delete projectPath
-      .then (response) ->
-        console.log 'project deleted.', project
-      .catch (error) ->
-        console.error 'deleteProject', error
 
     pinnedProjectIds: ->
       self.user().pins().map (pin) ->
@@ -186,8 +177,9 @@ module.exports = (application, userLoginOrId) ->
       'hidden' unless self.user().isAnon()
         
     deletedProjects: ->
-      deletedProjects = self.deletedProjects()
-      ProjectsListPresenter application, "Deleted Projects", deletedProjects  
+      deletedProjects = self.projects().filter (project) ->
+        project.isDeleted()
+      ProjectsListPresenter application, "Deleted Projects", deletedProjects
       
         
   # application.user.observe (newVal) ->
