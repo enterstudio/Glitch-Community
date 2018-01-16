@@ -36,3 +36,17 @@ module.exports = (project, application) ->
     
     removeProjectFromTeam: ->
       application.team().removeProject application, project
+      
+    hiddenUnlessProjectIsDeleted: ->
+      unless project.isDeleted(application)
+        'hidden'
+        
+    hiddenIfProjectIsDeleted: ->
+      if project.isDeleted(application)
+        'hidden'
+      
+    deleteProject: ->
+      application.project().deleteProject application, project
+      
+    undeleteProject: ->
+      application.project().undeleteProject application, project
