@@ -95,7 +95,8 @@ module.exports = Project = (I={}, self=Model(I)) ->
     isDeleted: ->
       # Todo, get a deleted property on the model instead of
       # inferring from the domain name. case 3279766
-      self.domain().endsWith("-deleted")
+      console.log "deleted is", self.deletedAt() 
+      self.deletedAt() != null
       
       
       
