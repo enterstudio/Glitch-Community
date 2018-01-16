@@ -38,15 +38,25 @@ module.exports = (project, application) ->
       application.team().removeProject application, project
       
     hiddenUnlessProjectIsDeleted: ->
-      unless project.isDeleted(application)
+      unless project.isDeleted()
         'hidden'
         
     hiddenIfProjectIsDeleted: ->
-      if project.isDeleted(application)
+      if project.isDeleted()
         'hidden'
       
     deleteProject: ->
-      application.project().deleteProject application, project
+      projectPath = "/projects/#{project.id()}"
+      application.api().delete projectPath
+      .then (response) ->
+        console.log 'project deleted.', project
+      .catch (error) ->
+        console.error 'deleteProject', error
       
     undeleteProject: ->
-      application.project().undeleteProject application, project
+      projectPath = "/projects/#{project.id()}/undelete"
+      application.api().post projectPath
+      .then (response) ->
+        console.log 'project restored!', project
+      .catch (error) ->
+        console.error 'undeleteProject', error

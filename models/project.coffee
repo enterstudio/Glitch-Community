@@ -155,14 +155,6 @@ Project.getSearchResults = (application, query) ->
   .catch (error) ->
     console.error 'getSearchResults', error
     
-Project.deleteProject: (application, project) ->
-  projectPath = "/projects/#{project.id()}"
-  application.api().delete projectPath
-  .then (response) ->
-    console.log 'project deleted.', self.projects()
-  .catch (error) ->
-    console.error 'deleteProject', error
-
 
 Project._cache = cache
 

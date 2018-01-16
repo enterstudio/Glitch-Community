@@ -156,7 +156,13 @@ module.exports = (application, userLoginOrId) ->
       self.user().projects()
       
     deletedProjects: ->
-      self.user().deletedProjects()
+      user
+      projectPath = "/projects/#{project.id()}"
+      application.api().delete projectPath
+      .then (response) ->
+        console.log 'project deleted.', project
+      .catch (error) ->
+        console.error 'deleteProject', error
 
     pinnedProjectIds: ->
       self.user().pins().map (pin) ->
