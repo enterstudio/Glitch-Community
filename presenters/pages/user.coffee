@@ -178,13 +178,15 @@ module.exports = (application, userLoginOrId) ->
         
     deletedProjects: ->
       if !self.isCurrentUser()
-        return
+        return []
       
       try
         deletedProjectsRaw = (await application.api().get "/user/deleted-projects/").data
-        deletedProjects = 
+        deletedProjects = deletedProjectsRaw.map (project) ->
+          project.fetched = true
+          Project(project)
         console.log "got some projects", deletedProjects
-        ProjectsListPresenter application, "Deleted Projects", deletedProjects
+        return ProjectsListPresenter application, "Deleted Projects", deletedProjects
       catch error
         console.error 'Failed to get deleted projects', error
         
