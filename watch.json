@@ -12,10 +12,7 @@
     ],
     "include": [
       "^sh/start.sh$",
-      "\\.coffee$",
-      "\\.jade",
-      "\\.json",
-      "\\.styl"
+      "\\.json"
     ]
   },
   "throttle": 100
