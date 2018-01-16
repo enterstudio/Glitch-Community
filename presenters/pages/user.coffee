@@ -186,7 +186,7 @@ module.exports = (application, userLoginOrId) ->
           project.fetched = true
           Project(project)
         console.log "got some projects", deletedProjects
-        return ProjectsListPresenter application, "Deleted Projects", deletedProjects
+        return ProjectsListPresenter application, "Deleted Projects", deletedProjects 
       catch error
         console.error 'Failed to get deleted projects', error
         
