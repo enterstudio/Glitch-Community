@@ -177,6 +177,33 @@ module.exports = (application, userLoginOrId) ->
       'hidden' unless self.user().isAnon()
         
     deletedProjects: ->
+      if !self.isCurrentUser()
+        Return null
+      
+      projectPath = "/projects/#{project.id()}"
+      application.api().get projectPath
+      .then (response) ->
+        console.log 'project deleted.', project
+      .catch (error) ->
+        console.error 'deleteProject', error
+        
+      deletedProjects = application.api.
+      projects: ->
+      projects = application.currentUser().projects()
+      if application.currentUser().isAnon()
+        projects = projects.slice(0,1)
+      else if application.currentUser().isSignedIn()
+        projects = projects.slice(0,3)      
+      projectIds = projects.map (project) ->
+        id: project.id()
+      application.getProjects projectIds
+      projects.map (project) ->
+        project.isRecentProject = true
+        category = 
+          color: ->
+            undefined
+        ProjectItemPresenter(application, project, category)
+      
       deletedProjects = self.projects().filter (project) ->
         project.isDeleted()
       ProjectsListPresenter application, "Deleted Projects", deletedProjects
