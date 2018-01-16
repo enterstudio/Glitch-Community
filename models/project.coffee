@@ -116,7 +116,7 @@ Project.getProjectsByIds = (api, ids) ->
   .filter (id) ->
     id
   projectIdGroups.forEach (group) ->
-    projectsPath = "projects/byIds?ids=#{group.join(',')}"
+    projectsPath = "projects/byIds?ids=#{group.join(',')}?showDeleted=true"
     api.get projectsPath
     .then ({data}) ->
       data.forEach (datum) ->
