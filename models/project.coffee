@@ -92,10 +92,10 @@ module.exports = Project = (I={}, self=Model(I)) ->
         pin.projectId
       _.contains pins, self.id()
       
-    isDeleted: (application) ->
+    isDeleted: ->
       # Todo, get a deleted property on the model instead of
       # inferring from the domain name. case 3279766
-      self.domain.endsWith("-deleted")
+      self.domain().endsWith("-deleted")
       
       
       

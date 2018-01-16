@@ -39,6 +39,7 @@ module.exports = User = (I={}, self=Model(I)) ->
     description: ""
     initialDescription: ""
     projects: undefined
+    deletedProjects: undefined
     teams: undefined
     thanksCount: 0
     fetched: false
@@ -50,6 +51,7 @@ module.exports = User = (I={}, self=Model(I)) ->
   self.attrObservable "notFound"
   self.attrObservable "localCoverImage"
   self.attrModels 'projects', Project
+  self.attrModels 'deletedProjects', Project
 
   self.extend
 

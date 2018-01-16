@@ -154,6 +154,9 @@ module.exports = (application, userLoginOrId) ->
 
     projects: ->
       self.user().projects()
+      
+    deletedProjects: ->
+      self.user().deletedProjects()
 
     pinnedProjectIds: ->
       self.user().pins().map (pin) ->
@@ -175,6 +178,10 @@ module.exports = (application, userLoginOrId) ->
     
     hiddenUnlessUserIsAnon: ->
       'hidden' unless self.user().isAnon()
+        
+    deletedProjects: ->
+      deletedProjects = self.deletedProjects()
+      ProjectsListPresenter application, "Deleted Projects", deletedProjects  
       
         
   # application.user.observe (newVal) ->
