@@ -93,9 +93,6 @@ module.exports = Project = (I={}, self=Model(I)) ->
       _.contains pins, self.id()
       
     isDeleted: ->
-      # Todo, get a deleted property on the model instead of
-      # inferring from the domain name. case 3279766
-      console.log "deleted is", self.deletedAt() 
       self.deletedAt() != null
       
       
@@ -157,6 +154,14 @@ Project.getSearchResults = (application, query) ->
       Project(datum).update(datum).pushSearchResult(application)
   .catch (error) ->
     console.error 'getSearchResults', error
+    
+Project.deleteProject: (application, project) ->
+  projectPath = "/projects/#{project.id()}"
+  application.api().delete projectPath
+  .then (response) ->
+    console.log 'project deleted.', self.projects()
+  .catch (error) ->
+    console.error 'deleteProject', error
 
 
 Project._cache = cache
