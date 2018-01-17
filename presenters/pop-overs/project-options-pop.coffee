@@ -38,10 +38,12 @@ module.exports = (project, application) ->
       application.team().removeProject application, project
       
     hiddenUnlessProjectIsDeleted: ->
+      console.log project
       unless project.isDeleted()
         'hidden'
         
     hiddenIfProjectIsDeleted: ->
+      console.log project
       if project.isDeleted()
         'hidden'
       
