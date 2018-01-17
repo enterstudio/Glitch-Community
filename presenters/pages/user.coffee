@@ -20,6 +20,8 @@ module.exports = (application, userLoginOrId) ->
     newDescription: Observable ""
     editingDescription: Observable false
     
+    deletedProjects: Ob
+    
     userLoginOrId: ->
       decodeURI userLoginOrId
 
