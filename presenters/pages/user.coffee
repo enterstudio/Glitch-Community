@@ -178,22 +178,23 @@ module.exports = (application, userLoginOrId) ->
     hiddenUnlessUserIsAnon: ->
       'hidden' unless self.user().isAnon()
      
-    deletedProjects: ->
+    deletedProjects: (projects)->
       if !self.isCurrentUser()
         return
       
-      try
-        deletedProjectsRaw = (await application.api().get "/user/deleted-projects/").data
-        deletedProjects = deletedProjectsRaw.map (project) ->
-          project.fetched = true
-          Project(project)
+      if !projects
+        try
+          deletedProjectsRaw = (await application.api().get "/user/deleted-projects/").data
+          deletedProjects = deletedProjectsRaw.map (project) ->
+            project.fetched = true
+            Project(project)
+
+          self.deletedProjectsCache(deletedProjects)
+          console.log "got some projects", deletedProjects
+        catch error
+          console.error 'Failed to get deleted projects', error
         
-        self.deletedProjectsCache(deletedProjects)
-        console.log "got some projects", deletedProjects
-      catch error
-        console.error 'Failed to get deleted projects', error
-        
-      ProjectsListPresenter application, "Deleted Projects", self.deletedProjectsCache
+      ProjectsListPresenter application, "Deleted Projects", user.deletedProect()
 
       
       
