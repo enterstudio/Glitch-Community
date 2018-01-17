@@ -164,6 +164,7 @@ module.exports = (application, userLoginOrId) ->
     recentProjects: ->
       recentProjects = self.projects().filter (project) ->
         !_.contains self.pinnedProjectIds(), project.id()
+      console.log 'recentProjects', recentProjects
       ProjectsListPresenter application, "Recent Projects", recentProjects  
     
     pinnedProjectsList: ->
@@ -178,23 +179,22 @@ module.exports = (application, userLoginOrId) ->
     hiddenUnlessUserIsAnon: ->
       'hidden' unless self.user().isAnon()
      
-    deletedProjects: (projects)->
+    deletedProjects: ()->
       if !self.isCurrentUser()
         return
       
-      if !projects
-        try
-          deletedProjectsRaw = (await application.api().get "/user/deleted-projects/").data
-          deletedProjects = deletedProjectsRaw.map (project) ->
-            project.fetched = true
-            Project(project)
+      (application.api().get "/user/deleted-projects/").then resp) -> 
+        deletedProjects = deletedProjectsRaw.map (project) ->
+          project.fetched = true
+          Project(project).update(project)
 
-          self.deletedProjectsCache(deletedProjects)
-          console.log "got some projects", deletedProjects
-        catch error
-          console.error 'Failed to get deleted projects', error
-        
-      ProjectsListPresenter application, "Deleted Projects", user.deletedProect()
+        self.deletedProjectsCache(deletedProjects)
+      console.log "got some projects", deletedProjects
+        console.error 'Failed to get deleted projects', error
+      
+      console.log user
+      console.log 'self.deletedProjectsCache()', self.deletedProjectsCache()
+      ProjectsListPresenter application, "Deleted Projects", self.deletedProjectsCache()
 
       
       

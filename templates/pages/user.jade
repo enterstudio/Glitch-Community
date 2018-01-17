@@ -43,6 +43,5 @@ main.user-page(role="main")
     span(class=@hiddenIfNotCurrentUserAndNoPins)
       = @pinnedProjectsList
     = @recentProjects
-    - x = @deletedProjectsCache()
-      = @deletedProjects(x)
+    = @deletedProjects
 
