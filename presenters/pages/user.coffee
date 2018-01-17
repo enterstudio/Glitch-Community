@@ -178,11 +178,7 @@ module.exports = (application, userLoginOrId) ->
     hiddenUnlessUserIsAnon: ->
       'hidden' unless self.user().isAnon()
      
-    deletedProjects -> 
-      getDeletedProjects
-      ProjectsListPresenter application, "Deleted Projects", self.deletedProjectsCache
-      
-    getDeletedProjects: ->
+    deletedProjects: ->
       if !self.isCurrentUser()
         return
       
@@ -192,11 +188,13 @@ module.exports = (application, userLoginOrId) ->
           project.fetched = true
           Project(project)
         
-        self.deletedProjects(deletedProjects)
+        self.deletedProjectsCache(deletedProjects)
         console.log "got some projects", deletedProjects
       catch error
         console.error 'Failed to get deleted projects', error
         
+      ProjectsListPresenter application, "Deleted Projects", self.deletedProjectsCache
+
       
       
         
