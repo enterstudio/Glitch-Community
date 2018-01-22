@@ -1,14 +1,30 @@
 ProjectItemPresenter = require "./project-item"
-ProjectsListTemplate = require "../templates/projects-list"
+DeletedProjectsListTemplate = require "../templates/deleted-projects-list"
 
 module.exports = (application, title, projects) ->
 
   self =
+  
+    deletedProjectsCache: Observable []
 
-    sectionTitle: title
+    sectionTitle: "Deleted Projects"
 
     projects: ->
-      projects.map (project) ->
+      if self.deletedProjectsCache().length == 0 
+        application.api().get("/user/deleted-projects/").then (response) -> 
+          console.log(response)
+          deletedProjectsRaw = response.data
+          deletedProjects = deletedProjectsRaw.map (project) ->
+            project.fetched = true
+            Project(project).update(project)
+
+          self.deletedProjectsCache(deletedProjects)
+          console.log "got some projects", deletedProjects
+        .catch (error) -> 
+          console.error 'Failed to get deleted projects', error
+      
+      console.log 'self.deletedProjectsCache()', self.deletedProjectsCache()
+      self.deletedProjectsCache().map (project) ->
         ProjectItemPresenter(application, project, {})
 
     visibleIfNoPins: ->
@@ -19,4 +35,4 @@ module.exports = (application, title, projects) ->
       'hidden' unless title is 'Pinned Projects'
 
 
-  return ProjectsListTemplate self
+  return DeletedProjectsListTemplate self
