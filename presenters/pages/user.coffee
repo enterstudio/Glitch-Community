@@ -7,7 +7,7 @@ md = require('markdown-it')
 .disable(['image'])
 
 UserTemplate = require "../../templates/pages/user"
-DeletedProjectsTemplate = require "../templates/deleted-projects"
+DeletedProjectsTemplate = require "../../templates/deleted-projects"
 LayoutPresenter = require "../layout"
 CtaButtonsPresenter = require "../cta-buttons"
 ProjectsListPresenter = require "../projects-list"
@@ -177,15 +177,8 @@ module.exports = (application, userLoginOrId) ->
     hiddenUnlessUserIsAnon: ->
       'hidden' unless self.user().isAnon()
      
-    deletedProjects: ()->
-      if !self.isCurrentUser()
-        return
-
-      DeletedProjectsPresenter application, self
-      
-    DeletedProjectsTemplate = require "../templates/deleted-projects"
-    deletedProjects: ->
-      return "fishsticks"
+    deletedProjectsCache: Observable []
+    getDeletedProjects: ->
       if self.deletedProjectsCache().length == 0 
         application.api().get("/user/deleted-projects/").then (response) -> 
           console.log(response)
@@ -200,13 +193,14 @@ module.exports = (application, userLoginOrId) ->
           console.error 'Failed to get deleted projects', error
       
       console.log 'self.deletedProjectsCache()', self.deletedProjectsCache()
-
-      parent.projects().map (project) ->
-        ProjectItemPresenter(application, project, {})
-
-
-   DeletedProjectsTemplate self
-
+      
+    deletedProjects: ->
+      if !self.isCurrentUser()
+        return
+      
+      self.getDeletedProjects()
+      
+      DeletedProjectsTemplate self 
       
       
         
