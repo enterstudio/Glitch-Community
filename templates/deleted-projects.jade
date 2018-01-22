@@ -3,9 +3,7 @@ article.projects
     span= "Deleted Projects"
   ul.projects-container
     - @deletedProjectsObservable.forEach (project) ->
-      li
-        img.avatar(src=project.avatar alt="#{@project.domain()} avatar")
-        button "Undelete
-          span.private-project-badge
-          .project-name=@project.domain
-      li= JSON.stringify project
+      li.deleted-project
+        img.avatar(src=project.avatar alt="#{project.domain()} avatar")
+        = project.domain
+        button Undelete
