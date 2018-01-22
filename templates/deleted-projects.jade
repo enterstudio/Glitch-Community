@@ -1,6 +1,8 @@
 article.projects
   h2
     span Deleted Projects
+      span.emoji.pushpin.emoji-in-title(class=@hiddenUnlessTitleIsPinned)
+    span Deleted Projects
       span.emoji.bomb
       span.down-arrow
       .project-options.button-borderless.opens-pop-over.hidden(click=@showProjectOptionsPop class=@visibleIfUserHasProjectOptions)
