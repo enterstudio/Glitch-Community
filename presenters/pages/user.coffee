@@ -192,7 +192,7 @@ module.exports = (application, userLoginOrId) ->
           #  Project(project).update(project)
 
           self.deletedProjectsCache(response.data)
-          console.log "got some projects", deletedProjects
+          console.log "got some projects", response.data
         .catch (error) -> 
           console.error 'Failed to get deleted projects', error
       
@@ -200,7 +200,7 @@ module.exports = (application, userLoginOrId) ->
       
     deletedProjects: ->
       self.getDeletedProjects()
-      DeletedProjectsTemplate self.deletedProjectsCache() 
+      DeletedProjectsTemplate { deletedProjects: self.deletedProjectsCache() }
       
       
         
