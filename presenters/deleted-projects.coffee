@@ -1,3 +1,4 @@
+Observable = require 'o_0'
 ProjectItemPresenter = require "./project-item"
 DeletedProjectsTemplate = require "../templates/deleted-projects"
 
@@ -5,9 +6,7 @@ module.exports = (application, parent) ->
 
   self =
   
-    deletedProjectsCache: [] 
-    wat: Observable []
-
+    deletedProjectsCache: Observable [] 
 
     sectionTitle: "Deleted Projects"
 
@@ -27,8 +26,9 @@ module.exports = (application, parent) ->
           console.error 'Failed to get deleted projects', error
       
       console.log 'self.deletedProjectsCache()', self.deletedProjectsCache()
-      self.deletedProjectsCache().map (project) ->
+
+      parent.projects().map (project) ->
         ProjectItemPresenter(application, project, {})
 
 
-      return DeletedProjectsTemplate self
+  return DeletedProjectsTemplate self
