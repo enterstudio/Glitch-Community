@@ -182,6 +182,7 @@ module.exports = (application, userLoginOrId) ->
       # restore the project to self.projects(), 
       # remove from deletedProjectsObservable, 
       # and animate
+      return
      
     deletedProjectsObservable: Observable []
     getDeletedProjects: ->
@@ -202,8 +203,6 @@ module.exports = (application, userLoginOrId) ->
         console.error 'Failed to get deleted projects', error
             
     deletedProjects: ->
-      
-      
       DeletedProjectsTemplate self
       
       
