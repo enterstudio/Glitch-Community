@@ -5,7 +5,9 @@ module.exports = (application, parent) ->
 
   self =
   
-    deletedProjectsCache: Observable []
+    deletedProjectsCache: [] 
+    wat: Observable []
+
 
     sectionTitle: "Deleted Projects"
 
@@ -28,11 +30,5 @@ module.exports = (application, parent) ->
       self.deletedProjectsCache().map (project) ->
         ProjectItemPresenter(application, project, {})
 
-    visibleIfNoPins: ->
-        'visible'
 
-    hiddenUnlessTitleIsPinned: ->
-      'hidden' unless title is 'Pinned Projects'
-
-
-  return DeletedProjectsTemplate self
+      return DeletedProjectsTemplate self
