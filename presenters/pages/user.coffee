@@ -179,15 +179,19 @@ module.exports = (application, userLoginOrId) ->
      
     deletedProjectsCache: Observable []
     getDeletedProjects: ->
+      console.log("Get current projects");
+      if !self.isCurrentUser()
+        return
+      
       if self.deletedProjectsCache().length == 0 
         application.api().get("/user/deleted-projects/").then (response) -> 
           console.log(response)
-          deletedProjectsRaw = response.data
-          deletedProjects = deletedProjectsRaw.map (project) ->
-            project.fetched = true
-            Project(project).update(project)
+          #deletedProjectsRaw = response.data
+          #deletedProjects = deletedProjectsRaw.map (project) ->
+          #  project.fetched = true
+          #  Project(project).update(project)
 
-          self.deletedProjectsCache(deletedProjects)
+          self.deletedProjectsCache(response.data)
           console.log "got some projects", deletedProjects
         .catch (error) -> 
           console.error 'Failed to get deleted projects', error
@@ -195,12 +199,8 @@ module.exports = (application, userLoginOrId) ->
       console.log 'self.deletedProjectsCache()', self.deletedProjectsCache()
       
     deletedProjects: ->
-      if !self.isCurrentUser()
-        return
-      
       self.getDeletedProjects()
-      
-      DeletedProjectsTemplate self 
+      DeletedProjectsTemplate self.deletedProjectsCache() 
       
       
         
@@ -209,5 +209,4 @@ module.exports = (application, userLoginOrId) ->
   #     self.setInitialUserDescription()
         
   content = UserTemplate(self)
-
   return LayoutPresenter application, content
