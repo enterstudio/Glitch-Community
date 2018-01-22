@@ -7,10 +7,10 @@ md = require('markdown-it')
 .disable(['image'])
 
 UserTemplate = require "../../templates/pages/user"
+DeletedProjectsTemplate = require "../templates/deleted-projects"
 LayoutPresenter = require "../layout"
 CtaButtonsPresenter = require "../cta-buttons"
 ProjectsListPresenter = require "../projects-list"
-DeletedProjectsPresenter = require "../deleted-projects"
 assetUtils = require('../../utils/assets')(application)
 
 module.exports = (application, userLoginOrId) ->
@@ -182,6 +182,30 @@ module.exports = (application, userLoginOrId) ->
         return
 
       DeletedProjectsPresenter application, self
+      
+    DeletedProjectsTemplate = require "../templates/deleted-projects"
+    deletedProjects: ->
+      return "fishsticks"
+      if self.deletedProjectsCache().length == 0 
+        application.api().get("/user/deleted-projects/").then (response) -> 
+          console.log(response)
+          deletedProjectsRaw = response.data
+          deletedProjects = deletedProjectsRaw.map (project) ->
+            project.fetched = true
+            Project(project).update(project)
+
+          self.deletedProjectsCache(deletedProjects)
+          console.log "got some projects", deletedProjects
+        .catch (error) -> 
+          console.error 'Failed to get deleted projects', error
+      
+      console.log 'self.deletedProjectsCache()', self.deletedProjectsCache()
+
+      parent.projects().map (project) ->
+        ProjectItemPresenter(application, project, {})
+
+
+   DeletedProjectsTemplate self
 
       
       
