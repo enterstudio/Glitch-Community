@@ -2,4 +2,6 @@ article.projects
   h2
     span= "Deleted Projects"
   ul.projects-container
-    = @domain
+    - [1,2,3].forEach (ix) ->
+      li= @ix
+    @deletedProjects.length
