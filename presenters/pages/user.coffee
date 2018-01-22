@@ -10,6 +10,7 @@ UserTemplate = require "../../templates/pages/user"
 LayoutPresenter = require "../layout"
 CtaButtonsPresenter = require "../cta-buttons"
 ProjectsListPresenter = require "../projects-list"
+DeletedProjectsPresenter = require "../deleted-projects-list"
 assetUtils = require('../../utils/assets')(application)
 
 module.exports = (application, userLoginOrId) ->
@@ -195,7 +196,7 @@ module.exports = (application, userLoginOrId) ->
           console.error 'Failed to get deleted projects', error
       
       console.log 'self.deletedProjectsCache()', self.deletedProjectsCache()
-      ProjectsListPresenter application, "Deleted Projects", self.deletedProjectsCache()
+      DeletedProjectsPresenter application, "Deleted Projects", self.deletedProjectsCache()
 
       
       
