@@ -176,6 +176,12 @@ module.exports = (application, userLoginOrId) ->
     
     hiddenUnlessUserIsAnon: ->
       'hidden' unless self.user().isAnon()
+        
+    undeleteProject: -> 
+      # hit the api,
+      # restore the project to self.projects(), 
+      # remove from deletedProjectsObservable, 
+      # and animate
      
     deletedProjectsObservable: Observable []
     getDeletedProjects: ->
@@ -196,7 +202,8 @@ module.exports = (application, userLoginOrId) ->
         console.error 'Failed to get deleted projects', error
             
     deletedProjects: ->
-      self.getDeletedProjects()
+      
+      
       DeletedProjectsTemplate self
       
       
