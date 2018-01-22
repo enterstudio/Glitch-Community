@@ -200,7 +200,7 @@ module.exports = (application, userLoginOrId) ->
       
     deletedProjects: ->
       self.getDeletedProjects()
-      DeletedProjectsTemplate { deletedProjects: self.deletedProjectsCache() }
+      DeletedProjectsTemplate self
       
       
         
