@@ -177,27 +177,24 @@ module.exports = (application, userLoginOrId) ->
     hiddenUnlessUserIsAnon: ->
       'hidden' unless self.user().isAnon()
      
-    deletedProjectsCache: Observable []
+    deletedProjectsObservable: Observable []
     getDeletedProjects: ->
       console.log("Get current projects");
       if !self.isCurrentUser()
         return
       
-      if self.deletedProjectsCache().length == 0 
-        application.api().get("/user/deleted-projects/").then (response) -> 
-          console.log(response)
-          #deletedProjectsRaw = response.data
-          #deletedProjects = deletedProjectsRaw.map (project) ->
-          #  project.fetched = true
-          #  Project(project).update(project)
+      application.api().get("/user/deleted-projects/").then (response) -> 
+        console.log(response)
+        deletedProjectsRaw = response.data
+        deletedProjects = deletedProjectsRaw.map (project) ->
+          project.fetched = true
+          Project(project).update(project)
 
-          self.deletedProjectsCache(response.data)
-          console.log "got some projects", response.data
-        .catch (error) -> 
-          console.error 'Failed to get deleted projects', error
-      
-      console.log 'self.deletedProjectsCache()', self.deletedProjectsCache()
-      
+        self.deletedProjectsObservable(deletedProjects)
+        console.log "got some projects", response.data
+      .catch (error) -> 
+        console.error 'Failed to get deleted projects', error
+            
     deletedProjects: ->
       self.getDeletedProjects()
       DeletedProjectsTemplate self

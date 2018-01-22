@@ -2,5 +2,10 @@ article.projects
   h2
     span= "Deleted Projects"
   ul.projects-container
-    - @deletedProjectsCache.forEach (project) ->
-      li= project.domain
+    - @deletedProjectsObservable.forEach (project) ->
+      li
+        img.avatar(src=project.avatar alt="#{@project.domain()} avatar")
+        button "Undelete
+          span.private-project-badge
+          .project-name=@project.domain
+      li= JSON.stringify project
