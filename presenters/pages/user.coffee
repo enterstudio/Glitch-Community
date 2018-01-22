@@ -10,7 +10,7 @@ UserTemplate = require "../../templates/pages/user"
 LayoutPresenter = require "../layout"
 CtaButtonsPresenter = require "../cta-buttons"
 ProjectsListPresenter = require "../projects-list"
-DeletedProjectsPresenter = require "../deleted-projects-list"
+DeletedProjectsPresenter = require "../deleted-projects"
 assetUtils = require('../../utils/assets')(application)
 
 module.exports = (application, userLoginOrId) ->
@@ -181,7 +181,7 @@ module.exports = (application, userLoginOrId) ->
       if !self.isCurrentUser()
         return
 
-      DeletedProjectsPresenter application, self.projects
+      DeletedProjectsPresenter application, self
 
       
       

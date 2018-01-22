@@ -1,7 +1,7 @@
 ProjectItemPresenter = require "./project-item"
-DeletedProjectsListTemplate = require "../templates/deleted-projects-list"
+DeletedProjectsTemplate = require "../templates/deleted-projects"
 
-module.exports = (application, title, projectsObservable) ->
+module.exports = (application, parent) ->
 
   self =
   
@@ -9,7 +9,8 @@ module.exports = (application, title, projectsObservable) ->
 
     sectionTitle: "Deleted Projects"
 
-    projects: ->
+    deletedProjects: ->
+      return "fishsticks"
       if self.deletedProjectsCache().length == 0 
         application.api().get("/user/deleted-projects/").then (response) -> 
           console.log(response)
@@ -34,4 +35,4 @@ module.exports = (application, title, projectsObservable) ->
       'hidden' unless title is 'Pinned Projects'
 
 
-  return DeletedProjectsListTemplate self
+  return DeletedProjectsTemplate self

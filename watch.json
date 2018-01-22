@@ -11,7 +11,7 @@
       "^test/"
     ],
     "include": [
-      "^sh/.sh$",
+      "^sh/start.sh$",
       "\\.json"
     ]
   },
