@@ -1,7 +1,7 @@
 ProjectItemPresenter = require "./project-item"
 DeletedProjectsListTemplate = require "../templates/deleted-projects-list"
 
-module.exports = (application, title, projects) ->
+module.exports = (application, title, projectsObservable) ->
 
   self =
   
@@ -28,7 +28,6 @@ module.exports = (application, title, projects) ->
         ProjectItemPresenter(application, project, {})
 
     visibleIfNoPins: ->
-      if title is 'Pinned Projects' and projects.length is 0
         'visible'
 
     hiddenUnlessTitleIsPinned: ->

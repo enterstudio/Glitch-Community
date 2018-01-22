@@ -181,7 +181,7 @@ module.exports = (application, userLoginOrId) ->
       if !self.isCurrentUser()
         return
 
-      DeletedProjectsPresenter application
+      DeletedProjectsPresenter application, self.projects
 
       
       
