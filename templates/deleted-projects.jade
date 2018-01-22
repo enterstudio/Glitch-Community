@@ -6,4 +6,4 @@ article.projects
       li.deleted-project
         img.avatar(src=project.avatar alt="#{project.domain()} avatar")
         = project.domain
-        button Undelete
+        button(click=@undeleteProject) Undelete
