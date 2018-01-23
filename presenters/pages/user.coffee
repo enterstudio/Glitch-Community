@@ -184,10 +184,8 @@ module.exports = (application, userLoginOrId) ->
       # restore the project to self.projects(),
       
       # remove project from deletedProjectsObservable, 
-      projects = self.deletedProjectsObservable()
-      index = projects.indexOf(project)
-      projects.splice(index, 1)
-      self.deletedProjectsObservable([])
+      index = self.deletedProjectsObservable.indexOf(project)
+      self.deletedProjectsObservable.splice(index, 1)
       # and animate
       return
      
