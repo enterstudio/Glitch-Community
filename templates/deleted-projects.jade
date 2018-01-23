@@ -1,3 +1,5 @@
+- self = this
+
 article.projects
   h2
     span Deleted Projects
@@ -10,4 +12,4 @@ article.projects
       li.deleted-project
         img.avatar(src=project.avatar alt="#{project.domain()} avatar")
         = project.domain
-        button(click=@undeleteProject) Undelete
+        button(click=self.undeleteProject) Undelete
