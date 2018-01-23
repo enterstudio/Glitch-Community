@@ -180,11 +180,14 @@ module.exports = (application, userLoginOrId) ->
     undeleteProject: (project) -> 
       console.log("Undelete request received!", project)
       # hit the api to actually undelete the project
-      project.undelete()
+      #project.undelete()
       # restore the project to self.projects(),
       
-      # remove from deletedProjectsObservable, 
-      
+      # remove project from deletedProjectsObservable, 
+      projects = self.deletedProjectsObservable()
+      index = projects.indexOf(project)
+      projects.splice(index, 1)
+      self.deletedProjectsObservable([])
       # and animate
       return
      
