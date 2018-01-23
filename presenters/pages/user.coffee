@@ -177,7 +177,7 @@ module.exports = (application, userLoginOrId) ->
     hiddenUnlessUserIsAnon: ->
       'hidden' unless self.user().isAnon()
         
-    undeleteProject: -> 
+    undeleteProject: (project) -> 
       # hit the api,
       # restore the project to self.projects(), 
       # remove from deletedProjectsObservable, 
@@ -195,7 +195,10 @@ module.exports = (application, userLoginOrId) ->
         deletedProjectsRaw = response.data
         deletedProjects = deletedProjectsRaw.map (project) ->
           project.fetched = true
-          Project(project).update(project)
+          projectModel = Project(project).update(project)
+          # Give the project access to this presenter:
+          projectModel.undelete = ->
+            self.undeleteProject(projectModel)
 
         self.deletedProjectsObservable(deletedProjects)
         console.log "got some projects", response.data
