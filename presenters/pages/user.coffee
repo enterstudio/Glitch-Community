@@ -192,13 +192,10 @@ module.exports = (application, userLoginOrId) ->
       index = self.deletedProjectsObservable.indexOf(project)
       self.deletedProjectsObservable.splice(index, 1)
 
-        # Fetch the recovered project and add it to self.projects()
-        
-      
-      # restore the project to self.projects(),
-      
-      
-      
+      debugger
+      # Fetch the recovered project and add it to self.projects()
+      projects = application.getProjects [project]
+      self.projects.unshift(projects[0])      
       
       return
      

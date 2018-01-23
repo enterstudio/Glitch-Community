@@ -91,10 +91,7 @@ module.exports = Project = (I={}, self=Model(I)) ->
       pins = application.team().pins().map (pin) ->
         pin.projectId
       _.contains pins, self.id()
-      
-    isDeleted: ->
-      self.deletedAt() != null
-      
+           
     delete: ->
       projectPath = "/projects/#{self.id()}"
       return new Promise (resolve, reject) ->
@@ -125,6 +122,17 @@ module.exports = Project = (I={}, self=Model(I)) ->
 
   return self
 
+Project.getProject(api, id) ->
+  projectsPath = "projects/byIds?ids=#{group.join(',')}"
+  api.get projectsPath
+  .then ({data}) ->
+    data.forEach (datum) ->
+      datum.fetched = true
+      Project(datum).update(datum)
+    ids.map (id) ->
+      Project id: id
+  .catch (error) ->
+      console.error "getProjectsByIds", error
 
 Project.getProjectsByIds = (api, ids) ->
   NUMBER_OF_PROJECTS_PER_REQUEST = 40
@@ -139,7 +147,7 @@ Project.getProjectsByIds = (api, ids) ->
   .filter (id) ->
     id
   projectIdGroups.forEach (group) ->
-    projectsPath = "projects/byIds?ids=#{group.join(',')}&showDeleted=true"
+    projectsPath = "projects/byIds?ids=#{group.join(',')}"
     api.get projectsPath
     .then ({data}) ->
       data.forEach (datum) ->
