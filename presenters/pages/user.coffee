@@ -20,6 +20,7 @@ module.exports = (application, userLoginOrId) ->
     
     newDescription: Observable ""
     editingDescription: Observable false
+    deletedProjectsObservable: Observable []
     
     userLoginOrId: ->
       decodeURI userLoginOrId
@@ -185,29 +186,26 @@ module.exports = (application, userLoginOrId) ->
       $(projectContainer).addClass('slide-up')
       
       # hit the api to actually undelete the project
-      await project.undelete
-      
-      # Now actually update the deleted projects observer
-      # (This bought us time for the animation to finish)
-      index = self.deletedProjectsObservable.indexOf(project)
-      self.deletedProjectsObservable.splice(index, 1)
+      project.undelete().then ->
+        # Now actually update the deleted projects observer
+        # (This bought us time for the animation to finish)
+        index = self.deletedProjectsObservable.indexOf(project)
+        self.deletedProjectsObservable.splice(index, 1)
 
-      # Fetch the recovered project and add it to self.projects()
-      #restoredProject = await application.getProject project.id
-      # ...Just fetch a project and give it back to  he caller.
-      projectsPath = "projects/byIds?ids=#{project.id()}"
-      application.api().get projectsPath
-      .then ({data}) ->
-        rawProject = data[0]
-        rawProject.fetched = true
-        restoredProject = Project(rawProject).update(rawProject)
-        self.projects.unshift(restoredProject)      
-      .catch (error) ->
-          console.error "getProject", error
+        # Fetch the recovered project and add it to self.projects()
+        #restoredProject = await application.getProject project.id
+        # ...Just fetch a project and give it back to  he caller.
+        projectsPath = "projects/byIds?ids=#{project.id()}"
+        application.api().get projectsPath
+        .then ({data}) ->
+          rawProject = data[0]
+          rawProject.fetched = true
+          restoredProject = Project(rawProject).update(rawProject)
+          self.user().projects.unshift(restoredProject)      
+        .catch (error) ->
+            console.error "getProject", error
       
-      return
-     
-    deletedProjectsObservable: Observable []
+
     getDeletedProjects: ->
       console.log("Get current projects");
       if !self.isCurrentUser()
