@@ -182,7 +182,12 @@ module.exports = (application, userLoginOrId) ->
       
       # animate
       projectContainer = event.target.closest 'li'
-      $(projectContainer).addClass('slide-up').promise().done () -> console.log("fin")
+      $(projectContainer).addClass('slide-up').one "transitionend", () -> 
+        # Now that animation has completed,
+        # remove project from deletedProjectsObservable, 
+        console.log "transition end"
+        #index = self.deletedProjectsObservable.indexOf(project)
+        #self.deletedProjectsObservable.splice(index, 1)
       
       # hit the api to actually undelete the project
       project.undelete()
@@ -190,9 +195,7 @@ module.exports = (application, userLoginOrId) ->
       # restore the project to self.projects(),
       
       
-      # remove project from deletedProjectsObservable, 
-      #index = self.deletedProjectsObservable.indexOf(project)
-      #self.deletedProjectsObservable.splice(index, 1)
+      
       
       return
      
