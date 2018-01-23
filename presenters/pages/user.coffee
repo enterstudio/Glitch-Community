@@ -187,6 +187,7 @@ module.exports = (application, userLoginOrId) ->
       index = self.deletedProjectsObservable.indexOf(project)
       self.deletedProjectsObservable.splice(index, 1)
       # and animate
+      
       return
      
     deletedProjectsObservable: Observable []

@@ -47,18 +47,9 @@ module.exports = (project, application) ->
       if project.isDeleted()
         'hidden'
       
-    deleteProject: ->
-      projectPath = "/projects/#{project.id()}"
-      application.api().delete projectPath
-      .then (response) ->
-        console.log 'project deleted.', project
-      .catch (error) ->
-        console.error 'deleteProject', error
+    deleteProject: (event) ->
+      projectContainer = event.target.closest 'li'
+      application.closeAllPopOvers()
+      $(projectContainer).addClass 'slide-down'
       
-    undeleteProject: ->
-      projectPath = "/projects/#{project.id()}/undelete"
-      application.api().post projectPath
-      .then (response) ->
-        console.log 'project restored!', project
-      .catch (error) ->
-        console.error 'undeleteProject', error
+      project.delete
