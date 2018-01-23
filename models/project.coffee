@@ -96,18 +96,18 @@ module.exports = Project = (I={}, self=Model(I)) ->
       self.deletedAt() != null
       
     delete: ->
-      projectPath = "/projects/#{project.id()}"
+      projectPath = "/projects/#{self.id()}"
       application.api().delete projectPath
       .then (response) ->
-        console.log 'project deleted.', project
+        console.log 'project deleted.', self
       .catch (error) ->
         console.error 'deleteProject', error
       
     undelete: ->
-      projectPath = "/projects/#{project.id()}/undelete"
+      projectPath = "/projects/#{self.id()}/undelete"
       application.api().post projectPath
       .then (response) ->
-        console.log 'project restored!', project
+        console.log 'project restored!', self
       .catch (error) ->
         console.error 'undeleteProject', error
       

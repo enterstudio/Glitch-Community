@@ -179,17 +179,20 @@ module.exports = (application, userLoginOrId) ->
         
     undeleteProject: (project, event) -> 
       console.log("Undelete request received!", project)
+      
+      # animate
+      projectContainer = event.target.closest 'li'
+      $(projectContainer).addClass('slide-up').promise().done () -> console.log("fin")
+      
       # hit the api to actually undelete the project
       project.undelete()
+      
       # restore the project to self.projects(),
       
-      # remove project from deletedProjectsObservable, 
-      index = self.deletedProjectsObservable.indexOf(project)
-      self.deletedProjectsObservable.splice(index, 1)
       
-      # and animate
-      projectContainer = event.target.closest 'li'
-      $(projectContainer).addClass 'slide-up'
+      # remove project from deletedProjectsObservable, 
+      #index = self.deletedProjectsObservable.indexOf(project)
+      #self.deletedProjectsObservable.splice(index, 1)
       
       return
      
