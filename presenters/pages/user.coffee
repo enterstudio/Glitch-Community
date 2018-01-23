@@ -194,8 +194,20 @@ module.exports = (application, userLoginOrId) ->
 
       debugger
       # Fetch the recovered project and add it to self.projects()
-      projects = application.getProjects [project]
-      self.projects.unshift(projects[0])      
+      restoredProject = await application.getProject project.id
+      # ...Just fetch a project and give it back to  he caller.
+Project.getProjectById = (api, id) ->
+  projectsPath = "projects/byIds?ids=#{id}"
+  return new Promise (resolve, reject) ->
+    api.get projectsPath
+    .then ({data}) ->
+      rawProject = data[0]
+      rawProject.fetched = true
+      resolve Project(rawProject).update(rawProject)
+    .catch (error) ->
+        console.error "getProject", error
+        reject error
+      self.projects.unshift(restoredProject)      
       
       return
      

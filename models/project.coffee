@@ -122,18 +122,7 @@ module.exports = Project = (I={}, self=Model(I)) ->
 
   return self
 
-Project.getProject(api, id) ->
-  projectsPath = "projects/byIds?ids=#{group.join(',')}"
-  api.get projectsPath
-  .then ({data}) ->
-    data.forEach (datum) ->
-      datum.fetched = true
-      Project(datum).update(datum)
-    ids.map (id) ->
-      Project id: id
-  .catch (error) ->
-      console.error "getProjectsByIds", error
-
+# Fetch projects and populate them into the local cache
 Project.getProjectsByIds = (api, ids) ->
   NUMBER_OF_PROJECTS_PER_REQUEST = 40
   newProjectIds = ids.filter (id) ->
