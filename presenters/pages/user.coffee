@@ -177,16 +177,19 @@ module.exports = (application, userLoginOrId) ->
     hiddenUnlessUserIsAnon: ->
       'hidden' unless self.user().isAnon()
         
-    undeleteProject: (project) -> 
+    undeleteProject: (project, event) -> 
       console.log("Undelete request received!", project)
       # hit the api to actually undelete the project
-      #project.undelete()
+      project.undelete()
       # restore the project to self.projects(),
       
       # remove project from deletedProjectsObservable, 
       index = self.deletedProjectsObservable.indexOf(project)
       self.deletedProjectsObservable.splice(index, 1)
+      
       # and animate
+      projectContainer = event.target.closest 'li'
+      $(projectContainer).addClass 'slide-up'
       
       return
      
@@ -203,8 +206,8 @@ module.exports = (application, userLoginOrId) ->
           projectRaw.fetched = true
           project = Project(projectRaw).update(projectRaw)
           # Give the project access to this presenter:
-          project.presenterUndelete = ->
-            self.undeleteProject(project)
+          project.presenterUndelete = (event) ->
+            self.undeleteProject(project, event)
           return project
 
         self.deletedProjectsObservable(deletedProjects)

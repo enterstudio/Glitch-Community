@@ -36,17 +36,7 @@ module.exports = (project, application) ->
     
     removeProjectFromTeam: ->
       application.team().removeProject application, project
-      
-    hiddenUnlessProjectIsDeleted: ->
-      console.log project
-      unless project.isDeleted()
-        'hidden'
-        
-    hiddenIfProjectIsDeleted: ->
-      console.log project
-      if project.isDeleted()
-        'hidden'
-      
+                  
     deleteProject: (event) ->
       projectContainer = event.target.closest 'li'
       application.closeAllPopOvers()
