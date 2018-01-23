@@ -192,22 +192,18 @@ module.exports = (application, userLoginOrId) ->
       index = self.deletedProjectsObservable.indexOf(project)
       self.deletedProjectsObservable.splice(index, 1)
 
-      debugger
       # Fetch the recovered project and add it to self.projects()
-      restoredProject = await application.getProject project.id
+      #restoredProject = await application.getProject project.id
       # ...Just fetch a project and give it back to  he caller.
-Project.getProjectById = (api, id) ->
-  projectsPath = "projects/byIds?ids=#{id}"
-  return new Promise (resolve, reject) ->
-    api.get projectsPath
-    .then ({data}) ->
-      rawProject = data[0]
-      rawProject.fetched = true
-      resolve Project(rawProject).update(rawProject)
-    .catch (error) ->
-        console.error "getProject", error
-        reject error
-      self.projects.unshift(restoredProject)      
+      projectsPath = "projects/byIds?ids=#{project.id()}"
+      application.api().get projectsPath
+      .then ({data}) ->
+        rawProject = data[0]
+        rawProject.fetched = true
+        restoredProject = Project(rawProject).update(rawProject)
+        self.projects.unshift(restoredProject)      
+      .catch (error) ->
+          console.error "getProject", error
       
       return
      
