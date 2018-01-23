@@ -97,19 +97,26 @@ module.exports = Project = (I={}, self=Model(I)) ->
       
     delete: ->
       projectPath = "/projects/#{self.id()}"
-      application.api().delete projectPath
-      .then (response) ->
-        console.log 'project deleted.', self
-      .catch (error) ->
-        console.error 'deleteProject', error
+      return new Promise (resolve, reject) ->
+        application.api().delete projectPath
+        .then (response) ->
+          resolve(response)
+          console.log 'project deleted.', self
+        .catch (error) ->
+          reject(error)
+          console.error 'deleteProject', error
       
     undelete: ->
       projectPath = "/projects/#{self.id()}/undelete"
-      application.api().post projectPath
-      .then (response) ->
-        console.log 'project restored!', self
-      .catch (error) ->
-        console.error 'undeleteProject', error
+      return new Promise (resolve, reject) -> 
+        application.api().post projectPath
+        .then (response) ->
+          console.log 'project restored!', self
+          resolve(response)
+        .catch (error) ->
+          reject(error)
+          console.error 'undeleteProject', error
+
       
       
       

@@ -184,17 +184,16 @@ module.exports = (application, userLoginOrId) ->
       projectContainer = event.target.closest 'li'
       $(projectContainer).addClass('slide-up')
       
-      setTimeout(() ->
-        # Now that animation has completed,
-        # remove project from deletedProjectsObservable, 
-        console.log "transition end"
-        #index = self.deletedProjectsObservable.indexOf(project)
-        #self.deletedProjectsObservable.splice(index, 1)
-        , 1000)
-        
-      
       # hit the api to actually undelete the project
-      project.undelete()
+      await project.undelete
+      
+      # Now actually update the deleted projects observer
+      # (This bought us time for the animation to finish)
+      index = self.deletedProjectsObservable.indexOf(project)
+      self.deletedProjectsObservable.splice(index, 1)
+
+        # Fetch the recovered project and add it to self.projects()
+        
       
       # restore the project to self.projects(),
       
