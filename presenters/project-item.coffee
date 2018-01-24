@@ -76,6 +76,6 @@ module.exports = (application, project, category, userPagePresenter) ->
       backgroundColor: category.color?()
 
     avatar: ->
-      "#{CDN_URL}/project-avatar/#{project.id()}.png"
+      project.avatar()
 
   return ProjectItemTemplate self
