@@ -41,5 +41,7 @@ module.exports = (project, application) ->
       projectContainer = event.target.closest 'li'
       application.closeAllPopOvers()
       $(projectContainer).addClass 'slide-down'
-      project.delete
+      project.delete().then ->
+        index = application.user().projects.indexOf(project)
+        application.user().projects.splice(index, 1)
       

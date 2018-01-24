@@ -93,7 +93,6 @@ module.exports = Project = (I={}, self=Model(I)) ->
       _.contains pins, self.id()
            
     delete: ->
-      console.log "Deleting", self
       projectPath = "/projects/#{self.id()}"
       return new Promise (resolve, reject) ->
         application.api().delete projectPath
