@@ -41,5 +41,5 @@ module.exports = (project, application) ->
       projectContainer = event.target.closest 'li'
       application.closeAllPopOvers()
       $(projectContainer).addClass 'slide-down'
-      
       project.delete
+      
