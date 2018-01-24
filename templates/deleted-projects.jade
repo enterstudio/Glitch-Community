@@ -7,8 +7,8 @@ article.projects
 
   ul.projects-container
     - @user().deletedProjects.forEach (project) ->
-      li.deleted-project
+      li.project.deleted-project
         img.avatar(src=project.avatar alt="#{project.domain()} avatar")
-        span.project-name
+        div.deleted-project-name
           =project.domain
         button(click=project.presenterUndelete) Undelete
