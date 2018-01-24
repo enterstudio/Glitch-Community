@@ -13,7 +13,7 @@ module.exports = (application, project, category) ->
     category: category
     project: project
 
-    projectOptionsPopPresenter: ProjectOptionsPopPresenter project, application
+    projectOptionsPopPresenter: ProjectOptionsPopPresenter project, application, self
     
     usersListPresenter: UsersListPresenter(project)
 
@@ -51,7 +51,7 @@ module.exports = (application, project, category) ->
     stopPropagation: (event) ->
       event.stopPropagation()
 
-    togglePinedState: ->
+    togglePinnedState: ->
       if application.pageIsTeamPage()
         self.toggleTeamPin()
       else

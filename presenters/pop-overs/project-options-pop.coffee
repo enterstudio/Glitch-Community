@@ -1,6 +1,6 @@
 _ = require 'underscore'
 
-module.exports = (project, application) ->
+module.exports = (project, application, projectItemPresenter) ->
 
   self =
 
@@ -44,7 +44,8 @@ module.exports = (project, application) ->
       project.delete().then ->
         # Remove from user's project collection
         index = application.user().projects.indexOf(project)
-        application.user().projects.splice(index, 1)
+        if index != -1
+          application.user().projects.splice(index, 1)
         
         # Add to user's deleted project collection
         application.user().deletedProjects.unshift(project)
