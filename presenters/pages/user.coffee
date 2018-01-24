@@ -178,8 +178,6 @@ module.exports = (application, userLoginOrId) ->
       'hidden' unless self.user().isAnon()
         
     undeleteProject: (project, event) -> 
-      console.log("Undelete request received!", project)
-      
       # animate
       projectContainer = event.target.closest 'li'
       $(projectContainer).one 'animationend', -> 

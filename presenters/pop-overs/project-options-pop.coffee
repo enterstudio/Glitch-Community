@@ -54,13 +54,13 @@ module.exports = (project, application, projectItemPresenter) ->
       
       project.delete().then ->
         # Fetch the deleted project and add it to deletedProjects()
-        projectsPath = "projects/byIds?ids=#{project.id()}&showDeleted=true"
-        application.api().get projectsPath
+        path = "projects/#{project.id()}?showDeleted=true"
+        application.api().get path
         .then ({data}) ->
-          rawProject = data[0]
+          rawProject = data
           rawProject.fetched = true
-          deletedProject = Project(rawProject).update(deletedProject)
-          self.user().deletedProjects.unshift(restoredProject)      
+          deletedProject = Project(rawProject).update(rawProject)
+          application.user().deletedProjects.unshift(deletedProject)     
         .catch (error) ->
             console.error "getDeletedProject", error
         
