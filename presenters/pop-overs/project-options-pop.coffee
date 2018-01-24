@@ -9,15 +9,17 @@ module.exports = (project, application, projectItemPresenter) ->
     
     style: -> undefined
 
-    addPinAnimation: (event) ->
+    addPin: (event) ->
       projectContainer = event.target.closest 'li'
       application.closeAllPopOvers()
       $(projectContainer).addClass 'slide-up'
+      projectItemPresenter.togglePinnedState()
 
-    removePinAnimation: (event) ->
+    removePin: (event) ->
       projectContainer = event.target.closest 'li'
       application.closeAllPopOvers()
       $(projectContainer).addClass 'slide-down'
+      projectItemPresenter.togglePinnedState()
 
     pinnedProjectIds: ->
       application.user().pins().map (pin) ->

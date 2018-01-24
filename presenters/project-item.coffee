@@ -13,7 +13,7 @@ module.exports = (application, project, category) ->
     category: category
     project: project
 
-    projectOptionsPopPresenter: ProjectOptionsPopPresenter project, application, self
+    projectOptionsPopPresenter: ProjectOptionsPopPresenter project, application, self 
     
     usersListPresenter: UsersListPresenter(project)
 
