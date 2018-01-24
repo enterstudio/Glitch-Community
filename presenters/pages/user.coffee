@@ -182,18 +182,16 @@ module.exports = (application, userLoginOrId) ->
       
       # animate
       projectContainer = event.target.closest 'li'
+      $(projectContainer).one 'animationend', -> 
+        # Now actually update the deleted projects observer
+        index = self.user().deletedProjects.indexOf(project)
+        if index != -1
+          self.user().deletedProjects.splice(index, 1)      
       $(projectContainer).addClass('slide-up')
       
       # hit the api to actually undelete the project
       project.undelete().then ->
-        # Now actually update the deleted projects observer
-        # (This bought us time for the animation to finish)
-        index = self.user().deletedProjects.indexOf(project)
-        self.user().deletedProjects.splice(index, 1)
-
         # Fetch the recovered project and add it to self.projects()
-        #restoredProject = await application.getProject project.id
-        # ...Just fetch a project and give it back to  he caller.
         projectsPath = "projects/byIds?ids=#{project.id()}"
         application.api().get projectsPath
         .then ({data}) ->
@@ -206,12 +204,10 @@ module.exports = (application, userLoginOrId) ->
       
 
     getDeletedProjects: ->
-      console.log("Get current projects");
       if !self.isCurrentUser()
         return
       
       application.api().get("/user/deleted-projects/").then (response) -> 
-        console.log(response)
         deletedProjectsRaw = response.data
         deletedProjects = deletedProjectsRaw.map (projectRaw) ->
           projectRaw.fetched = true
@@ -222,7 +218,6 @@ module.exports = (application, userLoginOrId) ->
           return project
 
         self.user().deletedProjects(deletedProjects)
-        console.log "got some projects", response.data
       .catch (error) -> 
         console.error 'Failed to get deleted projects', error
             

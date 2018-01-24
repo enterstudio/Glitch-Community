@@ -50,10 +50,18 @@ module.exports = (project, application, projectItemPresenter) ->
         if index != -1
           application.user().projects.splice(index, 1)
         
-        # Add to user's deleted project collection
-        application.user().deletedProjects.unshift(project)
       $(projectContainer).addClass 'slide-down'
       
-      project.delete()
+      project.delete().then ->
+        # Fetch the deleted project and add it to deletedProjects()
+        projectsPath = "projects/byIds?ids=#{project.id()}&showDeleted=true"
+        application.api().get projectsPath
+        .then ({data}) ->
+          rawProject = data[0]
+          rawProject.fetched = true
+          deletedProject = Project(rawProject).update(deletedProject)
+          self.user().deletedProjects.unshift(restoredProject)      
+        .catch (error) ->
+            console.error "getDeletedProject", error
         
       

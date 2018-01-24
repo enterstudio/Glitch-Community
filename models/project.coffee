@@ -98,7 +98,6 @@ module.exports = Project = (I={}, self=Model(I)) ->
         application.api().delete projectPath
         .then (response) ->
           resolve(response)
-          console.log 'project deleted.', self
         .catch (error) ->
           reject(error)
           console.error 'deleteProject', error
@@ -108,7 +107,6 @@ module.exports = Project = (I={}, self=Model(I)) ->
       return new Promise (resolve, reject) -> 
         application.api().post projectPath
         .then (response) ->
-          console.log 'project restored!', self
           resolve(response)
         .catch (error) ->
           reject(error)
