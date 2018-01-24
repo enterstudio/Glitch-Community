@@ -6,7 +6,7 @@ UsersListPresenter = require "./users-list"
 ProjectOptionsPop = require "../templates/pop-overs/project-options-pop"
 ProjectOptionsPopPresenter = require './pop-overs/project-options-pop'
 
-module.exports = (application, project, category) ->
+module.exports = (application, project, category, userPagePresenter) ->
 
   self = 
 
@@ -40,7 +40,7 @@ module.exports = (application, project, category) ->
       application.closeAllPopOvers()
       event.stopPropagation()
       button = $(event.target).closest('.opens-pop-over')
-      button[0].appendChild ProjectOptionsPop(ProjectOptionsPopPresenter(project, application, self))
+      button[0].appendChild ProjectOptionsPop(ProjectOptionsPopPresenter(project, application, self, userPagePresenter))
 
     visibleIfUserHasProjectOptions: ->
       if application.user().isOnUserPageForCurrentUser(application) or application.team().currentUserIsOnTeam(application)                    

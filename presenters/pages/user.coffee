@@ -176,6 +176,31 @@ module.exports = (application, userLoginOrId) ->
     
     hiddenUnlessUserIsAnon: ->
       'hidden' unless self.user().isAnon()
+                
+    deleteProject: (project, event) ->
+      projectContainer = event.target.closest 'li'
+      application.closeAllPopOvers()
+      $(projectContainer).one 'animationend', -> 
+        # Remove from user's project collection
+        index = application.user().projects.indexOf(project)
+        if index != -1
+          application.user().projects.splice(index, 1)
+        
+      $(projectContainer).addClass 'slide-down'
+      
+      project.delete().then ->
+        # Fetch the deleted project and add it to deletedProjects()
+        path = "projects/#{project.id()}?showDeleted=true"
+        application.api().get path
+        .then ({data}) ->
+          rawProject = data
+          rawProject.fetched = true
+          deletedProject = Project(rawProject).update(rawProject)
+          deletedProject.presenterUndelete = (event) ->
+            self.undeleteProject(project, event)
+          application.user().deletedProjects.unshift(deletedProject)     
+        .catch (error) ->
+            console.error "getDeletedProject", error
         
     undeleteProject: (project, event) -> 
       # animate

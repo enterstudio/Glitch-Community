@@ -9,7 +9,7 @@ module.exports = (application, title, projects, userPagePresenter) ->
 
     projects: ->
       projects.map (project) ->
-        ProjectItemPresenter(application, project, {})
+        ProjectItemPresenter(application, project, {}, userPagePresenter)
 
     visibleIfNoPins: ->
       if title is 'Pinned Projects' and projects.length is 0
