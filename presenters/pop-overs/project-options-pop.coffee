@@ -42,6 +42,11 @@ module.exports = (project, application) ->
       application.closeAllPopOvers()
       $(projectContainer).addClass 'slide-down'
       project.delete().then ->
+        # Remove from user's project collection
         index = application.user().projects.indexOf(project)
         application.user().projects.splice(index, 1)
+        
+        # Add to user's deleted project collection
+        application.user().deletedProjects.unshift(project)
+        
       

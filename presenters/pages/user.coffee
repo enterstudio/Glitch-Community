@@ -20,7 +20,6 @@ module.exports = (application, userLoginOrId) ->
     
     newDescription: Observable ""
     editingDescription: Observable false
-    deletedProjectsObservable: Observable []
     
     userLoginOrId: ->
       decodeURI userLoginOrId
@@ -189,8 +188,8 @@ module.exports = (application, userLoginOrId) ->
       project.undelete().then ->
         # Now actually update the deleted projects observer
         # (This bought us time for the animation to finish)
-        index = self.deletedProjectsObservable.indexOf(project)
-        self.deletedProjectsObservable.splice(index, 1)
+        index = self.user().deletedProjects.indexOf(project)
+        self.user().deletedProjects.splice(index, 1)
 
         # Fetch the recovered project and add it to self.projects()
         #restoredProject = await application.getProject project.id
@@ -222,7 +221,7 @@ module.exports = (application, userLoginOrId) ->
             self.undeleteProject(project, event)
           return project
 
-        self.deletedProjectsObservable(deletedProjects)
+        self.user().deletedProjects(deletedProjects)
         console.log "got some projects", response.data
       .catch (error) -> 
         console.error 'Failed to get deleted projects', error
