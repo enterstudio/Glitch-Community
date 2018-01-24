@@ -12,8 +12,6 @@ module.exports = (application, project, category) ->
 
     category: category
     project: project
-
-    projectOptionsPopPresenter: ProjectOptionsPopPresenter project, application, self 
     
     usersListPresenter: UsersListPresenter(project)
 
@@ -42,7 +40,7 @@ module.exports = (application, project, category) ->
       application.closeAllPopOvers()
       event.stopPropagation()
       button = $(event.target).closest('.opens-pop-over')
-      button[0].appendChild ProjectOptionsPop(self.projectOptionsPopPresenter)
+      button[0].appendChild ProjectOptionsPop(ProjectOptionsPopPresenter(project, application, self))
 
     visibleIfUserHasProjectOptions: ->
       if application.user().isOnUserPageForCurrentUser(application) or application.team().currentUserIsOnTeam(application)                    

@@ -12,14 +12,16 @@ module.exports = (project, application, projectItemPresenter) ->
     addPin: (event) ->
       projectContainer = event.target.closest 'li'
       application.closeAllPopOvers()
+      $(projectContainer).one 'animationend', -> 
+        projectItemPresenter.togglePinnedState()
       $(projectContainer).addClass 'slide-up'
-      projectItemPresenter.togglePinnedState()
 
     removePin: (event) ->
       projectContainer = event.target.closest 'li'
       application.closeAllPopOvers()
+      $(projectContainer).one 'animationend', -> 
+        projectItemPresenter.togglePinnedState()
       $(projectContainer).addClass 'slide-down'
-      projectItemPresenter.togglePinnedState()
 
     pinnedProjectIds: ->
       application.user().pins().map (pin) ->
@@ -42,8 +44,7 @@ module.exports = (project, application, projectItemPresenter) ->
     deleteProject: (event) ->
       projectContainer = event.target.closest 'li'
       application.closeAllPopOvers()
-      $(projectContainer).addClass 'slide-down'
-      project.delete().then ->
+      $(projectContainer).one 'animationend', -> 
         # Remove from user's project collection
         index = application.user().projects.indexOf(project)
         if index != -1
@@ -51,5 +52,8 @@ module.exports = (project, application, projectItemPresenter) ->
         
         # Add to user's deleted project collection
         application.user().deletedProjects.unshift(project)
+      $(projectContainer).addClass 'slide-down'
+      
+      project.delete()
         
       
