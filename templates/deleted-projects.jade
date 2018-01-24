@@ -6,7 +6,7 @@ article.projects
         .down-arrow
 
   ul.projects-container
-    - @deletedProjectsObservable.forEach (project) ->
+    - @user().deletedProjects.forEach (project) ->
       li.deleted-project
         img.avatar(src=project.avatar alt="#{project.domain()} avatar")
         = project.domain
