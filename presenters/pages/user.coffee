@@ -214,6 +214,12 @@ module.exports = (application, userLoginOrId) ->
       
       # hit the api to actually undelete the project
       project.undelete().then ->
+        if project.domain().endsWith "-deleted"
+          # Attempt to trim -deleted from the project name
+          renamePath = "projects/#{project.id()}"
+          application.api().patch renamePath {domain:
+          
+          
         # Fetch the recovered project and add it to self.projects()
         projectsPath = "projects/byIds?ids=#{project.id()}"
         application.api().get projectsPath
