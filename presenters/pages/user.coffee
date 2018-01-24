@@ -214,22 +214,27 @@ module.exports = (application, userLoginOrId) ->
       
       # hit the api to actually undelete the project
       project.undelete().then ->
-        if project.domain().endsWith "-deleted"
-          # Attempt to trim -deleted from the project name
-          renamePath = "projects/#{project.id()}"
-          application.api().patch renamePath {domain:
-          
-          
-        # Fetch the recovered project and add it to self.projects()
-        projectsPath = "projects/byIds?ids=#{project.id()}"
-        application.api().get projectsPath
-        .then ({data}) ->
-          rawProject = data[0]
-          rawProject.fetched = true
-          restoredProject = Project(rawProject).update(rawProject)
-          self.user().projects.unshift(restoredProject)      
-        .catch (error) ->
-            console.error "getProject", error
+        renamePromise = new Promise (resolve) ->
+          if project.domain().endsWith "-deleted"
+            # Attempt to trim -deleted from the project name
+            renamePath = "projects/#{project.id()}"
+            newDomain = project.domain().slice(0, "-deleted".length * -1)
+            application.api().patch(renamePath, domain: newDomain).then(resolve).catch(resolve)
+          else
+            resolve()
+        
+        renamePromise.then ->
+          debugger
+          # Fetch the recovered project and add it to self.projects()
+          projectsPath = "projects/byIds?ids=#{project.id()}"
+          application.api().get projectsPath
+          .then ({data}) ->
+            rawProject = data[0]
+            rawProject.fetched = true
+            restoredProject = Project(rawProject).update(rawProject)
+            self.user().projects.unshift(restoredProject)      
+          .catch (error) ->
+              console.error "getProject", error
       
 
     getDeletedProjects: ->
