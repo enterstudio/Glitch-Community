@@ -1,7 +1,7 @@
 ProjectItemPresenter = require "./project-item"
 ProjectsListTemplate = require "../templates/projects-list"
 
-module.exports = (application, title, projects) ->
+module.exports = (application, title, projects, userPagePresenter) ->
 
   self =
 

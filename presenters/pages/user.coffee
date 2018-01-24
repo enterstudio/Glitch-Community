@@ -163,12 +163,12 @@ module.exports = (application, userLoginOrId) ->
     recentProjects: ->
       recentProjects = self.projects().filter (project) ->
         !_.contains self.pinnedProjectIds(), project.id()
-      ProjectsListPresenter application, "Recent Projects", recentProjects  
+      ProjectsListPresenter application, "Recent Projects", recentProjects, self  
     
     pinnedProjectsList: ->
       pinnedProjects = self.projects().filter (project) ->
         _.contains self.pinnedProjectIds(), project.id()
-      ProjectsListPresenter application, "Pinned Projects", pinnedProjects
+      ProjectsListPresenter application, "Pinned Projects", pinnedProjects, self
 
     hiddenIfNotCurrentUserAndNoPins: ->
       if !self.isCurrentUser() and self.user().pins().length is 0
