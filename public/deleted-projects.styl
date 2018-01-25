@@ -1,4 +1,4 @@
-project-avatar-size = 32px
+deleted-project-avatar-size = 32px
 
 .deleted-projects
   clear: both
@@ -74,21 +74,20 @@ project-avatar-size = 32px
       &:after
       	left: 4%
     @media (max-width: 592px)
-      height: 112px
+      height: 60px
       &:after
       	left: 3%
 
     .avatar
       border-radius: 5px
-      margin-right: 7px
       vertical-align: top
       display: inline
-      width: project-avatar-size
-      height: project-avatar-size
+      width: deleted-project-avatar-size
+      height: deleted-project-avatar-size
+      max-width: deleted-project-avatar-size
 
     button
-      display: inline
-      vertical-align: top
+      float: right
 
     .deleted-project-name
       display: inline-block
