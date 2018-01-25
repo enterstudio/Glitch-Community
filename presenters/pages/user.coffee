@@ -224,7 +224,6 @@ module.exports = (application, userLoginOrId) ->
             resolve()
         
         renamePromise.then ->
-          debugger
           # Fetch the recovered project and add it to self.projects()
           projectsPath = "projects/byIds?ids=#{project.id()}"
           application.api().get projectsPath
