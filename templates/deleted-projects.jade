@@ -1,13 +1,13 @@
-article.projects
+article.deleted-projects
   h2
     span Deleted Projects
       span.emoji.bomb.emoji-in-title
-      .button-borderless(click=@getDeletedProjects)
+      .deleted-projects-arrow.button-borderless(click=@getDeletedProjects)
         .down-arrow
 
-  ul.projects-container
+  ul.deleted-projects-container
     - @user().deletedProjects.forEach (project) ->
-      li.project.deleted-project
+      li.deleted-project
         img.avatar(src=project.avatar alt="#{project.domain()} avatar")
         div.deleted-project-name
           =project.domain
