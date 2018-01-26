@@ -181,7 +181,7 @@ module.exports = (application, userLoginOrId) ->
       projectContainer = event.target.closest 'li'
       application.closeAllPopOvers()
       $(projectContainer).one 'animationend', -> 
-        # Remove from user's project collection
+        # Hold off on UI updates until the animation ends
         index = application.user().projects.indexOf(project)
         if index != -1
           application.user().projects.splice(index, 1)
@@ -203,17 +203,18 @@ module.exports = (application, userLoginOrId) ->
             console.error "getDeletedProject", error
         
     undeleteProject: (project, event) -> 
-      # animate
       projectContainer = event.target.closest 'li'
       $(projectContainer).one 'animationend', -> 
-        # Now actually update the deleted projects observer
+        # Hold off on UI updates until the animation ends
         index = self.user().deletedProjects.indexOf(project)
         if index != -1
           self.user().deletedProjects.splice(index, 1)      
       $(projectContainer).addClass('slide-up')
       
-      # hit the api to actually undelete the project
+      # Undelete the project using the API
       project.undelete().then ->
+        # Renaming, if appropriate, requires an API call,
+        # so we wait on the renamePromise before proceeding with the fetch
         renamePromise = new Promise (resolve) ->
           if project.domain().endsWith "-deleted"
             # Attempt to trim -deleted from the project name
@@ -264,4 +265,5 @@ module.exports = (application, userLoginOrId) ->
   #     self.setInitialUserDescription()
         
   content = UserTemplate(self)
+  
   return LayoutPresenter application, content

@@ -111,9 +111,6 @@ module.exports = Project = (I={}, self=Model(I)) ->
         .catch (error) ->
           reject(error)
           console.error 'undeleteProject', error
-
-      
-      
       
   cache[I.id] = self
   # console.log '💎 project cache', cache
@@ -172,7 +169,7 @@ Project.getSearchResults = (application, query) ->
       Project(datum).update(datum).pushSearchResult(application)
   .catch (error) ->
     console.error 'getSearchResults', error
-    
+
 
 Project._cache = cache
 
