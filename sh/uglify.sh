@@ -1,4 +1,4 @@
-0#!/bin/bash
+#!/bin/bash
 
 uglifyjs public/client.js \
       --compress \
