@@ -91,6 +91,28 @@ module.exports = Project = (I={}, self=Model(I)) ->
       pins = application.team().pins().map (pin) ->
         pin.projectId
       _.contains pins, self.id()
+           
+    delete: ->
+      projectPath = "/projects/#{self.id()}"
+      return new Promise (resolve, reject) ->
+        application.api().delete projectPath
+        .then (response) ->
+          resolve(response)
+        .catch (error) ->
+          reject(error)
+          console.error 'deleteProject', error
+      
+    undelete: ->
+      projectPath = "/projects/#{self.id()}/undelete"
+      return new Promise (resolve, reject) -> 
+        application.api().post projectPath
+        .then (response) ->
+          resolve(response)
+        .catch (error) ->
+          reject(error)
+          console.error 'undeleteProject', error
+
+      
       
       
   cache[I.id] = self
@@ -98,7 +120,7 @@ module.exports = Project = (I={}, self=Model(I)) ->
 
   return self
 
-
+# Fetch projects and populate them into the local cache
 Project.getProjectsByIds = (api, ids) ->
   NUMBER_OF_PROJECTS_PER_REQUEST = 40
   newProjectIds = ids.filter (id) ->
@@ -150,7 +172,7 @@ Project.getSearchResults = (application, query) ->
       Project(datum).update(datum).pushSearchResult(application)
   .catch (error) ->
     console.error 'getSearchResults', error
-
+    
 
 Project._cache = cache
 

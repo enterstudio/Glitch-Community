@@ -45,6 +45,7 @@ module.exports = User = (I={}, self=Model(I)) ->
     showAsGlitchTeam: false
     persistentToken: null
     pins: []
+    deletedProjects: []
 
   self.attrObservable Object.keys(I)...
   self.attrObservable "notFound"

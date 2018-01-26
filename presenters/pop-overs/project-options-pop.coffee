@@ -1,6 +1,6 @@
 _ = require 'underscore'
 
-module.exports = (project, application) ->
+module.exports = (project, application, projectItemPresenter, userPagePresenter) ->
 
   self =
 
@@ -9,14 +9,18 @@ module.exports = (project, application) ->
     
     style: -> undefined
 
-    addPinAnimation: (event) ->
+    addPin: (event) ->
       projectContainer = event.target.closest 'li'
       application.closeAllPopOvers()
+      $(projectContainer).one 'animationend', -> 
+        projectItemPresenter.togglePinnedState()
       $(projectContainer).addClass 'slide-up'
 
-    removePinAnimation: (event) ->
+    removePin: (event) ->
       projectContainer = event.target.closest 'li'
       application.closeAllPopOvers()
+      $(projectContainer).one 'animationend', -> 
+        projectItemPresenter.togglePinnedState()
       $(projectContainer).addClass 'slide-down'
 
     pinnedProjectIds: ->
@@ -36,3 +40,9 @@ module.exports = (project, application) ->
     
     removeProjectFromTeam: ->
       application.team().removeProject application, project
+                  
+    deleteProject: (event) ->
+      userPagePresenter.deleteProject project, event
+
+        
+      

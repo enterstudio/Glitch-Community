@@ -34,3 +34,11 @@ Why is this in [Jadelet](https://jadelet.com/)?
 - A nice Models, Presenters and Templates architecture
 - Unit testable (eventually!)
 - Can render views based on cached localstorage values, then update them with API based values
+
+FAQ
+---
+- _I remixed this site... how do I log in?_
+
+  First, log in on glitch.com.  Now open up your browser tools and 
+  grab the 'cachedUser' data from local storage.  (In Chrome, you'll find this under the 'application' tab.)  Paste that data into your localstorage
+  data in your remix, refresh the page, and now you're logged in!

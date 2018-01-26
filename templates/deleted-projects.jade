@@ -1,0 +1,14 @@
+article.deleted-projects
+  h2
+    span Deleted Projects
+      span.emoji.bomb.emoji-in-title
+      .deleted-projects-arrow.button-borderless(click=@getDeletedProjects)
+        .down-arrow
+
+  ul.deleted-projects-container
+    - @user().deletedProjects.forEach (project) ->
+      li.deleted-project
+        img.avatar(src=project.avatar alt="#{project.domain()} avatar")
+        div.deleted-project-name
+          =project.domain
+        button(click=project.presenterUndelete) Undelete

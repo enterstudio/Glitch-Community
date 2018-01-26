@@ -1,0 +1,118 @@
+deleted-project-avatar-size = 32px
+
+.deleted-projects
+  clear: both
+  display: inline-block
+  width: 100%
+  vertical-align: top
+  border-radius: 5px
+  padding: 16px
+  
+  header
+    float: left
+    width: 22%
+    @media (max-width: hugeViewport)
+      width: 21%
+
+  .deleted-projects-container
+    margin: 0
+    padding: 0
+    list-style-type: none
+    // overflow: auto
+    overflow: hidden
+
+    li
+      float: left
+      display: block
+      margin-right: 10px
+      width: 32.2%
+      position: relative
+      margin-bottom: 12px
+      @media (max-width: largeViewport)
+        width: 32%
+      @media (max-width: 592px)
+        width: 100%
+      &:last-child
+        margin-right: 0
+
+    a
+      &:hover
+        text-decoration: none
+      
+    .down-arrow
+      margin: 0
+    
+  .deleted-project
+    font-size: 0.9rem
+    border-radius: 5px
+    width: 100%
+    padding: 12px
+    height: 90px
+    position: relative
+    transition: 0.1s all
+    overflow: hidden
+    &:hover
+      button
+        background-color: secondary-background
+        box-shadow: 2px 2px 0 primary
+    &:active
+      button
+        background-color: secondary-background-active
+        box-shadow: none
+    &:after
+    	bottom: 100%
+    	left: 3.5%
+    	border: solid transparent
+    	content: " "
+    	height: 0
+    	width: 0
+    	position: absolute
+    	pointer-events: none
+    	border-bottom-color: inherit
+    	border-width: 6px
+    @media (max-width: largeViewport)
+      &:after
+      	left: 4%
+    @media (max-width: 592px)
+      height: 60px
+      &:after
+      	left: 3%
+
+    .avatar
+      border-radius: 5px
+      vertical-align: top
+      display: inline
+      width: deleted-project-avatar-size
+      height: deleted-project-avatar-size
+      max-width: deleted-project-avatar-size
+
+    button
+      float: right
+
+    .deleted-project-name
+      display: inline-block
+      margin: 6px
+      max-width: 50%
+      
+  .slide-up
+    animation: slideUp 0.1s ease-out
+    animation-fill-mode: forwards
+
+
+  .deleted-projects-arrow
+    right: 0px
+    top: 6px
+    padding: 10px
+    padding-bottom: 8px
+    border-radius: 5px
+    border: 0
+    margin-left: 6px
+    
+    .down-arrow
+      margin-left: 0
+      
+      
+@keyframes slideUp
+  to
+    transform: translateY(-50px)
+    opacity: 0
