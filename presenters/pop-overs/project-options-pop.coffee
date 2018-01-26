@@ -43,6 +43,3 @@ module.exports = (project, application, projectItemPresenter, userPagePresenter)
                   
     deleteProject: (event) ->
       userPagePresenter.deleteProject project, event
-
-        
-      
