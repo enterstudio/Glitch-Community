@@ -1,9 +1,13 @@
+- Loader = require "./includes/loader"
+
 article.deleted-projects
   h2
     span Deleted Projects
       span.emoji.bomb.emoji-in-title
-      .deleted-projects-arrow.button-borderless(click=@getDeletedProjects)
+      .deleted-projects-arrow.button-borderless(click=@getDeletedProjects class=@hiddenIfDeletedProjectsLoadingOrLoaded)
         .down-arrow
+      span(class=@hiddenUnlessDeletedProjectsLoading)
+        = Loader
 
   ul.deleted-projects-container
     - @user().deletedProjects.forEach (project) ->
