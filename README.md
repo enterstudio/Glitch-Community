@@ -15,7 +15,7 @@ There's a peculiarity around Oauth logins, since the providers expect the site t
 
   In a new browser tab, visit Glitch.com and log in if you aren't already.  Open up your browser's [Developer Tools](https://webmasters.stackexchange.com/a/77337/2628) and run this command in the console: `window.localStorage.cachedUser`.  Highlight and copy the big JSON blob that it prints out.
   
-  Now, back in your remix, click on the 'show' button to view your running app.  Open the developer tools again and this time type in `window.localStorage.cachedUser = ``<Paste that ` followed by a _paste_ of the big JSON blob you copied earlier.  Hit enter.  Refresh the page and you'll find yourself logged in!
+  Now, back in your remix, click on the 'show' button to view your running app.  Open the developer tools again and this time type in `window.localStorage.cachedUser = ````` followed by a _paste_ of the big JSON blob you copied earlier.  Hit enter.  Refresh the page and you'll find yourself logged in!
 First, log in on glitch.com.  Now open up your browser tools and 
   grab the 'cachedUser' data from local storage.  (In Chrome, you'll find this under the 'application' tab.)  Paste that data into your localstorage
   data in your remix, refresh the page, and now you're logged in!
