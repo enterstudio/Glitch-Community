@@ -4,11 +4,11 @@ article.deleted-projects
   h2
     span Deleted Projects
       span.emoji.bomb.emoji-in-title
-      .deleted-project-button-container
+      span.deleted-project-loader
         button.button-tertiary(click=@getDeletedProjects class=@hiddenIfDeletedProjectsLoadingOrLoaded) Show
         span(class=@hiddenUnlessDeletedProjectsLoading)
           = Loader
-        button.button-tertiary(click=@hideDeletedProjects class=@hiddenIfDeletedProjectsLoadingOrLoaded) Hide
+        button.button-tertiary(click=@hideDeletedProjects class=@hiddenUnlessDeletedProjectsLoaded) Hide
 
   ul.deleted-projects-container
     - @user().deletedProjects.forEach (project) ->

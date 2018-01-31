@@ -263,11 +263,18 @@ module.exports = (application, userLoginOrId) ->
     deletedProjects: ->
       DeletedProjectsTemplate self
       
+    hideDeletedProjects: ->
+      self.user().deletedProjects([])
+      self.deletedProjectsLoadingState('')
+      
     hiddenIfDeletedProjectsLoadingOrLoaded: ->
       'hidden' if ['loading','loaded'].includes self.deletedProjectsLoadingState()
       
     hiddenUnlessDeletedProjectsLoading: ->
       'hidden' unless self.deletedProjectsLoadingState() == 'loading'
+        
+    hiddenUnlessDeletedProjectsLoaded: ->
+      'hidden' unless self.deletedProjectsLoadingState() == 'loaded'
       
       
         
