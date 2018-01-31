@@ -7,10 +7,15 @@ Philosophically, a little bit `Youtube`, some `Spotify`, with a sprinkle of `app
 Getting Started
 -----------------
 
-Start by remixing this project!  It should come straight to life.
+#### Remix this project
 
-There's just one peculiar thing you'll need to work around: Oauth login's won't work because our oauth providers are bound to our root domain, not the domain of your new remix.  Here's how to log in to your remix of this project:
+It should come straight to life.
 
+There's a peculiarity around Oauth logins, since the providers expect the site to have a different domain than what your remix has.  To log in to your new remixed site,
+
+  In a new browser tab, visit Glitch.com and log in if you aren't already.  Open up your browser's [Developer Tools](https://webmasters.stackexchange.com/a/77337/2628) and run this command in the console: `window.localStorage.cachedUser`.  Highlight and copy the big JSON blob that it prints out.
+  
+  Now, in t your remixed community site
 First, log in on glitch.com.  Now open up your browser tools and 
   grab the 'cachedUser' data from local storage.  (In Chrome, you'll find this under the 'application' tab.)  Paste that data into your localstorage
   data in your remix, refresh the page, and now you're logged in!
