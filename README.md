@@ -7,6 +7,14 @@ Philosophically, a little bit `Youtube`, some `Spotify`, with a sprinkle of `app
 Getting Started
 -----------------
 
+Start by remixing this project!  It should come straight to life.
+
+There's just one peculiar thing you'll need to work around: Oauth login's won't work because our oauth providers are bound to our root domain, not the domain of your new remix.  Here's how to log in to your remix of this project:
+
+First, log in on glitch.com.  Now open up your browser tools and 
+  grab the 'cachedUser' data from local storage.  (In Chrome, you'll find this under the 'application' tab.)  Paste that data into your localstorage
+  data in your remix, refresh the page, and now you're logged in!
+
 
 Architecture: 
 
@@ -29,7 +37,9 @@ O RLY?  YA RLY   NO WAI!
 
 Contributing
 ------------
-https://glitch.com/edit/#!/quaint-behavior?path=CONTRIBUTING.md
+
+Please read [CONTRIBUTING.md](https://glitch.com/edit/#!/community?path=CONTRIBUTING.md) for details on our code of conduct, and the process for submitting pull requests to us.
+
 
 
 Why is this in [Jadelet](https://jadelet.com/)?
