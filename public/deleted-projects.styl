@@ -25,11 +25,12 @@ deleted-project-avatar-size = 32px
       display: block
       margin-right: 10px
       width: 32.2%
+      min-width: 300px
       position: relative
       margin-bottom: 12px
       @media (max-width: largeViewport)
         width: 32%
-      @media (max-width: 592px)
+      @media (max-width: 705px)
         width: 100%
       &:last-child
         margin-right: 0
@@ -92,7 +93,7 @@ deleted-project-avatar-size = 32px
     .deleted-project-name
       display: inline-block
       margin: 6px
-      max-width: 50%
+      max-width: calc(100% - 30px)
       
   .slide-up
     animation: slideUp 0.1s ease-out
