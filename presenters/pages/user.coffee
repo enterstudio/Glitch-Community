@@ -20,6 +20,7 @@ module.exports = (application, userLoginOrId) ->
     
     newDescription: Observable ""
     editingDescription: Observable false
+    deletedProjectsLoadingState: Observable ""
     
     userLoginOrId: ->
       decodeURI userLoginOrId
@@ -241,6 +242,8 @@ module.exports = (application, userLoginOrId) ->
       if !self.isCurrentUser()
         return
       
+      self.deletedProjectsLoadingState('loading')
+      
       application.api().get("/user/deleted-projects/").then (response) -> 
         deletedProjectsRaw = response.data
         deletedProjects = deletedProjectsRaw.map (projectRaw) ->
@@ -251,12 +254,27 @@ module.exports = (application, userLoginOrId) ->
             self.undeleteProject(project, event)
           return project
 
+        self.deletedProjectsLoadingState('loaded')
         self.user().deletedProjects(deletedProjects)
       .catch (error) -> 
+        self.deletedProjectsLoadingState('')
         console.error 'Failed to get deleted projects', error
             
     deletedProjects: ->
       DeletedProjectsTemplate self
+      
+    hideDeletedProjects: ->
+      self.user().deletedProjects([])
+      self.deletedProjectsLoadingState('')
+      
+    hiddenIfDeletedProjectsLoadingOrLoaded: ->
+      'hidden' if ['loading','loaded'].includes self.deletedProjectsLoadingState()
+      
+    hiddenUnlessDeletedProjectsLoading: ->
+      'hidden' unless self.deletedProjectsLoadingState() == 'loading'
+        
+    hiddenUnlessDeletedProjectsLoaded: ->
+      'hidden' unless self.deletedProjectsLoadingState() == 'loaded'
       
       
         

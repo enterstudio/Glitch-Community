@@ -6,7 +6,6 @@ deleted-project-avatar-size = 32px
   width: 100%
   vertical-align: top
   border-radius: 5px
-  padding: 16px
   
   header
     float: left
@@ -26,11 +25,12 @@ deleted-project-avatar-size = 32px
       display: block
       margin-right: 10px
       width: 32.2%
+      min-width: 300px
       position: relative
       margin-bottom: 12px
       @media (max-width: largeViewport)
         width: 32%
-      @media (max-width: 592px)
+      @media (max-width: 705px)
         width: 100%
       &:last-child
         margin-right: 0
@@ -43,7 +43,7 @@ deleted-project-avatar-size = 32px
       margin: 0
     
   .deleted-project
-    font-size: 0.9rem
+    background-color: #e5e5e5
     border-radius: 5px
     width: 100%
     padding: 12px
@@ -54,11 +54,6 @@ deleted-project-avatar-size = 32px
     &:hover
       button
         background-color: secondary-background
-        box-shadow: 2px 2px 0 primary
-    &:active
-      button
-        background-color: secondary-background-active
-        box-shadow: none
     &:after
     	bottom: 100%
     	left: 3.5%
@@ -79,6 +74,7 @@ deleted-project-avatar-size = 32px
       	left: 3%
 
     .avatar
+      margin-right: 7px;
       border-radius: 5px
       vertical-align: top
       display: inline
@@ -92,21 +88,15 @@ deleted-project-avatar-size = 32px
     .deleted-project-name
       display: inline-block
       margin: 6px
-      max-width: 50%
+      max-width: calc(100% - 140px)
+      font-weight: 600
+      font-size: 14px
+      color: #696969
       
   .slide-up
     animation: slideUp 0.1s ease-out
     animation-fill-mode: forwards
 
-
-  .deleted-projects-arrow
-    right: 0px
-    top: 6px
-    padding: 10px
-    padding-bottom: 8px
-    border-radius: 5px
-    border: 0
-    margin-left: 6px
-    
-    .down-arrow
-      margin-left: 0
+  .deleted-project-loader {
+    margin-left: 8px
+  }
