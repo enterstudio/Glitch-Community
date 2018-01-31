@@ -7,9 +7,6 @@ Philosophically, a little bit `Youtube`, some `Spotify`, with a sprinkle of `app
 Getting Started
 -----------------
 
-Contributing:
-
-- Awesome, we're glad to have you!  Please check out [CONTRIBUTING.md] for details on how to contribute.
 
 Architecture: 
 
@@ -30,11 +27,15 @@ application models -> presenter -> DOM
 O RLY?  YA RLY   NO WAI!
 ```
 
+Contributing
+------------
+https://glitch.com/edit/#!/quaint-behavior?path=CONTRIBUTING.md
+
+
 Why is this in [Jadelet](https://jadelet.com/)?
 -----------------------
 - The Glitch editor is also written in jadelet, so it reduces switching cost
 - A nice Models, Presenters and Templates architecture
-- Unit testable (eventually!)
 - Can render views based on cached localstorage values, then update them with API based values
 
 FAQ
