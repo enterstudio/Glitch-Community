@@ -7,7 +7,9 @@ Philosophically, a little bit `Youtube`, some `Spotify`, with a sprinkle of `app
 Getting Started
 -----------------
 
-[Contribution Guidelines and Process](https://docs.google.com/document/d/11xNX1SnAfnhUJZcE6jx_ic4QQUGtThv1CpvBprtB4Wo/edit)
+Contributing:
+
+- Awesome, we're glad to have you!  Please check out [CONTRIBUTING.md] for details on how to contribute.
 
 Architecture: 
 
