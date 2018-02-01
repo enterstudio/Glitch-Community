@@ -23,16 +23,6 @@ deleted-project-avatar-size = 32px
     flex-direction: row;
     flex-wrap: wrap;
 
-    li
-      display: block
-      margin-right: 10px
-      flex-basis: 250px
-      flex-grow: 1
-      position: relative
-      margin-bottom: 12px
-      &:last-child
-        margin-right: 0
-
     a
       &:hover
         text-decoration: none
@@ -43,13 +33,21 @@ deleted-project-avatar-size = 32px
   .deleted-project
     background-color: #e5e5e5
     border-radius: 5px
-    width: 100%
-    padding: 12px
+    cursor: pointer
+    display: block
+    flex-basis: 32%
+    flex-grow: 1
     height: 90px
+    max-width: 350px
+    min-width: 200px
+    margin-bottom: 12px
+    margin-right: 10px
+    overflow: hidden
+    padding: 12px
     position: relative
     transition: 0.1s all
-    overflow: hidden
-    cursor: pointer
+    width: 100%
+    
     &:hover
       button
         background-color: secondary-background
