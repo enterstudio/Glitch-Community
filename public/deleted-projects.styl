@@ -26,14 +26,6 @@ deleted-project-avatar-size = 32px
     .down-arrow
       margin: 0
       
-  li
-    @media (max-width: largeViewport)
-      width: 32%
-    @media (max-width: mediumSmallViewport)
-      width: 100%
-    &:last-child
-      margin-right: 0
-    
   .deleted-project
     background-color: #e5e5e5
     border-radius: 5px
@@ -41,15 +33,18 @@ deleted-project-avatar-size = 32px
     display: block
     float: left
     height: 90px
-    max-width: 400px
-    min-width: 275px
     margin-bottom: 12px
     margin-right: 10px
+    min-width: 235px
     overflow: hidden
     padding: 12px
     position: relative
     transition: 0.1s all
-    
+    width: 32%
+    @media (max-width: largeViewport)
+      width: 48%
+    @media (max-width: mediumSmallViewport)
+      width: 100%
     
     
 
