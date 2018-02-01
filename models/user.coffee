@@ -203,25 +203,25 @@ module.exports = User = (I={}, self=Model(I)) ->
   return self
 
 User.getUserByLogin = (application, login) ->
-  userPath = "users/byLogins?logins=#{login}"
-  application.api().get userPath
+  userIdPath = "/userid/byLogin/#{login}"
+  application.api().get userIdPath
   .then (response) ->
-    if response.data.length
-      user = response.data[0]
-      application.saveUser user
-    else
+    userId = response.data
+    if userId == "NOT FOUND"
       application.user().notFound true
+      return
+    
+    User.getUserById application, userId
   .catch (error) ->
-    console.error "getUserByLogin GET #{userPath}", error
+    console.error "getUserByLogin GET #{userIdPath}", error
 
 User.getUserById = (application, id) ->
   userPath = "users/#{id}"
   application.api().get userPath
   .then ({data}) ->
+    application.saveUser data
     if application.currentUser().id() is data.id
       application.saveCurrentUser data
-    else
-      application.saveUser data
   .catch (error) ->
     console.error "getUserById GET #{userPath}", error
     
