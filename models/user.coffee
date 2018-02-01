@@ -204,14 +204,16 @@ module.exports = User = (I={}, self=Model(I)) ->
   return self
 
 User.getUserByLogin = (application, login) ->
-  userPath = "users/byLogins?logins=#{login}"
-  application.api().get userPath
+  userIdPath = "/userid/byLogin/#{login}"
+  application.api().get userIdPath
   .then (response) ->
-    if response.data.length
-      user = response.data[0]
-      application.saveUser user
-    else
+    userId = response.data
+    console.log "userid is", response
+    if userId == "NOT FOUND"
       application.user().notFound true
+      return
+    
+    User.GetUserByID application, userId
   .catch (error) ->
     console.error "getUserByLogin GET #{userPath}", error
 
