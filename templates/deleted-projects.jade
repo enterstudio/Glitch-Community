@@ -5,7 +5,7 @@ article.deleted-projects
     = "Deleted Projects"
     span.emoji.bomb.emoji-in-title
 
-  span.deleted-project-loader
+  span.deleted-project-loader(class=@hiddenIfDeletedProjectsLoaded)
     button.button-tertiary(click=@getDeletedProjects class=@hiddenIfDeletedProjectsLoadingOrLoaded) Show
     span(class=@hiddenUnlessDeletedProjectsLoading)
       = Loader
