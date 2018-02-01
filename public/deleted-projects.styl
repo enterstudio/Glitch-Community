@@ -1,5 +1,4 @@
 deleted-project-avatar-size = 32px
-mediumViewport = 705px
 
 .deleted-projects
   clear: both
@@ -29,10 +28,6 @@ mediumViewport = 705px
       min-width: 300px
       position: relative
       margin-bottom: 12px
-      @media (max-width: largeViewport)
-        width: 32%
-      @media (max-width: mediumViewport)
-        width: 100%
       &:last-child
         margin-right: 0
 
@@ -73,13 +68,6 @@ mediumViewport = 705px
     	pointer-events: none
     	border-bottom-color: inherit
     	border-width: 6px
-    @media (max-width: largeViewport)
-      &:after
-      	left: 4%
-    @media (max-width: mediumViewport)
-      height: 60px
-      &:after
-      	left: 3%
 
     .avatar
       margin-right: 7px
@@ -92,18 +80,12 @@ mediumViewport = 705px
 
     button
       display: block
-      @media (max-width: mediumViewport)
-        position: absolute
-        right: 12px
-        top: 12px
 
     .deleted-project-name
       display: inline-block
       margin-top: 6px
       margin-left: 6px
       max-width: calc(100% - 55px)
-      @media (max-width: mediumViewport)
-        max-width: calc(100% - 155px)
       font-weight: 600
       font-size: 14px
       height: 34px
