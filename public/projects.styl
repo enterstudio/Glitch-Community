@@ -64,19 +64,9 @@ project-avatar-size = 42px
     list-style-type: none
     // overflow: auto
     overflow: hidden
-    
-    display: flex;
-    flex-direction: row;
-    flex-wrap: wrap;
-    
 
     li
       
-      //flex-basis: 32%
-      //flex-grow: 1
-      //max-width: 400px
-      //min-width: 275px
-
       float: left
       display: block
       margin-right: 10px
@@ -85,7 +75,7 @@ project-avatar-size = 42px
       margin-bottom: 12px
       @media (max-width: largeViewport)
         width: 32%
-      @media (max-width: mediumViewport)
+      @media (max-width: mediumSmallViewport)
         width: 100%
       &:last-child
         margin-right: 0
@@ -131,7 +121,7 @@ project-avatar-size = 42px
     @media (max-width: largeViewport)
       &:after
       	left: 4%
-    @media (max-width: mediumViewport)
+    @media (max-width: mediumSmallViewport)
       height: 112px
       &:after
       	left: 3%
@@ -162,7 +152,6 @@ project-avatar-size = 42px
     .description
       margin-top: 12px
       max-width: 92%
-      // margin-left: 54px
       margin-left: 15px
 
     .overflow-mask
@@ -231,7 +220,7 @@ project-avatar-size = 42px
       width: 32%
       @media (max-width: largeViewport)
         width: 48%
-      @media (max-width: mediumViewport)
+      @media (max-width: mediumSmallViewport)
         width: 100%
 
 .project-options
