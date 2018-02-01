@@ -66,18 +66,18 @@ project-avatar-size = 42px
     overflow: hidden
 
     li
+      
       float: left
       display: block
       margin-right: 10px
-      width: 32.2%
+      width: 32%
       position: relative
       margin-bottom: 12px
+      min-width: 235px
       @media (max-width: largeViewport)
-        width: 32%
-      @media (max-width: 592px)
+        width: 48%
+      @media (max-width: mediumSmallViewport)
         width: 100%
-      &:last-child
-        margin-right: 0
 
     a
       &:hover
@@ -120,7 +120,7 @@ project-avatar-size = 42px
     @media (max-width: largeViewport)
       &:after
       	left: 4%
-    @media (max-width: 592px)
+    @media (max-width: mediumSmallViewport)
       height: 112px
       &:after
       	left: 3%
@@ -151,7 +151,6 @@ project-avatar-size = 42px
     .description
       margin-top: 12px
       max-width: 92%
-      // margin-left: 54px
       margin-left: 15px
 
     .overflow-mask
@@ -215,13 +214,6 @@ project-avatar-size = 42px
   .category
     float: none
     width: initial
-  .projects-container
-    li
-      width: 32%
-      @media (max-width: largeViewport)
-        width: 48%
-      @media (max-width: 592px)
-        width: 100%
 
 .project-options
   display: none

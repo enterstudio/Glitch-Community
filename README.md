@@ -7,9 +7,8 @@ Philosophically, a little bit `Youtube`, some `Spotify`, with a sprinkle of `app
 Getting Started
 -----------------
 
-[Contribution Guidelines and Process](https://docs.google.com/document/d/11xNX1SnAfnhUJZcE6jx_ic4QQUGtThv1CpvBprtB4Wo/edit)
+File structure
 
-Architecture: 
 
 - the app starts at `server.coffee`
 - `client.coffee` is compiled and served as /client.js
@@ -20,6 +19,16 @@ Architecture:
 
 application models -> presenter -> DOM
 
+Built with
+----------
+
+- Coffescript
+- Jadelet
+- Stylus
+- Observables
+
+
+
 ```
   ___     ___      ___
  {o,o}   {o.o}    {o,o}
@@ -28,11 +37,29 @@ application models -> presenter -> DOM
 O RLY?  YA RLY   NO WAI!
 ```
 
+#### Remixing this project
+
+Once you remix this project, it'll come straight to life!
+
+##### Logging in with Oauth
+
+There's a peculiarity around Oauth logins, since the providers expect the site to have a different domain than what your remix has.  To log in to your new remixed site,
+
+  In a new browser tab, visit Glitch.com and log in if you aren't already.  Open up your browser's [Developer Tools](https://webmasters.stackexchange.com/a/77337/2628) and run this command in the console: `window.localStorage.cachedUser`.  Highlight and copy the big JSON blob that it prints out.
+  
+  Now, back in your remix, click on the 'show' button to view your running app.  Open the developer tools again and this time type in `window.localStorage.cachedUser = ``[Paste Here]`` `, replacing the `[Paste Here]` with your copied JSON blob from the other tab. Hit enter, refresh the page, and you're logged in!
+  
+Contributing
+------------
+
+Please read [CONTRIBUTING.md](https://glitch.com/edit/#!/community?path=CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests to us.
+
+
+
 Why is this in [Jadelet](https://jadelet.com/)?
 -----------------------
 - The Glitch editor is also written in jadelet, so it reduces switching cost
 - A nice Models, Presenters and Templates architecture
-- Unit testable (eventually!)
 - Can render views based on cached localstorage values, then update them with API based values
 
 FAQ

@@ -273,8 +273,8 @@ module.exports = (application, userLoginOrId) ->
     hiddenUnlessDeletedProjectsLoading: ->
       'hidden' unless self.deletedProjectsLoadingState() == 'loading'
         
-    hiddenUnlessDeletedProjectsLoaded: ->
-      'hidden' unless self.deletedProjectsLoadingState() == 'loaded'
+    hiddenIfDeletedProjectsLoaded: ->
+      'hidden' if self.deletedProjectsLoadingState() == 'loaded'
       
       
         

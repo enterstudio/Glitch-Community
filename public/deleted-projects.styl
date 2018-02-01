@@ -17,23 +17,7 @@ deleted-project-avatar-size = 32px
     margin: 0
     padding: 0
     list-style-type: none
-    // overflow: auto
     overflow: hidden
-
-    li
-      float: left
-      display: block
-      margin-right: 10px
-      width: 32.2%
-      min-width: 300px
-      position: relative
-      margin-bottom: 12px
-      @media (max-width: largeViewport)
-        width: 32%
-      @media (max-width: 705px)
-        width: 100%
-      &:last-child
-        margin-right: 0
 
     a
       &:hover
@@ -41,19 +25,41 @@ deleted-project-avatar-size = 32px
       
     .down-arrow
       margin: 0
-    
+      
   .deleted-project
     background-color: #e5e5e5
     border-radius: 5px
-    width: 100%
-    padding: 12px
+    cursor: pointer
+    display: block
+    float: left
     height: 90px
+    margin-bottom: 12px
+    margin-right: 10px
+    min-width: 235px
+    overflow: hidden
+    padding: 12px
     position: relative
     transition: 0.1s all
-    overflow: hidden
+    width: 32%
+    @media (max-width: largeViewport)
+      width: 48%
+    @media (max-width: mediumSmallViewport)
+      width: 100%
+    
+    
+
+    
+    
+    
     &:hover
       button
         background-color: secondary-background
+        box-shadow: 2px 2px 0 primary
+    &:active
+      button
+        background-color: secondary-background-active
+        box-shadow: none
+        
     &:after
     	bottom: 100%
     	left: 3.5%
@@ -65,16 +71,9 @@ deleted-project-avatar-size = 32px
     	pointer-events: none
     	border-bottom-color: inherit
     	border-width: 6px
-    @media (max-width: largeViewport)
-      &:after
-      	left: 4%
-    @media (max-width: 592px)
-      height: 60px
-      &:after
-      	left: 3%
 
     .avatar
-      margin-right: 7px;
+      margin-right: 7px
       border-radius: 5px
       vertical-align: top
       display: inline
@@ -83,20 +82,23 @@ deleted-project-avatar-size = 32px
       max-width: deleted-project-avatar-size
 
     button
-      float: right
+      display: block
 
     .deleted-project-name
       display: inline-block
-      margin: 6px
-      max-width: calc(100% - 140px)
+      margin-top: 6px
+      margin-left: 6px
+      max-width: calc(100% - 55px)
       font-weight: 600
       font-size: 14px
-      color: #696969
+      height: 34px
+      overflow: hidden
       
   .slide-up
     animation: slideUp 0.1s ease-out
     animation-fill-mode: forwards
 
   .deleted-project-loader {
-    margin-left: 8px
+    margin-top: 8px
+    margin-bottom: 8px
   }
