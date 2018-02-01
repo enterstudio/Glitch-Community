@@ -2,8 +2,8 @@
 
 article.deleted-projects
   h2
-    span Deleted Projects
-      span.emoji.bomb.emoji-in-title
+    = "Deleted Projects"
+    span.emoji.bomb.emoji-in-title
 
   span.deleted-project-loader
     button.button-tertiary(click=@getDeletedProjects class=@hiddenIfDeletedProjectsLoadingOrLoaded) Show
