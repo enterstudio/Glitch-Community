@@ -20,6 +20,10 @@ deleted-project-avatar-size = 32px
     // overflow: auto
     overflow: hidden
 
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+
     li
       float: left
       display: block
@@ -30,6 +34,12 @@ deleted-project-avatar-size = 32px
       margin-bottom: 12px
       &:last-child
         margin-right: 0
+        
+      @media (max-width: mediumViewport)
+        width: 48%
+        
+      @media (max-width: smallViewport)
+        width: 100%
 
     a
       &:hover
