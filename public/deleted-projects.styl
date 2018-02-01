@@ -84,13 +84,18 @@ mediumViewport = 705px
       max-width: deleted-project-avatar-size
 
     button
-      margin-left: 15px
+      @media (max-width: mediumViewport)
+        position: absolute
+        right: 12px
+        top: 12px
 
     .deleted-project-name
       display: inline-block
       margin-top: 6px
       margin-left: 6px
       max-width: calc(100% - 55px)
+      @media (max-width: mediumViewport)
+        max-width: calc(100% - 155px)
       font-weight: 600
       font-size: 14px
       height: 34px
