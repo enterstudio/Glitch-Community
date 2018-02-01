@@ -1,4 +1,5 @@
 deleted-project-avatar-size = 32px
+mediumViewport = 705px
 
 .deleted-projects
   clear: both
@@ -30,7 +31,7 @@ deleted-project-avatar-size = 32px
       margin-bottom: 12px
       @media (max-width: largeViewport)
         width: 32%
-      @media (max-width: 705px)
+      @media (max-width: mediumViewport)
         width: 100%
       &:last-child
         margin-right: 0
@@ -68,7 +69,7 @@ deleted-project-avatar-size = 32px
     @media (max-width: largeViewport)
       &:after
       	left: 4%
-    @media (max-width: 592px)
+    @media (max-width: mediumViewport)
       height: 60px
       &:after
       	left: 3%
@@ -88,10 +89,9 @@ deleted-project-avatar-size = 32px
     .deleted-project-name
       display: inline-block
       margin: 6px
-      max-width: calc(100% - 140px)
+      max-width: calc(100% - 40px)
       font-weight: 600
       font-size: 14px
-      color: #696969
       
   .slide-up
     animation: slideUp 0.1s ease-out
