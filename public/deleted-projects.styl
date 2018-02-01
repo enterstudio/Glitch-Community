@@ -52,9 +52,16 @@ mediumViewport = 705px
     position: relative
     transition: 0.1s all
     overflow: hidden
+    cursor: pointer
     &:hover
       button
         background-color: secondary-background
+        box-shadow: 2px 2px 0 primary
+    &:active
+      button
+        background-color: secondary-background-active
+        box-shadow: none
+        
     &:after
     	bottom: 100%
     	left: 3.5%
@@ -84,6 +91,7 @@ mediumViewport = 705px
       max-width: deleted-project-avatar-size
 
     button
+      display: block
       @media (max-width: mediumViewport)
         position: absolute
         right: 12px
