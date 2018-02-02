@@ -43,28 +43,29 @@ First, remix from https://glitch.com/~community into, e.g., "my-remix.glitch.me"
 
 Next, make your changes.  When you've got something you like, share it with us (see above), and you're all set.
 
+99% of people can stop right here.
+
 _But let's just say that I really want to be more hands-on with my sharing_
 
 Ok cool, these next steps are what we'd do internally and you're welcome to follow them as well.  Beware, Thar be Git Dragons beyond this point.
 
 1. On your local machine, clone our git repository from Github:
+ `git clone https://github.com/FogCreek/Glitch-Community`
+
+2. Add you remix as remote source in that repository (remember to swap 'my-remix' with your actual remix name)
+ `cd Glitch-Community`
+ `git remote add my-remix https://api.glitch.com/my-remix/git`
+ 
+3. Make a new branch ("my-branch" here, but it's best if you name this branch something that indicates its purpose, e.g. "fix-avatars", etc.) based on your remix:
+ `git fetch my-remix master:my-branch`
+ `git checkout my-branch`
+
+4. Almost done!  This next step will submit your pull request to us in GitHub!
+ `git push origin my-branch`
+ 
+ If you're a community member, you'll need to first 
 
 
-
-[Todo:  We can alleviate the users from having to do branching work in Setup by creating a branch out of my-remix/master in step 3 of ‘submit a pull request’.  This’d also let us adopt a public workflow of “Hey, just remix the site and make changes.”, and then a Glitch team member can do the ‘PR’ steps as needed.]
-
-Setup:
-Remix from /community/ into, e.g., my-remix
-On the console in your new remix, make a new branch
-`git checkout -b my-branch`
-Work on community.
-
-Later, to submit a pull request:
-On your local machine, have a git repo tracking https://github.com/FogCreek/Glitch-Community
-Add your remix as a remote source:
-`git remote add my-remix https://api.glitch.com/my-remix/git`
-Fetch your branch
-`git checkout --track my-remix/my-branch
 Push your branch to Glitch-Community
 `git push origin my-branch`
 (Not a Fog Creek employee? First Fork Glitch-Community, then push to your fork.)
