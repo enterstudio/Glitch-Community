@@ -53,7 +53,7 @@ Ok cool, these next steps are what we'd do internally and you're welcome to foll
     git clone https://github.com/FogCreek/Glitch-Community
     ```
 
-2. Add you remix as remote source in that repository (remember to swap 'my-remix' with your actual remix name)
+2. Add your remix as remote source in that repository (remember to swap 'my-remix' with your actual remix name)
     ```
     cd Glitch-Community
     git remote add my-remix https://api.glitch.com/my-remix/git
@@ -75,7 +75,7 @@ Ok cool, these next steps are what we'd do internally and you're welcome to foll
    ```
    git checkout my-branch  # Make sure we're on the right branch
    git pull my-remix master
-   git push origin my-remix
+   git push origin my-branch
    ```
 
 #### Deployment
@@ -100,6 +100,6 @@ First, let's make sure any changes made direct to Community are merged and happy
 
 #### Or just doing it live…
 
- *Can I just edit community directly,since it’s Glitch we’re dealing with here?*
+ *Can I just edit community directly, since it’s Glitch we’re dealing with here?*
   
 Sure, go for it.  Viva la quick ways to make small changes. All standard caveats and cautions apply.
