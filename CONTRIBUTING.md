@@ -70,20 +70,18 @@ Ok cool, these next steps are what we'd do internally and you're welcome to foll
 `git pull my-remix master`
 `git push origin my-remix`
 
-Push your branch to Glitch-Community
-`git push origin my-branch`
-(Not a Fog Creek employee? First Fork Glitch-Community, then push to your fork.)
-Within the GitHub UI, submit your pull request.
+### Deployment
+Only one of our paid maintainers is going to do this step, but here it is!  This generally happens immediately after we merge in any pull request.
 
-To iterate on your pull request:
-Inside your remix, make sure you’re still on my-branch, and do your work. `git commit` as much as you like, or wait for autocommit to come along.
-Locally, with my-branch checked out, `git pull`
-Locally, `git push origin my-branch` to add your changes to the PR
+First, let's make sure any changes made direct to Community are merged and happy.  This is a Glitch site, after all-- we're not forcing the PR workflow, especially for small changes.
 
-To deploy the site:
-On the community site, first to a Github Export to FogCreek/glitch-community-backup
-On the console in /Community/, `git pull`. https://github.com/FogCreek/Glitch-Community
-Smoke test;  if anything is funky then maybe `git checkout <commit-from-before-the-merge>` to keep the site happy, then remix and sort things out there or import from FogCreek/glitch-community-backup
+1. Locally, checkout origin/master, then pull from https://api.glitch.com/community/git and if there were any changes, merge them and push them back to origin/master.  If there were big changes, you'll want to test this merge by spinning up a new Glitch project and importing from GitHub.
+
+Ok, now the GitHub repository is up today and stable. 
+2. Inside of https://glitch.com/~community, open up the console.
+3. `git pull https://github.com/FogCreek/Glitch-Community`
+4. You're deployed!  View the site and the logs, make sure it's building and looks basically alive.
+  4.1 caveat for if the world is has beed destroyed...  no worries, you've got git on your side: `git checkout <commit-from-before-the-merge>` and you're back to where you were before the pull. 
 
 Or just doing it live…
     Q: Can I just edit community directly, since it’s Glitch we’re dealing with here?
