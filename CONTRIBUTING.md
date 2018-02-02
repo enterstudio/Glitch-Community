@@ -62,7 +62,7 @@ Ok cool, these next steps are what we'd do internally and you're welcome to foll
 3. Make a new branch ("my-branch" here, but it's best if you name this branch something that indicates its purpose, e.g. "fix-avatars", etc.) based on your remix:
     ```
     git fetch my-remix master:my-branch
-    git checkout my-branch`
+    git checkout my-branch
     ```
 
 4. Almost done!  This next step will submit your pull request to us in GitHub!
@@ -84,7 +84,7 @@ Only employees of Fog Creek will be able to do this step, and here it is!  This 
 
 First, let's make sure any changes made direct to Community are merged and happy.  This is a Glitch site, after all-- we're not forcing the PR workflow, especially for small changes.
 
-1. Locally, checkout origin/master, then pull from https://api.glitch.com/community/git and, if there were any changes, merge them and push them back to origin/master.  If there were big changes, you'll want to test this merge by spinning up a new Glitch project and importing from GitHub.
+1. In your local git repo, checkout `origin/master`, then pull from `https://api.glitch.com/community/git` and, if there were any changes, merge them and push them back to `origin/master`.  If there were big changes, you'll want to test this merge by performing step #2 on a remix of community first before changing the live site.
 
     Ok, now the GitHub repository is updated and stable. 
   
