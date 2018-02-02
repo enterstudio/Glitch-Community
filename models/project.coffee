@@ -58,6 +58,7 @@ module.exports = Project = (I={}, self=Model(I)) ->
         self.readme response.data
         application.overlayProject self
       .catch (error) ->
+        debugger
         console.error "getReadme", error
         if error.response.status is 404
           self.readmeNotFound true
@@ -147,7 +148,7 @@ Project.getProjectOverlay = (application, domain) ->
   application.overlayProjectVisible true
   application.api().get projectPath
   .then ({data}) ->
-    Project(data).showOverlay application
+    Project(data||{}).showOverlay application
   .catch (error) ->
     console.error "getProjectOverlay", error
 
