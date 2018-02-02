@@ -15,15 +15,15 @@ Philosophy and Ideals
 
 Our ideal contribution flow works like this:
 
-### On Your side
+#### On Your Side
 
 1. You remix this site, play with it, and show us what you made!  Tweeting [@Glitch](https://twitter.com/glitch) or posting to [our form](https://support.glitch.com/) are good ways to get our attention.
 2. We say something like "We like what you got, good job!"
-3. Your changes (or something inspired by your changes) are live on our production site.
+3. Your changes (or something inspired by your changes) are prepared and make their way to our live production site.
 
 _behind the scenes_ we'll make use of GitHub's Pull Request workflow to incorporate changes.  If you're a part of that community, then feel free to submit pull requests directly-- if you're not,  don't worry about it and just focus on building and sharing your ideas.
 
-### On our side
+#### On Our Side
 
 Sometimes we'll have another feature or design underway that'll be in conflict with the direction that you took the site.  It's all good, let's keep it fun and keep it focused on the ideas and improvements.
 
@@ -34,22 +34,24 @@ This site is also young and hungry.  We don't have a public "bug list" and a lot
 Accessible technologies are important to allowing people to contribute.  As we internally work on the code, we'll move incrementally towards ever-stronger documentation for the special pieces of this site and "boring"(easy to learn, perfectly fine) solutions for the standard components.
 
 
-Contribution workflow
+Contribution Workflow
 ----------------------
 
 It starts with a remix!
 
-First, remix from https://glitch.com/~community into, e.g., "my-remix.glitch.me"
+First, remix from [https://glitch.com/~community](https://glitch.com/~community) into, e.g., "my-remix"
 
 Next, make your changes.  When you've got something you like, share it with us (see above), and you're all set.
 
-99% of people can stop right here.
+***99% of people can stop right here.***
 
 _But let's just say that I really want to be more hands-on with my sharing_
 
+#### Pull Request Workflow
+
 Ok cool, these next steps are what we'd do internally and you're welcome to follow them as well.  Beware, Thar be Git Dragons beyond this point.
 
-1. On your local machine, clone our git repository from Github:
+1. On your local machine, clone our git repository from Github: 
  `git clone https://github.com/FogCreek/Glitch-Community`
 
 2. Add you remix as remote source in that repository (remember to swap 'my-remix' with your actual remix name)
@@ -61,16 +63,15 @@ Ok cool, these next steps are what we'd do internally and you're welcome to foll
  `git checkout my-branch`
 
 4. Almost done!  This next step will submit your pull request to us in GitHub!
- `git push origin my-branch`
- 
-( Don't have permission to push? You'll need to first [Fork](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) our [repository](https://github.com/FogCreek/Glitch-Community) and then [create a pull request from the fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) instead.
+ `git push origin my-branch` 
+ _(Don't have permission to push? You'll need to first [Fork](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) our [repository](https://github.com/FogCreek/Glitch-Community) and then [create a pull request from the fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) instead.)_
 
 5. Now that we can see the full diff in the pull request, there are probably some changes that pop out as things worth fixing before merging it with the main project.  No problem, iterate!  Observe the diff, go back into you Glitch project, and make your changes.  To update the pull request, go back to your local console and run:
 `git checkout my-branch`
 `git pull my-remix master`
 `git push origin my-remix`
 
-### Deployment
+#### Deployment
 Only one of our paid maintainers is going to do this step, but here it is!  This generally happens immediately after we merge in any pull request.
 
 First, let's make sure any changes made direct to Community are merged and happy.  This is a Glitch site, after all-- we're not forcing the PR workflow, especially for small changes.
@@ -79,10 +80,10 @@ First, let's make sure any changes made direct to Community are merged and happy
 
 Ok, now the GitHub repository is up today and stable. 
 2. Inside of https://glitch.com/~community, open up the console.
+3. `git log -1`
 3. `git pull https://github.com/FogCreek/Glitch-Community`
 4. You're deployed!  View the site and the logs, make sure it's building and looks basically alive.
-  4.1 caveat for if the world is has beed destroyed...  no worries, you've got git on your side: `git checkout <commit-from-before-the-merge>` and you're back to where you were before the pull. 
+  4.1 caveat for if the world is has beed destroyed...  no worries, you've got git on your side: `git checkout <commit-hash-from-above>` and you're back to where you were before the pull.  Now go get help because something went wrong with step 1, and you need to figure it out and fix it. Once more into the breach!
 
-Or just doing it live…
-    Q: Can I just edit community directly, since it’s Glitch we’re dealing with here?
-    A: Sure, go for it.  Viva la quick ways to make small changes.
+#### ...But like, this is a Glitch app, so I can just do it live, yeah?
+If you have permission to edit /~community directly,  yes, you can do it live.  All the standard risks and dangers apply, but there are plenty of good reasons to make quick edits in the way that Glitch does it best, so go for it. This remains appropriate for quick copy edits, typo fixes, updating the project-of-the-day, etc. Git is running and has got your back, in case somethign goes wrong, and any changes you make will, for the most part, merge in just fine :-)
