@@ -1,0 +1,19 @@
+- Loader = require "./includes/loader"
+
+article.deleted-projects
+  h2
+    = "Deleted Projects"
+    span.emoji.bomb.emoji-in-title
+
+  div.deleted-project-loader(class=@hiddenIfDeletedProjectsLoaded)
+    button.button-tertiary(click=@getDeletedProjects class=@hiddenIfDeletedProjectsLoadingOrLoaded) Show
+    span(class=@hiddenUnlessDeletedProjectsLoading)
+      = Loader
+        
+  ul.deleted-projects-container
+    - @user().deletedProjects.forEach (project) ->
+      li.deleted-project(click=project.presenterUndelete)
+        img.avatar(src=project.avatar)
+        div.deleted-project-name
+          =project.domain
+        button.button-small Undelete

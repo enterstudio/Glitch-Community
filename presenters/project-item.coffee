@@ -6,14 +6,12 @@ UsersListPresenter = require "./users-list"
 ProjectOptionsPop = require "../templates/pop-overs/project-options-pop"
 ProjectOptionsPopPresenter = require './pop-overs/project-options-pop'
 
-module.exports = (application, project, category) ->
+module.exports = (application, project, category, userPagePresenter) ->
 
   self = 
 
     category: category
     project: project
-
-    projectOptionsPopPresenter: ProjectOptionsPopPresenter project, application
     
     usersListPresenter: UsersListPresenter(project)
 
@@ -42,7 +40,7 @@ module.exports = (application, project, category) ->
       application.closeAllPopOvers()
       event.stopPropagation()
       button = $(event.target).closest('.opens-pop-over')
-      button[0].appendChild ProjectOptionsPop(self.projectOptionsPopPresenter)
+      button[0].appendChild ProjectOptionsPop(ProjectOptionsPopPresenter(project, application, self, userPagePresenter))
 
     visibleIfUserHasProjectOptions: ->
       if application.user().isOnUserPageForCurrentUser(application) or application.team().currentUserIsOnTeam(application)                    
@@ -51,7 +49,7 @@ module.exports = (application, project, category) ->
     stopPropagation: (event) ->
       event.stopPropagation()
 
-    togglePinedState: ->
+    togglePinnedState: ->
       if application.pageIsTeamPage()
         self.toggleTeamPin()
       else
@@ -78,6 +76,6 @@ module.exports = (application, project, category) ->
       backgroundColor: category.color?()
 
     avatar: ->
-      "#{CDN_URL}/project-avatar/#{project.id()}.png"
+      project.avatar()
 
   return ProjectItemTemplate self

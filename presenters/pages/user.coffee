@@ -7,6 +7,7 @@ md = require('markdown-it')
 .disable(['image'])
 
 UserTemplate = require "../../templates/pages/user"
+DeletedProjectsTemplate = require "../../templates/deleted-projects"
 LayoutPresenter = require "../layout"
 CtaButtonsPresenter = require "../cta-buttons"
 ProjectsListPresenter = require "../projects-list"
@@ -19,6 +20,7 @@ module.exports = (application, userLoginOrId) ->
     
     newDescription: Observable ""
     editingDescription: Observable false
+    deletedProjectsLoadingState: Observable ""
     
     userLoginOrId: ->
       decodeURI userLoginOrId
@@ -162,12 +164,12 @@ module.exports = (application, userLoginOrId) ->
     recentProjects: ->
       recentProjects = self.projects().filter (project) ->
         !_.contains self.pinnedProjectIds(), project.id()
-      ProjectsListPresenter application, "Recent Projects", recentProjects  
+      ProjectsListPresenter application, "Recent Projects", recentProjects, self  
     
     pinnedProjectsList: ->
       pinnedProjects = self.projects().filter (project) ->
         _.contains self.pinnedProjectIds(), project.id()
-      ProjectsListPresenter application, "Pinned Projects", pinnedProjects
+      ProjectsListPresenter application, "Pinned Projects", pinnedProjects, self
 
     hiddenIfNotCurrentUserAndNoPins: ->
       if !self.isCurrentUser() and self.user().pins().length is 0
@@ -175,6 +177,101 @@ module.exports = (application, userLoginOrId) ->
     
     hiddenUnlessUserIsAnon: ->
       'hidden' unless self.user().isAnon()
+                
+    deleteProject: (project, event) ->
+      projectContainer = event.target.closest 'li'
+      application.closeAllPopOvers()
+      $(projectContainer).one 'animationend', -> 
+        # Hold off on UI updates until the animation ends
+        index = application.user().projects.indexOf(project)
+        if index != -1
+          application.user().projects.splice(index, 1)
+        
+      $(projectContainer).addClass 'slide-down'
+      
+      project.delete().then ->
+        # Fetch the deleted project and add it to deletedProjects()
+        path = "projects/#{project.id()}?showDeleted=true"
+        application.api().get path
+        .then ({data}) ->
+          rawProject = data
+          rawProject.fetched = true
+          deletedProject = Project(rawProject).update(rawProject)
+          deletedProject.presenterUndelete = (event) ->
+            self.undeleteProject(project, event)
+          application.user().deletedProjects.unshift(deletedProject)     
+        .catch (error) ->
+            console.error "getDeletedProject", error
+        
+    undeleteProject: (project, event) -> 
+      projectContainer = event.target.closest 'li'
+      $(projectContainer).one 'animationend', -> 
+        # Hold off on UI updates until the animation ends
+        index = self.user().deletedProjects.indexOf(project)
+        if index != -1
+          self.user().deletedProjects.splice(index, 1)      
+      $(projectContainer).addClass('slide-up')
+      
+      # Undelete the project using the API
+      project.undelete().then ->
+        # Renaming, if appropriate, requires an API call,
+        # so we wait on the renamePromise before proceeding with the fetch
+        renamePromise = new Promise (resolve) ->
+          if project.domain().endsWith "-deleted"
+            # Attempt to trim -deleted from the project name
+            renamePath = "projects/#{project.id()}"
+            newDomain = project.domain().slice(0, "-deleted".length * -1)
+            application.api().patch(renamePath, domain: newDomain).then(resolve).catch(resolve)
+          else
+            resolve()
+        
+        renamePromise.then ->
+          # Fetch the recovered project and add it to self.projects()
+          projectsPath = "projects/byIds?ids=#{project.id()}"
+          application.api().get projectsPath
+          .then ({data}) ->
+            rawProject = data[0]
+            rawProject.fetched = true
+            restoredProject = Project(rawProject).update(rawProject)
+            self.user().projects.unshift(restoredProject)      
+          .catch (error) ->
+              console.error "getProject", error
+      
+
+    getDeletedProjects: ->
+      if !self.isCurrentUser()
+        return
+      
+      self.deletedProjectsLoadingState('loading')
+      
+      application.api().get("/user/deleted-projects/").then (response) -> 
+        deletedProjectsRaw = response.data
+        deletedProjects = deletedProjectsRaw.map (projectRaw) ->
+          projectRaw.fetched = true
+          project = Project(projectRaw).update(projectRaw)
+          # Give the project access to this presenter:
+          project.presenterUndelete = (event) ->
+            self.undeleteProject(project, event)
+          return project
+
+        self.deletedProjectsLoadingState('loaded')
+        self.user().deletedProjects(deletedProjects)
+      .catch (error) -> 
+        self.deletedProjectsLoadingState('')
+        console.error 'Failed to get deleted projects', error
+            
+    deletedProjects: ->
+      DeletedProjectsTemplate self
+      
+    hiddenIfDeletedProjectsLoadingOrLoaded: ->
+      'hidden' if ['loading','loaded'].includes self.deletedProjectsLoadingState()
+      
+    hiddenUnlessDeletedProjectsLoading: ->
+      'hidden' unless self.deletedProjectsLoadingState() == 'loading'
+        
+    hiddenIfDeletedProjectsLoaded: ->
+      'hidden' if self.deletedProjectsLoadingState() == 'loaded'
+      
       
         
   # application.user.observe (newVal) ->
@@ -182,5 +279,5 @@ module.exports = (application, userLoginOrId) ->
   #     self.setInitialUserDescription()
         
   content = UserTemplate(self)
-
+  
   return LayoutPresenter application, content

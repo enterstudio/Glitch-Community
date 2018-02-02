@@ -182,7 +182,11 @@ self = Model(
     User.getUserByLogin application, login
 
   getUserById: (id) ->
-    User.getUserById application, id
+    User.getUserById(application, id).then (user) =>
+      if application.currentUser().id() is user.id
+        application.saveCurrentUser user
+      else
+        application.saveUser user
 
   getTeamById: (id) ->
     Team.getTeamById application, id

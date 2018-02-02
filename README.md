@@ -7,9 +7,8 @@ Philosophically, a little bit `Youtube`, some `Spotify`, with a sprinkle of `app
 Getting Started
 -----------------
 
-[Contribution Guidelines and Process](https://docs.google.com/document/d/11xNX1SnAfnhUJZcE6jx_ic4QQUGtThv1CpvBprtB4Wo/edit)
+File structure
 
-Architecture: 
 
 - the app starts at `server.coffee`
 - `client.coffee` is compiled and served as /client.js
@@ -20,6 +19,16 @@ Architecture:
 
 application models -> presenter -> DOM
 
+Built with
+----------
+
+- [Coffescript](http://coffeescript.org/)
+- [Jadelet](https://jadelet.com/)
+- [Stylus](http://stylus-lang.com/)
+- [Node.js](https://nodejs.org/dist/latest-v8.x/docs/api/)
+
+
+
 ```
   ___     ___      ___
  {o,o}   {o.o}    {o,o}
@@ -28,9 +37,11 @@ application models -> presenter -> DOM
 O RLY?  YA RLY   NO WAI!
 ```
 
-Why is this in [Jadelet](https://jadelet.com/)?
------------------------
-- The Glitch editor is also written in jadelet, so it reduces switching cost
-- A nice Models, Presenters and Templates architecture
-- Unit testable (eventually!)
-- Can render views based on cached localstorage values, then update them with API based values
+#### Remixing this project
+
+Once you remix this project, it'll come straight to life! The only external dependency that doesn't remix cleanly is OAauth login -- see the [FAQ](https://glitch.com/edit/#!/community?path=FAQ.md) for a workaround.
+  
+Contributing
+------------
+
+Please read [CONTRIBUTING.md](https://glitch.com/edit/#!/community?path=CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests to us.

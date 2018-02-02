@@ -45,6 +45,7 @@ module.exports = User = (I={}, self=Model(I)) ->
     showAsGlitchTeam: false
     persistentToken: null
     pins: []
+    deletedProjects: []
 
   self.attrObservable Object.keys(I)...
   self.attrObservable "notFound"
@@ -203,28 +204,29 @@ module.exports = User = (I={}, self=Model(I)) ->
   return self
 
 User.getUserByLogin = (application, login) ->
-  userPath = "users/byLogins?logins=#{login}"
-  application.api().get userPath
+  userIdPath = "/userid/byLogin/#{login}"
+  application.api().get userIdPath
   .then (response) ->
-    if response.data.length
-      user = response.data[0]
-      application.saveUser user
-    else
+    userId = response.data
+    if userId == "NOT FOUND"
       application.user().notFound true
+      return
+    User.getUserById(application, userId).then (user) =>
+      application.saveUser user
   .catch (error) ->
-    console.error "getUserByLogin GET #{userPath}", error
+    console.error "getUserByLogin GET #{userIdPath}", error
 
 User.getUserById = (application, id) ->
   userPath = "users/#{id}"
-  application.api().get userPath
-  .then ({data}) ->
-    if application.currentUser().id() is data.id
-      application.saveCurrentUser data
-    else
-      application.saveUser data
-  .catch (error) ->
-    console.error "getUserById GET #{userPath}", error
-    
+  promise = new Promise (resolve, reject) =>
+    application.api().get userPath
+    .then ({data}) ->
+      resolve(data)
+    .catch (error) ->
+      console.error "getUserById GET #{userPath}", error
+      reject()
+  return promise
+
 User.getUsersById = (api, ids) ->
   team = application.team()
   userIdsToFetch = ids.filter (id) ->
