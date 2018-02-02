@@ -22,10 +22,10 @@ application models -> presenter -> DOM
 Built with
 ----------
 
-- Coffescript
-- Jadelet
-- Stylus
-- Observables
+- [Coffescript](http://coffeescript.org/)
+- [Jadelet](https://jadelet.com/)
+- [Stylus](http://stylus-lang.com/)
+- [Node.js](https://nodejs.org/dist/latest-v8.x/docs/api/)
 
 
 
@@ -39,33 +39,9 @@ O RLY?  YA RLY   NO WAI!
 
 #### Remixing this project
 
-Once you remix this project, it'll come straight to life!
-
-##### Logging in with Oauth
-
-There's a peculiarity around Oauth logins, since the providers expect the site to have a different domain than what your remix has.  To log in to your new remixed site,
-
-  In a new browser tab, visit Glitch.com and log in if you aren't already.  Open up your browser's [Developer Tools](https://webmasters.stackexchange.com/a/77337/2628) and run this command in the console: `window.localStorage.cachedUser`.  Highlight and copy the big JSON blob that it prints out.
-  
-  Now, back in your remix, click on the 'show' button to view your running app.  Open the developer tools again and this time type in `window.localStorage.cachedUser = ``[Paste Here]`` `, replacing the `[Paste Here]` with your copied JSON blob from the other tab. Hit enter, refresh the page, and you're logged in!
+Once you remix this project, it'll come straight to life! The only external dependency that doesn't remix cleanly is OAauth login -- see the [FAQ](https://glitch.com/edit/#!/community?path=FAQ.md) for a workaround.
   
 Contributing
 ------------
 
 Please read [CONTRIBUTING.md](https://glitch.com/edit/#!/community?path=CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests to us.
-
-
-
-Why is this in [Jadelet](https://jadelet.com/)?
------------------------
-- The Glitch editor is also written in jadelet, so it reduces switching cost
-- A nice Models, Presenters and Templates architecture
-- Can render views based on cached localstorage values, then update them with API based values
-
-FAQ
----
-- _I remixed this site... how do I log in?_
-
-  First, log in on glitch.com.  Now open up your browser tools and 
-  grab the 'cachedUser' data from local storage.  (In Chrome, you'll find this under the 'application' tab.)  Paste that data into your localstorage
-  data in your remix, refresh the page, and now you're logged in!

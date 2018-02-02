@@ -17,7 +17,7 @@ Our ideal contribution flow works like this:
 
 #### On Your Side
 
-1. You remix this site, play with it, and show us what you made!  Tweeting [@Glitch](https://twitter.com/glitch) or posting to [our form](https://support.glitch.com/) are good ways to get our attention.
+1. You remix this site, play with it, and show us what you made!  Tweeting [@Glitch](https://twitter.com/glitch) or posting to [our forum](https://support.glitch.com/) are good ways to get our attention.
 2. We say something like "We like what you got, good job!"
 3. Your changes (or something inspired by your changes) are prepared and make their way to our live production site.
 
