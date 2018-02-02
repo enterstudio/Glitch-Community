@@ -49,38 +49,57 @@ Ok cool, these next steps are what we'd do internally and you're welcome to foll
 
 1. On your local machine, clone our git repository from Github: 
 
-    `git clone https://github.com/FogCreek/Glitch-Community`
+    ```
+    git clone https://github.com/FogCreek/Glitch-Community
+    ```
 
 2. Add you remix as remote source in that repository (remember to swap 'my-remix' with your actual remix name)
- `cd Glitch-Community`
- `git remote add my-remix https://api.glitch.com/my-remix/git`
+    ```
+    cd Glitch-Community
+    git remote add my-remix https://api.glitch.com/my-remix/git
+    ```
  
 3. Make a new branch ("my-branch" here, but it's best if you name this branch something that indicates its purpose, e.g. "fix-avatars", etc.) based on your remix:
- `git fetch my-remix master:my-branch`
- `git checkout my-branch`
+    ```
+    git fetch my-remix master:my-branch
+    git checkout my-branch`
+    ```
 
 4. Almost done!  This next step will submit your pull request to us in GitHub!
- `git push origin my-branch` 
- _(Don't have permission to push? You'll need to first [Fork](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) our [repository](https://github.com/FogCreek/Glitch-Community) and then [create a pull request from the fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) instead.)_
+    ```
+    git push origin my-branch
+    ```
+    _(Don't have permission to push? You'll need to first [Fork](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) our [repository](https://github.com/FogCreek/Glitch-Community) and then [create a pull request from the fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) instead.)_
 
 5. Now that we can see the full diff in the pull request, there are probably some changes that pop out as things worth fixing before merging it with the main project.  No problem, iterate!  Observe the diff, go back into you Glitch project, and make your changes.  To update the pull request, go back to your local console and run:
-`git checkout my-branch`
-`git pull my-remix master`
-`git push origin my-remix`
+   ```
+   git checkout my-branch  # Make sure we're on the right branch
+   git pull my-remix master
+   git push origin my-remix
+   ```
 
 #### Deployment
-Only one of our paid maintainers is going to do this step, but here it is!  This generally happens immediately after we merge in any pull request.
+
+Only employees of Fog Creek will be able to do this step, and here it is!  This generally happens immediately after we merge in any pull request.
 
 First, let's make sure any changes made direct to Community are merged and happy.  This is a Glitch site, after all-- we're not forcing the PR workflow, especially for small changes.
 
-1. Locally, checkout origin/master, then pull from https://api.glitch.com/community/git and if there were any changes, merge them and push them back to origin/master.  If there were big changes, you'll want to test this merge by spinning up a new Glitch project and importing from GitHub.
+1. Locally, checkout origin/master, then pull from https://api.glitch.com/community/git and, if there were any changes, merge them and push them back to origin/master.  If there were big changes, you'll want to test this merge by spinning up a new Glitch project and importing from GitHub.
 
-Ok, now the GitHub repository is up today and stable. 
+    Ok, now the GitHub repository is updated and stable. 
+  
 2. Inside of https://glitch.com/~community, open up the console.
-3. `git log -1`
-3. `git pull https://github.com/FogCreek/Glitch-Community`
-4. You're deployed!  View the site and the logs, make sure it's building and looks basically alive.
-  4.1 caveat for if the world is has beed destroyed...  no worries, you've got git on your side: `git checkout <commit-hash-from-above>` and you're back to where you were before the pull.  Now go get help because something went wrong with step 1, and you need to figure it out and fix it. Once more into the breach!
+    ```
+    git log -1 # Gets a stable changeset handy in case we need to revert
+    git pull https://github.com/FogCreek/Glitch-Community
+    ```
+    
+3. You're deployed!  View the site and the logs, make sure it's building and looks basically alive.
 
-#### ...But like, this is a Glitch app, so I can just do it live, yeah?
-If you have permission to edit /~community directly,  yes, you can do it live.  All the standard risks and dangers apply, but there are plenty of good reasons to make quick edits in the way that Glitch does it best, so go for it. This remains appropriate for quick copy edits, typo fixes, updating the project-of-the-day, etc. Git is running and has got your back, in case somethign goes wrong, and any changes you make will, for the most part, merge in just fine :-)
+    3.1 caveat for if you just broke the internet...  no worries, you've got git on your side: `git checkout <commit-hash-from-above>` and you're back to where you were before the pull.  Now go get help because something went wrong with step 1, and you need to figure it out and fix it. Once more into the breach!
+
+#### Or just doing it live…
+
+ *Can I just edit community directly,since it’s Glitch we’re dealing with here?*
+  
+Sure, go for it.  Viva la quick ways to make small changes. All standard caveats and cautions apply.
