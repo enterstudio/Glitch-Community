@@ -211,20 +211,22 @@ User.getUserByLogin = (application, login) ->
     if userId == "NOT FOUND"
       application.user().notFound true
       return
-    User.getUserById application, userId
+    User.getUserById(application, userId).then (user) =>
+      application.saveUser user
   .catch (error) ->
     console.error "getUserByLogin GET #{userIdPath}", error
 
 User.getUserById = (application, id) ->
   userPath = "users/#{id}"
-  application.api().get userPath
-  .then ({data}) ->
-    if application.currentUser().id() is data.id
-      application.saveCurrentUser data
-    application.saveUser data
-  .catch (error) ->
-    console.error "getUserById GET #{userPath}", error
-    
+  promise = new Promise (resolve, reject) =>
+    application.api().get userPath
+    .then ({data}) ->
+      resolve(data)
+    .catch (error) ->
+      console.error "getUserById GET #{userPath}", error
+      reject()
+  return promise
+
 User.getUsersById = (api, ids) ->
   team = application.team()
   userIdsToFetch = ids.filter (id) ->
