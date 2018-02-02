@@ -92,6 +92,12 @@ First, let's make sure any changes made direct to Community are merged and happy
     ```
     git log -1 # Gets a stable changeset handy in case we need to revert
     git pull
+    refresh # Updates the glitch editor with the new files
+    ```
+    
+    Known issue:  The watchers can get into a tangled mess sometimes, and they'll just spew errors into the activity log. Quickly fix this by restarting the container:
+    ```
+    curl -X POST https://api.glitch.com/projects/community/stop?authorization=[your token]
     ```
     
 3. You're deployed!  View the site and the logs, make sure it's building and looks basically alive.
