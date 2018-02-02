@@ -5,17 +5,17 @@ Hey, welcome!  This document should give you all the steps you need to make cont
 
 Please note we have a [code of conduct](https://glitch.com/edit/#!/community?path=CODE_OF_CONDUCT.md), please follow it in all your interactions with the project and the denizens thereof.
 
-Mission
--------
-
+Contribution Mission
+--------------------
+Anyone in our community can feel welcome and supported in submitting improvements, fixes, and ideas to this Glitch community site.
 
 
 Philosophy and Ideals
 ---------------------
 
-This is a Glitch site! Our ideal contribution flow works like this:
+Our ideal contribution flow works like this:
 
-###On Your side
+### On Your side
 
 1. You remix this site, play with it, and show us what you made!  Tweeting [@Glitch](https://twitter.com/glitch) or posting to [our form](https://support.glitch.com/) are good ways to get our attention.
 2. We say something like "We like what you got, good job!"
@@ -31,11 +31,23 @@ This site is open source. All interactions between this site and Glitch-the-appl
 
 This site is also young and hungry.  We don't have a public "bug list" and a lot of processes that are best to formalize have yet to be. And this site believes in a Glitchy future-- it is built, maintained, and deployed entirely within Glitch itself.  We're living the Glitchy future of web development, and it's a blast.
 
-
+Accessible technologies are important to allowing people to contribute.  As we internally work on the code, we'll move incrementally towards ever-stronger documentation for the special pieces of this site and "boring"(easy to learn, perfectly fine) solutions for the standard components.
 
 
 Contribution workflow
 ----------------------
+
+It starts with a remix!
+
+First, remix from https://glitch.com/~community into, e.g., "my-remix.glitch.me"
+
+Next, make your changes.  When you've got something you like, share it with us (see above), and you're all set.
+
+_But let's just say that I really want to be more hands-on with my sharing_
+
+Ok cool, these next steps are what we'd do internally and you're welcome to follow them as well.  Beware, Thar be Git Dragons beyond this point.
+
+1. On your local machine, clone our git repository from Github:
 
 
 
