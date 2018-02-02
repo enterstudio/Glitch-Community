@@ -211,7 +211,6 @@ User.getUserByLogin = (application, login) ->
     if userId == "NOT FOUND"
       application.user().notFound true
       return
-    
     User.getUserById application, userId
   .catch (error) ->
     console.error "getUserByLogin GET #{userIdPath}", error
@@ -220,9 +219,9 @@ User.getUserById = (application, id) ->
   userPath = "users/#{id}"
   application.api().get userPath
   .then ({data}) ->
-    application.saveUser data
     if application.currentUser().id() is data.id
       application.saveCurrentUser data
+    application.saveUser data
   .catch (error) ->
     console.error "getUserById GET #{userPath}", error
     
