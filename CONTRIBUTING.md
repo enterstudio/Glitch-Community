@@ -63,8 +63,12 @@ Ok cool, these next steps are what we'd do internally and you're welcome to foll
 4. Almost done!  This next step will submit your pull request to us in GitHub!
  `git push origin my-branch`
  
- If you're a community member, you'll need to first 
+( Don't have permission to push? You'll need to first [Fork](https://blog.scottlowe.org/2015/01/27/using-fork-branch-git-workflow/) our [repository](https://github.com/FogCreek/Glitch-Community) and then [create a pull request from the fork](https://help.github.com/articles/creating-a-pull-request-from-a-fork/) instead.
 
+5. Now that we can see the full diff in the pull request, there are probably some changes that pop out as things worth fixing before merging it with the main project.  No problem, iterate!  Observe the diff, go back into you Glitch project, and make your changes.  To update the pull request, go back to your local console and run:
+`git checkout my-branch`
+`git pull my-remix master`
+`git push origin my-remix`
 
 Push your branch to Glitch-Community
 `git push origin my-branch`
