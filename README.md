@@ -4,6 +4,11 @@ Discover new reasons to code, remix cool and helpful projects made with Glitch.
 
 Philosophically, a little bit `Youtube`, some `Spotify`, with a sprinkle of `app store`.
 
+Contributing
+------------
+
+Please read [CONTRIBUTING.md](https://glitch.com/edit/#!/community?path=CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests to us.
+
 Getting Started
 -----------------
 
@@ -41,7 +46,4 @@ O RLY?  YA RLY   NO WAI!
 
 Once you remix this project, it'll come straight to life! The only external dependency that doesn't remix cleanly is OAauth login -- see the [FAQ](https://glitch.com/edit/#!/community?path=FAQ.md) for a workaround.
   
-Contributing
-------------
 
-Please read [CONTRIBUTING.md](https://glitch.com/edit/#!/community?path=CONTRIBUTING.md) for details on our code of conduct and the process for submitting pull requests to us.

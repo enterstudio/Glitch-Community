@@ -91,7 +91,7 @@ First, let's make sure any changes made direct to Community are merged and happy
 2. Inside of https://glitch.com/~community, open up the console.
     ```
     git log -1 # Gets a stable changeset handy in case we need to revert
-    git pull https://github.com/FogCreek/Glitch-Community
+    git pull
     ```
     
 3. You're deployed!  View the site and the logs, make sure it's building and looks basically alive.
