@@ -4,9 +4,9 @@
 
 .overlay-background(class=@hiddenUnlessOverlayProjectVisible click=@hideOverlay)
 
-  dialog.overlay.project-overlay(click=@stopPropagation tabindex="-1" class=@hiddenIfProjectNotFound)
+  dialog.overlay.project-overlay(click=@stopPropagation tabindex="-1")
     section.pop-over-info
-      img.avatar(src=@projectAvatar)
+      img.avatar(src=@projectAvatar, class=@hiddenIfProjectNotFound)
       .overlay-title= @projectDomain
 
     section.pop-over-actions.has-buttons(class=@hiddenIfCurrentUserInProject class=@hiddenIfProjectNotFound)
@@ -43,7 +43,7 @@
               a(href="https://support.glitch.com") support forum
               span .
 
-        span(class=@hiddenUnlessReadmeNotFound)
+        span(class=@hiddenUnlessReadmeNotFound class=@hiddenIfProjectNotFound)
           h1 
             span This is
             span= " #{@projectDomain()}" 

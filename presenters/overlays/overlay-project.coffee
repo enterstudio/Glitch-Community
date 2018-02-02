@@ -76,10 +76,10 @@ module.exports = (application) ->
       "warning" if self.project()?.projectNotFound()
 
     hiddenUnlessProjectNotFound: ->
-      'hidden' unless self.project()?.projectNotFound()
+      'hidden' unless self.project()?.projectNotFound() 
         
     hiddenIfProjectNotFound: ->
-      'hidden' if self.project().projectNotFound()
+      'hidden' if self.project() == undefined or self.project()?.projectNotFound()
     
     hiddenUnlessReadmeNotFound: ->
       'hidden' unless self.project()?.readmeNotFound()
