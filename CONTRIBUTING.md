@@ -5,12 +5,31 @@ Hey, welcome!  This document should give you all the steps you need to make cont
 
 Please note we have a [code of conduct](https://glitch.com/edit/#!/community?path=CODE_OF_CONDUCT.md), please follow it in all your interactions with the project and the denizens thereof.
 
-Philosophy
-----------
+Mission
+-------
+
+
+
+Philosophy and Ideals
+---------------------
+
+This is a Glitch site! Our ideal contribution flow works like this:
+
+###On Your side
+
+1. You remix this site, play with it, and show us what you made!  Tweeting [@Glitch](https://twitter.com/glitch) or posting to [our form](https://support.glitch.com/) are good ways to get our attention.
+2. We say something like "We like what you got, good job!"
+3. Your changes (or something inspired by your changes) are live on our production site.
+
+_behind the scenes_ we'll make use of GitHub's Pull Request workflow to incorporate changes.  If you're a part of that community, then feel free to submit pull requests directly-- if you're not,  don't worry about it and just focus on building and sharing your ideas.
+
+### On our side
+
+Sometimes we'll have another feature or design underway that'll be in conflict with the direction that you took the site.  It's all good, let's keep it fun and keep it focused on the ideas and improvements.
 
 This site is open source. All interactions between this site and Glitch-the-application are using public API endpoints-- there aren't any special prevlidges or secret endpoints going on.
 
-This site is also young and hungry.  We don't have a public "bug list" and a lot of processes that are best to formalize have yet to be. And this site believes in a Glitchy future-- it is built, maintained, and deployed entirely within Glitch itself.
+This site is also young and hungry.  We don't have a public "bug list" and a lot of processes that are best to formalize have yet to be. And this site believes in a Glitchy future-- it is built, maintained, and deployed entirely within Glitch itself.  We're living the Glitchy future of web development, and it's a blast.
 
 
 
