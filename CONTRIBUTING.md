@@ -37,22 +37,19 @@ Accessible technologies are important to allowing people to contribute.  As we i
 Contribution Workflow
 ----------------------
 
-It starts with a remix!
-
 First, remix from [https://glitch.com/~community](https://glitch.com/~community) into, e.g., "my-remix"
 
 Next, make your changes.  When you've got something you like, share it with us (see above), and you're all set.
 
-***99% of people can stop right here.***
-
-_But let's just say that I really want to be more hands-on with my sharing_
+***That's all you need to do,*** _but if you really want to be hands on with git pull requests, then read on._
 
 #### Pull Request Workflow
 
-Ok cool, these next steps are what we'd do internally and you're welcome to follow them as well.  Beware, Thar be Git Dragons beyond this point.
+Ok cool, these next steps are what we'd do internally and you're welcome to follow them as well if you choose.  Beyond this point, there be dragons.
 
 1. On your local machine, clone our git repository from Github: 
- `git clone https://github.com/FogCreek/Glitch-Community`
+
+    `git clone https://github.com/FogCreek/Glitch-Community`
 
 2. Add you remix as remote source in that repository (remember to swap 'my-remix' with your actual remix name)
  `cd Glitch-Community`
