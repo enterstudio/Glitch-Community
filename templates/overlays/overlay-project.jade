@@ -4,12 +4,12 @@
 
 .overlay-background(class=@hiddenUnlessOverlayProjectVisible click=@hideOverlay)
 
-  dialog.overlay.project-overlay(click=@stopPropagation tabindex="-1" class=@hiddenUnlessProject)
+  dialog.overlay.project-overlay(click=@stopPropagation tabindex="-1" class=@hiddenIfProjectNotFound)
     section.pop-over-info
       img.avatar(src=@projectAvatar)
       .overlay-title= @projectDomain
 
-    section.pop-over-actions.has-buttons(class=@hiddenIfCurrentUserInProject)
+    section.pop-over-actions.has-buttons(class=@hiddenIfCurrentUserInProject class=@hiddenIfProjectNotFound)
       a.button-link.show-app-link(href=@showLink)
         .button.show-app
           img(src=showIcon)

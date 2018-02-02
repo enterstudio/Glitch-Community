@@ -152,8 +152,12 @@ Project.getProjectOverlay = (application, domain) ->
   application.overlayProjectVisible true
   application.api().get projectPath
   .then ({data}) ->
-    project = 
-    if(data)
+    unless data
+      project = Project({domain: domain})
+      project.projectNotFound(true)
+      project.showOverlay application
+      return
+    
     Project(data).showOverlay application
   .catch (error) ->
     console.error "getProjectOverlay", error
