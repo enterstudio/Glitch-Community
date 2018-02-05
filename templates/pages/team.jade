@@ -36,10 +36,10 @@ main.user-page.team-page(role="main")
 
     button.button-small.button-tertiary.upload-cover-button(class=@hiddenUnlessCurrentUserIsOnTeam click=@uploadCover) Upload Cover
 
-  section
+  section.add-project-container
     button.button.add-project.has-emoji.opens-pop-over(class=@hiddenUnlessCurrentUserIsOnTeam click=@toggleAddTeamProjectPop) Add Project
       .emoji.bento-box
-      = @addTeamProjectPop
+    = @addTeamProjectPop
 
   span(class=@hiddenIfNotOnTeamAndNoPins)
     = @pinnedProjectsList
