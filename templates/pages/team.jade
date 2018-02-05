@@ -24,8 +24,9 @@ main.user-page.team-page(role="main")
               .users.team-users
                 = @teamUsers
 
+              span.add-user-container
               button.button.button-small.button-tertiary.add-user.opens-pop-over(class=@hiddenUnlessCurrentUserIsOnTeam click=@toggleAddTeamUserPop) Add
-                = @addTeamUserPop
+              = @addTeamUserPop
 
             p.thanks(class=@hiddenUnlessTeamHasThanks)= @teamThanks()
               span= " "
