@@ -16,7 +16,7 @@ dialog.pop-over.project-options-pop.disposable(click=@stopPropagation @style)
       span Remove Project
       span.emoji.thumbs_down
       
-  section.pop-over-actions.danger-zone.last-section
+  section.pop-over-actions.danger-zone.last-section(class=@hiddenIfPageIsTeamPage)
     button.button-small.has-emoji.button-tertiary(click=@deleteProject)
       span Delete This
       span.emoji.bomb

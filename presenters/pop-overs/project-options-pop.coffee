@@ -37,6 +37,9 @@ module.exports = (project, application, projectItemPresenter, userPagePresenter)
 
     hiddenUnlessPageIsTeamPage: ->
       'hidden' unless application.pageIsTeamPage()
+        
+    hiddenIfPageIsTeamPage: ->
+      'hidden' if application.pageIsTeamPage()
     
     removeProjectFromTeam: ->
       application.team().removeProject application, project
