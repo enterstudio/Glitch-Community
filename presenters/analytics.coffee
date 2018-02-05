@@ -323,7 +323,7 @@ module.exports = (application, teamOrProject) ->
       application.closeAllPopOvers()
 
       unless existingPop
-        element.appendChild AnalyticsTimePopPresenter application, self
+        element.parentElement.appendChild AnalyticsTimePopPresenter application, self
 
     toggleAnalyticsProjectsPop: (event) ->
       event.stopPropagation()
@@ -332,7 +332,7 @@ module.exports = (application, teamOrProject) ->
       application.closeAllPopOvers()
 
       unless existingPop
-        element.appendChild AnalyticsProjectsPopPresenter application, self
+        element.parentElement.appendChild AnalyticsProjectsPopPresenter application, self
 
     hiddenUnlessGettingAnalytics: ->
       'hidden' unless self.gettingAnalytics()
