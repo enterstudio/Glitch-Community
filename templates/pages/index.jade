@@ -6,10 +6,7 @@
 - QuestionsPresenter = require "../../presenters/questions"
 - CategoriesPresenter = require "../../presenters/categories"
 
-- NewStuffPresenters = (require "../../presenters/overlays/new-stuff")(@application)
-- NewStuffOverlay = NewStuffPresenter.overlay
-- NewStuffNotification = NewStuffPresenter.notification
-
+- NewStuffPresenter = require "../../presenters/overlays/new-stuff"
 
 - COMMUNITY_PROJECT = "https://glitch.com/edit/#!/community"
 
@@ -36,9 +33,7 @@ span
 
     = ByFogcreek(@application)
     
-    = NewStuffOverlay
-    = NewStuffNotification
-    = Footer
+    = NewStuffPresenter(@application)
 
     section.made-in-glitch
       p
