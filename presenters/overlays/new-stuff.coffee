@@ -12,6 +12,7 @@ module.exports = (application) ->
   application.overlayNewStuffVisible.observe ->
     if application.overlayNewStuffVisible() is true
       self.updateNewStuffRead()
+      self.newStuffNotificationVisible
 
   self =
 
@@ -52,20 +53,14 @@ module.exports = (application) ->
         application.updateUserPrefs 'showNewStuff', true
         true
 
-    newStuffReadDate: ->
-      newStuffReadDate = application.getUserPref 'newStuffReadDate'
-      if newStuffReadDate
-        new Date newStuffReadDate
-
     updateNewStuffRead: ->
       application.updateUserPrefs 'newStuffReadId', self.newStuffLog.updates()[0].id
-      application.updateUserPrefs 'newStuffReadDate', new Date
       
     hiddenUnlessNewStuffNotificationVisible: ->
       hasNewStuff = self.newStuff.length
-      ignoreNewStuff = application.getUserPref 'showNewStuff' == false
+      ignoreNewStuff = application.getUserPref('showNewStuff') == false
       
-      'hidden' unless hasNewStuff and
+      'hidden' unless hasNewStuff and not ignoreNewStuff
         
     showNewStuffOverlay: ->
       application.overlayNewStuffVisible(true)
