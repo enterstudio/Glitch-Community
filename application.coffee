@@ -148,9 +148,13 @@ self = Model(
   getLocal: (key) ->
     try
       JSON.parse window.localStorage[key]
+      
+  communityPrefNamespace: (key) ->
+    `community-${key}`
 
   getUserPrefs: ->
-    self.getLocal('userPrefs') or {}
+    prefs = self.getLocal('userPrefs') or {}
+    
 
   getUserPref: (key) ->
     self.getUserPrefs()[key]
