@@ -8,6 +8,11 @@ dialog.pop-over.user-options-pop(class=@hiddenUnlessUserOptionsPopVisible click=
       .button.button-small.has-emoji.button-tertiary
         span Your Profile
         img.emoji.avatar(src=@yourProfileAvatar)
+    
+    a.button-link(click=@showNewStuffOverlay)
+      .button.button-small.has-emoji.button-tertiary
+        span New Stuff
+        emoji.eyes
 
   section.pop-over-actions(class=@hiddenUnlesssUserHasTeams)
     - @teams().forEach (team) ->
