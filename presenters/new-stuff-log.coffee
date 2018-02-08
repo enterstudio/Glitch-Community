@@ -6,7 +6,8 @@ module.exports = () ->
   self =
 
     # equal to most newest update.id
-    totalUpdates: -> 3
+    totalUpdates: -> 
+      self.updates()[0].id
 
     # prepend new updates
     updates: ->
