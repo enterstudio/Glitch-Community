@@ -1,5 +1,7 @@
-.new-stuff.opens-pop-over(class=@hiddenUnlessNewStuffNotificationVisible click=@showNewStuffOverlay)
-  figure.new-stuff-avatar(data-tooltip="New" data-tooltip-top=true data-tooltip-persistent=true)
+.new-stuff-footer
+  .new-stuff.opens-pop-over(class=@hiddenUnlessNewStuffNotificationVisible click=@showNewStuffOverlay)
+    span New Stuff!
+    figure.new-stuff-avatar(data-tooltip="New" data-tooltip-top=true data-tooltip-persistent=true)
   
   .overlay-background(class=@visibility)
     dialog.pop-over.overlay.new-stuff-overlay.overlay-narrow
