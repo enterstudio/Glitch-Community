@@ -6,7 +6,6 @@ markdown = require('markdown-it')({html: true})
 Observable = require 'o_0'
 
 OverlayNewStuffTemplate = require "../../templates/overlays/new-stuff"
-NewStuffNotificationTemplate = require "../../templates/includes/new-stuff-notification"
 
 module.exports = (application) ->
   
@@ -72,7 +71,4 @@ module.exports = (application) ->
     
     
   self.getUpdates()
-  return {
-    overlay: OverlayNewStuffTemplate self
-    notification: NewStuffNotificationTemplate self
-  }
+  return OverlayNewStuffTemplate self
