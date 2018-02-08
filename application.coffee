@@ -149,12 +149,8 @@ self = Model(
     try
       JSON.parse window.localStorage[key]
       
-  communityPrefNamespace: (key) ->
-    `community-${key}`
-
   getUserPrefs: ->
-    prefs = self.getLocal('userPrefs') or {}
-    
+    prefs = self.getLocal('community-userPrefs') or {}
 
   getUserPref: (key) ->
     self.getUserPrefs()[key]
@@ -162,7 +158,7 @@ self = Model(
   updateUserPrefs: (key, value) ->
     prefs = self.getUserPrefs()
     prefs[key] = value
-    self.storeLocal('userPrefs', prefs)
+    self.storeLocal('community-userPrefs', prefs)
     
   login: (provider, code) ->
     console.log provider, code

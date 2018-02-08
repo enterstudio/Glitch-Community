@@ -3,6 +3,9 @@
 moment = require 'moment'
 markdown = require('markdown-it')({html: true})
   .use(require('markdown-it-sanitizer'))
+Observable = require 'o_0'
+
+OverlayNewStuffTemplate = require "../../templates/overlays/new-stuff"
 
 
 module.exports = (application) ->
@@ -15,7 +18,11 @@ module.exports = (application) ->
   self =
 
     newStuffLog: require('../new-stuff-log')(self)
-
+    
+    checkIfNewStuffVisible: Observable false
+    newStuffNotificationVisible: Observable false
+    newStuff: Observable []
+    
     mdToNode: (md) ->
       node = document.createElement 'span'
       node.innerHTML = markdown.render md
@@ -35,14 +42,13 @@ module.exports = (application) ->
       unread = totalUpdates - newStuffReadId
       latestStuff = updates.slice(0, MAX_UPDATES)
 
-      return
       if newStuffReadId
         newStuff = updates.slice(0, unread)
-        application.newStuff newStuff
+        self.newStuff newStuff
       else
-        application.newStuff latestStuff
-      if application.newStuff().length is 0
-        application.newStuff latestStuff
+        self.newStuff latestStuff
+      if self.newStuff().length is 0
+        self.newStuff latestStuff
 
     checked: (event) ->
       showNewStuff = application.getUserPref 'showNewStuff'
@@ -62,3 +68,5 @@ module.exports = (application) ->
     updateNewStuffRead: ->
       application.updateUserPrefs 'newStuffReadId', application.newStuffLog.updates()[0].id
       application.updateUserPrefs 'newStuffReadDate', new Date
+      
+  return OverlayNewStuffTemplate self

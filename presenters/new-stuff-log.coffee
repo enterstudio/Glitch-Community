@@ -2,7 +2,7 @@
 
 # 🐈
 
-module.exports = (application) ->
+module.exports = () ->
   self =
 
     # equal to most newest update.id
