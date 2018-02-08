@@ -7,8 +7,12 @@ Observable = require 'o_0'
 
 OverlayNewStuffTemplate = require "../../templates/overlays/new-stuff"
 
-
 module.exports = (application) ->
+  
+  application.overlayNewStuffVisible.observe ->
+    if application.overlayNewStuffVisible() is true
+      self.getUpdates()
+      self.updateNewStuffRead()
 
   self =
 
@@ -25,7 +29,7 @@ module.exports = (application) ->
       return node
 
     visibility: ->
-      "hidden" unless self.newStuffOverlayVisible()
+      "hidden" unless application.overlayNewStuffVisible()
         
     newStuffOverlayVisibile: ->
       true
@@ -62,9 +66,5 @@ module.exports = (application) ->
     updateNewStuffRead: ->
       application.updateUserPrefs 'newStuffReadId', self.newStuffLog.updates()[0].id
       application.updateUserPrefs 'newStuffReadDate', new Date
-  
-  if self.newStuffOverlayVisible() is true
-    self.getUpdates()
-    self.updateNewStuffRead()
-  
+    
   return OverlayNewStuffTemplate self

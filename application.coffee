@@ -31,6 +31,8 @@ self = Model(
   overlayProjectVisible: Observable false
   overlayProject: Observable undefined
   overlayVideoVisible: Observable false
+  overlayNewStuffVisible: Observable false
+
 
   # pop overs
   signInPopVisibleOnHeader: Observable false
@@ -112,6 +114,7 @@ self = Model(
     self.addTeamProjectPopVisible false
     self.overlayProjectVisible false
     self.overlayVideoVisible false
+    self.overlayNewStuffVisible false
 
   searchProjects: (query) ->
     self.searchResultsProjects []
