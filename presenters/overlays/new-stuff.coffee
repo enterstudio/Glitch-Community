@@ -41,12 +41,11 @@ module.exports = (application) ->
       if newStuffReadId
         unread = totalUpdates - newStuffReadId
         newStuff = updates.slice(0, unread)
-        unless unread == 0
+        if unread == 0
+          hasNewStuff = false
+        else
           self.newStuff newStuff
-          hasNewStuff = true
-      else 
-        
-      
+            
       isSignedIn = application.currentUser().isSignedIn()
       ignoreNewStuff = application.getUserPref('showNewStuff') == false
       visible = isSignedIn and hasNewStuff and not ignoreNewStuff
