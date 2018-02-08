@@ -6,6 +6,7 @@ markdown = require('markdown-it')({html: true})
 Observable = require 'o_0'
 
 OverlayNewStuffTemplate = require "../../templates/overlays/new-stuff"
+NewStuffNotificationTemplate = require "../../templates/new-stuff-notification"
 
 module.exports = (application) ->
   
@@ -18,9 +19,7 @@ module.exports = (application) ->
 
     newStuffLog: require('../new-stuff-log')(self)
     
-    checkIfNewStuffVisible: Observable false
     newStuffNotificationVisible: Observable false
-    newStuffOverlayVisible: Observable true
     newStuff: Observable []
     
     mdToNode: (md) ->
@@ -31,9 +30,6 @@ module.exports = (application) ->
     visibility: ->
       "hidden" unless application.overlayNewStuffVisible()
         
-    newStuffOverlayVisibile: ->
-      application.overlayNewStuffVisible
-
     getUpdates: ->
       MAX_UPDATES = 3
       updates = self.newStuffLog.updates()
@@ -68,11 +64,14 @@ module.exports = (application) ->
       application.updateUserPrefs 'newStuffReadDate', new Date
       
     hiddenUnlessNewStuffNotificationVisible: ->
-      'hidden' unless false
+      'hidden' unless self.newStuffNotificationVisible()
         
     showNewStuffOverlay: ->
-      true
+      application.overlayNewStuffVisible(true)
     
     
     
-  return OverlayNewStuffTemplate self
+  return {
+    overlay: OverlayNewStuffTemplate self
+    notification: NewStuffNotificationTemplate self
+  }
