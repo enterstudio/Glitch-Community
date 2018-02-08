@@ -18,3 +18,6 @@
           - if update.link
             p
               a.link(href=update.link) Read the blog post →
+
+.new-stuff.opens-pop-over(class=@hiddenUnlessNewStuffNotificationVisible click=@showNewStuffOverlay)
+  figure.new-stuff-avatar(data-tooltip="New" data-tooltip-top=true data-tooltip-persistent=true)

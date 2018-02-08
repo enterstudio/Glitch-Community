@@ -32,7 +32,7 @@ module.exports = (application) ->
       "hidden" unless application.overlayNewStuffVisible()
         
     newStuffOverlayVisibile: ->
-      true
+      application.overlayNewStuffVisible
 
     getUpdates: ->
       MAX_UPDATES = 3
@@ -66,5 +66,13 @@ module.exports = (application) ->
     updateNewStuffRead: ->
       application.updateUserPrefs 'newStuffReadId', self.newStuffLog.updates()[0].id
       application.updateUserPrefs 'newStuffReadDate', new Date
+      
+    hiddenUnlessNewStuffNotificationVisible: ->
+      'hidden' unless false
+        
+    showNewStuffOverlay: ->
+      true
+    
+    
     
   return OverlayNewStuffTemplate self
