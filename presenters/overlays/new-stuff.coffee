@@ -62,8 +62,10 @@ module.exports = (application) ->
       application.updateUserPrefs 'newStuffReadDate', new Date
       
     hiddenUnlessNewStuffNotificationVisible: ->
-      return ''
-      'hidden' unless self.newStuff.length
+      hasNewStuff = self.newStuff.length
+      ignoreNewStuff = application.getUserPref 'showNewStuff' == false
+      
+      'hidden' unless hasNewStuff and
         
     showNewStuffOverlay: ->
       application.overlayNewStuffVisible(true)
