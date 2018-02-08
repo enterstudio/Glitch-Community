@@ -37,11 +37,11 @@ module.exports = (application) ->
       latestStuff = updates.slice(0, MAX_UPDATES)
       self.newStuff latestStuff
 
-      hasNewStuff = false
+      hasNewStuff = true
       if newStuffReadId
         unread = totalUpdates - newStuffReadId
         newStuff = updates.slice(0, unread)
-        if unread > 0
+        unless unread == 0
           self.newStuff newStuff
           hasNewStuff = true
       else 

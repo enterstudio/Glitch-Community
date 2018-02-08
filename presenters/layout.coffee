@@ -5,6 +5,7 @@ Footer = require "../templates/includes/footer"
 OverlayProject = require "./overlays/overlay-project"
 OverlayVideo = require "./overlays/overlay-video"
 Notifications = require "./notifications"
+NewStuffPresenter = require "./overlays/new-stuff"
 
 module.exports = (application, content) ->
 
@@ -19,3 +20,4 @@ module.exports = (application, content) ->
     overlayProject: OverlayProject(application)
     overlayVideo: OverlayVideo(application)
     notifications: Notifications(application)
+    newStuff: NewStuffPresenter(application)
