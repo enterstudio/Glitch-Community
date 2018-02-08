@@ -1,6 +1,5 @@
 "use strict"
 
-moment = require 'moment'
 markdown = require('markdown-it')({html: true})
   .use(require('markdown-it-sanitizer'))
 Observable = require 'o_0'
@@ -34,17 +33,21 @@ module.exports = (application) ->
       updates = self.newStuffLog.updates()
       newStuffReadId = application.getUserPref 'newStuffReadId'
       totalUpdates = self.newStuffLog.totalUpdates()
+      
+      latestStuff = updates.slice(0, MAX_UPDATES)
+      self.newStuff latestStuff
 
+      hasNewStuff = false
       if newStuffReadId
         unread = totalUpdates - newStuffReadId
         newStuff = updates.slice(0, unread)
-        self.newStuff newStuff
+        if unread > 0
+          self.newStuff newStuff
+          hasNewStuff = true
       else 
-        latestStuff = updates.slice(0, MAX_UPDATES)
-        self.newStuff latestStuff
+        
       
       isSignedIn = application.currentUser().isSignedIn()
-      hasNewStuff = self.newStuff.length
       ignoreNewStuff = application.getUserPref('showNewStuff') == false
       visible = isSignedIn and hasNewStuff and not ignoreNewStuff
       
@@ -59,10 +62,9 @@ module.exports = (application) ->
         return showNewStuff
       else
         application.updateUserPrefs 'showNewStuff', true
-        true
 
     updateNewStuffRead: ->
-      application.updateUserPrefs 'newStuffReadId', self.newStuffLog.updates()[0].id
+      application.updateUserPrefs 'newStuffReadId', self.newStuffLog.totalUpdates()
       
     hiddenUnlessNewStuffNotificationVisible: ->
       'hidden' unless self.newStuffNotificationVisible()

@@ -33,7 +33,6 @@ self = Model(
   overlayVideoVisible: Observable false
   overlayNewStuffVisible: Observable false
 
-
   # pop overs
   signInPopVisibleOnHeader: Observable false
   signInPopVisibleOnRecentProjects: Observable false
@@ -151,9 +150,9 @@ self = Model(
   getLocal: (key) ->
     try
       JSON.parse window.localStorage[key]
-      
+
   getUserPrefs: ->
-    prefs = self.getLocal('community-userPrefs') or {}
+    self.getLocal('community-userPrefs') or {}
 
   getUserPref: (key) ->
     self.getUserPrefs()[key]
