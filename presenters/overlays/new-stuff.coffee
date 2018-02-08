@@ -10,17 +10,13 @@ OverlayNewStuffTemplate = require "../../templates/overlays/new-stuff"
 
 module.exports = (application) ->
 
-  #application.newStuffOverlayVisible.observe ->
-#    if application.newStuffOverlayVisible() is true
-#      self.getUpdates()
-#      self.updateNewStuffRead()
-
   self =
 
     newStuffLog: require('../new-stuff-log')(self)
     
     checkIfNewStuffVisible: Observable false
     newStuffNotificationVisible: Observable false
+    newStuffOverlayVisible: Observable true
     newStuff: Observable []
     
     mdToNode: (md) ->
@@ -39,15 +35,13 @@ module.exports = (application) ->
       updates = self.newStuffLog.updates()
       newStuffReadId = application.getUserPref 'newStuffReadId'
       totalUpdates = self.newStuffLog.totalUpdates()
-      unread = totalUpdates - newStuffReadId
-      latestStuff = updates.slice(0, MAX_UPDATES)
 
       if newStuffReadId
+        unread = totalUpdates - newStuffReadId
         newStuff = updates.slice(0, unread)
         self.newStuff newStuff
-      else
-        self.newStuff latestStuff
-      if self.newStuff().length is 0
+      else 
+        latestStuff = updates.slice(0, MAX_UPDATES)
         self.newStuff latestStuff
 
     checked: (event) ->
@@ -66,7 +60,11 @@ module.exports = (application) ->
         new Date newStuffReadDate
 
     updateNewStuffRead: ->
-      application.updateUserPrefs 'newStuffReadId', application.newStuffLog.updates()[0].id
+      application.updateUserPrefs 'newStuffReadId', self.newStuffLog.updates()[0].id
       application.updateUserPrefs 'newStuffReadDate', new Date
-      
+  
+  if self.newStuffOverlayVisible() is true
+    self.getUpdates()
+    self.updateNewStuffRead()
+  
   return OverlayNewStuffTemplate self
