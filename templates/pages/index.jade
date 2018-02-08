@@ -5,6 +5,8 @@
 - RecentProjectsPresenter = require "../../presenters/recent-projects"
 - QuestionsPresenter = require "../../presenters/questions"
 - CategoriesPresenter = require "../../presenters/categories"
+- NewStuffPresenter = require "../../presenters/overlays/new-stuff"
+
 
 - COMMUNITY_PROJECT = "https://glitch.com/edit/#!/community"
 
@@ -30,6 +32,8 @@ span
     = CategoriesPresenter(@application)
 
     = ByFogcreek(@application)
+    
+    = NewStuffPresenter(@application)
 
     section.made-in-glitch
       p

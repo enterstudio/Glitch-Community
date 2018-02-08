@@ -1,0 +1,20 @@
+.overlay-background(class=@visibility)
+  dialog.pop-over.overlay.new-stuff-overlay.overlay-narrow
+    section.pop-over-info
+      figure.new-stuff-cat
+      div
+        .overlay-title New Stuff
+        label.button.button-small
+          input.button-checkbox(type="checkbox" @checked)
+          span Keep showing me these
+
+    section.pop-over-actions
+      - updates = @newStuff()
+      - mdToNode = @mdToNode
+      - updates.forEach (update) ->
+        article
+          .title= update.title
+          .body= mdToNode(update.body)
+          - if update.link
+            p
+              a.link(href=update.link) Read the blog post →
