@@ -12,7 +12,7 @@ module.exports = (application) ->
   application.overlayNewStuffVisible.observe ->
     if application.overlayNewStuffVisible() is true
       self.updateNewStuffRead()
-      self.newStuffNotificationVisible
+      self.newStuffNotificationVisible(false)
 
   self =
 
@@ -42,6 +42,14 @@ module.exports = (application) ->
       else 
         latestStuff = updates.slice(0, MAX_UPDATES)
         self.newStuff latestStuff
+      
+      isSignedIn = application.currentUser().isSignedIn()
+      hasNewStuff = self.newStuff.length
+      ignoreNewStuff = application.getUserPref('showNewStuff') == false
+      visible = isSignedIn and hasNewStuff and not ignoreNewStuff
+      
+      self.newStuffNotificationVisible(visible)
+
 
     checked: (event) ->
       showNewStuff = application.getUserPref 'showNewStuff'
@@ -57,15 +65,10 @@ module.exports = (application) ->
       application.updateUserPrefs 'newStuffReadId', self.newStuffLog.updates()[0].id
       
     hiddenUnlessNewStuffNotificationVisible: ->
-      hasNewStuff = self.newStuff.length
-      ignoreNewStuff = application.getUserPref('showNewStuff') == false
-      
-      'hidden' unless hasNewStuff and not ignoreNewStuff
+      'hidden' unless self.newStuffNotificationVisible()
         
     showNewStuffOverlay: ->
       application.overlayNewStuffVisible(true)
-    
-    
-    
+
   self.getUpdates()
   return OverlayNewStuffTemplate self
