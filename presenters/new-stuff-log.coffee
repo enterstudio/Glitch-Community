@@ -23,10 +23,10 @@ module.exports = () ->
           """
       ,
         id: 2
-        title: ""
+        title: "Deleted, but not forgotten"
         body:
           """
-            Delete and undelete
+            You can now delete and undelete projects from your profile page.
 
             Check out [CONTRIBUTING.md](https://glitch.com/edit/#!/community?path=CONTRIBUTING.md) to see how you can join us to help build the very fabric of the Glitch community site.
           """
