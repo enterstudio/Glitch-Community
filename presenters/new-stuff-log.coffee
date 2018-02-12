@@ -6,24 +6,13 @@ module.exports = () ->
   self =
 
     # equal to most newest update.id
-    totalUpdates: -> 13
+    totalUpdates: -> 
+      self.updates()[0].id
 
     # prepend new updates
     updates: ->
       [
-        id: 13
-        title: "Open Source Licenses and Codes Of Conduct"
-        body:
-          """
-            Having the right open source license on your project lets everybody know how they can collaborate or share with each other, and an explicit code of conduct sets up rules that make sure contributing is a good experience for everybody.
-
-            Coincidentally, you can now easily easily add these files to your projects:
-
-            - `New File → Add License` creates a `LICENSE.md` file with an MIT license, which you can then change to the license of your choice.
-            - `New File → Add Code of Conduct` Similarly, helps make your projects a more welcoming place for contributors.
-          """
-      ,
-        id: 12
+        id: 3
         title: "Sharing is Caring"
         body:
           """
@@ -44,7 +33,7 @@ module.exports = () ->
             - ✍️🎤 You can now just start typing to remix someone else’s project.
           """
       ,
-        id: 11
+        id: 2
         title: "You Own Little Space on Glitch"
         body:
           """
@@ -57,7 +46,7 @@ module.exports = () ->
             p.s. here's [Dan's](https://glitch.com/@danreeves). More details [on Medium](https://medium.com/glitch/your-own-little-space-on-glitch-865b5cfebb7f)
           """
       ,
-        id: 10
+        id: 1
         title: "You're cordially invited to the $BASH"
         body:
           """

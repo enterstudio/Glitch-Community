@@ -41,7 +41,7 @@ module.exports = (application) ->
       if newStuffReadId
         unread = totalUpdates - newStuffReadId
         newStuff = updates.slice(0, unread)
-        if unread == 0
+        if unread <= 0
           hasNewStuff = false
         else
           self.newStuff newStuff
