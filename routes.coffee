@@ -3,7 +3,6 @@ fs = require "fs"
 rp = require "request-promise"
 util = require "util"
 { spawn } = require 'child_process'
-_ = require 'underscore'
 express = require 'express'
 CACHE_INTERVAL = 1000 * 60 * 30 # 30 minutes
 

@@ -5,10 +5,6 @@ OverlayProjectTemplate = require "../../templates/overlays/overlay-project"
 
 UsersList = require "../users-list"
 
-Observable = require 'o_0'
-_ = require 'underscore'
-randomColor = require 'randomcolor'
-axios = require 'axios'
 markdown = require('markdown-it')({html: true})
   .use(require('markdown-it-sanitizer'))
   

@@ -9,9 +9,8 @@ returned.
 If the id property is not given the model is not cached.
 ###
 
-_ = require 'underscore'
 randomColor = require 'randomcolor'
-# Observable = require 'o_0'
+
 
 Model = require './model'
 cache = {}
@@ -48,33 +47,6 @@ module.exports = Question = (I={}, self=Model(I)) ->
       else
         "#{EDITOR_URL}#!/#{I.domain}"
 
-#     validateQuestions: (data) ->
-#       console.log 'data', data
-#       if data.length
-#         selectedQuestions = data.slice 0, self.maxQuestions()
-#         validQuestions = selectedQuestions.filter (question) ->
-#           details = JSON.parse question.details
-#           details
-#       console.log 'validQuestions',validQuestions
-#       if validQuestions
-#         questions = validQuestions.map (question) ->
-#           colors = randomColor
-#             luminosity: 'light'
-#             count: 2
-
-#           details = JSON.parse question.details
-#           return unless details
-
-#           details.colorOuter = colors[0]
-#           details.colorInner = colors[1]
-
-#           return details
-#         .filter (details) ->
-#           details # skip nulls
-
-      # console.log '🌚 questions', questions
-      # return questions or []
-
 
   if I.questionId
     cache[I.questionId] = self
@@ -101,5 +73,3 @@ Question.getQuestions = (application) ->
 
 Question._cache = cache
 
-# Circular dependencies must go below module.exports
-# Project = require './project'

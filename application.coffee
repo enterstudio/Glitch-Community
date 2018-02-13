@@ -1,5 +1,5 @@
 Observable = require 'o_0'
-_ = require 'underscore'
+_ = require 'lodash'
 axios = require 'axios'
 
 cachedCategories = require './cache/categories.json'
@@ -86,8 +86,8 @@ self = Model(
     pendingUploads = self.pendingUploads()
     numberOfPendingUploads = pendingUploads.length
 
-    progress = pendingUploads.reduce (value, {ratio}) ->
-      value + ratio()
+    progress = pendingUploads.reduce (accumulator, currentValue) ->
+      accumulator + currentValue
     , 0
 
     (progress / numberOfPendingUploads * 100) | 0
@@ -278,7 +278,7 @@ self = Model(
   
   isSearchUrl: (url, queryString) ->
     queryStringKeys = _.keys queryString # ['q', 'blah']
-    if (url is 'search') and (_.contains queryStringKeys, 'q')
+    if (url is 'search') and (_.includes queryStringKeys, 'q')
       true
 
   isCategoryUrl: (url) ->

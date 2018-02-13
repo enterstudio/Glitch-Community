@@ -2,8 +2,7 @@ QuestionsTemplate = require "../templates/includes/questions"
 QuestionItemPresenter = require './question-item'
 
 Observable = require 'o_0'
-_ = require 'underscore'
-# randomColor = require 'randomcolor'
+_ = require 'lodash/collection'
 
 animationIteration = 'webkitAnimationiteration oanimationiteration msAnimationiteration animationiteration'
 DEFAULT_MAX_QUESTIONS = 3

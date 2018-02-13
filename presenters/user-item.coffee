@@ -1,5 +1,3 @@
-# _ = require 'underscore'
-
 UserTemplate = require "../templates/includes/user-item"
 
 module.exports = (application, user) ->

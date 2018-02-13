@@ -1,7 +1,7 @@
 cache = {}
 
 Model = require './model'
-_ = require 'underscore'
+_ = require 'lodash/collection'
 axios = require 'axios'
 
 source = undefined # reference to cancel token
@@ -90,12 +90,12 @@ module.exports = Project = (I={}, self=Model(I)) ->
     isPinnedByUser: (application) ->
       pins = application.user().pins().map (pin) ->
         pin.projectId
-      _.contains pins, self.id()
+      _.includes pins, self.id()
 
     isPinnedByTeam: (application) ->
       pins = application.team().pins().map (pin) ->
         pin.projectId
-      _.contains pins, self.id()
+      _.includes pins, self.id()
            
     delete: ->
       projectPath = "/projects/#{self.id()}"
