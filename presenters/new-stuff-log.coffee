@@ -40,7 +40,7 @@ module.exports = () ->
 
             ![Undelete projects using the new controls at the bottom of your profile page](https://cdn.glitch.com/03736932-82dc-40e8-8dc7-93330c933143%2Fnew-stuff-undelete.png?1518552423035)
 
-            Give it a go! There's even a swishy-slide animation. 💣🌈️❤️
+            Give it a go! There's a swishy-slide animation, too. 💣🌈️❤️
           """
       ]
 
