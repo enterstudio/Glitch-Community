@@ -126,7 +126,7 @@ module.exports = User = (I={}, self=Model(I)) ->
     updateUser: (application, updateData) ->
       userPath = "users/#{self.id()}"
       application.api().patch userPath, updateData
-      .then ({data}) ->
+      .then () ->
         console.log 'updatedUser'
       .catch (error) ->
         console.error "updateUser PATCH #{userPath}", error
