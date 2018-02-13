@@ -3,7 +3,7 @@
 
 Observable = require 'o_0'
 axios = require 'axios'
-throttle = require 'lodash/function/throttle'
+_ = require 'lodash/function'
 moment = require 'moment'
 
 AnalyticsTemplate = require "../templates/includes/analytics"

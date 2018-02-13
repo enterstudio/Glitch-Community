@@ -1,5 +1,4 @@
 Observable = require 'o_0'
-# _ = require 'underscore'
 
 AnalyticsProjectsPopTemplate = require "../../templates/pop-overs/analytics-projects-pop"
 
