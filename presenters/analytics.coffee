@@ -350,7 +350,7 @@ module.exports = (application, teamOrProject) ->
       'hidden' unless self.currentUserIsOnTeam application
 
 
-  window.addEventListener 'resize', throttle ->
+  window.addEventListener 'resize', _.throttle ->
     Plotly.Plots.resize(self.remixesChartElement)
     Plotly.Plots.resize(self.remixesReferrersBars)
     Plotly.Plots.resize(self.visitsChartElement)
