@@ -3,7 +3,7 @@
 
 Observable = require 'o_0'
 axios = require 'axios'
-_ = require 'underscore'
+throttle = require 'lodash/function/throttle'
 moment = require 'moment'
 
 AnalyticsTemplate = require "../templates/includes/analytics"
@@ -350,7 +350,7 @@ module.exports = (application, teamOrProject) ->
       'hidden' unless self.currentUserIsOnTeam application
 
 
-  window.addEventListener 'resize', _.throttle ->
+  window.addEventListener 'resize', throttle ->
     Plotly.Plots.resize(self.remixesChartElement)
     Plotly.Plots.resize(self.remixesReferrersBars)
     Plotly.Plots.resize(self.visitsChartElement)

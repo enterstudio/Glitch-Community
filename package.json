@@ -11,7 +11,6 @@
     "jadelet": "^0.8.0-pre.11",
     "body-parser": "^1.18.2",
     "stylus": "^0.54.5",
-    "underscore": "^1.8.3",
     "markdown-it": "^8.4.0",
     "ejs": "^2.5.7",
     "o_0": "^0.3.8",
@@ -32,7 +31,8 @@
     "request": "^2.83.0",
     "request-promise": "^4.2.2",
     "watchify": "^3.9.0",
-    "nodemon": "^1.14.11"
+    "nodemon": "^1.14.11",
+    "lodash": "^4.17.5"
   },
   "engines": {
     "node": "8.x"
