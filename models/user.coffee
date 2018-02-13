@@ -10,7 +10,6 @@ If the id property is not given the model is not cached.
 ###
 
 isuuid = require 'isuuid'
-_ = require 'underscore'
 axios = require 'axios'
 md = require('markdown-it')
   breaks: true

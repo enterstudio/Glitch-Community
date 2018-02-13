@@ -1,5 +1,5 @@
 Observable = require 'o_0'
-_ = require 'underscore'
+_ = require 'lodash'
 md = require('markdown-it')
   breaks: true
   linkify: true

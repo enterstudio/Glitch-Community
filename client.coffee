@@ -9,7 +9,6 @@ require "./extensions"
 application = require './application'
 qs = require 'querystringify'
 queryString = qs.parse window.location.search
-_ = require 'underscore'
 
 IndexPage = require "./presenters/pages/index"
 CategoryPage = require "./presenters/pages/category"

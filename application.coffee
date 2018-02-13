@@ -1,5 +1,5 @@
 Observable = require 'o_0'
-_ = require 'underscore'
+_ = require 'lodash'
 axios = require 'axios'
 
 cachedCategories = require './cache/categories.json'
