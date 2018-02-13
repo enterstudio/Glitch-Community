@@ -10,7 +10,7 @@ If the id property is not given the model is not cached.
 
 ###
 
-_ = require 'lodash/collection'
+_ = require 'lodash'
 axios = require 'axios'
 querystring = require 'querystring'
 

@@ -278,7 +278,7 @@ self = Model(
   
   isSearchUrl: (url, queryString) ->
     queryStringKeys = _.keys queryString # ['q', 'blah']
-    if (url is 'search') and (_.contains queryStringKeys, 'q')
+    if (url is 'search') and (_.includes queryStringKeys, 'q')
       true
 
   isCategoryUrl: (url) ->
