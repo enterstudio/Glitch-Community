@@ -13,7 +13,7 @@ module.exports = () ->
     updates: ->
       [
 ###        
-        id: 3
+        id: 2
         title: "Contributions Welcome"
         body:
           """
@@ -22,29 +22,21 @@ module.exports = () ->
             Check out [CONTRIBUTING.md](https://glitch.com/edit/#!/community?path=CONTRIBUTING.md) to see how you can join us to help build the very fabric of the Glitch community site.
           """
       ,
-        id: 2
+###
+        id: 1
         title: "Deleted, but not forgotten"
         body:
           """
-            You can now delete and undelete projects from your profile page.
+            You can now delete and undelete projects from your profile page!
 
-            Check out [CONTRIBUTING.md](https://glitch.com/edit/#!/community?path=CONTRIBUTING.md) to see how you can join us to help build the very fabric of the Glitch community site.
-          """
-      ,
-###
-        id: 1
-        title: "You're cordially invited to the $BASH"
-        body:
-          """
-            You can now Open the Console 📟 for your project by going to the advanced options menu.
+            Tidy up your project list without fear of regret. There's a new "Delete This" button on your project tiles that'll let you clean up your old experiments and give you more control over what you're presentign on your profile page.
 
-            Peek at spirits with `ls -a`, find juicy tidbits by `grep`ing yourself, `git` good, measure your rising blood pressure with `hg`. etc.
+            ![Delete using the project's dropdown list](https://cdn.glitch.com/03736932-82dc-40e8-8dc7-93330c933143%2Fnew-stuff-delete.png?1518549490386)
 
-            That said, if terminals and command lines make you bored or grimace-y, you definitely don't need it to use Glitch.
+            All of your deleted projects are now listed for you at the bottom of your profile page, and you can restore them to life with just one click.
 
-            XOXO
+            ![Undelete projects using the new controls at the bottom of your profile page](https://cdn.glitch.com/03736932-82dc-40e8-8dc7-93330c933143%2Fnew-stuff-undelete.png?1518549501633)
 
-            Also, we moved the project privacy toggle to the Share menu, to keep things contextually connected.
 
           """
       ]
