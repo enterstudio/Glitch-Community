@@ -1,0 +1,24 @@
+.new-stuff-footer
+  .new-stuff.opens-pop-over(class=@hiddenUnlessNewStuffNotificationVisible click=@showNewStuffOverlay)
+    figure.new-stuff-avatar(data-tooltip="New" data-tooltip-top=true data-tooltip-persistent=true)
+  
+  .overlay-background(class=@visibility)
+    dialog.pop-over.overlay.new-stuff-overlay.overlay-narrow
+      section.pop-over-info
+        figure.new-stuff-avatar
+        div.overlay-title New Stuff
+        div
+          label.button.button-small
+            input.button-checkbox(type="checkbox" @checked)
+            span Keep showing me these
+
+      section.pop-over-actions
+        - updates = @newStuff()
+        - mdToNode = @mdToNode
+        - updates.forEach (update) ->
+          article
+            .title= update.title
+            .body= mdToNode(update.body)
+            - if update.link
+              p
+                a.link(href=update.link) Read the blog post →

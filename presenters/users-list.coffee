@@ -1,8 +1,6 @@
 UsersListTemplate = require "../templates/includes/users-list"
 UserAvatarTemplate = require "../templates/includes/user-avatar" #
 
-_ = require 'underscore'
-
 module.exports = (projectOrTeam, type) ->
   
   self =

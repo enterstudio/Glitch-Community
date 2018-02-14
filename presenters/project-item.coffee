@@ -1,5 +1,3 @@
-# _ = require 'underscore'
-
 ProjectItemTemplate = require "../templates/includes/project-item"
 UsersListPresenter = require "./users-list"
 

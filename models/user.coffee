@@ -10,7 +10,6 @@ If the id property is not given the model is not cached.
 ###
 
 isuuid = require 'isuuid'
-_ = require 'underscore'
 axios = require 'axios'
 md = require('markdown-it')
   breaks: true
@@ -127,7 +126,7 @@ module.exports = User = (I={}, self=Model(I)) ->
     updateUser: (application, updateData) ->
       userPath = "users/#{self.id()}"
       application.api().patch userPath, updateData
-      .then ({data}) ->
+      .then () ->
         console.log 'updatedUser'
       .catch (error) ->
         console.error "updateUser PATCH #{userPath}", error

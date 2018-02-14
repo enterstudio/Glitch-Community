@@ -1,5 +1,5 @@
 Observable = require 'o_0'
-_ = require 'underscore'
+_ = require 'lodash'
 md = require('markdown-it')
   breaks: true
   linkify: true
@@ -163,12 +163,12 @@ module.exports = (application) ->
 
     recentProjects: ->
       recentProjects = self.projects().filter (project) ->
-        !_.contains self.pinnedProjectIds(), project.id()
+        !_.includes self.pinnedProjectIds(), project.id()
       ProjectsListPresenter application, "Recent Projects", recentProjects
     
     pinnedProjectsList: ->
       pinnedProjects = self.projects().filter (project) ->
-        _.contains self.pinnedProjectIds(), project.id()
+        _.includes self.pinnedProjectIds(), project.id()
       ProjectsListPresenter application, "Pinned Projects", pinnedProjects
     
     hiddenIfNotOnTeamAndNoPins: ->

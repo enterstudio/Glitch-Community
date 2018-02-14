@@ -1,5 +1,5 @@
 Observable = require 'o_0'
-_ = require 'underscore'
+_ = require 'lodash'
 axios = require 'axios'
 
 cachedCategories = require './cache/categories.json'
@@ -31,6 +31,7 @@ self = Model(
   overlayProjectVisible: Observable false
   overlayProject: Observable undefined
   overlayVideoVisible: Observable false
+  overlayNewStuffVisible: Observable false
 
   # pop overs
   signInPopVisibleOnHeader: Observable false
@@ -112,6 +113,7 @@ self = Model(
     self.addTeamProjectPopVisible false
     self.overlayProjectVisible false
     self.overlayVideoVisible false
+    self.overlayNewStuffVisible false
 
   searchProjects: (query) ->
     self.searchResultsProjects []
@@ -150,7 +152,7 @@ self = Model(
       JSON.parse window.localStorage[key]
 
   getUserPrefs: ->
-    self.getLocal('userPrefs') or {}
+    self.getLocal('community-userPrefs') or {}
 
   getUserPref: (key) ->
     self.getUserPrefs()[key]
@@ -158,7 +160,7 @@ self = Model(
   updateUserPrefs: (key, value) ->
     prefs = self.getUserPrefs()
     prefs[key] = value
-    self.storeLocal('userPrefs', prefs)
+    self.storeLocal('community-userPrefs', prefs)
     
   login: (provider, code) ->
     console.log provider, code
@@ -276,7 +278,7 @@ self = Model(
   
   isSearchUrl: (url, queryString) ->
     queryStringKeys = _.keys queryString # ['q', 'blah']
-    if (url is 'search') and (_.contains queryStringKeys, 'q')
+    if (url is 'search') and (_.includes queryStringKeys, 'q')
       true
 
   isCategoryUrl: (url) ->

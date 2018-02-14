@@ -32,3 +32,7 @@ module.exports = (application) ->
     hiddenUnlesssUserHasTeams: ->
       teams = self.teams().length
       'hidden' unless teams
+        
+    showNewStuffOverlay: ->
+      application.userOptionsPopVisible(false)
+      application.overlayNewStuffVisible(true)

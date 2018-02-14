@@ -1,5 +1,5 @@
 Observable = require 'o_0'
-_ = require 'underscore'
+_ = require 'lodash/function'
 
 AddTeamProjectTemplate = require "../../templates/pop-overs/add-team-project-pop"
 

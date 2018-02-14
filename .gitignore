@@ -5,3 +5,4 @@
 *.gz
 cache/*
 *.md5
+.config/configstore/update-notifier-nodemon.json
