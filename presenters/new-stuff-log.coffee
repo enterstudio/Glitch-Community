@@ -27,20 +27,20 @@ module.exports = () ->
         title: "Deleted, but not forgotten"
         body:
           """
-            You can now delete ***and undelete*** projects! 🎉
+            You can now delete ***and undelete*** projects. 🎉
 
-            Tidy up your project list without fear of regret.
+            Tidy up your profile page without fear of regret.
             There's a new "Delete This" button on your project tiles that'll let you clean up 
             your old experiments and help you present a healthier, more active looking profile page. 🥦
 
             ![Delete using the project's dropdown list](https://cdn.glitch.com/03736932-82dc-40e8-8dc7-93330c933143%2Fnew-stuff-delete.png?1518549490386)
 
             All of your deleted projects are listed for you at the bottom of your profile page,
-            and you can restore them to life with just one click. No forever-💔 here, every project has a second chance.
+            and you can restore them to life with just one click.
 
             ![Undelete projects using the new controls at the bottom of your profile page](https://cdn.glitch.com/03736932-82dc-40e8-8dc7-93330c933143%2Fnew-stuff-undelete.png?1518552423035)
 
-            Give it a go! There's even a swishy-slide animation. 💣🌈️❤️
+            No forever-💔 here, every project has a second chance.
           """
       ]
 
