@@ -32,7 +32,8 @@
     "request-promise": "^4.2.2",
     "watchify": "^3.9.0",
     "nodemon": "^1.14.11",
-    "lodash": "^4.17.5"
+    "lodash": "^4.17.5",
+    "underscore": "^1.8.3"
   },
   "engines": {
     "node": "8.x"
