@@ -172,12 +172,19 @@ Project.getSearchResults = (application, query) ->
   application.api(source).get searchPath
   .then ({data}) ->
     application.searchingForProjects false
-    data = data.slice(0 , MAX_RESULTS)
-    if data.length is 0
+    
+    projects = data
+
+    # Remove not-safe-for-kids results
+    projects = projects.filter (project) ->
+      project.notSafeForKids == false
+    
+    projects = projects.slice(0 , MAX_RESULTS)
+    if projects.length is 0
       application.searchResultsHaveNoProjects true
-    data.forEach (datum) ->
-      datum.fetched = true
-      Project(datum).update(datum).pushSearchResult(application)
+    projects.forEach (project) ->
+      project.fetched = true
+      Project(project).update(project).pushSearchResult(application)
   .catch (error) ->
     console.error 'getSearchResults', error
 
