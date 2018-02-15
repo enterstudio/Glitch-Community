@@ -27,7 +27,7 @@ module.exports = () ->
         title: "Deleted, but not forgotten"
         body:
           """
-            You can now delete ***and undelete*** projects. 🎉
+            You can now delete _and undelete_ projects. 🎉
 
             Tidy up your profile page without fear of regret.
             There's a new "Delete This" button on your project tiles that'll let you clean up 
