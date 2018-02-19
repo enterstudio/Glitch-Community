@@ -7,6 +7,7 @@ UsersList = require "../users-list"
 
 markdown = require('markdown-it')({html: true})
   .use(require('markdown-it-sanitizer'))
+  .use(require('markdown-it-emoji'))
   
 # currentPagePath = "/"
 
