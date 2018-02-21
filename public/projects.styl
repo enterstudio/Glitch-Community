@@ -97,7 +97,7 @@ project-avatar-size = 42px
     position: relative
     transition: 0.1s all
     cursor: pointer
-    overflow: hidden
+    overflow: visible
     &:hover
       button
         background-color: secondary-background
@@ -107,8 +107,8 @@ project-avatar-size = 42px
         background-color: secondary-background-active
         box-shadow: none
     &:after
-    	bottom: 100%
-    	left: 3.5%
+    	top: -13px
+    	left: 3%
     	border: solid transparent
     	content: " "
     	height: 0
@@ -116,7 +116,7 @@ project-avatar-size = 42px
     	position: absolute
     	pointer-events: none
     	border-bottom-color: inherit
-    	border-width: 6px
+    	border-width: 7px
     @media (max-width: largeViewport)
       &:after
       	left: 4%
