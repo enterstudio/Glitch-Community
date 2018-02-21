@@ -73,11 +73,11 @@ project-avatar-size = 42px
       width: 32%
       position: relative
       margin-bottom: 12px
-      min-width: 235px
-      @media (max-width: largeViewport)
-        width: 48%
-      @media (max-width: mediumSmallViewport)
+      @media (max-width: mediumViewport)
         width: 100%
+        
+    li:last-child
+      margin-right: 0px
       
     a
       &:hover
@@ -120,7 +120,7 @@ project-avatar-size = 42px
     @media (max-width: largeViewport)
       &:after
       	left: 4%
-    @media (max-width: mediumSmallViewport)
+    @media (max-width: mediumViewport)
       height: 112px
       &:after
       	left: 3%
@@ -229,5 +229,11 @@ project-avatar-size = 42px
     outline: transparent
     background: #efefef
 
-.profile-container .projects-container li:last-child
-  margin-right: 0px
+.user-page .projects-container li
+  // Permit a 2-column layout on the user-page
+  // in between mediumViewport and largeViewport
+  @media (max-width: largeViewport)
+    width: 48%
+        
+  @media (max-width: mediumViewport)
+    width: 100%
