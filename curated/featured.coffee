@@ -1,15 +1,15 @@
 module.exports =
 
   [
-      title: '‘Color-wander’ Generative Art'
-      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FcolorWanderFeatureBanner.png?1519649439336'
-      link: 'https://glitch.com/~color-wander'
+      title: '👟 Routeshuffle'
+      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FrouteShuffleFeatureBanner.png?1519725995897'
+      link: 'http://routeshuffle.glitch.me'
     ,
-      title: 'Make ASCII Art'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FasciiArtFeatureBanner.png?1519649081676"
-      link: "https://glitch.com/~ascii-art"
+      title: 'Learn to build a Slack app'
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FslackWebinarFeatureBanner.png?1519725881668"
+      link: "https://internalintegrations.splashthat.com/glitch"
     ,
-      title: 'Baer’s ‘Primary Light Group’ in CSS'
-      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FjoBaerFeatureBanner.png?1519649101294"
-      link: 'https://glitch.com/~jo-baer-light-group'
+      title: 'Make a mash-up comic'
+      img: "https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FWebcomicNameFeature.png?1517409070264"
+      link: 'https://webcomicname-mashup.glitch.me'
   ]
