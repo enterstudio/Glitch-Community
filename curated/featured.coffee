@@ -2,7 +2,7 @@ module.exports =
 
   [
       title: '👟 Routeshuffle'
-      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FrouteShuffleFeatureBanner.png?1519725995897'
+      img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FrouteShuffleFeatureBanner.png?1519746551206'
       link: 'http://routeshuffle.glitch.me'
     ,
       title: 'Learn to build a Slack app'
