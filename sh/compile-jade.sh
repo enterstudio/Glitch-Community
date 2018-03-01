@@ -1,3 +1,3 @@
 #!/bin/bash
 
-jadelet -d templates -r "require('jadelet')" | grep -v "\(no changes\)"
+jadelet -d src/templates -r "require('jadelet')" | grep -v "\(no changes\)"

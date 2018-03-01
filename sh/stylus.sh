@@ -9,7 +9,7 @@ while true; do
     --watch \
     --use autoprefixer-stylus \
     --sourcemap \
-    --compress public/styles.styl \
+    --compress public/styles/styles.styl \
     --out public/styles.css
   
   echo "Restarting stylus watcher"

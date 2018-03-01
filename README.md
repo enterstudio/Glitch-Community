@@ -15,9 +15,9 @@ Getting Started
 File structure
 
 
-- the app starts at `server.coffee`
-- `client.coffee` is compiled and served as /client.js
-- view templates start at `templates/hello.jadelet`
+- the backend app starts at `server.js`
+- `src/client.js` is compiled and served as /client-bundle.js
+- view templates start at `src/templates/hello.jadelet`
 - stylus files like `public/style.styl` is compiled and served directly as `public/style.css`
 - Files in `public/` are served directly
 - drag in `assets`, like images or music, to add them to your project
