@@ -1,0 +1,13 @@
+dialog.pop-over.results-list.analytics-time-pop.disposable(click=@stopPropagation)
+
+  section.pop-over-actions.last-section
+    ul.results
+      li.result(click=@selectMonthFrame class=@activeIfLabelIsMonths)
+        .result-container
+          .result-name Last 4 Weeks
+      li.result(click=@selectWeeksFrame class=@activeIfLabelIsWeeks)
+        .result-container
+          .result-name Last 2 Weeks
+      li.result(click=@selectHoursFrame class=@activeIfLabelIsHours)
+        .result-container
+          .result-name Last 24 Hours

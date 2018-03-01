@@ -1,0 +1,27 @@
+dialog.pop-over.project-options-pop.disposable(click=@stopPropagation @style)
+
+  section.pop-over-actions(class=@hiddenIfProjectIsPinned)
+    .button-link(click=@addPin)
+      button.button-small.has-emoji.button-tertiary
+        span Pin This
+        span.emoji.pushpin
+  section.pop-over-actions(class=@hiddenUnlessProjectIsPinned)
+    .button-link(click=@removePin)
+      button.button-small.has-emoji.button-tertiary
+        span Un-Pin This
+        span.emoji.pushpin
+
+  section.pop-over-actions.team-options.danger-zone.last-section(class=@hiddenUnlessPageIsTeamPage)
+    button.button-small.has-emoji.button-tertiary(click=@removeProjectFromTeam)
+      span Remove Project
+      span.emoji.thumbs_down
+      
+  section.pop-over-actions.danger-zone.last-section(class=@hiddenIfPageIsTeamPage)
+    button.button.button-small.has-emoji.button-tertiary(click=@deleteProject)
+      span Delete This
+      span.emoji.bomb
+    button.button.button-small.has-emoji.button-tertiary(click=@leaveProject)
+      span Leave This
+      span.emoji.wave  
+    
+  
