@@ -1,0 +1,497 @@
+// Analytics.styl
+
+.analytics  
+  .chart-container
+    background-color: secondary-background
+    border-radius: 5px
+    padding: 12px
+    h3
+      margin-top: 5px
+      display: inline-block
+      vertical-align: -2px
+    button,
+    .button
+      margin-left: 5px
+
+      
+// Categories.styl
+
+category-box-radius = 5px
+
+.categories
+  margin-top: 1rem
+  ul
+    padding: 0
+    margin-bottom: 0
+  .category-box-link
+    color: primary
+
+  li
+    display: inline-block
+    list-style-type: none
+    margin-bottom: 10px
+    width: 19%
+    margin-right: 10px
+    &:hover
+      .category-box-label
+        text-decoration: underline
+    @media (max-width: 1097px)
+      width: 18.5%
+    @media (max-width: largeViewport)
+      width: 23.5%
+    @media (max-width: 739px)
+      width: 31.5%
+    @media (max-width: 605px)
+      width: 30%
+    @media (max-width: 500px)
+      width: 46%
+
+  .category-box
+    background-color: lightgrey
+    height: 122px
+    border-top-left-radius: category-box-radius
+    border-top-right-radius: category-box-radius
+    img
+      max-width: 80%
+      max-height: 75%
+    @media (max-width: smallViewport)
+      height: 115px
+
+  .category-box-label
+    background-color: lightgrey
+    height: 37px
+    font-size: 14px
+    font-weight: 600
+    border-bottom-left-radius: category-box-radius
+    border-bottom-right-radius: category-box-radius
+
+.categories-link
+  color: primary
+  padding-bottom: 2px
+  font-weight: 600
+  font-size: 14px
+  padding: 6px 10px
+  border-radius: 3px
+  background-color: secondary-background
+  text-decoration: none
+  display: inline-block
+  &:hover
+    text-decoration: underline
+  &:active
+    background-color: secondary-background-active
+
+    
+// cta-buttons.styl
+
+.cta-buttons
+  position: relative
+  margin-top: 1rem
+  button,
+  .button
+    margin-right: 10px
+    @media (max-width: smallViewport)
+      margin-bottom: 12px
+  .buttons-wrap
+    position: relative
+
+    
+// featured.styl
+
+//mediumViewport = 670px
+//largeViewport = 900px
+
+.featured-collections
+  ul
+    padding: 0
+    margin-bottom: 0
+    display: flex
+    @media (max-width: mediumViewport)
+      // flex-wrap: wrap
+      display: flex
+      flex-wrap: nowrap
+      overflow-x: auto
+      -webkit-overflow-scrolling: touch
+
+  li
+    list-style-type: none
+    margin-right: 10px
+    display: inline-block
+    min-width: 240px
+    &:last-child
+      margin-right: 0
+    @media (max-width: largeViewport)
+      width: 48%
+    @media (max-width: mediumViewport)
+      flex-grow: 0
+      flex-shrink: 0
+      flex-basis: auto
+      margin-right: 8px
+      -webkit-overflow-scrolling: touch
+    @media (max-width: smallViewport)
+      width: 65%
+
+  .featured
+    cursor: pointer
+    margin-right: 10px
+    background-color: section-line
+    display: block
+    width: 100%
+    max-width: 375px
+    height: auto
+    border-radius: 5px
+    @media (max-width: largeViewport)
+      max-width: 425px
+    &:last-child
+      margin-right: 0
+
+  .badge
+    margin-left: 5px
+  
+  .featured-container
+    position: relative
+    &:hover
+      .project-name
+        text-decoration: underline
+    
+    .project-name
+      position: absolute
+      margin: 0
+      padding: 16px
+      bottom: 0
+      left: 0
+      font-weight: 600
+      color: white
+      cursor: pointer
+      @media (max-width: smallViewport)
+        padding: 10px
+
+
+        
+// footer.styl
+
+footer
+  border-top: 1px solid section-line
+  padding-top: 2rem
+  margin-top: 2rem
+  margin-bottom: 2rem
+  overflow: auto
+
+  p
+    margin-top: 1rem
+    margin-left: initial
+    &:first-child
+      margin-top: 0
+
+  .bird
+    display: inline-block
+    vertical-align: middle
+    width: 2.5rem
+    margin-right: 0.3rem
+
+  .glitch-for-links
+    margin-top: 1rem
+
+    
+// header.styl
+
+
+header
+  margin-top: 1rem
+  position: relative
+
+  .logo
+    vertical-align: middle
+    margin-right: 5px
+    margin-bottom: 1rem
+    width: 70px
+    
+  nav
+    position: absolute
+    right: 0
+    top: 0
+    text-align: right
+    form
+      margin-bottom: 0.5rem
+      input
+        width: 250px
+        @media (max-width: smallViewport)
+          width: 160px
+    button,
+    .button
+      margin-left: 10px
+
+    @media (max-width: smallViewport)
+      form
+        display: block
+        input
+          margin-top: 0
+
+  .user
+    padding: 0
+    display: inline-block
+    padding-right: 5px
+    border: none
+    margin: 0
+    img
+      width: 28px
+      height: auto
+      position: relative
+      display: inline
+      border-radius: inherit
+      border-radius: 5px
+      vertical-align: middle
+
+  .user-options-pop-button
+    border: 0
+    padding: 0
+    cursor: pointer
+    display: inline-block
+    // padding-right: 5px
+    position: relative
+    &:hover
+    &:focus
+      opacity: 1;
+      background-color: #eaeaea;
+      border-radius: 5px;
+      border: none;
+      outline: transparent
+      .down-arrow
+        opacity: 1  
+        
+        
+// notifications.styl
+
+
+.notifications
+  z-index: 11
+  // top: 60px
+  // right: side-padding
+  // position: absolute
+  top: 20px
+  right: 20px
+  position: fixed
+  user-select: none
+  pointer-events: none
+
+  .notification
+    background-color: notification
+    color: background-color
+    font-size: 12px
+    font-weight: 600
+    padding: 5px 8px
+    border-radius: 5px
+    max-width: 260px
+    animation-name: hideme
+    animation-delay: 2.5s
+    animation-duration: 0.1s
+    animation-iteration-count: 1
+    animation-direction: forward
+    animation-fill-mode: forwards
+    animation-timing-function: ease-out
+    margin-bottom: 5px
+    line-height: 16px
+    p
+      margin: 0
+    hr
+      opacity: 0.5
+      height: 1px
+      border: 0
+      background-color: background-color
+    .loader
+      width: 20px
+      height: 19px
+      margin: 0
+      margin-right: 5px
+
+  .notifyUserDescriptionUpdated
+    background-color: success
+
+  .notifyUploadFailure
+    background-color: error    
+
+  .notifyUploading
+    animation: none
+    assets-file-icon-active()
+    background-repeat: no-repeat
+    background-position: 8px 5px
+    padding-left: 28px
+
+  // .notifyReconnecting
+  //   animation: none
+  //   .files-loading
+  //     display: inline-block
+  //     padding: 0
+  //     width: 10px
+
+  .button-in-notification-container
+    pointer-events: auto
+    overflow: auto
+    margin-top: 5px
+    margin-bottom: 2px
+    :last-child
+      margin-right: 0
+    .button-in-notification
+      height: 27px
+      vertical-align: middle
+      margin-right: 5px
+
+@keyframes hideme
+  0%
+    opacity: 1
+  100%
+    opacity: 0
+
+    
+// questions.styl
+
+
+.questions
+  .projects
+    padding: 0
+    margin: 0
+
+  .project
+    background-color: secondary-background-active
+    padding: 8px
+    height: initial
+    min-height: 180px
+    a
+      color: primary
+    &:after
+      border: none
+    .overflow-mask
+      background-color: secondary-background-active
+
+    .project-container
+      padding: 8px
+      background-color: secondary-background
+      height: initial
+      border-radius: 3px
+      overflow: hidden
+
+    .tag
+        background-color: help-tag
+        border-radius: 5px
+        padding: 3px 5px
+        margin-right: 5px
+        display: inline-block
+        margin-bottom: 6px
+
+  .help-icon
+    vertical-align: middle
+    width: 28px
+    margin-bottom: -3px
+    margin-left: 6px
+
+  li
+    @media (max-width: 592px)
+      width: 100%
+      margin-bottom: 0.6rem
+      &:last-child
+        margin-bottom: 0
+
+pie-duration = 10s
+pie-size = 20px
+count = infinite
+
+.loader-pie
+  position: relative
+  width: pie-size
+  height: pie-size
+  border-radius: 100%
+  overflow: hidden
+  background-color: secondary-background
+  display: inline-block
+  vertical-align: top
+  transform: rotate(180deg)
+
+  .slice,
+  .left-side,
+  .right-side
+    overflow: hidden
+    position: absolute
+    width: 50%
+    height:100%
+
+  .slice
+    background-color: line-on-secondary-background
+    position: absolute
+    left:100%
+    top:0
+    width:100%
+    height:100%
+    border-radius: 100%
+
+  .left-side
+    left: 0
+    .slice
+      border-top-left-radius: 0
+      border-bottom-left-radius: 0
+      transform-origin: 0 50% 0
+      &.animated
+        animation: pie-left pie-duration infinite linear
+
+  .right-side
+    left: 50%
+    .slice
+      left:-100%;
+      border-bottom-right-radius: 0
+      border-top-right-radius: 0	
+      transform-origin: 100% 50% 0
+      &.animated
+        animation: pie-right pie-duration infinite linear
+
+@keyframes pie-left
+  0%
+    transform:rotate(0deg)
+  50%
+    transform:rotate(180deg)
+  100%
+    transform:rotate(180deg)
+
+@keyframes pie-right
+  0%
+    transform:rotate(0deg)
+  50%
+    transform:rotate(0deg)
+  100%
+    transform:rotate(180deg)
+
+
+    
+// what-is-glitch.styl
+
+.what-is-glitch
+  margin-top: 0
+  margin-bottom: 2rem
+
+  figure
+    margin: 0
+    .narrow
+      display: none
+    @media (max-width: mediumViewport)
+      .narrow
+        display: block
+      .wide
+        display: none
+
+  .free
+    width: 55px
+    vertical-align: sub
+
+  .video
+    display: inline-block
+    border: 0
+    font-weight: normal
+    font-size: 1em
+    color: link
+    cursor: pointer
+    .play-button
+      vertical-align: -6px
+      margin-right: 5px
+      margin-left: 2px
+    &:hover
+      text-decoration: underline
+
+  p
+    margin: 0

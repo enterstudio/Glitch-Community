@@ -1,0 +1,99 @@
+deleted-project-avatar-size = 32px
+
+.deleted-projects
+  clear: both
+  display: inline-block
+  width: 100%
+  vertical-align: top
+  border-radius: 5px
+  
+  header
+    float: left
+    width: 22%
+    @media (max-width: hugeViewport)
+      width: 21%
+
+  .deleted-projects-container
+    margin: 0
+    padding: 0
+    list-style-type: none
+    overflow: hidden
+
+    a
+      &:hover
+        text-decoration: none
+      
+    .down-arrow
+      margin: 0
+      
+  .deleted-project
+    background-color: #e5e5e5
+    border-radius: 5px
+    cursor: pointer
+    display: block
+    float: left
+    height: 90px
+    margin-bottom: 12px
+    margin-right: 10px
+    min-width: 235px
+    overflow: hidden
+    padding: 12px
+    position: relative
+    transition: 0.1s all
+    width: 32%
+    @media (max-width: largeViewport)
+      width: 48%
+    @media (max-width: mediumSmallViewport)
+      width: 100%
+    
+    &:hover
+      button
+        background-color: secondary-background
+        box-shadow: 2px 2px 0 primary
+    &:active
+      button
+        background-color: secondary-background-active
+        box-shadow: none
+        
+    &:after
+    	bottom: 100%
+    	left: 3.5%
+    	border: solid transparent
+    	content: " "
+    	height: 0
+    	width: 0
+    	position: absolute
+    	pointer-events: none
+    	border-bottom-color: inherit
+    	border-width: 6px
+
+    .avatar
+      margin-right: 7px
+      border-radius: 5px
+      vertical-align: top
+      display: inline
+      width: deleted-project-avatar-size
+      height: deleted-project-avatar-size
+      max-width: deleted-project-avatar-size
+
+    button
+      display: block
+
+    .deleted-project-name
+      display: inline-block
+      margin-top: 6px
+      margin-left: 6px
+      max-width: calc(100% - 55px)
+      font-weight: 600
+      font-size: 14px
+      height: 34px
+      overflow: hidden
+      
+  .slide-up
+    animation: slideUp 0.1s ease-out
+    animation-fill-mode: forwards
+
+  .deleted-project-loader {
+    margin-top: 8px
+    margin-bottom: 8px
+  }

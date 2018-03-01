@@ -1,0 +1,73 @@
+.new-stuff-footer
+  position: fixed
+  right: 60px
+  bottom: 15px
+  z-index: 4
+  
+  .new-stuff
+    cursor: pointer
+    .new-stuff-avatar
+      width: 50px
+      height: 52px
+      background-size: cover
+      transform: translateY(30px)
+      margin: 0
+      margin-right: 10px
+
+
+.new-stuff-avatar
+  background-image: url('https://cdn.glitch.com/03736932-82dc-40e8-8dc7-93330c933143%2Fnew-stuff-doggo.svg?1518195034082')
+
+.new-stuff-overlay
+  .new-stuff-avatar
+    width: 51px
+    height: 53px
+    background-size: cover
+    margin: 0
+    float: left
+    margin-right: 8px
+  .overlay-title
+    margin-bottom: 8px
+    display: block
+  article
+    margin-top: 1rem
+    margin-bottom: 1.5rem
+    border-bottom: 1px solid secondary
+    &:last-child
+      margin-bottom: auto
+      border:none
+    p
+      margin-bottom: 1rem
+    .title
+      margin-top: 0
+      font-weight: 600
+      font-size: 13px
+      background-color: marketing-background
+      padding: 2px 6px
+      padding-top: 4px
+
+    .body
+      margin-top: 0.5rem
+      margin-bottom: 1rem
+      h2
+        font-size: 13px
+        font-weight: 600
+      p
+        line-height: 19px
+      code
+        font-family: monospace
+        background-color: secondary-background-active
+        font-size: 13px
+      ul
+        padding-left: 1.5rem
+      li
+        margin-bottom: 0.6rem
+        &:last-child
+          margin-bottom: auto
+      img
+        display: block
+        margin-top: 1rem
+        margin-bottom: 1rem
+        max-width: 100%
+    .image
+      border-radius: 5px
