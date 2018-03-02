@@ -3,7 +3,7 @@ _ = require 'lodash'
 axios = require 'axios'
 
 cachedCategories = require './cache/categories.js'
-cachedTeams = require './cache/teams.js' 
+cachedTeams = require './cache/teams.js'  
 featuredCollections = require "./curated/featured"
 
 Model = require "./models/model"
