@@ -3,11 +3,11 @@ const WARN = 1;
 const ERROR = 2;
 
 module.exports = exports = {
-  "extends": "eslint:recommended", // Turn this on after the coffee -> es conversion
+  "extends": "eslint:recommended",
   env: {
       'es6': true,        // We are writing ES6 code
       'browser': true,    // for the browser
-      //'commonjs': true, // Turn this on after the coffee -> es conversion
+      'commonjs': true,   // using webpack
   },
   "parser": "babel-eslint",
   "parserOptions": {
