@@ -2,8 +2,8 @@ Observable = require 'o_0'
 _ = require 'lodash'
 axios = require 'axios'
 
-cachedCategories = require './cache/categories.json'
-cachedTeams = require './cache/teams.json'
+cachedCategories = require './cache/categories.js'
+cachedTeams = require './cache/teams.js' 
 featuredCollections = require "./curated/featured"
 
 Model = require "./models/model"
