@@ -14,7 +14,7 @@
       "^sh/",
       "\\.json",
       "^webpack\\.config\\.js$",
-      "^\\.eslintrc\\.js$"
+      "^src/\\.eslintrc\\.js$"
     ]
   },
   "throttle": 100
