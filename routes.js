@@ -26,7 +26,9 @@ if (process.env.RUNNING_ON === 'staging') {
 const updateCache = async type => {
   let response = await rp(`${API_URL}${type}`);
   try {
-    await fs_writeFile(`./src/cache/${type}.json`, response);
+    let json = response;
+    let fileContents = `module.exports = ${json}`
+    await fs_writeFile(`./src/cache/${type}.js`, fileContents);
     console.log(`☂️ ${type} re-cached`);
   } catch (error) {
     console.error("☔️", error);
