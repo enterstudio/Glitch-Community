@@ -4,16 +4,9 @@ public/*.ks
 public/*.js.map
 public/*.js
 *.gz
-#src/cache/*
+src/cache/*
 *.md5
 .config/configstore/update-notifier-nodemon.json
 .config/configstore/update-notifier-pnpm.json
 .viminfo
 .webpackCache/*
-
-dist/*
-
-# collapsing the styl directory 
-#*.styl
-
-!src/.eslintrc.js

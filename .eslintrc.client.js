@@ -3,7 +3,7 @@ const WARN = 1;
 const ERROR = 2;
 
 module.exports = exports = {
-  //"extends": "eslint:recommended", // Turn this on after the coffee -> es conversion
+  "extends": "eslint:recommended", // Turn this on after the coffee -> es conversion
   env: {
       'es6': true,        // We are writing ES6 code
       'browser': true,    // for the browser
