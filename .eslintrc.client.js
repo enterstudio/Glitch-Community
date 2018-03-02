@@ -15,6 +15,13 @@ module.exports = exports = {
     "allowImportExportEverywhere": true
   },
   "rules": {
+    // Intentionally off:
     "no-console": OFF,
+    
+    // Unintentionally off -- we should fix these, then enable them
+    "no-undef": OFF,
+    "no-unused-vars": OFF,
+    "no-useless-escape": OFF,
+    "no-empty": OFF,
   }
 }
