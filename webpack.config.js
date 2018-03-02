@@ -52,7 +52,6 @@ module.exports = () => {
             emitError: true,
             emitWarning: true,
             failOnError: false,
-            configFile: `${SRC}/.eslintrc.client.js`
           }
         },
         {
@@ -64,4 +63,4 @@ module.exports = () => {
     },
     plugins: plugins
   };
-}
+} 
