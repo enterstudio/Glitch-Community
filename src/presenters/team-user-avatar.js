@@ -1,34 +1,47 @@
-TeamUserTemplate = require "../templates/includes/team-user-avatar" # rename
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const TeamUserTemplate = require("../templates/includes/team-user-avatar"); // rename
 
-TeamUserOptionsPop = require "../templates/pop-overs/team-user-options-pop"
-TeamUserOptionsPopPresenter = require './pop-overs/team-user-options-pop'
+const TeamUserOptionsPop = require("../templates/pop-overs/team-user-options-pop");
+const TeamUserOptionsPopPresenter = require('./pop-overs/team-user-options-pop');
 
-module.exports = (application, user) ->
+module.exports = function(application, user) {
 
-  self = 
+  var self = { 
 
-    team: application.team
-    teamUserOptionsPopPresenter: TeamUserOptionsPopPresenter application, user
+    team: application.team,
+    teamUserOptionsPopPresenter: TeamUserOptionsPopPresenter(application, user),
 
-    showTeamUserOptionsPop: (event) ->
-      application.closeAllPopOvers()
-      event.stopPropagation()
-      avatar = $(event.target).closest('.opens-pop-over')
-      avatar[0].appendChild TeamUserOptionsPop(self.teamUserOptionsPopPresenter)
+    showTeamUserOptionsPop(event) {
+      application.closeAllPopOvers();
+      event.stopPropagation();
+      const avatar = $(event.target).closest('.opens-pop-over');
+      return avatar[0].appendChild(TeamUserOptionsPop(self.teamUserOptionsPopPresenter));
+    },
 
-    login: ->
-      user.login()
+    login() {
+      return user.login();
+    },
 
-    tooltipName: ->
-      user.tooltipName()
+    tooltipName() {
+      return user.tooltipName();
+    },
 
-    style: ->
-      backgroundColor: user.color()
+    style() {
+      return {backgroundColor: user.color()};
+    },
 
-    avatarUrl: ->
-      user.userAvatarUrl('large')
+    avatarUrl() {
+      return user.userAvatarUrl('large');
+    },
 
-    alt: ->
-      user.alt()
+    alt() {
+      return user.alt();
+    }
+  };
 
-  return TeamUserTemplate self
+  return TeamUserTemplate(self);
+};

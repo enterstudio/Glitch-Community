@@ -1,39 +1,56 @@
-UserOptionsPopTemplate = require "../../templates/pop-overs/user-options-pop"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const UserOptionsPopTemplate = require("../../templates/pop-overs/user-options-pop");
 
-module.exports = (application) ->
+module.exports = function(application) {
 
-  self =
+  let self;
+  return self = {
   
-    template: ->
-      UserOptionsPopTemplate self
+    template() {
+      return UserOptionsPopTemplate(self);
+    },
 
-    stopPropagation: (event) ->
-      event.stopPropagation()
+    stopPropagation(event) {
+      return event.stopPropagation();
+    },
 
-    hiddenUnlessUserOptionsPopVisible: ->
-      'hidden' unless application.userOptionsPopVisible()
+    hiddenUnlessUserOptionsPopVisible() {
+      if (!application.userOptionsPopVisible()) { return 'hidden'; }
+    },
 
-    signOut: ->
-      analytics.track "Logout"
-      analytics.reset()
-      localStorage.removeItem('cachedUser')
-      location.reload()
+    signOut() {
+      analytics.track("Logout");
+      analytics.reset();
+      localStorage.removeItem('cachedUser');
+      return location.reload();
+    },
 
-    yourProfileLink: ->
-      login = application.currentUser().login()
-      "/@#{login}"
+    yourProfileLink() {
+      const login = application.currentUser().login();
+      return `/@${login}`;
+    },
 
-    yourProfileAvatar: ->
-      application.currentUser().avatarUrl()
+    yourProfileAvatar() {
+      return application.currentUser().avatarUrl();
+    },
       
-    teams: ->
-      application.currentUser().teams() or []
+    teams() {
+      return application.currentUser().teams() || [];
+    },
 
-    hiddenUnlesssUserHasTeams: ->
-      teams = self.teams().length
-      'hidden' unless teams
+    hiddenUnlesssUserHasTeams() {
+      const teams = self.teams().length;
+      if (!teams) { return 'hidden'; }
+    },
         
-    showNewStuffOverlay: ->
-      application.userOptionsPopVisible(false)
-      application.overlayNewStuffVisible(true)
+    showNewStuffOverlay() {
+      application.userOptionsPopVisible(false);
+      return application.overlayNewStuffVisible(true);
+    }
+  };
+};
  

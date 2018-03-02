@@ -1,52 +1,72 @@
-UserResultTemplate = require "../templates/includes/user-result"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const UserResultTemplate = require("../templates/includes/user-result");
 
-module.exports = (application, user, options) ->
+module.exports = function(application, user, options) {
 
-  options = options or {}
+  options = options || {};
   
-  self =
+  var self = {
 
-    login: ->
-      "@" + user.login()
+    login() {
+      return `@${user.login()}`;
+    },
 
-    name: ->
-      user.name()
+    name() {
+      return user.name();
+    },
 
-    # truncatedDescription: ->
-    #   user.truncatedDescription()
+    // truncatedDescription: ->
+    //   user.truncatedDescription()
       
-    hoverBackground: ->
-      backgroundImage: "url('#{user.coverUrl()}')"
-      backgroundColor: user.coverColor('small')
+    hoverBackground() {
+      return {
+        backgroundImage: `url('${user.coverUrl()}')`,
+        backgroundColor: user.coverColor('small')
+      };
+    },
 
-    hiddenUnlessName: ->
-      'hidden' unless user.name()
+    hiddenUnlessName() {
+      if (!user.name()) { return 'hidden'; }
+    },
     
-    addUserToTeam: ->
-      console.log application
-      console.log self.application
-      console.log "adding #{user.name()} to #{application.team().id()}"
-      application.team().addUser application, user
-      application.closeAllPopOvers()
+    addUserToTeam() {
+      console.log(application);
+      console.log(self.application);
+      console.log(`adding ${user.name()} to ${application.team().id()}`);
+      application.team().addUser(application, user);
+      return application.closeAllPopOvers();
+    },
     
-    userResultKey: (event) ->
-      ENTER = 13
-      console.log event
-      if event.keyCode is ENTER
-        self.addUserToTeam()    
+    userResultKey(event) {
+      const ENTER = 13;
+      console.log(event);
+      if (event.keyCode === ENTER) {
+        return self.addUserToTeam();
+      }
+    },    
 
-    avatarUrl: ->
-      user.userAvatarUrl('large')
+    avatarUrl() {
+      return user.userAvatarUrl('large');
+    },
 
-    hiddenUnlessThanks: ->
-      "hidden" unless user.thanksCount() > 0
+    hiddenUnlessThanks() {
+      if (!(user.thanksCount() > 0)) { return "hidden"; }
+    },
 
-    hiddenUnlessShowingThanks: ->
-      'hidden' unless options.showThanks
+    hiddenUnlessShowingThanks() {
+      if (!options.showThanks) { return 'hidden'; }
+    },
 
-    thanks: ->
-      user.userThanks()
+    thanks() {
+      return user.userThanks();
+    }
+  };
     
     
 
-  return UserResultTemplate self
+  return UserResultTemplate(self);
+};

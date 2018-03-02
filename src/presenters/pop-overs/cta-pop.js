@@ -1,28 +1,39 @@
-CtaPopTemplate = require "../../templates/pop-overs/cta-pop"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const CtaPopTemplate = require("../../templates/pop-overs/cta-pop");
 
-module.exports = (application) ->
+module.exports = function(application) {
 
-  self =
+  const self = {
 
-    newProjectLink: "#{EDITOR_URL}#!/new-project"
-    newWebsiteLink: "#{EDITOR_URL}#!/remix/hello-website"
+    newProjectLink: `${EDITOR_URL}#!/new-project`,
+    newWebsiteLink: `${EDITOR_URL}#!/remix/hello-website`,
     
-    trackNewProject: ->
-      analytics.track "New Project Clicked",
-        projectType: "node app"
-      # return true means "follow href"
-      return true
+    trackNewProject() {
+      analytics.track("New Project Clicked",
+        {projectType: "node app"});
+      // return true means "follow href"
+      return true;
+    },
     
-    trackNewWebsite: ->
-      analytics.track "New Project Clicked",
-        projectType: "static app"
-      # return true means "follow href"
-      return true
+    trackNewWebsite() {
+      analytics.track("New Project Clicked",
+        {projectType: "static app"});
+      // return true means "follow href"
+      return true;
+    },
 
-    hiddenUnlessCtaPopVisible: ->
-      'hidden' unless application.ctaPopVisible()
+    hiddenUnlessCtaPopVisible() {
+      if (!application.ctaPopVisible()) { return 'hidden'; }
+    },
 
-    stopPropagation: (event) ->
-      event.stopPropagation()
+    stopPropagation(event) {
+      return event.stopPropagation();
+    }
+  };
 
-  return CtaPopTemplate self
+  return CtaPopTemplate(self);
+};

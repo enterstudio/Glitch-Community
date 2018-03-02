@@ -1,41 +1,52 @@
-NotificationsTemplate = require "../templates/includes/notifications"
+/*
+ * decaffeinate suggestions:
+ * DS101: Remove unnecessary use of Array.from
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const NotificationsTemplate = require("../templates/includes/notifications");
 
-Observable = require "o_0"
-animationEnd = 'webkitAnimationEnd oanimationend msAnimationEnd animationend'
+const Observable = require("o_0");
+const animationEnd = 'webkitAnimationEnd oanimationend msAnimationEnd animationend';
 
-module.exports = (application) ->
+module.exports = function(application) {
 
-  # defined as observables in application.coffee
-  notificationTypes = [
-    "UserDescriptionUpdated"
-    "Uploading"
+  // defined as observables in application.coffee
+  const notificationTypes = [
+    "UserDescriptionUpdated",
+    "Uploading",
     "UploadFailure"
-  ]
+  ];
 
-  notifications = notificationTypes.map (str) ->
-    ".notify#{str}"
-  .join(',')
+  const notifications = notificationTypes.map(str => `.notify${str}`).join(',');
 
-  generateNotifier = (method, application) ->
-    ->
-      $(notifications).one animationEnd, (event) ->
-        application[method] false
-      if not application[method]()
-        return "hidden"
+  const generateNotifier = (method, application) =>
+    function() {
+      $(notifications).one(animationEnd, event => application[method](false));
+      if (!application[method]()) {
+        return "hidden";
+      }
+    }
+  ;
 
 
-  self =
-    application: application
+  const self = {
+    application,
     
-    uploadFilesRemaining: ->
-      Math.round (application.uploadFilesRemaining() / 2)
+    uploadFilesRemaining() {
+      return Math.round((application.uploadFilesRemaining() / 2));
+    },
 
-    uploadProgress: ->
-      application.uploadProgress()
+    uploadProgress() {
+      return application.uploadProgress();
+    }
+  };
 
 
-  for notificationType in notificationTypes
-    method = "notify#{notificationType}"
-    self[method] = generateNotifier(method, application)
+  for (let notificationType of Array.from(notificationTypes)) {
+    const method = `notify${notificationType}`;
+    self[method] = generateNotifier(method, application);
+  }
 
-  return NotificationsTemplate self
+  return NotificationsTemplate(self);
+};

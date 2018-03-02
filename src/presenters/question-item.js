@@ -1,53 +1,71 @@
-Observable = require 'o_0'
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const Observable = require('o_0');
 
-QuestionItemTemplate = require "../templates/includes/question-item"
+const QuestionItemTemplate = require("../templates/includes/question-item");
 
-MAX_QUESTION_LENGTH = 140
-MAX_TAG_LENGTH = 15
+const MAX_QUESTION_LENGTH = 140;
+const MAX_TAG_LENGTH = 15;
 
-module.exports = (application, question) ->
+module.exports = function(application, question) {
   
-  self = 
+  const self = { 
   
-    question: question
+    question,
   
-    fullQuestion: ->
-      question.question()
+    fullQuestion() {
+      return question.question();
+    },
 
-    filteredQuestion: ->
-      question = question.question()
-      if question.length <= MAX_QUESTION_LENGTH
-        question
-      else
-        truncated = question.substring 0, (MAX_QUESTION_LENGTH - 5)
-        truncated + '...'
+    filteredQuestion() {
+      question = question.question();
+      if (question.length <= MAX_QUESTION_LENGTH) {
+        return question;
+      } else {
+        const truncated = question.substring(0, (MAX_QUESTION_LENGTH - 5));
+        return truncated + '...';
+      }
+    },
 
-    filteredTag: (tag) ->
-      tag.substring 0, MAX_TAG_LENGTH
+    filteredTag(tag) {
+      return tag.substring(0, MAX_TAG_LENGTH);
+    },
 
-    projectUrl: ->
-      question.editUrl()
+    projectUrl() {
+      return question.editUrl();
+    },
 
-    domain: ->
-      question.domain()
+    domain() {
+      return question.domain();
+    },
     
-    outerColor: ->
-      backgroundColor: question.colorOuter()
+    outerColor() {
+      return {backgroundColor: question.colorOuter()};
+    },
     
-    innerColor: ->
-      backgroundColor: question.colorInner()
+    innerColor() {
+      return {backgroundColor: question.colorInner()};
+    },
 
-    userAvatar: ->
-      question.userAvatar()
+    userAvatar() {
+      return question.userAvatar();
+    },
 
-    userColor: ->
-      question.userColor()
+    userColor() {
+      return question.userColor();
+    },
 
-    userLogin: ->
-      question.userLogin()
+    userLogin() {
+      return question.userLogin();
+    }
+  };
 
-    # tags: ->
-    #   console.log "🌙", question.tags()
-    #   question.tags()
+    // tags: ->
+    //   console.log "🌙", question.tags()
+    //   question.tags()
 
-  return QuestionItemTemplate self
+  return QuestionItemTemplate(self);
+};

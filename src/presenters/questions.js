@@ -1,53 +1,66 @@
-QuestionsTemplate = require "../templates/includes/questions"
-QuestionItemPresenter = require './question-item'
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const QuestionsTemplate = require("../templates/includes/questions");
+const QuestionItemPresenter = require('./question-item');
 
-Observable = require 'o_0'
-_ = require 'lodash/collection'
+const Observable = require('o_0');
+const _ = require('lodash/collection');
 
-animationIteration = 'webkitAnimationiteration oanimationiteration msAnimationiteration animationiteration'
-DEFAULT_MAX_QUESTIONS = 3
+const animationIteration = 'webkitAnimationiteration oanimationiteration msAnimationiteration animationiteration';
+const DEFAULT_MAX_QUESTIONS = 3;
 
-module.exports = (application, maxQuestions) ->
-  console.log "Presented questions"
+module.exports = function(application, maxQuestions) {
+  console.log("Presented questions");
 
-  self =
+  var self = {
 
-    maxQuestions: ->
-      maxQuestions or DEFAULT_MAX_QUESTIONS
+    maxQuestions() {
+      return maxQuestions || DEFAULT_MAX_QUESTIONS;
+    },
 
-    kaomoji: Observable '八(＾□＾*)'
+    kaomoji: Observable('八(＾□＾*)'),
 
-    randomKaomoji: ->
-      kaomojis = [
-        '八(＾□＾*)'
-        '(ノ^_^)ノ'
-        'ヽ(*ﾟｰﾟ*)ﾉ'
-        '♪(┌・。・)┌'
-        'ヽ(๏∀๏ )ﾉ'
+    randomKaomoji() {
+      const kaomojis = [
+        '八(＾□＾*)',
+        '(ノ^_^)ノ',
+        'ヽ(*ﾟｰﾟ*)ﾉ',
+        '♪(┌・。・)┌',
+        'ヽ(๏∀๏ )ﾉ',
         'ヽ(^。^)丿'
-      ]
-      self.kaomoji _.sample kaomojis
+      ];
+      return self.kaomoji(_.sample(kaomojis));
+    },
 
-    # hiddenIfGotQuestions: ->
-    #   'hidden' if application.questions().length
+    // hiddenIfGotQuestions: ->
+    //   'hidden' if application.questions().length
       
-    hiddenIfQuestions: ->
-      'hidden' if application.questions().length
+    hiddenIfQuestions() {
+      if (application.questions().length) { return 'hidden'; }
+    },
 
-    hiddenUnlessQuestions: ->
-      'hidden' unless application.questions().length
+    hiddenUnlessQuestions() {
+      if (!application.questions().length) { return 'hidden'; }
+    },
 
-    questions: ->
-      application.questions().map (question) ->
-        QuestionItemPresenter(application, question)
+    questions() {
+      return application.questions().map(question => QuestionItemPresenter(application, question));
+    },
 
-    animatedUnlessLookingForQuestions: ->
-      'animated' unless application.gettingQuestions()
+    animatedUnlessLookingForQuestions() {
+      if (!application.gettingQuestions()) { return 'animated'; }
+    }
+  };
 
 
-  setInterval ->
-    application.getQuestions()
-    self.randomKaomoji()
-  , 10000
+  setInterval(function() {
+    application.getQuestions();
+    return self.randomKaomoji();
+  }
+  , 10000);
 
-  return QuestionsTemplate self
+  return QuestionsTemplate(self);
+};

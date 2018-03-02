@@ -1,14 +1,23 @@
-OverlayVideoTemplate = require "../../templates/overlays/overlay-video"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const OverlayVideoTemplate = require("../../templates/overlays/overlay-video");
 
-module.exports = (application) ->
+module.exports = function(application) {
 
-  self =     
-    application: application
+  const self = {     
+    application,
     
-    hiddenUnlessOverlayVideoVisible: ->
-      "hidden" unless application.overlayVideoVisible()
+    hiddenUnlessOverlayVideoVisible() {
+      if (!application.overlayVideoVisible()) { return "hidden"; }
+    },
 
-    stopPropagation: (event) ->
-      event.stopPropagation()
+    stopPropagation(event) {
+      return event.stopPropagation();
+    }
+  };
 
-  return OverlayVideoTemplate self
+  return OverlayVideoTemplate(self);
+};

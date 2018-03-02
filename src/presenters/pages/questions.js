@@ -1,23 +1,33 @@
-QuestionsPageTemplate = require "../../templates/pages/questions"
-LayoutPresenter = require "../layout"
-CtaButtonsPresenter = require "../cta-buttons"
-QuestionsPresenter = require "../questions"
-CategoriesPresenter = require "../categories"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const QuestionsPageTemplate = require("../../templates/pages/questions");
+const LayoutPresenter = require("../layout");
+const CtaButtonsPresenter = require("../cta-buttons");
+const QuestionsPresenter = require("../questions");
+const CategoriesPresenter = require("../categories");
 
-module.exports = (application) ->
-  self =
+module.exports = function(application) {
+  const self = {
 
-    application: application
+    application,
 
-    ctaButtons: ->
-      CtaButtonsPresenter(application)
+    ctaButtons() {
+      return CtaButtonsPresenter(application);
+    },
 
-    questions: ->
-      QuestionsPresenter application, 12
+    questions() {
+      return QuestionsPresenter(application, 12);
+    },
 
-    categories: ->
-      CategoriesPresenter application
+    categories() {
+      return CategoriesPresenter(application);
+    }
+  };
       
-  content = QuestionsPageTemplate(self)
+  const content = QuestionsPageTemplate(self);
 
-  return LayoutPresenter application, content
+  return LayoutPresenter(application, content);
+};

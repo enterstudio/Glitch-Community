@@ -1,79 +1,108 @@
-ProjectItemTemplate = require "../templates/includes/project-item"
-UsersListPresenter = require "./users-list"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const ProjectItemTemplate = require("../templates/includes/project-item");
+const UsersListPresenter = require("./users-list");
 
-ProjectOptionsPop = require "../templates/pop-overs/project-options-pop"
-ProjectOptionsPopPresenter = require './pop-overs/project-options-pop'
+const ProjectOptionsPop = require("../templates/pop-overs/project-options-pop");
+const ProjectOptionsPopPresenter = require('./pop-overs/project-options-pop');
 
-module.exports = (application, project, category, userPagePresenter) ->
+module.exports = function(application, project, category, userPagePresenter) {
 
-  self = 
+  var self = { 
 
-    category: category
-    project: project
+    category,
+    project,
     
-    usersListPresenter: UsersListPresenter(project)
+    usersListPresenter: UsersListPresenter(project),
 
-    projectLink: ->
-      if project.isRecentProject
-        self.editorLink()
-      else
-        "/~#{project.domain()}"
+    projectLink() {
+      if (project.isRecentProject) {
+        return self.editorLink();
+      } else {
+        return `/~${project.domain()}`;
+      }
+    },
 
-    editorLink: ->
-      project.editUrl()
+    editorLink() {
+      return project.editUrl();
+    },
 
-    showProject: (event) ->
-      event.preventDefault()
-      event.stopPropagation()
-      project.showOverlay application
+    showProject(event) {
+      event.preventDefault();
+      event.stopPropagation();
+      return project.showOverlay(application);
+    },
 
-    buttonCtaIfCurrentUser: ->
-      if project.isRecentProject
-        "button-cta"
+    buttonCtaIfCurrentUser() {
+      if (project.isRecentProject) {
+        return "button-cta";
+      }
+    },
 
-    projectIsPrivate: ->
-      'private-project' if project.private()
+    projectIsPrivate() {
+      if (project.private()) { return 'private-project'; }
+    },
 
-    showProjectOptionsPop: (event) ->
-      application.closeAllPopOvers()
-      event.stopPropagation()
-      button = $(event.target).closest('.opens-pop-over')
-      button[0].appendChild ProjectOptionsPop(ProjectOptionsPopPresenter(project, application, self, userPagePresenter))
+    showProjectOptionsPop(event) {
+      application.closeAllPopOvers();
+      event.stopPropagation();
+      const button = $(event.target).closest('.opens-pop-over');
+      return button[0].appendChild(ProjectOptionsPop(ProjectOptionsPopPresenter(project, application, self, userPagePresenter)));
+    },
 
-    visibleIfUserHasProjectOptions: ->
-      if application.user().isOnUserPageForCurrentUser(application) or application.team().currentUserIsOnTeam(application)                    
-        'visible'
+    visibleIfUserHasProjectOptions() {
+      if (application.user().isOnUserPageForCurrentUser(application) || application.team().currentUserIsOnTeam(application)) {                    
+        return 'visible';
+      }
+    },
 
-    stopPropagation: (event) ->
-      event.stopPropagation()
+    stopPropagation(event) {
+      return event.stopPropagation();
+    },
 
-    togglePinnedState: ->
-      if application.pageIsTeamPage()
-        self.toggleTeamPin()
-      else
-        self.toggleUserPin()
+    togglePinnedState() {
+      if (application.pageIsTeamPage()) {
+        return self.toggleTeamPin();
+      } else {
+        return self.toggleUserPin();
+      }
+    },
 
-    toggleUserPin: ->
-      if project.isPinnedByUser application
-        application.user().removePin application, project.id()
-      else
-        application.user().addPin application, project.id()
+    toggleUserPin() {
+      if (project.isPinnedByUser(application)) {
+        return application.user().removePin(application, project.id());
+      } else {
+        return application.user().addPin(application, project.id());
+      }
+    },
 
-    toggleTeamPin: ->
-      if project.isPinnedByTeam application
-        application.team().removePin application, project.id()
-      else
-        console.log 'toggleTeamPin addpin'
-        application.team().addPin application, project.id()
+    toggleTeamPin() {
+      if (project.isPinnedByTeam(application)) {
+        return application.team().removePin(application, project.id());
+      } else {
+        console.log('toggleTeamPin addpin');
+        return application.team().addPin(application, project.id());
+      }
+    },
 
-    style: ->
-      backgroundColor: category.color?()
-      borderBottomColor: category.color?()
+    style() {
+      return {
+        backgroundColor: (typeof category.color === 'function' ? category.color() : undefined),
+        borderBottomColor: (typeof category.color === 'function' ? category.color() : undefined)
+      };
+    },
 
-    maskStyle: ->
-      backgroundColor: category.color?()
+    maskStyle() {
+      return {backgroundColor: (typeof category.color === 'function' ? category.color() : undefined)};
+    },
 
-    avatar: ->
-      project.avatar()
+    avatar() {
+      return project.avatar();
+    }
+  };
 
-  return ProjectItemTemplate self
+  return ProjectItemTemplate(self);
+};

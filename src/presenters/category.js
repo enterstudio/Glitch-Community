@@ -1,30 +1,40 @@
-CategoryTemplate = require "../templates/includes/category"
-ProjectItemPresenter = require "./project-item"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const CategoryTemplate = require("../templates/includes/category");
+const ProjectItemPresenter = require("./project-item");
 
-module.exports = (application, category) ->
-  category = category
-  projects = category.projects
+module.exports = function(application, category) {
+  category = category;
+  const { projects } = category;
 
-  projectElements = projects.map (project) ->
-    ProjectItemPresenter(application, project, category)
+  const projectElements = projects.map(project => ProjectItemPresenter(application, project, category));
 
-  self =
+  const self = {
 
-    category: category
-    projects: projects
+    category,
+    projects,
 
-    style: ->
-      backgroundColor: category.backgroundColor()
+    style() {
+      return {backgroundColor: category.backgroundColor()};
+    },
 
-    url: ->
-      category.url()
+    url() {
+      return category.url();
+    },
 
-    name: ->
-      category.name()
+    name() {
+      return category.name();
+    },
     
-    description: ->
-      category.description()
+    description() {
+      return category.description();
+    }
+  };
     
-  self.projects = projectElements
+  self.projects = projectElements;
 
-  return CategoryTemplate self
+  return CategoryTemplate(self);
+};

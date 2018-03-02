@@ -1,118 +1,151 @@
-moment = require 'moment'
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const moment = require('moment');
 
-HeaderTemplate = require "../templates/includes/header"
-import UserOptionsPop from "./pop-overs/user-options-pop.jsx"
+const HeaderTemplate = require("../templates/includes/header");
+import UserOptionsPop from "./pop-overs/user-options-pop.jsx";
 
-import SignInPop from "./pop-overs/sign-in-pop.jsx"
-import {render, unmountComponentAtNode} from 'react-dom'
-import React from 'react'
+import SignInPop from "./pop-overs/sign-in-pop.jsx";
+import {render, unmountComponentAtNode} from 'react-dom';
+import React from 'react';
 
-module.exports = (application) ->
+module.exports = function(application) {
   
-  getTeamsPojo = (teams) -> 
-    unless teams && teams.length
-      return []
+  const getTeamsPojo = function(teams) { 
+    if (!teams || !teams.length) {
+      return [];
+    }
     
-    # https://our.manuscript.com/f/cases/3292168/
-    # teams is inconsistent;
-    # pending a fix, let's normalize that here.
-    # Just need to extract name, url, and teamAvatarUrl
-    # trouble is they're inconsistently functions, strings, or undefined
-    return teams.map (team) ->
-      extract = (prop) ->
-        item = team[prop]
-        if typeof(item) == "string"
-          return item
-        else if typeof(item) == "function"
-          return item()
-        else if typeof(item) == "undefined"
-          return ""
-        else
-          console.error "Unxpected team property type", item, typeof(item)
+    // https://our.manuscript.com/f/cases/3292168/
+    // teams is inconsistent;
+    // pending a fix, let's normalize that here.
+    // Just need to extract name, url, and teamAvatarUrl
+    // trouble is they're inconsistently functions, strings, or undefined
+    return teams.map(function(team) {
+      const extract = function(prop) {
+        const item = team[prop];
+        if (typeof(item) === "string") {
+          return item;
+        } else if (typeof(item) === "function") {
+          return item();
+        } else if (typeof(item) === "undefined") {
+          return "";
+        } else {
+          return console.error("Unxpected team property type", item, typeof(item));
+        }
+      };
     
-      return 
-        name: extract("name")
-        url: extract("url")
+      return{ 
+        name: extract("name"),
+        url: extract("url"),
         teamAvatarUrl: extract("teamAvatarUrl")
+      };
+    });
+  };
   
-  # React will complain/break if non-react components remove a react component
-  # from the dom.  We heal that by observing and cleaning up here:
-  application.userOptionsPopVisible.observe ->
-    if application.userOptionsPopVisible() is false
-      unmountComponentAtNode(document.getElementById(self.userOptionsPopContainerId))
+  // React will complain/break if non-react components remove a react component
+  // from the dom.  We heal that by observing and cleaning up here:
+  application.userOptionsPopVisible.observe(function() {
+    if (application.userOptionsPopVisible() === false) {
+      return unmountComponentAtNode(document.getElementById(self.userOptionsPopContainerId));
+    }
+  });
 
-  self =
+  var self = {
 
-    application: application
-    baseUrl: application.normalizedBaseUrl()
+    application,
+    baseUrl: application.normalizedBaseUrl(),
   
-    toggleSignInPopVisible: (event) ->
-      application.signInPopVisibleOnHeader.toggle()
-      event.stopPropagation()
+    toggleSignInPopVisible(event) {
+      application.signInPopVisibleOnHeader.toggle();
+      return event.stopPropagation();
+    },
 
-    toggleUserOptionsPopVisible: (event) ->
-      application.userOptionsPopVisible.toggle()
-      event.stopPropagation()
+    toggleUserOptionsPopVisible(event) {
+      application.userOptionsPopVisible.toggle();
+      return event.stopPropagation();
+    },
 
-    hiddenUnlessUserIsExperienced: ->
-      'hidden' unless application.currentUser().isAnExperiencedUser()
+    hiddenUnlessUserIsExperienced() {
+      if (!application.currentUser().isAnExperiencedUser()) { return 'hidden'; }
+    },
       
-    hiddenUnlessSignInPopVisible: ->
-      'hidden' unless application.signInPopVisibleOnHeader()
+    hiddenUnlessSignInPopVisible() {
+      if (!application.signInPopVisibleOnHeader()) { return 'hidden'; }
+    },
 
-    userAvatar: ->
-      application.currentUser().avatarUrl()
+    userAvatar() {
+      return application.currentUser().avatarUrl();
+    },
 
-    logo: ->
-      LOGO_DAY = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Flogo-day.svg"
-      LOGO_SUNSET = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Flogo-sunset.svg"
-      LOGO_NIGHT = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Flogo-night.svg"
-      hour = moment().format('HH')
-      if hour >= 16 and hour <=18
-        LOGO_SUNSET
-      else if hour > 18 or hour <= 8
-        LOGO_NIGHT
-      else
-        LOGO_DAY
+    logo() {
+      const LOGO_DAY = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Flogo-day.svg";
+      const LOGO_SUNSET = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Flogo-sunset.svg";
+      const LOGO_NIGHT = "https://cdn.gomix.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2Flogo-night.svg";
+      const hour = moment().format('HH');
+      if ((hour >= 16) && (hour <=18)) {
+        return LOGO_SUNSET;
+      } else if ((hour > 18) || (hour <= 8)) {
+        return LOGO_NIGHT;
+      } else {
+        return LOGO_DAY;
+      }
+    },
 
-    hiddenIfSignedIn: ->
-      'hidden' if application.currentUser().login()
+    hiddenIfSignedIn() {
+      if (application.currentUser().login()) { return 'hidden'; }
+    },
         
-    hiddenUnlessSignedIn: ->
-      'hidden' unless application.currentUser().login()
+    hiddenUnlessSignedIn() {
+      if (!application.currentUser().login()) { return 'hidden'; }
+    },
         
-    SignInPop: (containerId) ->
-      setTimeout () => 
-        render(
+    SignInPop(containerId) {
+      return setTimeout(() => { 
+        return render(
           React.createElement(SignInPop, null),
           document.getElementById(containerId)
-        )
+        );
+      });
+    },
 
-    userOptionsPopContainerId: 'userOptionsPopContainer'
+    userOptionsPopContainerId: 'userOptionsPopContainer',
 
-    UserOptionsPop: (visible) ->
-      props =
-        visible: visible
+    UserOptionsPop(visible) {
+      const props = {
+        visible,
         teams: getTeamsPojo(application.currentUser().teams()),
-        profileLink: "/@#{application.currentUser().login()}",
+        profileLink: `/@${application.currentUser().login()}`,
         avatarUrl: application.currentUser().avatarUrl(),
-        showNewStuffOverlay: ->
-          application.userOptionsPopVisible(false)
-          application.overlayNewStuffVisible(true)
-        signOut: ->
+        showNewStuffOverlay() {
+          application.userOptionsPopVisible(false);
+          return application.overlayNewStuffVisible(true);
+        },
+        signOut() {
           analytics.track("Logout");
           analytics.reset();
           localStorage.removeItem('cachedUser');
           return location.reload();
+        }
+      };
 
-      setTimeout () => 
-        render(
+      return setTimeout(() => { 
+        return render(
           React.createElement(UserOptionsPop, props),
           document.getElementById(self.userOptionsPopContainerId)
-        )
+        );
+      });
+    },
     
-    submit: (event) ->
-      if event.target.children.q.value.trim().length is 0
-        event.preventDefault()
+    submit(event) {
+      if (event.target.children.q.value.trim().length === 0) {
+        return event.preventDefault();
+      }
+    }
+  };
         
-  return HeaderTemplate self
+  return HeaderTemplate(self);
+};

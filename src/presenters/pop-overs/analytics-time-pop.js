@@ -1,46 +1,60 @@
-moment = require 'moment'
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const moment = require('moment');
 
-AnalyticsTimePopTemplate = require "../../templates/pop-overs/analytics-time-pop"
+const AnalyticsTimePopTemplate = require("../../templates/pop-overs/analytics-time-pop");
 
-twoWeeks = moment().subtract(2, 'weeks').valueOf()
-oneMonth = moment().subtract(4, 'weeks').valueOf()
-oneDay = moment().subtract(24, 'hours').valueOf()
+const twoWeeks = moment().subtract(2, 'weeks').valueOf();
+const oneMonth = moment().subtract(4, 'weeks').valueOf();
+const oneDay = moment().subtract(24, 'hours').valueOf();
 
-module.exports = (application, analytics) ->
+module.exports = function(application, analytics) {
 
-  self =
+  const self = {
   
-    application: application
+    application,
   
-    # hiddenUnlessAnalyticsTimePopVisible: ->
-    #   'hidden' unless application.analyticsTimePopVisible()
+    // hiddenUnlessAnalyticsTimePopVisible: ->
+    //   'hidden' unless application.analyticsTimePopVisible()
 
-    stopPropagation: (event) ->
-      event.stopPropagation()
+    stopPropagation(event) {
+      return event.stopPropagation();
+    },
 
-    selectMonthFrame: ->
-      analytics.analyticsTimeLabel 'Last 4 Weeks'
-      # analytics.analyticsFromDate oneMonth
-      analytics.gettingAnalyticsFromDate true
+    selectMonthFrame() {
+      analytics.analyticsTimeLabel('Last 4 Weeks');
+      // analytics.analyticsFromDate oneMonth
+      return analytics.gettingAnalyticsFromDate(true);
+    },
 
-    selectWeeksFrame: ->
-      analytics.analyticsTimeLabel 'Last 2 Weeks'
-      # analytics.analyticsFromDate twoWeeks
-      analytics.gettingAnalyticsFromDate true
+    selectWeeksFrame() {
+      analytics.analyticsTimeLabel('Last 2 Weeks');
+      // analytics.analyticsFromDate twoWeeks
+      return analytics.gettingAnalyticsFromDate(true);
+    },
 
-    selectHoursFrame: ->
-      analytics.analyticsTimeLabel 'Last 24 Hours'
-      # analytics.analyticsFromDate oneDay
-      analytics.gettingAnalyticsFromDate true
+    selectHoursFrame() {
+      analytics.analyticsTimeLabel('Last 24 Hours');
+      // analytics.analyticsFromDate oneDay
+      return analytics.gettingAnalyticsFromDate(true);
+    },
 
-    activeIfLabelIsMonths: ->
-      'active' if analytics.analyticsTimeLabel() is 'Last 4 Weeks'
+    activeIfLabelIsMonths() {
+      if (analytics.analyticsTimeLabel() === 'Last 4 Weeks') { return 'active'; }
+    },
 
-    activeIfLabelIsWeeks: ->
-      'active' if analytics.analyticsTimeLabel() is 'Last 2 Weeks'
+    activeIfLabelIsWeeks() {
+      if (analytics.analyticsTimeLabel() === 'Last 2 Weeks') { return 'active'; }
+    },
 
-    activeIfLabelIsHours: ->
-      'active' if analytics.analyticsTimeLabel() is 'Last 24 Hours'
+    activeIfLabelIsHours() {
+      if (analytics.analyticsTimeLabel() === 'Last 24 Hours') { return 'active'; }
+    }
+  };
 
 
-  return AnalyticsTimePopTemplate self
+  return AnalyticsTimePopTemplate(self);
+};

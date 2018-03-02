@@ -1,18 +1,27 @@
-Observable = require 'o_0'
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const Observable = require('o_0');
 
-CtaButtonsTemplate = require "../templates/includes/cta-buttons"
-CtaPopPresenter = require "./pop-overs/cta-pop"
+const CtaButtonsTemplate = require("../templates/includes/cta-buttons");
+const CtaPopPresenter = require("./pop-overs/cta-pop");
 
-module.exports = (application) ->
+module.exports = function(application) {
 
-  self =
+  const self = {
 
-    ctaPop: CtaPopPresenter application
+    ctaPop: CtaPopPresenter(application),
 
-    toggleCtaPop: ->
-      application.ctaPopVisible.toggle()
+    toggleCtaPop() {
+      return application.ctaPopVisible.toggle();
+    },
 
-    hiddenUnlessIsSignedIn: ->
-      'hidden' unless application.currentUser().isSignedIn()
+    hiddenUnlessIsSignedIn() {
+      if (!application.currentUser().isSignedIn()) { return 'hidden'; }
+    }
+  };
 
-  return CtaButtonsTemplate self
+  return CtaButtonsTemplate(self);
+};

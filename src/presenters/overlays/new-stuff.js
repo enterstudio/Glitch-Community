@@ -1,75 +1,95 @@
-"use strict"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * DS207: Consider shorter variations of null checks
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+"use strict";
 
-markdown = require('markdown-it')({html: true})
-  .use(require('markdown-it-sanitizer'))
-Observable = require 'o_0'
+const markdown = require('markdown-it')({html: true})
+  .use(require('markdown-it-sanitizer'));
+const Observable = require('o_0');
 
-OverlayNewStuffTemplate = require "../../templates/overlays/new-stuff"
+const OverlayNewStuffTemplate = require("../../templates/overlays/new-stuff");
 
-module.exports = (application) ->
+module.exports = function(application) {
   
-  application.overlayNewStuffVisible.observe ->
-    if application.overlayNewStuffVisible() is true
-      self.updateNewStuffRead()
-      self.newStuffNotificationVisible(false)
+  application.overlayNewStuffVisible.observe(function() {
+    if (application.overlayNewStuffVisible() === true) {
+      self.updateNewStuffRead();
+      return self.newStuffNotificationVisible(false);
+    }
+  });
 
-  self =
+  var self = {
 
-    newStuffLog: require('../new-stuff-log')(self)
+    newStuffLog: require('../new-stuff-log')(self),
     
-    newStuffNotificationVisible: Observable false
-    newStuff: Observable []
+    newStuffNotificationVisible: Observable(false),
+    newStuff: Observable([]),
     
-    mdToNode: (md) ->
-      node = document.createElement 'span'
-      node.innerHTML = markdown.render md
-      return node
+    mdToNode(md) {
+      const node = document.createElement('span');
+      node.innerHTML = markdown.render(md);
+      return node;
+    },
 
-    visibility: ->
-      "hidden" unless application.overlayNewStuffVisible()
+    visibility() {
+      if (!application.overlayNewStuffVisible()) { return "hidden"; }
+    },
         
-    getUpdates: ->
-      MAX_UPDATES = 3
-      updates = self.newStuffLog.updates()
-      newStuffReadId = application.getUserPref 'newStuffReadId'
-      totalUpdates = self.newStuffLog.totalUpdates()
+    getUpdates() {
+      const MAX_UPDATES = 3;
+      const updates = self.newStuffLog.updates();
+      const newStuffReadId = application.getUserPref('newStuffReadId');
+      const totalUpdates = self.newStuffLog.totalUpdates();
       
-      latestStuff = updates.slice(0, MAX_UPDATES)
-      self.newStuff latestStuff
+      const latestStuff = updates.slice(0, MAX_UPDATES);
+      self.newStuff(latestStuff);
 
-      hasNewStuff = true
-      if newStuffReadId
-        unread = totalUpdates - newStuffReadId
-        newStuff = updates.slice(0, unread)
-        if unread <= 0
-          hasNewStuff = false
-        else
-          self.newStuff newStuff
+      let hasNewStuff = true;
+      if (newStuffReadId) {
+        const unread = totalUpdates - newStuffReadId;
+        const newStuff = updates.slice(0, unread);
+        if (unread <= 0) {
+          hasNewStuff = false;
+        } else {
+          self.newStuff(newStuff);
+        }
+      }
             
-      isSignedIn = application.currentUser().isSignedIn()
-      ignoreNewStuff = application.getUserPref('showNewStuff') == false
-      visible = isSignedIn and hasNewStuff and not ignoreNewStuff
+      const isSignedIn = application.currentUser().isSignedIn();
+      const ignoreNewStuff = application.getUserPref('showNewStuff') === false;
+      const visible = isSignedIn && hasNewStuff && !ignoreNewStuff;
       
-      self.newStuffNotificationVisible(visible)
+      return self.newStuffNotificationVisible(visible);
+    },
 
 
-    checked: (event) ->
-      showNewStuff = application.getUserPref 'showNewStuff'
-      if showNewStuff? and event?
-        application.updateUserPrefs 'showNewStuff', event
-      else if showNewStuff?
-        return showNewStuff
-      else
-        application.updateUserPrefs 'showNewStuff', true
+    checked(event) {
+      const showNewStuff = application.getUserPref('showNewStuff');
+      if ((showNewStuff != null) && (event != null)) {
+        return application.updateUserPrefs('showNewStuff', event);
+      } else if (showNewStuff != null) {
+        return showNewStuff;
+      } else {
+        return application.updateUserPrefs('showNewStuff', true);
+      }
+    },
 
-    updateNewStuffRead: ->
-      application.updateUserPrefs 'newStuffReadId', self.newStuffLog.totalUpdates()
+    updateNewStuffRead() {
+      return application.updateUserPrefs('newStuffReadId', self.newStuffLog.totalUpdates());
+    },
       
-    hiddenUnlessNewStuffNotificationVisible: ->
-      'hidden' unless self.newStuffNotificationVisible()
+    hiddenUnlessNewStuffNotificationVisible() {
+      if (!self.newStuffNotificationVisible()) { return 'hidden'; }
+    },
         
-    showNewStuffOverlay: ->
-      application.overlayNewStuffVisible(true)
+    showNewStuffOverlay() {
+      return application.overlayNewStuffVisible(true);
+    }
+  };
 
-  self.getUpdates()
-  return OverlayNewStuffTemplate self
+  self.getUpdates();
+  return OverlayNewStuffTemplate(self);
+};

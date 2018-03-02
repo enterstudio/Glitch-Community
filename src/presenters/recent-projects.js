@@ -1,57 +1,81 @@
-RecentProjectsTemplate = require "../templates/includes/recent-projects"
-ProjectItemPresenter = require "./project-item"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const RecentProjectsTemplate = require("../templates/includes/recent-projects");
+const ProjectItemPresenter = require("./project-item");
 
-module.exports = (application) ->
+module.exports = function(application) {
 
-  self = 
+  const self = { 
 
-    application: application
-    currentUser: application.currentUser()
+    application,
+    currentUser: application.currentUser(),
 
-    style: ->
-      backgroundImage: "url('#{application.currentUser().coverUrl('large')}')"
-      backgroundColor: application.currentUser().coverColor()
+    style() {
+      return {
+        backgroundImage: `url('${application.currentUser().coverUrl('large')}')`,
+        backgroundColor: application.currentUser().coverColor()
+      };
+    },
     
-    userAvatarStyle: ->
-      backgroundColor: application.currentUser().color()
-      backgroundImage: "url('#{application.currentUser().userAvatarUrl('large')}')"
+    userAvatarStyle() {
+      return {
+        backgroundColor: application.currentUser().color(),
+        backgroundImage: `url('${application.currentUser().userAvatarUrl('large')}')`
+      };
+    },
     
-    userAvatarUrl: ->
-      application.currentUser().userAvatarUrl('large')
+    userAvatarUrl() {
+      return application.currentUser().userAvatarUrl('large');
+    },
     
-    projects: ->
-      projects = application.currentUser().projects()
-      if application.currentUser().isAnon()
-        projects = projects.slice(0,1)
-      else if application.currentUser().isSignedIn()
-        projects = projects.slice(0,3)      
-      projectIds = projects.map (project) ->
-        id: project.id()
-      application.getProjects projectIds
-      projects.map (project) ->
-        project.isRecentProject = true
-        category = 
-          color: ->
-            undefined
-        ProjectItemPresenter(application, project, category)
+    projects() {
+      let projects = application.currentUser().projects();
+      if (application.currentUser().isAnon()) {
+        projects = projects.slice(0,1);
+      } else if (application.currentUser().isSignedIn()) {
+        projects = projects.slice(0,3);      
+      }
+      const projectIds = projects.map(project => ({id: project.id()}));
+      application.getProjects(projectIds);
+      return projects.map(function(project) {
+        project.isRecentProject = true;
+        const category = { 
+          color() {
+            return undefined;
+          }
+        };
+        return ProjectItemPresenter(application, project, category);
+      });
+    },
 
-    userAvatarIsAnon: ->
-      'anon-user-avatar' if application.currentUser().isAnon()
+    userAvatarIsAnon() {
+      if (application.currentUser().isAnon()) { return 'anon-user-avatar'; }
+    },
 
-    toggleSignInPopVisible: (event) ->
-      application.signInPopVisibleOnRecentProjects.toggle()
-      event.stopPropagation()
+    toggleSignInPopVisible(event) {
+      application.signInPopVisibleOnRecentProjects.toggle();
+      return event.stopPropagation();
+    },
 
-    hiddenUnlessSignInPopVisible: ->
-      'hidden' unless application.signInPopVisibleOnRecentProjects()
+    hiddenUnlessSignInPopVisible() {
+      if (!application.signInPopVisibleOnRecentProjects()) { return 'hidden'; }
+    },
 
-    userLink: ->
-      application.currentUser().userLink()
+    userLink() {
+      return application.currentUser().userLink();
+    },
 
-    hiddenIfUserIsFetched: ->
-      'hidden' if application.currentUser().fetched()
+    hiddenIfUserIsFetched() {
+      if (application.currentUser().fetched()) { return 'hidden'; }
+    },
 
-    hiddenUnlessCurrentUser: ->
-      'hidden' unless application.currentUser().id()
+    hiddenUnlessCurrentUser() {
+      if (!application.currentUser().id()) { return 'hidden'; }
+    }
+  };
 
-  return RecentProjectsTemplate self
+  return RecentProjectsTemplate(self);
+};

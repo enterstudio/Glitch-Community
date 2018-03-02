@@ -1,22 +1,32 @@
-ProjectItemPresenter = require "./project-item"
-ProjectsListTemplate = require "../templates/projects-list"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const ProjectItemPresenter = require("./project-item");
+const ProjectsListTemplate = require("../templates/projects-list");
 
-module.exports = (application, title, projects, userPagePresenter) ->
+module.exports = function(application, title, projects, userPagePresenter) {
 
-  self =
+  const self = {
 
-    sectionTitle: title
+    sectionTitle: title,
 
-    projects: ->
-      projects.map (project) ->
-        ProjectItemPresenter(application, project, {}, userPagePresenter)
+    projects() {
+      return projects.map(project => ProjectItemPresenter(application, project, {}, userPagePresenter));
+    },
 
-    visibleIfNoPins: ->
-      if title is 'Pinned Projects' and projects.length is 0
-        'visible'
+    visibleIfNoPins() {
+      if ((title === 'Pinned Projects') && (projects.length === 0)) {
+        return 'visible';
+      }
+    },
 
-    hiddenUnlessTitleIsPinned: ->
-      'hidden' unless title is 'Pinned Projects'
+    hiddenUnlessTitleIsPinned() {
+      if (title !== 'Pinned Projects') { return 'hidden'; }
+    }
+  };
 
 
-  return ProjectsListTemplate self
+  return ProjectsListTemplate(self);
+};

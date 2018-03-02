@@ -1,16 +1,26 @@
-FeaturedCollectionTemplate = require "../templates/includes/featured-collection"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const FeaturedCollectionTemplate = require("../templates/includes/featured-collection");
 
-module.exports = (application, collection) ->
-  self =
-    collection: collection
+module.exports = function(application, collection) {
+  const self = {
+    collection,
 
-    title: ->
-      collection.title
+    title() {
+      return collection.title;
+    },
     
-    src: ->
-      collection.img
+    src() {
+      return collection.img;
+    },
         
-    link: ->
-      collection.link
+    link() {
+      return collection.link;
+    }
+  };
       
-  return FeaturedCollectionTemplate self
+  return FeaturedCollectionTemplate(self);
+};

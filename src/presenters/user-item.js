@@ -1,46 +1,67 @@
-UserTemplate = require "../templates/includes/user-item"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const UserTemplate = require("../templates/includes/user-item");
 
-module.exports = (application, user) ->
+module.exports = function(application, user) {
 
-  self =
-    application: application
-    user: user
+  var self = {
+    application,
+    user,
 
-    login: ->
-      "@" + user.login()
+    login() {
+      return `@${user.login()}`;
+    },
 
-    name: ->
-      user.name()
+    name() {
+      return user.name();
+    },
 
-    truncatedDescription: ->
-      user.truncatedDescriptionMarkdown()
+    truncatedDescription() {
+      return user.truncatedDescriptionMarkdown();
+    },
 
-    coverUrl: ->
-      user.coverUrl 'small'
+    coverUrl() {
+      return user.coverUrl('small');
+    },
 
-    coverColor: ->
-      user.coverColor()
+    coverColor() {
+      return user.coverColor();
+    },
 
-    thanks: ->
-      user.userThanks()
+    thanks() {
+      return user.userThanks();
+    },
 
-    userLink: ->
-      user.userLink()
+    userLink() {
+      return user.userLink();
+    },
 
-    avatarUrl: ->
-      user.userAvatarUrl('large')
+    avatarUrl() {
+      return user.userAvatarUrl('large');
+    },
 
-    hiddenUnlessThanks: ->
-      'hidden' unless user.thanksCount() > 0
+    hiddenUnlessThanks() {
+      if (!(user.thanksCount() > 0)) { return 'hidden'; }
+    },
     
-    hiddenUnlessDescription: ->
-      'hidden' unless user.description()
+    hiddenUnlessDescription() {
+      if (!user.description()) { return 'hidden'; }
+    },
     
-    hiddenUnlessName: ->
-      'hidden' unless user.name()
+    hiddenUnlessName() {
+      if (!user.name()) { return 'hidden'; }
+    },
 
-    style: ->
-      backgroundImage: "url('#{self.coverUrl()}')"
-      backgroundColor: self.coverColor()
+    style() {
+      return {
+        backgroundImage: `url('${self.coverUrl()}')`,
+        backgroundColor: self.coverColor()
+      };
+    }
+  };
 
-  return UserTemplate self
+  return UserTemplate(self);
+};

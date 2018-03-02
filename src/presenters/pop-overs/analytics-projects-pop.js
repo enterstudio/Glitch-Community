@@ -1,39 +1,51 @@
-Observable = require 'o_0'
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const Observable = require('o_0');
 
-AnalyticsProjectsPopTemplate = require "../../templates/pop-overs/analytics-projects-pop"
+const AnalyticsProjectsPopTemplate = require("../../templates/pop-overs/analytics-projects-pop");
 
-module.exports = (application, analytics) ->
+module.exports = function(application, analytics) {
 
-  self =
+  var self = {
   
-    application: application  
-    teamProjects: Observable application.team().projects()
-    analytics: analytics
+    application,  
+    teamProjects: Observable(application.team().projects()),
+    analytics,
 
-    # hiddenUnlessAnalyticsProjectsPopVisible: ->
-    #   'hidden' unless application.analyticsProjectsPopVisible()
+    // hiddenUnlessAnalyticsProjectsPopVisible: ->
+    //   'hidden' unless application.analyticsProjectsPopVisible()
     
-    stopPropagation: (event) ->
-      event.stopPropagation()
+    stopPropagation(event) {
+      return event.stopPropagation();
+    },
 
-    filter: (event) ->
-      query = event.target.value.trim()
-      projects = application.team().projects()
-      if query.length
-        filtered = projects.filter (project) ->
-          project.domain().match(query) or project.description().match(query)
-        self.teamProjects filtered
-      else
-        self.teamProjects projects
+    filter(event) {
+      const query = event.target.value.trim();
+      const projects = application.team().projects();
+      if (query.length) {
+        const filtered = projects.filter(project => project.domain().match(query) || project.description().match(query));
+        return self.teamProjects(filtered);
+      } else {
+        return self.teamProjects(projects);
+      }
+    },
 
-    spacekeyDoesntClosePop: (event) ->
-      event.stopPropagation()
-      event.preventDefault()
+    spacekeyDoesntClosePop(event) {
+      event.stopPropagation();
+      return event.preventDefault();
+    },
 
-    activeIfAllProjects: ->
-      'active' if analytics.analyticsProjectDomain() is 'All Projects'
+    activeIfAllProjects() {
+      if (analytics.analyticsProjectDomain() === 'All Projects') { return 'active'; }
+    },
 
-    selectAllProjects: ->
-      analytics.analyticsProjectDomain 'All Projects'
+    selectAllProjects() {
+      return analytics.analyticsProjectDomain('All Projects');
+    }
+  };
         
-  return AnalyticsProjectsPopTemplate self
+  return AnalyticsProjectsPopTemplate(self);
+};

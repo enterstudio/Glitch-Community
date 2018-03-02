@@ -1,197 +1,249 @@
-Observable = require 'o_0'
-_ = require 'lodash'
-md = require('markdown-it')
-  breaks: true
-  linkify: true
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const Observable = require('o_0');
+const _ = require('lodash');
+const md = require('markdown-it')({
+  breaks: true,
+  linkify: true,
   typographer: true
+});
 
-TeamTemplate = require "../../templates/pages/team"
-LayoutPresenter = require "../layout"
-CtaButtonsPresenter = require "../cta-buttons"
-AddTeamUserPopPresenter = require "../pop-overs/add-team-user-pop"
-AddTeamProjectPopPresenter = require "../pop-overs/add-team-project-pop"
-ProjectsListPresenter = require "../projects-list"
-TeamUserPresenter = require "../team-user-avatar"
-AnalyticsPresenter = require "../analytics"
-UserAvatarTemplate = require "../../templates/includes/user-avatar" #
-assetUtils = require('../../utils/assets')(application)
+const TeamTemplate = require("../../templates/pages/team");
+const LayoutPresenter = require("../layout");
+const CtaButtonsPresenter = require("../cta-buttons");
+const AddTeamUserPopPresenter = require("../pop-overs/add-team-user-pop");
+const AddTeamProjectPopPresenter = require("../pop-overs/add-team-project-pop");
+const ProjectsListPresenter = require("../projects-list");
+const TeamUserPresenter = require("../team-user-avatar");
+const AnalyticsPresenter = require("../analytics");
+const UserAvatarTemplate = require("../../templates/includes/user-avatar"); //
+const assetUtils = require('../../utils/assets')(application);
 
 
-module.exports = (application) ->
-  self =
+module.exports = function(application) {
+  var self = {
 
-    application: application
-    team: application.team
-    hiddenIfTeamFetched: -> application.team().hiddenIfFetched()
-    hiddenUnlessTeamFetched: -> application.team().hiddenUnlessFetched()
-    initialTeamDescription: Observable undefined
+    application,
+    team: application.team,
+    hiddenIfTeamFetched() { return application.team().hiddenIfFetched(); },
+    hiddenUnlessTeamFetched() { return application.team().hiddenUnlessFetched(); },
+    initialTeamDescription: Observable(undefined),
 
-    verifiedTeamTooltip: ->
-      application.team().verifiedTooltip()
+    verifiedTeamTooltip() {
+      return application.team().verifiedTooltip();
+    },
 
-    teamUsers: ->
-      users = application.team().users()
-      if self.currentUserIsOnTeam()
-        users.map (user) ->
-          TeamUserPresenter application, user
-      else
-        users.map UserAvatarTemplate
+    teamUsers() {
+      const users = application.team().users();
+      if (self.currentUserIsOnTeam()) {
+        return users.map(user => TeamUserPresenter(application, user));
+      } else {
+        return users.map(UserAvatarTemplate);
+      }
+    },
 
-    teamAnalytics: ->
-      if self.team().fetched()
-        AnalyticsPresenter application, self.team()
+    teamAnalytics() {
+      if (self.team().fetched()) {
+        return AnalyticsPresenter(application, self.team());
+      }
+    },
 
-    ctaButtons: ->
-      CtaButtonsPresenter(application)
+    ctaButtons() {
+      return CtaButtonsPresenter(application);
+    },
 
-    addTeamUserPop: ->
-      AddTeamUserPopPresenter(application)
+    addTeamUserPop() {
+      return AddTeamUserPopPresenter(application);
+    },
 
-    addTeamProjectPop: ->
-      AddTeamProjectPopPresenter(application)
+    addTeamProjectPop() {
+      return AddTeamProjectPopPresenter(application);
+    },
 
-    coverUrl: ->
-      if application.team().localCoverImage()
-        application.team().localCoverImage()
-      else
-        application.team().coverUrl()
+    coverUrl() {
+      if (application.team().localCoverImage()) {
+        return application.team().localCoverImage();
+      } else {
+        return application.team().coverUrl();
+      }
+    },
 
-    teamProfileStyle: ->
-      backgroundColor: application.team().coverColor()
-      backgroundImage: "url('#{self.coverUrl()}')"
+    teamProfileStyle() {
+      return {
+        backgroundColor: application.team().coverColor(),
+        backgroundImage: `url('${self.coverUrl()}')`
+      };
+    },
 
-    teamAvatarStyle: ->
-      if application.team().hasAvatarImage()
-        backgroundImage: "url('#{self.teamAvatarUrl()}')"
-      else
-        backgroundColor: application.team().backgroundColor()
+    teamAvatarStyle() {
+      if (application.team().hasAvatarImage()) {
+        return {backgroundImage: `url('${self.teamAvatarUrl()}')`};
+      } else {
+        return {backgroundColor: application.team().backgroundColor()};
+      }
+    },
       
-    teamName: ->
-      application.team().name()
+    teamName() {
+      return application.team().name();
+    },
 
-    teamThanks: ->
-      application.team().teamThanks()
+    teamThanks() {
+      return application.team().teamThanks();
+    },
 
-    isVerified: ->
-      application.team().isVerified()
+    isVerified() {
+      return application.team().isVerified();
+    },
 
-    verifiedImage: ->
-      application.team().verifiedImage()
+    verifiedImage() {
+      return application.team().verifiedImage();
+    },
       
-    hiddenUnlessVerified: ->
-      'hidden' unless self.isVerified()
+    hiddenUnlessVerified() {
+      if (!self.isVerified()) { return 'hidden'; }
+    },
 
-    hiddenUnlessTeamHasThanks: ->
-      'hidden' unless application.team().thanksCount() > 0 
+    hiddenUnlessTeamHasThanks() {
+      if (!(application.team().thanksCount() > 0)) { return 'hidden'; }
+    }, 
 
-    currentUserIsOnTeam: ->
-      application.team().currentUserIsOnTeam application
+    currentUserIsOnTeam() {
+      return application.team().currentUserIsOnTeam(application);
+    },
 
-    hiddenUnlessCurrentUserIsOnTeam: ->
-      'hidden' unless self.currentUserIsOnTeam application
+    hiddenUnlessCurrentUserIsOnTeam() {
+      if (!self.currentUserIsOnTeam(application)) { return 'hidden'; }
+    },
 
-    hiddenIfCurrentUserIsOnTeam: ->
-      'hidden' if self.currentUserIsOnTeam application
+    hiddenIfCurrentUserIsOnTeam() {
+      if (self.currentUserIsOnTeam(application)) { return 'hidden'; }
+    },
         
-    description: ->
-      text = application.team().description()
-      node = document.createElement 'span'
-      node.innerHTML = md.render text
-      return node
+    description() {
+      const text = application.team().description();
+      const node = document.createElement('span');
+      node.innerHTML = md.render(text);
+      return node;
+    },
 
-    setInitialTeamDescription: ->
-      description = application.team().description()
-      node = document.createElement 'span'
-      node.innerHTML = md.render description
-      if description
-        self.initialTeamDescription node
+    setInitialTeamDescription() {
+      const description = application.team().description();
+      const node = document.createElement('span');
+      node.innerHTML = md.render(description);
+      if (description) {
+        return self.initialTeamDescription(node);
+      }
+    },
 
-    updateDescription: (event) ->
-      text = event.target.textContent
-      application.team().description text
-      self.updateTeam
-        description: text
+    updateDescription(event) {
+      const text = event.target.textContent;
+      application.team().description(text);
+      return self.updateTeam({
+        description: text});
+    },
 
-    updateTeam: _.debounce (data) ->
-      application.team().updateTeam application, data
-    , 250
+    updateTeam: _.debounce(data => application.team().updateTeam(application, data)
+    , 250),
 
-    applyDescription: (event) ->
-      event.target.innerHTML = md.render application.team().description()
-      # application.notifyUserDescriptionUpdated true
+    applyDescription(event) {
+      return event.target.innerHTML = md.render(application.team().description());
+    },
+      // application.notifyUserDescriptionUpdated true
 
-    teamAvatarUrl: ->
-      if application.team().localAvatarImage()
-        application.team().localAvatarImage()
-      else
-        application.team().teamAvatarUrl 'large'
+    teamAvatarUrl() {
+      if (application.team().localAvatarImage()) {
+        return application.team().localAvatarImage();
+      } else {
+        return application.team().teamAvatarUrl('large');
+      }
+    },
 
 
-    hiddenIfNoDescription: ->
-      'hidden' if application.team().description().length is 0
+    hiddenIfNoDescription() {
+      if (application.team().description().length === 0) { return 'hidden'; }
+    },
 
-    uploadCover: ->
-      input = document.createElement "input"
-      input.type = 'file'
-      input.accept = "image/*"
-      input.onchange = (event) ->
-        file = event.target.files[0]
-        console.log '☔️☔️☔️ input onchange', file
-        assetUtils.addCoverFile file
-      input.click()
-      console.log 'input created: ', input
-      return false
+    uploadCover() {
+      const input = document.createElement("input");
+      input.type = 'file';
+      input.accept = "image/*";
+      input.onchange = function(event) {
+        const file = event.target.files[0];
+        console.log('☔️☔️☔️ input onchange', file);
+        return assetUtils.addCoverFile(file);
+      };
+      input.click();
+      console.log('input created: ', input);
+      return false;
+    },
 
-    uploadAvatar: ->
-      input = document.createElement "input"
-      input.type = 'file'
-      input.accept = "image/*"
-      input.onchange = (event) ->
-        file = event.target.files[0]
-        console.log '☔️☔️☔️ input onchange', file
-        assetUtils.addAvatarFile file
-      input.click()
-      console.log 'input created: ', input
-      return false
+    uploadAvatar() {
+      const input = document.createElement("input");
+      input.type = 'file';
+      input.accept = "image/*";
+      input.onchange = function(event) {
+        const file = event.target.files[0];
+        console.log('☔️☔️☔️ input onchange', file);
+        return assetUtils.addAvatarFile(file);
+      };
+      input.click();
+      console.log('input created: ', input);
+      return false;
+    },
 
-    projects: ->
-      self.team().projects()
+    projects() {
+      return self.team().projects();
+    },
       
-    pinnedProjectIds: ->
-      self.team().pins().map (pin) ->
-        pin.projectId
+    pinnedProjectIds() {
+      return self.team().pins().map(pin => pin.projectId);
+    },
 
-    recentProjects: ->
-      recentProjects = self.projects().filter (project) ->
-        !_.includes self.pinnedProjectIds(), project.id()
-      ProjectsListPresenter application, "Recent Projects", recentProjects
+    recentProjects() {
+      const recentProjects = self.projects().filter(project => !_.includes(self.pinnedProjectIds(), project.id()));
+      return ProjectsListPresenter(application, "Recent Projects", recentProjects);
+    },
     
-    pinnedProjectsList: ->
-      pinnedProjects = self.projects().filter (project) ->
-        _.includes self.pinnedProjectIds(), project.id()
-      ProjectsListPresenter application, "Pinned Projects", pinnedProjects
+    pinnedProjectsList() {
+      const pinnedProjects = self.projects().filter(project => _.includes(self.pinnedProjectIds(), project.id()));
+      return ProjectsListPresenter(application, "Pinned Projects", pinnedProjects);
+    },
     
-    hiddenIfNotOnTeamAndNoPins: ->
-      if !self.currentUserIsOnTeam() and self.team().pins().length is 0
-        'hidden'
+    hiddenIfNotOnTeamAndNoPins() {
+      if (!self.currentUserIsOnTeam() && (self.team().pins().length === 0)) {
+        return 'hidden';
+      }
+    },
 
-    hiddenIfOnTeam: ->
-      'hidden' if self.currentUserIsOnTeam()
+    hiddenIfOnTeam() {
+      if (self.currentUserIsOnTeam()) { return 'hidden'; }
+    },
 
-    toggleAddTeamUserPop: ->
-      application.addTeamUserPopVisible.toggle()
-      if application.addTeamUserPopVisible()
-        $('#team-user-search').focus()
+    toggleAddTeamUserPop() {
+      application.addTeamUserPopVisible.toggle();
+      if (application.addTeamUserPopVisible()) {
+        return $('#team-user-search').focus();
+      }
+    },
     
-    toggleAddTeamProjectPop: ->
-      application.addTeamProjectPopVisible.toggle()
-      if application.addTeamProjectPopVisible()
-        $('#team-project-search').focus()
+    toggleAddTeamProjectPop() {
+      application.addTeamProjectPopVisible.toggle();
+      if (application.addTeamProjectPopVisible()) {
+        return $('#team-project-search').focus();
+      }
+    }
+  };
 
-  application.team.observe (newVal) ->
-    if newVal
-      self.setInitialTeamDescription()
+  application.team.observe(function(newVal) {
+    if (newVal) {
+      return self.setInitialTeamDescription();
+    }
+  });
         
-  content = TeamTemplate(self)
+  const content = TeamTemplate(self);
 
-  return LayoutPresenter application, content
+  return LayoutPresenter(application, content);
+};

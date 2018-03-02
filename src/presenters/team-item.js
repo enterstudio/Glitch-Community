@@ -1,55 +1,78 @@
-TeamItemTemplate = require "../templates/includes/team-item"
-UsersListPresenter = require "./users-list"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const TeamItemTemplate = require("../templates/includes/team-item");
+const UsersListPresenter = require("./users-list");
 
-module.exports = (application, team) ->
+module.exports = function(application, team) {
 
-  self =
-    application: application
-    team: team
+  var self = {
+    application,
+    team,
 
-    name: ->
-      team.name()
+    name() {
+      return team.name();
+    },
 
-    truncatedDescription: ->
-      team.truncatedDescription()
+    truncatedDescription() {
+      return team.truncatedDescription();
+    },
 
-    usersListPresenter: UsersListPresenter(team, 'team')
+    usersListPresenter: UsersListPresenter(team, 'team'),
 
-    url: ->
-      team.url()
+    url() {
+      return team.url();
+    },
     
-    coverUrl: ->
-      team.coverUrl 'small'
+    coverUrl() {
+      return team.coverUrl('small');
+    },
 
-    coverColor: ->
-      team.coverColor()
+    coverColor() {
+      return team.coverColor();
+    },
 
-    thanks: ->
-      team.teamThanks()
+    thanks() {
+      return team.teamThanks();
+    },
     
-    users: ->
-      team.users()
+    users() {
+      return team.users();
+    },
     
-    avatarUrl: ->
-      team.teamAvatarUrl()
+    avatarUrl() {
+      return team.teamAvatarUrl();
+    },
 
-    hiddenUnlessThanks: ->
-      'hidden' unless team.thanksCount() > 0
+    hiddenUnlessThanks() {
+      if (!(team.thanksCount() > 0)) { return 'hidden'; }
+    },
     
-    hiddenUnlessDescription: ->
-      'hidden' unless team.description()
+    hiddenUnlessDescription() {
+      if (!team.description()) { return 'hidden'; }
+    },
   
-    verifiedImage: ->
-      team.verifiedImage()
+    verifiedImage() {
+      return team.verifiedImage();
+    },
   
-    verifiedTeamTooltip: ->
-      team.verifiedTooltip()
+    verifiedTeamTooltip() {
+      return team.verifiedTooltip();
+    },
     
-    hiddenUnlessVerified: ->
-      'hidden' unless team.isVerified()
+    hiddenUnlessVerified() {
+      if (!team.isVerified()) { return 'hidden'; }
+    },
 
-    style: ->
-      backgroundImage: "url('#{self.coverUrl()}')"
-      backgroundColor: self.coverColor()
+    style() {
+      return {
+        backgroundImage: `url('${self.coverUrl()}')`,
+        backgroundColor: self.coverColor()
+      };
+    }
+  };
 
-  return TeamItemTemplate self
+  return TeamItemTemplate(self);
+};

@@ -1,34 +1,51 @@
-module.exports = (application, user) ->
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+module.exports = function(application, user) {
 
-  self =
+  let self;
+  return self = {
   
-    application: application
-    user: user
+    application,
+    user,
 
-    stopPropagation: (event) ->
-      event.stopPropagation()
+    stopPropagation(event) {
+      return event.stopPropagation();
+    },
 
-    userCover: ->
-      user.coverUrl 'small'
+    userCover() {
+      return user.coverUrl('small');
+    },
       
-    userAvatarBackground: ->
-      backgroundColor: user.color()
+    userAvatarBackground() {
+      return {backgroundColor: user.color()};
+    },
   
-    userLink: ->
-      user.userLink()
+    userLink() {
+      return user.userLink();
+    },
 
-    removeUser: ->
-      application.team().removeUser application, user
+    removeUser() {
+      return application.team().removeUser(application, user);
+    },
     
-    name: ->
-      user.name()
+    name() {
+      return user.name();
+    },
     
-    avatarUrl: ->
-      user.userAvatarUrl 'small'
+    avatarUrl() {
+      return user.userAvatarUrl('small');
+    },
     
-    hiddenIfUserIsCurrentUser: ->
-      'hidden' if user.isCurrentUser application
+    hiddenIfUserIsCurrentUser() {
+      if (user.isCurrentUser(application)) { return 'hidden'; }
+    },
     
-    hiddenUnlessUserIsCurrentUser: ->
-      'hidden' unless user.isCurrentUser application
+    hiddenUnlessUserIsCurrentUser() {
+      if (!user.isCurrentUser(application)) { return 'hidden'; }
+    }
+  };
+};
 

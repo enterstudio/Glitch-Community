@@ -1,40 +1,54 @@
-CategoryPageTemplate = require "../../templates/pages/category"
-LayoutPresenter = require "../layout"
-ProjectItemPresenter = require "../project-item"
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const CategoryPageTemplate = require("../../templates/pages/category");
+const LayoutPresenter = require("../layout");
+const ProjectItemPresenter = require("../project-item");
 
-module.exports = (application) ->
+module.exports = function(application) {
 
     
-  self =
+  var self = {
 
-    application: application
-    category: application.category
+    application,
+    category: application.category,
 
-    projectElements: ->
-      self.category().projects().map (project) ->
-        ProjectItemPresenter(application, project, self.category())
+    projectElements() {
+      return self.category().projects().map(project => ProjectItemPresenter(application, project, self.category()));
+    },
 
-    categories: ->
-      application.categories()
+    categories() {
+      return application.categories();
+    },
 
-    name: ->
-      self.category().name()
+    name() {
+      return self.category().name();
+    },
 
-    avatarUrl: ->
-      self.category().avatarUrl()
+    avatarUrl() {
+      return self.category().avatarUrl();
+    },
 
-    description: ->
-      self.category().description()
+    description() {
+      return self.category().description();
+    },
 
-    backgroundColor: ->
-      self.category().backgroundColor()
+    backgroundColor() {
+      return self.category().backgroundColor();
+    },
 
-    style: ->
-      backgroundColor: self.backgroundColor()
+    style() {
+      return {backgroundColor: self.backgroundColor()};
+    },
 
-    hiddenIfCategoryProjectsLoaded: ->
-      'hidden' if application.categoryProjectsLoaded()
+    hiddenIfCategoryProjectsLoaded() {
+      if (application.categoryProjectsLoaded()) { return 'hidden'; }
+    }
+  };
     
-  content = CategoryPageTemplate(self)
-  return LayoutPresenter application, content
+  const content = CategoryPageTemplate(self);
+  return LayoutPresenter(application, content);
+};
 

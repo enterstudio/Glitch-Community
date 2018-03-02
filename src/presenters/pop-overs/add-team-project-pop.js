@@ -1,52 +1,70 @@
-Observable = require 'o_0'
-_ = require 'lodash/function'
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const Observable = require('o_0');
+const _ = require('lodash/function');
 
-AddTeamProjectTemplate = require "../../templates/pop-overs/add-team-project-pop"
+const AddTeamProjectTemplate = require("../../templates/pop-overs/add-team-project-pop");
 
-module.exports = (application) ->
+module.exports = function(application) {
 
-  self =
+  var self = {
   
-    application: application
+    application,
   
-    query: Observable ""
+    query: Observable(""),
 
-    hiddenUnlessAddTeamProjectPopVisible: ->
-      'hidden' unless application.addTeamProjectPopVisible()
+    hiddenUnlessAddTeamProjectPopVisible() {
+      if (!application.addTeamProjectPopVisible()) { return 'hidden'; }
+    },
 
-    stopPropagation: (event) ->
-      event.stopPropagation()
+    stopPropagation(event) {
+      return event.stopPropagation();
+    },
 
-    hiddenUnlessSearching: ->
-      'hidden' unless application.searchingForProjects()
+    hiddenUnlessSearching() {
+      if (!application.searchingForProjects()) { return 'hidden'; }
+    },
 
-    spacekeyDoesntClosePop: (event) ->
-      event.stopPropagation()
-      event.preventDefault()      
+    spacekeyDoesntClosePop(event) {
+      event.stopPropagation();
+      return event.preventDefault();
+    },      
 
-    search: (event) ->
-      query = event.target.value.trim()
-      self.query query
-      application.searchingForProjects true
-      self.searchProjects query
+    search(event) {
+      const query = event.target.value.trim();
+      self.query(query);
+      application.searchingForProjects(true);
+      return self.searchProjects(query);
+    },
 
-    searchProjects: _.debounce (query) ->
-        if query.length
-          application.searchProjects(query)
-        else
-          application.searchingForProjects false
-      , 500
+    searchProjects: _.debounce(function(query) {
+        if (query.length) {
+          return application.searchProjects(query);
+        } else {
+          return application.searchingForProjects(false);
+        }
+      }
+      , 500),
 
-    searchResults: ->
-      MAX_RESULTS = 10
-      if self.query().length
-        application.searchResultsProjects().slice(0, MAX_RESULTS)
-      else
-        []
+    searchResults() {
+      const MAX_RESULTS = 10;
+      if (self.query().length) {
+        return application.searchResultsProjects().slice(0, MAX_RESULTS);
+      } else {
+        return [];
+      }
+    },
 
-    hiddenIfNoSearch: ->
-      if !self.searchResults().length and !application.searchingForProjects()
-        'hidden' 
+    hiddenIfNoSearch() {
+      if (!self.searchResults().length && !application.searchingForProjects()) {
+        return 'hidden';
+      }
+    } 
+  };
 
 
-  return AddTeamProjectTemplate self
+  return AddTeamProjectTemplate(self);
+};

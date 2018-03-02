@@ -1,296 +1,359 @@
-Observable = require 'o_0'
-_ = require 'lodash'
-md = require('markdown-it')
-  breaks: true
-  linkify: true
-  typographer: true
-.disable(['image'])
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const Observable = require('o_0');
+const _ = require('lodash');
+const md = require('markdown-it')({
+  breaks: true,
+  linkify: true,
+  typographer: true}).disable(['image']);
 
-UserTemplate = require "../../templates/pages/user"
-DeletedProjectsTemplate = require "../../templates/deleted-projects"
-LayoutPresenter = require "../layout"
-CtaButtonsPresenter = require "../cta-buttons"
-ProjectsListPresenter = require "../projects-list"
-assetUtils = require('../../utils/assets')(application)
+const UserTemplate = require("../../templates/pages/user");
+const DeletedProjectsTemplate = require("../../templates/deleted-projects");
+const LayoutPresenter = require("../layout");
+const CtaButtonsPresenter = require("../cta-buttons");
+const ProjectsListPresenter = require("../projects-list");
+const assetUtils = require('../../utils/assets')(application);
 
-module.exports = (application, userLoginOrId) ->
-  self =
+module.exports = function(application, userLoginOrId) {
+  var self = {
 
-    user: application.user    
+    user: application.user,    
     
-    newDescription: Observable ""
-    editingDescription: Observable false
-    deletedProjectsLoadingState: Observable ""
+    newDescription: Observable(""),
+    editingDescription: Observable(false),
+    deletedProjectsLoadingState: Observable(""),
     
-    userLoginOrId: ->
-      decodeURI userLoginOrId
+    userLoginOrId() {
+      return decodeURI(userLoginOrId);
+    },
 
-    application: application
+    application,
   
-    ctaButtons: ->
-      CtaButtonsPresenter(application)
+    ctaButtons() {
+      return CtaButtonsPresenter(application);
+    },
 
-    coverUrl: ->
-      if application.user().localCoverImage()
-        application.user().localCoverImage()
-      else
-        application.user().coverUrl()
+    coverUrl() {
+      if (application.user().localCoverImage()) {
+        return application.user().localCoverImage();
+      } else {
+        return application.user().coverUrl();
+      }
+    },
 
-    userProfileStyle: ->
-      backgroundColor: application.user().coverColor()
-      backgroundImage: "url('#{self.coverUrl()}')"
+    userProfileStyle() {
+      return {
+        backgroundColor: application.user().coverColor(),
+        backgroundImage: `url('${self.coverUrl()}')`
+      };
+    },
 
-    userName: ->
-      application.user().name()
+    userName() {
+      return application.user().name();
+    },
 
-    hiddenUnlessUserHasName: ->
-      'hidden' unless self.userName()
+    hiddenUnlessUserHasName() {
+      if (!self.userName()) { return 'hidden'; }
+    },
 
-    hiddenUnlessUserHasThanks: ->
-      'hidden' unless application.user().thanksCount() > 0
+    hiddenUnlessUserHasThanks() {
+      if (!(application.user().thanksCount() > 0)) { return 'hidden'; }
+    },
 
-    userThanks: -> application.user().userThanks()
+    userThanks() { return application.user().userThanks(); },
     
-    hiddenIfEditingDescription: ->
-      'hidden' if self.editingDescription()
+    hiddenIfEditingDescription() {
+      if (self.editingDescription()) { return 'hidden'; }
+    },
 
-    hiddenUnlessEditingDescription: ->
-      'hidden' unless self.editingDescription()
+    hiddenUnlessEditingDescription() {
+      if (!self.editingDescription()) { return 'hidden'; }
+    },
 
-    focusOnEditableDescription: ->
-      self.editingDescription true
-      element = document.getElementById('description-markdown')
-      element.focus()
+    focusOnEditableDescription() {
+      self.editingDescription(true);
+      const element = document.getElementById('description-markdown');
+      return element.focus();
+    },
     
-    defocusOnEditableDescription: (event) ->
-      self.editingDescription false
-      text = event.target.textContent
-      self.newDescription text
+    defocusOnEditableDescription(event) {
+      self.editingDescription(false);
+      const text = event.target.textContent;
+      return self.newDescription(text);
+    },
 
-    editableDescriptionMarkdown: ->
-      if application.user().description().trim().length is 0
-        return ""
-      else if self.newDescription()
-        text = self.newDescription()
-        node = document.createElement 'span'
-        node.innerHTML = md.render text
-        return node
-      else
-        application.user().initialDescriptionMarkdown()
+    editableDescriptionMarkdown() {
+      if (application.user().description().trim().length === 0) {
+        return "";
+      } else if (self.newDescription()) {
+        const text = self.newDescription();
+        const node = document.createElement('span');
+        node.innerHTML = md.render(text);
+        return node;
+      } else {
+        return application.user().initialDescriptionMarkdown();
+      }
+    },
 
-    editableDescription: ->
-      if self.newDescription()
-        self.newDescription()
-      else
-        application.user().initialDescription()
+    editableDescription() {
+      if (self.newDescription()) {
+        return self.newDescription();
+      } else {
+        return application.user().initialDescription();
+      }
+    },
 
-    description: ->
-      application.user().descriptionMarkdown()
+    description() {
+      return application.user().descriptionMarkdown();
+    },
 
-    updateDescription: (event) ->
-      text = event.target.textContent
-      application.user().description text
-      self.updateUser
-        description: text
+    updateDescription(event) {
+      const text = event.target.textContent;
+      application.user().description(text);
+      return self.updateUser({
+        description: text});
+    },
 
-    # applyDescription: (event) ->
-    #   event.target = application.user().descriptionMarkdown()
+    // applyDescription: (event) ->
+    //   event.target = application.user().descriptionMarkdown()
 
-    updateUser: _.debounce (data) ->
-      application.user().updateUser application, data
-    , 250
+    updateUser: _.debounce(data => application.user().updateUser(application, data)
+    , 250),
 
-    userHasData: ->
-      true if application.user().id()
+    userHasData() {
+      if (application.user().id()) { return true; }
+    },
 
-    userAvatarUrl: ->
-      application.user().userAvatarUrl('large')
+    userAvatarUrl() {
+      return application.user().userAvatarUrl('large');
+    },
 
-    userAvatarStyle: ->
-      backgroundColor: application.user().color()
-      backgroundImage: "url('#{self.userAvatarUrl()}')"
+    userAvatarStyle() {
+      return {
+        backgroundColor: application.user().color(),
+        backgroundImage: `url('${self.userAvatarUrl()}')`
+      };
+    },
 
-    hiddenIfUserFetched: -> 
-      application.user().hiddenIfFetched()
+    hiddenIfUserFetched() { 
+      return application.user().hiddenIfFetched();
+    },
 
-    hiddenUnlessUserFetched: -> 
-      application.user().hiddenUnlessFetched()
+    hiddenUnlessUserFetched() { 
+      return application.user().hiddenUnlessFetched();
+    },
 
-    visibleIfUserNotFound: ->
-      if application.user().notFound()
-        'visible'
+    visibleIfUserNotFound() {
+      if (application.user().notFound()) {
+        return 'visible';
+      }
+    },
 
-    hiddenIfUserNotFound: ->
-      if application.user().notFound()
-        'hidden'
+    hiddenIfUserNotFound() {
+      if (application.user().notFound()) {
+        return 'hidden';
+      }
+    },
 
-    isCurrentUser: ->
-      application.user().isCurrentUser application
+    isCurrentUser() {
+      return application.user().isCurrentUser(application);
+    },
 
-    hiddenUnlessUserIsCurrentUser: ->
-      'hidden' unless self.isCurrentUser()
+    hiddenUnlessUserIsCurrentUser() {
+      if (!self.isCurrentUser()) { return 'hidden'; }
+    },
 
-    hiddenIfUserIsNotCurrentUser: ->
-      'hidden' if self.isCurrentUser()
+    hiddenIfUserIsNotCurrentUser() {
+      if (self.isCurrentUser()) { return 'hidden'; }
+    },
 
-    hiddenIfNoDescription: ->
-      'hidden' if application.user().description().length is 0
+    hiddenIfNoDescription() {
+      if (application.user().description().length === 0) { return 'hidden'; }
+    },
 
-    possessivePronoun: ->
-      'Your ' if self.isCurrentUser()
+    possessivePronoun() {
+      if (self.isCurrentUser()) { return 'Your '; }
+    },
 
-    cover: ->
-      cover = self.coverUrl()
-      "url(#{cover})" if cover
+    cover() {
+      const cover = self.coverUrl();
+      if (cover) { return `url(${cover})`; }
+    },
 
-    uploadCover: ->
-      input = document.createElement "input"
-      input.type = 'file'
-      input.accept = "image/*"
-      input.onchange = (event) ->   
-        file = event.target.files[0]
-        console.log '☔️☔️☔️ input onchange', file
-        assetUtils.addCoverFile file
-      input.click()
-      return false
+    uploadCover() {
+      const input = document.createElement("input");
+      input.type = 'file';
+      input.accept = "image/*";
+      input.onchange = function(event) {   
+        const file = event.target.files[0];
+        console.log('☔️☔️☔️ input onchange', file);
+        return assetUtils.addCoverFile(file);
+      };
+      input.click();
+      return false;
+    },
 
-    projects: ->
-      self.user().projects()
+    projects() {
+      return self.user().projects();
+    },
 
-    pinnedProjectIds: ->
-      self.user().pins().map (pin) ->
-        pin.projectId
+    pinnedProjectIds() {
+      return self.user().pins().map(pin => pin.projectId);
+    },
 
-    recentProjects: ->
-      recentProjects = self.projects().filter (project) ->
-        !_.includes self.pinnedProjectIds(), project.id()
-      ProjectsListPresenter application, "Recent Projects", recentProjects, self  
+    recentProjects() {
+      const recentProjects = self.projects().filter(project => !_.includes(self.pinnedProjectIds(), project.id()));
+      return ProjectsListPresenter(application, "Recent Projects", recentProjects, self);
+    },  
     
-    pinnedProjectsList: ->
-      pinnedProjects = self.projects().filter (project) ->
-        _.includes self.pinnedProjectIds(), project.id()
-      ProjectsListPresenter application, "Pinned Projects", pinnedProjects, self
+    pinnedProjectsList() {
+      const pinnedProjects = self.projects().filter(project => _.includes(self.pinnedProjectIds(), project.id()));
+      return ProjectsListPresenter(application, "Pinned Projects", pinnedProjects, self);
+    },
 
-    hiddenIfNotCurrentUserAndNoPins: ->
-      if !self.isCurrentUser() and self.user().pins().length is 0
-        'hidden'
+    hiddenIfNotCurrentUserAndNoPins() {
+      if (!self.isCurrentUser() && (self.user().pins().length === 0)) {
+        return 'hidden';
+      }
+    },
     
-    hiddenUnlessUserIsAnon: ->
-      'hidden' unless self.user().isAnon()
+    hiddenUnlessUserIsAnon() {
+      if (!self.user().isAnon()) { return 'hidden'; }
+    },
                 
-    deleteProject: (project, event) ->
-      projectContainer = event.target.closest 'li'
-      application.closeAllPopOvers()
-      $(projectContainer).one 'animationend', -> 
-        # Hold off on UI updates until the animation ends
-        index = application.user().projects.indexOf(project)
-        if index != -1
-          application.user().projects.splice(index, 1)
+    deleteProject(project, event) {
+      const projectContainer = event.target.closest('li');
+      application.closeAllPopOvers();
+      $(projectContainer).one('animationend', function() { 
+        // Hold off on UI updates until the animation ends
+        const index = application.user().projects.indexOf(project);
+        if (index !== -1) {
+          return application.user().projects.splice(index, 1);
+        }
+      });
         
-      $(projectContainer).addClass 'slide-down'
+      $(projectContainer).addClass('slide-down');
       
-      project.delete().then ->
-        # Fetch the deleted project and add it to deletedProjects()
-        path = "projects/#{project.id()}?showDeleted=true"
-        application.api().get path
-        .then ({data}) ->
-          rawProject = data
-          rawProject.fetched = true
-          deletedProject = Project(rawProject).update(rawProject)
-          deletedProject.presenterUndelete = (event) ->
-            self.undeleteProject(project, event)
-          application.user().deletedProjects.unshift(deletedProject)     
-        .catch (error) ->
-            console.error "getDeletedProject", error
+      return project.delete().then(function() {
+        // Fetch the deleted project and add it to deletedProjects()
+        const path = `projects/${project.id()}?showDeleted=true`;
+        return application.api().get(path)
+        .then(function({data}) {
+          const rawProject = data;
+          rawProject.fetched = true;
+          const deletedProject = Project(rawProject).update(rawProject);
+          deletedProject.presenterUndelete = event => self.undeleteProject(project, event);
+          return application.user().deletedProjects.unshift(deletedProject);}).catch(error => console.error("getDeletedProject", error));
+      });
+    },
         
-    undeleteProject: (project, event) -> 
-      projectContainer = event.target.closest 'li'
-      $(projectContainer).one 'animationend', -> 
-        # Hold off on UI updates until the animation ends
-        index = self.user().deletedProjects.indexOf(project)
-        if index != -1
-          self.user().deletedProjects.splice(index, 1)      
-      $(projectContainer).addClass('slide-up')
+    undeleteProject(project, event) { 
+      const projectContainer = event.target.closest('li');
+      $(projectContainer).one('animationend', function() { 
+        // Hold off on UI updates until the animation ends
+        const index = self.user().deletedProjects.indexOf(project);
+        if (index !== -1) {
+          return self.user().deletedProjects.splice(index, 1);
+        }
+      });      
+      $(projectContainer).addClass('slide-up');
       
-      # Undelete the project using the API
-      project.undelete().then ->
-        # Renaming, if appropriate, requires an API call,
-        # so we wait on the renamePromise before proceeding with the fetch
-        renamePromise = new Promise (resolve) ->
-          if project.domain().endsWith "-deleted"
-            # Attempt to trim -deleted from the project name
-            renamePath = "projects/#{project.id()}"
-            newDomain = project.domain().slice(0, "-deleted".length * -1)
-            application.api().patch(renamePath, domain: newDomain).then(resolve).catch(resolve)
-          else
-            resolve()
+      // Undelete the project using the API
+      return project.undelete().then(function() {
+        // Renaming, if appropriate, requires an API call,
+        // so we wait on the renamePromise before proceeding with the fetch
+        const renamePromise = new Promise(function(resolve) {
+          if (project.domain().endsWith("-deleted")) {
+            // Attempt to trim -deleted from the project name
+            const renamePath = `projects/${project.id()}`;
+            const newDomain = project.domain().slice(0, "-deleted".length * -1);
+            return application.api().patch(renamePath, {domain: newDomain}).then(resolve).catch(resolve);
+          } else {
+            return resolve();
+          }
+        });
         
-        renamePromise.then ->
-          # Fetch the recovered project and add it to self.projects()
-          projectsPath = "projects/byIds?ids=#{project.id()}"
-          application.api().get projectsPath
-          .then ({data}) ->
-            rawProject = data[0]
-            rawProject.fetched = true
-            restoredProject = Project(rawProject).update(rawProject)
-            self.user().projects.unshift(restoredProject)      
-          .catch (error) ->
-              console.error "getProject", error
+        return renamePromise.then(function() {
+          // Fetch the recovered project and add it to self.projects()
+          const projectsPath = `projects/byIds?ids=${project.id()}`;
+          return application.api().get(projectsPath)
+          .then(function({data}) {
+            const rawProject = data[0];
+            rawProject.fetched = true;
+            const restoredProject = Project(rawProject).update(rawProject);
+            return self.user().projects.unshift(restoredProject);}).catch(error => console.error("getProject", error));
+        });
+      });
+    },
       
 
-    getDeletedProjects: ->
-      if !self.isCurrentUser()
-        return
+    getDeletedProjects() {
+      if (!self.isCurrentUser()) {
+        return;
+      }
       
-      self.deletedProjectsLoadingState('loading')
+      self.deletedProjectsLoadingState('loading');
       
-      application.api().get("/user/deleted-projects/").then (response) -> 
-        deletedProjectsRaw = response.data
-        deletedProjects = deletedProjectsRaw.map (projectRaw) ->
-          projectRaw.fetched = true
-          project = Project(projectRaw).update(projectRaw)
-          # Give the project access to this presenter:
-          project.presenterUndelete = (event) ->
-            self.undeleteProject(project, event)
-          return project
+      return application.api().get("/user/deleted-projects/").then(function(response) { 
+        const deletedProjectsRaw = response.data;
+        const deletedProjects = deletedProjectsRaw.map(function(projectRaw) {
+          projectRaw.fetched = true;
+          const project = Project(projectRaw).update(projectRaw);
+          // Give the project access to this presenter:
+          project.presenterUndelete = event => self.undeleteProject(project, event);
+          return project;
+        });
 
-        self.deletedProjectsLoadingState('loaded')
-        self.user().deletedProjects(deletedProjects)
-      .catch (error) -> 
-        self.deletedProjectsLoadingState('')
-        console.error 'Failed to get deleted projects', error
+        self.deletedProjectsLoadingState('loaded');
+        return self.user().deletedProjects(deletedProjects);}).catch(function(error) { 
+        self.deletedProjectsLoadingState('');
+        return console.error('Failed to get deleted projects', error);
+      });
+    },
             
-    deletedProjects: ->
-      DeletedProjectsTemplate self
+    deletedProjects() {
+      return DeletedProjectsTemplate(self);
+    },
       
-    hiddenIfDeletedProjectsLoadingOrLoaded: ->
-      'hidden' if ['loading','loaded'].includes self.deletedProjectsLoadingState()
+    hiddenIfDeletedProjectsLoadingOrLoaded() {
+      if (['loading','loaded'].includes(self.deletedProjectsLoadingState())) { return 'hidden'; }
+    },
       
-    hiddenUnlessDeletedProjectsLoading: ->
-      'hidden' unless self.deletedProjectsLoadingState() == 'loading'
+    hiddenUnlessDeletedProjectsLoading() {
+      if (self.deletedProjectsLoadingState() !== 'loading') { return 'hidden'; }
+    },
         
-    hiddenIfDeletedProjectsLoaded: ->
-      'hidden' if self.deletedProjectsLoadingState() == 'loaded'
+    hiddenIfDeletedProjectsLoaded() {
+      if (self.deletedProjectsLoadingState() === 'loaded') { return 'hidden'; }
+    },
         
-    leaveProject: (project, event) ->
-      projectContainer = event.target.closest 'li'
-      application.closeAllPopOvers()
-      $(projectContainer).one 'animationend', -> 
-        # Hold off on UI updates until the animation ends
-        index = application.user().projects.indexOf(project)
-        if index != -1
-          application.user().projects.splice(index, 1)
+    leaveProject(project, event) {
+      const projectContainer = event.target.closest('li');
+      application.closeAllPopOvers();
+      $(projectContainer).one('animationend', function() { 
+        // Hold off on UI updates until the animation ends
+        const index = application.user().projects.indexOf(project);
+        if (index !== -1) {
+          return application.user().projects.splice(index, 1);
+        }
+      });
         
-      $(projectContainer).addClass 'slide-down'
+      $(projectContainer).addClass('slide-down');
       
-      project.leave()
+      return project.leave();
+    }
+  };
       
       
         
-  # application.user.observe (newVal) ->
-  #   if newVal
-  #     self.setInitialUserDescription()
+  // application.user.observe (newVal) ->
+  //   if newVal
+  //     self.setInitialUserDescription()
         
-  content = UserTemplate(self)
+  const content = UserTemplate(self);
   
-  return LayoutPresenter application, content
+  return LayoutPresenter(application, content);
+};

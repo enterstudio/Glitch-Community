@@ -1,24 +1,38 @@
-UsersListTemplate = require "../templates/includes/users-list"
-UserAvatarTemplate = require "../templates/includes/user-avatar" #
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * DS207: Consider shorter variations of null checks
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const UsersListTemplate = require("../templates/includes/users-list");
+const UserAvatarTemplate = require("../templates/includes/user-avatar"); //
 
-module.exports = (projectOrTeam, type) ->
+module.exports = function(projectOrTeam, type) {
   
-  self =
+  var self = {
   
-    users: ->
-      projectOrTeam.users()
+    users() {
+      return projectOrTeam.users();
+    },
 
-    userAvatars: ->
-      self.users().map UserAvatarTemplate
+    userAvatars() {
+      return self.users().map(UserAvatarTemplate);
+    },
 
-    hiddenUnlessShowAsGlitchTeam: ->
-      if type is 'team'
-        return 'hidden' 
+    hiddenUnlessShowAsGlitchTeam() {
+      if (type === 'team') {
+        return 'hidden'; 
+      }
 
-      'hidden' unless projectOrTeam?.showAsGlitchTeam()
+      if (!(projectOrTeam != null ? projectOrTeam.showAsGlitchTeam() : undefined)) { return 'hidden'; }
+    },
 
-    hiddenIfShowAsGlitchTeam: ->
-      unless type is 'team'
-        'hidden' if projectOrTeam?.showAsGlitchTeam()
+    hiddenIfShowAsGlitchTeam() {
+      if (type !== 'team') {
+        if (projectOrTeam != null ? projectOrTeam.showAsGlitchTeam() : undefined) { return 'hidden'; }
+      }
+    }
+  };
 
-  return UsersListTemplate self
+  return UsersListTemplate(self);
+};

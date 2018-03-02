@@ -1,6 +1,13 @@
-"use strict"
+/*
+ * decaffeinate suggestions:
+ * DS101: Remove unnecessary use of Array.from
+ * DS102: Remove unnecessary code created because of implicit returns
+ * DS207: Consider shorter variations of null checks
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+"use strict";
 
-###
+/*
 S3 Uploader
 ===========
 
@@ -69,93 +76,109 @@ LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
 OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN THE
 SOFTWARE.
 
-###
+*/
 
-module.exports = (credentials) ->
-  {policy, signature, accessKeyId} = credentials
-  {acl, bucket, namespace} = extractPolicyData(policy)
+module.exports = function(credentials) {
+  const {policy, signature, accessKeyId} = credentials;
+  const {acl, bucket, namespace} = extractPolicyData(policy);
 
-  bucketUrl = "https://s3.amazonaws.com/#{bucket}"
+  const bucketUrl = `https://s3.amazonaws.com/${bucket}`;
 
-  urlFor = (key) ->
-    namespacedKey = "#{namespace}#{key}"
+  const urlFor = function(key) {
+    const namespacedKey = `${namespace}${key}`;
 
-    "#{bucketUrl}/#{namespacedKey}"
+    return `${bucketUrl}/${namespacedKey}`;
+  };
 
-  urlFor: urlFor
+  return {
+    urlFor,
 
-  upload: ({key, blob, cacheControl}) ->
-    console.log 'upload called', key # 2, based on user id
-    console.log 'using namespace', namespace # user-cover/2, not sure what it's based on
-    namespacedKey = "#{namespace}#{key}"
-    url = urlFor(key)
+    upload({key, blob, cacheControl}) {
+      console.log('upload called', key); // 2, based on user id
+      console.log('using namespace', namespace); // user-cover/2, not sure what it's based on
+      const namespacedKey = `${namespace}${key}`;
+      const url = urlFor(key);
 
-    sendForm bucketUrl, objectToForm
-      key: namespacedKey
-      "Content-Type": blob.type or 'binary/octet-stream'
-      "Cache-Control": "max-age=#{cacheControl or 31536000}"
-      AWSAccessKeyId: accessKeyId
-      "x-amz-security-token": credentials.sessionToken
-      acl: acl
-      policy: policy
-      signature: signature
-      file: blob
-    .then ->
-      "#{bucketUrl}/#{encodeURIComponent(namespacedKey)}"
+      return sendForm(bucketUrl, objectToForm({
+        key: namespacedKey,
+        "Content-Type": blob.type || 'binary/octet-stream',
+        "Cache-Control": `max-age=${cacheControl || 31536000}`,
+        AWSAccessKeyId: accessKeyId,
+        "x-amz-security-token": credentials.sessionToken,
+        acl,
+        policy,
+        signature,
+        file: blob
+      })).then(() => `${bucketUrl}/${encodeURIComponent(namespacedKey)}`);
+    }
+  };
+};
 
-getKey = (conditions, key) ->
-  results = conditions.filter (condition) ->
-    typeof condition is "object"
-  .map (object) ->
-    object[key]
-  .filter (value) ->
-    value
+const getKey = function(conditions, key) {
+  const results = conditions.filter(condition => typeof condition === "object").map(object => object[key])
+  .filter(value => value);
 
-  results[0]
+  return results[0];
+};
 
-getNamespaceFromPolicyConditions = (conditions) ->
-  (conditions.filter (condition) ->
-    if Array.isArray(condition)
-      [a, b, c] = condition
-      b is "$key" and (a is "starts-with" or a is "eq")
-  )[0][2]
+const getNamespaceFromPolicyConditions = conditions =>
+  (conditions.filter(function(condition) {
+    if (Array.isArray(condition)) {
+      const [a, b, c] = Array.from(condition);
+      return (b === "$key") && ((a === "starts-with") || (a === "eq"));
+    }
+  }))[0][2]
+;
 
-extractPolicyData = (policy) ->
-  policyObject = JSON.parse(atob(policy))
+var extractPolicyData = function(policy) {
+  const policyObject = JSON.parse(atob(policy));
 
-  conditions = policyObject.conditions
+  const { conditions } = policyObject;
 
-  acl: getKey(conditions, "acl")
-  bucket: getKey(conditions, "bucket")
-  namespace: getNamespaceFromPolicyConditions(conditions)
+  return {
+    acl: getKey(conditions, "acl"),
+    bucket: getKey(conditions, "bucket"),
+    namespace: getNamespaceFromPolicyConditions(conditions)
+  };
+};
 
-isSuccess = (request) ->
-  request.status.toString()[0] is "2"
+const isSuccess = request => request.status.toString()[0] === "2";
 
-sendForm = (url, formData) ->
-  new ProgressPromise (resolve, reject, notify) ->
-    request = new XMLHttpRequest()
+var sendForm = (url, formData) =>
+  new ProgressPromise(function(resolve, reject, notify) {
+    const request = new XMLHttpRequest();
 
-    request.open("POST", url, true)
+    request.open("POST", url, true);
 
-    request.upload?.onprogress = notify
+    if (request.upload != null) {
+      request.upload.onprogress = notify;
+    }
 
-    request.onreadystatechange = (e) ->
-      if request.readyState is 4
-        if isSuccess(request)
+    request.onreadystatechange = function(e) {
+      if (request.readyState === 4) {
+        if (isSuccess(request)) {
 
-          resolve request
-        else
-          reject request
+          return resolve(request);
+        } else {
+          return reject(request);
+        }
+      }
+    };
 
-    request.send(formData)
+    return request.send(formData);
+  })
+;
 
-objectToForm = (data) ->
-  formData = Object.keys(data).reduce (formData, key) ->
-    value = data[key]
+var objectToForm = function(data) {
+  let formData;
+  return formData = Object.keys(data).reduce(function(formData, key) {
+    const value = data[key];
 
-    if value
-      formData.append(key, value)
+    if (value) {
+      formData.append(key, value);
+    }
 
-    return formData
-  , new FormData
+    return formData;
+  }
+  , new FormData);
+};

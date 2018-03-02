@@ -1,39 +1,53 @@
-axios = require 'axios'
+/*
+ * decaffeinate suggestions:
+ * DS102: Remove unnecessary code created because of implicit returns
+ * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
+ */
+const axios = require('axios');
 
-LayoutPresenter = require "../layout"
-SearchPageTemplate = require "../../templates/pages/search"
+const LayoutPresenter = require("../layout");
+const SearchPageTemplate = require("../../templates/pages/search");
 
-module.exports = (application) ->
+module.exports = function(application) {
 
-  self = 
+  const self = { 
 
-    application: application
-    searchResultsProjects: application.searchResultsProjects
-    searchResultsUsers: application.searchResultsUsers
-    searchResultsTeams: application.searchResultsTeams
+    application,
+    searchResultsProjects: application.searchResultsProjects,
+    searchResultsUsers: application.searchResultsUsers,
+    searchResultsTeams: application.searchResultsTeams,
     
-    hiddenIfSearchResultsTeamsLoaded: ->
-      'hidden' if application.searchResultsTeamsLoaded()      
+    hiddenIfSearchResultsTeamsLoaded() {
+      if (application.searchResultsTeamsLoaded()) { return 'hidden'; }
+    },      
     
-    hiddenIfSearchResultsProjectsLoaded: ->
-      'hidden' if application.searchResultsProjectsLoaded()
+    hiddenIfSearchResultsProjectsLoaded() {
+      if (application.searchResultsProjectsLoaded()) { return 'hidden'; }
+    },
   
-    hiddenIfSearchResultsUsersLoaded: ->
-      'hidden' if application.searchResultsUsersLoaded()
+    hiddenIfSearchResultsUsersLoaded() {
+      if (application.searchResultsUsersLoaded()) { return 'hidden'; }
+    },
   
-    hiddenIfSearchResultsHaveNoUsers: ->
-      'hidden' if application.searchResultsHaveNoUsers()
+    hiddenIfSearchResultsHaveNoUsers() {
+      if (application.searchResultsHaveNoUsers()) { return 'hidden'; }
+    },
 
-    hiddenIfSearchResultsHaveNoProjects: ->
-      'hidden' if application.searchResultsHaveNoProjects()
+    hiddenIfSearchResultsHaveNoProjects() {
+      if (application.searchResultsHaveNoProjects()) { return 'hidden'; }
+    },
     
-    hiddenIfSearchResultsHaveNoTeams: ->
-      'hidden' if application.searchResultsHaveNoTeams()      
+    hiddenIfSearchResultsHaveNoTeams() {
+      if (application.searchResultsHaveNoTeams()) { return 'hidden'; }
+    },      
 
-    hiddenUnlessSearchHasNoResults: ->
-      'hidden' unless application.searchResultsHaveNoUsers() and application.searchResultsHaveNoProjects() and application.searchResultsHaveNoTeams()
+    hiddenUnlessSearchHasNoResults() {
+      if (!application.searchResultsHaveNoUsers() || !application.searchResultsHaveNoProjects() || !application.searchResultsHaveNoTeams()) { return 'hidden'; }
+    }
+  };
     
 
-  content = SearchPageTemplate self
+  const content = SearchPageTemplate(self);
         
-  return LayoutPresenter application, content
+  return LayoutPresenter(application, content);
+};
