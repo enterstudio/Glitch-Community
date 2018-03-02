@@ -1,5 +1,5 @@
 // TODO: This file was created by bulk-decaffeinate.
-// Sanity-check the conversion and remove this comment.
+// Check that you're happy with the conversion, then remove this comment.
 /*
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
