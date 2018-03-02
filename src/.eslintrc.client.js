@@ -19,7 +19,7 @@ module.exports = exports = {
     "no-console": OFF,
     
     // Unintentionally off -- we should fix these, then enable them
-    "no-undef": OFF,
+    "no-undef": ERROR,
     "no-unused-vars": OFF,
     "no-useless-escape": OFF,
     "no-empty": OFF,

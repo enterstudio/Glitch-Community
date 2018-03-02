@@ -32,7 +32,7 @@ module.exports = () => {
   
   return {
     entry: {
-      "client-bundle": `${SRC}/client.js`
+      "client-bundle": `${SRC}/client.js` 
     },
     output: {
       filename: '[name].js',
@@ -52,7 +52,7 @@ module.exports = () => {
             emitError: true,
             emitWarning: true,
             failOnError: false,
-            configFile: `.eslintrc.client.js`
+            configFile: `${SRC}/.eslintrc.client.js`
           }
         },
         {

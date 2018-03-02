@@ -7,7 +7,6 @@ dependencies:
   babel-preset-env: 1.6.1
   babel-preset-react: 6.24.1
   body-parser: 1.18.2
-  coffeescript: 2.2.2
   compression: 1.7.2
   ejs: 2.5.7
   eslint: 4.18.1
@@ -1398,12 +1397,6 @@ packages:
       node: '>=0.8.0'
     resolution:
       integrity: sha1-YplqhheAx15tUGnROCJyO3NAS/w=
-  /coffeescript/2.2.2:
-    dev: false
-    engines:
-      node: '>=6'
-    resolution:
-      integrity: sha512-VJnQbuT/lUXFPeh9ZPwuqZjG216ngxE89vfj1a1hlAaCCVOb694kKXMVSMm9kLKTbkMQKc/dPs9ABjO2ghMMJQ==
   /collection-visit/1.0.0:
     dependencies:
       map-visit: 1.0.0
@@ -5703,7 +5696,6 @@ specifiers:
   babel-preset-env: ^1.6.1
   babel-preset-react: ^6.24.1
   body-parser: ^1.18.2
-  coffeescript: ^2.2.2
   compression: ^1.7.2
   ejs: ^2.5.7
   eslint: ^4.17.0
