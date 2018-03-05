@@ -48,11 +48,10 @@ module.exports = () => {
           loader: "eslint-loader",
           options: {
             fix: false, // We can turn this on once OTFS is live
-            cache: true,
+            cache: false, //caching tends to make the config stick, so turn it off deliberately :(
             emitError: true,
             emitWarning: true,
             failOnError: false,
-            configFile: `.eslintrc.client.js`
           }
         },
         {
@@ -64,4 +63,4 @@ module.exports = () => {
     },
     plugins: plugins
   };
-}
+} 

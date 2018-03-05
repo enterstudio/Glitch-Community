@@ -10,7 +10,6 @@
     "axios": "^0.16.2",
     "babel-loader": "^7.1.2",
     "body-parser": "^1.18.2",
-    "coffeescript": "^2.2.2",
     "ejs": "^2.5.7",
     "eslint": "^4.17.0",
     "eslint-loader": "^1.9.0",

@@ -1,12 +1,6 @@
 /* global analytics */
 
-//
-// This .jsx file obviates
-// user-options-pop.coffee
-//         and
-// user-options-pop.jade
-//
-      
+     
 import React from 'react';
 
 const TeamButton = ({url, name, teamAvatarUrl=""}) => (

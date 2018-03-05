@@ -13,8 +13,7 @@
     "include": [
       "^sh/",
       "\\.json",
-      "^webpack\\.config\\.js$",
-      "^\\.eslintrc\\.js$"
+      "^webpack\\.config\\.js$"
     ]
   },
   "throttle": 100
