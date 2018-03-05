@@ -1,10 +1,3 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 const Observable = require('o_0');
 const _ = require('lodash/function');
 
@@ -17,11 +10,6 @@ module.exports = function(application) {
     application,
   
     query: Observable(""),
-  
-    // team: application.team
-  
-    // user: application.currentUser() # temp
-    // userResults: Observable []
 
     hiddenUnlessAddTeamUserPopVisible() {
       if (!application.addTeamUserPopVisible()) { return 'hidden'; }
@@ -34,10 +22,6 @@ module.exports = function(application) {
     hiddenUnlessSearching() {
       if (!application.searchingForUsers()) { return 'hidden'; }
     },
-
-    // visibleIfNoMatches: ->
-    //   if application.searchResultsUsersLoaded() and application.searchResultsUsers().length is 0 and !application.searchingForUsers() and self.query()       
-    //     'visible'
 
     spacekeyDoesntClosePop(event) {
       event.stopPropagation();
@@ -75,10 +59,6 @@ module.exports = function(application) {
       }
     } 
   };
-      
-      // console.log application.searchResultsUsers()
-      // console.log application.searchResultsUsersLoaded()      
-      // self.userResults []
-      
+            
   return AddTeamUserTemplate(self);
 };

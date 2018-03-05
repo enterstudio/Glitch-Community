@@ -1,10 +1,5 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
+/* globals Project */
+
 const Observable = require('o_0');
 const _ = require('lodash');
 const md = require('markdown-it')({
@@ -17,9 +12,10 @@ const DeletedProjectsTemplate = require("../../templates/deleted-projects");
 const LayoutPresenter = require("../layout");
 const CtaButtonsPresenter = require("../cta-buttons");
 const ProjectsListPresenter = require("../projects-list");
-const assetUtils = require('../../utils/assets')(application);
 
 module.exports = function(application, userLoginOrId) {
+  const assetUtils = require('../../utils/assets')(application);
+
   var self = {
 
     user: application.user,    
