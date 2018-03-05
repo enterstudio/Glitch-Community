@@ -56,9 +56,7 @@ module.exports = (Category = function(I, self) {
 Category.getRandomCategories = function(application, numberOfCategories, projectsPerCategory) {
   let categoriesPath;
   console.log('🎷🎷🎷 get random categories');
-  if (numberOfCategories && numberOfProjects) {
-    categoriesPath = "categories/random";
-  } else if (numberOfCategories) {
+  if (numberOfCategories) {
     categoriesPath = "categories/random?numCategories=2";
   } else if (projectsPerCategory) {
     categoriesPath = "categories/random?projectsPerCategory=2";

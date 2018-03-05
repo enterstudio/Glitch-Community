@@ -7,7 +7,6 @@ module.exports = exports = {
   env: {
       'es6': true,        // We are writing ES6 code
       'browser': true,    // for the browser
-      'commonjs': true,   // using webpack
   },
   "parser": "babel-eslint",
   "parserOptions": {
