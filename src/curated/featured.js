@@ -1,7 +1,4 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
 module.exports =
-
   [{
       title: 'Make WebVR, Reality',
       img: 'https://cdn.glitch.com/2bdfb3f8-05ef-4035-a06e-2043962a3a13%2FmozillaAframe.png?1494449169684',
