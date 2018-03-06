@@ -25,8 +25,9 @@ if (process.env.RUNNING_ON === 'staging') {
 
 const updateCache = async type => {
   let response = await axios.get(`${API_URL}${type}`);
+  debugger;
   try {
-    let json = response;
+    let json = JSON.stringify(response);
     let fileContents = `module.exports = ${json}`
     await fs_writeFile(`./src/cache/${type}.js`, fileContents);
     console.log(`☂️ ${type} re-cached`);

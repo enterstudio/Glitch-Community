@@ -4,11 +4,10 @@
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
  * DS102: Remove unnecessary code created because of implicit returns
- * DS103: Rewrite code to no longer use __guard__
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-/* global application */
+/* global application CDN_URL EDITOR_URL*/
 let Project;
 const cache = {};
 
@@ -51,14 +50,13 @@ module.exports = (Project = function(I, self) {
     editUrl() {
       if (I.line) {
         return `${EDITOR_URL}#!/${I.domain}?path=${I.path}:${I.line}:${I.character}`;
-      } else {
-        return `${EDITOR_URL}#!/${I.domain}`;
       }
+      return `${EDITOR_URL}#!/${I.domain}`;
     },
 
     userIsCurrentUser(application) {
       const userIsCurrentUser = _.find(self.users(), user => user.id() === application.currentUser().id());
-      if (userIsCurrentUser) { return true; }
+      return !!userIsCurrentUser;
     },
 
     avatar() {
@@ -78,8 +76,9 @@ module.exports = (Project = function(I, self) {
       self.readmeNotFound(undefined);
       self.projectNotFound(undefined);
       let path = `projects/${self.id()}/readme`;
-      if (__guard__(application.currentUser(), x => x.persistentToken())) {
-        path += `?token=${__guard__(application.currentUser(), x1 => x1.persistentToken())}`;
+      let token = application.currentUser() && application.currentUser().persistentToken();
+      if(token){
+        path += `?token=${token}`;
       }
       return application.api(source).get(path)
       .then(function(response) {
@@ -240,7 +239,3 @@ Project._cache = cache;
 
 // Circular dependencies must go below module.exports
 var User = require("./user");
-
-function __guard__(value, transform) {
-  return (typeof value !== 'undefined' && value !== null) ? transform(value) : undefined;
-}
