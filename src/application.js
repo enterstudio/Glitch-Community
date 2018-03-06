@@ -225,7 +225,6 @@ var self = Model({
         return application.saveCurrentUser(user);
       } 
       return application.saveUser(user);
-      
     });
   },
 
@@ -237,8 +236,6 @@ var self = Model({
     userData.fetched = true;
     console.log('👀 current user data is ', userData);
     self.currentUser().update(userData);
-    const teams = self.currentUser().teams().map(datum => Team(datum));
-    return self.currentUser().teams(teams);
   },
 
   saveUser(userData) {
