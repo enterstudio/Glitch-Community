@@ -8,8 +8,9 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-// todo convert to async await fetch
 // todo do accessibility w hidden tables
+
+/* globals Plotly */
 
 const Observable = require('o_0');
 const axios = require('axios');
@@ -332,6 +333,7 @@ module.exports = function(application, teamOrProject) {
         };
 
         const element = elements[i];
+        debugger;
         return Plotly.update(element, data, layout);
       });
     },
