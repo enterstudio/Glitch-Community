@@ -1,10 +1,6 @@
 {
   "presets" : [
-  ["modern-browsers", {
-    "loose": true,
-    "esnext": false,
-    "es2017": false,
-  }],
+  "env",
   "react",
   ]
 }
