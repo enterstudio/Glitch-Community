@@ -16,7 +16,6 @@ module.exports = exports = {
   "rules": {
     // Intentional config:
     "no-console": OFF,
-    
     "no-else-return": ERROR,
     
     // Unintentionally off -- we should fix these, then enable them
