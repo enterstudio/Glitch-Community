@@ -321,8 +321,8 @@ module.exports = function(application, teamOrProject) {
         const layout = {
           annotations: referrers.map(r =>
             ({
-              x: 0,
-              y: r.domain,
+              //x: 0,
+              //y: r.domain,
               showarrow: false,
               text: `${r.value} - ${r.domain}`,
               xanchor: "left",
@@ -333,7 +333,6 @@ module.exports = function(application, teamOrProject) {
         };
 
         const element = elements[i];
-        debugger;
         return Plotly.update(element, data, layout);
       });
     },
