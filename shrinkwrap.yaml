@@ -13,7 +13,6 @@ dependencies:
   eslint: 4.18.1
   eslint-loader: 1.9.0
   express: 4.16.2
-  isuuid: 0.1.0
   jadelet: 0.8.0-pre.11
   lodash: 4.17.5
   markdown-it: 8.4.1
@@ -2993,10 +2992,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-YRrhrPFPXoH3KVB0coGf6XM1WKk=
-  /isuuid/0.1.0:
-    dev: false
-    resolution:
-      integrity: sha1-UIEJrBQNbeQ7P4RlBs22Zd0+hzM=
   /jadelet/0.8.0-pre.11:
     dependencies:
       coffee-script: 1.7.1
@@ -5391,7 +5386,6 @@ specifiers:
   eslint: ^4.17.0
   eslint-loader: ^1.9.0
   express: ^4.16.2
-  isuuid: ^0.1.0
   jadelet: ^0.8.0-pre.11
   lodash: ^4.17.5
   markdown-it: ^8.4.0

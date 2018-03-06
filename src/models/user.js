@@ -19,7 +19,6 @@ If the id property is not given the model is not cached.
 */
 
 let User;
-const isuuid = require('isuuid');
 const axios = require('axios');
 const md = require('markdown-it')({
   breaks: true,
