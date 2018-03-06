@@ -1,5 +1,5 @@
 /* globals route EDITOR_URL baseUrl analytics */
-//require("./extensions");
+require("./extensions");
 
 const application = require('./application');
 const qs = require('querystringify');
