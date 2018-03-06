@@ -25,10 +25,9 @@ if (process.env.RUNNING_ON === 'staging') {
 
 const updateCache = async type => {
   let response = await axios.get(`${API_URL}${type}`, {
-    transformResponse: (data) => data
+    transformResponse: (data) => data // Override the default object transform
   });
   let json = response.data;
-  console.log("axios is", json, typeof(json));
   
   try {
     let fileContents = `module.exports = ${json}`
