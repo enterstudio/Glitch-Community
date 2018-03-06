@@ -236,6 +236,8 @@ var self = Model({
     userData.fetched = true;
     console.log('👀 current user data is ', userData);
     self.currentUser().update(userData);
+    const teams = self.currentUser().teams().map(datum => Team(datum));
+    self.currentUser().teams(teams);
   },
 
   saveUser(userData) {
@@ -355,7 +357,6 @@ var self = Model({
       
 self.attrModel("user", User);
 self.attrModel("currentUser", User);
-// self.attrModels "featuredProjects", Project
 self.attrModels("categories", Category);
 self.attrModel("category", Category);
 self.attrModel("team", Team);
