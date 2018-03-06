@@ -1,7 +1,7 @@
 - Loader = require "./loader"
 
 section.analytics(class=@hiddenUnlessCurrentUserIsOnTeam)
-  script(src="https://cdn.plot.ly/plotly-latest.min.js" load=@plotlyLoad async="4eva")
+  script(src="https://cdn.plot.ly/plotly-1.34.0.min.js" load=@plotlyLoad async="4eva")
 
   section.chart-container
     span(class=@hiddenUnlessGettingAnalytics)= Loader

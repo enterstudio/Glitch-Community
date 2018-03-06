@@ -319,10 +319,10 @@ module.exports = function(application, teamOrProject) {
         };
         
         const layout = {
-          annotations: referrers.map(r =>
+          annotations: referrers.map((r, index) =>
             ({
               x: 0,
-              y: r.domain,
+              y: index,
               showarrow: false,
               text: `${r.value} - ${r.domain}`,
               xanchor: "left",
