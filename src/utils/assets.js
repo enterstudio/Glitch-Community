@@ -84,9 +84,9 @@ const resizeImage = function(file, size) {
     file.height = image.height;
     if ((image.width < max) && (image.height < max)) {
       return file;
-    } else {
+    } 
       return drawCanvasThumbnail(image, file.type, max);
-    }
+    
   });
 };
 
@@ -136,11 +136,11 @@ const getDominantColor = function(image) {
   }
   if (transparentPixels) {
     return null;
-  } else {
+  } 
     const colorMap = quantize(colors, 5);
     const [r, g, b] = Array.from(colorMap.palette()[0]);
     return `rgb(${r},${g},${b})`;
-  }
+  
 };
 
 
@@ -162,9 +162,9 @@ module.exports = function(application) {
     getCoverImagePolicy() {
       if (application.pageIsTeamPage()) {
         return self.getTeamCoverImagePolicy();
-      } else {
+      } 
         return self.getUserCoverImagePolicy();
-      }
+      
     },
 
     getTeamCoverImagePolicy() {
@@ -198,10 +198,10 @@ module.exports = function(application) {
       return function({lengthComputable, loaded, total}) {
         if (lengthComputable) {
           return uploadData.ratio(loaded / total);
-        } else {
+        } 
           // Fake progress with each event: 0, 0.5, 0.75, 0.875, ...
           return uploadData.ratio((1 + uploadData.ratio()) / 2);
-        }
+        
       };
     },
 
@@ -241,9 +241,9 @@ module.exports = function(application) {
         {'hasCoverImage': true};
       if (application.pageIsTeamPage()) {
         return application.team().updateTeam(application, HAS_COVER_IMAGE);          
-      } else {
+      } 
         return application.user().updateUser(application, HAS_COVER_IMAGE);
-      }
+      
     },
 
     updateHasAvatarImage() {
@@ -251,9 +251,9 @@ module.exports = function(application) {
         {'hasAvatarImage': true};
       if (application.pageIsTeamPage()) {
         return application.team().updateTeam(application, HAS_AVATAR_IMAGE);          
-      } else {
+      } 
         return application.user().updateUser(application, HAS_AVATAR_IMAGE);
-      }
+      
     },
 
     addCoverFile(file) {
@@ -269,11 +269,11 @@ module.exports = function(application) {
           application.team().localCoverImage(image.src);
           application.team().hasCoverImage(true);
           return application.team().updateCoverColor(application, dominantColor);
-        } else {
+        } 
           application.user().localCoverImage(image.src);
           application.user().hasCoverImage(true);
           return application.user().updateCoverColor(application, dominantColor);
-        }}).catch(function(error) {
+        }).catch(function(error) {
         application.notifyUploadFailure(true);
         return console.error('addCoverFile', error);
       });

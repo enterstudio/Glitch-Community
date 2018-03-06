@@ -161,9 +161,9 @@ var sendForm = (url, formData) =>
         if (isSuccess(request)) {
 
           return resolve(request);
-        } else {
+        } 
           return reject(request);
-        }
+        
       }
     };
 

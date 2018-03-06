@@ -11,9 +11,9 @@ const defAccessor = (self, attrName) =>
       self.I[attrName] = newValue;
 
       return self;
-    } else {
+    } 
       return self.I[attrName];
-    }
+    
   }
 ;
 

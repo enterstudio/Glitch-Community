@@ -37,9 +37,9 @@ module.exports = function(application) {
           return item();
         } else if (typeof(item) === "undefined") {
           return "";
-        } else {
+        } 
           return console.error("Unxpected team property type", item, typeof(item));
-        }
+        
       };
     
       return{ 
@@ -94,9 +94,9 @@ module.exports = function(application) {
         return LOGO_SUNSET;
       } else if ((hour > 18) || (hour <= 8)) {
         return LOGO_NIGHT;
-      } else {
+      } 
         return LOGO_DAY;
-      }
+      
     },
 
     hiddenIfSignedIn() {

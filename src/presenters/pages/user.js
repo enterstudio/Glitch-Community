@@ -37,9 +37,9 @@ module.exports = function(application, userLoginOrId) {
     coverUrl() {
       if (application.user().localCoverImage()) {
         return application.user().localCoverImage();
-      } else {
+      } 
         return application.user().coverUrl();
-      }
+      
     },
 
     userProfileStyle() {
@@ -91,17 +91,17 @@ module.exports = function(application, userLoginOrId) {
         const node = document.createElement('span');
         node.innerHTML = md.render(text);
         return node;
-      } else {
+      } 
         return application.user().initialDescriptionMarkdown();
-      }
+      
     },
 
     editableDescription() {
       if (self.newDescription()) {
         return self.newDescription();
-      } else {
+      } 
         return application.user().initialDescription();
-      }
+      
     },
 
     description() {
@@ -269,9 +269,9 @@ module.exports = function(application, userLoginOrId) {
             const renamePath = `projects/${project.id()}`;
             const newDomain = project.domain().slice(0, "-deleted".length * -1);
             return application.api().patch(renamePath, {domain: newDomain}).then(resolve).catch(resolve);
-          } else {
+          } 
             return resolve();
-          }
+          
         });
         
         return renamePromise.then(function() {

@@ -72,18 +72,18 @@ module.exports = (Team = function(I, self) {
       size = size || 'large';
       if (self.hasCoverImage()) {
         return `https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/team-cover/${self.id()}/${size}?${cacheBuster}`;           
-      } else {
+      } 
         return "https://cdn.glitch.com/55f8497b-3334-43ca-851e-6c9780082244%2Fdefault-cover-wide.svg?1503518400625";
-      }
+      
     },
 
     teamAvatarUrl(size) {
       size = size || 'small';
       if (self.hasAvatarImage()) {
         return `https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/team-avatar/${self.id()}/${size}?${cacheBuster}`;
-      } else {
+      } 
         return "https://cdn.glitch.com/55f8497b-3334-43ca-851e-6c9780082244%2Fdefault-team-avatar.svg?1503510366819";
-      }
+      
     },
 
     hiddenIfFetched() {
@@ -98,9 +98,9 @@ module.exports = (Team = function(I, self) {
       const MAX_CHARACTERS = 140;
       if (self.description().length > MAX_CHARACTERS) {
         return self.description().substring(0, MAX_CHARACTERS) + "…";
-      } else {
+      } 
         return self.description();
-      }
+      
     },
 
     thanksCount() {
@@ -117,9 +117,9 @@ module.exports = (Team = function(I, self) {
         return "Thanked once";
       } else if (thanksCount === 2) {
         return "Thanked twice";
-      } else {
+      } 
         return `Thanked ${thanksCount} times`;
-      }
+      
     },
 
     currentUserIsOnTeam(application) {

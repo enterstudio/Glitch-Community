@@ -38,9 +38,9 @@ module.exports = function(application) {
     searchProjects: _.debounce(function(query) {
         if (query.length) {
           return application.searchProjects(query);
-        } else {
+        } 
           return application.searchingForProjects(false);
-        }
+        
       }
       , 500),
 
@@ -48,9 +48,9 @@ module.exports = function(application) {
       const MAX_RESULTS = 10;
       if (self.query().length) {
         return application.searchResultsProjects().slice(0, MAX_RESULTS);
-      } else {
+      } 
         return [];
-      }
+      
     },
 
     hiddenIfNoSearch() {

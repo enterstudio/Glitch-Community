@@ -87,9 +87,9 @@ module.exports = (Project = function(I, self) {
         console.error("getReadme", error);
         if (error.response.status === 404) {
           return self.readmeNotFound(true);
-        } else {
+        } 
           return self.projectNotFound(true);
-        }
+        
       });
     },
 
@@ -180,7 +180,7 @@ Project.getProjectsByIds = function(api, ids) {
   const projectIdGroups = newProjectIds.map(function(id, index) {
     if ((index % NUMBER_OF_PROJECTS_PER_REQUEST) === 0) { 
       return newProjectIds.slice(index, index + NUMBER_OF_PROJECTS_PER_REQUEST);       
-    } else { return null; }}).filter(id => id);
+    }  return null; }).filter(id => id);
   return projectIdGroups.forEach(function(group) {
     const projectsPath = `projects/byIds?ids=${group.join(',')}`;
     return api.get(projectsPath)

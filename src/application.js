@@ -111,9 +111,9 @@ var self = Model({
       return "/";
     } else if (lastCharacter === !"/") {
       return baseUrl + "/";
-    } else {
+    } 
       return baseUrl;
-    }
+    
   },
 
   closeAllPopOvers() {
@@ -156,12 +156,12 @@ var self = Model({
           Authorization: persistentToken
         }
       });
-    } else {
+    } 
       return axios.create({
         baseURL: API_URL,
         cancelToken: (source != null ? source.token : undefined)
       });
-    }
+    
   },
 
   storeLocal(key, value) {
@@ -222,9 +222,9 @@ var self = Model({
     return User.getUserById(application, id).then(user => {
       if (application.currentUser().id() === user.id) {
         return application.saveCurrentUser(user);
-      } else {
+      } 
         return application.saveUser(user);
-      }
+      
     });
   },
 

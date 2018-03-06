@@ -84,9 +84,9 @@ module.exports = (User = function(I, self) {
       size = size || 'large';
       if (self.hasCoverImage()) {
         return `https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/user-cover/${self.id()}/${size}?${cacheBuster}`;
-      } else {
+      } 
         return "https://cdn.glitch.com/55f8497b-3334-43ca-851e-6c9780082244%2Fdefault-cover-wide.svg?1503518400625";
-      }
+      
     },
 
     userAvatarUrl(size) {
@@ -95,9 +95,9 @@ module.exports = (User = function(I, self) {
         return "https://cdn.glitch.com/f6949da2-781d-4fd5-81e6-1fdd56350165%2Fanon-user-on-project-avatar.svg";
       } else if (self.facebookId()) {
         return `https://graph.facebook.com/${self.facebookId()}/picture?type=${size}`;
-      } else {
+      } 
         return self.avatarUrl();
-      }
+      
     },
         // self.avatarUrl size
 
@@ -144,9 +144,9 @@ module.exports = (User = function(I, self) {
     userLink() {
       if (self.isSignedIn()) {
         return `/@${I.login}`;
-      } else {
+      } 
         return `/user/${I.id}`;
-      }
+      
     },
 
     anonAvatar() {
@@ -173,9 +173,9 @@ module.exports = (User = function(I, self) {
       const MAX_CHARACTERS = 140;
       if (self.description().length > MAX_CHARACTERS) {
         return self.description().substring(0, MAX_CHARACTERS) + "…";
-      } else {
+      } 
         return self.description();
-      }
+      
     },
 
     descriptionMarkdown() {
@@ -210,9 +210,9 @@ module.exports = (User = function(I, self) {
         return "Thanked once";
       } else if (thanksCount === 2) {
         return "Thanked twice";
-      } else {
+      } 
         return `Thanked ${thanksCount} times`;
-      }
+      
     },
 
     addPin(application, projectId) {

@@ -78,9 +78,9 @@ module.exports = function(application, teamOrProject) {
         return fourWeeks;
       } else if (self.analyticsTimeLabel() === 'Last 24 Hours') {
         return oneDay;
-      } else {
+      } 
         return twoWeeks;
-      }
+      
     },
     
     // showRemixesReferrers: Observable false
@@ -124,7 +124,7 @@ module.exports = function(application, teamOrProject) {
       return {
         leftMargin: self.getWidthOfText(leftMarginString, "Benton Sans", "14px"), // super gross
         ranges: maxes.map(function(max) {
-          if (max >= 3) { return undefined; } else { return [0, 3]; }})
+          if (max >= 3) { return undefined; }  return [0, 3]; })
       };
     },
 

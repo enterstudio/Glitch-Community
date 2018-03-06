@@ -26,9 +26,9 @@ module.exports = function(application, project, options, analytics) {
       const MAX_LENGTH = 44;
       if (project.description().length > MAX_LENGTH) {
         return project.description().substring(0, MAX_LENGTH) + '…';
-      } else {
+      } 
         return project.description();
-      }
+      
     },
       
     addProjectToTeam() {

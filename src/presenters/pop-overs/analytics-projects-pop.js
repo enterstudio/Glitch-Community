@@ -30,9 +30,9 @@ module.exports = function(application, analytics) {
       if (query.length) {
         const filtered = projects.filter(project => project.domain().match(query) || project.description().match(query));
         return self.teamProjects(filtered);
-      } else {
+      } 
         return self.teamProjects(projects);
-      }
+      
     },
 
     spacekeyDoesntClosePop(event) {

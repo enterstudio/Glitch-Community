@@ -144,11 +144,11 @@ Promise.resolve()
     return location.assign('https://www.youtube.com/embed/DLzxrzFCyOs?autoplay=1');
 
   // error page ✅
-  } else {
+  } 
     const errorPage = errorPageTemplate(application);
     document.body.appendChild(errorPage);
     return document.title = "👻 Page not found";
-  }}).catch(function(error) {
+  }).catch(function(error) {
   console.error(error);
   throw error;
 });

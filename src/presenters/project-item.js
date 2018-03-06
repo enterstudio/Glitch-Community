@@ -23,9 +23,9 @@ module.exports = function(application, project, category, userPagePresenter) {
     projectLink() {
       if (project.isRecentProject) {
         return self.editorLink();
-      } else {
+      } 
         return `/~${project.domain()}`;
-      }
+      
     },
 
     editorLink() {
@@ -68,26 +68,26 @@ module.exports = function(application, project, category, userPagePresenter) {
     togglePinnedState() {
       if (application.pageIsTeamPage()) {
         return self.toggleTeamPin();
-      } else {
+      } 
         return self.toggleUserPin();
-      }
+      
     },
 
     toggleUserPin() {
       if (project.isPinnedByUser(application)) {
         return application.user().removePin(application, project.id());
-      } else {
+      } 
         return application.user().addPin(application, project.id());
-      }
+      
     },
 
     toggleTeamPin() {
       if (project.isPinnedByTeam(application)) {
         return application.team().removePin(application, project.id());
-      } else {
+      } 
         console.log('toggleTeamPin addpin');
         return application.team().addPin(application, project.id());
-      }
+      
     },
 
     style() {

@@ -35,9 +35,9 @@ module.exports = function(application) {
       const users = application.team().users();
       if (self.currentUserIsOnTeam()) {
         return users.map(user => TeamUserPresenter(application, user));
-      } else {
+      } 
         return users.map(UserAvatarTemplate);
-      }
+      
     },
 
     teamAnalytics() {
@@ -61,9 +61,9 @@ module.exports = function(application) {
     coverUrl() {
       if (application.team().localCoverImage()) {
         return application.team().localCoverImage();
-      } else {
+      } 
         return application.team().coverUrl();
-      }
+      
     },
 
     teamProfileStyle() {
@@ -76,9 +76,9 @@ module.exports = function(application) {
     teamAvatarStyle() {
       if (application.team().hasAvatarImage()) {
         return {backgroundImage: `url('${self.teamAvatarUrl()}')`};
-      } else {
+      } 
         return {backgroundColor: application.team().backgroundColor()};
-      }
+      
     },
       
     teamName() {
@@ -151,9 +151,9 @@ module.exports = function(application) {
     teamAvatarUrl() {
       if (application.team().localAvatarImage()) {
         return application.team().localAvatarImage();
-      } else {
+      } 
         return application.team().teamAvatarUrl('large');
-      }
+      
     },
 
 

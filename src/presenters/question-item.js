@@ -26,10 +26,10 @@ module.exports = function(application, question) {
       question = question.question();
       if (question.length <= MAX_QUESTION_LENGTH) {
         return question;
-      } else {
+      } 
         const truncated = question.substring(0, (MAX_QUESTION_LENGTH - 5));
         return truncated + '...';
-      }
+      
     },
 
     filteredTag(tag) {

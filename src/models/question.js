@@ -59,9 +59,9 @@ module.exports = (Question = function(I, self) {
     editUrl() {
       if (I.line) {
         return `${EDITOR_URL}#!/${I.domain}?path=${I.path}:${I.line}:${I.character}`;
-      } else {
+      } 
         return `${EDITOR_URL}#!/${I.domain}`;
-      }
+      
     }
   });
 

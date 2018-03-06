@@ -38,9 +38,9 @@ module.exports = function(application) {
     searchUsers: _.debounce(function(query) {
         if (query.length) {
           return application.searchUsers(self.query());
-        } else {
+        } 
           return application.searchingForUsers(false);
-        }
+        
       }
       , 500),
 
@@ -48,9 +48,9 @@ module.exports = function(application) {
       const MAX_RESULTS = 5;
       if (self.query().length) {
         return application.searchResultsUsers().slice(0, MAX_RESULTS);
-      } else {
+      } 
         return [];
-      }
+      
     },
 
     hiddenIfNoSearch() {
