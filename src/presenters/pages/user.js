@@ -115,9 +115,6 @@ module.exports = function(application, userLoginOrId) {
         description: text});
     },
 
-    // applyDescription: (event) ->
-    //   event.target = application.user().descriptionMarkdown()
-
     updateUser: _.debounce(data => application.user().updateUser(application, data)
       , 250),
 
