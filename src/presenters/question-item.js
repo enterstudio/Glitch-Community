@@ -27,8 +27,8 @@ module.exports = function(application, question) {
       if (question.length <= MAX_QUESTION_LENGTH) {
         return question;
       } 
-        const truncated = question.substring(0, (MAX_QUESTION_LENGTH - 5));
-        return truncated + '...';
+      const truncated = question.substring(0, (MAX_QUESTION_LENGTH - 5));
+      return truncated + '...';
       
     },
 

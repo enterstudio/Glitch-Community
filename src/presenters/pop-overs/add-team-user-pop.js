@@ -36,12 +36,12 @@ module.exports = function(application) {
     },
 
     searchUsers: _.debounce(function(query) {
-        if (query.length) {
-          return application.searchUsers(self.query());
-        } 
-          return application.searchingForUsers(false);
+      if (query.length) {
+        return application.searchUsers(self.query());
+      } 
+      return application.searchingForUsers(false);
         
-      }
+    }
       , 500),
 
     searchResults() {
@@ -49,7 +49,7 @@ module.exports = function(application) {
       if (self.query().length) {
         return application.searchResultsUsers().slice(0, MAX_RESULTS);
       } 
-        return [];
+      return [];
       
     },
 

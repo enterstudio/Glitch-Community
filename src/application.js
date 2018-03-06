@@ -33,9 +33,9 @@ const cachedUser =
     } catch (error) {} })() : undefined;
 
 var self = Model({
-    // featuredProjects: featuredProjects
-    currentUser: cachedUser
-  }).extend({
+  // featuredProjects: featuredProjects
+  currentUser: cachedUser
+}).extend({
 
   featuredCollections,
 
@@ -101,7 +101,7 @@ var self = Model({
     const numberOfPendingUploads = pendingUploads.length;
 
     const progress = pendingUploads.reduce((accumulator, currentValue) => accumulator + currentValue
-    , 0);
+      , 0);
 
     return ((progress / numberOfPendingUploads) * 100) | 0;
   },
@@ -206,13 +206,13 @@ var self = Model({
       authURL = `/auth/github/${code}`;
     }
     return self.api().post(`${authURL}`)
-    .then(function(response) {
-      analytics.track("Signed In",
-        {provider});
-      console.log("LOGGED IN", response.data);
-      self.currentUser(User(response.data));
-      return self.storeLocal('cachedUser', response.data);
-    });
+      .then(function(response) {
+        analytics.track("Signed In",
+          {provider});
+        console.log("LOGGED IN", response.data);
+        self.currentUser(User(response.data));
+        return self.storeLocal('cachedUser', response.data);
+      });
   },
 
   getUserByLogin(login) {
@@ -224,7 +224,7 @@ var self = Model({
       if (application.currentUser().id() === user.id) {
         return application.saveCurrentUser(user);
       } 
-        return application.saveUser(user);
+      return application.saveUser(user);
       
     });
   },
@@ -274,12 +274,12 @@ var self = Model({
 
   getRandomCategories(numberOfCategories, projectsPerCategory) {
     return Category.getRandomCategories(self, numberOfCategories, projectsPerCategory)
-    .then(categories => self.categories(categories));
+      .then(categories => self.categories(categories));
   },
 
   getCategories() {
     return Category.getCategories(self)
-    .then(categories => self.categories(categories));
+      .then(categories => self.categories(categories));
   },
 
   getQuestions() {

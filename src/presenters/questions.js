@@ -62,7 +62,7 @@ module.exports = function(application, maxQuestions) {
     application.getQuestions();
     return self.randomKaomoji();
   }
-  , 10000);
+    , 10000);
 
   return QuestionsTemplate(self);
 };

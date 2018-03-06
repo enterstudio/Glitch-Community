@@ -36,12 +36,12 @@ module.exports = function(application) {
     },
 
     searchProjects: _.debounce(function(query) {
-        if (query.length) {
-          return application.searchProjects(query);
-        } 
-          return application.searchingForProjects(false);
+      if (query.length) {
+        return application.searchProjects(query);
+      } 
+      return application.searchingForProjects(false);
         
-      }
+    }
       , 500),
 
     searchResults() {
@@ -49,7 +49,7 @@ module.exports = function(application) {
       if (self.query().length) {
         return application.searchResultsProjects().slice(0, MAX_RESULTS);
       } 
-        return [];
+      return [];
       
     },
 

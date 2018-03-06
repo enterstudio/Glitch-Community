@@ -75,7 +75,7 @@ module.exports = function(application) {
       } else if (showNewStuff != null) {
         return showNewStuff;
       } 
-        return application.updateUserPrefs('showNewStuff', true);
+      return application.updateUserPrefs('showNewStuff', true);
       
     },
 

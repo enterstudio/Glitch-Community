@@ -64,29 +64,29 @@ Category.getRandomCategories = function(application, numberOfCategories, project
     categoriesPath = "categories/random";
   }
   return application.api().get(categoriesPath)
-  .then(({data}) =>
-    data.map(categoryDatum => Category(categoryDatum).update(categoryDatum))
-  );
+    .then(({data}) =>
+      data.map(categoryDatum => Category(categoryDatum).update(categoryDatum))
+    );
 };
 
 Category.getCategories = function(application) {
   console.log('🎷🎷🎷 get categories');
   const categoriesPath = "categories";
   return application.api().get(categoriesPath)
-  .then(({data}) =>
-    data.map(categoryDatum => Category(categoryDatum).update(categoryDatum))
-  );
+    .then(({data}) =>
+      data.map(categoryDatum => Category(categoryDatum).update(categoryDatum))
+    );
 };
 
 Category.updateCategory = function(application, id) {
   const categoriesPath = `categories/${id}`;
   return application.api().get(categoriesPath)
-  .then(function({data}) {
-    data.fetched = true;
-    Category(data).update(data); // .pushSearchResult(application)
-    application.getProjects(data.projects);
-    return application.categoryProjectsLoaded(true);
-  });
+    .then(function({data}) {
+      data.fetched = true;
+      Category(data).update(data); // .pushSearchResult(application)
+      application.getProjects(data.projects);
+      return application.categoryProjectsLoaded(true);
+    });
 };
 
 

@@ -84,7 +84,7 @@ module.exports = (User = function(I, self) {
       if (self.hasCoverImage()) {
         return `https://s3.amazonaws.com/production-assetsbucket-8ljvyr1xczmb/user-cover/${self.id()}/${size}?${cacheBuster}`;
       } 
-        return "https://cdn.glitch.com/55f8497b-3334-43ca-851e-6c9780082244%2Fdefault-cover-wide.svg?1503518400625";
+      return "https://cdn.glitch.com/55f8497b-3334-43ca-851e-6c9780082244%2Fdefault-cover-wide.svg?1503518400625";
       
     },
 
@@ -95,10 +95,10 @@ module.exports = (User = function(I, self) {
       } else if (self.facebookId()) {
         return `https://graph.facebook.com/${self.facebookId()}/picture?type=${size}`;
       } 
-        return self.avatarUrl();
+      return self.avatarUrl();
       
     },
-        // self.avatarUrl size
+    // self.avatarUrl size
 
     isCurrentUser(application) {
       if (self.id() === application.currentUser().id()) { return true; }
@@ -144,7 +144,7 @@ module.exports = (User = function(I, self) {
       if (self.isSignedIn()) {
         return `/@${I.login}`;
       } 
-        return `/user/${I.id}`;
+      return `/user/${I.id}`;
       
     },
 
@@ -159,7 +159,7 @@ module.exports = (User = function(I, self) {
     updateUser(application, updateData) {
       const userPath = `users/${self.id()}`;
       return application.api().patch(userPath, updateData)
-      .then(() => console.log('updatedUser')).catch(error => console.error(`updateUser PATCH ${userPath}`, error));
+        .then(() => console.log('updatedUser')).catch(error => console.error(`updateUser PATCH ${userPath}`, error));
     },
 
     updateCoverColor(application, color) {
@@ -173,7 +173,7 @@ module.exports = (User = function(I, self) {
       if (self.description().length > MAX_CHARACTERS) {
         return self.description().substring(0, MAX_CHARACTERS) + "…";
       } 
-        return self.description();
+      return self.description();
       
     },
 
@@ -210,7 +210,7 @@ module.exports = (User = function(I, self) {
       } else if (thanksCount === 2) {
         return "Thanked twice";
       } 
-        return `Thanked ${thanksCount} times`;
+      return `Thanked ${thanksCount} times`;
       
     },
 
@@ -219,7 +219,7 @@ module.exports = (User = function(I, self) {
         projectId});
       const pinPath = `users/${self.id()}/pinned-projects/${projectId}`;
       return application.api().post(pinPath)
-      .then(({data}) => console.log(data)).catch(error => console.error('addPin', error));
+        .then(({data}) => console.log(data)).catch(error => console.error('addPin', error));
     },
 
     removePin(application, projectId) {
@@ -227,7 +227,7 @@ module.exports = (User = function(I, self) {
       self.pins(newPins);
       const pinPath = `users/${self.id()}/pinned-projects/${projectId}`;
       return application.api().delete(pinPath)
-      .then(({data}) => console.log(data)).catch(error => console.error('removePin', error));
+        .then(({data}) => console.log(data)).catch(error => console.error('removePin', error));
     }
   });
 
@@ -243,25 +243,25 @@ module.exports = (User = function(I, self) {
 User.getUserByLogin = function(application, login) {
   const userIdPath = `/userid/byLogin/${login}`;
   return application.api().get(userIdPath)
-  .then(function(response) {
-    const userId = response.data;
-    if (userId === "NOT FOUND") {
-      application.user().notFound(true);
-      return;
-    }
-    return User.getUserById(application, userId).then(user => {
-      return application.saveUser(user);
-    });}).catch(error => console.error(`getUserByLogin GET ${userIdPath}`, error));
+    .then(function(response) {
+      const userId = response.data;
+      if (userId === "NOT FOUND") {
+        application.user().notFound(true);
+        return;
+      }
+      return User.getUserById(application, userId).then(user => {
+        return application.saveUser(user);
+      });}).catch(error => console.error(`getUserByLogin GET ${userIdPath}`, error));
 };
 
 User.getUserById = function(application, id) {
   const userPath = `users/${id}`;
   const promise = new Promise((resolve, reject) => {
     return application.api().get(userPath)
-    .then(({data}) => resolve(data)).catch(function(error) {
-      console.error(`getUserById GET ${userPath}`, error);
-      return reject();
-    });
+      .then(({data}) => resolve(data)).catch(function(error) {
+        console.error(`getUserById GET ${userPath}`, error);
+        return reject();
+      });
   });
   return promise;
 };
@@ -274,13 +274,13 @@ User.getUsersById = function(api, ids) {
   });
   const usersPath = `users/byIds?ids=${userIdsToFetch.join(',')}`;
   return api.get(usersPath)
-  .then(function({data}) {
-    data.forEach(function(datum) {
-      datum.fetched = true;
-      return User(datum).update(datum);
+    .then(function({data}) {
+      data.forEach(function(datum) {
+        datum.fetched = true;
+        return User(datum).update(datum);
+      });
+      return ids.map(id => User({id}));
     });
-    return ids.map(id => User({id}));
-  });
 };
 
 User.getSearchResults = function(application, query) {
@@ -291,16 +291,16 @@ User.getSearchResults = function(application, query) {
   application.searchingForUsers(true);
   const searchPath = `users/search?q=${query}`;
   return application.api(source).get(searchPath)
-  .then(function({data}) {
-    application.searchingForUsers(false);
-    data = data.slice(0 , MAX_RESULTS);
-    if (data.length === 0) {
-      application.searchResultsHaveNoUsers(true);
-    }
-    return data.forEach(function(datum) {
-      datum.fetched = true;
-      return User(datum).update(datum).pushSearchResult(application);
-    });}).catch(error => console.error('getSearchResults', error));
+    .then(function({data}) {
+      application.searchingForUsers(false);
+      data = data.slice(0 , MAX_RESULTS);
+      if (data.length === 0) {
+        application.searchResultsHaveNoUsers(true);
+      }
+      return data.forEach(function(datum) {
+        datum.fetched = true;
+        return User(datum).update(datum).pushSearchResult(application);
+      });}).catch(error => console.error('getSearchResults', error));
 };
 
 

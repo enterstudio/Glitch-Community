@@ -38,7 +38,7 @@ module.exports = function(application, userLoginOrId) {
       if (application.user().localCoverImage()) {
         return application.user().localCoverImage();
       } 
-        return application.user().coverUrl();
+      return application.user().coverUrl();
       
     },
 
@@ -92,7 +92,7 @@ module.exports = function(application, userLoginOrId) {
         node.innerHTML = md.render(text);
         return node;
       } 
-        return application.user().initialDescriptionMarkdown();
+      return application.user().initialDescriptionMarkdown();
       
     },
 
@@ -100,7 +100,7 @@ module.exports = function(application, userLoginOrId) {
       if (self.newDescription()) {
         return self.newDescription();
       } 
-        return application.user().initialDescription();
+      return application.user().initialDescription();
       
     },
 
@@ -119,7 +119,7 @@ module.exports = function(application, userLoginOrId) {
     //   event.target = application.user().descriptionMarkdown()
 
     updateUser: _.debounce(data => application.user().updateUser(application, data)
-    , 250),
+      , 250),
 
     userHasData() {
       if (application.user().id()) { return true; }
@@ -239,12 +239,12 @@ module.exports = function(application, userLoginOrId) {
         // Fetch the deleted project and add it to deletedProjects()
         const path = `projects/${project.id()}?showDeleted=true`;
         return application.api().get(path)
-        .then(function({data}) {
-          const rawProject = data;
-          rawProject.fetched = true;
-          const deletedProject = Project(rawProject).update(rawProject);
-          deletedProject.presenterUndelete = event => self.undeleteProject(project, event);
-          return application.user().deletedProjects.unshift(deletedProject);}).catch(error => console.error("getDeletedProject", error));
+          .then(function({data}) {
+            const rawProject = data;
+            rawProject.fetched = true;
+            const deletedProject = Project(rawProject).update(rawProject);
+            deletedProject.presenterUndelete = event => self.undeleteProject(project, event);
+            return application.user().deletedProjects.unshift(deletedProject);}).catch(error => console.error("getDeletedProject", error));
       });
     },
         
@@ -270,7 +270,7 @@ module.exports = function(application, userLoginOrId) {
             const newDomain = project.domain().slice(0, "-deleted".length * -1);
             return application.api().patch(renamePath, {domain: newDomain}).then(resolve).catch(resolve);
           } 
-            return resolve();
+          return resolve();
           
         });
         
@@ -278,11 +278,11 @@ module.exports = function(application, userLoginOrId) {
           // Fetch the recovered project and add it to self.projects()
           const projectsPath = `projects/byIds?ids=${project.id()}`;
           return application.api().get(projectsPath)
-          .then(function({data}) {
-            const rawProject = data[0];
-            rawProject.fetched = true;
-            const restoredProject = Project(rawProject).update(rawProject);
-            return self.user().projects.unshift(restoredProject);}).catch(error => console.error("getProject", error));
+            .then(function({data}) {
+              const rawProject = data[0];
+              rawProject.fetched = true;
+              const restoredProject = Project(rawProject).update(rawProject);
+              return self.user().projects.unshift(restoredProject);}).catch(error => console.error("getProject", error));
         });
       });
     },
@@ -344,12 +344,6 @@ module.exports = function(application, userLoginOrId) {
       return project.leave();
     }
   };
-      
-      
-        
-  // application.user.observe (newVal) ->
-  //   if newVal
-  //     self.setInitialUserDescription()
         
   const content = UserTemplate(self);
   

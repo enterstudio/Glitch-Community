@@ -12,7 +12,7 @@ const defAccessor = (self, attrName) =>
 
       return self;
     } 
-      return self.I[attrName];
+    return self.I[attrName];
     
   }
 ;

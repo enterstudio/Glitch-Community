@@ -24,7 +24,7 @@ module.exports = function(application, project, category, userPagePresenter) {
       if (project.isRecentProject) {
         return self.editorLink();
       } 
-        return `/~${project.domain()}`;
+      return `/~${project.domain()}`;
       
     },
 
@@ -69,7 +69,7 @@ module.exports = function(application, project, category, userPagePresenter) {
       if (application.pageIsTeamPage()) {
         return self.toggleTeamPin();
       } 
-        return self.toggleUserPin();
+      return self.toggleUserPin();
       
     },
 
@@ -77,7 +77,7 @@ module.exports = function(application, project, category, userPagePresenter) {
       if (project.isPinnedByUser(application)) {
         return application.user().removePin(application, project.id());
       } 
-        return application.user().addPin(application, project.id());
+      return application.user().addPin(application, project.id());
       
     },
 
@@ -85,8 +85,8 @@ module.exports = function(application, project, category, userPagePresenter) {
       if (project.isPinnedByTeam(application)) {
         return application.team().removePin(application, project.id());
       } 
-        console.log('toggleTeamPin addpin');
-        return application.team().addPin(application, project.id());
+      console.log('toggleTeamPin addpin');
+      return application.team().addPin(application, project.id());
       
     },
 

@@ -10,11 +10,11 @@ if (Promise.prototype.finally == null) { Promise.prototype.finally = function(ca
     // Callback rejects: pass on rejection (=omit 2nd arg.)
     value =>
       Promise.resolve(callback())
-      .then(() => value)
+        .then(() => value)
     ,
     reason =>
       Promise.resolve(callback())
-      .then(function() { throw reason; })
+        .then(function() { throw reason; })
   );
 }; }
 

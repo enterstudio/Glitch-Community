@@ -31,7 +31,7 @@ module.exports = function(application, analytics) {
         const filtered = projects.filter(project => project.domain().match(query) || project.description().match(query));
         return self.teamProjects(filtered);
       } 
-        return self.teamProjects(projects);
+      return self.teamProjects(projects);
       
     },
 

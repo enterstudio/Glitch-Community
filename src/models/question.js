@@ -69,20 +69,20 @@ module.exports = (Question = function(I, self) {
 Question.getQuestions = function(application) {
   application.gettingQuestions(true);
   return application.api().get('projects/questions')
-  .then(function({data}) {
-    application.gettingQuestions(false);
-    return data.map(function(datum) {
-      const question = JSON.parse(datum.details);
-      const colors = randomColor({
-        luminosity: 'light',
-        count: 2
+    .then(function({data}) {
+      application.gettingQuestions(false);
+      return data.map(function(datum) {
+        const question = JSON.parse(datum.details);
+        const colors = randomColor({
+          luminosity: 'light',
+          count: 2
+        });
+        question.colorInner = colors[0];
+        question.colorOuter = colors[1];
+        return Question(question).update(question);
       });
-      question.colorInner = colors[0];
-      question.colorOuter = colors[1];
-      return Question(question).update(question);
-    });
-  })
-  .catch(error => console.error("GET projects/questions", error));
+    })
+    .catch(error => console.error("GET projects/questions", error));
 };
 
 

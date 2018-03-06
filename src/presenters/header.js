@@ -31,7 +31,7 @@ module.exports = function(application) {
         } else if (typeof(item) === "undefined") {
           return "";
         } 
-          return console.error("Unxpected team property type", item, typeof(item));
+        return console.error("Unxpected team property type", item, typeof(item));
         
       };
     
@@ -88,7 +88,7 @@ module.exports = function(application) {
       } else if ((hour > 18) || (hour <= 8)) {
         return LOGO_NIGHT;
       } 
-        return LOGO_DAY;
+      return LOGO_DAY;
       
     },
 

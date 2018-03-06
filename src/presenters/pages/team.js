@@ -36,7 +36,7 @@ module.exports = function(application) {
       if (self.currentUserIsOnTeam()) {
         return users.map(user => TeamUserPresenter(application, user));
       } 
-        return users.map(UserAvatarTemplate);
+      return users.map(UserAvatarTemplate);
       
     },
 
@@ -62,7 +62,7 @@ module.exports = function(application) {
       if (application.team().localCoverImage()) {
         return application.team().localCoverImage();
       } 
-        return application.team().coverUrl();
+      return application.team().coverUrl();
       
     },
 
@@ -77,7 +77,7 @@ module.exports = function(application) {
       if (application.team().hasAvatarImage()) {
         return {backgroundImage: `url('${self.teamAvatarUrl()}')`};
       } 
-        return {backgroundColor: application.team().backgroundColor()};
+      return {backgroundColor: application.team().backgroundColor()};
       
     },
       
@@ -141,18 +141,18 @@ module.exports = function(application) {
     },
 
     updateTeam: _.debounce(data => application.team().updateTeam(application, data)
-    , 250),
+      , 250),
 
     applyDescription(event) {
       return event.target.innerHTML = md.render(application.team().description());
     },
-      // application.notifyUserDescriptionUpdated true
+    // application.notifyUserDescriptionUpdated true
 
     teamAvatarUrl() {
       if (application.team().localAvatarImage()) {
         return application.team().localAvatarImage();
       } 
-        return application.team().teamAvatarUrl('large');
+      return application.team().teamAvatarUrl('large');
       
     },
 
