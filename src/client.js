@@ -1,11 +1,5 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
-require("./extensions");
+/* globals route EDITOR_URL baseUrl analytics */
+//require("./extensions");
 
 const application = require('./application');
 const qs = require('querystringify');

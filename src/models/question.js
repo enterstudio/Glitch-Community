@@ -71,7 +71,7 @@ Question.getQuestions = function(application) {
   return application.api().get('projects/questions')
   .then(function({data}) {
     application.gettingQuestions(false);
-    data.map(function(datum) {
+    return data.map(function(datum) {
       const question = JSON.parse(datum.details);
       const colors = randomColor({
         luminosity: 'light',
