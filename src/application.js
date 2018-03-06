@@ -3,11 +3,13 @@
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
- * DS103: Rewrite code to no longer use __guard__
  * DS205: Consider reworking code to avoid use of IIFEs
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
+
+/* globals baseUrl API_URL APP_URL EDITOR_URL analytics application*/
+
 const Observable = require('o_0');
 const _ = require('lodash');
 const axios = require('axios');
@@ -109,15 +111,15 @@ var self = Model({
     const lastCharacter = baseUrl.charAt(urlLength-1);
     if (baseUrl === "") {
       return "/";
-    } else if (lastCharacter === !"/") {
+    }
+    if (lastCharacter === !"/") {
       return baseUrl + "/";
     } 
-      return baseUrl;
+    return baseUrl;
     
   },
 
   closeAllPopOvers() {
-    console.log('closeAllPopOvers');
     $(".pop-over.disposable, .overlay-background.disposable").remove();
     self.signInPopVisibleOnHeader(false);
     self.signInPopVisibleOnRecentProjects(false);
@@ -147,7 +149,7 @@ var self = Model({
     
     
   api(source, queries) {
-    const persistentToken = __guard__(self.currentUser(), x => x.persistentToken());
+    const persistentToken = self.currentUser() && self.currentUser().persistentToken();
     if (persistentToken) {
       return axios.create({  
         baseURL: API_URL,
@@ -157,11 +159,10 @@ var self = Model({
         }
       });
     } 
-      return axios.create({
-        baseURL: API_URL,
-        cancelToken: (source != null ? source.token : undefined)
-      });
-    
+    return axios.create({
+      baseURL: API_URL,
+      cancelToken: (source != null ? source.token : undefined)
+    });
   },
 
   storeLocal(key, value) {
@@ -373,7 +374,3 @@ global.Team = Team;
 global.Question = Question;
 
 module.exports = self;
-
-function __guard__(value, transform) {
-  return (typeof value !== 'undefined' && value !== null) ? transform(value) : undefined;
-}

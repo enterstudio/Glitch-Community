@@ -17,6 +17,7 @@ module.exports = exports = {
     // Intentional config:
     "no-console": OFF,
     "no-else-return": ERROR,
+    "indent": ERROR,
     
     // Unintentionally off -- we should fix these, then enable them
     // Looking for a good first PR to contribute to the site?
