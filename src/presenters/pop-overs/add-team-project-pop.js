@@ -1,10 +1,3 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 const Observable = require('o_0');
 const _ = require('lodash/function');
 
@@ -43,21 +36,21 @@ module.exports = function(application) {
     },
 
     searchProjects: _.debounce(function(query) {
-        if (query.length) {
-          return application.searchProjects(query);
-        } else {
-          return application.searchingForProjects(false);
-        }
-      }
+      if (query.length) {
+        return application.searchProjects(query);
+      } 
+      return application.searchingForProjects(false);
+        
+    }
       , 500),
 
     searchResults() {
       const MAX_RESULTS = 10;
       if (self.query().length) {
         return application.searchResultsProjects().slice(0, MAX_RESULTS);
-      } else {
-        return [];
-      }
+      } 
+      return [];
+      
     },
 
     hiddenIfNoSearch() {

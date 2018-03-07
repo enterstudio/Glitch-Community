@@ -69,7 +69,7 @@ const drawCanvasThumbnail = function(image, type, max) {
       blob.height = height;
       return resolve(blob);
     }
-    , type, quality);
+      , type, quality);
   });
 };
 
@@ -79,15 +79,15 @@ const drawCanvasThumbnail = function(image, type, max) {
 const resizeImage = function(file, size) {
   const max = COVER_SIZES[size] || 1000;
   return blobToImage(file)
-  .then(function(image) {
-    file.width = image.width;
-    file.height = image.height;
-    if ((image.width < max) && (image.height < max)) {
-      return file;
-    } else {
+    .then(function(image) {
+      file.width = image.width;
+      file.height = image.height;
+      if ((image.width < max) && (image.height < max)) {
+        return file;
+      } 
       return drawCanvasThumbnail(image, file.type, max);
-    }
-  });
+    
+    });
 };
 
 const getDominantColor = function(image) {
@@ -102,9 +102,9 @@ const getDominantColor = function(image) {
   let colors = [];
   const outlyingColors = [];
   const outlyingColorsList = JSON.stringify([
-      [255,255,255],
-      [0,0,0]
-    ]);
+    [255,255,255],
+    [0,0,0]
+  ]);
   /*
   Iterate through edge pixels and get the average color, then conditionally
   handle edge colors and transparent images
@@ -118,7 +118,7 @@ const getDominantColor = function(image) {
         pixelData[0], // r
         pixelData[1], // g
         pixelData[2] // b
-        ];
+      ];
       const colorRegExObject = new RegExp(`(${color})`, 'g');
       if (pixelData[3] < 255) { // alpha pixels
         transparentPixels = true;
@@ -136,11 +136,11 @@ const getDominantColor = function(image) {
   }
   if (transparentPixels) {
     return null;
-  } else {
-    const colorMap = quantize(colors, 5);
-    const [r, g, b] = Array.from(colorMap.palette()[0]);
-    return `rgb(${r},${g},${b})`;
-  }
+  } 
+  const colorMap = quantize(colors, 5);
+  const [r, g, b] = Array.from(colorMap.palette()[0]);
+  return `rgb(${r},${g},${b})`;
+  
 };
 
 
@@ -162,46 +162,46 @@ module.exports = function(application) {
     getCoverImagePolicy() {
       if (application.pageIsTeamPage()) {
         return self.getTeamCoverImagePolicy();
-      } else {
-        return self.getUserCoverImagePolicy();
-      }
+      } 
+      return self.getUserCoverImagePolicy();
+      
     },
 
     getTeamCoverImagePolicy() {
       const policyPath = `teams/${application.team().id()}/cover/policy`;
       return application.api().get(policyPath)
-      .then(response => response).catch(function(error) {
-        application.notifyUploadFailure(true);
-        return console.error('getTeamCoverImagePolicy', error);
-      });
+        .then(response => response).catch(function(error) {
+          application.notifyUploadFailure(true);
+          return console.error('getTeamCoverImagePolicy', error);
+        });
     },
     
     getTeamAvatarImagePolicy() {
       const policyPath = `teams/${application.team().id()}/avatar/policy`;
       return application.api().get(policyPath)
-      .then(response => response).catch(function(error) {
-        application.notifyUploadFailure(true);
-        return console.error('getTeamAvatarImagePolicy', error);
-      });
+        .then(response => response).catch(function(error) {
+          application.notifyUploadFailure(true);
+          return console.error('getTeamAvatarImagePolicy', error);
+        });
     },
     
     getUserCoverImagePolicy() {
       const policyPath = `users/${application.user().id()}/cover/policy`;
       return application.api().get(policyPath)
-      .then(response => response).catch(function(error) {
-        application.notifyUploadFailure(true);
-        return console.error('getUserCoverImagePolicy', error);
-      });
+        .then(response => response).catch(function(error) {
+          application.notifyUploadFailure(true);
+          return console.error('getUserCoverImagePolicy', error);
+        });
     },
         
     generateUploadProgressEventHandler(uploadData) {
       return function({lengthComputable, loaded, total}) {
         if (lengthComputable) {
           return uploadData.ratio(loaded / total);
-        } else {
-          // Fake progress with each event: 0, 0.5, 0.75, 0.875, ...
-          return uploadData.ratio((1 + uploadData.ratio()) / 2);
-        }
+        } 
+        // Fake progress with each event: 0, 0.5, 0.75, 0.875, ...
+        return uploadData.ratio((1 + uploadData.ratio()) / 2);
+        
       };
     },
 
@@ -213,27 +213,27 @@ module.exports = function(application) {
         {ratio: Observable(0)};
       application.pendingUploads.push(uploadData);
       return self.getImagePolicy(assetType)
-      .then(function({data}) {
-        const policy = data;
-        console.log('got the policy', policy);
-        console.log('uploading', file);
-        return S3Uploader(policy).upload({
-          key: size,
-          blob: file}).progress(self.generateUploadProgressEventHandler(uploadData));}).finally(() => application.pendingUploads.remove(uploadData)).catch(function(error) {
-        application.notifyUploadFailure(true);
-        return console.error("uploadAsset", error);
-      });
+        .then(function({data}) {
+          const policy = data;
+          console.log('got the policy', policy);
+          console.log('uploading', file);
+          return S3Uploader(policy).upload({
+            key: size,
+            blob: file}).progress(self.generateUploadProgressEventHandler(uploadData));}).finally(() => application.pendingUploads.remove(uploadData)).catch(function(error) {
+          application.notifyUploadFailure(true);
+          return console.error("uploadAsset", error);
+        });
     },
 
     uploadResized(file, size, assetType) {
       console.log('uploadResized', size);
       return resizeImage(file, size)
-      .then(function(blob) {
-        console.log('uploadCoverSize blob', blob);
-        return self.uploadAsset(blob, size, assetType);}).catch(function(error) {
-        application.notifyUploadFailure(true);
-        return console.error('uploadResized', error);
-      });
+        .then(function(blob) {
+          console.log('uploadCoverSize blob', blob);
+          return self.uploadAsset(blob, size, assetType);}).catch(function(error) {
+          application.notifyUploadFailure(true);
+          return console.error('uploadResized', error);
+        });
     },
 
     updateHasCoverImage() {
@@ -241,9 +241,9 @@ module.exports = function(application) {
         {'hasCoverImage': true};
       if (application.pageIsTeamPage()) {
         return application.team().updateTeam(application, HAS_COVER_IMAGE);          
-      } else {
-        return application.user().updateUser(application, HAS_COVER_IMAGE);
-      }
+      } 
+      return application.user().updateUser(application, HAS_COVER_IMAGE);
+      
     },
 
     updateHasAvatarImage() {
@@ -251,50 +251,50 @@ module.exports = function(application) {
         {'hasAvatarImage': true};
       if (application.pageIsTeamPage()) {
         return application.team().updateTeam(application, HAS_AVATAR_IMAGE);          
-      } else {
-        return application.user().updateUser(application, HAS_AVATAR_IMAGE);
-      }
+      } 
+      return application.user().updateUser(application, HAS_AVATAR_IMAGE);
+      
     },
 
     addCoverFile(file) {
       self.uploadAsset(file)    
-      .then(() => self.updateHasCoverImage());
+        .then(() => self.updateHasCoverImage());
       for (let size in COVER_SIZES) {
         self.uploadResized(file, size);
       }      
       return blobToImage(file)
-      .then(function(image) {
-        const dominantColor = getDominantColor(image);
-        if (application.pageIsTeamPage()) {
-          application.team().localCoverImage(image.src);
-          application.team().hasCoverImage(true);
-          return application.team().updateCoverColor(application, dominantColor);
-        } else {
+        .then(function(image) {
+          const dominantColor = getDominantColor(image);
+          if (application.pageIsTeamPage()) {
+            application.team().localCoverImage(image.src);
+            application.team().hasCoverImage(true);
+            return application.team().updateCoverColor(application, dominantColor);
+          } 
           application.user().localCoverImage(image.src);
           application.user().hasCoverImage(true);
           return application.user().updateCoverColor(application, dominantColor);
-        }}).catch(function(error) {
-        application.notifyUploadFailure(true);
-        return console.error('addCoverFile', error);
-      });
+        }).catch(function(error) {
+          application.notifyUploadFailure(true);
+          return console.error('addCoverFile', error);
+        });
     },
 
     addAvatarFile(file) {
       self.uploadAsset(file, 'original', 'avatar')
-      .then(() => self.updateHasAvatarImage());
+        .then(() => self.updateHasAvatarImage());
       for (let size in AVATAR_SIZES) {
         self.uploadResized(file, size, 'avatar');
       }
       return blobToImage(file)
-      .then(function(image) {
-        const dominantColor = getDominantColor(image);
-        if (application.pageIsTeamPage()) {
-          application.team().localAvatarImage(image.src);
-          return application.team().updateAvatarColor(application, dominantColor);
-        }}).catch(function(error) {
-        application.notifyUploadFailure(true);
-        return console.error('addAvatarFile', error);
-      });
+        .then(function(image) {
+          const dominantColor = getDominantColor(image);
+          if (application.pageIsTeamPage()) {
+            application.team().localAvatarImage(image.src);
+            return application.team().updateAvatarColor(application, dominantColor);
+          }}).catch(function(error) {
+          application.notifyUploadFailure(true);
+          return console.error('addAvatarFile', error);
+        });
     }
   };
 };

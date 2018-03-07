@@ -1,12 +1,3 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
-/*
- * decaffeinate suggestions:
- * DS101: Remove unnecessary use of Array.from
- * DS102: Remove unnecessary code created because of implicit returns
- * DS207: Consider shorter variations of null checks
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 "use strict";
 
 // A composable data model that serializes cleanly to JSON and provides
@@ -20,9 +11,9 @@ const defAccessor = (self, attrName) =>
       self.I[attrName] = newValue;
 
       return self;
-    } else {
-      return self.I[attrName];
-    }
+    } 
+    return self.I[attrName];
+    
   }
 ;
 

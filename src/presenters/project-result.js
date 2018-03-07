@@ -26,23 +26,23 @@ module.exports = function(application, project, options, analytics) {
       const MAX_LENGTH = 44;
       if (project.description().length > MAX_LENGTH) {
         return project.description().substring(0, MAX_LENGTH) + '…';
-      } else {
-        return project.description();
-      }
+      } 
+      return project.description();
+      
     },
       
     addProjectToTeam() {
       console.log(`adding ${project.name()} to ${application.team().id()}`);
       return application.team().addProject(application, project);
     },
-      // application.closeAllPopOvers()
+    // application.closeAllPopOvers()
 
     setAnalyticsProjectDomain() {
       console.log(`setting analytics to ${project.domain()}`);
       analytics.analyticsProjectDomain(project.domain());
       return analytics.gettingAnalyticsProjectDomain(true);
     },
-      // application.closeAllPopOvers()
+    // application.closeAllPopOvers()
 
     projectAction() {
       if (options.addProjectToTeam) {
@@ -51,7 +51,7 @@ module.exports = function(application, project, options, analytics) {
         return self.setAnalyticsProjectDomain();
       }
     },
-      // event.preventDefault()
+    // event.preventDefault()
 
     projectResultKey(event) {
       const ENTER = 13;

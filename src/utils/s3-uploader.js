@@ -1,12 +1,3 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
-/*
- * decaffeinate suggestions:
- * DS101: Remove unnecessary use of Array.from
- * DS102: Remove unnecessary code created because of implicit returns
- * DS207: Consider shorter variations of null checks
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 "use strict";
 
 /*
@@ -118,7 +109,7 @@ module.exports = function(credentials) {
 
 const getKey = function(conditions, key) {
   const results = conditions.filter(condition => typeof condition === "object").map(object => object[key])
-  .filter(value => value);
+    .filter(value => value);
 
   return results[0];
 };
@@ -161,9 +152,9 @@ var sendForm = (url, formData) =>
         if (isSuccess(request)) {
 
           return resolve(request);
-        } else {
-          return reject(request);
-        }
+        } 
+        return reject(request);
+        
       }
     };
 
@@ -182,5 +173,5 @@ var objectToForm = function(data) {
 
     return formData;
   }
-  , new FormData);
+    , new FormData);
 };

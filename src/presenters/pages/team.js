@@ -1,10 +1,3 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 const Observable = require('o_0');
 const _ = require('lodash');
 const md = require('markdown-it')({
@@ -22,10 +15,10 @@ const ProjectsListPresenter = require("../projects-list");
 const TeamUserPresenter = require("../team-user-avatar");
 const AnalyticsPresenter = require("../analytics");
 const UserAvatarTemplate = require("../../templates/includes/user-avatar"); //
-const assetUtils = require('../../utils/assets')(application);
-
 
 module.exports = function(application) {
+  const assetUtils = require('../../utils/assets')(application);
+
   var self = {
 
     application,
@@ -42,9 +35,9 @@ module.exports = function(application) {
       const users = application.team().users();
       if (self.currentUserIsOnTeam()) {
         return users.map(user => TeamUserPresenter(application, user));
-      } else {
-        return users.map(UserAvatarTemplate);
-      }
+      } 
+      return users.map(UserAvatarTemplate);
+      
     },
 
     teamAnalytics() {
@@ -68,9 +61,9 @@ module.exports = function(application) {
     coverUrl() {
       if (application.team().localCoverImage()) {
         return application.team().localCoverImage();
-      } else {
-        return application.team().coverUrl();
-      }
+      } 
+      return application.team().coverUrl();
+      
     },
 
     teamProfileStyle() {
@@ -83,9 +76,9 @@ module.exports = function(application) {
     teamAvatarStyle() {
       if (application.team().hasAvatarImage()) {
         return {backgroundImage: `url('${self.teamAvatarUrl()}')`};
-      } else {
-        return {backgroundColor: application.team().backgroundColor()};
-      }
+      } 
+      return {backgroundColor: application.team().backgroundColor()};
+      
     },
       
     teamName() {
@@ -148,19 +141,19 @@ module.exports = function(application) {
     },
 
     updateTeam: _.debounce(data => application.team().updateTeam(application, data)
-    , 250),
+      , 250),
 
     applyDescription(event) {
       return event.target.innerHTML = md.render(application.team().description());
     },
-      // application.notifyUserDescriptionUpdated true
+    // application.notifyUserDescriptionUpdated true
 
     teamAvatarUrl() {
       if (application.team().localAvatarImage()) {
         return application.team().localAvatarImage();
-      } else {
-        return application.team().teamAvatarUrl('large');
-      }
+      } 
+      return application.team().teamAvatarUrl('large');
+      
     },
 
 

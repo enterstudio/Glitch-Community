@@ -8,8 +8,9 @@
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
-// todo convert to async await fetch
 // todo do accessibility w hidden tables
+
+/* globals Plotly */
 
 const Observable = require('o_0');
 const axios = require('axios');
@@ -49,7 +50,7 @@ const OpenPromise = function() {
 
 const sum = array =>
   array.reduce((a, b) => a + b
-  , 0)
+    , 0)
 ;
 
 module.exports = function(application, teamOrProject) {
@@ -78,9 +79,9 @@ module.exports = function(application, teamOrProject) {
         return fourWeeks;
       } else if (self.analyticsTimeLabel() === 'Last 24 Hours') {
         return oneDay;
-      } else {
-        return twoWeeks;
-      }
+      } 
+      return twoWeeks;
+      
     },
     
     // showRemixesReferrers: Observable false
@@ -118,13 +119,13 @@ module.exports = function(application, teamOrProject) {
       // PK: is it used anywhere? I see it's definition, but no other references to it
       // ET: it is used 4 lines below...
       let leftMarginString = __range__(1, maxDigits, true).reduce((a, b) => a + "9"
-      , "9"); // we add one digit because the histogram may aggregate buckets together
+        , "9"); // we add one digit because the histogram may aggregate buckets together
       leftMarginString = Plotly.d3.format(',dr')(parseInt(leftMarginString));
 
       return {
         leftMargin: self.getWidthOfText(leftMarginString, "Benton Sans", "14px"), // super gross
         ranges: maxes.map(function(max) {
-          if (max >= 3) { return undefined; } else { return [0, 3]; }})
+          if (max >= 3) { return undefined; }  return [0, 3]; })
       };
     },
 
@@ -299,7 +300,7 @@ module.exports = function(application, teamOrProject) {
         };
         
         let total = analyticsData[field].reduce((a, b) => makeObj(referrerValue, a[referrerValue] + b[referrerValue])
-        , makeObj(referrerValue, 0));
+          , makeObj(referrerValue, 0));
         total = total[REFERRER_VALUES[i]];
 
         let referrers = analyticsData[field].filter((r, i) => !r.self && (i < 5));
@@ -318,10 +319,10 @@ module.exports = function(application, teamOrProject) {
         };
         
         const layout = {
-          annotations: referrers.map(r =>
+          annotations: referrers.map((r, index) =>
             ({
               x: 0,
-              y: r.domain,
+              y: index,
               showarrow: false,
               text: `${r.value} - ${r.domain}`,
               xanchor: "left",
@@ -373,16 +374,16 @@ module.exports = function(application, teamOrProject) {
       }
 
       return application.api(source).get(analyticsPath)
-      .then(({data}) =>
-        plotlyPromise.then(function() {
-          self.gettingAnalytics(false);
-          self.gettingAnalyticsFromDate(false);
-          self.gettingAnalyticsProjectDomain(false);
+        .then(({data}) =>
+          plotlyPromise.then(function() {
+            self.gettingAnalytics(false);
+            self.gettingAnalyticsFromDate(false);
+            self.gettingAnalyticsProjectDomain(false);
 
-          self.updateCharts(data);
-          return self.updateReferrers(data);
-        })
-      );
+            self.updateCharts(data);
+            return self.updateReferrers(data);
+          })
+        );
     },
 
     toggleAnalyticsTimePop(event) {
@@ -435,7 +436,7 @@ module.exports = function(application, teamOrProject) {
     Plotly.Plots.resize(self.visitsChartElement);
     return Plotly.Plots.resize(self.visitsReferrersBars);
   }
-  , 50)
+    , 50)
   );
 
   // Bind a function to rerun and fetch the analytics data when the dependent observables change

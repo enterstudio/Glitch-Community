@@ -1,12 +1,3 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
-/*
- * decaffeinate suggestions:
- * DS101: Remove unnecessary use of Array.from
- * DS102: Remove unnecessary code created because of implicit returns
- * DS207: Consider shorter variations of null checks
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 /*
 We use a cache to keep an identity map of categories by id.
 
@@ -65,9 +56,7 @@ module.exports = (Category = function(I, self) {
 Category.getRandomCategories = function(application, numberOfCategories, projectsPerCategory) {
   let categoriesPath;
   console.log('🎷🎷🎷 get random categories');
-  if (numberOfCategories && numberOfProjects) {
-    categoriesPath = "categories/random";
-  } else if (numberOfCategories) {
+  if (numberOfCategories) {
     categoriesPath = "categories/random?numCategories=2";
   } else if (projectsPerCategory) {
     categoriesPath = "categories/random?projectsPerCategory=2";
@@ -75,29 +64,29 @@ Category.getRandomCategories = function(application, numberOfCategories, project
     categoriesPath = "categories/random";
   }
   return application.api().get(categoriesPath)
-  .then(({data}) =>
-    data.map(categoryDatum => Category(categoryDatum).update(categoryDatum))
-  );
+    .then(({data}) =>
+      data.map(categoryDatum => Category(categoryDatum).update(categoryDatum))
+    );
 };
 
 Category.getCategories = function(application) {
   console.log('🎷🎷🎷 get categories');
   const categoriesPath = "categories";
   return application.api().get(categoriesPath)
-  .then(({data}) =>
-    data.map(categoryDatum => Category(categoryDatum).update(categoryDatum))
-  );
+    .then(({data}) =>
+      data.map(categoryDatum => Category(categoryDatum).update(categoryDatum))
+    );
 };
 
 Category.updateCategory = function(application, id) {
   const categoriesPath = `categories/${id}`;
   return application.api().get(categoriesPath)
-  .then(function({data}) {
-    data.fetched = true;
-    Category(data).update(data); // .pushSearchResult(application)
-    application.getProjects(data.projects);
-    return application.categoryProjectsLoaded(true);
-  });
+    .then(function({data}) {
+      data.fetched = true;
+      Category(data).update(data); // .pushSearchResult(application)
+      application.getProjects(data.projects);
+      return application.categoryProjectsLoaded(true);
+    });
 };
 
 

@@ -1,6 +1,6 @@
 let API_URL, APP_URL, CDN_URL, EDITOR_URL, FACEBOOK_CLIENT_ID, GITHUB_CLIENT_ID;
 const fs = require("fs");
-const rp = require("request-promise-native");
+const axios = require("axios");
 const util = require("util");
 const express = require('express');
 const CACHE_INTERVAL = 1000 * 60 * 30; // 30 minutes
@@ -24,9 +24,12 @@ if (process.env.RUNNING_ON === 'staging') {
 }
 
 const updateCache = async type => {
-  let response = await rp(`${API_URL}${type}`);
+  let response = await axios.get(`${API_URL}${type}`, {
+    transformResponse: (data) => data // Override the default object transform
+  });
+  let json = response.data;
+  
   try {
-    let json = response;
     let fileContents = `module.exports = ${json}`
     await fs_writeFile(`./src/cache/${type}.js`, fileContents);
     console.log(`☂️ ${type} re-cached`);

@@ -1,10 +1,5 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
+/* globals Project */
+
 const Observable = require('o_0');
 const _ = require('lodash');
 const md = require('markdown-it')({
@@ -17,9 +12,10 @@ const DeletedProjectsTemplate = require("../../templates/deleted-projects");
 const LayoutPresenter = require("../layout");
 const CtaButtonsPresenter = require("../cta-buttons");
 const ProjectsListPresenter = require("../projects-list");
-const assetUtils = require('../../utils/assets')(application);
 
 module.exports = function(application, userLoginOrId) {
+  const assetUtils = require('../../utils/assets')(application);
+
   var self = {
 
     user: application.user,    
@@ -41,9 +37,9 @@ module.exports = function(application, userLoginOrId) {
     coverUrl() {
       if (application.user().localCoverImage()) {
         return application.user().localCoverImage();
-      } else {
-        return application.user().coverUrl();
-      }
+      } 
+      return application.user().coverUrl();
+      
     },
 
     userProfileStyle() {
@@ -95,17 +91,17 @@ module.exports = function(application, userLoginOrId) {
         const node = document.createElement('span');
         node.innerHTML = md.render(text);
         return node;
-      } else {
-        return application.user().initialDescriptionMarkdown();
-      }
+      } 
+      return application.user().initialDescriptionMarkdown();
+      
     },
 
     editableDescription() {
       if (self.newDescription()) {
         return self.newDescription();
-      } else {
-        return application.user().initialDescription();
-      }
+      } 
+      return application.user().initialDescription();
+      
     },
 
     description() {
@@ -119,11 +115,8 @@ module.exports = function(application, userLoginOrId) {
         description: text});
     },
 
-    // applyDescription: (event) ->
-    //   event.target = application.user().descriptionMarkdown()
-
     updateUser: _.debounce(data => application.user().updateUser(application, data)
-    , 250),
+      , 250),
 
     userHasData() {
       if (application.user().id()) { return true; }
@@ -243,12 +236,12 @@ module.exports = function(application, userLoginOrId) {
         // Fetch the deleted project and add it to deletedProjects()
         const path = `projects/${project.id()}?showDeleted=true`;
         return application.api().get(path)
-        .then(function({data}) {
-          const rawProject = data;
-          rawProject.fetched = true;
-          const deletedProject = Project(rawProject).update(rawProject);
-          deletedProject.presenterUndelete = event => self.undeleteProject(project, event);
-          return application.user().deletedProjects.unshift(deletedProject);}).catch(error => console.error("getDeletedProject", error));
+          .then(function({data}) {
+            const rawProject = data;
+            rawProject.fetched = true;
+            const deletedProject = Project(rawProject).update(rawProject);
+            deletedProject.presenterUndelete = event => self.undeleteProject(project, event);
+            return application.user().deletedProjects.unshift(deletedProject);}).catch(error => console.error("getDeletedProject", error));
       });
     },
         
@@ -273,20 +266,20 @@ module.exports = function(application, userLoginOrId) {
             const renamePath = `projects/${project.id()}`;
             const newDomain = project.domain().slice(0, "-deleted".length * -1);
             return application.api().patch(renamePath, {domain: newDomain}).then(resolve).catch(resolve);
-          } else {
-            return resolve();
-          }
+          } 
+          return resolve();
+          
         });
         
         return renamePromise.then(function() {
           // Fetch the recovered project and add it to self.projects()
           const projectsPath = `projects/byIds?ids=${project.id()}`;
           return application.api().get(projectsPath)
-          .then(function({data}) {
-            const rawProject = data[0];
-            rawProject.fetched = true;
-            const restoredProject = Project(rawProject).update(rawProject);
-            return self.user().projects.unshift(restoredProject);}).catch(error => console.error("getProject", error));
+            .then(function({data}) {
+              const rawProject = data[0];
+              rawProject.fetched = true;
+              const restoredProject = Project(rawProject).update(rawProject);
+              return self.user().projects.unshift(restoredProject);}).catch(error => console.error("getProject", error));
         });
       });
     },
@@ -348,12 +341,6 @@ module.exports = function(application, userLoginOrId) {
       return project.leave();
     }
   };
-      
-      
-        
-  // application.user.observe (newVal) ->
-  //   if newVal
-  //     self.setInitialUserDescription()
         
   const content = UserTemplate(self);
   

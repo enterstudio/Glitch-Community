@@ -1,10 +1,5 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
+/* global analytics */
+
 const moment = require('moment');
 
 const HeaderTemplate = require("../templates/includes/header");
@@ -35,9 +30,9 @@ module.exports = function(application) {
           return item();
         } else if (typeof(item) === "undefined") {
           return "";
-        } else {
-          return console.error("Unxpected team property type", item, typeof(item));
-        }
+        } 
+        return console.error("Unxpected team property type", item, typeof(item));
+        
       };
     
       return{ 
@@ -92,9 +87,9 @@ module.exports = function(application) {
         return LOGO_SUNSET;
       } else if ((hour > 18) || (hour <= 8)) {
         return LOGO_NIGHT;
-      } else {
-        return LOGO_DAY;
-      }
+      } 
+      return LOGO_DAY;
+      
     },
 
     hiddenIfSignedIn() {

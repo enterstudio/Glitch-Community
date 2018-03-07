@@ -1,10 +1,3 @@
-// TODO: This file was created by bulk-decaffeinate.
-// Check that you're happy with the conversion, then remove this comment.
-/*
- * decaffeinate suggestions:
- * DS102: Remove unnecessary code created because of implicit returns
- * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
- */
 const IndexTemplate = require("../../templates/pages/index");
 const LayoutPresenter = require("../layout");
 const WhatIsGlitchPresenter = require("../what-is-glitch");
@@ -34,9 +27,6 @@ module.exports = function(application) {
     },
 
     currentUser: application.currentUser,
-
-//     featuredProjects: ->
-//       application.featuredProjects()
       
     featuredCollections() {
       return application.featuredCollections.map(collection => FeaturedCollectionPresenter(application, collection));

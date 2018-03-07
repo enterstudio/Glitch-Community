@@ -4,10 +4,10 @@
  * decaffeinate suggestions:
  * DS101: Remove unnecessary use of Array.from
  * DS102: Remove unnecessary code created because of implicit returns
- * DS103: Rewrite code to no longer use __guard__
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
+/* global application CDN_URL EDITOR_URL*/
 let Project;
 const cache = {};
 
@@ -50,14 +50,13 @@ module.exports = (Project = function(I, self) {
     editUrl() {
       if (I.line) {
         return `${EDITOR_URL}#!/${I.domain}?path=${I.path}:${I.line}:${I.character}`;
-      } else {
-        return `${EDITOR_URL}#!/${I.domain}`;
       }
+      return `${EDITOR_URL}#!/${I.domain}`;
     },
 
     userIsCurrentUser(application) {
       const userIsCurrentUser = _.find(self.users(), user => user.id() === application.currentUser().id());
-      if (userIsCurrentUser) { return true; }
+      return !!userIsCurrentUser;
     },
 
     avatar() {
@@ -77,20 +76,21 @@ module.exports = (Project = function(I, self) {
       self.readmeNotFound(undefined);
       self.projectNotFound(undefined);
       let path = `projects/${self.id()}/readme`;
-      if (__guard__(application.currentUser(), x => x.persistentToken())) {
-        path += `?token=${__guard__(application.currentUser(), x1 => x1.persistentToken())}`;
+      let token = application.currentUser() && application.currentUser().persistentToken();
+      if(token){
+        path += `?token=${token}`;
       }
       return application.api(source).get(path)
-      .then(function(response) {
-        self.readme(response.data);
-        return application.overlayProject(self);}).catch(function(error) {
-        console.error("getReadme", error);
-        if (error.response.status === 404) {
-          return self.readmeNotFound(true);
-        } else {
+        .then(function(response) {
+          self.readme(response.data);
+          return application.overlayProject(self);}).catch(function(error) {
+          console.error("getReadme", error);
+          if (error.response.status === 404) {
+            return self.readmeNotFound(true);
+          } 
           return self.projectNotFound(true);
-        }
-      });
+        
+        });
     },
 
     showOverlay(application) {
@@ -128,10 +128,10 @@ module.exports = (Project = function(I, self) {
       const projectPath = `/projects/${self.id()}`;
       return new Promise(function(resolve, reject) {
         return application.api().delete(projectPath)
-        .then(response => resolve(response)).catch(function(error) {
-          reject(error);
-          return console.error('deleteProject', error);
-        });
+          .then(response => resolve(response)).catch(function(error) {
+            reject(error);
+            return console.error('deleteProject', error);
+          });
       });
     },
       
@@ -139,10 +139,10 @@ module.exports = (Project = function(I, self) {
       const projectPath = `/projects/${self.id()}/undelete`;
       return new Promise(function(resolve, reject) { 
         return application.api().post(projectPath)
-        .then(response => resolve(response)).catch(function(error) {
-          console.error('undeleteProject', error);
-          return reject(error);
-        });
+          .then(response => resolve(response)).catch(function(error) {
+            console.error('undeleteProject', error);
+            return reject(error);
+          });
       });
     },
     
@@ -158,7 +158,7 @@ module.exports = (Project = function(I, self) {
           .then(response => resolve(response)).catch(function(error) {
             console.error('leaveProject', error);
             return reject(error);
-        });
+          });
       });
     }
   });
@@ -180,16 +180,16 @@ Project.getProjectsByIds = function(api, ids) {
   const projectIdGroups = newProjectIds.map(function(id, index) {
     if ((index % NUMBER_OF_PROJECTS_PER_REQUEST) === 0) { 
       return newProjectIds.slice(index, index + NUMBER_OF_PROJECTS_PER_REQUEST);       
-    } else { return null; }}).filter(id => id);
+    }  return null; }).filter(id => id);
   return projectIdGroups.forEach(function(group) {
     const projectsPath = `projects/byIds?ids=${group.join(',')}`;
     return api.get(projectsPath)
-    .then(function({data}) {
-      data.forEach(function(datum) {
-        datum.fetched = true;
-        return Project(datum).update(datum);
-      });
-      return ids.map(id => Project({id}));}).catch(error => console.error("getProjectsByIds", error));
+      .then(function({data}) {
+        data.forEach(function(datum) {
+          datum.fetched = true;
+          return Project(datum).update(datum);
+        });
+        return ids.map(id => Project({id}));}).catch(error => console.error("getProjectsByIds", error));
   });
 };
 
@@ -197,15 +197,15 @@ Project.getProjectOverlay = function(application, domain) {
   const projectPath = `projects/${domain}`;
   application.overlayProjectVisible(true);
   return application.api().get(projectPath)
-  .then(function({data}) {
-    if (!data) {
-      const project = Project({domain});
-      project.projectNotFound(true);
-      project.showOverlay(application);
-      return;
-    }
+    .then(function({data}) {
+      if (!data) {
+        const project = Project({domain});
+        project.projectNotFound(true);
+        project.showOverlay(application);
+        return;
+      }
     
-    return Project(data).showOverlay(application);}).catch(error => console.error("getProjectOverlay", error));
+      return Project(data).showOverlay(application);}).catch(error => console.error("getProjectOverlay", error));
 };
 
 Project.getSearchResults = function(application, query) {
@@ -216,22 +216,22 @@ Project.getSearchResults = function(application, query) {
   application.searchingForProjects(true);
   const searchPath = `projects/search?q=${query}`;
   return application.api(source).get(searchPath)
-  .then(function({data}) {
-    application.searchingForProjects(false);
+    .then(function({data}) {
+      application.searchingForProjects(false);
     
-    let projects = data;
+      let projects = data;
 
-    // Remove not-safe-for-kids results
-    projects = projects.filter(project => project.notSafeForKids === false);
+      // Remove not-safe-for-kids results
+      projects = projects.filter(project => project.notSafeForKids === false);
     
-    projects = projects.slice(0 , MAX_RESULTS);
-    if (projects.length === 0) {
-      application.searchResultsHaveNoProjects(true);
-    }
-    return projects.forEach(function(project) {
-      project.fetched = true;
-      return Project(project).update(project).pushSearchResult(application);
-    });}).catch(error => console.error('getSearchResults', error));
+      projects = projects.slice(0 , MAX_RESULTS);
+      if (projects.length === 0) {
+        application.searchResultsHaveNoProjects(true);
+      }
+      return projects.forEach(function(project) {
+        project.fetched = true;
+        return Project(project).update(project).pushSearchResult(application);
+      });}).catch(error => console.error('getSearchResults', error));
 };
 
 
@@ -239,7 +239,3 @@ Project._cache = cache;
 
 // Circular dependencies must go below module.exports
 var User = require("./user");
-
-function __guard__(value, transform) {
-  return (typeof value !== 'undefined' && value !== null) ? transform(value) : undefined;
-}

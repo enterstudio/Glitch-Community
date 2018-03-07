@@ -7,7 +7,6 @@ module.exports = exports = {
   env: {
       'es6': true,        // We are writing ES6 code
       'browser': true,    // for the browser
-      'commonjs': true,   // using webpack
   },
   "parser": "babel-eslint",
   "parserOptions": {
@@ -15,8 +14,10 @@ module.exports = exports = {
     "allowImportExportEverywhere": true
   },
   "rules": {
-    // Intentionally off:
+    // Intentional config:
     "no-console": OFF,
+    "no-else-return": ERROR,
+    "indent": ["error", 2],
     
     // Unintentionally off -- we should fix these, then enable them
     // Looking for a good first PR to contribute to the site?

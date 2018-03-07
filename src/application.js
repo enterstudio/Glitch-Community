@@ -3,11 +3,13 @@
 /*
  * decaffeinate suggestions:
  * DS102: Remove unnecessary code created because of implicit returns
- * DS103: Rewrite code to no longer use __guard__
  * DS205: Consider reworking code to avoid use of IIFEs
  * DS207: Consider shorter variations of null checks
  * Full docs: https://github.com/decaffeinate/decaffeinate/blob/master/docs/suggestions.md
  */
+
+/* globals baseUrl API_URL APP_URL EDITOR_URL analytics application*/
+
 const Observable = require('o_0');
 const _ = require('lodash');
 const axios = require('axios');
@@ -31,9 +33,9 @@ const cachedUser =
     } catch (error) {} })() : undefined;
 
 var self = Model({
-    // featuredProjects: featuredProjects
-    currentUser: cachedUser
-  }).extend({
+  // featuredProjects: featuredProjects
+  currentUser: cachedUser
+}).extend({
 
   featuredCollections,
 
@@ -99,7 +101,7 @@ var self = Model({
     const numberOfPendingUploads = pendingUploads.length;
 
     const progress = pendingUploads.reduce((accumulator, currentValue) => accumulator + currentValue
-    , 0);
+      , 0);
 
     return ((progress / numberOfPendingUploads) * 100) | 0;
   },
@@ -109,15 +111,15 @@ var self = Model({
     const lastCharacter = baseUrl.charAt(urlLength-1);
     if (baseUrl === "") {
       return "/";
-    } else if (lastCharacter === !"/") {
-      return baseUrl + "/";
-    } else {
-      return baseUrl;
     }
+    if (lastCharacter === !"/") {
+      return baseUrl + "/";
+    } 
+    return baseUrl;
+    
   },
 
   closeAllPopOvers() {
-    console.log('closeAllPopOvers');
     $(".pop-over.disposable, .overlay-background.disposable").remove();
     self.signInPopVisibleOnHeader(false);
     self.signInPopVisibleOnRecentProjects(false);
@@ -147,7 +149,7 @@ var self = Model({
     
     
   api(source, queries) {
-    const persistentToken = __guard__(self.currentUser(), x => x.persistentToken());
+    const persistentToken = self.currentUser() && self.currentUser().persistentToken();
     if (persistentToken) {
       return axios.create({  
         baseURL: API_URL,
@@ -156,12 +158,11 @@ var self = Model({
           Authorization: persistentToken
         }
       });
-    } else {
-      return axios.create({
-        baseURL: API_URL,
-        cancelToken: (source != null ? source.token : undefined)
-      });
-    }
+    } 
+    return axios.create({
+      baseURL: API_URL,
+      cancelToken: (source != null ? source.token : undefined)
+    });
   },
 
   storeLocal(key, value) {
@@ -205,13 +206,13 @@ var self = Model({
       authURL = `/auth/github/${code}`;
     }
     return self.api().post(`${authURL}`)
-    .then(function(response) {
-      analytics.track("Signed In",
-        {provider});
-      console.log("LOGGED IN", response.data);
-      self.currentUser(User(response.data));
-      return self.storeLocal('cachedUser', response.data);
-    });
+      .then(function(response) {
+        analytics.track("Signed In",
+          {provider});
+        console.log("LOGGED IN", response.data);
+        self.currentUser(User(response.data));
+        return self.storeLocal('cachedUser', response.data);
+      });
   },
 
   getUserByLogin(login) {
@@ -222,9 +223,8 @@ var self = Model({
     return User.getUserById(application, id).then(user => {
       if (application.currentUser().id() === user.id) {
         return application.saveCurrentUser(user);
-      } else {
-        return application.saveUser(user);
-      }
+      } 
+      return application.saveUser(user);
     });
   },
 
@@ -237,7 +237,7 @@ var self = Model({
     console.log('👀 current user data is ', userData);
     self.currentUser().update(userData);
     const teams = self.currentUser().teams().map(datum => Team(datum));
-    return self.currentUser().teams(teams);
+    self.currentUser().teams(teams);
   },
 
   saveUser(userData) {
@@ -273,12 +273,12 @@ var self = Model({
 
   getRandomCategories(numberOfCategories, projectsPerCategory) {
     return Category.getRandomCategories(self, numberOfCategories, projectsPerCategory)
-    .then(categories => self.categories(categories));
+      .then(categories => self.categories(categories));
   },
 
   getCategories() {
     return Category.getCategories(self)
-    .then(categories => self.categories(categories));
+      .then(categories => self.categories(categories));
   },
 
   getQuestions() {
@@ -357,7 +357,6 @@ var self = Model({
       
 self.attrModel("user", User);
 self.attrModel("currentUser", User);
-// self.attrModels "featuredProjects", Project
 self.attrModels("categories", Category);
 self.attrModel("category", Category);
 self.attrModel("team", Team);
@@ -373,7 +372,3 @@ global.Team = Team;
 global.Question = Question;
 
 module.exports = self;
-
-function __guard__(value, transform) {
-  return (typeof value !== 'undefined' && value !== null) ? transform(value) : undefined;
-}
